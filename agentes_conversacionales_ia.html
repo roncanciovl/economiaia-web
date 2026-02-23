@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9Q4T51VW0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-Z9Q4T51VW0');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Optimización LLM SEO y Meta tags para Economía IA -->
+    <meta name="description"
+        content="Descubre el potencial de los agentes conversacionales con IA para automatizar ventas, atención al cliente y operaciones en negocios locales.">
+    <meta name="keywords"
+        content="Agentes Conversacionales, Inteligencia Artificial, Automatización de Ventas, Chatbots IA, Economía IA, CRM Inteligente, IA B2B">
+    <meta name="author" content="Economía IA">
+    <title>Agentes Conversacionales IA | Economía IA</title>
+    <!-- Datos Estructurados (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Implementación de Agentes Conversacionales con IA",
+      "provider": {
+        "@type": "Organization",
+        "name": "Economía IA"
+      },
+      "description": "Servicio de diseño e implementación de agentes de IA personalizados para ventas y atención automatizada en WhatsApp, Instagram y Web.",
+      "areaServed": "Global/Local",
+      "serviceType": "AI Automation"
+    }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@300;400;600;800&display=swap');
+
+        :root {
+            --bg-color: #0c111e;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-cyan: #22d3ee;
+            --accent-blue: #3b82f6;
+            --accent-indigo: #6366f1;
+            --glow-cyan: rgba(34, 211, 238, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px var(--glow-cyan);
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            margin-top: 2rem;
+        }
+
+        /* Ventajas Section */
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .benefit-card {
+            background: var(--card-bg);
+            border: 1px solid #334155;
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+        }
+
+        .benefit-card h3 {
+            color: var(--accent-cyan);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .benefit-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* CTA Section */
+        .cta-box {
+            background: linear-gradient(135deg, rgba(34, 211, 238, 0.1), rgba(99, 102, 241, 0.1));
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            border-radius: 1.5rem;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .cta-box h2 {
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 9999px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(34, 211, 238, 0.5);
+        }
+
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .cta-box {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html" class="nav-back">← Volver al Ecosistema</a>
+
+        <header class="hero">
+            <h1 class="hero-title">Agentes Conversacionales: El Empleado que No Duerme</h1>
+            <p class="hero-subtitle">Transforma tu atención al cliente y tus ventas con IAs de <strong>Texto y
+                    Voz</strong> que entienden, persuaden y cierran negocios en tiempo real, 24/7.</p>
+            <img src="agente_ia_hero.png" alt="Agente IA Conversacional" class="hero-image">
+        </header>
+
+        <h2 class="section-title">¿Por qué tu negocio necesita un Agente de IA?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3>💬 Disponibilidad Absoluta</h3>
+                <p>Responde en menos de 2 segundos a cualquier hora en WhatsApp e Instagram. No vuelvas a perder un
+                    cliente porque "ya cerramos" o porque el equipo está ocupado.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>📞 Agentes de Voz (IA Voice)</h3>
+                <p>Implementamos sistemas de voz con latencia ultra-baja que pueden atender llamadas telefónicas,
+                    agendar citas y resolver dudas con una voz natural y humana.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>🧠 Memoria y Contexto</h3>
+                <p>Nuestros agentes no solo responden texto; entienden el historial del cliente, sus preferencias y el
+                    inventario de tu negocio para dar respuestas precisas.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>📈 Ventas Proactivas</h3>
+                <p>No solo responden dudas. Están entrenados en técnicas de persuasión y cierre para guiar al usuario
+                    desde la curiosidad hasta el pago.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>🔗 Integración Total</h3>
+                <p>Conectamos tu agente directamente con tu CRM, Google Sheets, WhatsApp, Instagram y pasarelas de pago
+                    para una operación transparente.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>🌍 Escabilidad Global</h3>
+                <p>Atiende a miles de clientes simultáneamente en más de 50 idiomas sin necesidad de contratar más
+                    personal o ampliar oficinas.</p>
+            </div>
+        </div>
+
+        <section class="cta-box">
+            <h2>Implementación a Medida</h2>
+            <p>No usamos plantillas genéricas. Construimos arquitecturas conversacionales únicas basadas en la voz de tu
+                marca y las necesidades específicas de tu flujo de ventas.</p>
+            <a href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer" class="btn">
+                📩 Solicitar Consultoría de Implementación
+            </a>
+        </section>
+
+        <!-- Footer Economía IA -->
+        <footer
+            style="width: 100%; max-width: 1000px; margin: 5rem auto 0; padding: 1.2rem 1rem; border-top: 1px solid #1e293b; text-align: center;">
+            <div
+                style="display: flex; justify-content: center; align-items: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 0.6rem;">
+                <span style="color: #64748b; font-size: 0.8rem; font-weight: 600;">Economía IA</span>
+                <span style="color: #334155;">·</span>
+                <a href="https://www.tiktok.com/@economiaia" target="_blank" rel="noopener noreferrer"
+                    style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; transition: color 0.2s;"
+                    onmouseover="this.style.color='#ff0050';" onmouseout="this.style.color='#94a3b8';">🎵
+                    @economiaia</a>
+                <span style="color: #334155;">·</span>
+                <a href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer"
+                    style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; transition: color 0.2s;"
+                    onmouseover="this.style.color='#8b5cf6';" onmouseout="this.style.color='#94a3b8';">🔗 Enlaces</a>
+                <span style="color: #334155;">·</span>
+                <a href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer"
+                    style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; transition: color 0.2s;"
+                    onmouseover="this.style.color='#10b981';" onmouseout="this.style.color='#94a3b8';">💼
+                    Consultoría</a>
+            </div>
+            <p style="color: #334155; font-size: 0.7rem; margin: 0;">© 2026 Economía IA</p>
+        </footer>
+    </div>
+</body>
+
+</html>
