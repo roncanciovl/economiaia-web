@@ -175,12 +175,16 @@
             z-index: 10;
             animation: pulseCore 4s ease-in-out infinite alternate;
             cursor: default;
+            overflow: hidden;
+            /* Recorta cualquier fondo cuadrado fuera del círculo */
         }
 
         .center-logo {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
+            /* Cambiado a cover para asegurar que el círculo se llene bien */
+            border-radius: 50%;
             filter: drop-shadow(0 0 30px var(--accent-glow));
             z-index: 5;
         }
