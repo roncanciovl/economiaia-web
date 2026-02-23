@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Optimización LLM SEO y Meta tags para Economía IA -->
+    <meta name="description"
+        content="Aprende la arquitectura de marketing digital automatizada impulsada por Inteligencia Artificial. Descubre el nuevo motor de tu negocio con Economía IA.">
+    <meta name="keywords"
+        content="Economía IA, Marketing con Inteligencia Artificial, Automatización de Ventas, Efecto Veblen, Meta Advantage+, TikTok Smart+, LLM SEO">
+    <meta name="author" content="Economía IA">
+    <title>El Nuevo Motor de tu Negocio - Marketing 2026 | Economía IA</title>
+    <!-- Datos Estructurados (JSON-LD) para LLMs y Motores de Búsqueda -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "La Arquitectura de Economía IA: Marketing Automatizado",
+      "author": {
+        "@type": "Organization",
+        "name": "Economía IA"
+      },
+      "description": "Una guía completa sobre cómo estructurar el marketing moderno usando herramientas de IA para atraer, capturar, convertir, retener y optimizar clientes.",
+      "about": [
+        {"@type": "Thing", "name": "Marketing Digital AI"},
+        {"@type": "Thing", "name": "Automatización B2B/B2C"}
+      ]
+    }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #0c111e;
+            color: #f8fafc;
+            margin: 0;
+            padding: 3rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            background: linear-gradient(90deg, #34d399, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+            font-weight: 800;
+            max-width: 900px;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #94a3b8;
+            max-width: 800px;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        section {
+            width: 100%;
+            max-width: 1000px;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #f1f5f9;
+            border-bottom: 2px solid rgba(59, 130, 246, 0.2);
+            padding-bottom: 0.75rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title .section-number {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 800;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Evolución Grid */
+        .evolution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .evo-card {
+            background: #1e293b;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid #334155;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .evo-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+
+        .evo-card .old {
+            color: #ef4444;
+            font-size: 0.95rem;
+            text-decoration: line-through;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .evo-card .new {
+            color: #10b981;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .evo-card .desc {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        .evo-svg-container {
+            width: 100%;
+            height: 120px;
+            background: #0f172a;
+            border-radius: 0.75rem;
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: 1px solid #334155;
+            position: relative;
+        }
+
+        .context-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 0.75rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .context-image:hover {
+            transform: scale(1.02);
+            border-color: #3b82f6;
+        }
+
+        /* SVG Loop Animado */
+        .loop-container {
+            background: #0f172a;
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid #334155;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        /* Tech Stack Cards */
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .stack-card {
+            background: linear-gradient(145deg, #1e293b, #0c111e);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid #334155;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .stack-card h3 {
+            margin-top: 0;
+            color: #38bdf8;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stack-card p {
+            color: #cbd5e1;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Thesis Box */
+        .thesis-box {
+            background: linear-gradient(90deg, rgba(52, 211, 153, 0.1), rgba(59, 130, 246, 0.1));
+            border-left: 4px solid #34d399;
+            padding: 2rem;
+            border-radius: 0 1rem 1rem 0;
+            margin-top: 3rem;
+        }
+
+        .thesis-box h4 {
+            margin-top: 0;
+            color: #34d399;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .thesis-box p {
+            margin: 0;
+            color: #e2e8f0;
+            font-size: 1.1rem;
+        }
+
+        /* Animations */
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 5px rgba(52, 211, 153, 0.4));
+                transform: scale(1);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 15px rgba(52, 211, 153, 0.8));
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes flowData {
+            0% {
+                stroke-dashoffset: 40;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes bounceIcon {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes walk {
+            0% {
+                transform: translateX(-5px) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateX(5px) rotate(5deg);
+            }
+
+            100% {
+                transform: translateX(-5px) rotate(-5deg);
+            }
+        }
+
+        @keyframes radarScan {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes floatSmooth {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        @keyframes typingDot {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes dataSync {
+            0% {
+                stroke-dashoffset: 60;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes heartBeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            15% {
+                transform: scale(1.2);
+            }
+
+            30% {
+                transform: scale(1);
+            }
+
+            45% {
+                transform: scale(1.2);
+            }
+
+            60% {
+                transform: scale(1);
+            }
+        }
+
+        .icon-float {
+            animation: floatSmooth 3s ease-in-out infinite;
+        }
+
+        .icon-pulse {
+            animation: pulseGlow 2s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="width: 100%; max-width: 1000px; display: flex; flex-direction: column; align-items: center;">
+        <!-- Hero Banner -->
+        <div
+            style="width: 100%; margin-bottom: 2rem; position: relative; border-radius: 1rem; overflow: hidden; box-shadow: 0 20px 60px -15px rgba(0,0,0,0.6);">
+            <img src="marketing_ia_banner.png" alt="Arquitectura de Marketing por Economía IA"
+                style="width: 100%; height: 280px; object-fit: cover; display: block;" />
+            <div
+                style="position: absolute; inset: 0; background: linear-gradient(to top, #0c111e 0%, rgba(12,17,30,0.4) 40%, transparent 100%);">
+            </div>
+        </div>
+
+        <h1 id="economia-ia-motor">La Arquitectura de Economía IA ©</h1>
+        <p class="subtitle" style="margin-top: 1rem;">
+            Presentado por <strong>Economía IA</strong>: Una vez que tienes claro <strong>por qué te eligen</strong>,
+            construimos un motor autónomo con IA para que el
+            mundo te descubra y reaccione sin que tú tengas que estar empujando.
+        </p>
+    </header>
+
+    <main style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+
+        <!-- Sección 0: El Núcleo (Propuesta de Valor) -->
+        <section style="margin-bottom: 3rem; margin-top: 2rem;">
+            <div
+                style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08)); border: 1px solid #3b82f6; border-radius: 1rem; padding: 2rem; position: relative; overflow: hidden;">
+                <h2
+                    style="color: #60a5fa; font-size: 1.5rem; margin-top: 0; display: flex; align-items: center; gap: 0.5rem;">
+                    💎 La Condición Inicial: Una Oferta Irresistible (Propuesta de Valor)
+                </h2>
+                <p style="font-size: 1.05rem; color: #e2e8f0; margin-bottom: 1.5rem; margin-top: 1rem;">
+                    Toda oferta irresistible hace dos cosas: <strong>elimina un dolor urgente (un problema o fricción
+                        real
+                        que a tu cliente le urge resolver) o cumple un deseo
+                        profundo.</strong>
+                </p>
+                <!-- Diamante Animado (de Condición Cero) -->
+                <div
+                    style="background: #0f172a; border-radius: 0.75rem; padding: 1rem; border: 1px solid #334155; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+                    <svg viewBox="0 0 300 220" width="100%" height="200px" style="max-width: 500px;">
+                        <defs>
+                            <linearGradient id="gCenter" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#c084fc;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+                            </linearGradient>
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur" />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
+                            </filter>
+                        </defs>
+
+                        <!-- Halo pulsante exterior -->
+                        <circle cx="150" cy="110" r="80" fill="none" stroke="url(#gCenter)" stroke-width="1.5"
+                            opacity="0.2">
+                            <animate attributeName="r" values="75;95;75" dur="4s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="0.2;0.05;0.2" dur="4s" repeatCount="indefinite" />
+                        </circle>
+
+                        <!-- Órbita 1 -->
+                        <circle cx="150" cy="110" r="68" fill="none" stroke="#f59e0b" stroke-width="0.5"
+                            stroke-dasharray="2 5">
+                            <animateTransform attributeName="transform" type="rotate" from="0 150 110" to="360 150 110"
+                                dur="15s" repeatCount="indefinite" />
+                        </circle>
+                        <!-- Órbita 2 (inversa) -->
+                        <circle cx="150" cy="110" r="72" fill="none" stroke="#3b82f6" stroke-width="0.5"
+                            stroke-dasharray="2 5">
+                            <animateTransform attributeName="transform" type="rotate" from="360 150 110" to="0 150 110"
+                                dur="20s" repeatCount="indefinite" />
+                        </circle>
+
+                        <!-- Partículas orbitando -->
+                        <circle cx="218" cy="110" r="3.5" fill="#f59e0b">
+                            <animateTransform attributeName="transform" type="rotate" from="0 150 110" to="360 150 110"
+                                dur="6s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="82" cy="110" r="3" fill="#8b5cf6">
+                            <animateTransform attributeName="transform" type="rotate" from="0 150 110" to="-360 150 110"
+                                dur="8s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="150" cy="42" r="2.5" fill="#3b82f6">
+                            <animateTransform attributeName="transform" type="rotate" from="0 150 110" to="360 150 110"
+                                dur="10s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="150" cy="182" r="2.5" fill="#c084fc">
+                            <animateTransform attributeName="transform" type="rotate" from="0 150 110" to="-360 150 110"
+                                dur="12s" repeatCount="indefinite" />
+                        </circle>
+
+                        <!-- Círculo principal del diamante -->
+                        <circle cx="150" cy="110" r="55" fill="#1e293b" stroke="url(#gCenter)" stroke-width="3"
+                            filter="url(#glow)" />
+
+                        <!-- Diamante -->
+                        <text x="150" y="93" text-anchor="middle" font-size="30">💎</text>
+
+                        <!-- Texto central -->
+                        <text x="150" y="120" text-anchor="middle" fill="#f8fafc" font-size="11"
+                            font-weight="800">OFERTA</text>
+                        <text x="150" y="135" text-anchor="middle" fill="#f8fafc" font-size="11"
+                            font-weight="800">IRRESISTIBLE</text>
+
+                        <!-- Mini etiquetas -->
+                        <text x="150" y="153" text-anchor="middle" fill="#94a3b8" font-size="7">Dolor → Solución →
+                            Diferenciación</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 1: Los Fundamentos de tu Negocio -->
+        <section>
+            <h2 class="section-title"><span class="section-number">1</span> El Marketing Amplifica tu Oferta</h2>
+            <p style="color: #94a3b8; margin-bottom: 2rem; margin-top: -1rem; font-size: 1.05rem;">Estos son los 5
+                pilares
+                que la IA opera por ti. Cada tarjeta muestra <strong style="color: #e2e8f0;">qué hace</strong> y <strong
+                    style="color: #e2e8f0;">cómo lo automatiza</strong>.</p>
+            <div class="evolution-grid">
+                <div class="evo-card">
+                    <!-- Real AI Generated Image Atraer -->
+                    <img src="atraer.png" alt="Turista descubriendo - Estrategia definida por Economía IA"
+                        class="context-image" loading="lazy">
+                    <p class="new" style="color: #8b5cf6;">🔭 Atraer (Descubrimiento del cliente)</p>
+                    <p class="desc">Antes dependías de las recomendaciones, de tener una buena ubicación física, o de
+                        pagar
+                        por mostrar anuncios a "todo el mundo" en redes sociales. Ahora, la IA hace
+                        <strong>descubrimiento
+                            algorítmico</strong>: no empujas tu negocio a la fuerza, la IA se lo muestra exactamente a
+                        quien
+                        tiene ganas de comprarte hoy.
+                    </p>
+                    <div class="evo-svg-container">
+                        <svg viewBox="0 0 200 120" width="100%" height="100%">
+                            <!-- Radar AI Descubrimiento -->
+                            <circle cx="50" cy="60" r="30" fill="none" stroke="#334155" stroke-width="1" />
+                            <circle cx="50" cy="60" r="20" fill="none" stroke="#334155" stroke-width="1" />
+                            <circle cx="50" cy="60" r="10" fill="#1e293b" />
+                            <text x="50" y="65" text-anchor="middle" font-size="14">🤖</text>
+                            <!-- Radar Sweep -->
+                            <path d="M 50 60 L 50 30 A 30 30 0 0 1 80 60 Z" fill="rgba(139, 92, 246, 0.2)">
+                                <animateTransform attributeName="transform" type="rotate" from="0 50 60" to="360 50 60"
+                                    dur="3s" repeatCount="indefinite" />
+                            </path>
+                            <!-- Conexión Algorítmica -->
+                            <path d="M 85 60 L 140 60" fill="none" stroke="#8b5cf6" stroke-width="2"
+                                stroke-dasharray="4 4" style="animation: dataSync 1.5s linear infinite reverse;" />
+                            <circle cx="112" cy="60" r="3" fill="#8b5cf6">
+                                <animate attributeName="cx" values="85;140" dur="1.5s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="1;0" dur="1.5s" repeatCount="indefinite" />
+                            </circle>
+                            <!-- Cliente Específico Descubierto -->
+                            <circle cx="155" cy="60" r="16" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"
+                                class="icon-float" />
+                            <text x="155" y="65" text-anchor="middle" fill="#fff" font-size="14">🎯</text>
+                            <!-- Etiquetas -->
+                            <text x="50" y="105" text-anchor="middle" fill="#94a3b8" font-size="9"
+                                font-weight="600">Scan
+                                Algorítmico</text>
+                            <text x="155" y="105" text-anchor="middle" fill="#8b5cf6" font-size="9"
+                                font-weight="600">Turista Exacto</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="evo-card" style="border-color: #1e3a8a;">
+                    <!-- Real AI Generated Image Intención -->
+                    <img src="capturar_intencion.png" alt="Búsqueda con Inteligencia Artificial guiada por Economía IA"
+                        class="context-image" loading="lazy">
+                    <p class="new" style="color: #60a5fa;">📍 Capturar Intención (Conexión con tu Oferta)</p>
+                    <p class="desc">En <strong>Google Maps y Búsqueda</strong>, el usuario te busca explícitamente
+                        porque
+                        tiene una necesidad local y urgente. Tienen la intención de comprar de
+                        inmediato.<br><br><strong>La
+                            Solución con Inteligencia Artificial:</strong> El botón de Google Maps no envía a una web
+                        tradicional, abre tu WhatsApp. El Asistente IA responde al instante, agenda la reserva en tu
+                        calendario y cobra el anticipo por ti mediante un enlace de pago automático.</p>
+                    <div class="evo-svg-container">
+                        <svg viewBox="0 0 200 120" width="100%" height="100%">
+                            <!-- Google Maps Pin / Search -->
+                            <path
+                                d="M50 30 C 25 30, 15 55, 15 75 C 15 105, 50 135, 50 135 C 50 135, 85 105, 85 75 C 85 55, 75 30, 50 30 Z"
+                                fill="none" stroke="#3b82f6" stroke-width="2"
+                                style="animation: floatSmooth 3s ease-in-out infinite;" />
+                            <circle cx="50" cy="65" r="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"
+                                style="animation: floatSmooth 3s ease-in-out infinite;" />
+                            <text x="50" y="69" text-anchor="middle" font-size="10"
+                                style="animation: floatSmooth 3s ease-in-out infinite;">📍</text>
+
+                            <!-- Conversión Express a Asistente IA via WhatsApp-->
+                            <path d="M 85 60 L 140 60" fill="none" stroke="#10b981" stroke-width="2"
+                                stroke-dasharray="4 4" style="animation: dataSync 1s linear infinite reverse;" />
+
+                            <!-- Conversión Instantánea -->
+                            <circle cx="155" cy="60" r="16" fill="#1e293b" stroke="#10b981" stroke-width="2"
+                                class="icon-pulse" />
+                            <text x="155" y="65" text-anchor="middle" font-size="14">🤖</text>
+                            <!-- Checkmark -->
+                            <circle cx="170" cy="45" r="5" fill="#10b981" />
+                            <text x="170" y="48" text-anchor="middle" fill="#fff" font-size="6">✓</text>
+
+                            <!-- Etiquetas -->
+                            <text x="50" y="105" text-anchor="middle" fill="#60a5fa" font-size="9"
+                                font-weight="600">Busca
+                                Servicio Local</text>
+                            <text x="155" y="105" text-anchor="middle" fill="#10b981" font-size="9"
+                                font-weight="600">Agenda
+                                Automática</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="evo-card">
+                    <!-- Real AI Generated Image Convertir -->
+                    <img src="convertir.png" alt="Venta y Conversión automatizada por Economía IA" class="context-image"
+                        loading="lazy">
+                    <p class="new" style="color: #10b981;">⚡ Convertir (Automatizar la venta)</p>
+                    <p class="desc">"Vender" es la consecuencia, el marketing hace <strong>conversión</strong> y
+                        persuasión.
+                        Antes perdías la conversión si un turista preguntaba mientras estabas ocupado. Ahora, la IA se
+                        encarga de <strong>persuadir, cotizar y cobrar</strong> automáticamente por WhatsApp para
+                        transformar esos curiosos en clientes reales 24/7.</p>
+                    <div class="evo-svg-container">
+                        <svg viewBox="0 0 200 120" width="100%" height="100%">
+                            <!-- Chat WhatsApp -->
+                            <rect x="25" y="30" width="50" height="40" rx="6" fill="#1e293b" stroke="#25d366"
+                                stroke-width="2" class="icon-float" />
+                            <text x="50" y="55" text-anchor="middle" font-size="18">💬</text>
+                            <!-- Typing animation en chat -->
+                            <circle cx="40" cy="78" r="3" fill="#10b981"
+                                style="animation: typingDot 1.4s infinite 0s;" />
+                            <circle cx="50" cy="78" r="3" fill="#10b981"
+                                style="animation: typingDot 1.4s infinite 0.2s;" />
+                            <circle cx="60" cy="78" r="3" fill="#10b981"
+                                style="animation: typingDot 1.4s infinite 0.4s;" />
+                            <!-- Proceso Persuasión a Venta -->
+                            <path d="M 85 50 C 105 50, 115 50, 135 50" fill="none" stroke="#10b981" stroke-width="2"
+                                stroke-dasharray="4 4" style="animation: dataSync 1s linear infinite reverse;" />
+                            <text x="110" y="45" text-anchor="middle" font-size="12">⚙️</text>
+                            <!-- Cobro Automático -->
+                            <rect x="145" y="30" width="40" height="50" rx="6" fill="#1e293b" stroke="#10b981"
+                                stroke-width="2" />
+                            <text x="165" y="55" text-anchor="middle" font-size="20" class="icon-pulse">💰</text>
+                            <text x="165" y="72" text-anchor="middle" fill="#10b981" font-size="9"
+                                font-weight="bold">Pagado</text>
+                            <!-- Etiquetas -->
+                            <text x="50" y="105" text-anchor="middle" fill="#25d366" font-size="9"
+                                font-weight="600">Persuasión IA 24/7</text>
+                            <text x="165" y="105" text-anchor="middle" fill="#10b981" font-size="9"
+                                font-weight="600">Cobro
+                                Listo</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="evo-card">
+                    <!-- Real AI Generated Image Fidelizar -->
+                    <img src="fidelizar.png" alt="Fidelización Personalizada en Economía IA" class="context-image"
+                        loading="lazy">
+                    <p class="new" style="color: #f43f5e;">❤️ Retener (Crear el hábito de re-compra)</p>
+                    <p class="desc">Retener se trata de diseñar un ecosistema de "fricción cero" para que tu producto se
+                        vuelva un hábito de consumo predecible.<br><br>La IA analiza datos de comportamiento y calcula
+                        matemáticamente el día exacto en que al cliente le hará falta tu servicio de nuevo. Al enviarles
+                        un
+                        mensaje automático ("Hola, ¿te reservo el de siempre?") justo a tiempo, logras que volver a
+                        comprarte sea la opción que requiere menos esfuerzo mental.</p>
+                    <div class="evo-svg-container">
+                        <svg viewBox="0 0 200 120" width="100%" height="100%">
+                            <!-- Cerebro Calculando Tiempo -->
+                            <circle cx="50" cy="50" r="18" fill="#1e293b" stroke="#c084fc" stroke-width="2"
+                                class="icon-pulse" />
+                            <text x="50" y="55" text-anchor="middle" font-size="16">🧠</text>
+                            <!-- Reloj (Cálculo matemático) -->
+                            <circle cx="65" cy="35" r="8" fill="#f8fafc" stroke="#64748b" stroke-width="1" />
+                            <path d="M 65 35 L 65 30 M 65 35 L 68 37" fill="none" stroke="#334155" stroke-width="1">
+                                <animateTransform attributeName="transform" type="rotate" from="0 65 35" to="360 65 35"
+                                    dur="2s" repeatCount="indefinite" />
+                            </path>
+                            <!-- Loop de predicción y envío -->
+                            <path d="M 80 50 C 110 50, 110 70, 140 70" fill="none" stroke="#f43f5e" stroke-width="2"
+                                stroke-dasharray="4 4" style="animation: dataSync 1.5s linear infinite reverse;" />
+                            <text x="110" y="55" text-anchor="middle" font-size="12">💌</text>
+                            <!-- Cliente en el momento exacto -->
+                            <circle cx="155" cy="70" r="16" fill="#1e293b" stroke="#f43f5e" stroke-width="2"
+                                class="icon-float" />
+                            <text x="155" y="75" text-anchor="middle" font-size="16">😍</text>
+                            <path d="M 172 65 C 185 65, 185 85, 172 85" fill="none" stroke="#f43f5e" stroke-width="1.5"
+                                stroke-dasharray="2 2" />
+                            <text x="182" y="78" text-anchor="middle" font-size="10"
+                                style="animation: heartBeat 1.5s infinite;">💎</text>
+                            <!-- Etiquetas -->
+                            <text x="50" y="95" text-anchor="middle" fill="#c084fc" font-size="9"
+                                font-weight="600">Predicción de Recompra</text>
+                            <text x="155" y="105" text-anchor="middle" fill="#f43f5e" font-size="9"
+                                font-weight="600">Fricción Cero</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="evo-card">
+                    <!-- Real AI Generated Image Medir -->
+                    <img src="medir.png" alt="Análisis y Predicción de Algoritmos - Economía IA" class="context-image"
+                        loading="lazy">
+                    <p class="new" style="color: #06b6d4;">✨ Optimizar (Ver qué funciona y mejorarlo)</p>
+                    <p class="desc">El marketing actual (SOTA) opera en <strong>piloto automático
+                            predictivo</strong>.<br><br>
+                        Con <strong>Meta Advantage+ (ASC)</strong> y <strong>TikTok Smart+</strong>, la IA hace el
+                        <em>targeting</em>. Tú pones el video; el algoritmo hace miles de pruebas en tiempo real,
+                        aprende
+                        quién te compra y busca sus "gemelos exactos". <strong>Ya no pagas por impresiones vacías, pagas
+                            cuando la IA predice tu próxima venta.</strong>
+                    </p>
+                    <div class="evo-svg-container">
+                        <svg viewBox="0 0 200 120" width="100%" height="100%">
+                            <!-- Video Input -->
+                            <rect x="20" y="40" width="30" height="40" rx="4" fill="#1e293b" stroke="#64748b"
+                                stroke-width="2" />
+                            <text x="35" y="63" text-anchor="middle" font-size="16">🎬</text>
+                            <text x="35" y="95" text-anchor="middle" fill="#94a3b8" font-size="8">Tu Video</text>
+                            <!-- Motor A/B y Predicción -->
+                            <path d="M 55 60 L 75 60" fill="none" stroke="#06b6d4" stroke-width="2"
+                                stroke-dasharray="3 3" style="animation: dataSync 1s linear infinite reverse;" />
+                            <rect x="80" y="45" width="40" height="30" rx="6" fill="#1e293b" stroke="#06b6d4"
+                                stroke-width="2" class="icon-pulse" />
+                            <text x="100" y="65" text-anchor="middle" font-size="14">🧪</text>
+                            <text x="100" y="95" text-anchor="middle" fill="#06b6d4" font-size="9"
+                                font-weight="600">Algoritmo (Gemelos)</text>
+                            <!-- Salidas Múltiples -->
+                            <path d="M 125 50 C 140 40, 140 30, 155 30" fill="none" stroke="#3b82f6" stroke-width="1"
+                                stroke-dasharray="2 2" />
+                            <path d="M 125 60 L 155 60" fill="none" stroke="#10b981" stroke-width="2"
+                                style="animation: dataSync 1s linear infinite reverse;" />
+                            <path d="M 125 70 C 140 80, 140 90, 155 90" fill="none" stroke="#ef4444" stroke-width="1"
+                                stroke-dasharray="2 2" />
+                            <!-- Resultado: Venta Predicha -->
+                            <circle cx="165" cy="60" r="12" fill="#10b981" class="icon-float" />
+                            <text x="165" y="64" text-anchor="middle" fill="#fff" font-size="10">✔️</text>
+                            <text x="165" y="85" text-anchor="middle" fill="#10b981" font-size="9"
+                                font-weight="bold">Venta
+                                Efectiva</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="evo-card">
+                    <!-- Real AI Generated Image Marca -->
+                    <img src="marca.png" alt="Construcción de Marca con Economía IA" class="context-image"
+                        loading="lazy">
+                    <p class="new" style="color: #eab308;">🌟 Construir Lealtad (Proyectar tu reputación con una Marca)
+                    </p>
+                    <p class="desc"><strong>Tu Marca no es un logo; es tu reputación al cumplir tu oferta.</strong> Para
+                        un
+                        negocio, la verdadera lealtad nace de escuchar activamente al cliente para garantizar que
+                        recibió el
+                        valor prometido y hacerlo sentir reconocido.<br><br>Hoy, la IA soluciona la falta de tiempo
+                        <strong>clonando tu atención al detalle</strong>. Al hacer un seguimiento de la experiencia y el
+                        historial de cada usuario, tu sistema escucha, valida y responde con tal empatía que cada
+                        persona
+                        experimenta el respaldo directo del dueño, 24/7 y sin que tú estés operando el celular.
+                    </p>
+                    <div class="evo-svg-container">
+                        <svg viewBox="0 0 200 120" width="100%" height="100%">
+                            <!-- Escucha Activa Feedback -->
+                            <circle cx="40" cy="55" r="16" fill="#1e293b" stroke="#64748b" stroke-width="2" />
+                            <text x="40" y="60" text-anchor="middle" font-size="14">👤</text>
+                            <path d="M 60 55 C 75 40, 85 40, 100 55" fill="none" stroke="#eab308" stroke-width="1.5"
+                                stroke-dasharray="4 4" style="animation: dataSync 1.5s linear infinite reverse;" />
+                            <text x="80" y="45" text-anchor="middle" font-size="10">🗣️</text>
+                            <!-- Nexo de Confianza (Empatía Clonada) -->
+                            <circle cx="100" cy="55" r="20" fill="#1e293b" stroke="#eab308" stroke-width="2"
+                                class="icon-pulse" />
+                            <text x="100" y="62" text-anchor="middle" font-size="18">🤝</text>
+                            <!-- Respuesta de Valor (Directa al cliente) -->
+                            <path d="M 100 55 C 115 70, 125 70, 140 55" fill="none" stroke="#eab308" stroke-width="2"
+                                style="animation: dataSync 1.5s linear infinite;" />
+                            <circle cx="120" cy="68" r="4" fill="#eab308">
+                                <animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite" />
+                            </circle>
+                            <text x="120" y="82" text-anchor="middle" fill="#eab308" font-size="8">Respaldo</text>
+                            <!-- Cliente Leal -->
+                            <circle cx="160" cy="55" r="16" fill="#1e293b" stroke="#eab308" stroke-width="2"
+                                class="icon-float" />
+                            <text x="160" y="60" text-anchor="middle" font-size="14">👑</text>
+                            <!-- Etiquetas -->
+                            <text x="40" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">Experiencia</text>
+                            <text x="100" y="105" text-anchor="middle" fill="#eab308" font-size="9"
+                                font-weight="600">Empatía 24/7 (Como Tú)</text>
+                            <text x="160" y="95" text-anchor="middle" fill="#eab308" font-size="9"
+                                font-weight="bold">Lealtad</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: El Precio es 100% Marketing -->
+        <section>
+            <h2 class="section-title"><span class="section-number">2</span> La Psicología del Precio (100% Marketing)
+            </h2>
+            <p style="color: #94a3b8; margin-bottom: 2rem; margin-top: -1rem; font-size: 1.05rem;">El precio no es un
+                simple
+                cálculo contable, es la herramienta de percepción más fuerte que tienes. Aquí te explico los <strong
+                    style="color: #e2e8f0;">3 motivos psicológicos</strong> por los que el precio es marketing puro.</p>
+
+            <div class="evolution-grid">
+                <!-- Tarjeta 2a: Efecto Veblen -->
+                <div class="evo-card">
+                    <img src="efecto_veblen.png" alt="Efecto Veblen de Estatus según Economía IA" class="context-image"
+                        loading="lazy">
+                    <p class="new" style="color: #f59e0b;">👑 1. Comunica "Estatus" y "Calidad"</p>
+                    <p class="desc">Si vendes una botella a $1, el cliente asume que es agua normal. A $6, asume que es
+                        premium (Efecto Veblen).<br><br><strong>¿Cómo ayuda la IA?</strong> Los algoritmos de Meta o
+                        TikTok
+                        ya saben quién compra lujo. En lugar de mostrar tu precio alto a toda la ciudad y recibir
+                        quejas, la
+                        IA escanea la base de datos, identifica milimétricamente al pequeño porcentaje con poder
+                        adquisitivo, y <strong>solo</strong> les muestra tu anuncio a ellos. Vendes exclusividad al
+                        público
+                        correcto.</p>
+                    <div class="evo-svg-container">
+                        <svg viewBox="0 0 200 120" width="100%" height="100%">
+                            <!-- Normal vs Premium -->
+                            <circle cx="50" cy="60" r="16" fill="#1e293b" stroke="#64748b" stroke-width="2" />
+                            <text x="50" y="64" text-anchor="middle" font-size="12" fill="#94a3b8">$1</text>
+
+                            <path d="M 75 60 L 125 60" fill="none" stroke="#f59e0b" stroke-width="2"
+                                stroke-dasharray="4 4" style="animation: dataSync 1s linear infinite reverse;" />
+                            <text x="100" y="55" text-anchor="middle" font-size="14">→</text>
+
+                            <!-- Glowing Premium Coin/Crown -->
+                            <circle cx="150" cy="60" r="20" fill="#1e293b" stroke="#f59e0b" stroke-width="2"
+                                class="icon-pulse" />
+                            <text x="150" y="65" text-anchor="middle" font-size="14" fill="#f59e0b"
+                                style="font-weight: bold;">$6</text>
+                            <!-- Sparkles -->
+                            <circle cx="130" cy="40" r="2" fill="#f59e0b">
+                                <animate attributeName="opacity" values="1;0" dur="1.5s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="170" cy="45" r="3" fill="#f59e0b">
+                                <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="165" cy="80" r="1.5" fill="#f59e0b">
+                                <animate attributeName="opacity" values="0;1" dur="1s" repeatCount="indefinite" />
+                            </circle>
+
+                            <text x="50" y="100" text-anchor="middle" fill="#94a3b8" font-size="8">Común</text>
+                            <text x="150" y="100" text-anchor="middle" fill="#f59e0b" font-size="9"
+                                font-weight="bold">Exclusividad</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2b: Barrera de entrada -->
+                <div class="evo-card">
+                    <img src="barrera_cliente.png" alt="Barrera de Entrada de Clientes - Economía IA"
+                        class="context-image" loading="lazy">
+                    <p class="new" style="color: #10b981;">🛡️ 2. Segmenta a tu Cliente (La Barrera)</p>
+                    <p class="desc">Cobrar muy barato atrae a clientes que regatean todo. Subir el precio crea una
+                        "muralla
+                        eléctrica" invisible que aleja rápidamente al mercado problemático.<br><br><strong>¿Cómo ayuda
+                            la
+                            IA?</strong> Tu Inteligencia Artificial responde tu WhatsApp y actúa como el "guardia de
+                        seguridad" de esta muralla. Explica el precio con firmeza en milisegundos. Si el prospecto
+                        regatea y
+                        es tóxico, la IA lo descarta automáticamente sin molestarte. Tú ya no recibes insultos; tú solo
+                        atiendes del celular a los que pasaron el filtro y están dispuestos a pagar.</p>
+                    <div class="evo-svg-container">
+                        <svg viewBox="0 0 200 120" width="100%" height="100%">
+                            <!-- Chaotic clients -->
+                            <circle cx="40" cy="30" r="6" fill="#ef4444" style="animation: bounceIcon 1.5s infinite;" />
+                            <circle cx="30" cy="60" r="6" fill="#ef4444" style="animation: walk 2s infinite;" />
+                            <circle cx="45" cy="85" r="6" fill="#ef4444" style="animation: bounceIcon 1s infinite;" />
+
+                            <!-- Flow lines blocked -->
+                            <path d="M 55 30 L 90 45" fill="none" stroke="#ef4444" stroke-width="1.5"
+                                stroke-dasharray="2 2" />
+                            <path d="M 45 60 L 90 60" fill="none" stroke="#ef4444" stroke-width="1.5"
+                                stroke-dasharray="2 2" />
+                            <path d="M 55 85 L 90 75" fill="none" stroke="#ef4444" stroke-width="1.5"
+                                stroke-dasharray="2 2" />
+
+                            <!-- Shield/Barrier -->
+                            <rect x="95" y="25" width="10" height="70" rx="4" fill="#1e293b" stroke="#10b981"
+                                stroke-width="2" class="icon-pulse" />
+                            <text x="100" y="108" text-anchor="middle" fill="#10b981" font-size="8"
+                                font-weight="bold">Precio Alto (Filtro)</text>
+
+                            <!-- Allowed Client -->
+                            <path d="M 110 60 L 150 60" fill="none" stroke="#10b981" stroke-width="2"
+                                stroke-dasharray="4 4" style="animation: dataSync 1.5s linear infinite reverse;" />
+                            <circle cx="165" cy="60" r="14" fill="#1e293b" stroke="#10b981" stroke-width="2"
+                                class="icon-float" />
+                            <text x="165" y="65" text-anchor="middle" font-size="12">👔</text>
+                            <text x="165" y="90" text-anchor="middle" fill="#10b981" font-size="8"
+                                font-weight="bold">Cliente Ideal</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2c: Dolor del pago -->
+                <div class="evo-card">
+                    <img src="dolor_pago.png" alt="Controlar el Dolor del Pago en Economía IA" class="context-image"
+                        loading="lazy">
+                    <p class="new" style="color: #ec4899;">🧠 3. Controla el "Dolor del Pago"</p>
+                    <p class="desc">El cerebro entra en tensión al soltar dinero. Con un <em>Precio Señuelo</em> (Ej:
+                        palomita chica $4, gigante $8, y mediana inútil de $7), logramos distraer al cerebro: "Por $1 me
+                        llevo la grande, ¡qué ofertón!".<br><br><strong>¿Cómo ayuda la IA?</strong> La IA analiza en
+                        tiempo
+                        real cómo interactúa el cliente. Si en el chat nota que alguien duda profundamente por el
+                        precio,
+                        puede desplegar la estrategia adecuada (ofrecerle una "suscripción de goterita" o 3 cuotas) para
+                        aliviar ese "dolor de pago" exacto y no perder la venta. Todo mientras tú duermes.</p>
+                    <div class="evo-svg-container">
+                        <svg viewBox="0 0 200 120" width="100%" height="100%">
+                            <!-- Chica $4 -->
+                            <rect x="30" y="60" width="25" height="40" rx="3" fill="#1e293b" stroke="#64748b"
+                                stroke-width="1.5" />
+                            <text x="42.5" y="50" text-anchor="middle" fill="#94a3b8" font-size="10">$4</text>
+                            <text x="42.5" y="85" text-anchor="middle" font-size="12">🍿</text>
+
+                            <!-- Mediana (El Señuelo) $7 -->
+                            <rect x="80" y="45" width="40" height="55" rx="3" fill="#1e293b" stroke="#64748b"
+                                stroke-width="1.5" stroke-dasharray="2 2" />
+                            <text x="100" y="35" text-anchor="middle" fill="#ef4444" font-size="10"
+                                text-decoration="line-through">$7</text>
+                            <text x="100" y="75" text-anchor="middle" font-size="16" opacity="0.6">🍿</text>
+                            <text x="100" y="112" text-anchor="middle" fill="#64748b" font-size="7">El Engaño</text>
+
+                            <!-- Gigante $8 -->
+                            <rect x="140" y="30" width="40" height="70" rx="4" fill="#1e293b" stroke="#ec4899"
+                                stroke-width="2.5" class="icon-pulse" />
+                            <text x="160" y="20" text-anchor="middle" fill="#ec4899" font-size="14"
+                                font-weight="bold">$8</text>
+                            <text x="160" y="70" text-anchor="middle" font-size="24" class="icon-float">🍿</text>
+                            <text x="160" y="112" text-anchor="middle" fill="#ec4899" font-size="8"
+                                font-weight="bold">¡Ofertón!</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="thesis-box"
+                style="border-left-color: #fca5a5; background: #1e293b; border: 1px solid #334155; padding: 2rem; border-radius: 1rem; margin-top: 3rem;">
+                <h4 style="color: #fca5a5; text-align: center; margin-bottom: 1.5rem;">⚖️ La Regla de Oro: El Precio
+                    dicta
+                    la Tubería</h4>
+
+                <div class="svg-container"
+                    style="height: 220px; background: #0f172a; border-radius: 0.75rem; border: 1px solid #334155; display: flex; justify-content: center; align-items: center; overflow: hidden; margin-bottom: 1rem;">
+                    <svg viewBox="0 0 400 200" width="100%" height="100%">
+                        <!-- Ruta A: Precio Bajo (Impulso) -->
+                        <rect x="20" y="30" width="80" height="40" rx="6" fill="#1e293b" stroke="#10b981"
+                            stroke-width="2" />
+                        <text x="60" y="55" text-anchor="middle" fill="#10b981" font-weight="bold">$15 USD</text>
+                        <text x="60" y="85" text-anchor="middle" fill="#94a3b8" font-size="10">Impulso</text>
+
+                        <!-- Flecha Directa y Rápida -->
+                        <path d="M 100 50 L 280 50" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="4 4"
+                            style="animation: dataSync 1s linear infinite reverse;" />
+                        <text x="190" y="40" text-anchor="middle" font-size="14">🔥 Spark Ad (Botón)</text>
+
+                        <!-- Destino Final A (Tienda) -->
+                        <rect x="280" y="30" width="100" height="40" rx="6" fill="#1e293b" stroke="#10b981"
+                            stroke-width="2" class="icon-pulse" />
+                        <text x="330" y="55" text-anchor="middle" fill="#fff" font-size="14">🛒 Carrito Web</text>
+
+                        <!-- Línea divisoria -->
+                        <line x1="20" y1="100" x2="380" y2="100" stroke="#334155" stroke-dasharray="2 2" />
+
+                        <!-- Ruta B: Precio Alto (High Ticket) -->
+                        <rect x="20" y="130" width="80" height="40" rx="6" fill="#1e293b" stroke="#fca5a5"
+                            stroke-width="2" />
+                        <text x="60" y="155" text-anchor="middle" fill="#fca5a5" font-weight="bold">$500 USD</text>
+                        <text x="60" y="185" text-anchor="middle" fill="#94a3b8" font-size="10">High-Ticket</text>
+
+                        <!-- Flecha a ManyChat (Fricción) -->
+                        <path d="M 100 150 L 160 150" fill="none" stroke="#fca5a5" stroke-width="2"
+                            stroke-dasharray="4 4" style="animation: dataSync 1.5s linear infinite reverse;" />
+
+                        <!-- Filtro Conversacional WA/ManyChat -->
+                        <rect x="160" y="130" width="60" height="40" rx="6" fill="#1e293b" stroke="#3b82f6"
+                            stroke-width="2" class="icon-float" />
+                        <text x="190" y="150" text-anchor="middle" font-size="14">🤖</text>
+                        <text x="190" y="165" text-anchor="middle" fill="#3b82f6" font-size="8">WhatsApp IA</text>
+                        <text x="190" y="185" text-anchor="middle" fill="#94a3b8" font-size="8">Elimina Miedos</text>
+
+                        <!-- Flecha Final al Cierre -->
+                        <path d="M 220 150 L 280 150" fill="none" stroke="#3b82f6" stroke-width="2"
+                            stroke-dasharray="4 4" style="animation: dataSync 1s linear infinite reverse;" />
+
+                        <!-- Destino Final B (Facturación) -->
+                        <rect x="280" y="130" width="100" height="40" rx="6" fill="#1e293b" stroke="#3b82f6"
+                            stroke-width="2" />
+                        <text x="330" y="155" text-anchor="middle" fill="#fff" font-size="14">💳 Link de Pago</text>
+                    </svg>
+                </div>
+
+                <p style="color: #e2e8f0; font-size: 1rem; text-align: center; margin: 0;">
+                    El precio bajo no admite fricciones extras (Mándalos directo de TikTok a la web).<br>El precio alto
+                    <strong>necesita</strong> la fricción conversacional (WhatsApp) para generar confianza antes de
+                    cobrar.
+                </p>
+            </div>
+        </section>
+
+        <!-- Enlace a la siguiente fase -->
+        <section style="text-align: center; margin-top: 4rem; margin-bottom: 2rem;">
+            <h2 style="color: #cbd5e1; font-size: 1.2rem; margin-bottom: 1.5rem;">Aprende más con Economía IA:
+                Construyamos el Motor 👇
+            </h2>
+            <a href="operaciones_y_datos_ia.html"
+                style="background: linear-gradient(135deg, #10b981, #3b82f6); color: white; padding: 1rem 2.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 800; display: inline-block; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4); border: 1px solid #34d399; transition: transform 0.2s;">
+                Fase 2: Operaciones y Datos con IA 🚀
+            </a>
+            <p style="color: #94a3b8; margin-top: 2rem; font-size: 0.9rem;">
+                © 2026 <strong>Economía IA</strong>. Optimizando negocios con el poder del algoritmo y la inteligencia
+                artificial.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer Economía IA -->
+    <footer
+        style="width: 100%; max-width: 1000px; margin: 3rem auto 0; padding: 1.2rem 1rem; border-top: 1px solid #1e293b; text-align: center;">
+        <div
+            style="display: flex; justify-content: center; align-items: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 0.6rem;">
+            <span style="color: #64748b; font-size: 0.8rem; font-weight: 600;">Economía IA</span>
+            <span style="color: #334155;">·</span>
+            <a href="https://www.tiktok.com/@economiaia" target="_blank" rel="noopener noreferrer"
+                style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; transition: color 0.2s;"
+                onmouseover="this.style.color='#ff0050';" onmouseout="this.style.color='#94a3b8';">🎵 @economiaia</a>
+            <span style="color: #334155;">·</span>
+            <a href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer"
+                style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; transition: color 0.2s;"
+                onmouseover="this.style.color='#8b5cf6';" onmouseout="this.style.color='#94a3b8';">🔗 Enlaces</a>
+            <span style="color: #334155;">·</span>
+            <a href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer"
+                style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; transition: color 0.2s;"
+                onmouseover="this.style.color='#10b981';" onmouseout="this.style.color='#94a3b8';">💼 Consultoría</a>
+        </div>
+        <p style="color: #334155; font-size: 0.7rem; margin: 0;">© 2026 Economía IA</p>
+    </footer>
+
+</body>
+
+</html>

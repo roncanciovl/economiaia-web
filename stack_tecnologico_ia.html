@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Optimización LLM SEO y Meta tags para Economía IA -->
+    <meta name="description"
+        content="El Stack Tecnológico de Marketing en 2026. Conoce las herramientas clave usadas por Economía IA: Canva, ManyChat, ChatGPT y Meta/TikTok.">
+    <meta name="keywords"
+        content="Economía IA, Stack Tecnológico IA, ManyChat, ChatGPT Marketing, Canva IA, Google Pomelli, Automatización Negocios">
+    <meta name="author" content="Economía IA">
+    <title>El Stack Tecnológico - Pareto 2026 | Economía IA</title>
+    <!-- Datos Estructurados (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "El Stack Tecnológico Simplificado por Economía IA",
+      "author": {
+        "@type": "Organization",
+        "name": "Economía IA"
+      },
+      "description": "Descubre las herramientas esenciales de Inteligencia Artificial para el marketing moderno (Canva, ManyChat, ChatGPT)."
+    }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #0c111e;
+            color: #f8fafc;
+            margin: 0;
+            padding: 3rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            background: linear-gradient(90deg, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+            font-weight: 800;
+            max-width: 900px;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #94a3b8;
+            max-width: 800px;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        section {
+            width: 100%;
+            max-width: 1000px;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #f1f5f9;
+            border-bottom: 2px solid rgba(59, 130, 246, 0.2);
+            padding-bottom: 0.75rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title .section-number {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 800;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Evolución Grid */
+        .evolution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .evo-card {
+            background: #1e293b;
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid #334155;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+        }
+
+        .evo-card:hover {
+            transform: translateY(-5px);
+            border-color: #6366f1;
+            box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        .evo-card h3 {
+            font-size: 1.4rem;
+            margin-top: 0;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .badge.canva {
+            background: linear-gradient(90deg, #00C4CC, #7D2AE8);
+        }
+
+        .badge.manychat {
+            background-color: #10b981;
+        }
+
+        .badge.chatgpt {
+            background-color: #10a37f;
+        }
+
+        .badge.tiktok {
+            background: linear-gradient(90deg, #ff0050, #00f2fe);
+        }
+
+        .badge.discovery {
+            background: linear-gradient(90deg, #f59e0b, #ef4444);
+        }
+
+        .evo-card p.concept {
+            color: #fbbf24;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+
+        .evo-card p.description {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+
+        .evo-card ul {
+            padding-left: 1.2rem;
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .evo-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .evo-svg-container {
+            width: 100%;
+            height: 220px;
+            background: #0B1120;
+            border-radius: 0.75rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #1e293b;
+        }
+
+        /* Shared SVG Animations */
+        @keyframes flow {
+            to {
+                stroke-dashoffset: -20;
+            }
+        }
+
+        @keyframes flowReverse {
+            to {
+                stroke-dashoffset: 20;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.9;
+                filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+                filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        .path-flow {
+            stroke-width: 2.5;
+            stroke-dasharray: 6 6;
+            animation: flow 1s linear infinite;
+        }
+
+        .node {
+            fill: #1e293b;
+            stroke-width: 2;
+        }
+
+        .icon-pulse {
+            animation: pulse 2.5s infinite;
+            transform-origin: center;
+        }
+
+        .icon-float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Banner -->
+    <div
+        style="width: 100%; max-width: 1000px; margin-bottom: 2rem; position: relative; border-radius: 1rem; overflow: hidden; box-shadow: 0 20px 60px -15px rgba(0,0,0,0.6);">
+        <!-- Usamos un banner acorde a herramientas/stacks -->
+        <img src="stack_operativo.png" alt="Stack Operativo de IA"
+            style="width: 100%; height: 280px; object-fit: cover; display: block;"
+            onerror="this.src='marketing_ia_banner.png'" />
+        <div
+            style="position: absolute; inset: 0; background: linear-gradient(to top, #0c111e 0%, rgba(12,17,30,0.4) 40%, transparent 100%);">
+        </div>
+    </div>
+
+    <h1>El Stack Tecnológico Simplificado</h1>
+    <p class="subtitle" style="margin-top: 1rem;">
+        El <strong>Principio de Pareto (20/80)</strong> para una "persona normal" en 2026 se trata de
+        <strong>conveniencia y usabilidad</strong>. Olvídate de programar o conectar APIs: con estas 3 Apps desde tu
+        celular obtienes el 80% de los resultados de una agencia profesional.
+    </p>
+
+    <!-- Sección 1: La Trinidad de Herramientas -->
+    <section>
+        <h2 class="section-title"><span class="section-number">1</span> La Trinidad Operativa Inteligente</h2>
+        <div class="evolution-grid">
+            <!-- 1. Canva -->
+            <div class="evo-card">
+                <div class="evo-svg-container">
+                    <svg viewBox="0 0 300 220" width="100%" height="100%">
+                        <defs>
+                            <linearGradient id="gradCanva" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00C4CC;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#7D2AE8;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M 80 110 L 220 110" fill="none" class="path-flow" stroke="url(#gradCanva)" />
+                        <!-- Material Crudo -->
+                        <rect x="40" y="85" width="40" height="50" rx="4" class="node icon-float" stroke="#64748b" />
+                        <text x="60" y="115" text-anchor="middle" font-size="20">📸</text>
+                        <text x="60" y="155" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600">Fotos
+                            base</text>
+                        <!-- Magia Canva -->
+                        <circle cx="150" cy="110" r="30" fill="url(#gradCanva)" class="icon-pulse"
+                            style="transform-origin: 150px 110px;" />
+                        <text x="150" y="118" text-anchor="middle" font-size="24">✨</text>
+                        <text x="150" y="160" text-anchor="middle" fill="#c084fc" font-size="10"
+                            font-weight="600">Estudio Mágico</text>
+                        <!-- Resultado -->
+                        <rect x="220" y="85" width="50" height="50" rx="8" class="node icon-float" stroke="#00C4CC"
+                            style="animation-delay: 0.5s;" />
+                        <text x="245" y="115" text-anchor="middle" font-size="24">🎥</text>
+                        <text x="245" y="155" text-anchor="middle" fill="#00C4CC" font-size="10" font-weight="600">Reel
+                            Editado</text>
+                    </svg>
+                </div>
+                <h3>Promoción <span class="badge canva">Canva</span></h3>
+                <p class="concept">Democratización de la Calidad Visual</p>
+                <p class="description">Has dejado atrás Photoshop y Premiere. Canva integra todo el diseño y video en un
+                    botón.</p>
+                <ul>
+                    <li><strong>Video Instantáneo:</strong> Subes 3 fotos de tu pueblo y te escupe un Reel editado con
+                        música.</li>
+                    <li><strong>Fotos de Producto:</strong> Borras el fondo feo de tu artesanía y lo cambias por "un río
+                        colombiano" en 10 segundos.</li>
+                </ul>
+            </div>
+
+            <!-- 2. ManyChat -->
+            <div class="evo-card">
+                <div class="evo-svg-container">
+                    <svg viewBox="0 0 300 220" width="100%" height="100%">
+                        <defs>
+                            <linearGradient id="gradWhatsApp" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#25D366;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#128C7E;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M 60 110 L 240 110" fill="none" class="path-flow" stroke="#25D366" />
+                        <!-- Cliente -->
+                        <circle cx="50" cy="110" r="25" class="node icon-float" stroke="url(#gradWhatsApp)" />
+                        <text x="50" y="118" text-anchor="middle" font-size="24">💬</text>
+                        <text x="50" y="152" text-anchor="middle" fill="#94a3b8" font-size="10"
+                            font-weight="600">Cliente (10 PM)</text>
+                        <!-- ManyChat -->
+                        <rect x="125" y="85" width="50" height="50" rx="10" class="node" stroke="#10b981" />
+                        <text x="150" y="115" text-anchor="middle" font-size="22">🤖</text>
+                        <path d="M 150 85 L 150 60" fill="none" stroke="#64748b" stroke-dasharray="2 2" />
+                        <rect x="135" y="40" width="30" height="40" rx="4" class="node icon-pulse" stroke="#f87171"
+                            style="transform-origin: 150px 60px;" />
+                        <text x="150" y="65" text-anchor="middle" font-size="12">📄</text>
+                        <text x="150" y="155" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">Lee
+                            tu PDF</text>
+                        <!-- Reserva -->
+                        <circle cx="250" cy="110" r="22" class="node icon-float" stroke="#fbbf24"
+                            style="animation-delay: 0.5s;" />
+                        <text x="250" y="118" text-anchor="middle" font-size="20">✅</text>
+                        <text x="250" y="152" text-anchor="middle" fill="#fbbf24" font-size="10"
+                            font-weight="600">Reserva Creada</text>
+                    </svg>
+                </div>
+                <h3>Plaza & Ventas <span class="badge manychat">ManyChat</span></h3>
+                <p class="concept">Ubicuidad: Abierto 24/7 en WhatsApp</p>
+                <p class="description">Interfaz gráfica "arrastrar y soltar" directamente en el canal más usado. Sin
+                    programar agentes.</p>
+                <ul>
+                    <li><strong>Contexto Fácil:</strong> Le subes un PDF con precios y un interruptor enciende la IA.
+                    </li>
+                    <li><strong>Resultados:</strong> Cuando preguntan a medianoche "¿hay cupo?", la IA responde y cierra
+                        la venta mientras tú duermes.</li>
+                </ul>
+            </div>
+
+            <!-- 3. ChatGPT -->
+            <div class="evo-card">
+                <div class="evo-svg-container">
+                    <svg viewBox="0 0 300 220" width="100%" height="100%">
+                        <defs>
+                            <linearGradient id="gradOpenAI" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#10a37f;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Celular -->
+                        <rect x="70" y="50" width="70" height="120" rx="10" class="node icon-float" stroke="#cbd5e1" />
+                        <rect x="90" y="55" width="30" height="4" rx="2" fill="#334155" class="icon-float" />
+                        <!-- Animación Voz -->
+                        <g transform="translate(105, 120)">
+                            <rect x="-15" y="-5" width="6" height="10" rx="3" fill="#10a37f">
+                                <animate attributeName="height" values="10;30;10" dur="1s" repeatCount="indefinite" />
+                                <animate attributeName="y" values="-5;-15;-5" dur="1s" repeatCount="indefinite" />
+                            </rect>
+                            <rect x="-5" y="-10" width="6" height="20" rx="3" fill="#10a37f">
+                                <animate attributeName="height" values="20;40;20" dur="1.2s" repeatCount="indefinite" />
+                                <animate attributeName="y" values="-10;-20;-10" dur="1.2s" repeatCount="indefinite" />
+                            </rect>
+                            <rect x="5" y="-5" width="6" height="10" rx="3" fill="#10a37f">
+                                <animate attributeName="height" values="10;25;10" dur="0.8s" repeatCount="indefinite" />
+                                <animate attributeName="y" values="-5;-12.5;-5" dur="0.8s" repeatCount="indefinite" />
+                            </rect>
+                        </g>
+                        <text x="105" y="195" text-anchor="middle" fill="#10a37f" font-size="10" font-weight="600">Modo
+                            Voz (Socio)</text>
+                        <!-- Flow -->
+                        <path d="M 140 110 L 200 110" fill="none" class="path-flow" stroke="#10a37f" />
+                        <!-- Estrategia -->
+                        <circle cx="230" cy="110" r="28" class="node icon-pulse" stroke="#f59e0b"
+                            style="transform-origin: 230px 110px;" />
+                        <text x="230" y="120" text-anchor="middle" font-size="28">💡</text>
+                        <text x="230" y="160" text-anchor="middle" fill="#f59e0b" font-size="10"
+                            font-weight="600">Estrategia & Precio</text>
+                    </svg>
+                </div>
+                <h3>Producto & Precio <span class="badge chatgpt">ChatGPT App</span></h3>
+                <p class="concept">Inteligencia de Negocios en el Bolsillo</p>
+                <p class="description">No lo uses solo para escribir textos. Es tu jefe de estrategia, consultor y
+                    analista 24/7.</p>
+                <ul>
+                    <li><strong>Investigación:</strong> Le tomas foto al menú de la competencia y le preguntas por voz a
+                        cuánto debes cobrar.</li>
+                    <li><strong>Creación de Ofertas:</strong> "Va a llover el fin de semana. Dame un paquete romántico
+                        para parejas" y diseña la oferta completa.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Especial: Agencia en una Caja (Pomelli) -->
+    <section>
+        <h2 class="section-title"><span class="section-number">2</span> Agencia en una Caja (Fábrica de Combustible)
+        </h2>
+        <div class="evolution-grid">
+            <div class="evo-card" style="border-color: #fbbc04;">
+                <div class="evo-svg-container" style="background: rgba(251, 188, 4, 0.05);">
+                    <svg viewBox="0 0 300 220" width="100%" height="100%">
+                        <defs>
+                            <linearGradient id="gradGoogle" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4285F4;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#EA4335;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#34A853;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Website DNA -->
+                        <polygon points="50,110 40,85 70,85" fill="#fbbc04" class="icon-pulse"
+                            style="transform-origin: 55px 100px;" />
+                        <rect x="40" y="85" width="30" height="40" rx="4" class="node icon-float" stroke="#cbd5e1" />
+                        <text x="55" y="115" text-anchor="middle" font-size="18">🌐</text>
+                        <text x="55" y="145" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="600">ADN
+                            (Web)</text>
+                        <!-- Flow a Pomelli -->
+                        <path d="M 80 105 L 120 105" fill="none" class="path-flow" stroke="#4285F4" />
+                        <!-- Pomelli Core -->
+                        <circle cx="150" cy="105" r="30" class="node icon-pulse" stroke="url(#gradGoogle)"
+                            stroke-width="3" style="transform-origin: 150px 105px;" />
+                        <text x="150" y="115" text-anchor="middle" font-size="28">🍋</text>
+                        <text x="150" y="155" text-anchor="middle" fill="#fbbc04" font-size="10"
+                            font-weight="600">Google Pomelli</text>
+                        <!-- Splits -->
+                        <path d="M 180 105 L 210 70" fill="none" class="path-flow" stroke="#EA4335" />
+                        <path d="M 180 105 L 220 105" fill="none" class="path-flow" stroke="#4285F4" />
+                        <path d="M 180 105 L 210 140" fill="none" class="path-flow" stroke="#34A853" />
+                        <!-- Outputs -->
+                        <rect x="210" y="55" width="25" height="25" rx="4" class="node" stroke="#EA4335" />
+                        <text x="222.5" y="73" text-anchor="middle" font-size="12">📧</text>
+                        <text x="250" y="70" text-anchor="start" fill="#EA4335" font-size="8" font-weight="600">Email
+                            Mk</text>
+
+                        <rect x="220" y="93" width="25" height="25" rx="4" class="node" stroke="#4285F4" />
+                        <text x="232.5" y="111" text-anchor="middle" font-size="12">🖼️</text>
+                        <text x="250" y="108" text-anchor="start" fill="#4285F4" font-size="8"
+                            font-weight="600">Posts/Banners</text>
+
+                        <rect x="210" y="128" width="25" height="25" rx="4" class="node" stroke="#34A853" />
+                        <text x="222.5" y="146" text-anchor="middle" font-size="12">🎯</text>
+                        <text x="250" y="143" text-anchor="start" fill="#34A853" font-size="8" font-weight="600">Ads
+                            Google</text>
+                    </svg>
+                </div>
+                <h3>Producción Escalonada <span class="badge"
+                        style="background: linear-gradient(90deg, #4285F4, #fbbc04);">Google Pomelli</span></h3>
+                <p class="concept">De la Web a Campañas Globales al Instante</p>
+                <p class="description">El "Departamento de Marketing en una caja" de Google Labs. Escanea tu marca para
+                    diseñar todo el material promocional sin depender de diseñadores.</p>
+                <ul>
+                    <li><strong>ADN de Negocio:</strong> Extrae la paleta, tipografías y el "Tono de Voz" leyendo tu
+                        web. Nunca publica algo genérico.</li>
+                    <li><strong>El Combustible (End-to-End):</strong> Genera docenas de artes visuales, copies para
+                        redes y campañas nativas para Google Ads que luego inyectarás a Advantage+.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 2: El Motor de Distribución -->
+    <section>
+        <h2 class="section-title"><span class="section-number">3</span> Amplificación y Distribución Automática</h2>
+        <div class="evolution-grid">
+            <!-- 4. TikTok -->
+            <div class="evo-card">
+                <div class="evo-svg-container">
+                    <svg viewBox="0 0 300 220" width="100%" height="100%">
+                        <defs>
+                            <linearGradient id="gradTikTok" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ff0050;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="gradRetencion" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#00f2fe;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#ff0050;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Camino a través del Grafo -->
+                        <path d="M 50 110 C 130 110, 110 50, 170 50 C 230 50, 200 110, 260 110" fill="none"
+                            class="path-flow" stroke="url(#gradRetencion)" stroke-width="2.5" />
+                        <!-- Bucle Retención -->
+                        <circle cx="150" cy="110" r="35" fill="none" stroke="#ff0050" stroke-width="2"
+                            stroke-dasharray="8 8">
+                            <animateTransform attributeName="transform" type="rotate" from="0 150 110" to="360 150 110"
+                                dur="4s" repeatCount="indefinite" />
+                        </circle>
+                        <!-- Director -->
+                        <rect x="30" y="85" width="40" height="50" rx="6" class="node icon-float" stroke="#cbd5e1" />
+                        <text x="50" y="115" text-anchor="middle" font-size="20">🎥</text>
+                        <text x="50" y="155" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600">Crudo
+                            + Audio</text>
+                        <!-- IA Bucle -->
+                        <circle cx="150" cy="110" r="18" fill="#1e293b" stroke="#00f2fe" stroke-width="2"
+                            class="icon-pulse" style="transform-origin: 150px 110px;" />
+                        <text x="150" y="116" text-anchor="middle" font-size="16">♾️</text>
+                        <text x="150" y="165" text-anchor="middle" fill="#00f2fe" font-size="10" font-weight="600">Bucle
+                            (3-10-30s)</text>
+                        <!-- Viral -->
+                        <circle cx="260" cy="110" r="22" class="node icon-float" stroke="url(#gradTikTok)"
+                            style="animation-delay: 0.6s;" />
+                        <text x="260" y="118" text-anchor="middle" font-size="20">🔥</text>
+                        <text x="260" y="155" text-anchor="middle" fill="#ff0050" font-size="10" font-weight="600">Para
+                            Ti</text>
+                    </svg>
+                </div>
+                <h3>Descubrimiento <span class="badge tiktok">TikTok SEO</span></h3>
+                <p class="concept">Grafo de Contenido & Retención</p>
+                <p class="description">TikTok busca "momentos de retención". El formato orgánico "Director de
+                    Documentales" funciona mejor que anuncios prefabricados.</p>
+                <ul>
+                    <li><strong>Código 3-10-30:</strong> Engancha en 3s con conflicto visual y sonido ambiente real
+                        (lo-fi).</li>
+                    <li><strong>Cero Anuncios:</strong> Empújate mostrando curiosidad y procesos reales de tu vida y
+                        negocio.</li>
+                    <li><strong>SEO Nativo:</strong> El algoritmo lee tu voz. Habla claro: <em>"Marketing en
+                            Colombia..."</em></li>
+                </ul>
+            </div>
+
+            <!-- 5. AI Discovery -->
+            <div class="evo-card">
+                <div class="evo-svg-container">
+                    <svg viewBox="0 0 300 220" width="100%" height="100%">
+                        <defs>
+                            <linearGradient id="gradDiscovery" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- CAPI -->
+                        <path d="M 230 130 C 230 180, 70 180, 70 130" fill="none" stroke="#10b981" stroke-width="2"
+                            stroke-dasharray="4 4">
+                            <animate attributeName="stroke-dashoffset" from="40" to="0" dur="1s"
+                                repeatCount="indefinite" />
+                        </path>
+                        <polygon points="70,130 65,140 75,140" fill="#10b981" />
+                        <text x="150" y="175" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">CAPI
+                            (Conversión Real)</text>
+                        <!-- Video -->
+                        <rect x="50" y="60" width="40" height="50" rx="4" class="node icon-float"
+                            stroke="url(#gradDiscovery)" />
+                        <text x="70" y="90" text-anchor="middle" font-size="20">🎬</text>
+                        <text x="70" y="125" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600">Señal
+                            Creativa</text>
+                        <!-- Flow a IA -->
+                        <path d="M 90 85 L 135 85" fill="none" class="path-flow" stroke="#f59e0b" />
+                        <!-- Motor IA -->
+                        <rect x="135" y="60" width="50" height="50" rx="10" class="node icon-pulse" stroke="#cbd5e1"
+                            style="transform-origin: 160px 85px;" />
+                        <text x="160" y="92" text-anchor="middle" font-size="24">🧠</text>
+                        <text x="160" y="125" text-anchor="middle" fill="#cbd5e1" font-size="10" font-weight="600">Motor
+                            IA Predice</text>
+                        <!-- Flow a Cliente -->
+                        <path d="M 185 85 L 230 85" fill="none" class="path-flow" stroke="#ef4444" />
+                        <!-- Match -->
+                        <circle cx="230" cy="85" r="22" class="node icon-float" stroke="#ef4444"
+                            style="animation-delay: 0.5s;" />
+                        <text x="230" y="93" text-anchor="middle" font-size="20">👤</text>
+                        <text x="230" y="125" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="600">Match
+                            Probable</text>
+                    </svg>
+                </div>
+                <h3>Distribución <span class="badge discovery">AI Discovery</span></h3>
+                <p class="concept">De Segmentación a "Zero-Targeting"</p>
+                <p class="description">Ya no buscas al cliente manualmente (cazador). La IA lo encuentra por ti si
+                    diseñas una buena "señal" creativa (anzuelo).</p>
+                <ul>
+                    <li><strong>La Creatividad es el Filtro:</strong> La IA lee tu video de "Café + Paz" y busca
+                        personas estresadas al instante.</li>
+                    <li><strong>Broad Targeting:</strong> Dejas la segmentación abierta y permites que Meta/TikTok
+                        actúen como un laboratorio continuo.</li>
+                    <li><strong>Loop CAPI:</strong> Cuando alguien compra, tu sistema avisa al algoritmo para buscar
+                        "gemelos de comportamiento".</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Economía IA -->
+    <footer
+        style="width: 100%; max-width: 1000px; margin: 3rem auto 0; padding: 1.2rem 1rem; border-top: 1px solid #1e293b; text-align: center;">
+        <div
+            style="display: flex; justify-content: center; align-items: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 0.6rem;">
+            <span style="color: #64748b; font-size: 0.8rem; font-weight: 600;">Economía IA</span>
+            <span style="color: #334155;">·</span>
+            <a href="https://www.tiktok.com/@economiaia" target="_blank" rel="noopener noreferrer"
+                style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; transition: color 0.2s;"
+                onmouseover="this.style.color='#ff0050';" onmouseout="this.style.color='#94a3b8';">🎵 @economiaia</a>
+            <span style="color: #334155;">·</span>
+            <a href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer"
+                style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; transition: color 0.2s;"
+                onmouseover="this.style.color='#8b5cf6';" onmouseout="this.style.color='#94a3b8';">🔗 Enlaces</a>
+            <span style="color: #334155;">·</span>
+            <a href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer"
+                style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; transition: color 0.2s;"
+                onmouseover="this.style.color='#10b981';" onmouseout="this.style.color='#94a3b8';">💼 Consultoría</a>
+        </div>
+        <p style="color: #334155; font-size: 0.7rem; margin: 0;">© 2026 Economía IA</p>
+    </footer>
+    </footer>
+
+</body>
+
+</html>

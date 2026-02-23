@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Optimización LLM SEO y Meta tags para Economía IA -->
+    <meta name="description"
+        content="Ecosistema de Marketing liderado por Inteligencia Artificial. Descubre las órbitas de conocimiento de Economía IA: estrategias, sistemas y automatización.">
+    <meta name="keywords"
+        content="Economía IA, Ecosistema Marketing IA, Automatización de Ventas, Hub Central de Marketing, IA para Negocios, Crecimiento Exponencial, LLM SEO">
+    <meta name="author" content="Economía IA">
+    <title>Ecosistema de Marketing IA - Hub Central | Economía IA</title>
+    <!-- Datos Estructurados (JSON-LD) para LLMs y Motores de Búsqueda -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Ecosistema de Marketing por Economía IA",
+      "url": "https://economiaia.business",
+      "author": {
+        "@type": "Organization",
+        "name": "Economía IA"
+      },
+      "description": "Hub interactivo que presenta los fundamentos, sistemas y herramientas de Inteligencia Artificial aplicados al marketing moderno.",
+      "keywords": "Marketing con IA, Automatización, Economía IA, Ecosistema Digital"
+    }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --bg-color: #030305;
+            --accent: #6C5CE7;
+            --accent-glow: rgba(108, 92, 231, 0.5);
+            --text-color: #F0F0F0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at center, #0B0B1A 0%, var(--bg-color) 100%);
+            color: var(--text-color);
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px;
+        }
+
+        /* Ambient glowing background */
+        .ambient-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw;
+            height: 80vh;
+            background: radial-gradient(circle, rgba(108, 92, 231, 0.1) 0%, transparent 60%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Abstract Background Elements */
+        .bg-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+            transform: perspective(600px) rotateX(60deg) translateY(-100px) translateZ(-300px);
+            animation: gridMove 20s linear infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes gridMove {
+            0% {
+                transform: perspective(600px) rotateX(60deg) translateY(0) translateZ(-300px);
+            }
+
+            100% {
+                transform: perspective(600px) rotateX(60deg) translateY(50px) translateZ(-300px);
+            }
+        }
+
+        h1.title {
+            position: absolute;
+            top: 50px;
+            text-align: center;
+            width: 100%;
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            z-index: 10;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, #ffffff 0%, #a29bfe 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            position: absolute;
+            top: 110px;
+            text-align: center;
+            width: 100%;
+            font-weight: 300;
+            font-size: 1.1rem;
+            color: #a29bfe;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            z-index: 10;
+        }
+
+        /* Connections layer */
+        canvas#connections {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* 3D Scene Config */
+        .scene {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            transform-style: preserve-3d;
+            z-index: 5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .center-node {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            background: transparent;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            animation: pulseCore 4s ease-in-out infinite alternate;
+            cursor: default;
+        }
+
+        .center-logo {
+            width: 120%;
+            height: 120%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 30px var(--accent-glow));
+            z-index: 5;
+        }
+
+        .center-node-icon {
+            display: none;
+        }
+
+        .center-node-label {
+            display: none;
+        }
+
+        /* Pulsing ring layers beneath the center node */
+        .ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid rgba(108, 92, 231, 0.8);
+            animation: ringExpand 3s linear infinite;
+        }
+
+        .ring:nth-child(2) {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes ringExpand {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulseCore {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                box-shadow: 0 0 40px var(--accent-glow);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1.05);
+                box-shadow: 0 0 80px var(--accent-glow), 0 0 100px rgba(108, 92, 231, 0.2);
+            }
+        }
+
+        /* Orbiting track */
+        .orbit-track {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border: 1px dashed rgba(162, 155, 254, 0.2);
+            border-radius: 50%;
+            box-sizing: border-box;
+            transform-style: preserve-3d;
+            pointer-events: none;
+            /* Previene que la órbita bloquee hovers en círculos menores */
+        }
+
+        /* Las animaciones CSS de rotación y pausa en hover fueron reemplazadas por control táctil JS */
+
+        /* The nodes that orbit */
+        .node-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-style: preserve-3d;
+            pointer-events: none;
+            /* Asegura que no estorbe */
+        }
+
+        .node {
+            width: 70px;
+            height: 70px;
+            background: rgba(15, 15, 25, 0.85);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+            cursor: pointer;
+            position: relative;
+            pointer-events: auto;
+            /* Reactiva clicks solo en el botón del widget */
+        }
+
+        /* Inverse rotation to keep content upright inside orbiting node */
+        .node-inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+
+        /* Orientación manejada por script de arrastre interactivo (JS) */
+
+        /* Hover interactions */
+        .node:hover {
+            transform: scale(1.4) translateZ(30px) !important;
+            z-index: 50;
+        }
+
+        /* Thematic node glows */
+        .node[data-type="estrategia"]:hover {
+            border-color: #ff007f;
+            box-shadow: 0 0 30px rgba(255, 0, 127, 0.8);
+            background: linear-gradient(135deg, rgba(15, 15, 25, 0.95), rgba(255, 0, 127, 0.2));
+        }
+
+        .node[data-type="arquitectura"]:hover {
+            border-color: #00d2ff;
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.8);
+            background: linear-gradient(135deg, rgba(15, 15, 25, 0.95), rgba(0, 210, 255, 0.2));
+        }
+
+        .node[data-type="teoria"]:hover {
+            border-color: #ffaa00;
+            box-shadow: 0 0 30px rgba(255, 170, 0, 0.8);
+            background: linear-gradient(135deg, rgba(15, 15, 25, 0.95), rgba(255, 170, 0, 0.2));
+        }
+
+        .node[data-type="operaciones"]:hover {
+            border-color: #00ff88;
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.8);
+            background: linear-gradient(135deg, rgba(15, 15, 25, 0.95), rgba(0, 255, 136, 0.2));
+        }
+
+        .node-icon {
+            font-size: 1.8rem;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+        }
+
+        .node-label {
+            position: absolute;
+            top: 85px;
+            white-space: nowrap;
+            background: rgba(5, 5, 10, 0.95);
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            z-index: 100;
+        }
+
+        .level-tag {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        /* Level-specific tags styling */
+        .level-tag.fundamentos {
+            color: #ffaa00;
+            font-weight: 800;
+        }
+
+        .level-tag.sistemas {
+            color: #00d2ff;
+            font-weight: 800;
+        }
+
+        .level-tag.herramientas {
+            color: #00ff88;
+            font-weight: 800;
+        }
+
+        .node:hover .node-label {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating particles */
+        #particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @media (max-width: 900px) {
+            h1.title {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1.title {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+                top: 90px;
+            }
+
+            .center-node {
+                width: 90px;
+                height: 90px;
+            }
+
+            .center-node-icon {
+                font-size: 1.5rem;
+            }
+
+            .node {
+                width: 50px;
+                height: 50px;
+            }
+
+            .node-icon {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header style="position: absolute; width: 100%; text-align: center; z-index: 10;">
+        <h1 class="title">Ecosistema Marketing | Economía IA</h1>
+        <div class="subtitle">Órbitas de Conocimiento para la Nueva Economía</div>
+    </header>
+
+    <main class="scene" id="scene">
+        <div class="center-node" id="centerNode">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <img src="logo_economia_ia.png" alt="Economía IA Logo" class="center-logo">
+        </div>
+        <!-- Orbit Tracks Injected by JS -->
+    </main>
+
+    <div class="ambient-glow"></div>
+    <div class="bg-grid"></div>
+    <div id="particles"></div>
+    <canvas id="connections"></canvas>
+
+    <script>
+        // Data organized by "Atomic Levels"
+        const levels = [
+            {
+                id: 'fundamentos',
+                name: 'Nivel 1: Fundamentos',
+                radius: 170, // Base Desktop Radius
+                speed: 35,   // Rotation duration
+                color: 'rgba(255, 170, 0, 0.4)',
+                pages: [
+                    { title: 'Condición Cero', file: 'presentacion_condicion_cero.html', icon: '<i class="ph-duotone ph-crosshair"></i>', type: 'estrategia' },
+                    { title: 'Teoría Señal Creativa', file: 'teoria_senal_creativa.html', icon: '<i class="ph-duotone ph-lightbulb-filament"></i>', type: 'teoria' },
+                    { title: 'Arquitectura Marketing', file: 'arquitectura_marketing_ia.html', icon: '<i class="ph-duotone ph-brain"></i>', type: 'arquitectura' }
+                ]
+            },
+            {
+                id: 'sistemas',
+                name: 'Nivel 2: Sistemas & Estrategias',
+                radius: 280,
+                speed: 55,
+                color: 'rgba(0, 210, 255, 0.3)',
+                pages: [
+                    { title: 'Arquitectura Distribución', file: 'arquitectura_distribucion_motor.html', icon: '<i class="ph-duotone ph-gear-six"></i>', type: 'arquitectura' },
+                    { title: 'Operaciones y Datos', file: 'operaciones_y_datos_ia.html', icon: '<i class="ph-duotone ph-chart-polar"></i>', type: 'operaciones' },
+                    { title: 'Estrategia TikTok IA', file: 'estrategia_tiktok_ia.html', icon: '<i class="ph-duotone ph-tiktok-logo"></i>', type: 'estrategia' },
+                    { title: 'Ecosistema Meta IA', file: 'ecosistema_meta_ia.html', icon: '<i class="ph-duotone ph-infinity"></i>', type: 'estrategia' }
+                ]
+            },
+            {
+                id: 'herramientas',
+                name: 'Nivel 3: Herramientas IA',
+                radius: 390,
+                speed: 80,
+                color: 'rgba(0, 255, 136, 0.25)',
+                pages: [
+                    { title: 'Arquitectura ManyChat', file: 'arquitectura_manychat_ia.html', icon: '<i class="ph-duotone ph-robot"></i>', type: 'arquitectura' },
+                    { title: 'Stack Tecnológico', file: 'stack_tecnologico_ia.html', icon: '<i class="ph-duotone ph-stack"></i>', type: 'operaciones' }
+                ]
+            }
+        ];
+
+        const scene = document.getElementById('scene');
+        let orbitTracksElements = [];
+        let activeOrbits = [];
+        let isHoveringNode = false;
+
+        // --- Dragging Logic ---
+        let draggedOrbit = null;
+        let startPointerAngle = 0;
+        let startOrbitAngle = 0;
+        let dragMoved = false;
+
+        function getPointerAngle(e) {
+            const centerNode = document.getElementById('centerNode');
+            if (!centerNode) return 0;
+            const rect = centerNode.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+            return Math.atan2(clientY - cy, clientX - cx);
+        }
+
+        function startDrag(e, orbitData) {
+            draggedOrbit = orbitData;
+            startPointerAngle = getPointerAngle(e);
+            startOrbitAngle = draggedOrbit.currentAngle;
+            dragMoved = false;
+            draggedOrbit.isDragging = true;
+            document.body.style.cursor = 'grabbing';
+            orbitData.nodes.forEach(node => node.parentElement.style.cursor = 'grabbing');
+        }
+
+        function stopDrag() {
+            if (draggedOrbit) {
+                draggedOrbit.nodes.forEach(node => node.parentElement.style.cursor = 'pointer');
+                draggedOrbit.isDragging = false;
+                draggedOrbit = null;
+                document.body.style.cursor = 'default';
+            }
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            if (draggedOrbit) {
+                dragMoved = true;
+                const currentPointerAngle = getPointerAngle(e);
+                let angleDelta = currentPointerAngle - startPointerAngle;
+
+                if (angleDelta > Math.PI) angleDelta -= 2 * Math.PI;
+                if (angleDelta < -Math.PI) angleDelta += 2 * Math.PI;
+
+                draggedOrbit.currentAngle = startOrbitAngle + angleDelta;
+            }
+        });
+        document.addEventListener('mouseup', stopDrag);
+
+        document.addEventListener('touchmove', (e) => {
+            if (draggedOrbit) {
+                dragMoved = true;
+                const currentPointerAngle = getPointerAngle(e);
+                let angleDelta = currentPointerAngle - startPointerAngle;
+
+                if (angleDelta > Math.PI) angleDelta -= 2 * Math.PI;
+                if (angleDelta < -Math.PI) angleDelta += 2 * Math.PI;
+
+                draggedOrbit.currentAngle = startOrbitAngle + angleDelta;
+            }
+        }, { passive: false });
+        document.addEventListener('touchend', stopDrag);
+
+        function initScene() {
+            let scale = 1;
+            if (window.innerWidth <= 600) scale = 0.55;
+            else if (window.innerWidth <= 1000) scale = 0.8;
+            else if (window.innerHeight <= 800) scale = 0.85;
+
+            orbitTracksElements.forEach(t => t.remove());
+            orbitTracksElements = [];
+            activeOrbits = [];
+
+            levels.forEach((level) => {
+                const track = document.createElement('div');
+                track.className = 'orbit-track';
+
+                const currentRadius = level.radius * scale;
+                track.style.width = `${currentRadius * 2}px`;
+                track.style.height = `${currentRadius * 2}px`;
+                track.style.marginTop = `-${currentRadius}px`;
+                track.style.marginLeft = `-${currentRadius}px`;
+                track.style.border = `1px dashed ${level.color}`;
+
+                const orbitData = {
+                    element: track,
+                    nodes: [],
+                    speedRadMs: (2 * Math.PI) / (level.speed * 1000),
+                    currentAngle: 0,
+                    isDragging: false
+                };
+
+                level.pages.forEach((page, index) => {
+                    const angle = (index / level.pages.length) * 2 * Math.PI;
+                    const x = Math.cos(angle) * currentRadius;
+                    const y = Math.sin(angle) * currentRadius;
+
+                    const container = document.createElement('div');
+                    container.className = 'node-container';
+                    container.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+
+                    container.innerHTML = `
+                        <a href="${page.file}" class="node" data-type="${page.type}">
+                            <div class="node-inner">
+                                <span class="node-icon">${page.icon}</span>
+                                <div class="node-label">
+                                    ${page.title} 
+                                    <span class="level-tag ${level.id}">${level.name}</span>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+
+                    orbitData.nodes.push(container.querySelector('.node-inner'));
+                    const nodeEl = container.querySelector('.node');
+
+                    nodeEl.ondragstart = () => false;
+
+                    const handleStart = (e) => {
+                        startDrag(e, orbitData);
+                    };
+
+                    nodeEl.addEventListener('mousedown', handleStart);
+                    nodeEl.addEventListener('touchstart', handleStart, { passive: true });
+
+                    nodeEl.addEventListener('click', (e) => {
+                        if (dragMoved) {
+                            e.preventDefault();
+                        }
+                    });
+
+                    nodeEl.addEventListener('mouseenter', () => isHoveringNode = true);
+                    nodeEl.addEventListener('mouseleave', () => isHoveringNode = false);
+
+                    track.appendChild(container);
+                });
+
+                scene.appendChild(track);
+                orbitTracksElements.push(track);
+                activeOrbits.push(orbitData);
+            });
+        }
+
+        initScene();
+
+        document.addEventListener('mousemove', (e) => {
+            if (draggedOrbit) return;
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 45;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 45;
+            scene.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        const canvas = document.getElementById('connections');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initScene();
+        }
+
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(resizeCanvas, 200);
+        });
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let lastTime = performance.now();
+
+        function animate(currentTime) {
+            const deltaTime = currentTime - lastTime;
+            lastTime = currentTime;
+
+            if (!isHoveringNode && !draggedOrbit) {
+                activeOrbits.forEach(orbit => {
+                    orbit.currentAngle += orbit.speedRadMs * deltaTime;
+                });
+            }
+
+            activeOrbits.forEach(orbit => {
+                orbit.element.style.transform = `rotateZ(${orbit.currentAngle}rad)`;
+                orbit.nodes.forEach(node => {
+                    node.style.transform = `rotateZ(${-orbit.currentAngle}rad)`;
+                });
+            });
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const centerNode = document.getElementById('centerNode');
+            if (centerNode) {
+                const centerRect = centerNode.getBoundingClientRect();
+                const cx = centerRect.left + centerRect.width / 2;
+                const cy = centerRect.top + centerRect.height / 2;
+
+                const nodes = document.querySelectorAll('.node');
+                ctx.beginPath();
+                nodes.forEach(node => {
+                    const rect = node.getBoundingClientRect();
+                    const nx = rect.left + rect.width / 2;
+                    const ny = rect.top + rect.height / 2;
+
+                    ctx.moveTo(cx, cy);
+                    ctx.lineTo(nx, ny);
+                    ctx.moveTo(nx, ny);
+                    ctx.arc(nx, ny, 3, 0, Math.PI * 2);
+                });
+                ctx.strokeStyle = 'rgba(120, 100, 240, 0.25)';
+                ctx.lineWidth = 1;
+                ctx.stroke();
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+                ctx.fill();
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        requestAnimationFrame((time) => {
+            lastTime = time;
+            animate(time);
+        });
+
+        // Background particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            let p = document.createElement('div');
+            p.style.position = 'absolute';
+            p.style.width = Math.random() * 3 + 1 + 'px';
+            p.style.height = p.style.width;
+            p.style.background = 'rgba(255, 255, 255, ' + (Math.random() * 0.4 + 0.1) + ')';
+            p.style.borderRadius = '50%';
+            p.style.left = Math.random() * 100 + 'vw';
+            p.style.top = Math.random() * 100 + 'vh';
+            p.style.boxShadow = '0 0 10px rgba(255,255,255,0.8)';
+            p.style.pointerEvents = 'none';
+            p.style.animation = `float ${Math.random() * 10 + 10}s linear infinite`;
+            particlesContainer.appendChild(p);
+        }
+
+        const style = document.createElement('style');
+        style.innerHTML = `
+                @keyframes float {
+                    0% { transform: translateY(0) scale(1); opacity: 0; }
+                    50% { opacity: 1; }
+                    100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+                }`;
+        document.head.appendChild(style);
+
+    </script>
+
+
+
+</body>
+
+</html>

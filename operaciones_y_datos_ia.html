@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Optimización LLM SEO y Meta tags para Economía IA -->
+    <meta name="description"
+        content="Operaciones y datos automatizados con IA. Descubre el motor operativo de Economía IA.">
+    <meta name="keywords"
+        content="Economía IA, Operaciones IA, Marketing Automation, Cualificación de Leads, IA en Marketing, CAPI">
+    <meta name="author" content="Economía IA">
+    <title>Fase 2: Operaciones y Datos con IA | Economía IA</title>
+    <!-- Datos Estructurados (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Operaciones y Datos con IA",
+      "author": {
+        "@type": "Organization",
+        "name": "Economía IA"
+      },
+      "description": "Una guía sobre cómo automatizar operaciones y captura de señales en marketing digital usando Inteligencia Artificial."
+    }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #0c111e;
+            color: #f8fafc;
+            margin: 0;
+            padding: 3rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            background: linear-gradient(90deg, #34d399, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+            font-weight: 800;
+            max-width: 900px;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #94a3b8;
+            max-width: 800px;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        section {
+            width: 100%;
+            max-width: 1000px;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #f1f5f9;
+            border-bottom: 2px solid rgba(59, 130, 246, 0.2);
+            padding-bottom: 0.75rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title .section-number {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 800;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Evolución Grid */
+        .evolution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .evo-card {
+            background: #1e293b;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid #334155;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .evo-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+
+        .evo-card .old {
+            color: #ef4444;
+            font-size: 0.95rem;
+            text-decoration: line-through;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .evo-card .new {
+            color: #10b981;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .evo-card .desc {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        .evo-svg-container {
+            width: 100%;
+            height: 120px;
+            background: #0f172a;
+            border-radius: 0.75rem;
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: 1px solid #334155;
+            position: relative;
+        }
+
+        .context-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 0.75rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .context-image:hover {
+            transform: scale(1.02);
+            border-color: #3b82f6;
+        }
+
+        /* SVG Loop Animado */
+        .loop-container {
+            background: #0f172a;
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid #334155;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        /* Tech Stack Cards */
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .stack-card {
+            background: linear-gradient(145deg, #1e293b, #0c111e);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid #334155;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .stack-card h3 {
+            margin-top: 0;
+            color: #38bdf8;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stack-card p {
+            color: #cbd5e1;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Thesis Box */
+        .thesis-box {
+            background: linear-gradient(90deg, rgba(52, 211, 153, 0.1), rgba(59, 130, 246, 0.1));
+            border-left: 4px solid #34d399;
+            padding: 2rem;
+            border-radius: 0 1rem 1rem 0;
+            margin-top: 3rem;
+        }
+
+        .thesis-box h4 {
+            margin-top: 0;
+            color: #34d399;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .thesis-box p {
+            margin: 0;
+            color: #e2e8f0;
+            font-size: 1.1rem;
+        }
+
+        /* Animations */
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 5px rgba(52, 211, 153, 0.4));
+                transform: scale(1);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 15px rgba(52, 211, 153, 0.8));
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes flowData {
+            0% {
+                stroke-dashoffset: 40;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes bounceIcon {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes walk {
+            0% {
+                transform: translateX(-5px) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateX(5px) rotate(5deg);
+            }
+
+            100% {
+                transform: translateX(-5px) rotate(-5deg);
+            }
+        }
+
+        @keyframes radarScan {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes floatSmooth {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        @keyframes typingDot {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes dataSync {
+            0% {
+                stroke-dashoffset: 60;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes heartBeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            15% {
+                transform: scale(1.2);
+            }
+
+            30% {
+                transform: scale(1);
+            }
+
+            45% {
+                transform: scale(1.2);
+            }
+
+            60% {
+                transform: scale(1);
+            }
+        }
+
+        .icon-float {
+            animation: floatSmooth 3s ease-in-out infinite;
+        }
+
+        .icon-pulse {
+            animation: pulseGlow 2s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Banner -->
+    <div
+        style="width: 100%; max-width: 1000px; margin-bottom: 2rem; position: relative; border-radius: 1rem; overflow: hidden; box-shadow: 0 20px 60px -15px rgba(0,0,0,0.6);">
+        <img src="marketing_ia_banner.png" alt="Marketing Digital en la Economía de la IA"
+            style="width: 100%; height: 280px; object-fit: cover; display: block;" />
+        <div
+            style="position: absolute; inset: 0; background: linear-gradient(to top, #0c111e 0%, rgba(12,17,30,0.4) 40%, transparent 100%);">
+        </div>
+    </div>
+
+    <h1>Fase 2: Motor de Operaciones y Datos ©</h1>
+    <p class="subtitle" style="margin-top: 1rem;">
+        Una vez estructurado el marketing, así es como la tecnología automatiza tu tiempo y controla el flujo de tu
+        información.
+    </p>
+
+    <!-- Aquí comenzaba la sección de Marketing (Eliminada para esta página de operaciones) -->
+
+    <!-- Sección 2: Despliegue Operacional -->
+    <section>
+        <h2 class="section-title"><span class="section-number">2</span> Despliegue Operacional: El Nuevo Flujo de
+            Trabajo</h2>
+        <p style="color: #94a3b8; margin-bottom: 2rem; margin-top: -1rem; font-size: 1.05rem;">Así es como funciona en
+            la
+            vida real. Tu trabajo será <strong style="color: #e2e8f0;">tomar las decisiones importantes</strong>,
+            mientras <strong style="color: #e2e8f0;">la tecnología se encarga</strong> de las tareas repetitivas y
+            aburridas.</p>
+
+        <div class="evolution-grid">
+            <!-- Tarjeta 2a: El Nuevo Stack Operativo -->
+            <div class="evo-card">
+                <img src="stack_operativo.png" alt="El Nuevo Stack Operativo con IA" class="context-image"
+                    loading="lazy">
+                <p class="new" style="color: #8b5cf6;">🏗️ Un Equipo de Una Persona</p>
+                <p class="desc"><strong>Antes:</strong> Necesitabas contratar a un diseñador, a alguien para las redes,
+                    a
+                    un vendedor y a alguien para responder mensajes. Eso significaba pagar muchos sueldos y tener
+                    dolores de
+                    cabeza coordinando a todos.<br><br><strong>Ahora:</strong> Tu equipo de trabajo es simple:
+                    <strong>Tú (el dueño que dirige)</strong> + una Inteligencia Artificial que trabaja como tu
+                    asistente
+                    incansable. Haces mucho más, mucho más rápido, y por una fracción de lo que costaría pagar sueldos
+                    fijos.
+                </p>
+                <div class="evo-svg-container">
+                    <svg viewBox="0 0 200 120" width="100%" height="100%">
+                        <!-- Viejo equipo (tachado) -->
+                        <text x="30" y="30" text-anchor="middle" font-size="12">👤👤👤👤👤</text>
+                        <line x1="5" y1="28" x2="55" y2="28" stroke="#ef4444" stroke-width="2">
+                            <animate attributeName="x2" from="5" to="55" dur="1s" fill="freeze" />
+                        </line>
+                        <text x="30" y="45" text-anchor="middle" fill="#64748b" font-size="9">5 salarios</text>
+
+                        <!-- Circuito Conector y Flecha -->
+                        <path d="M 65 30 L 95 30" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="4 4"
+                            style="animation: dataSync 1.5s linear infinite reverse;" />
+                        <text x="80" y="26" text-anchor="middle" font-size="14">→</text>
+
+                        <!-- Nuevo stack (El Cerebro / IA) -->
+                        <circle cx="125" cy="30" r="16" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"
+                            class="icon-pulse" />
+                        <text x="125" y="36" text-anchor="middle" font-size="14">🧠</text>
+
+                        <!-- Conexión entre Cerebro y Automatizador -->
+                        <path d="M 141 30 L 155 30" fill="none" stroke="#10b981" stroke-width="1.5"
+                            stroke-dasharray="2 2" style="animation: dataSync 1s linear infinite reverse;" />
+
+                        <!-- Automatizador (Engranaje) -->
+                        <circle cx="170" cy="30" r="12" fill="#1e293b" stroke="#10b981" stroke-width="2" />
+                        <text x="170" y="34" text-anchor="middle" font-size="10">⚙️</text>
+                        <!-- Engranaje rotando -->
+                        <path d="M 170 16 L 170 18 M 170 42 L 170 44 M 156 30 L 158 30 M 182 30 L 184 30" fill="none"
+                            stroke="#10b981" stroke-width="2">
+                            <animateTransform attributeName="transform" type="rotate" from="0 170 30" to="360 170 30"
+                                dur="4s" repeatCount="indefinite" />
+                        </path>
+
+                        <!-- Outputs generados -->
+                        <path d="M 125 46 L 125 70" fill="none" stroke="#8b5cf6" stroke-width="1.5"
+                            stroke-dasharray="3 3" style="animation: dataSync 1.5s linear infinite;" />
+                        <path d="M 170 42 L 170 70" fill="none" stroke="#10b981" stroke-width="1.5"
+                            stroke-dasharray="3 3" style="animation: dataSync 1.5s linear infinite;" />
+
+                        <!-- Nodo central de resultados -->
+                        <circle cx="147.5" cy="70" r="4" fill="#60a5fa" class="icon-pulse" />
+
+                        <text x="147.5" y="85" text-anchor="middle" fill="#8b5cf6" font-size="9" font-weight="600">Tú +
+                            Tu Asistente Digital</text>
+                        <!-- Costo -->
+                        <text x="100" y="105" text-anchor="middle" fill="#8b5cf6" font-size="10" font-weight="600">Mucho
+                            más barato, mucho más rápido</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2b: Un Día en la Vida -->
+            <div class="evo-card">
+                <img src="dia_automatizado.png" alt="Tu negocio opera mientras duermes" class="context-image"
+                    loading="lazy">
+                <p class="new" style="color: #10b981;">🛌 Un Día en tu Nueva Vida</p>
+                <p class="desc"><strong>02:00 AM</strong> — Tu asistente en internet busca clientes interesados mientras
+                    duermes.<br><strong>05:00 AM</strong> — Alguien curioso escribe. Tu asistente le contesta rápido,
+                    amable,
+                    resuelve sus dudas y cierra la venta.<br><strong>08:00 AM</strong> — Te despiertas. Miras tu celular
+                    y
+                    ves que hay dinero nuevo de ventas que entraron de noche.<br><br>Tu única tarea del día:
+                    <strong>atender bien a los
+                        clientes</strong> y asegurarte de tener un producto excelente. La tecnología se encarga del
+                    marketing.
+                </p>
+                <div class="evo-svg-container">
+                    <svg viewBox="0 0 200 120" width="100%" height="100%">
+                        <!-- Timeline base -->
+                        <line x1="20" y1="50" x2="180" y2="50" stroke="#334155" stroke-width="2" />
+
+                        <!-- Timeline Activo (animado) -->
+                        <line x1="20" y1="50" x2="180" y2="50" stroke="#10b981" stroke-width="2" stroke-dasharray="160"
+                            stroke-dashoffset="160">
+                            <animate attributeName="stroke-dashoffset" values="160;0;160" dur="6s"
+                                repeatCount="indefinite" />
+                        </line>
+
+                        <!-- Puntos de tiempo -->
+                        <!-- 02:00 -->
+                        <circle cx="40" cy="50" r="12" fill="#1e293b" stroke="#10b981" stroke-width="2"
+                            class="icon-pulse" style="animation-duration: 2s;" />
+                        <text x="40" y="54" text-anchor="middle" font-size="10">🌙</text>
+                        <text x="40" y="32" text-anchor="middle" fill="#64748b" font-size="8">02:00 AM</text>
+                        <text x="40" y="70" text-anchor="middle" fill="#10b981" font-size="7">Buscando Clientes</text>
+
+                        <!-- 05:00 -->
+                        <circle cx="100" cy="50" r="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"
+                            class="icon-pulse" style="animation-duration: 2.5s;" />
+                        <text x="100" y="54" text-anchor="middle" font-size="10">💬</text>
+                        <text x="100" y="32" text-anchor="middle" fill="#64748b" font-size="8">05:00 AM</text>
+                        <text x="100" y="70" text-anchor="middle" fill="#3b82f6" font-size="7">Venta Creada</text>
+
+                        <!-- 08:00 -->
+                        <circle cx="160" cy="50" r="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"
+                            class="icon-pulse" style="animation-duration: 3s;" />
+                        <text x="160" y="54" text-anchor="middle" font-size="10">💰</text>
+                        <text x="160" y="32" text-anchor="middle" fill="#64748b" font-size="8">08:00 AM</text>
+                        <text x="160" y="70" text-anchor="middle" fill="#f59e0b" font-size="7">Cobro Listo</text>
+
+                        <!-- Tú despertando -->
+                        <circle cx="100" cy="98" r="10" fill="#10b981" class="icon-float" />
+                        <text x="100" y="102" text-anchor="middle" fill="#fff" font-size="10">😎</text>
+
+                        <path d="M 150 65 L 115 90" fill="none" stroke="#10b981" stroke-width="1.5"
+                            stroke-dasharray="2 2" style="animation: dataSync 1s linear infinite reverse;" />
+
+                        <text x="100" y="115" text-anchor="middle" fill="#10b981" font-size="8" font-weight="600">Tú te
+                            despiertas y ves el reporte</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2c: Máquina vs Humano -->
+            <div class="evo-card">
+                <img src="humano_vs_maquina.png" alt="Colaboración Humano e IA" class="context-image" loading="lazy">
+                <p class="new" style="color: #f43f5e;">⚔️ Qué haces Tú y qué hace el Software</p>
+                <p class="desc"><strong>El Software se encarga de:</strong> Responder las preguntas de siempre, buscar
+                    nuevos clientes en internet, mandar recordatorios por chat y cobrar de manera
+                    automática.<br><br><strong>Tú te encargas de:</strong> Ser la cara de tu negocio, aportar la
+                    creatividad,
+                    garantizar que tu servicio sea espectacular y cerrar en persona las reuniones que requieren ese
+                    toque
+                    puramente humano y de confianza.</p>
+                <div class="evo-svg-container">
+                    <svg viewBox="0 0 200 120" width="100%" height="100%">
+                        <!-- Lado IA -->
+                        <rect x="5" y="15" width="88" height="75" rx="8" fill="#1e293b" stroke="#f43f5e"
+                            stroke-width="1.5" />
+                        <circle cx="49" cy="35" r="12" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"
+                            class="icon-pulse" />
+                        <text x="49" y="39" text-anchor="middle" font-size="12">🤖</text>
+                        <text x="49" y="58" text-anchor="middle" fill="#f43f5e" font-size="8" font-weight="600">EL
+                            SOFTWARE</text>
+                        <text x="49" y="70" text-anchor="middle" fill="#94a3b8" font-size="6.5">Tareas
+                            repetitivas</text>
+                        <text x="49" y="80" text-anchor="middle" fill="#94a3b8" font-size="6.5">Trabaja 24 horas</text>
+
+                        <!-- Lado Humano -->
+                        <rect x="107" y="15" width="88" height="75" rx="8" fill="#1e293b" stroke="#eab308"
+                            stroke-width="1.5" />
+                        <circle cx="151" cy="35" r="12" fill="#1e293b" stroke="#eab308" stroke-width="1.5"
+                            class="icon-float" />
+                        <text x="151" y="39" text-anchor="middle" font-size="12">🧑‍💼</text>
+                        <text x="151" y="58" text-anchor="middle" fill="#eab308" font-size="8" font-weight="600">TÚ
+                            (EL DUEÑO)</text>
+                        <text x="151" y="70" text-anchor="middle" fill="#94a3b8" font-size="6.5">Tomar decisiones</text>
+                        <text x="151" y="80" text-anchor="middle" fill="#94a3b8" font-size="6.5">Aportar lo
+                            humano</text>
+
+                        <!-- Interfaz de colaboración (Centro) -->
+                        <line x1="100" y1="10" x2="100" y2="90" stroke="#334155" stroke-width="1"
+                            stroke-dasharray="2 2" />
+
+                        <!-- Flujo de datos máquina -> humano (Reportes/Insight) -->
+                        <path d="M 85 40 L 115 40" fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="3 3"
+                            style="animation: dataSync 1s linear infinite reverse;" />
+                        <text x="100" y="37" text-anchor="middle" font-size="8">📊</text>
+
+                        <!-- Flujo de datos humano -> máquina (Estrategia/Directrices) -->
+                        <path d="M 115 65 L 85 65" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="3 3"
+                            style="animation: dataSync 1s linear infinite reverse;" />
+                        <text x="100" y="75" text-anchor="middle" font-size="8">🎯</text>
+
+                        <!-- Etiqueta -->
+                        <text x="100" y="108" text-anchor="middle" fill="#e2e8f0" font-size="9" font-weight="600">Tú
+                            diriges. La máquina ejecuta.</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 3: Arquitectura de Datos y Sistemas -->
+    <section>
+        <h2 class="section-title"><span class="section-number">3</span> Arquitectura de Datos: El Motor Bajo el Capó
+        </h2>
+        <p style="color: #94a3b8; margin-bottom: 2rem; margin-top: -1rem; font-size: 1.05rem;">El marketing moderno no
+            es un cartel en la calle; es un <strong style="color: #e2e8f0;">sistema interconectado de datos</strong>.
+            Así es como la información fluye por las tuberías de tu negocio.</p>
+
+        <div class="evolution-grid">
+            <!-- Tarjeta 3a: Captura de Señales -->
+            <div class="evo-card">
+                <img src="captura_senales.png" alt="Captura de Señales y Trackeo" class="context-image" loading="lazy">
+                <p class="new" style="color: #06b6d4;">📡 1. Captura de Señales (El Radar)</p>
+                <p class="desc"><strong>Antes:</strong> Rezabas para que la persona que vio tu publicidad se animara a
+                    escribirte. Si alguien veía tu anuncio, dudaba y cerraba el teléfono, lo perdías para
+                    siempre.<br><br><strong>Ahora:</strong> Es como tener un "radar silencioso". El sistema detecta
+                    automáticamente a las personas que mostraron interés (por ejemplo, quién se quedó mirando completo
+                    tu video). Los anota discretamente y les vuelve a mostrar tu negocio al día siguiente para
+                    convencerlos, sin que tengas que pagar una publicidad nueva.</p>
+                <div class="evo-svg-container">
+                    <svg viewBox="0 0 200 120" width="100%" height="100%">
+                        <!-- Orígenes (Tráfico y Redes) -->
+                        <rect x="20" y="20" width="24" height="24" rx="4" fill="#1e293b" stroke="#3b82f6"
+                            stroke-width="1.5" class="icon-float" style="animation-duration: 2s;" />
+                        <text x="32" y="36" text-anchor="middle" font-size="12">👍</text>
+
+                        <rect x="20" y="50" width="24" height="24" rx="4" fill="#1e293b" stroke="#ec4899"
+                            stroke-width="1.5" class="icon-float" style="animation-duration: 3s;" />
+                        <text x="32" y="66" text-anchor="middle" font-size="12">▶️</text>
+
+                        <rect x="20" y="80" width="24" height="24" rx="4" fill="#1e293b" stroke="#8b5cf6"
+                            stroke-width="1.5" class="icon-float" style="animation-duration: 2.5s;" />
+                        <text x="32" y="96" text-anchor="middle" font-size="12">🖱️</text>
+
+                        <!-- Flujos de data bruta -->
+                        <path d="M 44 32 Q 70 32 90 62" fill="none" stroke="#64748b" stroke-width="1.5"
+                            stroke-dasharray="3 3" style="animation: dataSync 1s linear infinite reverse;" />
+                        <path d="M 44 62 L 90 62" fill="none" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3 3"
+                            style="animation: dataSync 1.2s linear infinite reverse;" />
+                        <path d="M 44 92 Q 70 92 90 62" fill="none" stroke="#64748b" stroke-width="1.5"
+                            stroke-dasharray="3 3" style="animation: dataSync 1.5s linear infinite reverse;" />
+
+                        <!-- Radar central (Embudo/Captura) -->
+                        <path d="M 85 45 L 85 79 L 115 65 Z" fill="#1e293b" stroke="#06b6d4" stroke-width="2"
+                            class="icon-pulse" />
+
+                        <!-- Flujo consolidado a la Base de Datos -->
+                        <path d="M 115 62 L 155 62" fill="none" stroke="#06b6d4" stroke-width="2.5"
+                            stroke-dasharray="4 4" style="animation: dataSync 1.5s linear infinite reverse;" />
+
+                        <!-- Base de Datos -->
+                        <path d="M 155 52 Q 170 47 185 52 L 185 72 Q 170 77 155 72 Z" fill="#1e293b" stroke="#0ea5e9"
+                            stroke-width="2" />
+                        <path d="M 155 52 Q 170 57 185 52" fill="none" stroke="#0ea5e9" stroke-width="2" />
+                        <text x="170" y="95" text-anchor="middle" fill="#0ea5e9" font-size="7" font-weight="600">Base
+                            Central (Data)</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3b: Cualificación en Tiempo Real -->
+            <div class="evo-card">
+                <img src="cualificacion_ia.png" alt="Cualificación de Leads con Inteligencia Artificial"
+                    class="context-image" loading="lazy">
+                <p class="new" style="color: #8b5cf6;">🧠 2. Cualificación Instantánea (El Filtro)</p>
+                <p class="desc"><strong>Antes:</strong> Tú o un empleado perdían 4 horas al día pegados al celular
+                    respondiendo "precio por favor" o "info" a decenas de curiosos que jamás te iban a
+                    comprar.<br><br><strong>Ahora:</strong> Colocamos a un "Recepcionista Virtual Inteligente" por ti.
+                    Atiende a todos de inmediato, responde de qué trata el menú o los horarios en milisegundos.
+                    Automáticamente ignora a los curiosos y solo le avisa a tu teléfono cuando encuentra a alguien
+                    diciendo: "Estoy listo, ¿dónde pago?".</p>
+                <div class="evo-svg-container">
+                    <svg viewBox="0 0 200 120" width="100%" height="100%">
+                        <!-- Data mezclada (Leads fríos y calientes) -->
+                        <circle cx="20" cy="40" r="4" fill="#64748b" /> <!-- Frío -->
+                        <circle cx="20" cy="80" r="4" fill="#f59e0b" /> <!-- Caliente -->
+                        <circle cx="40" cy="60" r="4" fill="#64748b" /> <!-- Frío -->
+
+                        <path d="M 25 40 L 75 55" fill="none" stroke="#334155" stroke-width="1.5"
+                            stroke-dasharray="2 2" />
+                        <path d="M 45 60 L 75 60" fill="none" stroke="#334155" stroke-width="1.5"
+                            stroke-dasharray="2 2" />
+                        <path d="M 25 80 L 75 65" fill="none" stroke="#334155" stroke-width="1.5"
+                            stroke-dasharray="2 2" />
+
+                        <!-- Filtro Central IA -->
+                        <rect x="75" y="35" width="50" height="50" rx="8" fill="#1e293b" stroke="#8b5cf6"
+                            stroke-width="2" class="icon-pulse" />
+                        <text x="100" y="66" text-anchor="middle" font-size="20">🤖</text>
+                        <text x="100" y="98" text-anchor="middle" fill="#8b5cf6" font-size="7" font-weight="600">Scoring
+                            en 0.5s</text>
+
+                        <!-- Rechazo de leads fríos -->
+                        <path d="M 125 45 L 155 25" fill="none" stroke="#ef4444" stroke-width="1.5"
+                            stroke-dasharray="3 3" style="animation: dataSync 1s linear infinite;" />
+                        <circle cx="160" cy="22" r="6" fill="#1e293b" stroke="#ef4444" stroke-width="1" />
+                        <text x="160" y="25" text-anchor="middle" fill="#ef4444" font-size="8">🗑️</text>
+
+                        <!-- Flujo de lead cualificado al Humano -->
+                        <path d="M 125 70 L 155 85" fill="none" stroke="#10b981" stroke-width="2.5"
+                            stroke-dasharray="4 4" style="animation: dataSync 1.5s linear infinite reverse;" />
+                        <circle cx="165" cy="85" r="14" fill="#1e293b" stroke="#10b981" stroke-width="2"
+                            class="icon-float" />
+                        <text x="165" y="90" text-anchor="middle" font-size="14">🧑‍💼</text>
+                        <text x="165" y="112" text-anchor="middle" fill="#10b981" font-size="7" font-weight="600">Venta
+                            Lista</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3c: Activación Omnicanal -->
+            <div class="evo-card">
+                <img src="activacion_omnicanal.png" alt="Activación Omnicanal Automatizada" class="context-image"
+                    loading="lazy">
+                <p class="new" style="color: #ec4899;">🚀 3. Activación Omnicanal (La Ejecución)</p>
+                <p class="desc"><strong>Antes:</strong> Hacer seguimiento a la gente era manual y molesto. Terminabas
+                    mandando cadenas masivas por WhatsApp para que la gente regresara, y te terminaban bloqueando el
+                    número.<br><br><strong>Ahora:</strong> Tienes un "Supervisor de Ventas" en piloto automático. Si un
+                    cliente te escribe hoy preguntando por un tour y al final no compra nada, el sistema le escribe solo
+                    a las 2 horas preguntando si tiene alguna duda. O si hace un mes que vino a tu local, le manda un
+                    mensajito especial invitándolo a volver. Sigues vendiendo 24/7 sin tocar el celular.</p>
+                <div class="evo-svg-container">
+                    <svg viewBox="0 0 200 120" width="100%" height="100%">
+                        <!-- Regla / Trigger Central -->
+                        <circle cx="50" cy="60" r="18" fill="#1e293b" stroke="#ec4899" stroke-width="2"
+                            class="icon-pulse" />
+                        <text x="50" y="66" text-anchor="middle" font-size="16">⚙️</text>
+                        <text x="50" y="92" text-anchor="middle" fill="#ec4899" font-size="7"
+                            font-weight="600">Disparador (Trigger)</text>
+
+                        <!-- Rutas Omnicanal -->
+                        <path d="M 68 50 Q 100 25 145 25" fill="none" stroke="#10b981" stroke-width="2"
+                            stroke-dasharray="3 3" style="animation: dataSync 1.5s linear infinite reverse;" />
+                        <path d="M 68 60 L 145 60" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="3 3"
+                            style="animation: dataSync 1s linear infinite reverse;" />
+                        <path d="M 68 70 Q 100 95 145 95" fill="none" stroke="#3b82f6" stroke-width="2"
+                            stroke-dasharray="3 3" style="animation: dataSync 2s linear infinite reverse;" />
+
+                        <!-- Nodos (WhatsApp, Email, SMS) -->
+                        <circle cx="155" cy="25" r="12" fill="#1e293b" stroke="#10b981" stroke-width="1.5"
+                            class="icon-float" style="animation-duration: 2s;" />
+                        <text x="155" y="29" text-anchor="middle" font-size="10">💬</text>
+                        <text x="180" y="28" text-anchor="start" fill="#10b981" font-size="6">WhatsApp</text>
+
+                        <circle cx="155" cy="60" r="12" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"
+                            class="icon-float" style="animation-duration: 3s;" />
+                        <text x="155" y="64" text-anchor="middle" font-size="10">✉️</text>
+                        <text x="180" y="63" text-anchor="start" fill="#f59e0b" font-size="6">Email Automático</text>
+
+                        <circle cx="155" cy="95" r="12" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"
+                            class="icon-float" style="animation-duration: 2.5s;" />
+                        <text x="155" y="99" text-anchor="middle" font-size="10">🌐</text>
+                        <text x="180" y="98" text-anchor="start" fill="#3b82f6" font-size="6">Audiencia Meta</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 4: Mitos y Verdades de la IA en WhatsApp (2026) -->
+    <section>
+        <h2 class="section-title"><span class="section-number">4</span> Mitos y Verdades de la IA en WhatsApp (2026)
+        </h2>
+        <p style="color: #94a3b8; margin-bottom: 2rem; margin-top: -1rem; font-size: 1.05rem;">
+            Se ha dicho mucho sobre "conectar ChatGPT a WhatsApp". Aquí tienes exactamente lo que funciona, lo que está
+            prohibido, y cómo la industria de la automatización conversacional maduró para este año.
+        </p>
+
+        <div class="evolution-grid">
+            <!-- Mito ChatGPT Plus -->
+            <div class="evo-card" style="border-color: #ef4444;">
+                <h3 style="color: #ef4444;">❌ El Mito: Conectar "ChatGPT Plus"</h3>
+                <p><strong>Lo que se creía:</strong> Que pagando la mensualidad de ChatGPT Plus (app de usuario de
+                    OpenAI) podías enlazarla a tu número de WhatsApp personal y que respondiera como si fueras tú
+                    hablando de todo el universo.</p>
+                <div class="evo-svg-container" style="height: 150px; margin-bottom: 1.5rem;">
+                    <svg viewBox="0 0 200 120" width="100%" height="100%">
+                        <!-- Teléfono WhatsApp Personal -->
+                        <rect x="30" y="30" width="40" height="60" rx="6" fill="#1e293b" stroke="#64748b"
+                            stroke-width="2" />
+                        <text x="50" y="65" text-anchor="middle" font-size="16">📵</text>
+                        <!-- IA Bloqueada -->
+                        <path d="M 80 60 L 120 60" fill="none" stroke="#ef4444" stroke-width="2"
+                            stroke-dasharray="4 4" />
+                        <circle cx="100" cy="60" r="8" fill="#ef4444" />
+                        <text x="100" y="64" text-anchor="middle" fill="#fff" font-size="10">X</text>
+
+                        <rect x="130" y="30" width="40" height="60" rx="6" fill="#1e293b" stroke="#10a37f"
+                            stroke-width="2" />
+                        <text x="150" y="65" text-anchor="middle" font-size="16">🤖</text>
+
+                        <text x="100" y="105" text-anchor="middle" fill="#ef4444" font-size="9"
+                            font-weight="bold">Integración Cerrada por Meta</text>
+                    </svg>
+                </div>
+                <p class="desc"><strong>La Realidad:</strong> WhatsApp pertenece a Meta, y prohibieron tajantemente los
+                    "asistentes de charla general (charlas sobre la vida)" de terceros. A principios de año, OpenAI tuvo
+                    que desconectar su integración nativa pública con WhatsApp.</p>
+            </div>
+
+            <!-- Meta AI Nativo -->
+            <div class="evo-card" style="border-color: #3b82f6;">
+                <h3 style="color: #3b82f6;">🧬 La Jugada de Meta: Meta AI Business</h3>
+                <p><strong>Lo Oficial:</strong> Meta quiere ser dueño del mercado, así que introdujo sus propios
+                    "**Agentes Meta AI**" directamente dentro de la app oficial de WhatsApp Business. No requieren
+                    programar ni pagar otras licencias.</p>
+                <div class="evo-svg-container" style="height: 150px; margin-bottom: 1.5rem;">
+                    <svg viewBox="0 0 200 120" width="100%" height="100%">
+                        <!-- App WA Business -->
+                        <circle cx="50" cy="60" r="20" fill="#1e293b" stroke="#25d366" stroke-width="2" />
+                        <text x="50" y="65" text-anchor="middle" font-size="16">💬</text>
+                        <text x="50" y="95" text-anchor="middle" fill="#25d366" font-size="8">WA Business</text>
+
+                        <path d="M 75 60 L 125 60" fill="none" stroke="#3b82f6" stroke-width="2"
+                            style="animation: dataSync 1.5s linear infinite reverse;" />
+
+                        <!-- Llama a Meta AI -->
+                        <circle cx="150" cy="60" r="22" fill="#1e293b" stroke="#3b82f6" stroke-width="2"
+                            class="icon-pulse" />
+                        <text x="150" y="65" text-anchor="middle" font-size="14">🧠</text>
+                        <text x="150" y="95" text-anchor="middle" fill="#3b82f6" font-size="8">Meta AI</text>
+                    </svg>
+                </div>
+                <p class="desc"><strong>Qué hacen:</strong> Estos agentes leen tu catálogo y responden automáticamente
+                    preguntas frecuentes de los clientes ("¿Qué precio tiene?", "¿Hacen envíos?"). Son gratis, pero
+                    <strong>no</strong> son personalizables a fondo ni interactúan en base a datos profundos de ventas.
+                    Son una curita rápida muy útil para el negocio pequeño.
+                </p>
+            </div>
+
+            <!-- ManyChat + API -->
+            <div class="evo-card" style="border-color: #10b981;">
+                <h3 style="color: #10b981;">🛠️ La Vía Profesional: API + Tareas (ManyChat)</h3>
+                <p><strong>Lo Permitido:</strong> Aunque prohibieron los bots "charladores libres", Meta <strong>SÍ
+                        permite</strong> integrar ChatGPT mediante plataformas terciarias (ManyChat) siempre y cuando el
+                    bot tenga un <strong>propósito de negocio estricto</strong> (ventas, soporte, citas).</p>
+                <div class="evo-svg-container" style="height: 150px; margin-bottom: 1.5rem;">
+                    <svg viewBox="0 0 200 120" width="100%" height="100%">
+                        <!-- Cliente -->
+                        <circle cx="40" cy="60" r="16" fill="#1e293b" stroke="#64748b" stroke-width="2" />
+                        <text x="40" y="64" text-anchor="middle" font-size="12">👤</text>
+
+                        <!-- Conversión de Flujo ManyChat -->
+                        <path d="M 60 40 L 95 40" fill="none" stroke="#10b981" stroke-width="1.5"
+                            stroke-dasharray="2 2" />
+                        <path d="M 60 80 L 95 80" fill="none" stroke="#10b981" stroke-width="1.5"
+                            stroke-dasharray="2 2" />
+
+                        <!-- ManyChat + API OpenAI -->
+                        <rect x="95" y="30" width="65" height="60" rx="8" fill="#1e293b" stroke="#10b981"
+                            stroke-width="2" />
+                        <text x="127.5" y="55" text-anchor="middle" font-size="16">👾 + 🧠</text>
+                        <text x="127.5" y="75" text-anchor="middle" fill="#10b981" font-size="8">Ventas (API)</text>
+
+                        <!-- Calificado -->
+                        <path d="M 165 60 L 195 60" fill="none" stroke="#f59e0b" stroke-width="2" class="path-active" />
+                        <text x="210" y="65" text-anchor="middle" font-size="14">💰</text>
+                    </svg>
+                </div>
+                <p class="desc"><strong>Qué hacen:</strong> Aquí no usas la app de ChatGPT Plus. Conectas la cuenta de
+                    desarrollador (OpenAI API) a <strong>ManyChat</strong>. Le subes tu material de ventas en PDF y le
+                    das la orden estricta: "Eres un cerrador de ventas experto. Toma los datos del cliente y cobra".
+                    Esto es 100% legal bajo las nuevas normas, ya que el modelo de IA no divaga, sino ejecuta una tarea
+                    comercial específica para calificar al cliente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 5: Funcionalidades de ManyChat -->
+    <section>
+        <h2 class="section-title"><span class="section-number">5</span> El Arsenal de ManyChat (SOTA 2026)</h2>
+        <p style="color: #94a3b8; margin-bottom: 2rem; margin-top: -1rem; font-size: 1.05rem;">
+            Si decides irte por la vía profesional, ManyChat no es solo un bot que dice "Hola", es un ecosistema
+            completo de conversión de leads diseñado para no perder ni un centavo en la mesa.
+        </p>
+
+        <div class="stack-grid">
+            <!-- Funcionalidad 1 -->
+            <div class="stack-card">
+                <h3>💬 1. Automatización "Comment-to-DM"</h3>
+                <p>El motor de crecimiento más salvaje de 2025/2026. Subes un Reel a Instagram o TikTok y dices:
+                    <em>"Comenta la palabra PDF y te mando el libro"</em>.
+                </p>
+                <p style="color: #94a3b8; font-size: 0.9rem;">ManyChat detecta la palabra exacta en los comentarios
+                    públicos, le da "Me gusta" al comentario y automáticamente le dispara un mensaje privado (DM) al
+                    usuario con el archivo o el enlace. Es tráfico orgánico convertido instantáneamente en base de
+                    datos.</p>
+            </div>
+
+            <!-- Funcionalidad 2 -->
+            <div class="stack-card">
+                <h3>🧩 2. Visual Flow Builder (Sin Código)</h3>
+                <p>No necesitas ser un ingeniero de software para crear un bot. ManyChat utiliza un sistema visual de
+                    "cajas y flechas" (Drag-and-Drop).</p>
+                <p style="color: #94a3b8; font-size: 0.9rem;">Tú diseñas literalmente un mapa mental. Si el usuario
+                    presiona el botón "Precios", la flecha lo lleva a un bloque que le muestra el catálogo. Si presiona
+                    "Hablar con humano", se pausa la IA y te notifica en tu celular.</p>
+            </div>
+
+            <!-- Funcionalidad 3 -->
+            <div class="stack-card">
+                <h3>🧠 3. Integración en "1 click" con ChatGPT</h3>
+                <p>Dentro del constructor visual de ManyChat, existe un bloque nativo exclusivo para OpenAI.</p>
+                <p style="color: #94a3b8; font-size: 0.9rem;">En lugar de armar miles de respuestas posibles, puedes
+                    pasarle la respuesta del usuario a la IA. La configuras dándole "Reglas del Sistema" (ej. "Eres el
+                    vendedor de mi marca X, responde en tono amigable, máx. 3 renglones") y la IA responde dinámicamente
+                    según el contexto de la charla y tu base de conocimientos.</p>
+            </div>
+
+            <!-- Funcionalidad 4 -->
+            <div class="stack-card">
+                <h3>📲 4. Live Chat (Inbox Unificado) y CRM</h3>
+                <p>¿Qué pasa cuando la IA no puede resolver algo o es una queja delicada?</p>
+                <p style="color: #94a3b8; font-size: 0.9rem;">ManyChat incluye un "Inbox Central". Allí recibes los
+                    mensajes de Instagram, WhatsApp y Messenger <strong>en una sola pantalla</strong>. Puedes asignarle
+                    etiquetas automáticas a los clientes (Ej: "Cliente Caliente", "Venta Cerrada", "Compró Playera
+                    Azul") creando un Mini-CRM para segmentar futuras campañas y retomar el control manual humano al
+                    instante.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 6: Restricciones de WhatsApp Business -->
+    <section>
+        <h2 class="section-title"><span class="section-number">6</span> El Fin de la App Gratuita: La era API (2026)
+        </h2>
+        <div class="highlight-box"
+            style="border-left-color: #ef4444; background: linear-gradient(90deg, rgba(239, 68, 68, 0.1), rgba(15, 23, 42, 0.1)); margin-top: 0;">
+            <p>
+                Meta se ha dado cuenta de que no generaba ingresos con la versión gratuita de <strong>WhatsApp
+                    Business</strong> que usas en tu teléfono. A partir de 2025/2026, comenzaron a asfixiar la
+                aplicación normal y a empujar forzosamente a todas las empresas a usar la <strong>WhatsApp Cloud
+                    API</strong> (Tubería de datos oficial).
+            </p>
+        </div>
+
+        <div class="grid-2" style="margin-top: 2rem;">
+            <div class="card" style="border-color: #334155;">
+                <h3 style="color: #cbd5e1;">📱 WhatsApp Business (La App Normal)</h3>
+                <ul>
+                    <li><strong style="color:#ef4444;">Listas de Difusión Muertas:</strong> Sigues limitado a 256
+                        contactos, y si el cliente no te tiene agendado, el mensaje nunca le llega (80% de esfuerzo
+                        tirado a la basura).</li>
+                    <li><strong style="color:#ef4444;">Caos de Multi-Agente:</strong> Si 3 personas intentan usar tu
+                        mismo número desde la versión web, se cae, se pierden chats y no hay control de calidad.</li>
+                    <li><strong style="color:#ef4444;">Sin IA Verdadera:</strong> Imposible conectarle chatbots
+                        avanzados de cierre, solo mensajes automáticos de "Ausencia".</li>
+                </ul>
+            </div>
+
+            <div class="card" style="border-color: #10b981;">
+                <h3 style="color: #10b981;">☁️ WhatsApp Cloud API (+ ManyChat)</h3>
+                <ul>
+                    <li><strong style="color:#10b981;">Sin Límites Absurdos:</strong> Permite enviar mensajes masivos
+                        promocionales (Newsletter) a miles de clientes al día, garantizando la entrega, tengan o no tu
+                        número guardado.</li>
+                    <li><strong style="color:#10b981;">Botones Interactivos:</strong> Mandar botones nativos clickeables
+                        y catálogos directamente en la charla, aumentando el % de conversión en un 40%.</li>
+                    <li><strong style="color:#10b981;">El Precio del Juego:</strong> Meta te cobra un micro-centavo por
+                        cada mensaje promocional (Marketing) que envíes, pero los mensajes de servicio al cliente te los
+                        regalan. Es el precio de jugar en modo Enterprise.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 7: Prompt Engineering -->
+    <section>
+        <h2 class="section-title"><span class="section-number">7</span> El "Prompt" Maestro del Agente Cerrador</h2>
+        <p style="color: #94a3b8; font-size: 1.05rem; margin-top: -1rem; margin-bottom: 2rem;">
+            No basta con conectar OpenAI a tu WhatsApp. Si lo haces sin reglas, la IA divagará. Aquí tienes documentada
+            la arquitectura real (System Prompt) que utilizamos en el Nodo Místico de ManyChat para blindar al bot y
+            convertirlo en un persuasor enfocado en mitigar el dolor del pago.
+        </p>
+
+        <div
+            style="background: #1e293b; border-radius: 0.75rem; border: 1px solid #334155; padding: 1.5rem; overflow-x: auto;">
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444;"></div>
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b;"></div>
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #10b981;"></div>
+            </div>
+            <pre
+                style="color: #a78bfa; font-family: 'Courier New', monospace; font-size: 0.9rem; margin: 0; line-height: 1.5; white-space: pre-wrap;">
+<span style="color: #38bdf8; font-weight: bold;"># ROL Y OBJETIVO</span>
+Eres "Alex", el cerrador de ventas estrella (High-Ticket Closer) de nuestra marca. Operas a través de WhatsApp. Tu único objetivo es calificar al "Lead", resolver sus objeciones de forma concisa y llevarlo a realizar el pago. Eres un experto en persuadir, generar urgencia sutil y cerrar tratos.
+
+<span style="color: #38bdf8; font-weight: bold;"># PSICOLOGÍA Y TONO (REGLAS DE ORO)</span>
+<span style="color: #fca5a5;">1. DIRECTO Y AL GRANO:</span> En WhatsApp, la gente no lee párrafos largos. Usa un máximo de 3 a 4 oraciones cortas por mensaje.
+<span style="color: #fca5a5;">2. MITIGAR EL "DOLOR DEL PAGO":</span> Nunca enmarques el precio como un "gasto". Enmárcalo como una "inversión" o resalta lo que pierden por NO tener el servicio hoy.
+<span style="color: #fca5a5;">3. PREGUNTAS DE CONTROL:</span> Termina SIEMPRE con una pregunta para dictar el ritmo de la charla (Ej: "¿Te envío el enlace de pago seguro?").
+<span style="color: #fca5a5;">4. CERO DIVAGACIONES:</span> Si el cliente pregunta cosas random, devuélvelo al embudo de venta.
+
+<span style="color: #38bdf8; font-weight: bold;"># FLUJO DE CALIFICACIÓN (EMBUDO DEL BOT)</span>
+Fase 1 - Descubrimiento: Pregunta cuál es su mayor desafío a resolver.
+Fase 2 - Presentación: Presenta la solución como un traje a la medida. Habla de beneficios, no características.
+Fase 3 - Cierre Inversivo: Presenta el precio e inmediatamente lanza la forma de pago.
+
+<span style="color: #38bdf8; font-weight: bold;"># MANEJO DE OBJECIONES</span>
+- Si dice <span style="color: #fbbf24;">"Es muy caro"</span>: "Entiendo, [Nombre]. Comparado con el costo de no resolver [Su Problema], esto se paga solo en X tiempo."
+- Si se frustra: Responde <span style="color: #ef4444; font-weight: bold;">"ENTREGAR_A_HUMANO"</span> (esto activará una regla en ManyChat para notificar al dueño y apagar la IA).</pre>
+        </div>
+    </section>
+
+    <section style="text-align: center; margin-top: 4rem;">
+        <a href="arquitectura_marketing_ia.html"
+            style="background: #3b82f6; color: white; padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: bold; display: inline-block;">Volver
+            a la Estrategia Principal</a>
+    </section>
+
+    <!-- Footer Economía IA -->
+    <footer
+        style="width: 100%; max-width: 1000px; margin: 3rem auto 0; padding: 1.2rem 1rem; border-top: 1px solid #1e293b; text-align: center;">
+        <div
+            style="display: flex; justify-content: center; align-items: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 0.6rem;">
+            <span style="color: #64748b; font-size: 0.8rem; font-weight: 600;">Economía IA</span>
+            <span style="color: #334155;">·</span>
+            <a href="https://www.tiktok.com/@economiaia" target="_blank" rel="noopener noreferrer"
+                style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; transition: color 0.2s;"
+                onmouseover="this.style.color='#ff0050';" onmouseout="this.style.color='#94a3b8';">🎵 @economiaia</a>
+            <span style="color: #334155;">·</span>
+            <a href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer"
+                style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; transition: color 0.2s;"
+                onmouseover="this.style.color='#8b5cf6';" onmouseout="this.style.color='#94a3b8';">🔗 Enlaces</a>
+            <span style="color: #334155;">·</span>
+            <a href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer"
+                style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; transition: color 0.2s;"
+                onmouseover="this.style.color='#10b981';" onmouseout="this.style.color='#94a3b8';">💼 Consultoría</a>
+        </div>
+        <p style="color: #334155; font-size: 0.7rem; margin: 0;">© 2026 Economía IA</p>
+    </footer>
+    </footer>
+
+</body>
+
+</html>
