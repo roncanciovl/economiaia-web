@@ -379,6 +379,20 @@
             transform: translateY(0);
         }
 
+        .node.active-drag .node-inner {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px var(--accent-glow);
+            border-color: #fff;
+        }
+
+        /* Hit area enhancement for mobile */
+        @media (pointer: coarse) {
+            .node {
+                padding: 15px;
+                /* Increase invisible hit area around the icon */
+            }
+        }
+
         /* Floating particles */
         #particles {
             position: absolute;
@@ -407,8 +421,8 @@
             }
 
             .center-node {
-                width: 90px;
-                height: 90px;
+                width: 80px;
+                height: 80px;
             }
 
             .center-node-icon {
@@ -416,8 +430,8 @@
             }
 
             .node {
-                width: 50px;
-                height: 50px;
+                width: 65px;
+                height: 65px;
             }
 
             .node-icon {
@@ -499,7 +513,9 @@
         let draggedOrbit = null;
         let startPointerAngle = 0;
         let startOrbitAngle = 0;
+        let startPointerPos = { x: 0, y: 0 };
         let dragMoved = false;
+        const DRAG_THRESHOLD = 10; // Pixels of movement before considering it a drag instead of a tap
 
         function getPointerAngle(e) {
             const centerNode = document.getElementById('centerNode');
@@ -518,24 +534,43 @@
             draggedOrbit = orbitData;
             startPointerAngle = getPointerAngle(e);
             startOrbitAngle = draggedOrbit.currentAngle;
+
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+            startPointerPos = { x: clientX, y: clientY };
+
             dragMoved = false;
             draggedOrbit.isDragging = true;
             document.body.style.cursor = 'grabbing';
-            orbitData.nodes.forEach(node => node.parentElement.style.cursor = 'grabbing');
+            orbitData.nodes.forEach(node => {
+                node.parentElement.style.cursor = 'grabbing';
+                node.parentElement.classList.add('active-drag');
+            });
         }
 
         function stopDrag() {
             if (draggedOrbit) {
-                draggedOrbit.nodes.forEach(node => node.parentElement.style.cursor = 'pointer');
+                draggedOrbit.nodes.forEach(node => {
+                    node.parentElement.style.cursor = 'pointer';
+                    node.parentElement.classList.remove('active-drag');
+                });
                 draggedOrbit.isDragging = false;
                 draggedOrbit = null;
                 document.body.style.cursor = 'default';
             }
         }
 
-        document.addEventListener('mousemove', (e) => {
+        function handleMove(e) {
             if (draggedOrbit) {
-                dragMoved = true;
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+                const dist = Math.sqrt(Math.pow(clientX - startPointerPos.x, 2) + Math.pow(clientY - startPointerPos.y, 2));
+
+                if (dist > DRAG_THRESHOLD) {
+                    dragMoved = true;
+                }
+
                 const currentPointerAngle = getPointerAngle(e);
                 let angleDelta = currentPointerAngle - startPointerAngle;
 
@@ -543,22 +578,14 @@
                 if (angleDelta < -Math.PI) angleDelta += 2 * Math.PI;
 
                 draggedOrbit.currentAngle = startOrbitAngle + angleDelta;
+
+                if (e.type === 'touchmove') e.preventDefault();
             }
-        });
+        }
+
+        document.addEventListener('mousemove', handleMove);
         document.addEventListener('mouseup', stopDrag);
-
-        document.addEventListener('touchmove', (e) => {
-            if (draggedOrbit) {
-                dragMoved = true;
-                const currentPointerAngle = getPointerAngle(e);
-                let angleDelta = currentPointerAngle - startPointerAngle;
-
-                if (angleDelta > Math.PI) angleDelta -= 2 * Math.PI;
-                if (angleDelta < -Math.PI) angleDelta += 2 * Math.PI;
-
-                draggedOrbit.currentAngle = startOrbitAngle + angleDelta;
-            }
-        }, { passive: false });
+        document.addEventListener('touchmove', handleMove, { passive: false });
         document.addEventListener('touchend', stopDrag);
 
         function initScene() {
