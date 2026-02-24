@@ -100,13 +100,17 @@
             position: relative;
             margin-bottom: 2rem;
             box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease, border-color 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: revealUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.7);
-            border-color: rgba(0, 242, 254, 0.3);
+            box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 242, 254, 0.1);
+            border-color: rgba(0, 242, 254, 0.4);
+            z-index: 10;
         }
 
         .card h2 {
@@ -142,22 +146,23 @@
         }
 
         .highlight-box {
-            background: rgba(15, 23, 42, 0.6);
+            background: rgba(15, 23, 42, 0.7);
             border-left: 4px solid;
             padding: 1.5rem;
             border-radius: 0 0.5rem 0.5rem 0;
             margin-top: 1rem;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background 0.3s ease;
         }
 
         .highlight-box:hover {
-            transform: translateX(5px);
+            transform: translateX(6px);
+            background: rgba(15, 23, 42, 0.95);
         }
 
         .svg-container {
             width: 100%;
             height: 350px;
-            background: #0f172a;
+            background: radial-gradient(circle at center, #1b2538 0%, #0f172a 100%);
             border-radius: 0.75rem;
             margin-top: 2rem;
             display: flex;
@@ -166,15 +171,176 @@
             overflow: hidden;
             border: 1px solid #334155;
             position: relative;
-            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
         }
 
         /* ===== ANIMATION SYSTEM ===== */
 
+        @keyframes revealUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.25s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .card:nth-child(4) {
+            animation-delay: 0.55s;
+        }
+
+        @keyframes scan {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(150px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes scanReverse {
+            0% {
+                transform: translateY(150px);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 8px rgba(255, 0, 80, 0.4));
+            }
+
+            50% {
+                transform: scale(1.08);
+                filter: drop-shadow(0 0 25px rgba(255, 0, 80, 0.9));
+            }
+        }
+
+        @keyframes pulseCyan {
+
+            0%,
+            100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.3));
+            }
+
+            50% {
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 20px rgba(0, 242, 254, 0.8));
+            }
+        }
+
+        @keyframes dataFlow {
+            to {
+                stroke-dashoffset: -20;
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @keyframes orbitCW {
+            from {
+                transform: rotate(0deg) translateX(40px) rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg) translateX(40px) rotate(-360deg);
+            }
+        }
+
+        @keyframes orbitCCW {
+            from {
+                transform: rotate(360deg) translateX(35px) rotate(-360deg);
+            }
+
+            to {
+                transform: rotate(0deg) translateX(35px) rotate(0deg);
+            }
+        }
+
+        /* Ambient glowing background elements */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 15% 30%, rgba(0, 242, 254, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 85% 70%, rgba(255, 0, 80, 0.03) 0%, transparent 40%);
+            z-index: -1;
+            pointer-events: none;
+        }
 
         /* Section headers glow */
         section h2[style*="border-bottom"] {
-            text-shadow: 0 0 30px rgba(0, 242, 254, 0.15);
+            text-shadow: 0 0 30px rgba(0, 242, 254, 0.2);
+        }
+
+        /* Specific SVG visual classes (using class to avoid repeating inline styles) */
+        .svg-pulse-red {
+            animation: pulse 2.5s infinite;
+        }
+
+        .svg-pulse-cyan {
+            animation: pulseCyan 3s infinite;
+        }
+
+        .svg-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .svg-glow-cyan {
+            filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.6));
+        }
+
+        .svg-glow-red {
+            filter: drop-shadow(0 0 10px rgba(255, 0, 80, 0.7));
         }
 
         /* Smooth transition for all SVG elements */
@@ -184,7 +350,7 @@
         svg path,
         svg polygon,
         svg line {
-            transition: opacity 0.3s ease;
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
     </style>
 </head>
@@ -234,40 +400,89 @@
                     </div>
                 </div>
 
-                <div class="svg-container" style="height: auto; min-height: 350px; margin-top: 0;">
+                <div class="svg-container">
                     <svg viewBox="0 0 300 300" width="100%" height="100%">
+                        <!-- Background ambient rings -->
+                        <circle cx="150" cy="110" r="80" fill="none" stroke="rgba(0,242,254,0.05)" stroke-width="1" />
+                        <circle cx="150" cy="110" r="95" fill="none" stroke="rgba(139,92,246,0.05)" stroke-width="0.5"
+                            stroke-dasharray="3 6">
+                            <animateTransform attributeName="transform" type="rotate" from="0 150 110" to="360 150 110"
+                                dur="40s" repeatCount="indefinite" />
+                        </circle>
+
                         <!-- Video Source (La Señal) -->
                         <rect x="110" y="40" width="80" height="120" rx="10" fill="#1e293b" stroke="#cbd5e1"
-                            stroke-width="2" style="animation: float 4s ease-in-out infinite;" />
-                        <polygon points="140,85 140,115 170,100" fill="#ff0050" style="animation: pulse 2s infinite;" />
-                        <text x="150" y="180" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">Tu
-                            Video</text>
+                            stroke-width="2" class="svg-float svg-glow-cyan" />
+                        <!-- Screen inner glow -->
+                        <rect x="115" y="48" width="70" height="104" rx="6" fill="rgba(0,242,254,0.03)"
+                            class="svg-float">
+                            <animate attributeName="fill"
+                                values="rgba(0,242,254,0.03);rgba(255,0,80,0.03);rgba(0,242,254,0.03)" dur="5s"
+                                repeatCount="indefinite" />
+                        </rect>
+                        <polygon points="140,85 140,115 170,100" fill="#ff0050" class="svg-float svg-pulse-red" />
+                        <text x="150" y="185" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold"
+                            class="svg-glow-cyan">Tu Video</text>
 
-                        <!-- AI Scanner Lines -->
-                        <line x1="90" y1="100" x2="210" y2="100" stroke="#00f2fe" stroke-width="2" opacity="0.8">
-                            <animate attributeName="y1" values="50;150;50" dur="3s" repeatCount="indefinite" />
-                            <animate attributeName="y2" values="50;150;50" dur="3s" repeatCount="indefinite" />
+                        <!-- AI Scanner Lines (Dual direction) -->
+                        <line x1="85" y1="100" x2="215" y2="100" stroke="#00f2fe" stroke-width="2" opacity="0.6"
+                            class="svg-glow-cyan">
+                            <animate attributeName="y1" values="45;155;45" dur="3s" repeatCount="indefinite" />
+                            <animate attributeName="y2" values="45;155;45" dur="3s" repeatCount="indefinite" />
+                        </line>
+                        <line x1="90" y1="100" x2="210" y2="100" stroke="#00f2fe" stroke-width="1" opacity="0.3">
+                            <animate attributeName="y1" values="155;45;155" dur="4s" repeatCount="indefinite" />
+                            <animate attributeName="y2" values="155;45;155" dur="4s" repeatCount="indefinite" />
                         </line>
 
-                        <!-- Datos Extraídos -->
-                        <text x="70" y="70" fill="#00f2fe" font-size="10">Audio 🎙️</text>
-                        <path d="M 90 70 L 110 70" fill="none" stroke="#00f2fe" stroke-width="1.5"
-                            stroke-dasharray="2 2" style="animation: dataFlow 1s linear infinite reverse;" />
+                        <!-- Datos Extraídos with particles -->
+                        <text x="50" y="70" fill="#00f2fe" font-size="10" class="svg-glow-cyan">Audio 🎙️</text>
+                        <path d="M 85 70 L 110 70" fill="none" stroke="#00f2fe" stroke-width="1.5"
+                            stroke-dasharray="2 2" style="animation: dataFlow 0.8s linear infinite reverse;" />
+                        <circle cx="95" cy="70" r="2.5" fill="#00f2fe" class="svg-glow-cyan">
+                            <animate attributeName="cx" values="85;110" dur="0.8s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="1;0" dur="0.8s" repeatCount="indefinite" />
+                        </circle>
 
-                        <text x="210" y="100" fill="#00f2fe" font-size="10">Visual 👁️</text>
-                        <path d="M 190 100 L 210 100" fill="none" stroke="#00f2fe" stroke-width="1.5"
-                            stroke-dasharray="2 2" style="animation: dataFlow 1s linear infinite;" />
+                        <text x="215" y="100" fill="#00f2fe" font-size="10" class="svg-glow-cyan">Visual 👁️</text>
+                        <path d="M 190 100 L 213 100" fill="none" stroke="#00f2fe" stroke-width="1.5"
+                            stroke-dasharray="2 2" style="animation: dataFlow 0.8s linear infinite;" />
+                        <circle cx="205" cy="100" r="2.5" fill="#00f2fe" class="svg-glow-cyan">
+                            <animate attributeName="cx" values="190;213" dur="0.8s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="1;0" dur="0.8s" repeatCount="indefinite" />
+                        </circle>
 
-                        <text x="70" y="130" fill="#00f2fe" font-size="10">Texto 📝</text>
-                        <path d="M 90 130 L 110 130" fill="none" stroke="#00f2fe" stroke-width="1.5"
-                            stroke-dasharray="2 2" style="animation: dataFlow 1s linear infinite reverse;" />
+                        <text x="50" y="130" fill="#00f2fe" font-size="10" class="svg-glow-cyan">Texto 📝</text>
+                        <path d="M 85 130 L 110 130" fill="none" stroke="#00f2fe" stroke-width="1.5"
+                            stroke-dasharray="2 2" style="animation: dataFlow 0.8s linear infinite reverse;" />
+                        <circle cx="95" cy="130" r="2.5" fill="#00f2fe" class="svg-glow-cyan">
+                            <animate attributeName="cx" values="85;110" dur="0.8s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="1;0" dur="0.8s" repeatCount="indefinite" />
+                        </circle>
 
-                        <!-- Emisión de la Señal al Algoritmo -->
-                        <path d="M 150 200 L 150 240" fill="none" stroke="#ff0050" stroke-width="3"
-                            stroke-dasharray="4 4" style="animation: dataFlow 0.5s linear infinite reverse;" />
-                        <circle cx="150" cy="260" r="15" fill="#1e293b" stroke="#ff0050" stroke-width="2" />
+                        <!-- Emisión de la Señal al Algoritmo (Energy transfer) -->
+                        <path d="M 150 200 L 150 240" fill="none" stroke="#ff0050" stroke-width="4"
+                            stroke-dasharray="5 4" style="animation: dataFlow 0.5s linear infinite reverse;"
+                            class="svg-glow-red" />
+
+                        <!-- Algoritmo Brain -->
+                        <!-- Ambient brain rings -->
+                        <circle cx="150" cy="260" r="20" fill="none" stroke="#ff0050" stroke-width="1" opacity="0.3">
+                            <animate attributeName="r" values="16;28;16" dur="2.5s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="0.4;0;0.4" dur="2.5s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="150" cy="260" r="15" fill="#1e293b" stroke="#ff0050" stroke-width="2"
+                            class="svg-glow-red svg-pulse-red" />
                         <text x="150" y="265" text-anchor="middle" font-size="16">🧠</text>
-                        <text x="150" y="290" text-anchor="middle" fill="#94a3b8" font-size="10">Algoritmo ForYou</text>
+                        <text x="150" y="293" text-anchor="middle" fill="#94a3b8" font-size="10">Algoritmo ForYou</text>
+
+                        <!-- Orbiting particles around brain -->
+                        <g transform="translate(150, 260)">
+                            <circle cx="0" cy="0" r="2" fill="#00f2fe" class="svg-glow-cyan"
+                                style="animation: orbitCW 4s linear infinite;" />
+                            <circle cx="0" cy="0" r="2" fill="#8b5cf6" class="svg-glow-red"
+                                style="animation: orbitCCW 5s linear infinite;" />
+                        </g>
                     </svg>
                 </div>
             </div>
@@ -301,43 +516,73 @@
             </div>
 
             <!-- Flow Chart Animado -->
-            <div class="svg-container" style="height: 200px;">
+            <div class="svg-container">
                 <svg viewBox="0 0 600 200" width="100%" height="100%">
                     <!-- Lotes de Videos Orgánicos -->
-                    <rect x="50" y="60" width="30" height="40" rx="4" fill="#334155" />
-                    <rect x="90" y="50" width="30" height="50" rx="4" fill="#334155" />
+                    <rect x="50" y="60" width="30" height="40" rx="4" fill="#334155" opacity="0.6">
+                        <animate attributeName="opacity" values="0.6;0.3;0.6" dur="3s" repeatCount="indefinite" />
+                    </rect>
+                    <rect x="90" y="50" width="30" height="50" rx="4" fill="#334155" opacity="0.7">
+                        <animate attributeName="opacity" values="0.7;0.3;0.7" dur="3s" begin="0.5s"
+                            repeatCount="indefinite" />
+                    </rect>
                     <rect x="130" y="30" width="30" height="70" rx="4" fill="#ff0050"
-                        style="animation: pulse 2s infinite;" />
-                    <rect x="170" y="60" width="30" height="40" rx="4" fill="#334155" />
+                        class="svg-pulse-red svg-glow-red" />
+                    <rect x="170" y="60" width="30" height="40" rx="4" fill="#334155" opacity="0.6">
+                        <animate attributeName="opacity" values="0.6;0.3;0.6" dur="3s" begin="1s"
+                            repeatCount="indefinite" />
+                    </rect>
+                    <rect x="210" y="55" width="30" height="45" rx="4" fill="#334155" opacity="0.5">
+                        <animate attributeName="opacity" values="0.5;0.2;0.5" dur="3s" begin="1.5s"
+                            repeatCount="indefinite" />
+                    </rect>
 
-                    <text x="125" y="130" text-anchor="middle" fill="#cbd5e1" font-size="12">Prueba Gratis</text>
-                    <text x="125" y="150" text-anchor="middle" fill="#94a3b8" font-size="10">(5 videos)</text>
+                    <text x="145" y="135" text-anchor="middle" fill="#cbd5e1" font-size="12">Prueba Gratis</text>
+                    <text x="145" y="153" text-anchor="middle" fill="#94a3b8" font-size="10">(5 videos)</text>
 
                     <!-- Flecha Filtro -->
-                    <path d="M 220 70 L 290 70" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="4 4"
-                        style="animation: dataFlow 1s linear infinite reverse;" />
-                    <circle cx="255" cy="70" r="12" fill="#1e293b" stroke="#cbd5e1" stroke-width="1" />
-                    <text x="255" y="74" text-anchor="middle" font-size="10">🔍</text>
+                    <path d="M 245 70 L 305 70" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="4 4"
+                        style="animation: dataFlow 1s linear infinite reverse;" class="svg-glow-cyan" />
+                    <circle cx="280" cy="70" r="2" fill="#00f2fe" class="svg-glow-cyan">
+                        <animate attributeName="cx" values="245;305" dur="1.2s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="1;0" dur="1.2s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="255" cy="70" r="14" fill="#1e293b" stroke="#cbd5e1" stroke-width="1.5" />
+                    <text x="255" y="74" text-anchor="middle" font-size="11">🔍</text>
 
                     <!-- Identificación del Ganador -->
-                    <rect x="310" y="30" width="40" height="80" rx="4" fill="#1e293b" stroke="#00f2fe" stroke-width="2"
-                        style="animation: float 3s ease-in-out infinite;" />
-                    <text x="330" y="75" text-anchor="middle" font-size="20">🏆</text>
-                    <text x="330" y="130" text-anchor="middle" fill="#00f2fe" font-size="12"
-                        font-weight="bold">Ganador</text>
+                    <rect x="325" y="30" width="45" height="80" rx="6" fill="#1e293b" stroke="#00f2fe" stroke-width="2"
+                        class="svg-float svg-glow-cyan" />
+                    <text x="347" y="76" text-anchor="middle" font-size="22">🏆</text>
+                    <!-- Winner ring -->
+                    <circle cx="347" cy="70" r="32" fill="none" stroke="#00f2fe" stroke-width="1" opacity="0.3">
+                        <animate attributeName="r" values="28;40;28" dur="2s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.5;0;0.5" dur="2s" repeatCount="indefinite" />
+                    </circle>
+                    <text x="347" y="135" text-anchor="middle" fill="#00f2fe" font-size="12" font-weight="bold"
+                        class="svg-glow-cyan">🔥 Ganador</text>
 
                     <!-- Inyección Spark Ads -->
-                    <path d="M 370 70 L 440 70" fill="none" stroke="#00f2fe" stroke-width="3" stroke-dasharray="4 4"
-                        style="animation: dataFlow 1s linear infinite reverse;" />
-                    <text x="405" y="55" text-anchor="middle" fill="#00f2fe" font-size="10"
-                        font-weight="bold">+💰</text>
+                    <path d="M 395 70 L 460 70" fill="none" stroke="#10b981" stroke-width="3" stroke-dasharray="6 4"
+                        style="animation: dataFlow 0.8s linear infinite reverse;"
+                        filter="drop-shadow(0 0 5px rgba(16,185,129,0.5))" />
+                    <circle cx="427" cy="70" r="2.5" fill="#10b981">
+                        <animate attributeName="cx" values="395;460" dur="0.9s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="1;0" dur="0.9s" repeatCount="indefinite" />
+                    </circle>
+                    <text x="427" y="55" text-anchor="middle" fill="#10b981" font-size="11" font-weight="bold">💰</text>
 
                     <!-- Amplificación Masiva -->
-                    <circle cx="500" cy="70" r="40" fill="rgba(0, 242, 254, 0.1)" stroke="#00f2fe" stroke-width="2"
-                        style="animation: pulse 1.5s infinite;" />
-                    <text x="500" y="78" text-anchor="middle" font-size="30">🚀</text>
-                    <text x="500" y="140" text-anchor="middle" fill="#00f2fe" font-size="12" font-weight="bold">Spark
-                        Ads</text>
+                    <circle cx="510" cy="70" r="45" fill="rgba(0, 242, 254, 0.08)" stroke="#00f2fe" stroke-width="2"
+                        class="svg-pulse-cyan svg-glow-cyan" />
+                    <circle cx="510" cy="70" r="60" fill="none" stroke="rgba(0, 242, 254, 0.2)" stroke-width="1">
+                        <animate attributeName="r" values="50;70;50" dur="3s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.3;0;0.3" dur="3s" repeatCount="indefinite" />
+                    </circle>
+                    <text x="510" y="78" text-anchor="middle" font-size="32" class="svg-float">🚀</text>
+                    <text x="510" y="145" text-anchor="middle" fill="#00f2fe" font-size="13" font-weight="bold"
+                        class="svg-glow-cyan">Spark Ads</text>
+                    <text x="510" y="162" text-anchor="middle" fill="#94a3b8" font-size="10">(Escala automática)</text>
                 </svg>
             </div>
         </div>
