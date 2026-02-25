@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9Q4T51VW0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-Z9Q4T51VW0');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Economía IA">
+
+    <!-- Optimización LLM SEO y Meta tags para Economía IA -->
+    <meta name="description"
+        content="Las 6 claves del Núcleo de la Economía IA: Cómo aplicar la ciencia económica pura para vender más usando algoritmos de Matchmaking y eliminando la fricción de los clientes.">
+    <meta name="keywords"
+        content="Economía IA, Matchmaking IA, Costos de Transacción, Señalización, IA Ventas, Automatización de Marketing, Vender más con IA, Agentes IA WhatsApp">
+
+    <!-- Open Graph (Redes Sociales y LLMs) -->
+    <meta property="og:title" content="El Núcleo Económico - Las Claves de Vender Más | Economía IA">
+    <meta property="og:description" content="Descubre las tácticas reales para vender más usando algoritmos IA.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Economía IA">
+
+    <title>El Núcleo Económico - Las Claves para Vender Más | Economía IA</title>
+
+    <!-- Datos Estructurados (JSON-LD) para LLMs y Motores de Búsqueda -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://economiaia.business/nucleo_economia_ia.html"
+      },
+      "headline": "Las Claves para Vender Más con Economía IA",
+      "description": "Explicación práctica de las 6 reglas para usar la Inteligencia Artificial como motor de emparejamiento (Matchmaker) y reducir los costos de adquisición de clientes.",
+      "author": {
+        "@type": "Organization",
+        "name": "Economía IA"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Economía IA"
+      }
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #0c111e;
+            color: #f8fafc;
+            margin: 0;
+            padding: 3rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            background: linear-gradient(90deg, #f59e0b, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+            font-weight: 800;
+            max-width: 900px;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #94a3b8;
+            max-width: 800px;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        section {
+            width: 100%;
+            max-width: 1000px;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #f1f5f9;
+            border-bottom: 2px solid rgba(245, 158, 11, 0.2);
+            padding-bottom: 0.75rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title .section-number {
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 800;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Evolución Grid */
+        .evolution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .evo-card {
+            background: #1e293b;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid #334155;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .evo-card:hover {
+            transform: translateY(-5px);
+            border-color: #f59e0b;
+        }
+
+        .evo-card .new {
+            color: #10b981;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .evo-card .desc {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        .evo-svg-container {
+            width: 100%;
+            height: 120px;
+            background: #0f172a;
+            border-radius: 0.75rem;
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: 1px solid #334155;
+            position: relative;
+        }
+
+        .pulse-icon {
+            font-size: 2.5rem;
+            animation: pulseGlow 2s infinite;
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                text-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+                transform: scale(1);
+            }
+
+            50% {
+                text-shadow: 0 0 20px rgba(245, 158, 11, 0.8);
+                transform: scale(1.1);
+            }
+        }
+
+        /* --- Animaciones Cotidianas (Modo Calle) --- */
+        .scene-wrapper {
+            font-size: 2.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 1. Cura: Producto -> Emoción */
+        .scene-cura .box {
+            animation: shake 2.5s infinite;
+            display: inline-block;
+        }
+
+        .scene-cura .arrow {
+            animation: fadeInOut 2.5s infinite;
+            display: inline-block;
+            font-size: 1.5rem;
+        }
+
+        .scene-cura .heart {
+            animation: heartbeat 2.5s infinite;
+            display: inline-block;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: rotate(0);
+            }
+
+            10%,
+            30% {
+                transform: rotate(-10deg);
+            }
+
+            20%,
+            40% {
+                transform: rotate(10deg);
+                filter: drop-shadow(0 0 5px #3b82f6);
+            }
+
+            50% {
+                transform: rotate(0);
+            }
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            40%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+                filter: grayscale(1);
+            }
+
+            50%,
+            80% {
+                transform: scale(1.3);
+                opacity: 1;
+                filter: grayscale(0) drop-shadow(0 0 15px #ef4444);
+            }
+        }
+
+        @keyframes fadeInOut {
+
+            0%,
+            40%,
+            100% {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+
+            50%,
+            80% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* 2. Pruebas: Dude -> Prueba -> Cierre */
+        .scene-proof {
+            display: flex;
+            gap: 10px;
+        }
+
+        .scene-proof .doubt {
+            animation: doubtFace 3.5s infinite;
+            display: inline-block;
+            font-size: 2.2rem;
+        }
+
+        .scene-proof .proof {
+            animation: proofPop 3.5s infinite;
+            display: inline-block;
+            font-size: 1.8rem;
+        }
+
+        .scene-proof .deal {
+            animation: dealWow 3.5s infinite;
+            display: inline-block;
+            font-size: 2.2rem;
+        }
+
+        @keyframes doubtFace {
+
+            0%,
+            20% {
+                opacity: 1;
+                transform: translateX(0);
+                filter: none;
+            }
+
+            30%,
+            100% {
+                opacity: 0.2;
+                transform: translateX(-10px);
+                filter: grayscale(1);
+            }
+        }
+
+        @keyframes proofPop {
+
+            0%,
+            20%,
+            90%,
+            100% {
+                opacity: 0;
+                transform: scale(0) rotate(-20deg);
+            }
+
+            30%,
+            80% {
+                opacity: 1;
+                transform: scale(1.4) rotate(0deg);
+                filter: drop-shadow(0 0 15px #f59e0b);
+            }
+        }
+
+        @keyframes dealWow {
+
+            0%,
+            40%,
+            100% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            50%,
+            80% {
+                opacity: 1;
+                transform: scale(1.2);
+                filter: drop-shadow(0 0 20px #8b5cf6);
+            }
+        }
+
+        /* 3. Fricción: Chat Lento -> Robot IA -> Pago Inmediato */
+        .scene-fric {
+            display: flex;
+            gap: 10px;
+        }
+
+        .scene-fric .msg {
+            animation: msgPop 3.5s infinite;
+            display: inline-block;
+            font-size: 2rem;
+        }
+
+        .scene-fric .bot {
+            animation: botWork 3.5s infinite;
+            display: inline-block;
+            font-size: 1.6rem;
+            margin: 0 5px;
+        }
+
+        .scene-fric .link {
+            animation: linkPay 3.5s infinite;
+            display: inline-block;
+            font-size: 2.2rem;
+        }
+
+        @keyframes msgPop {
+
+            0%,
+            90%,
+            100% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+
+            10%,
+            30% {
+                opacity: 1;
+                transform: scale(1.1);
+                filter: drop-shadow(0 0 5px #fff);
+            }
+        }
+
+        @keyframes botWork {
+
+            0%,
+            20%,
+            100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            30%,
+            80% {
+                opacity: 1;
+                transform: translateY(0);
+                filter: drop-shadow(0 0 15px #38bdf8);
+            }
+        }
+
+        @keyframes linkPay {
+
+            0%,
+            40%,
+            100% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            50%,
+            80% {
+                opacity: 1;
+                transform: scale(1.2);
+                filter: drop-shadow(0 0 20px #10b981);
+            }
+        }
+
+        /* 4. VIP: Combo Agrandado */
+        .scene-vip .base {
+            animation: idleItem 3s infinite;
+            display: inline-block;
+        }
+
+        .scene-vip .plus {
+            animation: fadePlus 3s infinite;
+            display: inline-block;
+            font-size: 1.2rem;
+        }
+
+        .scene-vip .upgrade {
+            animation: dropUpgrade 3s infinite;
+            display: inline-block;
+        }
+
+        @keyframes idleItem {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadePlus {
+
+            0%,
+            30%,
+            100% {
+                opacity: 0;
+            }
+
+            40%,
+            90% {
+                opacity: 1;
+                color: #ec4899;
+                filter: drop-shadow(0 0 5px #ec4899);
+            }
+        }
+
+        @keyframes dropUpgrade {
+
+            0%,
+            40%,
+            100% {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.8);
+            }
+
+            50%,
+            90% {
+                opacity: 1;
+                transform: translateY(0) scale(1.3);
+                filter: drop-shadow(0 0 20px #ec4899);
+            }
+        }
+
+        /* 5. Escasez: Cliente Frío -> Alarma Urgente -> Comprando Corriendo */
+        .scene-fomo {
+            display: flex;
+            gap: 10px;
+        }
+
+        .scene-fomo .cold {
+            animation: sleepyFade 3.5s infinite;
+            display: inline-block;
+            font-size: 2.2rem;
+        }
+
+        .scene-fomo .alarm {
+            animation: alarmRing 3.5s infinite;
+            display: inline-block;
+            font-size: 2rem;
+        }
+
+        .scene-fomo .rush {
+            animation: rushPay 3.5s infinite;
+            display: inline-block;
+            font-size: 2.2rem;
+        }
+
+        @keyframes sleepyFade {
+
+            0%,
+            20% {
+                opacity: 1;
+                transform: translateX(0);
+                filter: none;
+            }
+
+            30%,
+            100% {
+                opacity: 0.2;
+                transform: translateX(-10px);
+                filter: grayscale(1);
+            }
+        }
+
+        @keyframes alarmRing {
+
+            0%,
+            20%,
+            90%,
+            100% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            30%,
+            80% {
+                opacity: 1;
+                transform: scale(1.3);
+                filter: drop-shadow(0 0 15px #ef4444);
+            }
+
+            40%,
+            45%,
+            50%,
+            55%,
+            60%,
+            65%,
+            70%,
+            75% {
+                transform: scale(1.3) rotate(15deg);
+            }
+
+            42%,
+            47%,
+            52%,
+            57%,
+            62%,
+            67%,
+            72%,
+            77% {
+                transform: scale(1.3) rotate(-15deg);
+            }
+        }
+
+        @keyframes rushPay {
+
+            0%,
+            40%,
+            100% {
+                opacity: 0;
+                transform: translateX(-20px) scale(0.5);
+            }
+
+            50%,
+            80% {
+                opacity: 1;
+                transform: translateX(0) scale(1.2);
+                filter: drop-shadow(0 0 15px #f59e0b);
+            }
+        }
+
+        /* 6. Predicción: Adivinar -> Certeza */
+        .scene-pred .guess {
+            animation: guessFade 3.5s infinite;
+            display: inline-block;
+            font-size: 2.5rem;
+        }
+
+        .scene-pred .arrow {
+            animation: arrowMove 3.5s infinite;
+            display: inline-block;
+            font-size: 1.5rem;
+        }
+
+        .scene-pred .sure {
+            animation: surePop 3.5s infinite;
+            display: inline-block;
+            font-size: 2.2rem;
+        }
+
+        @keyframes guessFade {
+
+            0%,
+            20% {
+                opacity: 1;
+                transform: translateX(0);
+                filter: grayscale(0);
+            }
+
+            30%,
+            100% {
+                opacity: 0.2;
+                transform: translateX(-10px);
+                filter: grayscale(1);
+            }
+        }
+
+        @keyframes arrowMove {
+
+            0%,
+            20%,
+            90%,
+            100% {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+
+            30%,
+            80% {
+                opacity: 1;
+                transform: translateX(0);
+                color: #fbbf24;
+                filter: drop-shadow(0 0 10px #fbbf24);
+            }
+        }
+
+        @keyframes surePop {
+
+            0%,
+            30%,
+            100% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            40%,
+            80% {
+                opacity: 1;
+                transform: scale(1.3);
+                filter: drop-shadow(0 0 20px #fbbf24);
+            }
+        }
+
+        /* Diseño "Carta Pokémon Dorada" para la tarjeta 6 */
+        .golden-pokemon-card {
+            background: linear-gradient(135deg, #1e293b 40%, rgba(251, 191, 36, 0.1) 100%);
+            border: 2px solid #f59e0b;
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.2), inset 0 0 20px rgba(245, 158, 11, 0.1);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            animation: goldenFloat 4s ease-in-out infinite alternate;
+        }
+
+        .golden-pokemon-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            background: linear-gradient(105deg, transparent 30%, rgba(253, 230, 138, 0.4) 45%, rgba(251, 191, 36, 0.8) 50%, rgba(253, 230, 138, 0.4) 55%, transparent 70%);
+            background-size: 200% 200%;
+            animation: foilShine 5s infinite linear;
+            z-index: -1;
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+
+        .golden-pokemon-card .desc {
+            color: #f8fafc;
+            /* Texto muy claro para compensar el fondo */
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        @keyframes foilShine {
+            0% {
+                background-position: 200% 50%;
+            }
+
+            100% {
+                background-position: -200% 50%;
+            }
+        }
+
+        @keyframes goldenFloat {
+            0% {
+                transform: translateY(0);
+                box-shadow: 0 5px 15px rgba(245, 158, 11, 0.2), inset 0 0 20px rgba(245, 158, 11, 0.1);
+            }
+
+            100% {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 25px rgba(245, 158, 11, 0.4), inset 0 0 30px rgba(245, 158, 11, 0.2);
+                border-color: #fbbf24;
+            }
+        }
+
+        /* Fórmula de la Venta con IA */
+        .formula-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.9));
+            border: 1px dashed #475569;
+            border-radius: 1rem;
+            padding: 2.5rem 1.5rem;
+            margin-bottom: 3.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .formula-container::before {
+            content: "LAS CLAVES PARA VENDER MÁS";
+            position: absolute;
+            top: -12px;
+            background: #0f172a;
+            padding: 2px 12px;
+            color: #38bdf8;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            border: 1px solid #38bdf8;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+        }
+
+        .formula-element {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .formula-icon {
+            font-size: 2.4rem;
+        }
+
+        .formula-text {
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            font-weight: 600;
+            text-align: center;
+            max-width: 90px;
+            line-height: 1.2;
+        }
+
+        .formula-plus {
+            font-size: 1.8rem;
+            color: #475569;
+            font-weight: 800;
+            animation: pulseGlow 2s infinite;
+        }
+
+        .formula-equals {
+            font-size: 2.5rem;
+            color: #3b82f6;
+            font-weight: 800;
+        }
+
+        .result-element {
+            padding: 1.2rem;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 1rem;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.3);
+            transform: translateY(-3px);
+        }
+
+        @keyframes bounceGlow {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.4));
+            }
+
+            50% {
+                transform: translateY(-6px);
+                filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.8));
+            }
+        }
+
+        .bounce-glow {
+            animation: bounceGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes borderVibrate {
+            0% {
+                border-color: #ec4899;
+                box-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
+                transform: scale(1);
+            }
+
+            50% {
+                border-color: #f472b6;
+                box-shadow: 0 0 25px rgba(236, 72, 153, 0.7);
+                transform: scale(1.02);
+            }
+
+            100% {
+                border-color: #ec4899;
+                box-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
+                transform: scale(1);
+            }
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .btn-back:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="width: 100%; max-width: 1000px; display: flex; flex-direction: column; align-items: center;">
+        <h1 id="economia-ia-nucleo">Las Claves para Vender Más</h1>
+        <p class="subtitle" style="margin-top: 1rem;">
+            Entiende por qué la gente realmente saca la billetera y cómo la Inteligencia Artificial hace el trabajo
+            pesado por ti, para que tú te dediques a cobrar y hacer crecer tu negocio.
+        </p>
+    </header>
+
+    <main style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+
+        <section>
+            <h2 class="section-title"><span class="section-number">💎</span> Las 6 Leyes Reales del Mercado</h2>
+            <p style="color: #94a3b8; margin-bottom: 2rem; margin-top: -1rem; font-size: 1.05rem;">
+                Si entiendes exactamente por qué tu cliente decide pagarte, logras ventas seguras. Aplica estas
+                6 reglas en tu negocio hoy mismo y deja de perder dinero.
+            </p>
+
+            <!-- Animación Intuitiva de la Fórmula ("El Truco") -->
+            <div class="formula-container">
+                <div class="formula-element">
+                    <span class="formula-icon pulse-icon">🎯</span>
+                    <span class="formula-text">Dar lo que quieren</span>
+                </div>
+                <span class="formula-plus">+</span>
+                <div class="formula-element">
+                    <span class="formula-icon pulse-icon" style="animation-delay: 0.3s;">⚡</span>
+                    <span class="formula-text">Fácil de pagar</span>
+                </div>
+                <span class="formula-plus">+</span>
+                <div class="formula-element">
+                    <span class="formula-icon pulse-icon" style="animation-delay: 0.6s;">⏳</span>
+                    <span class="formula-text">Crear urgencia</span>
+                </div>
+                <span class="formula-plus">+</span>
+                <div class="formula-element">
+                    <span class="formula-icon pulse-icon"
+                        style="animation-delay: 0.9s; text-shadow: 0 0 15px rgba(251, 191, 36, 0.8);">🧲</span>
+                    <span class="formula-text" style="color: #fbbf24;">Tener el comprador</span>
+                </div>
+                <span class="formula-equals">=</span>
+                <div class="formula-element result-element">
+                    <span class="formula-icon bounce-glow" style="font-size: 3rem;">💸</span>
+                    <span class="formula-text"
+                        style="color: #34d399; font-weight: 800; font-size: 1.2rem; max-width: 150px; text-transform: uppercase;">Ventas
+                        Constantes</span>
+                </div>
+            </div>
+
+            <div class="evolution-grid">
+
+                <!-- Tarjeta 1: Valor Subjetivo -->
+                <div class="evo-card" style="border-color: #3b82f6;">
+                    <p class="new" style="color: #3b82f6;">🎭 1. No vendes el producto, vendes la cura</p>
+                    <div class="evo-svg-container">
+                        <div class="scene-wrapper scene-cura">
+                            <span class="box">📦</span>
+                            <span class="arrow">➡️</span>
+                            <span class="heart">❤️</span>
+                        </div>
+                    </div>
+                    <p class="desc">
+                        A nadie le importa tu taladro, la gente quiere hacer un hueco en
+                        la pared rápido. Tu cliente te compra para quitarse un dolor de cabeza o cumplir un
+                        deseo.<br><br>
+                        La IA se encarga de averiguar exactamente qué "dolor"
+                        tiene la persona que está viendo tu anuncio o escribiéndote al WhatsApp. A la mamá le vende
+                        "ahorrar tiempo", al joven le vende "verse increíble". Mismo producto, pero con el mensaje
+                        exacto que los hace comprar sin chistar.
+                    </p>
+                </div>
+
+                <!-- Tarjeta 2: Señalización -->
+                <div class="evo-card" style="border-color: #8b5cf6;">
+                    <p class="new" style="color: #8b5cf6;">📡 2. "Palabras no, muéstrame las pruebas"</p>
+                    <div class="evo-svg-container">
+                        <div class="scene-wrapper scene-proof">
+                            <span class="doubt">🤨</span>
+                            <span class="proof">🏆📸</span>
+                            <span class="deal">🤩💸</span>
+                        </div>
+                    </div>
+                    <p class="desc">
+                        Hoy en día todo el mundo desconfía. Si solo dices "soy el mejor de
+                        la ciudad", nadie te cree. Necesitas mostrar testimonios potentes, fotos de calidad, o dar una
+                        garantía que diga: "si te fallo, te devuelvo la plata".<br><br>
+                        La <b>Inteligencia Artificial</b> ayuda a tu negocio a verse premium y confiable al
+                        instante. Te arma imágenes, textos persuasivos y casos de éxito en minutos. Hace que tu
+                        negocio se vea gigante y profesional, ganándole la confianza al cliente antes de que voltee a
+                        ver a tu competencia.
+                    </p>
+                </div>
+
+                <!-- Tarjeta 3: Fricción Cero -->
+                <div class="evo-card" style="border-color: #10b981;">
+                    <p class="new" style="color: #10b981;">🚀 3. No los pongas a dar vueltas</p>
+                    <div class="evo-svg-container">
+                        <div class="scene-wrapper scene-fric">
+                            <span class="msg">💬</span>
+                            <span class="bot">🤖</span>
+                            <span class="link">🔗💸</span>
+                        </div>
+                    </div>
+                    <p class="desc">
+                        Si un cliente te escribe para comprar y tú le respondes 4 horas
+                        después, o lo obligas a descargar una app o llenar un formulario aburridísimo, el cliente se
+                        enfría y se va.<br><br>
+                        Ponemos un Agente de IA que atiende tu WhatsApp a la
+                        velocidad de la luz, las 24 horas del día. Aclara dudas enseguida y le manda el link de pago
+                        exacto ahí mismo. El cliente compra al instante porque le pusiste el camino fácil y sin
+                        tropiezos.
+                    </p>
+                </div>
+
+                <!-- Tarjeta 4: Excedente -->
+                <div class="evo-card" style="border-color: #ec4899;">
+                    <p class="new" style="color: #ec4899;">💎 4. Siempre hay quien paga el paquete VIP</p>
+                    <div class="evo-svg-container">
+                        <div class="scene-wrapper scene-vip">
+                            <span class="base">🍔</span>
+                            <span class="plus">➕</span>
+                            <span class="upgrade">🍟🥤</span>
+                        </div>
+                    </div>
+                    <p class="desc">
+                        Tienes clientes que aman tu negocio y que ganarían más si les
+                        ofreces algo más completo (y más caro). Si a todos les cobras el mismo precio "estándar", estás
+                        dejando plata sobre la mesa. Tienes que ofrecer el "combo grande".<br><br>
+                        La tecnología detecta cuándo un cliente está a punto de
+                        pagar, y de forma automática e inteligente le sugiere un producto adicional o una mejora
+                        ("¿deseas agrandar tu pedido por solo un poco más?"). Esto sube el total de tu venta diaria en
+                        automático.
+                    </p>
+                </div>
+
+                <!-- Tarjeta 5: FOMO y Escasez -->
+                <div class="evo-card" style="border-color: #ef4444;">
+                    <p class="new" style="color: #ef4444;">⏳ 5. El cliente de "mañana" no existe</p>
+                    <div class="evo-svg-container">
+                        <div class="scene-wrapper scene-fomo">
+                            <span class="cold">😴</span>
+                            <span class="alarm">⏰🚨</span>
+                            <span class="rush">🏃🏽‍♂️💨</span>
+                        </div>
+                    </div>
+                    <p class="desc">
+                        Somos humanos, dejamos todo para el final. Si el cliente cree que
+                        puede regresar a comprar mañana al mismo precio, no te va a comprar hoy. Tienes que darle una
+                        razón urgente para decidirse YA.<br><br>
+                        La IA se encarga de lanzar promociones exclusivas con
+                        límite de tiempo. Y mejor aún: si alguien te iba a comprar y no lo hizo, la IA lo persigue
+                        amablemente al otro día para decirle "¡Oye, esta oferta se acaba en 2 horas!". Revive ventas
+                        muertas por ti.
+                    </p>
+                </div>
+
+                <!-- Tarjeta 6: La Revelación Final -->
+                <div class="evo-card golden-pokemon-card">
+                    <p class="new"
+                        style="color: #fbbf24; text-shadow: 0 0 10px rgba(251, 191, 36, 0.6); letter-spacing: -0.5px;">
+                        👑 6. IA: Ya te tengo el comprador</p>
+                    <div class="evo-svg-container"
+                        style="border: 1px solid rgba(251, 191, 36, 0.4); background: rgba(15, 23, 42, 0.8);">
+                        <div class="scene-wrapper scene-pred">
+                            <span class="guess">📢</span>
+                            <span class="arrow">➡️</span>
+                            <span class="sure">🧲🤝</span>
+                        </div>
+                    </div>
+                    <p class="desc">
+                        Históricamente, el gran desgaste y principal costo de una empresa es <b>encontrar</b> al
+                        comprador.
+                        Por eso el marketing ha dependido de llegar de forma costosa y masiva a multitudes, invirtiendo
+                        tiempo en intentar persuadir a prospectos que no tienen intención real de compra.<br><br>
+                        La IA actúa de forma sencilla: es tu <b>Matchmaker</b> (emparejador).
+                        Rastrea qué está viendo o necesitando la gente ahora mismo, y le pone tu producto de frente
+                        a la persona exacta que ya se sabe que va a comprar. Así se acaba el salir a buscar a
+                        ciegas;
+                        la máquina te pone al cliente, tú solo cobras.
+                    </p>
+                </div>
+        </section>
+
+        <a href="index.html" class="btn-back">← Volver al Hub Central</a>
+    </main>
+
+    <!-- Footer Economía IA -->
+    <footer
+        style="width: 100%; max-width: 1000px; margin: 3rem auto 0; padding: 1.2rem 1rem; border-top: 1px solid #1e293b; text-align: center;">
+        <div
+            style="display: flex; justify-content: center; align-items: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 0.6rem;">
+            <span style="color: #64748b; font-size: 0.8rem; font-weight: 600;">Economía IA</span>
+            <span style="color: #334155;">·</span>
+            <a href="https://www.tiktok.com/@economiaia" target="_blank" rel="noopener noreferrer"
+                style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; transition: color 0.2s;"
+                onmouseover="this.style.color='#ff0050';" onmouseout="this.style.color='#94a3b8';">🎵 @economiaia</a>
+            <span style="color: #334155;">·</span>
+            <a href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer"
+                style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; transition: color 0.2s;"
+                onmouseover="this.style.color='#8b5cf6';" onmouseout="this.style.color='#94a3b8';">🔗 Enlaces</a>
+            <span style="color: #334155;">·</span>
+            <a href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer"
+                style="color: #94a3b8; font-size: 0.8rem; text-decoration: none; transition: color 0.2s;"
+                onmouseover="this.style.color='#10b981';" onmouseout="this.style.color='#94a3b8';">💼 Consultoría</a>
+        </div>
+        <p style="color: #334155; font-size: 0.7rem; margin: 0;">© 2026 Economía IA</p>
+    </footer>
+
+</body>
+
+</html>
