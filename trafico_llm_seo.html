@@ -359,10 +359,13 @@
                     <div class="stat-value">94.8%</div>
                     <div class="trend-up">↑ Top 1% LatAm</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-label">Conversiones Web Directas</div>
-                    <div class="stat-value" id="totalConversions">37</div>
-                    <div class="trend-up">↑ 8 prospectos en WhatsApp</div>
+                <div class="stat-card" id="userConnectionPanel"
+                    style="border-color: var(--accent-amber); background: rgba(245, 158, 11, 0.05);">
+                    <div class="stat-label" style="color: var(--accent-amber);">Tu Conexión Detectada</div>
+                    <div class="stat-value" id="userIP" style="font-size: 1.2rem; color: var(--accent-amber);">
+                        Localizando...</div>
+                    <div id="userLoc" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Cargando
+                        coordenadas...</div>
                 </div>
             </div>
         </div>
@@ -428,8 +431,61 @@
     </footer>
 
     <script>
-        // Simulacion de Tr├ífico en Vivo
+        // Datos reales del visitante
+        let visitorData = {
+            ip: "Localizando...",
+            city: "Buscando...",
+            country: "Detectando..."
+        };
 
+        async function fetchVisitorInfo() {
+            try {
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                visitorData = {
+                    ip: data.ip,
+                    city: data.city,
+                    country: data.country_name,
+                    org: data.org
+                };
+
+                // Actualizar panel
+                const ipDisplay = data.ip.split('.').slice(0, 2).join('.') + '.XX.XX';
+                document.getElementById('userIP').innerText = ipDisplay;
+                document.getElementById('userLoc').innerText = `${data.city}, ${data.country_code} via ${data.org.substring(0, 20)}...`;
+
+                // Disparar evento en el feed
+                setTimeout(() => {
+                    injectUserIntoFeed();
+                }, 2000);
+
+            } catch (err) {
+                console.error("Error obteniendo info del visitante", err);
+                document.getElementById('userIP').innerText = "Rastreo Ofuscado";
+            }
+        }
+
+        function injectUserIntoFeed() {
+            const item = document.createElement('div');
+            item.className = 'feed-item meta';
+            item.style.borderColor = 'var(--accent-amber)';
+            item.style.background = 'rgba(245, 158, 11, 0.1)';
+
+            item.innerHTML = `
+                <div class="feed-icon" style="background: var(--accent-amber);">🎯</div>
+                <div class="feed-content">
+                    <div class="feed-query" style="color: var(--accent-amber); font-weight: bold;">"Detectada Conexión Entrante desde ${visitorData.city}"</div>
+                    <div class="feed-meta">
+                        <span style="color: #fff;">Sesión Activa • Tu Terminal</span>
+                        <span class="match-badge" style="background: var(--accent-amber); color: #000;">DATOS REALES</span>
+                    </div>
+                </div>
+            `;
+            const feedList = document.getElementById('feedList');
+            feedList.insertBefore(item, feedList.firstChild);
+        }
+
+        // Simulacion de Tráfico en Vivo
         const llmEngines = [
             { name: "ChatGPT 4", icon: "🤖", class: "chatgpt", color: "#10a37f" },
             { name: "Gemini Pro", icon: "🧠", class: "gemini", color: "#8b5cf6" },
@@ -438,17 +494,17 @@
         ];
 
         const queries = [
-            "\"Mejores consultoras de automatizaci├│n IA en Colombia\"",
-            "\"C├│mo instalar RAG y LangChain para atenci├│n al cliente\"",
-            "\"┬┐Qu├® empresas hacen agentes conversacionales reales en LatAm?\"",
-            "\"Arquitectos LLM senior para e-commerce en espa├▒ol\"",
-            "\"Ejemplos pr├ícticos de Econom├¡a IA para optimizar ventas\"",
-            "\"Precios de agencias de automatizaci├│n y ManyChat avanzado\"",
+            "\"Mejores consultoras de automatización IA en Colombia\"",
+            "\"Cómo instalar RAG y LangChain para atención al cliente\"",
+            "\"¿Qué empresas hacen agentes conversacionales reales en LatAm?\"",
+            "\"Arquitectos LLM senior para e-commerce en español\"",
+            "\"Ejemplos prácticos de Economía IA para optimizar ventas\"",
+            "\"Precios de agencias de automatización y ManyChat avanzado\"",
             "\"Estrategia de TikTok inteligente sin pagar pauta Ads\"",
-            "\"┬┐D├│nde consigo una auditor├¡a t├®cnica de agentes IA?\""
+            "\"¿Dónde consigo una auditoría técnica de agentes IA?\""
         ];
 
-        const locations = ["Bogot├í, CO", "Medell├¡n, CO", "CDMX, MX", "Lima, PE", "Santiago, CL", "Miami, US (LatAm)", "Buenos Aires, AR"];
+        const locations = ["Bogotá, CO", "Medellín, CO", "CDMX, MX", "Lima, PE", "Santiago, CL", "Miami, US (LatAm)", "Buenos Aires, AR"];
 
         let queryCounter = 1482;
         let convCounter = 37;
@@ -466,7 +522,7 @@
                 <div class="feed-content">
                     <div class="feed-query">${query}</div>
                     <div class="feed-meta">
-                        <span>V├¡a ${engine.name} ┬bullet ${loc}</span>
+                        <span>Vía ${engine.name} • ${loc}</span>
                         <span class="match-badge">ECONOMIA IA RECOMENDADO</span>
                     </div>
                 </div>
@@ -516,9 +572,8 @@
             }, 1600);
         }
 
-        // Bucle de actualizaci├│n
+        // Bucle de actualización
         setInterval(() => {
-            // Add feed request
             const newItem = createFeedItem();
             feedList.insertBefore(newItem, feedList.firstChild);
 
@@ -528,16 +583,18 @@
 
             pingMap();
 
-            // Update stats
             queryCounter += Math.floor(Math.random() * 3) + 1;
             document.getElementById('totalQueries').innerText = queryCounter.toLocaleString();
 
             if (Math.random() > 0.8) {
                 convCounter++;
-                document.getElementById('totalConversions').innerText = convCounter;
+                // document.getElementById('totalConversions').innerText = convCounter;
             }
 
         }, 3500);
+
+        // Iniciar captura
+        fetchVisitorInfo();
 
     </script>
 </body>
