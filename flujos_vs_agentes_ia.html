@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Diferencias fundamentales entre automatización por flujos y arquitecturas agénticas con IA. Guía técnica y estratégica para negocios en 2026.">
+    <title>Flujos vs. Agentes: La Evolución de la IA | Guía Conceptual</title>
+    <style>
+        :root {
+            --bg-color: #030712;
+            --card-bg: #111827;
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+            --accent-flow: #3b82f6;
+            --accent-agent: #10b981;
+            --accent-hybrid: #8b5cf6;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            background: linear-gradient(135deg, #fff 30%, #64748b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        .header p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 6rem;
+        }
+
+        .concept-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 2rem;
+            padding: 3rem;
+            position: relative;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .concept-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+        }
+
+        .card-flow::before {
+            background: var(--accent-flow);
+        }
+
+        .card-agent::before {
+            background: var(--accent-agent);
+        }
+
+        .type-label {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .description {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .feature-list li::before {
+            content: '→';
+            color: var(--text-muted);
+        }
+
+        /* Visualizations */
+        .viz-container {
+            height: 150px;
+            margin-top: 2rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .node {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-flow);
+            position: relative;
+        }
+
+        .line {
+            height: 2px;
+            background: rgba(59, 130, 246, 0.3);
+            width: 50px;
+        }
+
+        .agent-brain {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-agent);
+            border-radius: 1rem;
+            filter: blur(20px);
+            opacity: 0.4;
+            animation: pulse 3s infinite;
+        }
+
+        /* Comparison Section */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 4rem;
+            background: var(--card-bg);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .comparison-table th {
+            background: rgba(255, 255, 255, 0.02);
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Hybrid Section */
+        .hybrid-box {
+            margin-top: 6rem;
+            background: linear-gradient(145deg, rgba(139, 92, 246, 0.1), rgba(3, 7, 18, 1));
+            border: 1px solid var(--accent-hybrid);
+            border-radius: 2.5rem;
+            padding: 4rem;
+            text-align: center;
+        }
+
+        .hybrid-box h3 {
+            font-size: 2.5rem;
+            color: var(--accent-hybrid);
+            margin-top: 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 4rem 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Flujos vs. Agentes</h1>
+            <p>Entender la diferencia entre automatizar una tarea y delegar una función es la clave para la madurez
+                tecnológica en la era de la IA.</p>
+        </header>
+
+        <div class="grid">
+            <!-- Flujos -->
+            <article class="concept-card card-flow">
+                <span class="type-label" style="color: var(--accent-flow);">Automatización de Procesos</span>
+                <h2>Flujos (Rule-Based)</h2>
+                <p class="description">Es la automatización tradicional de "Si pasa X, entonces haz Y". Son sistemas
+                    predecibles y rígidos diseñados para eficiencia pura.</p>
+                <ul class="feature-list">
+                    <li>Estructura determinística (árbol de decisión).</li>
+                    <li>Excelente para captura de datos y validaciones.</li>
+                    <li>No tiene memoria contextual real.</li>
+                    <li>Falla ante lo inesperado o fuera del guion.</li>
+                </ul>
+                <div class="viz-container">
+                    <div class="node"></div>
+                    <div class="line"></div>
+                    <div class="node"></div>
+                    <div class="line"></div>
+                    <div class="node"></div>
+                </div>
+            </article>
+
+            <!-- Agentes -->
+            <article class="concept-card card-agent">
+                <span class="type-label" style="color: var(--accent-agent);">Sistemas Cognitivos</span>
+                <h2>Agentes (Reasoning-Based)</h2>
+                <p class="description">Sistemas que usan un modelo de lenguaje (LLM) como cerebro para razonar,
+                    planificar y ejecutar acciones basadas en un objetivo.</p>
+                <ul class="feature-list">
+                    <li>Comportamiento dinámico y adaptativo.</li>
+                    <li>Usa contexto e historia para decidir.</li>
+                    <li>Capacidad de usar herramientas externas.</li>
+                    <li>Acepta instrucciones en lenguaje natural.</li>
+                </ul>
+                <div class="viz-container">
+                    <div class="agent-brain"></div>
+                    <div style="position: absolute; font-size: 2.5rem;">🧠</div>
+                </div>
+            </article>
+        </div>
+
+        <section>
+            <h2 style="text-align: center; margin-bottom: 3rem;">El Cuadro de Decisión</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Flujo Tradicional</th>
+                        <th>Arquitectura Agéntica</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Lógica</strong></td>
+                        <td>Rígida / Predefinida</td>
+                        <td>Emergedente / Razonada</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Manejo de Error</strong></td>
+                        <td>Falla al salir del guion</td>
+                        <td>Busca alternativas para cumplir el objetivo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contexto</strong></td>
+                        <td>Limitado a la sesión actual</td>
+                        <td>Memoria histórica y acceso a datos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Implementación</strong></td>
+                        <td>Rápida y Barata</td>
+                        <td>Compleja y de mayor costo (Cómputo)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ideal para...</strong></td>
+                        <td>Captura de leads, FAQs simples</td>
+                        <td>Ventas, Consultoría, Resolución de dudas</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="hybrid-box">
+            <span class="type-label" style="color: var(--accent-hybrid);">El Estado del Arte</span>
+            <h3>La Orquestación Híbrida</h3>
+            <p style="font-size: 1.2rem; color: #fff; max-width: 800px; margin: 2rem auto;">
+                El futuro no es elegir uno u otro. La excelencia operativa se logra usando **Flujos** como la tubería de
+                entrada (ordenada y segura) y **Agentes** como el motor de razonamiento que se activa cuando la
+                conversación requiere profundidad.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 3rem; flex-wrap: wrap;">
+                <div
+                    style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 1rem; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 1.5rem;">📥</div>
+                    <div style="font-weight: bold;">Flujo: Captura</div>
+                </div>
+                <div style="padding-top: 1rem;">➔</div>
+                <div
+                    style="background: rgba(139, 92, 246, 0.2); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--accent-hybrid);">
+                    <div style="font-size: 1.5rem;">🧠</div>
+                    <div style="font-weight: bold;">Agente: Razonamiento</div>
+                </div>
+                <div style="padding-top: 1rem;">➔</div>
+                <div
+                    style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 1rem; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 1.5rem;">💰</div>
+                    <div style="font-weight: bold;">Meta: Conversión</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2026 Guía de Madurez en Inteligencia Artificial. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
