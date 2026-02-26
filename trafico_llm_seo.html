@@ -449,8 +449,18 @@
                     org: data.org
                 };
 
-                // Actualizar panel
-                const ipDisplay = data.ip.split('.').slice(0, 2).join('.') + '.XX.XX';
+                // Formatear IP para privacidad y compatibilidad IPv4/IPv6
+                let ipDisplay = "Ofuscada";
+                if (data.ip.includes(':')) {
+                    // Es IPv6
+                    const parts = data.ip.split(':');
+                    ipDisplay = parts[0] + ':' + parts[1] + ':XXXX:XXXX';
+                } else {
+                    // Es IPv4
+                    const parts = data.ip.split('.');
+                    ipDisplay = parts[0] + '.' + parts[1] + '.XX.XX';
+                }
+
                 document.getElementById('userIP').innerText = ipDisplay;
                 document.getElementById('userLoc').innerText = `${data.city}, ${data.country_code} via ${data.org.substring(0, 20)}...`;
 
