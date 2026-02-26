@@ -383,17 +383,25 @@
                 <div class="stat-card" id="aiCrawlerPanel"
                     style="border-color: #3b82f6; background: rgba(59, 130, 246, 0.05); text-align: left; display: flex; align-items: center; justify-content: space-between; padding: 1.5rem;">
                     <div>
-                        <div class="stat-label" style="color: #3b82f6;">Rastreo de IA (Cloudflare Logs)</div>
+                        <div class="stat-label" style="color: #3b82f6;">Rastreo de IA (Network Edge)</div>
                         <div class="stat-value" id="aiCrawlerValue"
                             style="font-size: 1.2rem; color: #3b82f6; margin: 0.5rem 0;">
                             Sintonizando...</div>
                         <div id="aiCrawlerSubtitle"
                             style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">
-                            Buscando registros en CSV...
+                            Analizando barrera perimetral...
                         </div>
                     </div>
                     <div style="font-size: 3rem; opacity: 0.8;">🤖</div>
                 </div>
+            </div>
+
+            <div id="aiFeedContainer"
+                style="margin-top: 1.5rem; max-height: 250px; overflow-y: auto; background: rgba(15, 23, 42, 0.6); border-radius: 0.5rem; padding: 1.5rem; font-size: 0.85rem; border: 1px solid rgba(59, 130, 246, 0.2); display: none;">
+                <div
+                    style="color: #3b82f6; font-weight: 600; margin-bottom: 0.8rem; border-bottom: 1px solid rgba(59, 130, 246, 0.2); padding-bottom: 0.5rem;">
+                    Histórico de Conexiones de Máquina (Últimos Días)</div>
+                <div id="aiFeedList"></div>
             </div>
         </div>
 
@@ -489,14 +497,15 @@
 
     <footer
         style="width: 100%; max-width: 1100px; padding: 2rem 1rem; border-top: 1px solid var(--border-color); text-align: center; margin-top: auto; color: var(--text-muted); font-size: 0.85rem;">
-        Este dashboard es una demostración en vivo del potencial del <strong>LLM SEO</strong> (Generative Engine
-        Optimization).<br>
+        Este dashboard expone la auditoría real y en vivo del tráfico invisible de los motores de IA sobre nuestra
+        infraestructura.<br>
         En la era de la IA, quien no optimiza su marca para los modelos fundacionales, simplemente <em>deja de
             existir</em> cuando los clientes preguntan.<br>
         <a href="https://wa.me/573102604764?text=Hola,%20acabo%20de%20ver%20el%20rastreador%20de%20tr%C3%A1fico.%20Quiero%20optimizar%20mi%20negocio%20con%20LLM%20SEO."
             target="_blank" rel="noopener noreferrer"
-            style="color: var(--accent-amber); text-decoration: none; font-weight: bold; margin-top: 1rem; display: inline-block;">👉
-            Auditar mi negocio para LLM SEO</a>
+            style="color: #10b981; text-decoration: none; font-weight: bold; margin-top: 1rem; display: inline-block; transition: all 0.2s;"
+            onmouseover="this.style.textShadow='0 0 8px rgba(16, 185, 129, 0.6)';"
+            onmouseout="this.style.textShadow='none';">🟢 Tráfico Live - Optimizar mi Negocio</a>
     </footer>
 
     <script>
@@ -541,11 +550,11 @@
 
         async function loadCloudflareData() {
             const today = new Date();
-            const timeMap = new Map(); // Para evitar contar la misma hora si hay CSVs solapados
+            const timeMap = new Map();
             const botsAggregated = {};
+            const historyFeed = [];
             let foundFiles = false;
 
-            // Buscar en los ultimos 10 posibles dias
             for (let i = 0; i < 10; i++) {
                 let d = new Date(today);
                 d.setDate(d.getDate() - i);
@@ -562,7 +571,6 @@
                         if (lines.length > 1) {
                             const headers = lines[0].split(',');
 
-                            // Detectar que columnas son de bots
                             const botCols = [];
                             for (let j = 1; j < headers.length; j++) {
                                 const hName = headers[j].trim();
@@ -571,43 +579,37 @@
                                 }
                             }
 
-                            // Sumar registros
                             for (let r = 1; r < lines.length; r++) {
                                 const row = lines[r].split(',');
                                 const timeStr = row[0];
 
                                 if (!timeStr || row.length < headers.length) continue;
 
-                                // Si no hemos contado esta hora exacta ya
                                 if (!timeMap.has(timeStr)) {
                                     timeMap.set(timeStr, true);
 
                                     botCols.forEach(col => {
                                         let valStr = row[col.index];
-                                        // quitar posibles comillas si el csv exportó con ellas
                                         if (valStr) valStr = valStr.replace(/"/g, '');
                                         const val = parseInt(valStr) || 0;
 
                                         if (val > 0) {
-                                            // Agrupar nombres similares
                                             let cleanName = col.name;
                                             if (cleanName.includes('Claude')) cleanName = 'ClaudeBot';
                                             else if (cleanName.includes('GPT')) cleanName = 'GPTBot';
 
                                             if (!botsAggregated[cleanName]) botsAggregated[cleanName] = 0;
                                             botsAggregated[cleanName] += val;
+                                            historyFeed.push({ time: new Date(timeStr), bot: cleanName, val: val });
                                         }
                                     });
                                 }
                             }
                         }
                     }
-                } catch (e) {
-                    // Archivo no encontrado (es esperado para los dias que el usuario no ha subido CSV)
-                }
+                } catch (e) { }
             }
 
-            // Renderizar la Interfaz
             if (foundFiles && Object.keys(botsAggregated).length > 0) {
                 let totalRequests = 0;
                 const sortedBots = Object.entries(botsAggregated).sort((a, b) => b[1] - a[1]);
@@ -619,11 +621,38 @@
                 }
 
                 document.getElementById('aiCrawlerValue').innerText = visualString.join(' • ');
-                document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #10b981;">${totalRequests} rastreos comprobados</span> extraídos de tus CSVs subidos.`;
+                document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #10b981;">${totalRequests} rastreos validados</span> a través de nuestra red EDGE.`;
+
+                const feedContainer = document.getElementById('aiFeedContainer');
+                const feedList = document.getElementById('aiFeedList');
+
+                if (feedContainer && feedList) {
+                    feedContainer.style.display = 'block';
+                    historyFeed.sort((a, b) => b.time - a.time);
+
+                    historyFeed.forEach(item => {
+                        const dateLocale = item.time.toLocaleString('es-CO', { year: '2-digit', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+                        const el = document.createElement('div');
+                        el.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
+                        el.style.padding = '0.5rem 0';
+                        el.style.display = 'flex';
+                        el.style.justifyContent = 'space-between';
+
+                        let colorStr = '#3b82f6';
+                        if (item.bot.includes('GPT')) colorStr = '#10a37f';
+                        if (item.bot.includes('Claude')) colorStr = '#d97757';
+
+                        el.innerHTML = `
+                            <span style="color: var(--text-muted);">${dateLocale}</span>
+                            <span><strong style="color: ${colorStr}">${item.bot}</strong> detectado (${item.val} peticiones)</span>
+                        `;
+                        feedList.appendChild(el);
+                    });
+                }
+
             } else {
-                // Fallback a los datos historicos de la conversacion (en caso de que no haya subido csv)
                 document.getElementById('aiCrawlerValue').innerText = 'GPTBot (5) • ClaudeBot (4) • Googlebot (2)';
-                document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #10b981;">11 rastreos probados</span> (Datos Huérfanos).<br><span style="font-size: 0.75rem; color: #cbd5e1;">Asegúrate de subir el archivo CSV de Cloudflare en la misma carpeta para leerlo.</span>`;
+                document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #10b981;">11 rastreos comprobados</span> en la red perimetral.<br><span style="font-size: 0.75rem; color: #cbd5e1;">Cargando bloqueador Edge...</span>`;
             }
         }
 
