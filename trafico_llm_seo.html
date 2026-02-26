@@ -384,10 +384,12 @@
                     style="border-color: #3b82f6; background: rgba(59, 130, 246, 0.05); text-align: left; display: flex; align-items: center; justify-content: space-between; padding: 1.5rem;">
                     <div>
                         <div class="stat-label" style="color: #3b82f6;">Rastreo de IA (Cloudflare Logs)</div>
-                        <div class="stat-value" style="font-size: 1.2rem; color: #3b82f6; margin: 0.5rem 0;">
-                            GPTBot (5) • ClaudeBot (4) • Googlebot (2)</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">
-                            <span style="color: #10b981;">12 rastreos exitosos</span> indexando subpáginas.
+                        <div class="stat-value" id="aiCrawlerValue"
+                            style="font-size: 1.2rem; color: #3b82f6; margin: 0.5rem 0;">
+                            Sintonizando...</div>
+                        <div id="aiCrawlerSubtitle"
+                            style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">
+                            Buscando registros en CSV...
                         </div>
                     </div>
                     <div style="font-size: 3rem; opacity: 0.8;">🤖</div>
@@ -537,8 +539,97 @@
             }
         }
 
-        // Iniciar captura
+        async function loadCloudflareData() {
+            const today = new Date();
+            const timeMap = new Map(); // Para evitar contar la misma hora si hay CSVs solapados
+            const botsAggregated = {};
+            let foundFiles = false;
+
+            // Buscar en los ultimos 10 posibles dias
+            for (let i = 0; i < 10; i++) {
+                let d = new Date(today);
+                d.setDate(d.getDate() - i);
+                let dateStr = d.toISOString().split('T')[0];
+                let filename = `ai-zone-economiaia.business-requests-crawler-${dateStr}.csv`;
+
+                try {
+                    const response = await fetch(filename);
+                    if (response.ok) {
+                        foundFiles = true;
+                        const text = await response.text();
+                        const lines = text.trim().split('\n');
+
+                        if (lines.length > 1) {
+                            const headers = lines[0].split(',');
+
+                            // Detectar que columnas son de bots
+                            const botCols = [];
+                            for (let j = 1; j < headers.length; j++) {
+                                const hName = headers[j].trim();
+                                if (hName !== 'timestamp' && hName !== 'dashed' && hName !== 'time') {
+                                    botCols.push({ index: j, name: hName });
+                                }
+                            }
+
+                            // Sumar registros
+                            for (let r = 1; r < lines.length; r++) {
+                                const row = lines[r].split(',');
+                                const timeStr = row[0];
+
+                                if (!timeStr || row.length < headers.length) continue;
+
+                                // Si no hemos contado esta hora exacta ya
+                                if (!timeMap.has(timeStr)) {
+                                    timeMap.set(timeStr, true);
+
+                                    botCols.forEach(col => {
+                                        let valStr = row[col.index];
+                                        // quitar posibles comillas si el csv exportó con ellas
+                                        if (valStr) valStr = valStr.replace(/"/g, '');
+                                        const val = parseInt(valStr) || 0;
+
+                                        if (val > 0) {
+                                            // Agrupar nombres similares
+                                            let cleanName = col.name;
+                                            if (cleanName.includes('Claude')) cleanName = 'ClaudeBot';
+                                            else if (cleanName.includes('GPT')) cleanName = 'GPTBot';
+
+                                            if (!botsAggregated[cleanName]) botsAggregated[cleanName] = 0;
+                                            botsAggregated[cleanName] += val;
+                                        }
+                                    });
+                                }
+                            }
+                        }
+                    }
+                } catch (e) {
+                    // Archivo no encontrado (es esperado para los dias que el usuario no ha subido CSV)
+                }
+            }
+
+            // Renderizar la Interfaz
+            if (foundFiles && Object.keys(botsAggregated).length > 0) {
+                let totalRequests = 0;
+                const sortedBots = Object.entries(botsAggregated).sort((a, b) => b[1] - a[1]);
+                let visualString = [];
+
+                for (const [name, count] of sortedBots) {
+                    visualString.push(`${name} (${count})`);
+                    totalRequests += count;
+                }
+
+                document.getElementById('aiCrawlerValue').innerText = visualString.join(' • ');
+                document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #10b981;">${totalRequests} rastreos comprobados</span> extraídos de tus CSVs subidos.`;
+            } else {
+                // Fallback a los datos historicos de la conversacion (en caso de que no haya subido csv)
+                document.getElementById('aiCrawlerValue').innerText = 'GPTBot (5) • ClaudeBot (4) • Googlebot (2)';
+                document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #10b981;">11 rastreos probados</span> (Datos Huérfanos).<br><span style="font-size: 0.75rem; color: #cbd5e1;">Asegúrate de subir el archivo CSV de Cloudflare en la misma carpeta para leerlo.</span>`;
+            }
+        }
+
+        // Iniciar
         fetchVisitorInfo();
+        loadCloudflareData();
 
     </script>
 </body>
