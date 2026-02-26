@@ -209,17 +209,18 @@
         <div class="architecture-box">
             <svg viewBox="0 0 800 500" width="100%" height="100%">
                 <!-- Entradas de Clientes (Locales) -->
-                <!-- Dentista -->
+                <!-- Negocio A (Salud) -->
                 <rect x="50" y="80" width="140" height="70" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="2" />
                 <text x="120" y="110" fill="#10b981" font-weight="bold" font-size="14" text-anchor="middle">Clínica
-                    Smile</text>
-                <text x="120" y="130" fill="#94a3b8" font-size="10" text-anchor="middle">IG DM: "Cita Brackets"</text>
+                    Médica</text>
+                <text x="120" y="130" fill="#94a3b8" font-size="10" text-anchor="middle">IG DM: "Agendar Cita"</text>
 
-                <!-- Abogado -->
+                <!-- Negocio B (Legal) -->
                 <rect x="50" y="215" width="140" height="70" rx="8" fill="#0f172a" stroke="#f59e0b" stroke-width="2" />
-                <text x="120" y="245" fill="#f59e0b" font-weight="bold" font-size="14" text-anchor="middle">Gómez
+                <text x="120" y="245" fill="#f59e0b" font-weight="bold" font-size="14" text-anchor="middle">Firma
                     Legal</text>
-                <text x="120" y="265" fill="#94a3b8" font-size="10" text-anchor="middle">WhatsApp: "Choqué auto"</text>
+                <text x="120" y="265" fill="#94a3b8" font-size="10" text-anchor="middle">WhatsApp: "Consulta
+                    Jurídica"</text>
 
                 <!-- Economía IA (Tú) -->
                 <rect x="50" y="350" width="140" height="70" rx="8" fill="#0f172a" stroke="#3b82f6" stroke-width="2" />
@@ -232,12 +233,12 @@
                 <!-- Tubo 1 -->
                 <path d="M 190 115 C 280 115, 300 250, 360 250" fill="none" stroke="#10b981" stroke-width="3"
                     class="data-stream" opacity="0.7" />
-                <text x="260" y="150" fill="#10b981" font-size="10">/webhook/clinica_smile</text>
+                <text x="260" y="150" fill="#10b981" font-size="10">/webhook/negocio_A</text>
 
                 <!-- Tubo 2 -->
                 <path d="M 190 250 L 360 250" fill="none" stroke="#f59e0b" stroke-width="3" class="data-stream"
                     opacity="0.7" />
-                <text x="260" y="240" fill="#f59e0b" font-size="10">/webhook/gomez_legal</text>
+                <text x="260" y="240" fill="#f59e0b" font-size="10">/webhook/negocio_B</text>
 
                 <!-- Tubo 3 -->
                 <path d="M 190 385 C 280 385, 300 250, 360 250" fill="none" stroke="#3b82f6" stroke-width="3"
@@ -284,9 +285,9 @@
             </div>
             <div class="card" style="border-left-color: #10b981;">
                 <h3>Seguridad de Facturación</h3>
-                <p>Cada vez que tu servidor le pide pensar a OpenAI, usa la `API_KEY` guardada para ese cliente
-                    específico. Esto significa que si el dentista tiene 1,000 chats al día, el costo se le carga a su
-                    propia tarjeta puesta en OpenAI, no al presupuesto de "Economía IA".</p>
+                <p>Cada vez que tu servidor le pide pensar a OpenAI, usa la `API_KEY` guardada para ese inquilino
+                    específico. Esto significa que si un negocio tiene 1,000 chats al día, el costo se le carga a su
+                    propia tarjeta puesta en OpenAI, no al presupuesto central de orquestación.</p>
             </div>
             <div class="card" style="border-left-color: #f59e0b;">
                 <h3>Ventaja Nativa CAPI (Pagos Offline)</h3>
