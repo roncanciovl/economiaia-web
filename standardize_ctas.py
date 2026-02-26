@@ -22,8 +22,8 @@ footer_html = '''    <!-- Footer Economía IA -->
                 onmouseover="this.style.color='#10b981';" onmouseout="this.style.color='#64748b';">💼 Consultoría</a>
             <span style="color: #1e293b;">·</span>
             <a href="trafico_llm_seo.html" target="_blank" rel="noopener noreferrer"
-                style="color: #64748b; font-size: 0.7rem; text-decoration: none; transition: color 0.2s;"
-                onmouseover="this.style.color='#f59e0b';" onmouseout="this.style.color='#64748b';">📈 Tráfico</a>
+                style="color: #10b981; font-weight: bold; font-size: 0.7rem; text-decoration: none; transition: all 0.2s;"
+                onmouseover="this.style.textShadow='0 0 8px rgba(16, 185, 129, 0.6)';" onmouseout="this.style.textShadow='none';">🟢 Tráfico Real</a>
             <span style="color: #1e293b;">·</span>
             <a href="https://wa.me/573102604764" target="_blank" rel="noopener noreferrer"
                 style="color: #64748b; font-size: 0.7rem; text-decoration: none; transition: color 0.2s;"
