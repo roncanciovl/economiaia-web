@@ -352,7 +352,20 @@
                 Así como rastreamos tu conexión humana ahora mismo, la ingeniería de servidor nos permite detectar y
                 analizar los rastreadores de modelos fundacionales (OpenAI, Anthropic, Meta) en tiempo real.
             </p>
-            <div class="stats-grid" style="grid-template-columns: 1fr;">
+            <style>
+                .tracker-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1.5rem;
+                }
+
+                @media (max-width: 850px) {
+                    .tracker-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            </style>
+            <div class="tracker-grid">
                 <div class="stat-card" id="userConnectionPanel"
                     style="border-color: var(--accent-amber); background: rgba(245, 158, 11, 0.05); text-align: left; display: flex; align-items: center; justify-content: space-between; padding: 1.5rem;">
                     <div>
@@ -365,6 +378,19 @@
                             coordenadas...</div>
                     </div>
                     <div style="font-size: 3rem; opacity: 0.8;">🎯</div>
+                </div>
+
+                <div class="stat-card" id="aiCrawlerPanel"
+                    style="border-color: #3b82f6; background: rgba(59, 130, 246, 0.05); text-align: left; display: flex; align-items: center; justify-content: space-between; padding: 1.5rem;">
+                    <div>
+                        <div class="stat-label" style="color: #3b82f6;">Rastreo de IA (Cloudflare Logs)</div>
+                        <div class="stat-value" style="font-size: 1.5rem; color: #3b82f6; margin: 0.5rem 0;">
+                            Googlebot (Gemini AI)</div>
+                        <div style="font-size: 0.9rem; color: var(--text-muted); font-weight: 600;">
+                            <span style="color: #10b981;">2 accesos directos</span> detectados en las últimas 24h
+                        </div>
+                    </div>
+                    <div style="font-size: 3rem; opacity: 0.8;">🤖</div>
                 </div>
             </div>
         </div>
