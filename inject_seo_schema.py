@@ -33,7 +33,7 @@ schema_template = '''
         "Inteligencia Artificial para Negocios",
         "Arquitectura de Datos IA",
         "Google Vertex AI",
-        "Gemini 1.5 Pro"
+        "Gemini Pro"
       ],
       "sameAs": [
         "https://www.tiktok.com/@economiaia",
