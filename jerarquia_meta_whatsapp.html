@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9Q4T51VW0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-Z9Q4T51VW0');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatización con Meta (WhatsApp/Insta/Facebook) | Economía IA</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+        :root {
+            --bg-dark: #0c111e;
+            --card-bg: #1e293b;
+            --accent-blue: #3b82f6;
+            --accent-cyan: #06b6d4;
+            --accent-purple: #8b5cf6;
+            --accent-green: #10b981;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --border-color: #334155;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            margin: 0;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.6;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 40%);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .highlight-text {
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        /* Hierarchy Cards */
+        .hierarchy-section {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .level-card {
+            background: var(--card-bg);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            gap: 1.5rem;
+            overflow: hidden;
+        }
+
+        .level-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-blue);
+        }
+
+        .level-card:nth-child(2)::before {
+            background: var(--accent-purple);
+        }
+
+        .level-card:nth-child(3)::before {
+            background: var(--accent-green);
+        }
+
+        .level-card:hover {
+            transform: translateX(10px);
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .level-number {
+            font-size: 0.9rem;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            height: fit-content;
+            white-space: nowrap;
+        }
+
+        .level-content h2 {
+            margin: 0 0 1rem 0;
+            font-size: 1.5rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .level-content p {
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+        }
+
+        .id-badge {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            color: var(--accent-cyan);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .id-label {
+            color: var(--text-dim);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Tree Visualization */
+        .visual-tree {
+            background: #0f172a;
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            margin-bottom: 4rem;
+            border: 1px dashed var(--border-color);
+            position: relative;
+        }
+
+        .visual-tree h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.25rem;
+            color: var(--accent-cyan);
+        }
+
+        .tree-container {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-main);
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        .tree-accent {
+            color: var(--accent-blue);
+        }
+
+        .tree-folder {
+            color: var(--accent-purple);
+        }
+
+        .tree-phone {
+            color: var(--accent-green);
+        }
+
+        .tree-status {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--accent-green);
+        }
+
+        /* Implementation Guide */
+        .guide-section {
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 1.25rem;
+            padding: 2.5rem;
+            margin-bottom: 4rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .step-list {
+            padding-left: 1.5rem;
+        }
+
+        .step-list li {
+            margin-bottom: 1rem;
+            color: var(--text-dim);
+        }
+
+        .step-list li b {
+            color: var(--text-main);
+        }
+
+        /* Difference Box */
+        .diff-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .diff-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .level-card {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        .diff-card {
+            background: rgba(15, 23, 42, 0.4);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .diff-card h4 {
+            margin: 0 0 0.75rem 0;
+            color: var(--accent-cyan);
+            font-size: 1.1rem;
+        }
+
+        .diff-card ul {
+            padding-left: 1.2rem;
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+
+        .summary-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1));
+            padding: 2rem;
+            border-radius: 1.25rem;
+            border: 1px solid var(--accent-blue);
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* SVG Hierarchy Diagram */
+        .svg-diagram {
+            width: 100%;
+            height: auto;
+            margin-bottom: 3rem;
+        }
+
+        @keyframes pulseLine {
+            0% {
+                stroke-dashoffset: 100;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .flow-line {
+            stroke-dasharray: 5;
+            animation: pulseLine 2s linear infinite;
+        }
+    </style>
+
+    <!-- Marcado Estructurado JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Automatización con Meta (WhatsApp/Insta/Facebook)",
+      "description": "Explicación técnica de la jerarquía de activos y automatización avanzada en el ecosistema de Meta.",
+      "author": {
+        "@type": "Organization",
+        "name": "Economía IA"
+      }
+    }
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Automatización con Meta <br><small
+                    style="font-size: 0.5em; vertical-align: middle; opacity: 0.8;">(WhatsApp / Insta /
+                    Facebook)</small></h1>
+            <p class="subtitle">
+                Tus activos digitales en Meta no son entidades sueltas; forman parte de una <span
+                    class="highlight-text">estructura oficial</span> de mayor a menor. Entender esto es vital para tu
+                arquitectura de datos y automatización avanzada.
+            </p>
+        </header>
+
+        <!-- SVG Hierarchy Animation -->
+        <section style="margin-bottom: 5rem; perspective: 1000px;">
+            <div
+                style="background: rgba(15, 23, 42, 0.4); border-radius: 2rem; border: 1px solid var(--border-color); padding: 3rem 1rem; position: relative; overflow: hidden;">
+                <!-- Ambient Glows -->
+                <div
+                    style="position: absolute; top: -50px; left: 50%; width: 200px; height: 100px; background: rgba(59, 130, 246, 0.2); filter: blur(60px); transform: translateX(-50%);">
+                </div>
+
+                <svg viewBox="0 0 800 400" width="100%" height="100%" class="svg-diagram">
+                    <defs>
+                        <linearGradient id="gradBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:var(--accent-cyan);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:var(--accent-blue);stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+
+                    <!-- Connections (Bottom Up for layering) -->
+                    <!-- WABA to Phones -->
+                    <path d="M 400 200 Q 400 280 200 320" fill="none" stroke="var(--border-color)" stroke-width="2" />
+                    <path d="M 400 200 Q 400 280 600 320" fill="none" stroke="var(--border-color)" stroke-width="2" />
+                    <!-- Business to WABA -->
+                    <path d="M 400 70 L 400 150" fill="none" stroke="var(--border-color)" stroke-width="2" />
+
+                    <!-- Animated Flow Lines -->
+                    <path d="M 400 70 L 400 150" fill="none" stroke="var(--accent-blue)" stroke-width="3"
+                        stroke-dasharray="10 20" class="flow-line" filter="url(#glow)" />
+                    <path d="M 400 200 Q 400 280 200 320" fill="none" stroke="var(--accent-purple)" stroke-width="2"
+                        stroke-dasharray="10 30" class="flow-line" style="animation-duration: 3s;"
+                        filter="url(#glow)" />
+                    <path d="M 400 200 Q 400 280 600 320" fill="none" stroke="var(--accent-green)" stroke-width="2"
+                        stroke-dasharray="10 30" class="flow-line" style="animation-duration: 2.5s;"
+                        filter="url(#glow)" />
+
+                    <!-- Nodes -->
+                    <!-- LEVEL 1: Portfolio -->
+                    <g transform="translate(400, 70)" style="cursor: pointer;">
+                        <circle r="35" fill="var(--bg-dark)" stroke="url(#gradBlue)" stroke-width="3"
+                            style="animation: pulseSoft 4s infinite;" />
+                        <text y="8" text-anchor="middle" font-size="24">🏢</text>
+                        <text y="55" text-anchor="middle" fill="var(--text-main)" font-size="12"
+                            font-weight="bold">Portfolio Comercial</text>
+                    </g>
+
+                    <!-- LEVEL 2: WABA -->
+                    <g transform="translate(400, 200)">
+                        <rect x="-40" y="-30" width="80" height="60" rx="10" fill="var(--bg-dark)"
+                            stroke="var(--accent-purple)" stroke-width="3" style="animation: floatY 5s infinite;" />
+                        <text y="8" text-anchor="middle" font-size="24">📁</text>
+                        <text y="50" text-anchor="middle" fill="var(--text-dim)" font-size="10" font-weight="600">WABA
+                            ID</text>
+                    </g>
+
+                    <!-- LEVEL 3: API Numbers -->
+                    <g transform="translate(200, 320)">
+                        <circle r="25" fill="var(--bg-dark)" stroke="var(--accent-green)" stroke-width="2" />
+                        <text y="8" text-anchor="middle" font-size="18">🔌</text>
+                        <text y="40" text-anchor="middle" fill="var(--accent-green)" font-size="9" font-weight="800">API
+                            NUMBER 1</text>
+                    </g>
+
+                    <g transform="translate(600, 320)">
+                        <circle r="25" fill="var(--bg-dark)" stroke="var(--accent-green)" stroke-width="2" />
+                        <text y="8" text-anchor="middle" font-size="18">🔌</text>
+                        <text y="40" text-anchor="middle" fill="var(--accent-green)" font-size="9" font-weight="800">API
+                            NUMBER 2</text>
+                    </g>
+
+                    <!-- Data Packets (Animación extra) -->
+                    <circle r="4" fill="#fff" filter="url(#glow)">
+                        <animateMotion dur="4s" repeatCount="indefinite" path="M 400 70 L 400 150" />
+                    </circle>
+                </svg>
+
+                <!-- Floating Label -->
+                <div
+                    style="position: absolute; bottom: 20px; right: 20px; font-size: 0.7rem; color: var(--text-dim); border-left: 2px solid var(--accent-blue); padding-left: 10px;">
+                    FLUJO DE HERENCIA DE ACTIVOS<br>
+                    <span style="color: var(--accent-cyan);">Sincronización en tiempo real</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Hierarchy Recap -->
+        <section class="hierarchy-section">
+            <div class="level-card">
+                <div class="level-number">Nivel 1</div>
+                <div class="level-content">
+                    <h2>🏢 Portafolio Comercial <small>(Business Portfolio)</small></h2>
+                    <p>Es el "Dueño del Edificio". Representa a tu empresa legal y es el contenedor principal de todos
+                        los activos.</p>
+                    <p><b>Función:</b> Paga las facturas, gestiona usuarios y tiene la propiedad de las cuentas
+                        comerciales.</p>
+                    <div class="id-badge">
+                        <span class="id-label">Business ID:</span> 122780889905****
+                    </div>
+                </div>
+            </div>
+
+            <div class="level-card">
+                <div class="level-number">Nivel 2</div>
+                <div class="level-content">
+                    <h2>📁 Cuenta de WhatsApp Business <small>(WABA)</small></h2>
+                    <p>Es la "Oficina" de automatización. Si tienes este ID, significa que tu número está conectado a la
+                        <b>WhatsApp Business API</b>.
+                    </p>
+                    <p><b>Función:</b> Es el motor que permite conectar Bots (Manychat) e IAs. Define el límite de
+                        mensajes automáticos y la facturación por conversación.</p>
+                    <div class="id-badge">
+                        <span class="id-label">WABA ID:</span> 149412984187****
+                    </div>
+                </div>
+            </div>
+
+            <div class="level-card">
+                <div class="level-number">Nivel 3</div>
+                <div class="level-content">
+                    <h2>🔌 WhatsApp API Number <small>(Phone Number ID)</small></h2>
+                    <p>Es la identidad final del número dentro de la infraestructura Cloud de Meta. Un número normal se
+                        convierte en un <b>API Number</b> cuando se "desconecta" del chip físico y se registra en la
+                        nube.</p>
+                    <p><b>Función:</b> Es el terminal técnico que recibe órdenes de Manychat o Meta AI. Su "dirección"
+                        única es el <b>Phone Number ID</b>.</p>
+                    <div class="id-badge">
+                        <span class="id-label">Phone ID:</span> 384752910384****
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visual Visualization (Animated) -->
+        <section class="visual-tree"
+            style="background: #0c111e; border: 1px solid var(--border-color); padding: 0; overflow: hidden; border-radius: 1.5rem; margin-bottom: 4rem;">
+            <div
+                style="padding: 2rem; border-bottom: 1px solid var(--border-color); background: rgba(255,255,255,0.02);">
+                <h3 style="margin: 0; color: var(--accent-cyan);">Ejemplo: Infraestructura Economía IA</h3>
+                <p style="font-size: 0.85rem; color: var(--text-dim); margin: 0.5rem 0 0 0;">Representación visual de
+                    tus activos reales en el cluster de Meta.</p>
+            </div>
+
+            <div
+                style="height: 450px; position: relative; background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 70%);">
+                <svg viewBox="0 0 600 450" width="100%" height="100%">
+                    <!-- Trunk lines -->
+                    <line x1="300" y1="85" x2="300" y2="160" stroke="var(--accent-blue)" stroke-width="2"
+                        stroke-dasharray="4" style="animation: pulseLine 2s linear infinite;" />
+
+                    <!-- Branch lines -->
+                    <path d="M 300 240 Q 300 320 150 340" fill="none" stroke="var(--accent-cyan)" stroke-width="1.5"
+                        stroke-dasharray="4" opacity="0.6" />
+                    <path d="M 300 240 Q 300 320 450 340" fill="none" stroke="var(--accent-cyan)" stroke-width="1.5"
+                        stroke-dasharray="4" opacity="0.6" />
+
+                    <!-- Nodes -->
+                    <!-- Nivel 1: Portfolio -->
+                    <g transform="translate(300, 60)">
+                        <rect x="-120" y="-30" width="240" height="60" rx="15" fill="#1e293b"
+                            stroke="var(--accent-blue)" stroke-width="2" />
+                        <text y="5" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">🏢
+                            economiaia</text>
+                        <text y="22" text-anchor="middle" fill="var(--accent-blue)" font-size="10"
+                            font-family="Fira Code">ID: 122780889905****</text>
+                    </g>
+
+                    <!-- Nivel 2: WABA -->
+                    <g transform="translate(300, 200)">
+                        <rect x="-110" y="-40" width="220" height="80" rx="12" fill="#1e293b"
+                            stroke="var(--accent-purple)" stroke-width="2" style="animation: pulseSoft 3s infinite;" />
+                        <text y="-5" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">📁 WABA: Economia
+                            IA</text>
+                        <text y="15" text-anchor="middle" fill="var(--accent-purple)" font-size="10"
+                            font-family="Fira Code">ID: 149412984187****</text>
+                        <text y="30" text-anchor="middle" fill="#94a3b8" font-size="9">Owned by: economiaia</text>
+                    </g>
+
+                    <!-- Nivel 3: Phones -->
+                    <!-- Phone 1 (Connected) -->
+                    <g transform="translate(150, 360)">
+                        <circle r="45" fill="#1e293b" stroke="var(--accent-green)" stroke-width="2" />
+                        <text y="-8" text-anchor="middle" font-size="20">📞</text>
+                        <text y="12" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">+1 669...</text>
+                        <rect x="-35" y="20" width="70" height="18" rx="4" fill="rgba(16, 185, 129, 0.1)" />
+                        <text y="32" text-anchor="middle" fill="var(--accent-green)" font-size="9"
+                            font-weight="bold">Connected</text>
+                        <circle cx="0" cy="55" r="5" fill="var(--accent-green)"
+                            style="animation: pulseSoft 1.5s infinite;" />
+                    </g>
+
+                    <!-- Phone 2 (Unverified) -->
+                    <g transform="translate(450, 360)">
+                        <circle r="45" fill="#1e293b" stroke="#ef4444" stroke-width="2" />
+                        <text y="-8" text-anchor="middle" font-size="20">📞</text>
+                        <text y="12" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">+57 304...</text>
+                        <rect x="-35" y="20" width="70" height="18" rx="4" fill="rgba(239, 68, 68, 0.1)" />
+                        <text y="32" text-anchor="middle" fill="#ef4444" font-size="9"
+                            font-weight="bold">Unverified</text>
+                        <circle cx="0" cy="55" r="5" fill="#ef4444" />
+                    </g>
+
+                    <!-- Animated Data Packets -->
+                    <circle r="3" fill="#fff">
+                        <animateMotion dur="3s" repeatCount="indefinite" path="M 300 90 L 300 160" />
+                    </circle>
+                </svg>
+
+                <!-- Status Sidebar -->
+                <div
+                    style="position: absolute; top: 20px; right: 20px; background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 0.75rem; border: 1px solid var(--border-color); backdrop-filter: blur(4px);">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <span
+                            style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent-green);"></span>
+                        <span style="font-size: 0.75rem; color: #fff;">Nodo Principal Activo</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 8px; height: 8px; border-radius: 50%; background: #ef4444;"></span>
+                        <span style="font-size: 0.75rem; color: #fff;">Verificación requerida</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Where to see this in Meta -->
+        <section class="guide-section">
+            <h3>🔍 ¿Dónde ves esto en Meta?</h3>
+            <p>Para obtener los IDs reales y validar el estado de tus activos:</p>
+            <ol class="step-list">
+                <li>Ve a <b><a href="https://business.facebook.com/settings" target="_blank"
+                            style="color: var(--accent-cyan);">business.facebook.com/settings</a></b>.</li>
+                <li>En el menú lateral izquierdo, busca <b>Cuentas</b> -> <b>Cuentas de WhatsApp</b>.</li>
+                <li>Haz clic en tu cuenta (la WABA).</li>
+                <li>Ve a la pestaña <b>Configuración (Settings)</b>.</li>
+                <li>Busca "Administrador de WhatsApp" para ver la lista de <b>Phone Number IDs</b>.</li>
+            </ol>
+        </section>
+
+        <!-- New Section: Connection Architecture & Coexistence -->
+        <section style="margin-top: 6rem; margin-bottom: 6rem;">
+            <header style="text-align: left; margin-bottom: 3rem;">
+                <h2
+                    style="font-size: 2.2rem; background: linear-gradient(90deg, #fff, var(--accent-blue)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                    La Matrix de Conexión</h2>
+                <p style="color: var(--text-dim); max-width: 800px;">Entender esta conexión exacta es como ver la
+                    "Matrix" del ecosistema de Meta. Así es como la App de tu celular, Manychat y los Servidores de
+                    Meta convergen en una sola arquitectura funcional.</p>
+            </header>
+
+            <div class="grid-2" style="margin-bottom: 4rem;">
+                <div class="diff-card">
+                    <h4 style="color: var(--accent-blue);">1. Cuentas de Meta (El Dueño)</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-dim);">Todo nace en el <b>Meta Business
+                            Portfolio</b>. Representa a "Economía IA" legalmente. Meta Cloud API es el dueño de la
+                        tubería por donde viajan los bits.</p>
+                </div>
+                <div class="diff-card">
+                    <h4 style="color: var(--accent-purple);">2. Manychat o Meta AI (Los Cerebros)</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-dim);">Puedes usar <b>Manychat</b> (externo) o el
+                        nuevo <b>Meta AI</b> (nativo). Son los encargados de procesar la lógica y responder sin que tú
+                        toques el celular.</p>
+                </div>
+            </div>
+
+            <!-- Animated Connection Flow -->
+            <div
+                style="background: rgba(15, 23, 42, 0.4); border-radius: 2rem; border: 1px solid var(--border-color); padding: 3rem 1rem; position: relative; overflow: hidden; margin-bottom: 4rem;">
+                <h3
+                    style="text-align: center; color: var(--accent-cyan); margin-bottom: 2rem; font-size: 1.1rem; letter-spacing: 0.1em; text-transform: uppercase;">
+                    CONVERTIR UN NÚMERO DE WHATSAPP BUSINESS A UN NÚMERO WHATSAPP API</h3>
+
+                <svg viewBox="0 0 800 500" width="100%" height="100%">
+                    <!-- Client Node -->
+                    <g transform="translate(100, 250)">
+                        <circle r="40" fill="var(--bg-dark)" stroke="var(--text-dim)" stroke-width="2" />
+                        <text y="8" text-anchor="middle" font-size="24">👤</text>
+                        <text y="55" text-anchor="middle" fill="var(--text-dim)" font-size="11">CLIENTE</text>
+                    </g>
+
+                    <!-- Meta Cloud Node -->
+                    <g transform="translate(400, 250)">
+                        <path d="M -60 -40 L 60 -40 L 80 0 L 60 40 L -60 40 L -80 0 Z" fill="var(--bg-dark)"
+                            stroke="var(--accent-blue)" stroke-width="3" style="animation: pulseSoft 3s infinite;" />
+                        <text y="-5" text-anchor="middle" fill="#fff" font-size="12" font-weight="800">OFICINA
+                            CENTRAL</text>
+                        <text y="10" text-anchor="middle" fill="var(--accent-cyan)" font-size="10" font-weight="bold">✨
+                            Meta AI (Nativo)</text>
+                        <text y="24" text-anchor="middle" fill="var(--accent-blue)" font-size="8">(Cerebro de
+                            Meta)</text>
+                    </g>
+
+                    <!-- App Node (Terminal Humana) -->
+                    <g transform="translate(700, 120)">
+                        <rect x="-55" y="-35" width="110" height="75" rx="10" fill="var(--bg-dark)"
+                            stroke="var(--accent-green)" stroke-width="2" />
+                        <text y="-5" text-anchor="middle" font-size="20">📱</text>
+                        <text y="15" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">WhatsApp
+                            APP</text>
+                        <text y="28" text-anchor="middle" fill="var(--accent-green)" font-size="8"
+                            font-weight="bold">(Business App)</text>
+                    </g>
+
+                    <!-- API Node (Terminal Digital) -->
+                    <g transform="translate(700, 380)">
+                        <rect x="-55" y="-35" width="110" height="75" rx="10" fill="var(--bg-dark)"
+                            stroke="var(--accent-purple)" stroke-width="2" />
+                        <text y="-5" text-anchor="middle" font-size="20">🤖</text>
+                        <text y="15" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">API
+                            Number</text>
+                        <text y="28" text-anchor="middle" fill="var(--accent-purple)" font-size="8"
+                            font-weight="bold">(Infrastructure)</text>
+                    </g>
+
+                    <!-- Signal Lines -->
+                    <path d="M 150 250 L 310 250" fill="none" stroke="var(--accent-blue)" stroke-width="2"
+                        stroke-dasharray="5 5" style="animation: flowData 2s linear infinite;" />
+                    <path d="M 485 250 Q 550 250 550 120 L 640 120" fill="none" stroke="var(--accent-green)"
+                        stroke-width="2" stroke-dasharray="5 5" opacity="0.6" />
+                    <path d="M 485 250 Q 550 250 550 380 L 640 380" fill="none" stroke="var(--accent-purple)"
+                        stroke-width="2" stroke-dasharray="5 5" opacity="0.6" />
+
+                    <!-- Animated Data Packets -->
+                    <circle r="4" fill="#fff">
+                        <animateMotion dur="4s" repeatCount="indefinite" path="M 150 250 L 310 250" />
+                    </circle>
+                    <circle r="3" fill="var(--accent-green)">
+                        <animateMotion dur="4s" repeatCount="indefinite" path="M 485 250 Q 550 250 550 120 L 640 120" />
+                    </circle>
+                    <circle r="3" fill="var(--accent-purple)">
+                        <animateMotion dur="4s" repeatCount="indefinite" path="M 485 250 Q 550 250 550 380 L 640 380" />
+                    </circle>
+
+                    <!-- Feedback Path -->
+                    <path d="M 640 395 Q 400 395 400 300" fill="none" stroke="var(--accent-purple)" stroke-width="1.5"
+                        stroke-dasharray="2 4" />
+                    <circle r="3" fill="var(--accent-purple)">
+                        <animateMotion dur="3s" repeatCount="indefinite" path="M 640 395 Q 400 395 400 300" />
+                    </circle>
+                </svg>
+
+                <div
+                    style="margin-top: 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center;">
+                    <div
+                        style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 1rem; border: 1px solid rgba(255,255,255,0.05);">
+                        <span
+                            style="display: block; font-size: 0.7rem; color: var(--accent-blue); margin-bottom: 0.5rem; font-weight: bold;">1.
+                            EL CLIENTE ESCRIBE</span>
+                        <p style="font-size: 0.8rem; margin: 0; color: var(--text-dim);">El mensaje vuela directo a la
+                            oficina central de Meta.</p>
+                    </div>
+                    <div
+                        style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 1rem; border: 1px solid rgba(255,255,255,0.05);">
+                        <span
+                            style="display: block; font-size: 0.7rem; color: var(--accent-cyan); margin-bottom: 0.5rem; font-weight: bold;">2.
+                            PROCESAMIENTO</span>
+                        <p style="font-size: 0.8rem; margin: 0; color: var(--text-dim);">Meta analiza si responde
+                            <b>Meta AI</b> (nativo) o si envía la señal a <b>Manychat</b>.
+                        </p>
+                    </div>
+                    <div
+                        style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 1rem; border: 1px solid rgba(255,255,255,0.05);">
+                        <span
+                            style="display: block; font-size: 0.7rem; color: var(--accent-purple); margin-bottom: 0.5rem; font-weight: bold;">3.
+                            TRABAJO EN EQUIPO</span>
+                        <p style="font-size: 0.8rem; margin: 0; color: var(--text-dim);">El Bot responde rápido y tu
+                            celular se mantiene al día de todo.</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+        <!-- New Section: Meta AI (Nativo) - Límites y Alcance -->
+        <section style="margin-top: 4rem; margin-bottom: 4rem;">
+            <header style="text-align: left; margin-bottom: 2rem;">
+                <h2 style="font-size: 1.8rem; color: var(--accent-cyan);">Meta AI Hoy: ¿Qué puede hacer y qué no?</h2>
+                <p style="color: var(--text-dim);">El asistente nativo de Meta (Llama 3) es potente para el día a día,
+                    pero tiene fronteras claras frente a la automatización profesional.</p>
+            </header>
+
+            <div class="diff-grid">
+                <!-- Lo que SÍ se puede con Meta AI -->
+                <div class="diff-card" style="border-left: 3px solid var(--accent-green);">
+                    <h4 style="color: var(--accent-green);">✅ Lo que SÍ hace Meta AI (Nativo)</h4>
+                    <ul>
+                        <li style="margin-bottom: 0.8rem;"><b>Asistencia en Perfil:</b> Redacta descripciones y optimiza
+                            tu bio de negocio automáticamente.</li>
+                        <li style="margin-bottom: 0.8rem;"><b>Generación de Catálogo:</b> Crea imágenes y textos para
+                            tus productos con solo pedírselo.</li>
+                        <li style="margin-bottom: 0.8rem;"><b>Respuestas Rápidas Sugeridas:</b> Te propone qué contestar
+                            a preguntas de horarios o precios basadas en tu info.</li>
+                        <li style="margin-bottom: 0.8rem;"><b>IA para Ads:</b> Optimiza tus campañas de "Click to
+                            WhatsApp" con creativos generados por IA.</li>
+                        <li style="margin-bottom: 0.8rem;"><b>Resumen de Chats:</b> Te da un resumen ejecutivo de
+                            conversaciones largas que no has leído.</li>
+                    </ul>
+                </div>
+
+                <!-- Lo que NO se puede (Requiere Manychat/API) -->
+                <div class="diff-card" style="border-left: 3px solid var(--accent-purple);">
+                    <h4 style="color: var(--accent-purple);">❌ Lo que NO hace (Aún)</h4>
+                    <ul>
+                        <li style="margin-bottom: 0.8rem;"><b>Flujos Condicionales Complejos:</b> No puede "si el
+                            cliente elige A, llévalo al paso B". Eso requiere Manychat.</li>
+                        <li style="margin-bottom: 0.8rem;"><b>Integración CRM:</b> No guarda automáticamente datos en
+                            Google Sheets o tu base de datos propia.</li>
+                        <li style="margin-bottom: 0.8rem;"><b>Pagos Automatizados:</b> No puede gestionar un carrito de
+                            compras con checkout externo de forma autónoma.</li>
+                        <li style="margin-bottom: 0.8rem;"><b>Captura de Leads:</b> No tiene formularios estructurados
+                            para validar correos o teléfonos de forma estricta.</li>
+                        <li style="margin-bottom: 0.8rem;"><b>Omnicanalidad:</b> Meta AI en WhatsApp no sabe lo que el
+                            cliente te escribió en Instagram o Facebook.</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </section>
+
+        <section class="summary-box">
+            <b>🏠 En resumen:</b> Tus números son "hermanos". Viven en la misma "Casa" (WABA) que es propiedad de tu
+            "Padre" (Portafolio Comercial).
+        </section>
+
+        <!-- Standard Footer -->
+        <footer
+            style="margin-top: 5rem; padding: 2rem 0; border-top: 1px solid var(--border-color); text-align: center;">
+            <div
+                style="display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                <span style="color: var(--text-dim); font-size: 0.8rem; font-weight: 700;">ECONOMÍA IA</span>
+                <span style="color: var(--border-color);">|</span>
+                <a href="index.html" style="color: var(--accent-cyan); text-decoration: none; font-size: 0.8rem;">Hub
+                    Principal</a>
+                <a href="https://wa.me/573102604764"
+                    style="color: var(--text-dim); text-decoration: none; font-size: 0.8rem;">Soporte Técnico</a>
+            </div>
+            <p style="color: #475569; font-size: 0.7rem;">© 2026 Economía IA - Infraestructura de Datos Avanzada</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>
