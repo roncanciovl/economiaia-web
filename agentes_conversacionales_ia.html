@@ -196,6 +196,86 @@
                 padding: 2rem 1.5rem;
             }
         }
+
+        /* Consultancy Banner */
+        .consultancy-banner {
+            background: linear-gradient(135deg, rgba(34, 211, 238, 0.1), rgba(59, 130, 246, 0.1));
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            margin: 4rem 0;
+            text-align: left;
+        }
+
+        .consultancy-banner .ribbon {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--accent-blue);
+            color: #fff;
+            font-size: 0.65rem;
+            padding: 14px 28px;
+            transform: rotate(15deg);
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .consultancy-banner .info {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .consultancy-banner .info h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.5rem;
+            color: var(--accent-cyan);
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .consultancy-banner .info p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .btn-consultancy {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 0.6rem;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(34, 211, 238, 0.3);
+            white-space: nowrap;
+        }
+
+        .btn-consultancy:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(34, 211, 238, 0.5);
+            filter: brightness(1.1);
+        }
+
+        @media (max-width: 600px) {
+            .consultancy-banner {
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+
+            .btn-consultancy {
+                width: 100%;
+            }
+        }
     </style>
 
 
@@ -286,6 +366,19 @@
             </div>
         </div>
 
+        <!-- Consultancy Banner -->
+        <div class="consultancy-banner">
+            <div class="ribbon">DISPONIBLE</div>
+            <div style="font-size: 3rem;">🤝</div>
+            <div class="info">
+                <h3>Consultoría: Implementa tu Agente Cognitivo</h3>
+                <p>Diseñamos y desplegamos infraestructuras de IA personalizadas para automatizar tus ventas y atención
+                    al cliente. Habla directamente con un experto.</p>
+            </div>
+            <a href="https://wa.me/573043656226?text=Hola,%20quiero%20recibir%20consultoría%20para%20implementar%20agentes%20conversacionales."
+                class="btn-consultancy">Solicitar Consultoría 📱</a>
+        </div>
+
         <!-- Footer Economía IA -->
 
     </div>
@@ -328,7 +421,8 @@
         style="width: 100%; max-width: 1000px; margin: 1rem auto; padding: 1rem; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
         <div
             style="display: flex; justify-content: center; align-items: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 0.4rem;">
-            <a href="index.html" style="color: #475569; font-size: 0.7rem; font-weight: 600; text-decoration: none;">Ir al Ecosistema ECONOMÍA IA</a>
+            <a href="index.html" style="color: #475569; font-size: 0.7rem; font-weight: 600; text-decoration: none;">Ir
+                al Ecosistema ECONOMÍA IA</a>
             <span style="color: #1e293b;">·</span>
             <a href="https://www.tiktok.com/@economiaia" target="_blank" rel="noopener noreferrer"
                 style="color: #64748b; font-size: 0.7rem; text-decoration: none; transition: color 0.2s;"
