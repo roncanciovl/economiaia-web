@@ -25,7 +25,7 @@ footer_html = '''    <!-- Footer Economía IA -->
                 style="color: #10b981; font-weight: bold; font-size: 0.7rem; text-decoration: none; transition: all 0.2s;"
                 onmouseover="this.style.textShadow='0 0 8px rgba(16, 185, 129, 0.6)';" onmouseout="this.style.textShadow='none';">🟢 Tráfico Real</a>
             <span style="color: #1e293b;">·</span>
-            <a href="https://wa.me/573102604764" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/573043656226" target="_blank" rel="noopener noreferrer"
                 style="color: #64748b; font-size: 0.7rem; text-decoration: none; transition: color 0.2s;"
                 onmouseover="this.style.color='#25d366';" onmouseout="this.style.color='#64748b';">📱 WhatsApp</a>
         </div>
@@ -37,28 +37,28 @@ def get_cta(filename):
         return {
             "title": "Auditoría Técnica de Agentes",
             "desc": "Define el alcance de tu arquitectura (RAG, Multi-Agente) antes de producir.",
-            "wa": "https://wa.me/573102604764?text=Hola,%20estoy%20evaluando%20opciones%20para%20un%20agente%20conversacional%20y%20quiero%20la%20auditor%C3%ADa%20t%C3%A9cnica.",
+            "wa": "https://wa.me/573043656226?text=Hola,%20estoy%20evaluando%20opciones%20para%20un%20agente%20conversacional%20y%20quiero%20la%20auditor%C3%ADa%20t%C3%A9cnica.",
             "btn": "🔍 Solicitar Auditoría"
         }
     elif filename == "arquitectura_marketing_ia.html":
         return {
             "title": "Recomendación en Motores de IA",
             "desc": "Configuramos tu web para que la IA recomiende tu negocio de inmediato.",
-            "wa": "https://wa.me/573102604764?text=Hola,%20quiero%20que%20la%20IA%20recomiende%20mi%20negocio.",
+            "wa": "https://wa.me/573043656226?text=Hola,%20quiero%20que%20la%20IA%20recomiende%20mi%20negocio.",
             "btn": "📩 Quiero aparecer en la IA"
         }
     elif filename == "teoria_senal_creativa.html":
         return {
             "title": "Ruta Técnica de Ventas",
             "desc": "Escríbenos 'MOTOR' para analizar la recomendación de tu negocio por la IA.",
-            "wa": "https://wa.me/573102604764?text=MOTOR",
+            "wa": "https://wa.me/573043656226?text=MOTOR",
             "btn": "📩 Enviar MOTOR"
         }
     else:
         return {
             "title": "Consultoría Estratégica IA",
             "desc": "Diseñamos el ecosistema que tu negocio necesita para escalar sin depender de ti.",
-            "wa": "https://wa.me/573102604764?text=Hola,%20quisiera%20agendar%20una%20consultor%C3%ADa%20estrat%C3%A9gica%20para%20mi%20negocio.",
+            "wa": "https://wa.me/573043656226?text=Hola,%20quisiera%20agendar%20una%20consultor%C3%ADa%20estrat%C3%A9gica%20para%20mi%20negocio.",
             "btn": "💼 Agendar Consultoría"
         }
 
