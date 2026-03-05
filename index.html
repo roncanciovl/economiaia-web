@@ -468,7 +468,8 @@
     </script>
     <link rel="canonical" href="https://economiaia.business/index.html">
     <meta property="og:title" content="Ecosistema de Marketing IA - Hub Central | Economía IA">
-    <meta property="og:description" content="Ecosistema de conocimiento y consultoría de Inteligencia Artificial en Latinoamérica. Estrategias, agentes conversacionales y automatización para negocios.">
+    <meta property="og:description"
+        content="Ecosistema de conocimiento y consultoría de Inteligencia Artificial en Latinoamérica. Estrategias, agentes conversacionales y automatización para negocios.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://economiaia.business/index.html">
     <meta property="og:site_name" content="Economía IA">
@@ -1070,8 +1071,8 @@
         </div>
         <div class="ai-chat-body" id="chatBody">
             <div class="chat-bubble chat-bot">
-                Hola. Soy Sigma, el agente cognitivo de Economía IA. Estás en nuestro simulador principal (Hub). Dime,
-                ¿qué tema estás buscando explorar hoy?
+                Hola. Soy Sigma, el agente cognitivo de Economía IA. Estás en nuestro Hub Central. Dime, ¿qué tema del
+                ecosistema te gustaría explorar hoy?
             </div>
         </div>
         <div class="ai-chat-input-area">
@@ -1123,20 +1124,32 @@
                 // URL de Producción del Worker de Cloudflare
                 const workerUrl = 'https://agente-sigma.henryroncanciovelandia.workers.dev/';
 
-                // RAG Local Extendido para extraer los nombres de las órbitas y enlaces de la página Home 
-                // para que sugiera a donde navegar
-                let pageContext = "Nos encontramos en el Ecosistema Central (Index). Contenidos disponibles (Opciones del menú de órbitas a las que el usuario puede dar clic): \n";
-                const orbitLinks = document.querySelectorAll('.node-label');
-                orbitLinks.forEach(tag => {
-                    pageContext += "- " + tag.innerText.replace('\n', ' ') + " \n";
+                // --- RAG Local: Extraer contexto visible de la página ---
+                let pageContext = "";
+
+                // Extraer específicamente los nodos/órbitas con sus enlaces
+                const orbitNodes = document.querySelectorAll('.node');
+                orbitNodes.forEach(node => {
+                    const label = node.querySelector('.node-label').innerText.replace('\n', ' ');
+                    const url = "https://economiaia.business/" + node.getAttribute('href');
+                    pageContext += `- ${label}: ${url}\n`;
                 });
+
+                // Extraer otros textos de la página
+                const mainTags = document.querySelectorAll('h1, h2, h3, p');
+                mainTags.forEach(tag => {
+                    if (!tag.closest('.ai-chat-panel') && !tag.closest('.node-label')) {
+                        pageContext += tag.innerText + " \n";
+                    }
+                });
+                const cleanedContext = pageContext.substring(0, 4000); // 4000 caracteres como máximo preventivo
 
                 const response = await fetch(workerUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         user_question: text,
-                        page_context: pageContext,
+                        page_context: cleanedContext,
                         chat_history: chatHistory
                     })
                 });

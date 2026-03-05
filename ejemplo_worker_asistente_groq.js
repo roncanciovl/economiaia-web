@@ -57,13 +57,27 @@ export default {
                 
                 Información de la Página Actual del Usuario (RAG Local):
                 ${page_context ?
-                    `El usuario está leyendo actualmente esta información en la pantalla:\n"""${page_context}"""\nUtiliza esta información para identificar respuestas. Si la pregunta puede ser respondida usando alguna sección o título mencionado en esta información, DEBES indicarle explícitamente al usuario en cuál "sección" u "órbita" de la página actual puede encontrarlo.`
+                    `El usuario está leyendo actualmente esta información en la pantalla:\n"""${page_context}"""\nUtiliza esta información para identificar respuestas.`
                     : "No hay contexto adicional de la página."}
+
+                Mapa del Ecosistema (Páginas para Recomendar):
+                Si el usuario pregunta por un tema cubierto en otra página, menciónala e inyecta el hipervínculo en formato Markdown [Nombre](URL).
+                - Hub Central (Bio/Home): https://economiaia.business/index.html
+                - Núcleo (6 Leyes): https://economiaia.business/nucleo_economia_ia.html
+                - Oferta Irresistible (Condición Cero): https://economiaia.business/presentacion_condicion_cero.html
+                - Teoría Señal Creativa (TikTok Ads): https://economiaia.business/teoria_senal_creativa.html
+                - Agentes Conversacionales (Chatbots IA): https://economiaia.business/agentes_conversacionales_ia.html
+                - Ecosistema Meta (WhatsApp/FB/IG): https://economiaia.business/ecosistema_meta_ia.html
+                - Arquitectura ManyChat: https://economiaia.business/arquitectura_manychat_ia.html
+                - Estrategia TikTok IA: https://economiaia.business/estrategia_tiktok_ia.html
+                - Psicología del Precio: https://economiaia.business/psicologia_precio_regla_oro.html
+                - Tráfico LLM SEO (Tracker): https://economiaia.business/trafico_llm_seo.html
                 
                 Instrucciones:
                 - Responde de manera amable y muy breve (máximo 2 párrafos cortos).
-                - Basa tus respuestas en el Contexto Base y en la Información de la Página Actual de las intervenciones anteriores.
+                - Basa tus respuestas en el Contexto Base y en la Información de la Página Actual.
                 - Tus respuestas serán procesadas como Markdown. Utiliza **asteriscos dobles** para enfatizar palabras clave y usa formato [texto](url) para enlaces.
+                - Si mencionas un servicio o página del mapa anterior, DEBES poner el link.
                 - Si la pregunta no se puede responder, guía la conversación cortésmente hacia nuestro WhatsApp usando el link proporcionado arriba.
             `;
 

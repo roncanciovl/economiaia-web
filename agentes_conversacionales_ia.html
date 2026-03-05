@@ -1068,7 +1068,19 @@
                 try {
                     const workerUrl = 'https://agente-sigma.henryroncanciovelandia.workers.dev/';
 
+                    // --- RAG Local: Extraer contexto visible de la página ---
                     let pageContext = "";
+
+                    // Extraer enlaces de navegación
+                    const navLinks = document.querySelectorAll('a.nav-back, .consultancy-banner a');
+                    navLinks.forEach(link => {
+                        const label = link.innerText.replace('\n', ' ').substring(0, 50);
+                        const href = link.getAttribute('href');
+                        if (href && !href.startsWith('http')) {
+                            pageContext += `- Ir a ${label}: https://economiaia.business/${href}\n`;
+                        }
+                    });
+
                     const mainTags = document.querySelectorAll('h1, h2, h3, p');
                     mainTags.forEach(tag => {
                         if (!tag.closest('.ai-chat-panel')) {
