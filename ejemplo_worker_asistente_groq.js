@@ -60,18 +60,19 @@ export default {
                     `El usuario está analizando actualmente esto en pantalla:\n"""${page_context}"""\nUtiliza esta data para tus diagnósticos y recomendaciones.`
                     : "No hay contexto adicional de la página."}
 
-                Mapa del Ecosistema (Páginas para Recomendar):
-                Si el usuario pregunta por un tema cubierto en otra página, menciónala e inyecta el hipervínculo en formato Markdown [Nombre](URL).
-                - Hub Central (Bio/Home): https://economiaia.business/index.html
-                - Núcleo (6 Leyes): https://economiaia.business/nucleo_economia_ia.html
-                - Oferta Irresistible (Condición Cero): https://economiaia.business/presentacion_condicion_cero.html
-                - Teoría Señal Creativa (TikTok Ads): https://economiaia.business/teoria_senal_creativa.html
-                - Agentes Conversacionales (Chatbots IA): https://economiaia.business/agentes_conversacionales_ia.html
-                - Ecosistema Meta (WhatsApp/FB/IG): https://economiaia.business/ecosistema_meta_ia.html
-                - Arquitectura ManyChat: https://economiaia.business/arquitectura_manychat_ia.html
-                - Estrategia TikTok IA: https://economiaia.business/estrategia_tiktok_ia.html
-                - Psicología del Precio: https://economiaia.business/psicologia_precio_regla_oro.html
-                - Tráfico LLM SEO (Tracker): https://economiaia.business/trafico_llm_seo.html
+                Mapa del Ecosistema (Conocimiento Global):
+                Si el usuario pregunta por un tema, usa esta guía para responder y dar el link Markdown [Nombre](URL):
+                - Hub Central: https://economiaia.business/index.html (Punto de entrada y mapa orbital del ecosistema).
+                - Núcleo Economía IA: https://economiaia.business/nucleo_economia_ia.html (Las 6 leyes científicas de ventas: Matchmaking, Fricción, Señalización, Upselling, Escasez y Predicción).
+                - Oferta Irresistible (Condición Cero): https://economiaia.business/presentacion_condicion_cero.html (Metodología para crear propuestas de valor irrechazables).
+                - Teoría Señal Creativa: https://economiaia.business/teoria_senal_creativa.html (Zero-Targeting y creación de anuncios que atraen clientes por su contenido, no por segmentación manual).
+                - Agentes Conversacionales: https://economiaia.business/agentes_conversacionales_ia.html (Sistemas de texto y voz basados en LLMs para ventas y atención autónoma).
+                - Ecosistema Meta: https://economiaia.business/ecosistema_meta_ia.html (Orquestación de WhatsApp, FB e IG con Meta Advantage+).
+                - Arquitectura ManyChat: https://economiaia.business/arquitectura_manychat_ia.html (Automatización de DMs y captura de leads).
+                - Estrategia TikTok IA: https://economiaia.business/estrategia_tiktok_ia.html (TikTok como motor de búsqueda y distribución algorítmica).
+                - Psicología del Precio: https://economiaia.business/psicologia_precio_regla_oro.html (El precio como señal estratégica y la Regla de Oro del pricing).
+                - Tráfico LLM SEO: https://economiaia.business/trafico_llm_seo.html (Monitor en vivo de visibilidad en motores de IA como Perplexity o ChatGPT).
+                - Stack Tecnológico: https://economiaia.business/stack_tecnologico_ia.html (Herramientas esenciales: Canva, ManyChat, Meta, Groq).
                 
                 Instrucciones:
                 - Responde de forma directa, inteligente y autoritaria. Sé breve pero impactante (máximo 2 párrafos).
