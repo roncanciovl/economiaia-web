@@ -925,6 +925,368 @@
                 Economía IA ™</p>
         </footer>
 
+
+    <!-- Asistente IA "Sigma" Widget -->
+    <style>
+        .ai-widget-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+            cursor: pointer;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .ai-widget-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.6);
+        }
+
+        .ai-widget-btn svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+            animation: float-icon 3s ease-in-out infinite;
+        }
+
+        @keyframes float-icon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+
+        .ai-chat-panel {
+            position: fixed;
+            bottom: 6rem;
+            right: 2rem;
+            width: 350px;
+            height: 500px;
+            max-height: 80vh;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 1rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            z-index: 9998;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+
+        .ai-chat-panel.active {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0);
+        }
+
+        .ai-chat-header {
+            background: linear-gradient(90deg, #1e293b, #0f172a);
+            padding: 1rem;
+            border-bottom: 1px solid #334155;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ai-chat-header h3 {
+            margin: 0;
+            font-size: 1rem;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ai-chat-header .badge {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .close-chat {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+
+        .close-chat:hover {
+            color: #f1f5f9;
+        }
+
+        .ai-chat-body {
+            flex-grow: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chat-bubble {
+            max-width: 85%;
+            padding: 0.8rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .chat-bot {
+            background: #1e293b;
+            color: #e2e8f0;
+            border-bottom-left-radius: 0.25rem;
+            align-self: flex-start;
+            border: 1px solid #334155;
+        }
+
+        .chat-user {
+            background: #3b82f6;
+            color: #fff;
+            border-bottom-right-radius: 0.25rem;
+            align-self: flex-end;
+        }
+
+        .ai-chat-input-area {
+            padding: 1rem;
+            border-top: 1px solid #334155;
+            display: flex;
+            gap: 0.5rem;
+            background: #0f172a;
+        }
+
+        .ai-chat-input-area input {
+            flex-grow: 1;
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: #fff;
+            padding: 0.7rem 1rem;
+            border-radius: 2rem;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .ai-chat-input-area input:focus {
+            border-color: #3b82f6;
+        }
+
+        .ai-chat-input-area button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            flex-shrink: 0;
+        }
+
+        .ai-chat-input-area button:hover {
+            background: #2563eb;
+        }
+
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 0.5rem 1rem;
+            background: #1e293b;
+            border-radius: 1rem;
+            width: fit-content;
+            align-self: flex-start;
+            border-bottom-left-radius: 0.25rem;
+            border: 1px solid #334155;
+        }
+
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background: #94a3b8;
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(1) { animation-delay: 0s; }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typing {
+            0%, 100% { transform: translateY(0); opacity: 0.4; }
+            50% { transform: translateY(-4px); opacity: 1; }
+        }
+
+        @media (max-width: 600px) {
+            .ai-chat-panel {
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100vh;
+                max-height: 100vh;
+                border-radius: 0;
+            }
+
+            .ai-widget-btn {
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+    </style>
+
+    <button class="ai-widget-btn" id="aiBtn" aria-label="Abrir asistente">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.01 1.01 4.35l-1.35 4.02a.85.85 0 0 0 1.07 1.07l4.02-1.35A9.95 9.95 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.36 0-2.65-.29-3.83-.8l-.34-.14-2.82.94.94-2.82-.14-.34A7.95 7.95 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
+        </svg>
+    </button>
+
+    <div class="ai-chat-panel" id="aiChatPanel">
+        <div class="ai-chat-header">
+            <h3>Sigma <span class="badge">Llama 3 (Edge)</span></h3>
+            <button class="close-chat" id="closeChat">&times;</button>
+        </div>
+        <div class="ai-chat-body" id="chatBody">
+            <div class="chat-bubble chat-bot">
+                ¿Quieres usar TikTok como un motor de ventas automático? Pregúntame cómo funciona.
+            </div>
+        </div>
+        <div class="ai-chat-input-area">
+            <input type="text" id="chatInput" placeholder="Escribe tu pregunta..." autocomplete="off">
+            <button id="sendBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const aiBtn = document.getElementById('aiBtn');
+        const aiChatPanel = document.getElementById('aiChatPanel');
+        const closeChat = document.getElementById('closeChat');
+        const chatInput = document.getElementById('chatInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const chatBody = document.getElementById('chatBody');
+
+        let chatHistory = [];
+
+        aiBtn.addEventListener('click', () => {
+            aiChatPanel.classList.add('active');
+            chatInput.focus();
+            aiBtn.style.display = 'none';
+        });
+
+        closeChat.addEventListener('click', () => {
+            aiChatPanel.classList.remove('active');
+            aiBtn.style.display = 'flex';
+        });
+
+        async function sendMessage() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            addMessage(text, 'user');
+            chatInput.value = '';
+
+            const typingId = showTyping();
+
+            try {
+                const workerUrl = 'https://agente-sigma.henryroncanciovelandia.workers.dev/';
+
+                let pageContext = "";
+                const mainTags = document.querySelectorAll('h1, h2, h3, p');
+                mainTags.forEach(tag => {
+                    if (!tag.closest('.ai-chat-panel')) {
+                        pageContext += tag.innerText + " \n";
+                    }
+                });
+                const cleanedContext = pageContext.substring(0, 4000);
+
+                const response = await fetch(workerUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        user_question: text,
+                        page_context: cleanedContext,
+                        chat_history: chatHistory
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    removeTyping(typingId);
+                    addMessage(data.answer, 'bot');
+
+                    chatHistory.push({ role: "user", content: text });
+                    chatHistory.push({ role: "assistant", content: data.answer });
+
+                    if (chatHistory.length > 10) chatHistory = chatHistory.slice(chatHistory.length - 10);
+                } else {
+                    throw new Error("Worker no conectado");
+                }
+            } catch (err) {
+                setTimeout(() => {
+                    removeTyping(typingId);
+                    addMessage("Ha ocurrido un error contactando a la Inteligencia Artificial. Revisa tu conexión a internet.", 'bot');
+                }, 1500);
+            }
+        }
+
+        sendBtn.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        function parseMarkdown(text) {
+            let html = text;
+            html = html.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color:#10b981; text-decoration:underline;">$1</a>');
+            html = html.replace(/\n/g, '<br>');
+            return html;
+        }
+
+        function addMessage(text, sender) {
+            const div = document.createElement('div');
+            div.className = 'chat-bubble chat-' + sender;
+            div.innerHTML = sender === 'bot' ? parseMarkdown(text) : text;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function showTyping() {
+            const id = 'typing-' + Date.now();
+            const div = document.createElement('div');
+            div.className = 'typing-indicator';
+            div.id = id;
+            div.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+            return id;
+        }
+
+        function removeTyping(id) {
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        }
+    </script>
+
 </body>
 
 </html>
