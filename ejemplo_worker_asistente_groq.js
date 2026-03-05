@@ -81,7 +81,7 @@ export default {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    model: "llama3-8b-8192", // Modelo ultra-rápido de Llama 3 en Groq
+                    model: "llama-3.3-70b-versatile", // Modelo avanzado y versátil de Llama 3 en Groq
                     messages: [
                         { role: "system", content: systemPrompt },
                         ...(chat_history || []),
