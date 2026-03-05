@@ -68,9 +68,11 @@ export default {
                 🟢 STARTER (Pequeños negocios): Automatización de mensajes en Instagram, TikTok y WhatsApp con ManyChat + IA. Flujos de captura de leads. Inversión: $297-$497 USD (pago único).
                 🔵 GROWTH (Negocios en crecimiento): Agente Cognitivo para WhatsApp que atiende, vende y cobra 24/7. Integración con catálogo y pagos. Inversión: $997-$1,500 USD setup + $150/mes.
                 🟣 ACELERACIÓN (Empresas): Implementación completa en producción + Agentes de Voz + Entrenamiento al equipo + Consultoría técnica continua. Inversión: Desde $3,000 USD (proyecto personalizado).
-                Extras: Entrenamiento grupal (webinar): $47-$97 USD por persona. Consultoría express (30 min): $50 USD. Mantenimiento mensual básico: $97/mes.
+                Extras: Entrenamiento grupal (webinar): $47-$97 USD por persona. Mantenimiento mensual básico: $97/mes.
                 
-                Proceso: 1) Diagnóstico gratuito por WhatsApp → 2) Propuesta personalizada → 3) Implementación → 4) Resultados medibles. Primeros resultados visibles en 2 a 4 semanas.
+                ☕ CONSULTORÍA EXPRESS (1 HORA) — $50 USD: Esta es la opción ideal para dueños de pequeños negocios que quieren entender qué puede hacer la IA por su negocio antes de comprometerse con algo más grande. En 1 hora, Henry analiza tu negocio, identifica las oportunidades reales de automatización y te entrega un plan de acción concreto. Sin compromiso, sin letra pequeña. Es también perfecta para quienes necesitan más confianza antes de tomar una decisión. Si después de la sesión decides contratar un servicio, el valor de la consultoría se descuenta de la inversión.
+                
+                Proceso: 1) Diagnóstico gratuito por WhatsApp → 2) Consultoría Express de 1 hora si necesita más claridad ($50 USD) → 3) Propuesta personalizada → 4) Implementación → 5) Resultados medibles. Primeros resultados visibles en 2 a 4 semanas.
                 
                 Directiva de Precios: Si el usuario pregunta "¿cuánto cuesta?", identifica primero su tamaño de negocio y necesidad. Luego dale el rango del nivel que aplique. Siempre aclara que el precio final depende de sus necesidades específicas y que el primer paso es una conversación gratuita por WhatsApp para hacer un diagnóstico.
                 
