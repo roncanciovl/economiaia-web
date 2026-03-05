@@ -32,8 +32,8 @@ export default {
         }
 
         try {
-            // 2. Extraer la pregunta y el contexto de la página desde el body del request
-            const { user_question, page_context } = await request.json();
+            // 2. Extraer la pregunta, el contexto de la página y el historial de la conversación
+            const { user_question, page_context, chat_history } = await request.json();
 
             if (!user_question) {
                 return new Response(JSON.stringify({ error: "Falta la pregunta del usuario" }), {
@@ -50,19 +50,21 @@ export default {
                 - Ayudamos a empresas a escalar con automatizaciones cognitivas (Vertex AI, Groq, Llama 3).
                 - Reemplazamos chatbots de árbol de decisión viejos por Agentes con razonamiento.
                 - Optimizamos en 'LLM SEO' y WhatsApp Agents.
-                - Número de contacto o WhatsApp: +57-304-365-6226.
+                - Contacto oficial: WhatsApp. Cuando ofrezcas contactar a la agencia o a un humano, SIEMPRE debes usar e incluir estricta y ÚNICAMENTE este enlace de HTML: <a href="https://wa.me/573043656226?text=Hola%20Sigma" target="_blank" style="color:#10b981; text-decoration:underline;">Hablar Asesor en WhatsApp</a>. ¡Nunca menciones el número de teléfono como texto plano!
                 - Filosofía "Condición Cero": No le cobramos al cliente si no generamos valor exponencial.
                 
                 Información de la Página Actual del Usuario (RAG Local):
                 ${page_context ?
-                    `El usuario está leyendo actualmente esta información en la pantalla:\n"""${page_context}"""\nUtiliza esta información para darle una respuesta ultra-precisa sobre el tema específico que está viendo.`
+                    `El usuario está leyendo actualmente esta información en la pantalla:\n"""${page_context}"""\nUtiliza esta información para identificar respuestas. Si la pregunta puede ser respondida usando alguna sección o título mencionado en esta información, DEBES indicarle explícitamente al usuario en cuál "sección" u "órbita" de la página actual puede encontrarlo.`
                     : "No hay contexto adicional de la página."}
                 
                 Instrucciones:
-                - Responde a la siguiente pregunta del usuario de manera amable y muy breve (máximo 2 párrafos cortos).
-                - Basa tus respuestas en el Contexto Base y en la Información de la Página Actual.
-                - Si la pregunta no se puede responder con este contexto, guía la conversación hacia una agenda de consultoría IA al número de contacto de Economía IA.
+                - Responde de manera amable y muy breve (máximo 2 párrafos cortos).
+                - Basa tus respuestas en el Contexto Base y en la Información de la Página Actual de las intervenciones anteriores.
+                - Tus respuestas están siendo insertadas como HTML. Puedes utilizar etiquetas como <b> para enfatizar palabras clave.
+                - Si la pregunta no se puede responder, guía la conversación cortésmente hacia nuestro WhatsApp usando el link HTML proporcionado arriba.
             `;
+
 
             // 4. Preparar la llamada a la API de Groq
             // Asegúrate de tener GROQ_API_KEY configurada en los Settings del Worker -> Variables
@@ -82,6 +84,7 @@ export default {
                     model: "llama3-8b-8192", // Modelo ultra-rápido de Llama 3 en Groq
                     messages: [
                         { role: "system", content: systemPrompt },
+                        ...(chat_history || []),
                         { role: "user", content: user_question }
                     ],
                     temperature: 0.3, // Baja temperatura para respuestas más precisas y corporativas
