@@ -469,9 +469,43 @@
 </head>
 
 <body>
-    <header style="position: absolute; top: 0; left: 0; width: 100%; text-align: center; z-index: 20;">
+    <header style="position: absolute; top: 0; left: 0; width: 100%; text-align: center; z-index: 50;">
         <h1 class="title">Ecosistema Marketing | Economía IA</h1>
         <div class="subtitle">Órbitas de Conocimiento para la Nueva Economía</div>
+
+        <div
+            style="margin: 120px auto 0 auto; max-width: 600px; padding: 1rem 1.5rem; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 0.8rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); backdrop-filter: blur(10px); display: flex; flex-direction: column; gap: 0.8rem; align-items: center;">
+            <div
+                style="display: flex; align-items: center; gap: 0.5rem; color: #10b981; font-weight: 700; font-size: 0.95rem;">
+                <i class="ph-fill ph-robot"></i> ¿ChatGPT y Claude ya te recomiendan?
+            </div>
+            <p style="color: #cbd5e1; font-size: 0.85rem; margin: 0; line-height: 1.4;">
+                El SEO tradicional está muriendo. Descubre cómo nuestra estrategia de <strong>LLM SEO</strong>
+                intercepta y audita el tráfico de las Inteligencias Artificiales para posicionar tu negocio como la
+                única respuesta correcta.
+            </p>
+            <a href="trafico_llm_seo.html"
+                style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #10b981; text-decoration: none; padding: 0.5rem 1rem; border-radius: 0.4rem; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; transition: all 0.2s;">
+                <span
+                    style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #10b981; animation: pulse 1.5s infinite;"></span>
+                Ver Auditoría IA en Vivo
+            </a>
+        </div>
+        <style>
+            @keyframes pulse {
+                0% {
+                    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+                }
+
+                70% {
+                    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+                }
+
+                100% {
+                    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+                }
+            }
+        </style>
     </header>
 
     <main class="scene" id="scene">
@@ -528,7 +562,8 @@
                 pages: [
                     { title: 'Arquitectura ManyChat', file: 'arquitectura_manychat_ia.html', icon: '<i class="ph-duotone ph-robot"></i>', type: 'arquitectura' },
                     { title: 'Stack Tecnológico', file: 'stack_tecnologico_ia.html', icon: '<i class="ph-duotone ph-stack"></i>', type: 'operaciones' },
-                    { title: 'Automatización con Meta', file: 'jerarquia_meta_whatsapp.html', icon: '<i class="ph-duotone ph-tree-view"></i>', type: 'arquitectura' }
+                    { title: 'Automatización con Meta', file: 'jerarquia_meta_whatsapp.html', icon: '<i class="ph-duotone ph-tree-view"></i>', type: 'arquitectura' },
+                    { title: 'Tráfico LLM SEO', file: 'trafico_llm_seo.html', icon: '<i class="ph-duotone ph-radar"></i>', type: 'arquitectura' }
                 ]
             }
         ];
