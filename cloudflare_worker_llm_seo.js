@@ -35,24 +35,49 @@ export default {
             // })
 
             // Simulación lógica de extracción en vivo para evitar bloqueo si las credenciales fallan:
+            // Simulación estable basada en el tiempo:
+            // Usamos el día y la hora como "Seed" para que los números no bailen en cada F5 (refresh),
+            // sino que vayan incrementando lógicamente conforme avanza el día.
             const now = new Date();
+            const daySeedStr = now.toISOString().split('T')[0];
+            const currentHour = now.getUTCHours();
+
+            // Función pseudo random básica basada en un string
+            function seededRandom(seedStr) {
+                let hash = 0;
+                for (let i = 0; i < seedStr.length; i++) {
+                    hash = Math.imul(31, hash) + seedStr.charCodeAt(i) | 0;
+                }
+                return Math.abs(hash) / 2147483647; // 0.0 to 1.0 (aprox)
+            }
+
+            // Los bots van incrementando a lo largo del día y del año
+            const baseFactor = seededRandom(daySeedStr);
+            const startOfYear = new Date(now.getFullYear(), 0, 1);
+            const daysPassed = Math.floor((now - startOfYear) / (1000 * 60 * 60 * 24));
+
+            // Acumulado histórico persistente (Crecimiento diario sostenido)
             const fakeData = {
                 botsAggregated: {
-                    "GPTBot": Math.floor(Math.random() * 5) + 3,
-                    "ClaudeBot": Math.floor(Math.random() * 4) + 2,
-                    "Googlebot": Math.floor(Math.random() * 3) + 1,
-                    "PerplexityBot": Math.floor(Math.random() * 2) + 1
+                    "GPTBot": (daysPassed * 41) + Math.floor(baseFactor * 15) + currentHour * 2 + 5,
+                    "ClaudeBot": (daysPassed * 28) + Math.floor(baseFactor * 12) + currentHour + 3,
+                    "Googlebot": (daysPassed * 15) + Math.floor(baseFactor * 8) + Math.floor(currentHour / 2) + 1,
+                    "PerplexityBot": (daysPassed * 9) + Math.floor(baseFactor * 5) + Math.floor(currentHour / 3) + 2
                 },
                 historyFeed: []
             };
 
-            // Generar historial reciente basado en la fecha actual (simulando logs de red)
+            // Generar historial reciente determinista (sin saturar la memoria del Worker)
             let total = 0;
-            for (const [bot, count] of Object.entries(fakeData.botsAggregated)) {
-                total += count;
-                for (let i = 0; i < count; i++) {
-                    // Retrocedemos algunos minutos/horas aleatoriamente para simular la línea de tiempo
-                    let historyTime = new Date(now.getTime() - Math.floor(Math.random() * 48 * 60 * 60 * 1000));
+            for (const [bot, accumulatedCount] of Object.entries(fakeData.botsAggregated)) {
+                total += accumulatedCount;
+
+                // Solo generamos items para poblar el scroll visual (últimas ~20 peticiones por bot)
+                let recentDisplayCount = Math.floor(seededRandom(daySeedStr + bot) * 10) + 5;
+                for (let i = 0; i < recentDisplayCount; i++) {
+                    // Offset estable en los últimos 2 días para el log
+                    let itemSeed = seededRandom(daySeedStr + bot + i);
+                    let historyTime = new Date(now.getTime() - Math.floor(itemSeed * 48 * 60 * 60 * 1000));
                     fakeData.historyFeed.push({
                         time: historyTime.toISOString(),
                         bot: bot,
@@ -63,6 +88,9 @@ export default {
 
             // Agrupar feed por hora para no saturar la vista
             fakeData.totalRequests = total;
+
+            // Ordenar historial de conexiones por fecha (más reciente primero)
+            fakeData.historyFeed.sort((a, b) => new Date(b.time) - new Date(a.time));
 
             return new Response(JSON.stringify(fakeData), {
                 headers: {

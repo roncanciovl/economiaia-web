@@ -1,0 +1,119 @@
+﻿c0db7a8 Optimize footer layout for mobile devices adding specific media queries
+3f3aa7d Enhance footer aesthetics with custom glassmorphic containers and hover states
+7c6e66f style: mejorar animaciones SVG (flujo tr├ífico) y hover de tarjetas
+c4e75ef Rename module 'Jerarqu├¡a Meta' to 'Automatizaci├│n con Meta'
+80ad05c feat: agregar p├ígina estrategia tr├ífico local (9 estrategias con IA para locales de experiencias y artesan├¡as)
+3784c49 Final Footer Update: Added Bio/Home (Beacons) back to all 5 standard links
+972c789 Restore and standardize 'Consultor├¡a' link in footers (WhatsApp delivery)
+21b1cf5 Upgrade footer with premium SVG icons (WhatsApp, TikTok, etc.) and trademark symbol
+b5be3e6 Improve hero image with Spanish text on conversational agents page
+aa56402 Add conversational agents consultancy banner
+8ff0eaf Update footer across all pages to link back to ecosystem index
+f763080 Update footer with ecosystem link
+ed9b193 Fix: Update webinar link with TikTok URL in arquitectura_manychat_ia.html
+cdcfda2 Update WhatsApp phone number to +573043656226 globally
+63821c9 Refactor Meta hierarchy terminology and footer design
+a451b0c data: fix malformed rows in crawler CSV and update LLM SEO tracker
+a877585 feat: add Meta Automation guide (WhatsApp/Insta/FB) and WhatsApp API Number architecture
+4b65a73 UI: Rename pricing module to 'Psicolog├¡a del Precio' in the hub
+975dbe0 Refactor: Remove pricing psychology banner from Marketing Architecture page
+63772f2 Refactor: Extract Pricing Psychology and Golden Rule to a dedicated specialized page and update Hub
+7136892 Refactor: Move core explanation text after the Offer section for better narrative flow
+186f3da Refactor: Sync branding with Matchmaking AI and update hero images
+8fed224 Claridad de lenguaje en nucleo_economia_ia sin cambiar titulos
+6f9bb0e Renombrar Condicion Cero a Oferta Irresistible
+6f0116c Claridad de lenguaje en presentacion_condicion_cero
+56cef95 Fidelizar + restaurar frase reputacion marca
+67f646d Ajustar titulo Capturar Intenci├│n con verbo
+24a6424 Claridad de lenguaje en textos de arquitectura_marketing_ia
+d812b8d Simplificar texto de navegaci├│n a Se├▒al Creativa
+0a42052 Tarjeta Atraer ahora enlaza a teoria_senal_creativa.html
+03cd897 Cambiar navegaci├│n final a Teor├¡a de la Se├▒al Creativa
+9081ab4 Remover secci├│n CTA de Consultor├¡a Estrat├®gica de nucleo_economia_ia
+f6ee357 Remover secci├│n vieja duplicada de navegaci├│n en arquitectura_marketing_ia
+1b3f403 Remover bot├│n Consultor├¡a IA de secciones de navegaci├│n entre p├íginas
+3e65eca Remover secci├│n Tecnolog├¡as Clave de p├ígina p├║blica de agentes
+a19b5b4 Neutralizaci├│n agentes: mover infra custom a privado, tono informativo, remover CTAs de venta
+71ed987 Separar infraestructura privada: nueva p├ígina p├║blica informativa de ManyChat
+9069f62 Neutralizaci├│n de arquitectura: Removiendo nombres de clientes espec├¡ficos del diagrama
+f1d9bec Arquitectura Ag├®ntica: Evoluci├│n de flujos a agentes cognitivos y neutralizaci├│n informativa
+3fb6b6c Optimize page linking logic and user funnel flow
+d7aecd8 Refining Marketing Architecture: Updated titles and simplified index labels
+44cf007 refactor(seo): update gemini version terminology to Gemini Pro across all architecture
+fcc1358 feat(seo): add google vertex ai and gemini 1.5 to tech stack authority across all pages
+70f3dd4 feat(seo): add hidden RAG bait page for industry analysis and AI ranking
+033b0c6 feat(seo): implement schema.org json-ld across all pages for entity-based llm indexing
+118e5ab feat(ui): improve mobile responsiveness of tracker dashboard and hide llm anatomy
+7a25b3d feat(ui): update footer across all pages to highlight 'Trafico Real' in bright green
+0fd1db6 feat: actualizar textos para clientes y mostrar historico de conexiones en feed
+4393aef feat: parseo asincrono y suma de multiples archivos CSV de Cloudflare
+6094138 feat: actualizar panel de cf con metricas reales de crawlers de openai y anthropic
+c838007 feat: integrar datos crudos de Cloudflare mostrando rastreos reales de Googlebot
+eb16973 style: hacer responsivo el panel grid de insights llm seo para lectura en movil
+a408d6b feat: reemplazar entorno simulado de trafico por panel educativo 100% veridico sobre LLM SEO
+2411189 fix: corregir visualizacion de IP en el panel en vivo para soporte IPv6
+b857ab6 chore: remover documentacion interna del repositorio publico
+0cb2f04 docs: Documentar resolucion de DNS y SSL con GitHub y Cloudflare
+c9cfd1e style: eliminar footer por completo de index.html
+23f63df fix: asegurar que el footer del index.html quede fijado en la parte inferior en PC
+2b4473d Create CNAME
+f70744f Delete CNAME
+cce509a Create CNAME
+018ae3a Delete CNAME
+31df25d Create CNAME
+8d23739 Delete CNAME
+dbae24a style: ultra minimalism for cta and footer sections
+163df16 style: reducir tama├▒o de bloques de consultoria y footers para mayor discrecion
+c9b8818 style: eliminar bloques de consultoria redundantes en index y teoria de la se├▒al
+5757de7 feat: visualizar datos reales del visitante en el dashboard de tr├ífico
+45d26df feat: conectar dashboard de trafico con Google Analytics Tag
+cf76a9f fix: restaurar integridad de archivos y corregir dashboard de trafico con datos reales
+36f0693 feat: optimizar CTAs para whatsapp aplicando conceptos de baja friccion y valor gratuito
+08bbb02 Create CNAME
+698b070 Delete CNAME
+e04c6f0 style: redise├▒ar secciones CTA con estilo m├ís sobrio (colores oscuros, menos padding)
+78c6df0 Create CNAME
+69291fa Delete CNAME
+06c4283 Create CNAME
+f109e42 Delete CNAME
+62eed43 Create CNAME
+ad4934c Delete CNAME
+a1cce81 Create CNAME
+77e2eae Delete CNAME
+2775bc2 feat: agregar enlace a WhatsApp en el footer de todas las p├íginas
+b14d160 feat: integrar 'El N├║cleo' (Ciencia Econ├│mica de Ventas) al ecosistema
+de70a4e Create CNAME
+9da8d54 Delete CNAME
+35d8ba2 feat: optimizacion SEO LLM a nivel Latinoamerica y Arquitectura Custom
+5c06824 Create CNAME file to trigger GitHub Pages check
+2b834b1 Delete CNAME
+a5e6520 Create CNAME
+f90e18c Delete CNAME
+d34d4af Create CNAME
+94be457 Delete CNAME
+32855cd Update logo source to version 4
+0dfb8bf Fix logo: extract base64 to separate .jpeg file to avoid rendering issues
+de1162d Update logo in index.html to base64 image
+63c31e2 Feat(UI): reordenar layout F├│rmula de Se├▒al para mostrar animaci├│n primero
+d9af207 Feat(UI): animaciones SVG puramente narrativas para la Formula
+8ae2098 Feat(UI): animaciones premium seguras con CSS para los 5 puntos de la F├│rmula en teoria_senal
+acd7241 Feat(UI): restaurar animaciones premium en teoria_senal usando CSS safe shadows
+a981155 Fix: restauraci├│n de formataci├│n y diagramas tras upgrade visual en teoria_senal_creativa
+7f71f71 Visual: upgrade masivo de animaciones en teoria_senal_creativa - glows, particles, energy beams, shimmer title, scroll reveals
+7c5907e UX: callejizaci├│n completa de la teor├¡a de la se├▒al creativa
+830767d UX: Lenguaje simplificado para due├▒os de negocios en secciones de LLM SEO
+ce25561 UX: S├¡ntesis de captura de intenci├│n con LLM SEO
+0cb5720 UX: Descripci├│n de LLM SEO m├ís concisa en arquitectura de marketing
+a563676 LLM SEO Core Upgrade: Implementaci├│n masiva de datos estructurados (JSON-LD) y secciones de oferta de servicio GEO/LLM-SEO en todo el ecosistema
+b875d9f LLM SEO Optimization: Injected semantic metadata blocks for AI crawlers
+1a87fc3 UX Mobile: Mejora de sensibilidad t├íctil, ├íreas de toque ampliadas y feedback visual de arrastre
+546491b Reduciendo tama├▒o del n├║cleo a 80px
+835f265 Agregada p├ígina de Agentes Conversacionales (Texto y Voz) y vinculada al ecosistema
+2363266 Reduciendo tama├▒o del logo central a 95px
+b064665 Efecto de radiaci├│n con ondas azul-cyan activo y optimizado
+db6af50 Recorte circular del logo mediante CSS (border-radius y overflow)
+cf8e7b0 Revert to dark logo and blend nucleus with background gradient (#0B0B1A)
+c869a55 Ajuste de dise├▒o: T├¡tulo m├ís alto, logo reducido y fondo de logo optimizado
+4d2dbd7 Add Google Analytics G-Z9Q4T51VW0 to all pages
+d38cfbf Create CNAME
+766cc05 Initial commit for Econom├¡a IA website

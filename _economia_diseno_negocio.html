@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9Q4T51VW0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-Z9Q4T51VW0');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description"
+        content="Cómo la teoría económica explica el diseño de negocios exitosos: señalización, costos de transacción, destrucción creativa y cadenas de valor.">
+    <meta name="keywords"
+        content="Economía IA, Diseño de Negocios, Teoría Económica, Señalización, Costos de Transacción, Destrucción Creativa, Cadena de Valor">
+    <meta name="author" content="Economía IA">
+    <title>Economía del Diseño: Cómo Nace un Negocio Exitoso | Economía IA</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+        :root {
+            --bg: #0c111e;
+            --card: #1e293b;
+            --border: #334155;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --soft: #cbd5e1;
+            --gold: #f59e0b;
+            --blue: #3b82f6;
+            --cyan: #22d3ee;
+            --green: #10b981;
+            --pink: #ec4899;
+            --purple: #8b5cf6;
+            --red: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            padding: 3rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.7;
+        }
+
+        /* --- HEADER --- */
+        h1 {
+            text-align: center;
+            background: linear-gradient(90deg, var(--gold), var(--blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+            font-weight: 800;
+            max-width: 900px;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: var(--muted);
+            max-width: 800px;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .private-badge {
+            display: inline-block;
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--red);
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 6px;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            width: 100%;
+            max-width: 1000px;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #f1f5f9;
+            border-bottom: 2px solid rgba(59, 130, 246, 0.2);
+            padding-bottom: 0.75rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-number {
+            background: linear-gradient(135deg, var(--gold), var(--red));
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 800;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* --- CARDS --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 1rem;
+            padding: 1.8rem;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .card h3 {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card p {
+            color: var(--soft);
+            font-size: 0.95rem;
+        }
+
+        .card .tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 0.8rem;
+        }
+
+        /* --- GOLDEN CARD --- */
+        .golden-card {
+            background: linear-gradient(135deg, #1e293b 40%, rgba(251, 191, 36, 0.1) 100%);
+            border: 2px solid var(--gold);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.2), inset 0 0 20px rgba(245, 158, 11, 0.1);
+            animation: goldenFloat 4s ease-in-out infinite alternate;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .golden-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            background: linear-gradient(105deg, transparent 30%, rgba(253, 230, 138, 0.4) 45%, rgba(251, 191, 36, 0.8) 50%, rgba(253, 230, 138, 0.4) 55%, transparent 70%);
+            background-size: 200% 200%;
+            animation: foilShine 5s infinite linear;
+            z-index: 0;
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+
+        .golden-card>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes foilShine {
+            0% {
+                background-position: 200% 50%;
+            }
+
+            100% {
+                background-position: -200% 50%;
+            }
+        }
+
+        @keyframes goldenFloat {
+            0% {
+                transform: translateY(0);
+                box-shadow: 0 5px 15px rgba(245, 158, 11, 0.2);
+            }
+
+            100% {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 25px rgba(245, 158, 11, 0.4);
+                border-color: #fbbf24;
+            }
+        }
+
+        /* --- SVG CONTAINERS --- */
+        .svg-box {
+            width: 100%;
+            height: 160px;
+            background: #0f172a;
+            border-radius: 0.75rem;
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        @keyframes flowLine {
+            0% {
+                stroke-dashoffset: 60;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.4));
+                transform: scale(1);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.8));
+                transform: scale(1.05);
+            }
+        }
+
+        .anim-flow {
+            stroke-dasharray: 8 8;
+            animation: flowLine 1s linear infinite reverse;
+        }
+
+        .anim-pulse {
+            animation: pulseGlow 2.5s ease-in-out infinite;
+        }
+
+        /* --- THESIS BOX --- */
+        .thesis {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 1), rgba(15, 23, 42, 1));
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--cyan);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            margin-top: 2rem;
+        }
+
+        .thesis h4 {
+            margin-top: 0;
+            color: var(--cyan);
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .thesis p {
+            color: #e2e8f0;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        /* --- FORMULA --- */
+        .formula {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.9));
+            border: 1px dashed #475569;
+            border-radius: 1rem;
+            padding: 2.5rem 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .formula::before {
+            content: "FÓRMULA DEL NEGOCIO EXITOSO";
+            position: absolute;
+            top: -12px;
+            background: #0f172a;
+            padding: 2px 12px;
+            color: var(--cyan);
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            border: 1px solid var(--cyan);
+            border-radius: 5px;
+        }
+
+        .f-el {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .f-icon {
+            font-size: 2.2rem;
+        }
+
+        .f-text {
+            font-size: 0.8rem;
+            color: var(--soft);
+            font-weight: 600;
+            text-align: center;
+            max-width: 85px;
+            line-height: 1.2;
+        }
+
+        .f-op {
+            font-size: 1.8rem;
+            color: #475569;
+            font-weight: 800;
+        }
+
+        .f-result {
+            padding: 1rem;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 1rem;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+        }
+
+        /* --- TIMELINE --- */
+        .timeline {
+            position: relative;
+            padding-left: 2.5rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.7rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--gold), var(--blue), var(--green));
+            border-radius: 2px;
+        }
+
+        .t-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .t-item::before {
+            content: '';
+            position: absolute;
+            left: -2.15rem;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            background: var(--bg);
+        }
+
+        .t-item h3 {
+            color: var(--text);
+            font-size: 1.15rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .t-item p {
+            color: var(--soft);
+            font-size: 0.95rem;
+        }
+
+        .t-item .t-theory {
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+
+        /* --- BTN --- */
+        .btn-back {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .btn-back:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #fff;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .formula {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header style="width: 100%; max-width: 1000px; display: flex; flex-direction: column; align-items: center;">
+        <div class="private-badge">🔒 Página Privada — Solo Equipo</div>
+        <h1>Economía del Diseño: Cómo Nace un Negocio Exitoso</h1>
+        <p class="subtitle">
+            Todo negocio exitoso sigue reglas económicas invisibles. Aquí desciframos la ciencia detrás del diseño
+            empresarial:
+            por qué unos negocios explotan y otros mueren, explicado con teoría pura.
+        </p>
+    </header>
+
+    <main style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+
+        <!-- ═══════════ FORMULA ═══════════ -->
+        <section>
+            <div class="formula">
+                <div class="f-el"><span class="f-icon">🎯</span><span class="f-text">Señal Clara</span></div>
+                <span class="f-op">+</span>
+                <div class="f-el"><span class="f-icon">⚡</span><span class="f-text">Baja Fricción</span></div>
+                <span class="f-op">+</span>
+                <div class="f-el"><span class="f-icon">🧠</span><span class="f-text">Diseño de Valor</span></div>
+                <span class="f-op">+</span>
+                <div class="f-el"><span class="f-icon">🔄</span><span class="f-text">Iteración Rápida</span></div>
+                <span class="f-op">=</span>
+                <div class="f-el f-result"><span class="f-icon">🚀</span><span class="f-text"
+                        style="color: #10b981; font-weight: 800;">Negocio Exitoso</span></div>
+            </div>
+        </section>
+
+        <!-- ═══════════ SECCIÓN 1: SEÑALIZACIÓN ═══════════ -->
+        <section>
+            <h2 class="section-title"><span class="section-number">1</span> Señalización: Eres lo que Comunicas</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="tag" style="background: rgba(245,158,11,0.15); color: var(--gold);">Michael Spence ·
+                        Nobel 2001</span>
+                    <h3>📡 Teoría de la Señalización</h3>
+                    <p>En un mercado con <strong>información asimétrica</strong>, el comprador no sabe si tu producto es
+                        bueno. Tu trabajo es enviar <strong>señales costosas</strong> (diseño premium, marca fuerte,
+                        testimonios) que solo un negocio legítimo podría pagar. El que no invierte en señalización, es
+                        invisible.</p>
+                    <div class="svg-box">
+                        <svg viewBox="0 0 300 140" width="100%" height="100%">
+                            <rect x="20" y="50" width="70" height="40" rx="6" fill="#1e293b" stroke="#64748b"
+                                stroke-width="1.5" />
+                            <text x="55" y="74" text-anchor="middle" fill="#94a3b8" font-size="11">Negocio</text>
+                            <path d="M 95 70 L 180 70" fill="none" stroke="#f59e0b" stroke-width="2"
+                                class="anim-flow" />
+                            <text x="137" y="60" text-anchor="middle" fill="#f59e0b" font-size="9"
+                                font-weight="bold">SEÑAL</text>
+                            <circle cx="210" cy="70" r="25" fill="#1e293b" stroke="#f59e0b" stroke-width="2"
+                                class="anim-pulse" />
+                            <text x="210" y="66" text-anchor="middle" fill="#fff" font-size="18">👁️</text>
+                            <text x="210" y="82" text-anchor="middle" fill="#f59e0b" font-size="8">Mercado</text>
+                            <text x="275" y="74" text-anchor="middle" fill="#10b981" font-size="20">💰</text>
+                            <path d="M 235 70 L 258 70" fill="none" stroke="#10b981" stroke-width="2"
+                                class="anim-flow" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="card">
+                    <span class="tag" style="background: rgba(59,130,246,0.15); color: var(--blue);">Aplicación
+                        Práctica</span>
+                    <h3>🎨 El Diseño ES la Señal</h3>
+                    <p>Tu logo, tus colores, la experiencia de tu sitio web, el packaging — todo es una señal económica.
+                        Un diseño genérico dice "soy uno más". Un diseño premium dice "tengo recursos, confía en mí".
+                        <strong>El diseño no es estética: es economía pura.</strong>
+                    </p>
+                    <div class="svg-box">
+                        <svg viewBox="0 0 300 140" width="100%" height="100%">
+                            <rect x="15" y="35" width="110" height="70" rx="6" fill="#1e293b" stroke="#64748b"
+                                stroke-width="1" stroke-dasharray="3 3" />
+                            <text x="70" y="60" text-anchor="middle" fill="#64748b" font-size="10">Diseño
+                                Genérico</text>
+                            <text x="70" y="80" text-anchor="middle" fill="#64748b" font-size="22">😐</text>
+                            <text x="150" y="74" text-anchor="middle" fill="#475569" font-size="16">→</text>
+                            <rect x="175" y="30" width="110" height="80" rx="10" fill="#1e293b" stroke="#f59e0b"
+                                stroke-width="2.5" class="anim-pulse" />
+                            <text x="230" y="55" text-anchor="middle" fill="#f59e0b" font-size="10"
+                                font-weight="bold">Diseño Premium</text>
+                            <text x="230" y="82" text-anchor="middle" fill="#f59e0b" font-size="26">🤩</text>
+                            <text x="230" y="100" text-anchor="middle" fill="#10b981" font-size="8"
+                                font-weight="bold">+340% Confianza</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ SECCIÓN 2: COSTOS DE TRANSACCIÓN ═══════════ -->
+        <section>
+            <h2 class="section-title"><span class="section-number">2</span> Costos de Transacción: Elimina la Fricción
+            </h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="tag" style="background: rgba(34,211,238,0.15); color: var(--cyan);">Ronald Coase ·
+                        Nobel 1991</span>
+                    <h3>⚡ Teorema de Coase</h3>
+                    <p>Un negocio existe porque reduce los <strong>costos de transacción</strong> del mercado: búsqueda,
+                        negociación, verificación, cumplimiento. Si comprar tu producto genera más fricción que el
+                        problema que resuelve, el cliente no compra. <strong>Punto.</strong></p>
+                </div>
+                <div class="card">
+                    <span class="tag" style="background: rgba(236,72,153,0.15); color: var(--pink);">Oliver Williamson ·
+                        Nobel 2009</span>
+                    <h3>🔓 Diseñar para Cero Fricción</h3>
+                    <p>Williamson demostró que la <strong>estructura</strong> de una transacción importa más que el
+                        precio. ¿Cuántos clics para comprar? ¿Cuántas preguntas sin responder? ¿Cuánto tiempo esperando?
+                        Cada paso extra es un cliente perdido. El diseño del negocio exitoso <strong>minimiza
+                            pasos</strong>.</p>
+                </div>
+            </div>
+            <div class="thesis" style="margin-top: 2rem;">
+                <h4>🧮 La Ecuación de la Fricción</h4>
+                <div class="svg-box" style="height: 130px; margin-top: 1rem;">
+                    <svg viewBox="0 0 400 110" width="100%" height="100%">
+                        <text x="30" y="55" fill="#ef4444" font-size="12" font-weight="bold">Fricción Alta</text>
+                        <rect x="120" y="30" width="160" height="50" rx="8" fill="none" stroke="#ef4444"
+                            stroke-width="2" stroke-dasharray="4 4" />
+                        <text x="200" y="50" text-anchor="middle" fill="#94a3b8" font-size="9">Buscar → Llamar → Esperar
+                            → Cotizar</text>
+                        <text x="200" y="68" text-anchor="middle" fill="#94a3b8" font-size="9">→ Negociar → Dudar →
+                            ¿Pagar?</text>
+                        <text x="320" y="58" text-anchor="middle" fill="#ef4444" font-size="24">🚫</text>
+                        <text x="30" y="100" fill="#10b981" font-size="12" font-weight="bold">Fricción Cero</text>
+                        <rect x="120" y="82" width="100" height="25" rx="6" fill="none" stroke="#10b981"
+                            stroke-width="2" />
+                        <text x="170" y="99" text-anchor="middle" fill="#10b981" font-size="10" font-weight="bold">Ver →
+                            Comprar ✓</text>
+                        <text x="260" y="98" text-anchor="middle" fill="#10b981" font-size="24">💰</text>
+                    </svg>
+                </div>
+                <p>Cada paso eliminado en el proceso de compra <strong>aumenta exponencialmente</strong> la conversión.
+                </p>
+            </div>
+        </section>
+
+        <!-- ═══════════ SECCIÓN 3: DESTRUCCIÓN CREATIVA ═══════════ -->
+        <section>
+            <h2 class="section-title"><span class="section-number">3</span> Destrucción Creativa: Innovar o Morir</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="tag" style="background: rgba(139,92,246,0.15); color: var(--purple);">Joseph Schumpeter
+                        · 1942</span>
+                    <h3>🌪️ Destrucción Creativa</h3>
+                    <p>El capitalismo avanza destruyendo lo viejo. Kodak, Blockbuster, los taxis — todos fueron
+                        reemplazados por quien <strong>rediseñó la experiencia</strong>. Un negocio exitoso no compite
+                        con el anterior: lo vuelve obsoleto. El arma es el <strong>diseño de una experiencia
+                            radicalmente superior</strong>.</p>
+                </div>
+                <div class="card golden-card">
+                    <span class="tag" style="background: rgba(251,191,36,0.2); color: #fde68a;">Clave de Economía
+                        IA</span>
+                    <h3 style="color: #fde68a;">👑 La Ventaja del Rediseño Total</h3>
+                    <p style="color: #f8fafc; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">No necesitas inventar algo nuevo.
+                        Solo necesitas <strong>rediseñar</strong> lo que ya existe eliminando toda la fricción. Uber no
+                        inventó el transporte — eliminó la fricción de pedir un taxi. Airbnb no inventó el alojamiento —
+                        eliminó la fricción de reservar. <strong>Tu negocio exitoso es el rediseño de un proceso
+                            obsoleto.</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ SECCIÓN 4: CADENA DE VALOR ═══════════ -->
+        <section>
+            <h2 class="section-title"><span class="section-number">4</span> Cadena de Valor: Donde Captas el Margen</h2>
+            <div class="card" style="max-width: 100%;">
+                <span class="tag" style="background: rgba(16,185,129,0.15); color: var(--green);">Michael Porter ·
+                    Harvard</span>
+                <h3>🔗 Diseñar la Cadena de Valor</h3>
+                <p>Porter demostró que las empresas compiten creando una <strong>cadena de actividades</strong> donde
+                    cada eslabón añade valor. El negocio exitoso no vende "un producto" — diseña un <strong>sistema
+                        completo</strong> donde cada paso refuerza la confianza y reduce la fricción hasta el pago.</p>
+                <div class="svg-box" style="height: 180px;">
+                    <svg viewBox="0 0 500 160" width="100%" height="100%">
+                        <!-- Eslabones -->
+                        <rect x="10" y="50" width="80" height="60" rx="8" fill="#1e293b" stroke="#3b82f6"
+                            stroke-width="2" />
+                        <text x="50" y="72" text-anchor="middle" fill="#3b82f6" font-size="18">🎯</text>
+                        <text x="50" y="95" text-anchor="middle" fill="#94a3b8" font-size="8"
+                            font-weight="bold">ATRAER</text>
+
+                        <path d="M 92 80 L 112 80" fill="none" stroke="#475569" stroke-width="2" class="anim-flow" />
+
+                        <rect x="115" y="50" width="80" height="60" rx="8" fill="#1e293b" stroke="#8b5cf6"
+                            stroke-width="2" />
+                        <text x="155" y="72" text-anchor="middle" fill="#8b5cf6" font-size="18">🤝</text>
+                        <text x="155" y="95" text-anchor="middle" fill="#94a3b8" font-size="8"
+                            font-weight="bold">CUALIFICAR</text>
+
+                        <path d="M 197 80 L 217 80" fill="none" stroke="#475569" stroke-width="2" class="anim-flow" />
+
+                        <rect x="220" y="50" width="80" height="60" rx="8" fill="#1e293b" stroke="#f59e0b"
+                            stroke-width="2" />
+                        <text x="260" y="72" text-anchor="middle" fill="#f59e0b" font-size="18">🧠</text>
+                        <text x="260" y="95" text-anchor="middle" fill="#94a3b8" font-size="8"
+                            font-weight="bold">CONVENCER</text>
+
+                        <path d="M 302 80 L 322 80" fill="none" stroke="#475569" stroke-width="2" class="anim-flow" />
+
+                        <rect x="325" y="50" width="80" height="60" rx="8" fill="#1e293b" stroke="#10b981"
+                            stroke-width="2" class="anim-pulse" />
+                        <text x="365" y="72" text-anchor="middle" fill="#10b981" font-size="18">💰</text>
+                        <text x="365" y="95" text-anchor="middle" fill="#94a3b8" font-size="8"
+                            font-weight="bold">VENDER</text>
+
+                        <path d="M 407 80 L 427 80" fill="none" stroke="#475569" stroke-width="2" class="anim-flow" />
+
+                        <rect x="430" y="45" width="60" height="70" rx="10" fill="#1e293b" stroke="#ec4899"
+                            stroke-width="2" />
+                        <text x="460" y="72" text-anchor="middle" fill="#ec4899" font-size="18">❤️</text>
+                        <text x="460" y="95" text-anchor="middle" fill="#94a3b8" font-size="7"
+                            font-weight="bold">FIDELIZAR</text>
+
+                        <!-- Labels -->
+                        <text x="250" y="145" text-anchor="middle" fill="#64748b" font-size="10">Cada eslabón diseñado
+                            reduce fricción y aumenta margen</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ SECCIÓN 5: ECONOMÍA CONDUCTUAL ═══════════ -->
+        <section>
+            <h2 class="section-title"><span class="section-number">5</span> Economía Conductual: El Cliente No Es
+                Racional</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="tag" style="background: rgba(139,92,246,0.15); color: var(--purple);">Kahneman &
+                        Tversky</span>
+                    <h3>🧠 Prospect Theory</h3>
+                    <p>Las personas <strong>sienten las pérdidas el doble</strong> que las ganancias. El diseño exitoso
+                        enmarca la compra no como un gasto, sino como <strong>evitar perder</strong> algo valioso. "¿Vas
+                        a dejar que tu competencia te gane?" es más poderoso que "Cómpralo".</p>
+                </div>
+                <div class="card">
+                    <span class="tag" style="background: rgba(236,72,153,0.15); color: var(--pink);">Richard Thaler ·
+                        Nobel 2017</span>
+                    <h3>🏗️ Arquitectura de Decisiones</h3>
+                    <p>El <strong>Nudge</strong>: diseñas el entorno para que la decisión "correcta" sea la más fácil.
+                        Preseleccionar el plan Premium, poner el botón de compra donde el ojo mira primero, dar 3
+                        opciones donde la del medio es la que quieres vender. <strong>Eso es diseño con teoría
+                            económica.</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ SECCIÓN 6: TIMELINE ═══════════ -->
+        <section>
+            <h2 class="section-title"><span class="section-number">6</span> El Proceso: De Idea a Negocio Exitoso</h2>
+            <div class="timeline">
+                <div class="t-item">
+                    <div class="t-theory">Paso 1 · Señalización (Spence)</div>
+                    <h3>Define tu Señal de Valor</h3>
+                    <p>¿Qué problema resuelves? ¿Para quién? Define tu Oferta Irresistible: qué vendes, a quién y por
+                        qué solo tú puedes hacerlo. La señal tiene que ser costosa de imitar.</p>
+                </div>
+                <div class="t-item">
+                    <div class="t-theory">Paso 2 · Costos de Transacción (Coase)</div>
+                    <h3>Diseña el Proceso con Cero Fricción</h3>
+                    <p>Mapea cada paso que hace tu cliente desde que te descubre hasta que paga. Elimina todo lo
+                        innecesario. Cada clic, cada formulario, cada paso de más es un punto de fuga.</p>
+                </div>
+                <div class="t-item">
+                    <div class="t-theory">Paso 3 · Cadena de Valor (Porter)</div>
+                    <h3>Construye el Sistema Completo</h3>
+                    <p>Atraer → Cualificar → Convencer → Vender → Fidelizar. Cada eslabón es un activo del negocio. No
+                        dejes ninguno al azar: automatiza con IA lo repetitivo y humaniza lo que necesita confianza.</p>
+                </div>
+                <div class="t-item">
+                    <div class="t-theory">Paso 4 · Economía Conductual (Thaler)</div>
+                    <h3>Aplica los Nudges Correctos</h3>
+                    <p>Usa el efecto señuelo en tu precio, la escasez real en tu oferta, y la prueba social en tu
+                        comunicación. El cliente no es racional: responde a emociones bien diseñadas.</p>
+                </div>
+                <div class="t-item">
+                    <div class="t-theory">Paso 5 · Destrucción Creativa (Schumpeter)</div>
+                    <h3>Itera y Destruye tu Propia Versión Anterior</h3>
+                    <p>El negocio exitoso nunca se queda quieto. Mide, aprende, rediseña. Cada versión de tu negocio
+                        debe ser la "destrucción creativa" de la versión anterior. El que no se reinventa, lo reinventan
+                        otros.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ SECCIÓN 7: TRANSFERENCIA DE RIQUEZA ═══════════ -->
+        <section>
+            <h2 class="section-title"><span class="section-number">7</span> Transferencia de Riqueza: Los Canales del
+                Dinero</h2>
+            <div class="card" style="max-width: 100%; margin-bottom: 1.5rem;">
+                <span class="tag" style="background: rgba(245,158,11,0.15); color: var(--gold);">Fundamento
+                    Económico</span>
+                <h3>💸 Toda Transacción es una Transferencia</h3>
+                <p>Desde la economía, <strong>el dinero no se crea ni se destruye en una transacción: se
+                        transfiere</strong>. El que entiende los mecanismos de transferencia controla el flujo. Existen
+                    6 canales fundamentales por los que la riqueza cambia de manos:</p>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <span class="tag" style="background: rgba(239,68,68,0.15); color: var(--red);">Canal #1 · El Mayor
+                        Recaudador</span>
+                    <h3 style="color: var(--red);">🏛️ Gobierno (Impuestos)</h3>
+                    <p>Coerción legal — el Estado extrae y redistribuye. Solo EE.UU. recauda <strong>~$4.4
+                            trillones/año</strong>. Es la máquina de transferencia más grande del planeta. No es
+                        voluntaria, pero define todas las reglas del juego.</p>
+                    <div class="svg-box" style="height: 100px;">
+                        <svg viewBox="0 0 300 80" width="100%" height="100%">
+                            <rect x="10" y="25" width="250" height="30" rx="6" fill="#1e293b" stroke="#334155"
+                                stroke-width="1" />
+                            <rect x="10" y="25" width="250" height="30" rx="6" fill="rgba(239,68,68,0.3)" />
+                            <text x="135" y="45" text-anchor="middle" fill="#fff" font-size="11"
+                                font-weight="bold">$4.4T — Impuestos Federales USA</text>
+                            <text x="270" y="68" fill="#ef4444" font-size="9" font-weight="bold">100%</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card">
+                    <span class="tag" style="background: rgba(59,130,246,0.15); color: var(--blue);">Canal #2 · El
+                        Negocio Privado Rey</span>
+                    <h3 style="color: var(--blue);">🏦 Banca y Servicios Financieros</h3>
+                    <p>Intermediación del dinero — cobra por prestar lo que otros depositan. La banca global genera
+                        <strong>~$6.5T/año en ingresos</strong>. JPMorgan solo: $150B/año. Ganan con el <em>spread</em>:
+                        captan barato, prestan caro.
+                    </p>
+                    <div class="svg-box" style="height: 100px;">
+                        <svg viewBox="0 0 300 80" width="100%" height="100%">
+                            <rect x="10" y="25" width="250" height="30" rx="6" fill="#1e293b" stroke="#334155"
+                                stroke-width="1" />
+                            <rect x="10" y="25" width="220" height="30" rx="6" fill="rgba(59,130,246,0.3)" />
+                            <text x="120" y="45" text-anchor="middle" fill="#fff" font-size="11"
+                                font-weight="bold">$6.5T — Banca Global</text>
+                            <text x="240" y="68" fill="#3b82f6" font-size="9" font-weight="bold">88%</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card">
+                    <span class="tag" style="background: rgba(16,185,129,0.15); color: var(--green);">Canal #3 · La
+                        Empresa Más Rentable</span>
+                    <h3 style="color: var(--green);">⛽ Energía (Petróleo/Gas)</h3>
+                    <p>Saudi Aramco es la empresa <strong>más rentable del mundo: ~$160B de utilidad neta</strong>. El
+                        petróleo es literalmente el "impuesto" privado al movimiento. Quien controla la energía,
+                        controla la economía.</p>
+                    <div class="svg-box" style="height: 100px;">
+                        <svg viewBox="0 0 300 80" width="100%" height="100%">
+                            <rect x="10" y="25" width="250" height="30" rx="6" fill="#1e293b" stroke="#334155"
+                                stroke-width="1" />
+                            <rect x="10" y="25" width="160" height="30" rx="6" fill="rgba(16,185,129,0.3)" />
+                            <text x="90" y="45" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">$160B
+                                — Aramco (neta)</text>
+                            <text x="180" y="68" fill="#10b981" font-size="9" font-weight="bold">Más rentable</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card">
+                    <span class="tag" style="background: rgba(139,92,246,0.15); color: var(--purple);">Canal #4 · Costo
+                        Marginal Cero</span>
+                    <h3 style="color: var(--purple);">📱 Plataformas Tecnológicas</h3>
+                    <p>Apple, Microsoft, Google y Meta combinados: <strong>+$1.2T/año</strong>. Su modelo es el más
+                        eficiente de la historia: costos marginales cercanos a cero, escala infinita. Monetizan
+                        <strong>atención y datos</strong>.
+                    </p>
+                    <div class="svg-box" style="height: 100px;">
+                        <svg viewBox="0 0 300 80" width="100%" height="100%">
+                            <rect x="10" y="25" width="250" height="30" rx="6" fill="#1e293b" stroke="#334155"
+                                stroke-width="1" />
+                            <rect x="10" y="25" width="180" height="30" rx="6" fill="rgba(139,92,246,0.3)" />
+                            <text x="100" y="45" text-anchor="middle" fill="#fff" font-size="11"
+                                font-weight="bold">$1.2T — Big Tech combinados</text>
+                            <text x="200" y="68" fill="#8b5cf6" font-size="9" font-weight="bold">Escala ∞</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card">
+                    <span class="tag" style="background: rgba(236,72,153,0.15); color: var(--pink);">Canal #5 · Activo
+                        Escaso</span>
+                    <h3 style="color: var(--pink);">🏢 Renta / Real Estate</h3>
+                    <p>Propiedad de activos escasos — cobra por acceso al espacio. El mercado inmobiliario global vale
+                        <strong>~$380T</strong>. Generas riqueza por <strong>plusvalía pasiva</strong>: el activo sube
+                        de valor mientras duermes.
+                    </p>
+                </div>
+                <div class="card">
+                    <span class="tag" style="background: rgba(34,211,238,0.15); color: var(--cyan);">Canal #6 · Pooling
+                        de Riesgo</span>
+                    <h3 style="color: var(--cyan);">🛡️ Seguros</h3>
+                    <p>Muchos pagan para que pocos cobren. La industria de seguros global recauda <strong>~$7T/año en
+                            primas</strong>. El modelo puro: cobras por un evento que probablemente no ocurra.
+                        <strong>Vendes tranquilidad.</strong>
+                    </p>
+                </div>
+            </div>
+
+            <div class="thesis" style="margin-top: 2rem; border-left-color: var(--gold);">
+                <h4 style="color: var(--gold);">🔑 El Patrón Oculto</h4>
+                <p>Todos los canales que más recaudan tienen algo en común: <strong>controlan un cuello de
+                        botella</strong> — un punto de paso obligatorio. El banco controla el acceso al crédito, el
+                    gobierno la legalidad, la plataforma la atención, el dueño del inmueble el espacio, la aseguradora
+                    la tranquilidad.</p>
+            </div>
+        </section>
+
+        <!-- ═══════════ SECCIÓN 8: RENT-SEEKING VS CREACIÓN DE VALOR ═══════════ -->
+        <section>
+            <h2 class="section-title"><span class="section-number">8</span> Rent-Seeking vs Creación de Valor: La Gran
+                División</h2>
+            <div class="grid">
+                <div class="card" style="border-color: rgba(239,68,68,0.4);">
+                    <span class="tag" style="background: rgba(239,68,68,0.15); color: var(--red);">Gordon Tullock ·
+                        Teoría del Rent-Seeking</span>
+                    <h3 style="color: var(--red);">🏚️ Rent-Seeking (Captura de Renta)</h3>
+                    <p><strong>Capturas riqueza existente sin crear nada nuevo.</strong> Usas monopolios, regulación,
+                        intermediación o lobbying para extraer valor de otros. Ejemplos: el revendedor que solo sube el
+                        precio, el trámite burocrático que no aporta, el intermediario innecesario.</p>
+                    <div class="svg-box" style="height: 120px;">
+                        <svg viewBox="0 0 300 100" width="100%" height="100%">
+                            <!-- Persona A pierde -->
+                            <circle cx="50" cy="50" r="20" fill="#1e293b" stroke="#ef4444" stroke-width="2" />
+                            <text x="50" y="46" text-anchor="middle" fill="#ef4444" font-size="14">😩</text>
+                            <text x="50" y="62" text-anchor="middle" fill="#ef4444" font-size="7">Pierde</text>
+                            <!-- Flecha de transferencia -->
+                            <path d="M 75 50 L 155 50" fill="none" stroke="#ef4444" stroke-width="2"
+                                class="anim-flow" />
+                            <text x="115" y="40" text-anchor="middle" fill="#ef4444" font-size="8"
+                                font-weight="bold">EXTRAE</text>
+                            <!-- Intermediario captura -->
+                            <rect x="160" y="30" width="50" height="40" rx="6" fill="#1e293b" stroke="#ef4444"
+                                stroke-width="2" class="anim-pulse" />
+                            <text x="185" y="53" text-anchor="middle" fill="#ef4444" font-size="12">🏦</text>
+                            <!-- Sin valor nuevo -->
+                            <text x="250" y="50" text-anchor="middle" fill="#64748b" font-size="9">Valor nuevo</text>
+                            <text x="250" y="64" text-anchor="middle" fill="#ef4444" font-size="14" font-weight="bold">=
+                                0</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card" style="border-color: rgba(16,185,129,0.4);">
+                    <span class="tag" style="background: rgba(16,185,129,0.15); color: var(--green);">Schumpeter +
+                        Kirzner · Entrepreneurship</span>
+                    <h3 style="color: var(--green);">🚀 Creación de Valor</h3>
+                    <p><strong>Produces algo que no existía.</strong> Innovación genuina: resuelves un problema real,
+                        diseñas una experiencia nueva, reduces fricción. El valor total del mercado CRECE gracias a ti.
+                        Ejemplos: iPhone, Spotify, el agente IA que reemplaza 10 empleados.</p>
+                    <div class="svg-box" style="height: 120px;">
+                        <svg viewBox="0 0 300 100" width="100%" height="100%">
+                            <!-- Emprendedor -->
+                            <circle cx="50" cy="50" r="20" fill="#1e293b" stroke="#10b981" stroke-width="2" />
+                            <text x="50" y="46" text-anchor="middle" fill="#10b981" font-size="14">🧠</text>
+                            <text x="50" y="62" text-anchor="middle" fill="#10b981" font-size="7">Crea</text>
+                            <!-- Flecha de creación -->
+                            <path d="M 75 50 L 145 50" fill="none" stroke="#10b981" stroke-width="2"
+                                class="anim-flow" />
+                            <text x="110" y="40" text-anchor="middle" fill="#10b981" font-size="8"
+                                font-weight="bold">INNOVA</text>
+                            <!-- Valor nuevo -->
+                            <rect x="150" y="25" width="60" height="50" rx="8" fill="#1e293b" stroke="#10b981"
+                                stroke-width="2" class="anim-pulse" />
+                            <text x="180" y="45" text-anchor="middle" fill="#10b981" font-size="10">💡</text>
+                            <text x="180" y="62" text-anchor="middle" fill="#10b981" font-size="7"
+                                font-weight="bold">Nuevo</text>
+                            <!-- Todos ganan -->
+                            <text x="245" y="40" text-anchor="middle" fill="#10b981" font-size="8">Valor total</text>
+                            <text x="245" y="55" text-anchor="middle" fill="#10b981" font-size="14" font-weight="bold">↑
+                                CRECE</text>
+                            <text x="245" y="72" text-anchor="middle" fill="#64748b" font-size="7">Todos ganan</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card golden-card" style="margin-top: 1.5rem;">
+                <span class="tag" style="background: rgba(251,191,36,0.2); color: #fde68a;">El Secreto del Cuello de
+                    Botella</span>
+                <h3 style="color: #fde68a;">🔐 Controla el Paso Obligatorio</h3>
+                <p style="color: #f8fafc; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">El negocio ideal combina ambos:
+                    <strong>creas valor real</strong> (resuelves un problema) y al mismo tiempo te posicionas como
+                    <strong>cuello de botella</strong> (todo el mundo pasa por ti). Google no solo buscó información —
+                    se convirtió en la <strong>puerta de entrada a internet</strong>. WhatsApp no solo conectó personas
+                    — se volvió el <strong>canal obligatorio de comunicación</strong> en Latam. Tu misión: crear valor
+                    genuino y convertirte en el paso que nadie puede saltarse.
+                </p>
+                <div class="svg-box" style="height: 140px; margin-top: 1rem;">
+                    <svg viewBox="0 0 400 120" width="100%" height="100%">
+                        <!-- Flujo izquierda -->
+                        <circle cx="40" cy="35" r="12" fill="#1e293b" stroke="#94a3b8" stroke-width="1" />
+                        <text x="40" y="39" text-anchor="middle" fill="#94a3b8" font-size="10">👤</text>
+                        <circle cx="40" cy="65" r="12" fill="#1e293b" stroke="#94a3b8" stroke-width="1" />
+                        <text x="40" y="69" text-anchor="middle" fill="#94a3b8" font-size="10">👤</text>
+                        <circle cx="40" cy="95" r="12" fill="#1e293b" stroke="#94a3b8" stroke-width="1" />
+                        <text x="40" y="99" text-anchor="middle" fill="#94a3b8" font-size="10">👤</text>
+                        <!-- Flechas convergentes -->
+                        <path d="M 55 35 L 140 60" fill="none" stroke="#f59e0b" stroke-width="1.5" class="anim-flow" />
+                        <path d="M 55 65 L 140 60" fill="none" stroke="#f59e0b" stroke-width="1.5" class="anim-flow" />
+                        <path d="M 55 95 L 140 60" fill="none" stroke="#f59e0b" stroke-width="1.5" class="anim-flow" />
+                        <!-- Cuello de botella (TÚ) -->
+                        <rect x="145" y="35" width="110" height="50" rx="12" fill="#1e293b" stroke="#f59e0b"
+                            stroke-width="3" class="anim-pulse" />
+                        <text x="200" y="55" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="bold">TU
+                            NEGOCIO</text>
+                        <text x="200" y="72" text-anchor="middle" fill="#fde68a" font-size="8">Cuello de Botella</text>
+                        <!-- Flechas divergentes -->
+                        <path d="M 260 50 L 330 35" fill="none" stroke="#10b981" stroke-width="1.5" class="anim-flow" />
+                        <path d="M 260 60 L 330 60" fill="none" stroke="#10b981" stroke-width="1.5" class="anim-flow" />
+                        <path d="M 260 70 L 330 90" fill="none" stroke="#10b981" stroke-width="1.5" class="anim-flow" />
+                        <!-- Resultados -->
+                        <text x="355" y="38" text-anchor="middle" fill="#10b981" font-size="14">💰</text>
+                        <text x="355" y="63" text-anchor="middle" fill="#10b981" font-size="14">💰</text>
+                        <text x="355" y="93" text-anchor="middle" fill="#10b981" font-size="14">💰</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ SECCIÓN 9: HORMOZI — VALUE EQUATION ═══════════ -->
+        <section>
+            <h2 class="section-title"><span class="section-number">9</span> Alex Hormozi: La Ecuación del Valor</h2>
+            <div class="card" style="max-width: 100%; margin-bottom: 1.5rem;">
+                <span class="tag" style="background: rgba(239,68,68,0.15); color: var(--red);">$100M Offers · Alex
+                    Hormozi</span>
+                <h3 style="color: var(--red);">🎰 La Ecuación que Decide si Compran o No</h3>
+                <p>Hormozi formalizó lo que la economía conductual intuía: <strong>el valor percibido no depende del
+                        producto, sino de cómo se enmarca</strong>. Su ecuación es la fórmula matemática para crear
+                    ofertas "estúpidamente buenas":</p>
+            </div>
+            <div class="thesis" style="border-left-color: var(--red);">
+                <h4 style="color: var(--red); font-size: 1.1rem;">📐 Ecuación del Valor (Hormozi)</h4>
+                <div class="svg-box" style="height: 150px; margin-top: 1rem; margin-bottom: 1rem;">
+                    <svg viewBox="0 0 500 130" width="100%" height="100%">
+                        <!-- Numerador -->
+                        <text x="70" y="35" text-anchor="middle" fill="#f59e0b" font-size="12"
+                            font-weight="bold">Resultado Soñado</text>
+                        <text x="70" y="52" text-anchor="middle" fill="#94a3b8" font-size="9">(lo que quiere el
+                            cliente)</text>
+                        <text x="170" y="40" text-anchor="middle" fill="#475569" font-size="20"
+                            font-weight="bold">×</text>
+                        <text x="280" y="35" text-anchor="middle" fill="#10b981" font-size="12"
+                            font-weight="bold">Probabilidad Percibida</text>
+                        <text x="280" y="52" text-anchor="middle" fill="#94a3b8" font-size="9">(cree que lo va a
+                            lograr)</text>
+                        <!-- Línea divisoria -->
+                        <line x1="30" y1="65" x2="340" y2="65" stroke="#64748b" stroke-width="2" />
+                        <!-- Denominador -->
+                        <text x="90" y="88" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="bold">Tiempo
+                            de Espera</text>
+                        <text x="90" y="105" text-anchor="middle" fill="#94a3b8" font-size="9">(cuánto tarda)</text>
+                        <text x="190" y="90" text-anchor="middle" fill="#475569" font-size="20"
+                            font-weight="bold">+</text>
+                        <text x="280" y="88" text-anchor="middle" fill="#ef4444" font-size="12"
+                            font-weight="bold">Esfuerzo y Sacrificio</text>
+                        <text x="280" y="105" text-anchor="middle" fill="#94a3b8" font-size="9">(qué le cuesta)</text>
+                        <!-- Resultado -->
+                        <text x="380" y="70" text-anchor="middle" fill="#64748b" font-size="30"
+                            font-weight="bold">=</text>
+                        <rect x="410" y="40" width="80" height="50" rx="10" fill="#1e293b" stroke="#f59e0b"
+                            stroke-width="2" class="anim-pulse" />
+                        <text x="450" y="60" text-anchor="middle" fill="#f59e0b" font-size="10"
+                            font-weight="bold">VALOR</text>
+                        <text x="450" y="78" text-anchor="middle" fill="#f59e0b" font-size="16">🔥</text>
+                    </svg>
+                </div>
+                <p><strong>Maximiza arriba</strong> (resultado grande + alta confianza) y <strong>minimiza
+                        abajo</strong> (rápido + fácil) = oferta irresistible. Esto es la Teoría de la Señalización de
+                    Spence + Costos de Transacción de Coase, empaquetados en una fórmula práctica.</p>
+            </div>
+            <div class="grid" style="margin-top: 1.5rem;">
+                <div class="card">
+                    <h3 style="color: var(--green);">✅ Cómo se Aplica</h3>
+                    <p>1. <strong>Resultado Soñado:</strong> "Gana $10K/mes con IA" es mejor que "Aprende IA".<br>
+                        2. <strong>Probabilidad:</strong> Testimonios, garantías, pruebas = señales (Spence).<br>
+                        3. <strong>Tiempo:</strong> "En 30 días" gana contra "eventualmente".<br>
+                        4. <strong>Esfuerzo:</strong> "Done-for-you" gana contra "hazlo tú solo" = menos fricción
+                        (Coase).</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--pink);">🧲 El Grand Slam Offer</h3>
+                    <p>Hormozi enseña a apilar soluciones: por cada problema del cliente, creas un componente de la
+                        oferta. El resultado es un paquete tan completo que <strong>el precio se vuelve
+                            irrelevante</strong>. Es el Efecto Señuelo (Thaler) pero a escala industrial: el valor
+                        percibido es 10x el precio.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ SECCIÓN 10: NAVAL — LOS 4 TIPOS DE LEVERAGE ═══════════ -->
+        <section>
+            <h2 class="section-title"><span class="section-number">10</span> Naval Ravikant: Los 4 Tipos de
+                Apalancamiento</h2>
+            <div class="card" style="max-width: 100%; margin-bottom: 1.5rem;">
+                <span class="tag" style="background: rgba(34,211,238,0.15); color: var(--cyan);">The Almanack of Naval
+                    Ravikant</span>
+                <h3 style="color: var(--cyan);">⚙️ "Productize Yourself" — Empaqueta lo que Sabes</h3>
+                <p>Naval descubrió que la riqueza no viene de trabajar duro, sino de <strong>aplicar el apalancamiento
+                        correcto sobre tu conocimiento específico</strong>. Define 4 palancas que multiplican tu
+                    esfuerzo, de las cuales 2 requieren permiso y 2 son libres:</p>
+            </div>
+            <div class="grid">
+                <div class="card" style="border-color: rgba(239,68,68,0.3);">
+                    <span class="tag" style="background: rgba(239,68,68,0.15); color: var(--red);">Requiere
+                        Permiso</span>
+                    <h3 style="color: var(--red);">👥 Palanca 1: Trabajo (Labor)</h3>
+                    <p>Personas trabajando para ti. Es la palanca más antigua y la <strong>menos eficiente</strong>:
+                        cada empleado añadido suma costos fijos, conflictos y gestión. Es lineal: 2x personas ≈ 2x
+                        resultado. <em>Funciona pero no escala exponencialmente.</em></p>
+                </div>
+                <div class="card" style="border-color: rgba(245,158,11,0.3);">
+                    <span class="tag" style="background: rgba(245,158,11,0.15); color: var(--gold);">Requiere
+                        Permiso</span>
+                    <h3 style="color: var(--gold);">💰 Palanca 2: Capital</h3>
+                    <p>Dinero invertido que trabaja por ti. Requiere que alguien te <strong>confíe su capital</strong>
+                        (banco, inversionista). Es poderosa pero depende de la señalización: sin credibilidad, nadie te
+                        presta. <em>Los financistas viven de esta palanca.</em></p>
+                </div>
+                <div class="card" style="border-color: rgba(16,185,129,0.4);">
+                    <span class="tag" style="background: rgba(16,185,129,0.15); color: var(--green);">🔓 Sin
+                        Permiso</span>
+                    <h3 style="color: var(--green);">💻 Palanca 3: Código (Software)</h3>
+                    <p>Un programa trabaja 24/7, no duerme, no cobra. <strong>Costo marginal = cero.</strong> Es la
+                        palanca que convirtió a Zuckerberg en billonario con 20 años. Un agente IA reemplaza 10
+                        empleados. <em>Es la palanca definitiva de esta era.</em></p>
+                </div>
+                <div class="card golden-card" style="border-color: rgba(251,191,36,0.6);">
+                    <span class="tag" style="background: rgba(251,191,36,0.2); color: #fde68a;">🔓 Sin Permiso · La más
+                        accesible</span>
+                    <h3 style="color: #fde68a;">📱 Palanca 4: Media (Contenido)</h3>
+                    <p style="color: #f8fafc; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">Un post, un video, un podcast
+                        llega a millones mientras duermes. <strong>No necesitas permiso de nadie</strong> para publicar.
+                        Es la palanca que usa Economía IA: un TikTok bien hecho genera clientes 24/7. Codie Sanchez,
+                        Hormozi — todos construyeron imperios con esta palanca primero.</p>
+                </div>
+            </div>
+            <div class="thesis" style="margin-top: 2rem; border-left-color: var(--cyan);">
+                <h4 style="color: var(--cyan);">💎 Conocimiento Específico + Apalancamiento = Riqueza</h4>
+                <p>Naval dice: <strong>"El conocimiento específico es lo que parece juego para ti pero trabajo para
+                        otros."</strong> Es lo que no se puede enseñar en una universidad: tu experiencia única, tu ojo,
+                    tu intuición. Cuando aplicas las 4 palancas sobre ese conocimiento, generas riqueza exponencial.</p>
+            </div>
+        </section>
+
+        <!-- ═══════════ SECCIÓN 11: CODIE + BRUNSON — BORING BIZ + VALUE LADDER ═══════════ -->
+        <section>
+            <h2 class="section-title"><span class="section-number">11</span> Codie Sanchez + Russell Brunson: Los
+                Modelos Probados</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="tag" style="background: rgba(16,185,129,0.15); color: var(--green);">Codie Sanchez ·
+                        Contrarian Thinking</span>
+                    <h3 style="color: var(--green);">🧹 Boring Businesses (Negocios Aburridos)</h3>
+                    <p>Codie descubrió lo que Coase predijo: el negocio que más recauda no es el más sexy, es el que
+                        <strong>tiene la menor fricción entre necesidad y pago</strong>. Lavanderías, car washes,
+                        vending machines — negocios "aburridos" que generan cashflow predecible.
+                    </p>
+                    <div class="svg-box" style="height: 120px;">
+                        <svg viewBox="0 0 300 100" width="100%" height="100%">
+                            <text x="50" y="30" text-anchor="middle" fill="#64748b" font-size="10">Startup Sexy</text>
+                            <circle cx="50" cy="55" r="20" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"
+                                stroke-dasharray="3 3" />
+                            <text x="50" y="59" text-anchor="middle" fill="#ef4444" font-size="14">🚀</text>
+                            <text x="50" y="85" text-anchor="middle" fill="#ef4444" font-size="7">95% mueren</text>
+                            <text x="150" y="55" text-anchor="middle" fill="#475569" font-size="14">vs</text>
+                            <text x="250" y="30" text-anchor="middle" fill="#10b981" font-size="10"
+                                font-weight="bold">Boring Business</text>
+                            <circle cx="250" cy="55" r="22" fill="#1e293b" stroke="#10b981" stroke-width="2.5"
+                                class="anim-pulse" />
+                            <text x="250" y="59" text-anchor="middle" fill="#10b981" font-size="14">🧹</text>
+                            <text x="250" y="85" text-anchor="middle" fill="#10b981" font-size="7"
+                                font-weight="bold">Cash Flow real</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card">
+                    <span class="tag" style="background: rgba(139,92,246,0.15); color: var(--purple);">Codie ·
+                        Estrategia de Adquisición</span>
+                    <h3 style="color: var(--purple);">🔑 Los 3 Principios Codie</h3>
+                    <p><strong>1. Comprar > Crear:</strong> Comprar un negocio existente con flux de caja es menos
+                        riesgoso que empezar de cero.<br><br>
+                        <strong>2. The Fax Machine Test:</strong> Si el negocio todavía usa fax o procesos manuales, hay
+                        una oportunidad masiva de automatización (IA).<br><br>
+                        <strong>3. Seller Financing:</strong> El dueño actual te financia la compra — no necesitas
+                        banco. <em>Reduces fricción de entrada (Coase puro).</em>
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid" style="margin-top: 1.5rem;">
+                <div class="card" style="grid-column: 1 / -1;">
+                    <span class="tag" style="background: rgba(59,130,246,0.15); color: var(--blue);">Russell Brunson ·
+                        DotCom Secrets</span>
+                    <h3 style="color: var(--blue);">🪜 Value Ladder: Sube al Cliente Escalón por Escalón</h3>
+                    <p>Brunson sistematizó lo que Porter llamó "cadena de valor": no vendes UN producto — diseñas una
+                        <strong>escalera de valor</strong> donde cada peldaño aumenta el precio y la confianza. Empiezas
+                        gratis, terminas en high-ticket.
+                    </p>
+                    <div class="svg-box" style="height: 180px;">
+                        <svg viewBox="0 0 500 160" width="100%" height="100%">
+                            <!-- Escalón 1: Gratis -->
+                            <rect x="30" y="115" width="90" height="35" rx="6" fill="#1e293b" stroke="#10b981"
+                                stroke-width="2" />
+                            <text x="75" y="130" text-anchor="middle" fill="#10b981" font-size="9"
+                                font-weight="bold">GRATIS</text>
+                            <text x="75" y="143" text-anchor="middle" fill="#94a3b8" font-size="7">Lead Magnet</text>
+                            <!-- Escalón 2: Low-ticket -->
+                            <rect x="140" y="85" width="90" height="35" rx="6" fill="#1e293b" stroke="#3b82f6"
+                                stroke-width="2" />
+                            <text x="185" y="100" text-anchor="middle" fill="#3b82f6" font-size="9"
+                                font-weight="bold">$27-$97</text>
+                            <text x="185" y="113" text-anchor="middle" fill="#94a3b8" font-size="7">Producto
+                                Entry</text>
+                            <!-- Escalón 3: Core -->
+                            <rect x="250" y="55" width="90" height="35" rx="6" fill="#1e293b" stroke="#f59e0b"
+                                stroke-width="2" />
+                            <text x="295" y="70" text-anchor="middle" fill="#f59e0b" font-size="9"
+                                font-weight="bold">$500-$2K</text>
+                            <text x="295" y="83" text-anchor="middle" fill="#94a3b8" font-size="7">Oferta Core</text>
+                            <!-- Escalón 4: High-ticket -->
+                            <rect x="360" y="22" width="100" height="40" rx="8" fill="#1e293b" stroke="#ec4899"
+                                stroke-width="2.5" class="anim-pulse" />
+                            <text x="410" y="38" text-anchor="middle" fill="#ec4899" font-size="10"
+                                font-weight="bold">$5K-$50K+</text>
+                            <text x="410" y="53" text-anchor="middle" fill="#94a3b8" font-size="7">High-Ticket</text>
+                            <!-- Flechas -->
+                            <path d="M 120 120 L 140 105" fill="none" stroke="#475569" stroke-width="1.5"
+                                class="anim-flow" />
+                            <path d="M 230 95 L 250 75" fill="none" stroke="#475569" stroke-width="1.5"
+                                class="anim-flow" />
+                            <path d="M 340 65 L 360 48" fill="none" stroke="#475569" stroke-width="1.5"
+                                class="anim-flow" />
+                            <!-- Etiqueta -->
+                            <text x="250" y="155" text-anchor="middle" fill="#64748b" font-size="9">Cada escalón aumenta
+                                confianza, precio y compromiso</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ SECCIÓN 12: IA — EL MOTOR DISRUPTIVO ═══════════ -->
+        <section>
+            <h2 class="section-title"><span class="section-number"
+                    style="background: linear-gradient(135deg, #22d3ee, #3b82f6);">12</span> Inteligencia Artificial: El
+                Motor que Reescribe las Reglas</h2>
+            <div class="card" style="max-width: 100%; margin-bottom: 1.5rem; border-color: rgba(34,211,238,0.4);">
+                <span class="tag" style="background: rgba(34,211,238,0.15); color: var(--cyan);">La Revolución
+                    2024–2030</span>
+                <h3 style="color: var(--cyan);">🤖 IA No Es una Herramienta — Es una Nueva Dimensión</h3>
+                <p>Cada teoría económica que hemos visto fue formulada en un mundo donde la inteligencia era
+                    <strong>escasa y cara</strong> (solo humanos la poseían). La IA cambia eso de raíz: <strong>la
+                        inteligencia se vuelve abundante, barata e instantánea</strong>. Esto no solo mejora los
+                    negocios existentes — crea una dimensión completamente nueva.
+                </p>
+            </div>
+
+            <!-- TABLA: Cómo la IA transforma cada teoría -->
+            <div class="card" style="max-width: 100%; overflow-x: auto; padding: 1.5rem;">
+                <h3 style="color: var(--cyan); margin-bottom: 1.5rem; text-align: center;">🔄 Cómo la IA Transforma Cada
+                    Teoría</h3>
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                    <thead>
+                        <tr>
+                            <th
+                                style="text-align: left; padding: 0.8rem; border-bottom: 2px solid var(--cyan); color: var(--cyan); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">
+                                Teoría</th>
+                            <th
+                                style="text-align: left; padding: 0.8rem; border-bottom: 2px solid var(--gold); color: var(--gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">
+                                Antes de IA</th>
+                            <th
+                                style="text-align: left; padding: 0.8rem; border-bottom: 2px solid var(--green); color: var(--green); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">
+                                Con IA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid rgba(51,65,85,0.5);">
+                            <td style="padding: 0.8rem; color: var(--gold); font-weight: 600;">📡 Señalización</td>
+                            <td style="padding: 0.8rem; color: var(--soft);">Diseño premium costaba $5K-$50K (agencia)
+                            </td>
+                            <td style="padding: 0.8rem; color: var(--green);"><strong>IA genera branding, copy y diseño
+                                    en minutos.</strong> La señal premium se democratiza.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(51,65,85,0.5);">
+                            <td style="padding: 0.8rem; color: var(--cyan); font-weight: 600;">⚡ Costos de Transacción
+                            </td>
+                            <td style="padding: 0.8rem; color: var(--soft);">Reducir fricción requería empleados 24/7
+                            </td>
+                            <td style="padding: 0.8rem; color: var(--green);"><strong>Chatbots IA atienden 24/7 sin
+                                    costo marginal.</strong> Fricción → casi cero.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(51,65,85,0.5);">
+                            <td style="padding: 0.8rem; color: var(--purple); font-weight: 600;">🌪️ Destrucción
+                                Creativa</td>
+                            <td style="padding: 0.8rem; color: var(--soft);">Ciclos de disrupción cada 10-20 años</td>
+                            <td style="padding: 0.8rem; color: var(--green);"><strong>Ciclos de disrupción cada 6-12
+                                    meses.</strong> La IA es Schumpeter en esteroides.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(51,65,85,0.5);">
+                            <td style="padding: 0.8rem; color: var(--blue); font-weight: 600;">🔗 Cadena de Valor</td>
+                            <td style="padding: 0.8rem; color: var(--soft);">Cada eslabón requería personas
+                                especializadas</td>
+                            <td style="padding: 0.8rem; color: var(--green);"><strong>Agentes IA automatizan eslabones
+                                    enteros:</strong> captación, cualificación, seguimiento.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(51,65,85,0.5);">
+                            <td style="padding: 0.8rem; color: var(--pink); font-weight: 600;">🧠 Economía Conductual
+                            </td>
+                            <td style="padding: 0.8rem; color: var(--soft);">Nudges genéricos, mismos para todos</td>
+                            <td style="padding: 0.8rem; color: var(--green);"><strong>Nudges personalizados en tiempo
+                                    real</strong> según comportamiento del usuario.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(51,65,85,0.5);">
+                            <td style="padding: 0.8rem; color: var(--red); font-weight: 600;">🎰 Hormozi (Valor)</td>
+                            <td style="padding: 0.8rem; color: var(--soft);">Crear ofertas requería semanas de análisis
+                            </td>
+                            <td style="padding: 0.8rem; color: var(--green);"><strong>IA analiza mercado + crea ofertas
+                                    optimizadas</strong> en horas, no semanas.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(51,65,85,0.5);">
+                            <td style="padding: 0.8rem; color: var(--cyan); font-weight: 600;">⚙️ Naval (Leverage)</td>
+                            <td style="padding: 0.8rem; color: var(--soft);">Código = devs caros. Media = producción
+                                lenta.</td>
+                            <td style="padding: 0.8rem; color: var(--green);"><strong>IA escribe código + genera
+                                    media.</strong> Las 2 palancas "sin permiso" se aceleran 100x.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.8rem; color: #fde68a; font-weight: 600;">🧹 Codie (Boring Biz)</td>
+                            <td style="padding: 0.8rem; color: var(--soft);">Negocios aburridos operaban con métodos
+                                viejos</td>
+                            <td style="padding: 0.8rem; color: var(--green);"><strong>IA automatiza el "Fax Machine
+                                    Test"</strong> — el negocio aburrido + IA = máquina de cashflow.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Diagrama SVG: El multiplicador IA -->
+            <div class="thesis" style="margin-top: 2rem; border-left-color: var(--cyan);">
+                <h4 style="color: var(--cyan);">⚡ La Ecuación Actualizada</h4>
+                <div class="svg-box" style="height: 120px; margin: 1rem 0;">
+                    <svg viewBox="0 0 500 100" width="100%" height="100%">
+                        <!-- Negocio Tradicional -->
+                        <rect x="20" y="30" width="130" height="40" rx="8" fill="#1e293b" stroke="#64748b"
+                            stroke-width="1.5" />
+                        <text x="85" y="48" text-anchor="middle" fill="#94a3b8" font-size="9">Negocio Tradicional</text>
+                        <text x="85" y="62" text-anchor="middle" fill="#64748b" font-size="8">Teoría + Frameworks</text>
+                        <!-- Multiplicador -->
+                        <text x="185" y="55" text-anchor="middle" fill="#22d3ee" font-size="24"
+                            font-weight="bold">×</text>
+                        <!-- IA -->
+                        <rect x="210" y="25" width="80" height="50" rx="10" fill="#1e293b" stroke="#22d3ee"
+                            stroke-width="2.5" class="anim-pulse" />
+                        <text x="250" y="48" text-anchor="middle" fill="#22d3ee" font-size="12"
+                            font-weight="bold">IA</text>
+                        <text x="250" y="63" text-anchor="middle" fill="#22d3ee" font-size="16">🤖</text>
+                        <!-- Igual -->
+                        <text x="320" y="55" text-anchor="middle" fill="#64748b" font-size="24"
+                            font-weight="bold">=</text>
+                        <!-- Resultado -->
+                        <rect x="345" y="20" width="140" height="60" rx="12" fill="#1e293b" stroke="#10b981"
+                            stroke-width="2.5" class="anim-pulse" />
+                        <text x="415" y="43" text-anchor="middle" fill="#10b981" font-size="10"
+                            font-weight="bold">NEGOCIO</text>
+                        <text x="415" y="57" text-anchor="middle" fill="#10b981" font-size="10"
+                            font-weight="bold">EXPONENCIAL</text>
+                        <text x="415" y="72" text-anchor="middle" fill="#10b981" font-size="14">🚀</text>
+                    </svg>
+                </div>
+                <p>La IA no reemplaza las teorías — las <strong>multiplica</strong>. Un negocio con fundamentos sólidos
+                    + IA se convierte en una máquina exponencial. Un negocio sin fundamentos + IA solo falla más rápido.
+                </p>
+            </div>
+        </section>
+
+        <!-- ═══════════ SECCIÓN 13: LA NUEVA DIMENSIÓN ═══════════ -->
+        <section>
+            <h2 class="section-title"><span class="section-number"
+                    style="background: linear-gradient(135deg, #10b981, #22d3ee);">13</span> La Nueva Dimensión: El
+                Negocio Autónomo</h2>
+            <div class="card" style="max-width: 100%; margin-bottom: 1.5rem; border-color: rgba(16,185,129,0.4);">
+                <span class="tag" style="background: rgba(16,185,129,0.15); color: var(--green);">La Tesis de Economía
+                    IA</span>
+                <h3 style="color: var(--green);">🌐 Del Negocio Diseñado al Negocio que se Diseña Solo</h3>
+                <p>La IA no solo acelera los negocios existentes — abre una dimensión que <strong>ningún economista
+                        clásico pudo prever</strong>: negocios que se optimizan solos. Mientras Spence pensaba en
+                    señales estáticas y Coase en fricción fija, la IA introduce variables <strong>dinámicas, adaptativas
+                        y autónomas</strong>.</p>
+            </div>
+
+            <div class="grid">
+                <div class="card" style="border-color: rgba(245,158,11,0.3);">
+                    <span class="tag" style="background: rgba(245,158,11,0.15); color: var(--gold);">Etapa 1 ·
+                        Hoy</span>
+                    <h3 style="color: var(--gold);">🔧 IA como Herramienta</h3>
+                    <p><strong>Usas IA para hacer lo mismo, más rápido.</strong> ChatGPT escribe tus emails, Midjourney
+                        diseña tu logo, un chatbot responde FAQs. Reduces costos y tiempo, pero el negocio sigue
+                        dependiendo de TI.</p>
+                    <div class="svg-box" style="height: 90px;">
+                        <svg viewBox="0 0 250 70" width="100%" height="100%">
+                            <circle cx="50" cy="35" r="18" fill="#1e293b" stroke="#f59e0b" stroke-width="2" />
+                            <text x="50" y="39" text-anchor="middle" fill="#f59e0b" font-size="14">👤</text>
+                            <path d="M 72 35 L 110 35" fill="none" stroke="#f59e0b" stroke-width="2"
+                                class="anim-flow" />
+                            <text x="91" y="28" text-anchor="middle" fill="#f59e0b" font-size="7"
+                                font-weight="bold">MANDA</text>
+                            <rect x="115" y="20" width="40" height="30" rx="6" fill="#1e293b" stroke="#f59e0b"
+                                stroke-width="1.5" />
+                            <text x="135" y="39" text-anchor="middle" fill="#f59e0b" font-size="12">🤖</text>
+                            <path d="M 160 35 L 195 35" fill="none" stroke="#f59e0b" stroke-width="2"
+                                class="anim-flow" />
+                            <text x="215" y="39" text-anchor="middle" fill="#94a3b8" font-size="12">📄</text>
+                            <text x="125" y="62" text-anchor="middle" fill="#64748b" font-size="7">Tú decides
+                                todo</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card" style="border-color: rgba(59,130,246,0.4);">
+                    <span class="tag" style="background: rgba(59,130,246,0.15); color: var(--blue);">Etapa 2 ·
+                        2025-2026</span>
+                    <h3 style="color: var(--blue);">🔗 IA como Agente</h3>
+                    <p><strong>Los agentes IA toman decisiones autónomas dentro de reglas.</strong> Un agente cualifica
+                        leads, otro negocia precios, otro crea contenido. Tú defines las reglas, la IA ejecuta. Es el
+                        equivalente a tener 10 empleados que no duermen.</p>
+                    <div class="svg-box" style="height: 90px;">
+                        <svg viewBox="0 0 250 70" width="100%" height="100%">
+                            <circle cx="40" cy="35" r="15" fill="#1e293b" stroke="#3b82f6" stroke-width="2" />
+                            <text x="40" y="39" text-anchor="middle" fill="#3b82f6" font-size="12">👤</text>
+                            <path d="M 58 35 L 80 35" fill="none" stroke="#3b82f6" stroke-width="1.5"
+                                class="anim-flow" />
+                            <text x="69" y="28" text-anchor="middle" fill="#3b82f6" font-size="6"
+                                font-weight="bold">REGLAS</text>
+                            <rect x="85" y="18" width="35" height="34" rx="5" fill="#1e293b" stroke="#3b82f6"
+                                stroke-width="1.5" />
+                            <text x="102" y="39" text-anchor="middle" fill="#3b82f6" font-size="10">🤖</text>
+                            <rect x="130" y="12" width="30" height="22" rx="4" fill="#1e293b" stroke="#3b82f6"
+                                stroke-width="1" />
+                            <text x="145" y="26" text-anchor="middle" fill="#3b82f6" font-size="8">🤖</text>
+                            <rect x="130" y="40" width="30" height="22" rx="4" fill="#1e293b" stroke="#3b82f6"
+                                stroke-width="1" />
+                            <text x="145" y="54" text-anchor="middle" fill="#3b82f6" font-size="8">🤖</text>
+                            <path d="M 120 30 L 130 23" fill="none" stroke="#475569" stroke-width="1" />
+                            <path d="M 120 42 L 130 48" fill="none" stroke="#475569" stroke-width="1" />
+                            <path d="M 163 23 L 185 30" fill="none" stroke="#3b82f6" stroke-width="1"
+                                class="anim-flow" />
+                            <path d="M 163 51 L 185 42" fill="none" stroke="#3b82f6" stroke-width="1"
+                                class="anim-flow" />
+                            <text x="205" y="39" text-anchor="middle" fill="#10b981" font-size="14">💰</text>
+                            <text x="130" y="70" text-anchor="middle" fill="#64748b" font-size="7">Tú defines, IA
+                                ejecuta</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card golden-card" style="grid-column: 1 / -1;">
+                    <span class="tag" style="background: rgba(251,191,36,0.2); color: #fde68a;">Etapa 3 · 2027+ · La
+                        Nueva Dimensión</span>
+                    <h3 style="color: #fde68a;">🧬 IA como Co-fundador: El Negocio Autónomo</h3>
+                    <p style="color: #f8fafc; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">El negocio se
+                        <strong>auto-optimiza</strong>. La IA analiza datos en tiempo real, ajusta precios (Thaler),
+                        modifica las señales (Spence), reduce fricción automáticamente (Coase), crea contenido
+                        adaptativo (Naval), y rediseña la oferta según el mercado (Hormozi). Tú eres el
+                        <strong>arquitecto de la visión</strong> — la IA es el sistema operativo que ejecuta, aprende y
+                        mejora sin parar.
+                    </p>
+                    <div class="svg-box" style="height: 150px; margin-top: 1rem;">
+                        <svg viewBox="0 0 500 130" width="100%" height="100%">
+                            <!-- Centro: Negocio Autónomo -->
+                            <circle cx="250" cy="65" r="35" fill="#1e293b" stroke="#f59e0b" stroke-width="3"
+                                class="anim-pulse" />
+                            <text x="250" y="58" text-anchor="middle" fill="#f59e0b" font-size="9"
+                                font-weight="bold">NEGOCIO</text>
+                            <text x="250" y="70" text-anchor="middle" fill="#fde68a" font-size="9"
+                                font-weight="bold">AUTÓNOMO</text>
+                            <text x="250" y="84" text-anchor="middle" fill="#f59e0b" font-size="14">🧬</text>
+                            <!-- Nodos externos con feedback loops -->
+                            <!-- Señales -->
+                            <circle cx="100" cy="30" r="18" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" />
+                            <text x="100" y="28" text-anchor="middle" fill="#f59e0b" font-size="7">SEÑALES</text>
+                            <text x="100" y="40" text-anchor="middle" fill="#f59e0b" font-size="9">📡</text>
+                            <path d="M 118 38 L 218 55" fill="none" stroke="#f59e0b" stroke-width="1"
+                                class="anim-flow" />
+                            <!-- Fricción -->
+                            <circle cx="100" cy="100" r="18" fill="#1e293b" stroke="#22d3ee" stroke-width="1.5" />
+                            <text x="100" y="98" text-anchor="middle" fill="#22d3ee" font-size="7">FRICCIÓN</text>
+                            <text x="100" y="110" text-anchor="middle" fill="#22d3ee" font-size="9">⚡</text>
+                            <path d="M 118 92 L 220 72" fill="none" stroke="#22d3ee" stroke-width="1"
+                                class="anim-flow" />
+                            <!-- Oferta -->
+                            <circle cx="400" cy="30" r="18" fill="#1e293b" stroke="#ef4444" stroke-width="1.5" />
+                            <text x="400" y="28" text-anchor="middle" fill="#ef4444" font-size="7">OFERTA</text>
+                            <text x="400" y="40" text-anchor="middle" fill="#ef4444" font-size="9">🎯</text>
+                            <path d="M 382 38 L 282 55" fill="none" stroke="#ef4444" stroke-width="1"
+                                class="anim-flow" />
+                            <!-- Media -->
+                            <circle cx="400" cy="100" r="18" fill="#1e293b" stroke="#10b981" stroke-width="1.5" />
+                            <text x="400" y="98" text-anchor="middle" fill="#10b981" font-size="7">MEDIA</text>
+                            <text x="400" y="110" text-anchor="middle" fill="#10b981" font-size="9">📱</text>
+                            <path d="M 382 92 L 282 72" fill="none" stroke="#10b981" stroke-width="1"
+                                class="anim-flow" />
+                            <!-- Nudges -->
+                            <circle cx="250" cy="125" r="14" fill="#1e293b" stroke="#ec4899" stroke-width="1.5" />
+                            <text x="250" y="128" text-anchor="middle" fill="#ec4899" font-size="8">🧠</text>
+                            <path d="M 250 111 L 250 100" fill="none" stroke="#ec4899" stroke-width="1"
+                                class="anim-flow" />
+                            <!-- Label -->
+                            <text x="250" y="15" text-anchor="middle" fill="#64748b" font-size="8">Todo se auto-optimiza
+                                en tiempo real</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Las 5 Capacidades del Negocio Autónomo -->
+            <div class="card" style="max-width: 100%; margin-top: 1.5rem; border-color: rgba(16,185,129,0.3);">
+                <h3 style="color: var(--green); margin-bottom: 1rem;">🏗️ Las 5 Capacidades del Negocio IA</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem;">
+                    <div
+                        style="text-align: center; padding: 1rem; background: #0f172a; border-radius: 0.75rem; border: 1px solid var(--border);">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">🔍</div>
+                        <div style="color: var(--gold); font-weight: 700; font-size: 0.8rem;">Auto-Análisis</div>
+                        <div style="color: var(--muted); font-size: 0.7rem; margin-top: 0.3rem;">Lee datos de mercado y
+                            se ajusta</div>
+                    </div>
+                    <div
+                        style="text-align: center; padding: 1rem; background: #0f172a; border-radius: 0.75rem; border: 1px solid var(--border);">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">✍️</div>
+                        <div style="color: var(--cyan); font-weight: 700; font-size: 0.8rem;">Auto-Contenido</div>
+                        <div style="color: var(--muted); font-size: 0.7rem; margin-top: 0.3rem;">Genera copy, video,
+                            posts sin parar</div>
+                    </div>
+                    <div
+                        style="text-align: center; padding: 1rem; background: #0f172a; border-radius: 0.75rem; border: 1px solid var(--border);">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">💬</div>
+                        <div style="color: var(--green); font-weight: 700; font-size: 0.8rem;">Auto-Venta</div>
+                        <div style="color: var(--muted); font-size: 0.7rem; margin-top: 0.3rem;">Cualifica, negocia y
+                            cierra 24/7</div>
+                    </div>
+                    <div
+                        style="text-align: center; padding: 1rem; background: #0f172a; border-radius: 0.75rem; border: 1px solid var(--border);">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">🎯</div>
+                        <div style="color: var(--pink); font-weight: 700; font-size: 0.8rem;">Auto-Oferta</div>
+                        <div style="color: var(--muted); font-size: 0.7rem; margin-top: 0.3rem;">Adapta precio/packaging
+                            según demanda</div>
+                    </div>
+                    <div
+                        style="text-align: center; padding: 1rem; background: #0f172a; border-radius: 0.75rem; border: 1px solid var(--border);">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">🔄</div>
+                        <div style="color: var(--purple); font-weight: 700; font-size: 0.8rem;">Auto-Iteración</div>
+                        <div style="color: var(--muted); font-size: 0.7rem; margin-top: 0.3rem;">Destrucción creativa
+                            continua</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ SECCIÓN 14: EJECUCIÓN 80/20 ═══════════ -->
+        <section>
+            <h2 class="section-title"><span class="section-number"
+                    style="background: linear-gradient(135deg, #f59e0b, #ec4899);">14</span> Ejecución 80/20: Los 3
+                Escenarios Ganadores</h2>
+            <div class="card" style="max-width: 100%; margin-bottom: 1.5rem; border-color: rgba(245,158,11,0.4);">
+                <span class="tag" style="background: rgba(245,158,11,0.15); color: var(--gold);">El Principio de Pareto
+                    Aplicado</span>
+                <h3 style="color: var(--gold);">🎯 El 20% del Esfuerzo que Trae el 80% de la Riqueza</h3>
+                <p>La teoría sin acción es inútil. Aplicando la regla de Pareto (80/20), si integramos la
+                    <strong>economía, los gurús y la IA</strong>, surgen 3 escenarios de negocio claros y accionables
+                    que concentran el máximo impacto con la menor fricción en el mercado actual.</p>
+            </div>
+
+            <div class="grid">
+                <!-- Escenario 1 -->
+                <div class="card" style="border-top: 3px solid var(--blue);">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤖💼</div>
+                    <h3 style="color: var(--blue);">1. El "Boring Business" Aumentado</h3>
+                    <p><strong>La Tesis:</strong> Comprar o iniciar un negocio tradicional (limpieza, plomería,
+                        gestoría) que tiene clientes cautivos pero métodos anticuados, y aplicarle automatización
+                        extrema.<br><br>
+                        <strong>La Teoría:</strong> Codie Sanchez (Boring Biz) + Coase (Reducción de Costos de
+                        Transacción) + Naval (Apalancamiento de Código).<br><br>
+                        <strong>Ejecución 80/20:</strong> Tomas un negocio offline, reemplazas el Excel y la
+                        recepcionista con un agente IA que agenda y cobra vía WhatsApp 24/7. El margen de ganancia se
+                        dispara al reducir la fricción laboral a cero. Te vuelves el cuello de botella más rápido y
+                        barato de tu industria.
+                    </p>
+                </div>
+
+                <!-- Escenario 2 -->
+                <div class="card" style="border-top: 3px solid var(--pink);">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤳🧲</div>
+                    <h3 style="color: var(--pink);">2. Marca Personal + Grand Slam Offer</h3>
+                    <p><strong>La Tesis:</strong> Usar algoritmos de contenido para atraer atención masiva (GRATIS) y
+                        redirigirla a una oferta donde el valor percibido es tan alto que el precio no importa.<br><br>
+                        <strong>La Teoría:</strong> Hormozi (Value Equation) + Naval (Media Leverage) + Spence
+                        (Señalización).<br><br>
+                        <strong>Ejecución 80/20:</strong> Creas contenido en formato corto (TikTok/Reels) mostrando tu
+                        conocimiento específico (Señalización). Eso atrae tráfico gratuito. Los llevas a una escalera de
+                        valor (Brunson) donde la oferta principal garantiza un resultado enorme con cero esfuerzo para
+                        el cliente (IA lo hace por ellos).
+                    </p>
+                </div>
+
+                <!-- Escenario 3 -->
+                <div class="card" style="border-top: 3px solid var(--green);">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚙️🤝</div>
+                    <h3 style="color: var(--green);">3. Agencia de IA (Arbitraje de Eficiencia)</h3>
+                    <p><strong>La Tesis:</strong> Vender el "resultado" a empresas, cobrando tarifas premium, pero
+                        ejecutando el trabajo a costo casi cero usando agentes de IA.<br><br>
+                        <strong>La Teoría:</strong> Schumpeter (Destrucción Creativa) + Thaler (Economía Conductual) +
+                        Transferencia de Riqueza.<br><br>
+                        <strong>Ejecución 80/20:</strong> Vendes un servicio como "creación de contenido" o "atención al
+                        cliente". El cliente paga $2,000/mes asumiendo el costo del trabajo humano (Valor Percibido). Tú
+                        lo ejecutas con flujos automatizados de IA que te cuestan $50/mes. Haces arbitraje de la
+                        asimetría de información antes de que el mercado se adapte.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ TESIS FINAL ═══════════ -->
+        <section>
+            <div class="thesis" style="border-left-color: var(--cyan); border-left-width: 4px;">
+                <h4 style="color: var(--cyan); font-size: 1.3rem;">⚡ Tesis Final: La Ecuación Definitiva del Negocio
+                    Exitoso</h4>
+                <p style="font-size: 1.05rem; max-width: 800px; margin: 0 auto;">
+                    Un negocio exitoso en la era IA no es suerte. Es la <strong>intersección de 3
+                        capas</strong>:<br><br>
+                    <span
+                        style="display: inline-block; padding: 3px 10px; border-radius: 4px; background: rgba(245,158,11,0.15); color: var(--gold); font-weight: 700; font-size: 0.85rem; margin-bottom: 0.5rem;">CAPA
+                        1 — TEORÍA ECONÓMICA (el POR QUÉ)</span><br>
+                    Señalización · Costos de Transacción · Destrucción Creativa · Cadena de Valor · Economía Conductual
+                    · Transferencia de Riqueza<br><br>
+                    <span
+                        style="display: inline-block; padding: 3px 10px; border-radius: 4px; background: rgba(236,72,153,0.15); color: var(--pink); font-weight: 700; font-size: 0.85rem; margin-bottom: 0.5rem;">CAPA
+                        2 — FRAMEWORKS PROBADOS (el CÓMO)</span><br>
+                    Hormozi (Oferta) · Naval (Apalancamiento) · Codie (Adquisición) · Brunson (Value Ladder)<br><br>
+                    <span
+                        style="display: inline-block; padding: 3px 10px; border-radius: 4px; background: rgba(34,211,238,0.15); color: var(--cyan); font-weight: 700; font-size: 0.85rem; margin-bottom: 0.5rem;">CAPA
+                        3 — INTELIGENCIA ARTIFICIAL (el MULTIPLICADOR)</span><br>
+                    Auto-análisis · Auto-contenido · Auto-venta · Auto-oferta · Auto-iteración<br><br>
+                    <em style="color: var(--muted); display: block; margin-top: 1rem; font-size: 0.95rem;">La teoría te
+                        dice por qué funciona. Los gurús te dicen cómo ejecutar. La IA multiplica todo lo que
+                        haces.<br><strong style="color: var(--cyan);">Quien domine las 3 capas, domina el
+                            mercado.</strong></em>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Economía IA -->
+    <style>
+        .footer-premium {
+            width: calc(100% - 2rem);
+            max-width: 1000px;
+            margin: 4rem auto 2rem auto;
+            padding: 3rem 2rem;
+            border-radius: 1.5rem;
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.6) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+        }
+
+        .footer-premium-brand {
+            display: inline-block;
+            color: #f8fafc;
+            font-size: 1rem;
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
+
+        .footer-premium-brand:hover {
+            opacity: 1;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-premium-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-link-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 80px;
+        }
+
+        .footer-link-item .icon-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .footer-link-item.tiktok:hover {
+            color: #f8fafc;
+        }
+
+        .footer-link-item.tiktok:hover .icon-wrap {
+            background: rgba(255, 0, 80, 0.1);
+            border-color: rgba(255, 0, 80, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .footer-link-item.whatsapp:hover {
+            color: #f8fafc;
+        }
+
+        .footer-link-item.whatsapp:hover .icon-wrap {
+            background: rgba(37, 211, 102, 0.1);
+            border-color: rgba(37, 211, 102, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .footer-link-item.consultoria:hover {
+            color: #f8fafc;
+        }
+
+        .footer-link-item.consultoria:hover .icon-wrap {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .footer-link-item.bio:hover {
+            color: #f8fafc;
+        }
+
+        .footer-link-item.bio:hover .icon-wrap {
+            background: rgba(250, 204, 21, 0.1);
+            border-color: rgba(250, 204, 21, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .footer-link-item.trafico:hover {
+            color: #34d399;
+        }
+
+        .footer-link-item.trafico .icon-wrap {
+            background: rgba(16, 185, 129, 0.05);
+            border-color: rgba(16, 185, 129, 0.2);
+        }
+
+        .footer-link-item.trafico:hover .icon-wrap {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.6);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 600px) {
+            .footer-premium {
+                padding: 2.5rem 1rem;
+                margin: 3rem auto 1.5rem auto;
+                border-radius: 1rem;
+            }
+
+            .footer-premium-links {
+                gap: 1rem;
+            }
+
+            .footer-link-item {
+                width: 70px;
+                font-size: 0.65rem;
+            }
+
+            .footer-link-item .icon-wrap {
+                width: 38px;
+                height: 38px;
+            }
+
+            .footer-premium-brand {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    <footer class="footer-premium">
+        <div style="margin-bottom: 2.5rem;">
+            <a href="index.html" class="footer-premium-brand">
+                ECONOMÍA IA <span style="color: #3b82f6;">ECOSISTEMA</span>
+            </a>
+            <div
+                style="height: 2px; width: 40px; background: linear-gradient(90deg, #22d3ee, #3b82f6); margin: 0.8rem auto 0; border-radius: 2px;">
+            </div>
+        </div>
+        <div class="footer-premium-links">
+            <a href="https://www.tiktok.com/@economiaia" target="_blank" rel="noopener noreferrer"
+                class="footer-link-item tiktok">
+                <div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743 2.897 2.897 0 0 1 3.103-4.488v-3.44a6.324 6.324 0 0 0-5.236 10.517 6.33 6.33 0 0 0 10.78-4.394V7.727a8.21 8.21 0 0 0 5.207 1.754V6.03a4.75 4.75 0 0 1-1.438-.344Z" />
+                    </svg></div>
+                <span>TikTok</span>
+            </a>
+            <a href="https://wa.me/573043656226?text=Hola,%20vengo%20del%20Ecosistema%20IA.%20Quiero%20más%20información."
+                target="_blank" rel="noopener noreferrer" class="footer-link-item whatsapp">
+                <div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.670.15-.197.297-.767.966-.940 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.390-1.475-.883-.788-1.480-1.761-1.653-2.059-.173-.297-.018-.458.130-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.050-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.500-.669-.510-.173-.008-.371-.010-.570-.01-.198 0-.520.074-.792.372-.272.297-1.040 1.016-1.040 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.200 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.570-.347m-4.752 5.093h-.008c-1.247 0-2.47-.336-3.541-.970l-.253-.149-2.632.691.704-2.569-.163-.260c-.697-1.110-1.066-2.393-1.066-3.714 0-3.804 3.096-6.901 6.904-6.901 1.842 0 3.574.717 4.876 2.020 1.301 1.303 2.019 3.036 2.019 4.879 0 3.805-3.097 6.901-6.904 6.901m9.609-12.719C20.373 4.708 17.803 3.500 15.067 3.500c-5.863 0-10.634 4.771-10.634 10.635 0 1.873.488 3.702 1.414 5.304L4.000 26.500l7.150-1.875c1.554.848 3.305 1.297 5.087 1.300 5.861 0 10.632-4.772 10.632-10.636 0-2.840-1.105-5.511-3.113-7.518" />
+                    </svg></div>
+                <span>WhatsApp</span>
+            </a>
+            <a href="https://wa.me/573043656226?text=Hola,%20quiero%20recibir%20consultoría%20sobre%20IA%20y%20Agentes%20Conversacionales."
+                target="_blank" rel="noopener noreferrer" class="footer-link-item consultoria">
+                <div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg></div>
+                <span>Consultoría</span>
+            </a>
+            <a href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer"
+                class="footer-link-item bio">
+                <div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg></div>
+                <span>Bio/Home</span>
+            </a>
+            <a href="trafico_llm_seo.html" target="_blank" rel="noopener noreferrer" class="footer-link-item trafico">
+                <div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg></div>
+                <span>Tráfico Real</span>
+            </a>
+        </div>
+        <p style="color: #64748b; font-size: 0.75rem; margin: 0; font-weight: 500; letter-spacing: 0.05em;">© 2026
+            Economía IA ™</p>
+    </footer>
+</body>
+
+</html>
