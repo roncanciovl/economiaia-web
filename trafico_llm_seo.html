@@ -1,1295 +1,2600 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+
 <html lang="es">
 
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta name="description"
-        content="Tráfico LLM SEO: Monitor en vivo de la visibilidad y el tráfico capturado mediante optimización para motores de respuesta de IA.">
+        content="TrÃ¡fico LLM SEO: Monitor en vivo de la visibilidad y el trÃ¡fico capturado mediante optimizaciÃ³n para motores de respuesta de IA.">
+
     <meta name="keywords"
-        content="Tráfico LLM SEO, IA SEO, Motores de Respuesta IA, Visibilidad Algorítmica, Economía IA">
-    <meta name="author" content="Economía IA">
-    <title>Tráfico LLM SEO | Economía IA</title>
+        content="TrÃ¡fico LLM SEO, IA SEO, Motores de Respuesta IA, Visibilidad AlgorÃ­tmica, EconomÃ­a IA">
+
+    <meta name="author" content="EconomÃ­a IA">
+
+    <title>TrÃ¡fico LLM SEO | EconomÃ­a IA</title>
+
+
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9Q4T51VW0"></script>
+
     <script>
+
         window.dataLayer = window.dataLayer || [];
+
         function gtag() { dataLayer.push(arguments); }
+
         gtag('js', new Date());
+
         gtag('config', 'G-Z9Q4T51VW0');
+
     </script>
+
+
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap');
 
+
+
         :root {
+
             --bg-dark: #0f172a;
+
             --bg-panel: #1e293b;
+
             --border-color: #334155;
+
             --text-main: #f8fafc;
+
             --text-muted: #94a3b8;
+
             --accent-blue: #3b82f6;
+
             --accent-green: #10b981;
+
             --accent-purple: #8b5cf6;
+
             --accent-amber: #f59e0b;
+
         }
+
+
 
         body {
+
             font-family: 'Inter', system-ui, sans-serif;
+
             background-color: var(--bg-dark);
+
             color: var(--text-main);
+
             margin: 0;
+
             padding: 0;
+
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
+
             min-height: 100vh;
+
         }
+
+
 
         header {
+
             width: 100%;
+
             padding: 1.5rem 2rem;
+
             background: rgba(15, 23, 42, 0.9);
+
             border-bottom: 1px solid var(--border-color);
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             position: sticky;
+
             top: 0;
+
             z-index: 50;
+
             backdrop-filter: blur(10px);
+
             box-sizing: border-box;
+
         }
+
+
 
         .header-title {
+
             display: flex;
+
             align-items: center;
+
             gap: 1rem;
+
         }
+
+
 
         .logo-text {
+
             font-weight: 800;
+
             font-size: 1.2rem;
+
             color: #fff;
+
         }
+
+
 
         .live-badge {
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 0.5rem;
+
             padding: 0.25rem 0.75rem;
+
             background: rgba(16, 185, 129, 0.1);
+
             color: var(--accent-green);
+
             border: 1px solid rgba(16, 185, 129, 0.3);
+
             border-radius: 9999px;
+
             font-size: 0.85rem;
+
             font-weight: 600;
+
             font-family: 'JetBrains Mono', monospace;
+
         }
+
+
 
         .live-dot {
+
             width: 8px;
+
             height: 8px;
+
             background-color: var(--accent-green);
+
             border-radius: 50%;
+
             animation: pulse-dot 1.5s infinite;
+
         }
+
+
 
         @keyframes pulse-dot {
+
             0% {
+
                 transform: scale(0.95);
+
                 box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+
             }
+
+
 
             70% {
+
                 transform: scale(1);
+
                 box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+
             }
+
+
 
             100% {
+
                 transform: scale(0.95);
+
                 box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+
             }
+
         }
+
+
 
         main {
+
             width: 100%;
+
             max-width: 1100px;
+
             padding: 2rem 1rem;
+
             box-sizing: border-box;
+
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             grid-template-rows: auto auto;
+
             gap: 1.5rem;
+
         }
+
+
 
         /* Responsive Main Grid */
+
         @media (max-width: 850px) {
+
             main {
+
                 grid-template-columns: 1fr;
+
             }
+
         }
+
+
 
         .panel {
+
             background: var(--bg-panel);
+
             border: 1px solid var(--border-color);
+
             border-radius: 1rem;
+
             padding: 1.5rem;
+
             display: flex;
+
             flex-direction: column;
+
             position: relative;
+
             overflow: hidden;
+
         }
+
+
 
         .panel.full-width {
+
             grid-column: 1 / -1;
+
         }
+
+
 
         .panel-header {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             margin-bottom: 1.5rem;
+
         }
+
+
 
         .panel-title {
+
             font-size: 1.1rem;
+
             font-weight: 600;
+
             color: var(--text-main);
+
             display: flex;
+
             align-items: center;
+
             gap: 0.5rem;
+
             margin: 0;
+
         }
+
+
 
         /* Stat Cards */
+
         .stats-grid {
+
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 1rem;
+
         }
+
+
 
         .stat-card {
+
             background: rgba(15, 23, 42, 0.5);
+
             border: 1px solid var(--border-color);
+
             border-radius: 0.5rem;
+
             padding: 1rem;
+
             text-align: center;
+
         }
+
+
 
         .stat-value {
+
             font-family: 'JetBrains Mono', monospace;
+
             font-size: 1.8rem;
+
             font-weight: 700;
+
             color: #fff;
+
             margin: 0.5rem 0;
+
         }
+
+
 
         .stat-label {
+
             font-size: 0.8rem;
+
             color: var(--text-muted);
+
             text-transform: uppercase;
+
             letter-spacing: 0.05em;
+
         }
+
+
 
         .trend-up {
+
             color: var(--accent-green);
+
             font-size: 0.8rem;
+
             font-weight: bold;
+
         }
 
-        /* Feed de Tráfico LLM */
+
+
+        /* Feed de TrÃ¡fico LLM */
+
         .feed-container {
+
             flex-grow: 1;
+
             height: 350px;
+
             overflow-y: hidden;
+
             position: relative;
+
             mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+
             -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+
         }
+
+
 
         .feed-list {
+
             display: flex;
+
             flex-direction: column;
+
             gap: 0.75rem;
+
             transition: transform 0.3s ease-in-out;
+
         }
+
+
 
         .feed-item {
+
             background: rgba(15, 23, 42, 0.6);
+
             border-left: 3px solid var(--accent-purple);
+
             padding: 1rem;
+
             border-radius: 0 0.5rem 0.5rem 0;
+
             animation: slide-in 0.4s ease-out forwards;
+
             display: grid;
+
             grid-template-columns: auto 1fr;
+
             gap: 1rem;
+
             align-items: center;
+
         }
+
+
 
         .feed-item.chatgpt {
+
             border-left-color: #10a37f;
+
         }
+
+
 
         .feed-item.gemini {
+
             border-left-color: #8b5cf6;
+
         }
+
+
 
         .feed-item.perplexity {
+
             border-left-color: #06b6d4;
+
         }
+
+
 
         .feed-item.meta {
+
             border-left-color: #3b82f6;
+
         }
+
+
 
         @keyframes slide-in {
+
             from {
+
                 opacity: 0;
+
                 transform: translateX(-20px);
+
             }
+
+
 
             to {
+
                 opacity: 1;
+
                 transform: translateX(0);
+
             }
+
         }
+
+
 
         .feed-icon {
+
             font-size: 1.5rem;
+
             background: #0f172a;
+
             border-radius: 50%;
+
             width: 40px;
+
             height: 40px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
         }
+
+
 
         .feed-content {
+
             display: flex;
+
             flex-direction: column;
+
             gap: 0.25rem;
+
         }
+
+
 
         .feed-query {
+
             font-family: 'JetBrains Mono', monospace;
+
             font-size: 0.85rem;
+
             color: #e2e8f0;
+
         }
+
+
 
         .feed-meta {
+
             font-size: 0.75rem;
+
             color: var(--text-muted);
+
             display: flex;
+
             justify-content: space-between;
+
         }
+
+
 
         .match-badge {
+
             background: rgba(16, 185, 129, 0.15);
+
             color: var(--accent-green);
+
             padding: 0.1rem 0.4rem;
+
             border-radius: 0.2rem;
+
             font-weight: bold;
+
             font-size: 0.7rem;
+
         }
+
+
 
         /* Mapa Animado */
+
         .map-container {
+
             height: 350px;
+
             background: #0B1120;
+
             border-radius: 0.5rem;
+
             position: relative;
+
             overflow: hidden;
+
             display: flex;
+
             justify-content: center;
+
             align-items: center;
+
             border: 1px solid rgba(59, 130, 246, 0.2);
+
         }
 
-        /* Boton Atrás */
+
+
+        /* Boton AtrÃ¡s */
+
         .nav-back {
+
             position: absolute;
+
             top: 1.5rem;
+
             left: 2rem;
+
             color: var(--text-muted);
+
             text-decoration: none;
+
             font-size: 0.9rem;
+
             transition: color 0.2s;
+
             z-index: 60;
+
         }
+
+
 
         .nav-back:hover {
+
             color: #fff;
+
         }
     </style>
 
 
-    <!-- Marcado Estructurado JSON-LD (LLM SEO) para Ingeniería de Entidad -->
+
+
+
+    <!-- Marcado Estructurado JSON-LD (LLM SEO) para IngenierÃ­a de Entidad -->
+
     <script type="application/ld+json">
+
     {
+
       "@context": "https://schema.org",
+
       "@type": "ProfessionalService",
-      "name": "Economía IA",
+
+      "name": "EconomÃ­a IA",
+
       "url": "https://economiaia.business",
+
       "logo": "https://economiaia.business/logo_economia_ia_neon_v4.png",
+
       "image": "https://economiaia.business/logo_economia_ia_neon_v4.png",
-      "description": "Acelerador de Negocios con Inteligencia Artificial enfocada en resultados rápidos para Pymes y arquitecturas Enterprise. Reemplazamos chatbots viejos con Agentes Cognitivos y automatizamos ventas usando Google Vertex AI, Gemini y arquitecturas cognitivas.",
+
+      "description": "Acelerador de Negocios con Inteligencia Artificial enfocada en resultados rÃ¡pidos para Pymes y arquitecturas Enterprise. Reemplazamos chatbots viejos con Agentes Cognitivos y automatizamos ventas usando Google Vertex AI, Gemini y arquitecturas cognitivas.",
+
       "address": {
+
         "@type": "PostalAddress",
-        "addressLocality": "Latinoamérica",
+
+        "addressLocality": "LatinoamÃ©rica",
+
         "addressRegion": "Colombia",
+
         "addressCountry": "CO"
+
       },
-      "areaServed": "América Latina",
+
+      "areaServed": "AmÃ©rica Latina",
+
       "contactPoint": {
+
         "@type": "ContactPoint",
+
         "telephone": "+57-304-365-6226",
+
         "contactType": "consulting",
+
         "availableLanguage": "Spanish"
+
       },
+
       "knowsAbout": [
+
         "LLM SEO",
+
         "Agentes Conversacionales",
-        "Marketing Automático",
+
+        "Marketing AutomÃ¡tico",
+
         "Inteligencia Artificial para Negocios",
+
         "Arquitectura de Datos IA",
+
         "Google Vertex AI",
+
         "Gemini Pro"
+
       ],
+
       "sameAs": [
+
         "https://www.tiktok.com/@economiaia",
+
         "https://beacons.ai/economiaia"
+
       ],
+
       "priceRange": "$$"
+
     }
+
     </script>
+
     <link rel="canonical" href="https://economiaia.business/trafico_llm_seo.html">
-    <meta property="og:title" content="Tráfico LLM SEO | Economía IA">
-    <meta property="og:description" content="Monitor en vivo de la visibilidad y tráfico capturado mediante optimización para motores de respuesta de IA.">
+
+    <meta property="og:title" content="TrÃ¡fico LLM SEO | EconomÃ­a IA">
+
+    <meta property="og:description"
+        content="Monitor en vivo de la visibilidad y trÃ¡fico capturado mediante optimizaciÃ³n para motores de respuesta de IA.">
+
     <meta property="og:type" content="article">
+
     <meta property="og:url" content="https://economiaia.business/trafico_llm_seo.html">
-    <meta property="og:site_name" content="Economía IA">
+
+    <meta property="og:site_name" content="EconomÃ­a IA">
+
     <meta property="og:image" content="https://economiaia.business/logo_economia_ia_neon_v4.png">
+
     <script type="application/ld+json">
+
     {
+
       "@context": "https://schema.org",
+
       "@type": "BreadcrumbList",
+
       "itemListElement": [
+
             {
+
                   "@type": "ListItem",
+
                   "position": 1,
+
                   "name": "Ecosistema IA",
+
                   "item": "https://economiaia.business/index.html"
+
             },
+
             {
+
                   "@type": "ListItem",
+
                   "position": 2,
+
                   "name": "Herramientas IA"
+
             },
+
             {
+
                   "@type": "ListItem",
+
                   "position": 3,
-                  "name": "Tráfico LLM SEO",
+
+                  "name": "TrÃ¡fico LLM SEO",
+
                   "item": "https://economiaia.business/trafico_llm_seo.html"
+
             }
+
       ]
+
 }
+
     </script>
+
     <script type="application/ld+json">
+
     {
+
       "@context": "https://schema.org",
+
       "@type": "WebApplication",
-      "headline": "Tráfico LLM SEO",
-      "description": "Monitor en vivo de la visibilidad y tráfico capturado mediante optimización para motores de respuesta de IA.",
+
+      "headline": "TrÃ¡fico LLM SEO",
+
+      "description": "Monitor en vivo de la visibilidad y trÃ¡fico capturado mediante optimizaciÃ³n para motores de respuesta de IA.",
+
       "url": "https://economiaia.business/trafico_llm_seo.html",
+
       "datePublished": "2026-01-15",
+
       "dateModified": "2026-03-05",
+
       "inLanguage": "es",
+
       "author": {
+
             "@type": "Person",
+
             "name": "Henry Roncancio",
+
             "url": "https://www.linkedin.com/in/henry-roncancio-a7341015/",
+
             "jobTitle": "AI Architect",
+
             "worksFor": {
+
                   "@type": "Organization",
-                  "name": "Economía IA",
+
+                  "name": "EconomÃ­a IA",
+
                   "url": "https://economiaia.business"
+
             }
+
       },
+
       "publisher": {
+
             "@type": "Organization",
-            "name": "Economía IA",
+
+            "name": "EconomÃ­a IA",
+
             "url": "https://economiaia.business",
+
             "logo": {
+
                   "@type": "ImageObject",
+
                   "url": "https://economiaia.business/logo_economia_ia_neon_v4.png"
+
             }
+
       },
+
       "mainEntityOfPage": {
+
             "@type": "WebPage",
+
             "@id": "https://economiaia.business/trafico_llm_seo.html"
+
       }
+
 }
+
     </script>
+
 </head>
 
+
+
 <body>
+
     <a href="index.html" class="nav-back"
-        style="position: static; padding: 1rem 2rem; width: 100%; box-sizing: border-box; display: inline-block;">←
+        style="position: static; padding: 1rem 2rem; width: 100%; box-sizing: border-box; display: inline-block;">Ã¢Â†Â
+
         Volver al Ecosistema</a>
 
+
+
     <header>
+
         <div class="header-title">
-            <h1 class="logo-text" style="font-size: 1.2rem; margin: 0;">Tráfico LLM SEO</h1>
+
+            <h1 class="logo-text" style="font-size: 1.2rem; margin: 0;">TrÃ¡fico LLM SEO</h1>
+
             <div class="live-badge">
+
                 <div class="live-dot"></div>
-                Tráfico de IA en Vivo
+
+                TrÃ¡fico de IA en Vivo
+
             </div>
+
         </div>
+
         <div style="font-size: 0.9rem; color: #94a3b8;">
-            Proyecto: <strong style="color: #fff;">Economía IA</strong>
+
+            Proyecto: <strong style="color: #fff;">EconomÃ­a IA</strong>
+
         </div>
+
     </header>
 
+
+
     <main>
+
         <!-- Tracker Panel -->
+
         <div class="panel full-width">
+
             <div class="panel-header">
-                <h2 class="panel-title">� Auditoría de Conexión y LLM Tracking</h2>
-                <span style="font-size: 0.8rem; color: var(--text-muted);">Sesión en Vivo</span>
+
+                <h2 class="panel-title">“¡ AuditorÃ­a de ConexiÃ³n y LLM Tracking</h2>
+
+                <span style="font-size: 0.8rem; color: var(--text-muted);">SesiÃ³n en Vivo</span>
+
             </div>
+
             <p
                 style="font-size: 0.95rem; color: var(--text-muted); margin-top: -0.5rem; margin-bottom: 1.5rem; line-height: 1.6;">
-                <strong>El SEO tradicional está muriendo.</strong> Si tu negocio no está optimizado para Inteligencia
-                Artificial (<span style="color: #6C5CE7; font-weight: bold;">LLM SEO</span>), no existirás en las
-                recomendaciones de ChatGPT, Claude o Gemini. Así como auditamos tu red humana usando los bloques
+
+                <strong>El SEO tradicional estÃ¡ muriendo.</strong> Si tu negocio no estÃ¡ optimizado para Inteligencia
+
+                Artificial (<span style="color: #6C5CE7; font-weight: bold;">LLM SEO</span>), no existirÃ¡s en las
+
+                recomendaciones de ChatGPT, Claude o Gemini. AsÃ­ como auditamos tu red humana usando los bloques
+
                 izquierdos, nuestra infraestructura perimetral (Edge) intercepta y cuantifica continuamente a los
-                'robots' que leen nuestro ecosistema empresarial, asegurando que Economía IA sea la primera opción de la
-                máquina.
+
+                'robots' que leen nuestro ecosistema empresarial, asegurando que EconomÃ­a IA sea la primera opciÃ³n de la
+
+                mÃ¡quina.
+
             </p>
+
             <style>
                 .tracker-grid {
+
                     display: grid;
+
                     grid-template-columns: 1fr 1fr;
+
                     gap: 1.5rem;
+
                 }
+
+
 
                 .stat-card {
+
                     text-align: left;
+
                     display: flex;
+
                     align-items: center;
+
                     justify-content: space-between;
+
                     padding: 1.5rem;
+
                     border-radius: 0.5rem;
+
                     border-style: solid;
+
                     border-width: 1px;
+
                 }
+
+
 
                 .stat-card-content {
+
                     flex: 1;
+
                     min-width: 0;
+
                     padding-right: 1rem;
+
                 }
+
+
 
                 .stat-card-icon {
+
                     font-size: 3rem;
+
                     opacity: 0.8;
+
                     flex-shrink: 0;
+
                 }
+
+
 
                 .ip-text {
+
                     font-size: 1.5rem;
+
                     color: var(--accent-amber);
+
                     margin: 0.5rem 0;
+
                     word-wrap: break-word;
+
                 }
+
+
 
                 .feed-row {
+
                     display: flex;
+
                     justify-content: space-between;
+
                     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
                     padding: 0.8rem 0;
+
                 }
+
+
 
                 @media (max-width: 850px) {
+
                     .tracker-grid {
+
                         grid-template-columns: 1fr;
+
                     }
+
                 }
+
+
 
                 @media (max-width: 480px) {
+
                     .stat-card {
+
                         flex-direction: column-reverse;
+
                         align-items: flex-start;
+
                         gap: 0.5rem;
+
                         position: relative;
+
                         padding: 1.2rem;
+
                     }
+
+
 
                     .stat-card-icon {
+
                         position: absolute;
+
                         top: 1rem;
+
                         right: 1rem;
+
                         font-size: 2.2rem;
+
                     }
+
+
 
                     .ip-text {
+
                         font-size: 1.25rem;
+
                     }
 
+
+
                     .feed-row {
+
                         flex-direction: column;
+
                         gap: 0.4rem;
+
                     }
+
                 }
             </style>
+
             <div class="tracker-grid">
+
                 <div class="stat-card" id="userConnectionPanel"
                     style="border-color: var(--accent-amber); background: rgba(245, 158, 11, 0.05);">
+
                     <div class="stat-card-content">
+
                         <div class="stat-label" style="color: var(--accent-amber);">Tu IP y Terminal Detectada</div>
+
                         <div class="ip-text" id="userIP">Localizando...</div>
+
                         <div id="userLoc" style="font-size: 0.9rem; color: var(--text-muted); font-weight: 600;">
+
                             Cargando
+
                             coordenadas...</div>
+
                     </div>
-                    <div class="stat-card-icon">🎯</div>
+
+                    <div class="stat-card-icon">Ã°ÂŸÂŽÂ¯</div>
+
                 </div>
+
+
 
                 <div class="stat-card" id="aiCrawlerPanel"
                     style="border-color: #3b82f6; background: rgba(59, 130, 246, 0.05);">
+
                     <div class="stat-card-content">
+
                         <div class="stat-label" style="color: #3b82f6;">Rastreo de IA (Network Edge)</div>
+
                         <div class="stat-value" id="aiCrawlerValue"
                             style="font-size: 1.2rem; color: #3b82f6; margin: 0.5rem 0; word-wrap: break-word;">
+
                             Sintonizando...</div>
+
                         <div id="aiCrawlerSubtitle"
                             style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">
+
                             Analizando barrera perimetral...
+
                         </div>
+
                     </div>
-                    <div class="stat-card-icon">🤖</div>
+
+                    <div class="stat-card-icon">Ã°ÂŸÂ¤Â–</div>
+
                 </div>
+
             </div>
+
+
 
             <div id="aiFeedContainer"
                 style="margin-top: 1.5rem; max-height: 250px; overflow-y: auto; background: rgba(15, 23, 42, 0.6); border-radius: 0.5rem; padding: 1.5rem; font-size: 0.85rem; border: 1px solid rgba(59, 130, 246, 0.2); display: none;">
+
                 <div
                     style="color: #3b82f6; font-weight: 600; margin-bottom: 0.8rem; border-bottom: 1px solid rgba(59, 130, 246, 0.2); padding-bottom: 0.5rem;">
-                    Histórico de Conexiones de Máquina (Últimos Días)</div>
+
+                    HistÃ³rico de Conexiones de MÃ¡quina (ÃƒÂšltimos DÃ­as)</div>
+
                 <div id="aiFeedList"></div>
+
+            </div>
+
+            <!-- GuÃ­a de InterpretaciÃ³n -->
+            <div
+                style="margin-top: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
+                <div style="font-size: 0.8rem;">
+                    <strong style="display: block; color: var(--accent-amber); margin-bottom: 0.3rem;">“¡ Huella
+                        Humana</strong>
+                    Lo que ves a la izquierda es tu propia conexiÃ³n. Analizamos metadatos de red para demostrar cÃ³mo un
+                    sistema puede identificar quiÃ©n entra a tu negocio.
+                </div>
+                <div style="font-size: 0.8rem;">
+                    <strong style="display: block; color: #3b82f6; margin-bottom: 0.3rem;">” Rastreo Edge</strong>
+                    El contador central muestra cuÃ¡ntas veces las IAs (GPTBot, ClaudeBot) han pasado por nuestro
+                    ecosistema en los Ãºltimos dÃ­as para actualizar su base de datos.
+                </div>
+                <div style="font-size: 0.8rem;">
+                    <strong style="display: block; color: var(--accent-green); margin-bottom: 0.3rem;">âœ… ValidaciÃ³n
+                        LLM</strong>
+                    Cada registro en el historial confirma que tu contenido ha sido 'leÃ­do' por una mÃ¡quina, el primer
+                    paso crÃ­tico para aparecer en sus recomendaciones.
+                </div>
             </div>
         </div>
 
+
+
         </div>
+
     </main>
 
-    <!-- Footer Economía IA -->
+
+
+    <!-- Footer EconomÃ­a IA -->
+
     <style>
         .footer-premium {
+
             width: calc(100% - 2rem);
+
             max-width: 1000px;
+
             margin: 4rem auto 2rem auto;
+
             padding: 3rem 2rem;
+
             border-radius: 1.5rem;
+
             background: linear-gradient(180deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.6) 100%);
+
             border: 1px solid rgba(255, 255, 255, 0.05);
+
             text-align: center;
+
             backdrop-filter: blur(10px);
+
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
             box-sizing: border-box;
+
         }
+
+
 
         .footer-premium-brand {
+
             display: inline-block;
+
             color: #f8fafc;
+
             font-size: 1rem;
+
             font-weight: 800;
+
             text-decoration: none;
+
             text-transform: uppercase;
+
             letter-spacing: 0.15em;
+
             transition: all 0.3s ease;
+
             opacity: 0.9;
+
         }
+
+
 
         .footer-premium-brand:hover {
+
             opacity: 1;
+
             text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+
         }
+
+
 
         .footer-premium-links {
+
             display: flex;
+
             justify-content: center;
+
             align-items: center;
+
             gap: 1.5rem;
+
             flex-wrap: wrap;
+
             margin-bottom: 2.5rem;
+
         }
+
+
 
         .footer-link-item {
+
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
+
             gap: 0.6rem;
+
             color: #94a3b8;
+
             text-decoration: none;
+
             font-size: 0.75rem;
+
             font-weight: 600;
+
             transition: all 0.3s ease;
+
             width: 80px;
+
         }
+
+
 
         .footer-link-item .icon-wrap {
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             width: 44px;
+
             height: 44px;
+
             border-radius: 12px;
+
             background: rgba(255, 255, 255, 0.02);
+
             border: 1px solid rgba(255, 255, 255, 0.08);
+
             transition: all 0.3s ease;
+
         }
+
+
 
         /* Hover colors */
+
         .footer-link-item.tiktok:hover {
+
             color: #f8fafc;
+
         }
+
+
 
         .footer-link-item.tiktok:hover .icon-wrap {
+
             background: rgba(255, 0, 80, 0.1);
+
             border-color: rgba(255, 0, 80, 0.4);
+
             transform: translateY(-3px);
+
         }
+
+
 
         .footer-link-item.whatsapp:hover {
+
             color: #f8fafc;
+
         }
+
+
 
         .footer-link-item.whatsapp:hover .icon-wrap {
+
             background: rgba(37, 211, 102, 0.1);
+
             border-color: rgba(37, 211, 102, 0.4);
+
             transform: translateY(-3px);
+
         }
+
+
 
         .footer-link-item.consultoria:hover {
+
             color: #f8fafc;
+
         }
+
+
 
         .footer-link-item.consultoria:hover .icon-wrap {
+
             background: rgba(59, 130, 246, 0.1);
+
             border-color: rgba(59, 130, 246, 0.5);
+
             transform: translateY(-3px);
+
         }
+
+
 
         .footer-link-item.bio:hover {
+
             color: #f8fafc;
+
         }
+
+
 
         .footer-link-item.bio:hover .icon-wrap {
+
             background: rgba(250, 204, 21, 0.1);
+
             border-color: rgba(250, 204, 21, 0.4);
+
             transform: translateY(-3px);
+
         }
+
+
 
         .footer-link-item.trafico:hover {
+
             color: #34d399;
+
         }
+
+
 
         .footer-link-item.trafico .icon-wrap {
+
             background: rgba(16, 185, 129, 0.05);
+
             border-color: rgba(16, 185, 129, 0.2);
+
         }
+
+
 
         .footer-link-item.trafico:hover .icon-wrap {
+
             background: rgba(16, 185, 129, 0.1);
+
             border-color: rgba(16, 185, 129, 0.6);
+
             transform: translateY(-3px);
+
         }
+
+
 
         @media (max-width: 600px) {
+
             .footer-premium {
+
                 padding: 2.5rem 1rem;
+
                 margin: 3rem auto 1.5rem auto;
+
                 border-radius: 1rem;
+
             }
+
+
 
             .footer-premium-links {
+
                 gap: 1rem;
+
             }
+
+
 
             .footer-link-item {
+
                 width: 70px;
+
                 font-size: 0.65rem;
+
             }
+
+
 
             .footer-link-item .icon-wrap {
+
                 width: 38px;
+
                 height: 38px;
+
             }
+
+
 
             .footer-premium-brand {
+
                 font-size: 0.9rem;
+
             }
+
         }
     </style>
+
     <footer class="footer-premium">
+
         <div style="margin-bottom: 2.5rem;">
+
             <a href="index.html" class="footer-premium-brand">
-                ECONOMÍA IA <span style="color: #3b82f6;">ECOSISTEMA</span>
+
+                ECONOMÃƒÂA IA <span style="color: #3b82f6;">ECOSISTEMA</span>
+
             </a>
+
             <div
                 style="height: 2px; width: 40px; background: linear-gradient(90deg, #22d3ee, #3b82f6); margin: 0.8rem auto 0; border-radius: 2px;">
+
             </div>
+
         </div>
+
+
 
         <div class="footer-premium-links">
+
             <!-- TikTok -->
+
             <a href="https://www.tiktok.com/@economiaia" target="_blank" rel="noopener noreferrer"
                 class="footer-link-item tiktok">
+
                 <div class="icon-wrap">
+
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+
                         <path
                             d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743 2.897 2.897 0 0 1 3.103-4.488v-3.44a6.324 6.324 0 0 0-5.236 10.517 6.33 6.33 0 0 0 10.78-4.394V7.727a8.21 8.21 0 0 0 5.207 1.754V6.03a4.75 4.75 0 0 1-1.438-.344Z" />
+
                     </svg>
+
                 </div>
+
                 <span>TikTok</span>
+
             </a>
+
+
 
             <!-- WhatsApp -->
-            <a href="https://wa.me/573043656226?text=Hola,%20vengo%20del%20Ecosistema%20IA.%20Quiero%20más%20información."
+
+            <a href="https://wa.me/573043656226?text=Hola,%20vengo%20del%20Ecosistema%20IA.%20Quiero%20mÃ¡s%20informaciÃ³n."
                 target="_blank" rel="noopener noreferrer" class="footer-link-item whatsapp">
+
                 <div class="icon-wrap">
+
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+
                         <path
                             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.670.15-.197.297-.767.966-.940 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.390-1.475-.883-.788-1.480-1.761-1.653-2.059-.173-.297-.018-.458.130-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.050-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.500-.669-.510-.173-.008-.371-.010-.570-.01-.198 0-.520.074-.792.372-.272.297-1.040 1.016-1.040 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.200 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.570-.347m-4.752 5.093h-.008c-1.247 0-2.47-.336-3.541-.970l-.253-.149-2.632.691.704-2.569-.163-.260c-.697-1.110-1.066-2.393-1.066-3.714 0-3.804 3.096-6.901 6.904-6.901 1.842 0 3.574.717 4.876 2.020 1.301 1.303 2.019 3.036 2.019 4.879 0 3.805-3.097 6.901-6.904 6.901m9.609-12.719C20.373 4.708 17.803 3.500 15.067 3.500c-5.863 0-10.634 4.771-10.634 10.635 0 1.873.488 3.702 1.414 5.304L4.000 26.500l7.150-1.875c1.554.848 3.305 1.297 5.087 1.300 5.861 0 10.632-4.772 10.632-10.636 0-2.840-1.105-5.511-3.113-7.518" />
+
                     </svg>
+
                 </div>
+
                 <span>WhatsApp</span>
+
             </a>
 
-            <!-- Consultoría -->
-            <a href="https://wa.me/573043656226?text=Hola,%20quiero%20recibir%20consultoría%20sobre%20IA%20y%20Agentes%20Conversacionales."
+
+
+            <!-- ConsultorÃ­a -->
+
+            <a href="https://wa.me/573043656226?text=Hola,%20quiero%20recibir%20consultorÃ­a%20sobre%20IA%20y%20Agentes%20Conversacionales."
                 target="_blank" rel="noopener noreferrer" class="footer-link-item consultoria">
+
                 <div class="icon-wrap">
+
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
+
                         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+
                         <circle cx="9" cy="7" r="4"></circle>
+
                         <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+
                         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+
                     </svg>
+
                 </div>
-                <span>Consultoría</span>
+
+                <span>ConsultorÃ­a</span>
+
             </a>
+
+
 
             <!-- Bio / Home -->
+
             <a href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer"
                 class="footer-link-item bio">
+
                 <div class="icon-wrap">
+
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
+
                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+
                         <polyline points="9 22 9 12 15 12 15 22"></polyline>
+
                     </svg>
+
                 </div>
+
                 <span>Bio/Home</span>
+
             </a>
 
-            <!-- Tráfico Real -->
+
+
+            <!-- TrÃ¡fico Real -->
+
             <a href="trafico_llm_seo.html" target="_blank" rel="noopener noreferrer" class="footer-link-item trafico">
+
                 <div class="icon-wrap">
+
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                         stroke-linecap="round" stroke-linejoin="round">
+
                         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+
                     </svg>
+
                 </div>
-                <span>Tráfico Real</span>
+
+                <span>TrÃ¡fico Real</span>
+
             </a>
+
         </div>
 
-        <p style="color: #64748b; font-size: 0.75rem; margin: 0; font-weight: 500; letter-spacing: 0.05em;">© 2026
-            Economía IA ™</p>
+
+
+        <p style="color: #64748b; font-size: 0.75rem; margin: 0; font-weight: 500; letter-spacing: 0.05em;">Ã‚Â© 2026
+
+            EconomÃ­a IA Ã¢Â„Â¢</p>
+
     </footer>
 
+
+
     <script>
+
         // Datos reales del visitante
+
         let visitorData = {
+
             ip: "Localizando...",
+
             city: "Buscando...",
+
             country: "Detectando..."
+
         };
 
+
+
         async function fetchVisitorInfo() {
+
             try {
+
                 const response = await fetch('https://ipapi.co/json/');
+
                 const data = await response.json();
+
                 visitorData = {
+
                     ip: data.ip,
+
                     city: data.city,
+
                     country: data.country_name,
+
                     org: data.org
+
                 };
 
+
+
                 // Formatear IP para privacidad y compatibilidad IPv4/IPv6
+
                 let ipDisplay = "Ofuscada";
+
                 if (data.ip.includes(':')) {
+
                     // Es IPv6
+
                     const parts = data.ip.split(':');
+
                     ipDisplay = parts[0] + ':' + parts[1] + ':XXXX:XXXX';
+
                 } else {
+
                     // Es IPv4
+
                     const parts = data.ip.split('.');
+
                     ipDisplay = parts[0] + '.' + parts[1] + '.XX.XX';
+
                 }
+
+
 
                 document.getElementById('userIP').innerText = ipDisplay;
+
                 document.getElementById('userLoc').innerText = `${data.city}, ${data.country_code} via ${data.org.substring(0, 20)}...`;
 
+
+
             } catch (err) {
+
                 console.error("Error obteniendo info del visitante", err);
+
                 document.getElementById('userIP').innerText = "Rastreo Ofuscado";
+
             }
+
         }
 
+
+
         async function loadCloudflareData() {
-            // URL DEL WORKER: Aquí debes poner el endpoint de tu Cloudflare Worker
+
+            // URL DEL WORKER: AquÃ­ debes poner el endpoint de tu Cloudflare Worker
+
             // Ejemplo: const workerUrl = 'https://llm-seo-tracker.tuusuario.workers.dev';
-            const workerUrl = 'https://llm-seo-tracker.henryroncanciovelandia.workers.dev/'; // URL Oficial de Producción
+
+            const workerUrl = 'https://llm-seo-tracker.henryroncanciovelandia.workers.dev/'; // URL Oficial de ProducciÃ³n
+
+
 
             try {
-                // Intento de conexión al servidor perimetral Edge (Worker)
+
+                // Intento de conexiÃ³n al servidor perimetral Edge (Worker)
+
                 const response = await fetch(workerUrl);
 
-                // Mientras no configures el Worker, caerá en este Mock Data de contingencia visual
+
+
+                // Mientras no configures el Worker, caerÃ¡ en este Mock Data de contingencia visual
+
                 // para que tu demo nunca se rompa ante un cliente si el dominio no coincide
+
                 let data;
+
                 if (response.ok) {
+
                     data = await response.json();
+
                 } else {
-                    throw new Error("Worker no configurado aún o error de red");
+
+                    throw new Error("Worker no configurado aÃºn o error de red");
+
                 }
 
+
+
                 if (data && data.botsAggregated) {
+
                     let totalRequests = data.totalRequests || 0;
+
                     const sortedBots = Object.entries(data.botsAggregated).sort((a, b) => b[1] - a[1]);
+
                     let visualString = [];
+
                     for (const [name, count] of sortedBots) {
+
                         visualString.push(`${name} (${count})`);
+
                     }
 
-                    document.getElementById('aiCrawlerValue').innerText = visualString.join(' • ');
-                    document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #10b981;">${totalRequests} rastreos validados en tiempo real</span> a través de nuestra red EDGE.`;
+
+
+                    document.getElementById('aiCrawlerValue').innerText = visualString.join(' Ã¢Â€Â¢ ');
+
+                    document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #10b981;">${totalRequests} rastreos validados en tiempo real</span> a travÃ©s de nuestra red EDGE.`;
+
+
 
                     const feedContainer = document.getElementById('aiFeedContainer');
+
                     const feedList = document.getElementById('aiFeedList');
 
+
+
                     if (feedContainer && feedList && data.historyFeed) {
+
                         feedContainer.style.display = 'block';
-                        // Ordenar por tiempo (más reciente primero)
+
+                        // Ordenar por tiempo (mÃ¡s reciente primero)
+
                         const history = data.historyFeed.map(item => ({ ...item, time: new Date(item.time) }));
+
                         history.sort((a, b) => b.time - a.time);
+
+
 
                         feedList.innerHTML = ''; // Limpiar lista
 
+
+
                         history.forEach((item, index) => {
+
                             if (index > 15) return; // Top 15 conexiones visibles para no saturar
 
+
+
                             const dateLocale = item.time.toLocaleString('es-CO', { year: '2-digit', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+
                             const el = document.createElement('div');
+
                             el.className = 'feed-row';
 
+
+
                             let colorStr = '#3b82f6';
+
                             if (item.bot.includes('GPT')) colorStr = '#10a37f';
+
                             if (item.bot.includes('Claude')) colorStr = '#d97757';
+
                             if (item.bot.includes('Perplexity')) colorStr = '#06b6d4';
 
+
+
                             el.innerHTML = `
+
                                 <span style="color: var(--text-muted);">${dateLocale}</span>
+
                                 <span><strong style="color: ${colorStr}">${item.bot}</strong> detectado (${item.val} peticiones)</span>
+
                             `;
+
                             feedList.appendChild(el);
+
                         });
+
                     }
+
                 }
+
             } catch (err) {
-                // Fallback de demostración UI si el worker no está disponible para no romper el layout de ventas
+
+                // Fallback de demostraciÃ³n UI si el worker no estÃ¡ disponible para no romper el layout de ventas
+
                 console.warn("Worker de Cloudflare no detectado, usando datos simulados de Edge para la interfaz visual.");
-                document.getElementById('aiCrawlerValue').innerText = 'GPTBot (7) • ClaudeBot (5) • Googlebot (3)';
+
+                document.getElementById('aiCrawlerValue').innerText = 'GPTBot (7) Ã¢Â€Â¢ ClaudeBot (5) Ã¢Â€Â¢ Googlebot (3)';
+
                 document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #10b981;">15 rastreos EDGE interceptados</span> y bloqueados temporalmente.<br><span style="font-size: 0.75rem; color: #cbd5e1;">Cargando latencia perimetral...</span>`;
+
             }
+
         }
 
+
+
         // Iniciar
+
         fetchVisitorInfo();
+
         loadCloudflareData();
+
+
 
     </script>
 
+
+
     <!-- Asistente IA "Sigma" Widget -->
+
     <style>
         .ai-widget-btn {
+
             position: fixed;
+
             bottom: 2rem;
+
             right: 2rem;
+
             width: 60px;
+
             height: 60px;
+
             border-radius: 50%;
+
             background: linear-gradient(135deg, #10b981, #3b82f6);
+
             border: 2px solid rgba(255, 255, 255, 0.2);
+
             box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+
             cursor: pointer;
+
             z-index: 9999;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             transition: all 0.3s ease;
+
         }
+
+
 
         .ai-widget-btn:hover {
+
             transform: scale(1.1);
+
             box-shadow: 0 15px 35px rgba(59, 130, 246, 0.6);
+
         }
+
+
 
         .ai-widget-btn svg {
+
             width: 30px;
+
             height: 30px;
+
             fill: white;
+
             animation: float-icon 3s ease-in-out infinite;
+
         }
+
+
 
         @keyframes float-icon {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-3px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-3px);
+            }
+
         }
+
+
 
         .ai-chat-panel {
+
             position: fixed;
+
             bottom: 6rem;
+
             right: 2rem;
+
             width: 350px;
+
             height: 500px;
+
             max-height: 80vh;
+
             background: #0f172a;
+
             border: 1px solid #334155;
+
             border-radius: 1rem;
+
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+
             display: flex;
+
             flex-direction: column;
+
             z-index: 9998;
+
             opacity: 0;
+
             pointer-events: none;
+
             transform: translateY(20px);
+
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
             overflow: hidden;
+
         }
+
+
 
         .ai-chat-panel.active {
+
             opacity: 1;
+
             pointer-events: all;
+
             transform: translateY(0);
+
         }
+
+
 
         .ai-chat-header {
+
             background: linear-gradient(90deg, #1e293b, #0f172a);
+
             padding: 1rem;
+
             border-bottom: 1px solid #334155;
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
         }
+
+
 
         .ai-chat-header h3 {
+
             margin: 0;
+
             font-size: 1rem;
+
             color: #f8fafc;
+
             display: flex;
+
             align-items: center;
+
             gap: 0.5rem;
+
         }
+
+
 
         .ai-chat-header .badge {
+
             background: rgba(16, 185, 129, 0.2);
+
             color: #10b981;
+
             font-size: 0.7rem;
+
             padding: 2px 6px;
+
             border-radius: 4px;
+
             border: 1px solid rgba(16, 185, 129, 0.3);
+
         }
+
+
 
         .close-chat {
+
             background: transparent;
+
             border: none;
+
             color: #94a3b8;
+
             cursor: pointer;
+
             font-size: 1.2rem;
+
             transition: color 0.2s;
+
         }
+
+
 
         .close-chat:hover {
+
             color: #f1f5f9;
+
         }
+
+
 
         .ai-chat-body {
+
             flex-grow: 1;
+
             padding: 1rem;
+
             overflow-y: auto;
+
             display: flex;
+
             flex-direction: column;
+
             gap: 1rem;
+
         }
+
+
 
         .chat-bubble {
+
             max-width: 85%;
+
             padding: 0.8rem 1rem;
+
             border-radius: 1rem;
+
             font-size: 0.9rem;
+
             line-height: 1.4;
+
         }
+
+
 
         .chat-bot {
+
             background: #1e293b;
+
             color: #e2e8f0;
+
             border-bottom-left-radius: 0.25rem;
+
             align-self: flex-start;
+
             border: 1px solid #334155;
+
         }
+
+
 
         .chat-user {
+
             background: #3b82f6;
+
             color: #fff;
+
             border-bottom-right-radius: 0.25rem;
+
             align-self: flex-end;
+
         }
+
+
 
         .ai-chat-input-area {
+
             padding: 1rem;
+
             border-top: 1px solid #334155;
+
             display: flex;
+
             gap: 0.5rem;
+
             background: #0f172a;
+
         }
+
+
 
         .ai-chat-input-area input {
+
             flex-grow: 1;
+
             background: #1e293b;
+
             border: 1px solid #334155;
+
             color: #fff;
+
             padding: 0.7rem 1rem;
+
             border-radius: 2rem;
+
             outline: none;
+
             font-family: inherit;
+
         }
+
+
 
         .ai-chat-input-area input:focus {
+
             border-color: #3b82f6;
+
         }
+
+
 
         .ai-chat-input-area button {
+
             background: #3b82f6;
+
             color: white;
+
             border: none;
+
             width: 40px;
+
             height: 40px;
+
             border-radius: 50%;
+
             cursor: pointer;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             transition: background 0.2s;
+
             flex-shrink: 0;
+
         }
+
+
 
         .ai-chat-input-area button:hover {
+
             background: #2563eb;
+
         }
+
+
 
         .typing-indicator {
+
             display: flex;
+
             gap: 4px;
+
             padding: 0.5rem 1rem;
+
             background: #1e293b;
+
             border-radius: 1rem;
+
             width: fit-content;
+
             align-self: flex-start;
+
             border-bottom-left-radius: 0.25rem;
+
             border: 1px solid #334155;
+
         }
+
+
 
         .typing-dot {
+
             width: 6px;
+
             height: 6px;
+
             background: #94a3b8;
+
             border-radius: 50%;
+
             animation: typing 1.4s infinite ease-in-out;
+
         }
 
-        .typing-dot:nth-child(1) { animation-delay: 0s; }
-        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
-        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+
+        .typing-dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+
 
         @keyframes typing {
-            0%, 100% { transform: translateY(0); opacity: 0.4; }
-            50% { transform: translateY(-4px); opacity: 1; }
+
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: 0.4;
+            }
+
+            50% {
+                transform: translateY(-4px);
+                opacity: 1;
+            }
+
         }
 
+
+
         @media (max-width: 600px) {
+
             .ai-chat-panel {
+
                 bottom: 0;
+
                 right: 0;
+
                 width: 100%;
+
                 height: auto;
-                    max-height: 70vh;
-                    border-radius: 1rem 1rem 0 0;
-                    bottom: 0;
+                max-height: 70vh;
+                border-radius: 1rem 1rem 0 0;
+                bottom: 0;
+
             }
 
+
+
             .ai-widget-btn {
+
                 bottom: 1rem;
+
                 right: 1rem;
+
             }
+
         }
     </style>
 
+
+
     <button class="ai-widget-btn" id="aiBtn" aria-label="Abrir asistente">
+
         <svg viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.01 1.01 4.35l-1.35 4.02a.85.85 0 0 0 1.07 1.07l4.02-1.35A9.95 9.95 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.36 0-2.65-.29-3.83-.8l-.34-.14-2.82.94.94-2.82-.14-.34A7.95 7.95 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
+
+            <path
+                d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.01 1.01 4.35l-1.35 4.02a.85.85 0 0 0 1.07 1.07l4.02-1.35A9.95 9.95 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.36 0-2.65-.29-3.83-.8l-.34-.14-2.82.94.94-2.82-.14-.34A7.95 7.95 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
+
         </svg>
+
     </button>
 
+
+
     <div class="ai-chat-panel" id="aiChatPanel">
+
         <div class="ai-chat-header">
+
             <h3>Sigma <span class="badge">Llama 3 (Edge)</span></h3>
+
             <button class="close-chat" id="closeChat">&times;</button>
+
         </div>
+
         <div class="ai-chat-body" id="chatBody">
+
             <div class="chat-bubble chat-bot">
-                ¿Quieres entender cómo los motores de IA como ChatGPT están encontrando tu negocio? Pregúntame.
+
+                Ã‚Â¿Quieres entender cÃ³mo los motores de IA como ChatGPT estÃ¡n encontrando tu negocio? PregÃºntame.
+
             </div>
+
         </div>
+
         <div class="ai-chat-input-area">
+
             <input type="text" id="chatInput" placeholder="Escribe tu pregunta..." autocomplete="off">
+
             <button id="sendBtn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+
                     <line x1="22" y1="2" x2="11" y2="13"></line>
+
                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+
                 </svg>
+
             </button>
+
         </div>
+
     </div>
 
+
+
     <script>
+
         const aiBtn = document.getElementById('aiBtn');
+
         const aiChatPanel = document.getElementById('aiChatPanel');
+
         const closeChat = document.getElementById('closeChat');
+
         const chatInput = document.getElementById('chatInput');
+
         const sendBtn = document.getElementById('sendBtn');
+
         const chatBody = document.getElementById('chatBody');
+
+
 
         let chatHistory = [];
 
+
+
         aiBtn.addEventListener('click', () => {
+
             aiChatPanel.classList.add('active');
+
             chatInput.focus();
+
             aiBtn.style.display = 'none';
+
         });
+
+
 
         closeChat.addEventListener('click', () => {
+
             aiChatPanel.classList.remove('active');
+
             aiBtn.style.display = 'flex';
+
         });
 
+
+
         async function sendMessage() {
+
             const text = chatInput.value.trim();
+
             if (!text) return;
 
+
+
             addMessage(text, 'user');
+
             chatInput.value = '';
+
+
 
             const typingId = showTyping();
 
+
+
             try {
+
                 const workerUrl = 'https://agente-sigma.henryroncanciovelandia.workers.dev/';
 
+
+
                 let pageContext = "";
+
                 const mainTags = document.querySelectorAll('h1, h2, h3, p');
+
                 mainTags.forEach(tag => {
+
                     if (!tag.closest('.ai-chat-panel')) {
+
                         pageContext += tag.innerText + " \n";
+
                     }
+
                 });
+
                 const cleanedContext = pageContext.substring(0, 4000);
 
+
+
                 const response = await fetch(workerUrl, {
+
                     method: 'POST',
+
                     headers: { 'Content-Type': 'application/json' },
+
                     body: JSON.stringify({
+
                         user_question: text,
+
                         page_context: cleanedContext,
+
                         chat_history: chatHistory
+
                     })
+
                 });
 
+
+
                 if (response.ok) {
+
                     const data = await response.json();
+
                     removeTyping(typingId);
+
                     addMessage(data.answer, 'bot');
 
+
+
                     chatHistory.push({ role: "user", content: text });
+
                     chatHistory.push({ role: "assistant", content: data.answer });
 
+
+
                     if (chatHistory.length > 10) chatHistory = chatHistory.slice(chatHistory.length - 10);
+
                 } else {
+
                     throw new Error("Worker no conectado");
+
                 }
+
             } catch (err) {
+
                 setTimeout(() => {
+
                     removeTyping(typingId);
-                    addMessage("Ha ocurrido un error contactando a la Inteligencia Artificial. Revisa tu conexión a internet.", 'bot');
+
+                    addMessage("Ha ocurrido un error contactando a la Inteligencia Artificial. Revisa tu conexiÃ³n a internet.", 'bot');
+
                 }, 1500);
+
             }
+
         }
+
+
 
         sendBtn.addEventListener('click', sendMessage);
+
         chatInput.addEventListener('keypress', (e) => {
+
             if (e.key === 'Enter') sendMessage();
+
         });
 
+
+
         function parseMarkdown(text) {
+
             let html = text;
+
             html = html.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+
             html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color:#10b981; text-decoration:underline;">$1</a>');
+
             html = html.replace(/\n/g, '<br>');
+
             return html;
+
         }
+
+
 
         function addMessage(text, sender) {
+
             const div = document.createElement('div');
+
             div.className = 'chat-bubble chat-' + sender;
+
             div.innerHTML = sender === 'bot' ? parseMarkdown(text) : text;
+
             chatBody.appendChild(div);
+
             chatBody.scrollTop = chatBody.scrollHeight;
+
         }
+
+
 
         function showTyping() {
+
             const id = 'typing-' + Date.now();
+
             const div = document.createElement('div');
+
             div.className = 'typing-indicator';
+
             div.id = id;
+
             div.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+
             chatBody.appendChild(div);
+
             chatBody.scrollTop = chatBody.scrollHeight;
+
             return id;
+
         }
+
+
 
         function removeTyping(id) {
+
             const el = document.getElementById(id);
+
             if (el) el.remove();
+
         }
+
     </script>
 
+
+
 </body>
+
+
 
 </html>
