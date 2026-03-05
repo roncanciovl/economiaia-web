@@ -1,0 +1,62 @@
+# Economía IA — robots.txt
+# https://economiaia.business
+#
+# IMPORTANTE PARA CLOUDFLARE:
+# Este archivo define directivas para crawlers. Sin embargo, si "Bot Fight Mode"
+# o "Super Bot Fight Mode" está activo en Cloudflare, esos bots serán bloqueados
+# a nivel firewall ANTES de leer este archivo.
+#
+# Para permitir bots de IA, verificar en Cloudflare Dashboard:
+#   Security → Bots → Configure Super Bot Fight Mode
+#   → "Definitely Automated" → set to "Allow"
+#   O crear WAF Custom Rules que permitan GPTBot, ClaudeBot, etc.
+#
+# Cloudflare también tiene el toggle "AI Scrapers and Crawlers" en:
+#   Security → Bots → block AI scrapers → OFF (desactivado)
+
+# --- Regla general: permitir todo ---
+User-agent: *
+Allow: /
+Disallow: /old_*
+Disallow: /patch*.txt
+Disallow: /grep_nav.txt
+Disallow: /*.py$
+Disallow: /*.csv$
+
+# --- Bots de IA: acceso total ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# --- Bots de búsqueda: acceso total ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap
+Sitemap: https://economiaia.business/sitemap.xml
+
+# LLMs.txt — Archivo de contexto para modelos de lenguaje
+# https://economiaia.business/llms.txt
