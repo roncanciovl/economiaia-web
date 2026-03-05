@@ -1665,11 +1665,22 @@
             if (e.key === 'Enter') sendMessage();
         });
 
+        function parseMarkdown(text) {
+            let html = text;
+            // Convertir **negritas** a <b>negritas</b>
+            html = html.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+            // Convertir [texto](url) a <a href="url" target="_blank">texto</a>
+            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color:#10b981; text-decoration:underline;">$1</a>');
+            // Convertir saltos de linea a <br>
+            html = html.replace(/\n/g, '<br>');
+            return html;
+        }
+
         function addMessage(text, sender) {
             const div = document.createElement('div');
             div.className = 'chat-bubble chat-' + sender;
-            // Usamos innerHTML en lugar de innerText para permitir que se rendericen los <a> enlaces y <b> del backend
-            div.innerHTML = text;
+            // Usamos innerHTML y parseamos el Markdown a HTML (solo para las respuestas del bot)
+            div.innerHTML = sender === 'bot' ? parseMarkdown(text) : text;
             chatBody.appendChild(div);
             chatBody.scrollTop = chatBody.scrollHeight;
         }

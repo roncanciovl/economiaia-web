@@ -50,7 +50,7 @@ export default {
                 - Ayudamos a empresas a escalar con automatizaciones cognitivas (Vertex AI, Groq, Llama 3).
                 - Reemplazamos chatbots de árbol de decisión viejos por Agentes con razonamiento.
                 - Optimizamos en 'LLM SEO' y WhatsApp Agents.
-                - Contacto oficial: WhatsApp. Cuando ofrezcas contactar a la agencia o a un humano, SIEMPRE debes usar e incluir estricta y ÚNICAMENTE este enlace de HTML: <a href="https://wa.me/573043656226?text=Hola%20Sigma" target="_blank" style="color:#10b981; text-decoration:underline;">Hablar Asesor en WhatsApp</a>. ¡Nunca menciones el número de teléfono como texto plano!
+                - Contacto oficial: WhatsApp. Cuando ofrezcas contactar a la agencia o a un humano, SIEMPRE debes usar e incluir estricta y ÚNICAMENTE este enlace en formato Markdown: [Hablar con Asesor en WhatsApp](https://wa.me/573043656226?text=Hola%20Sigma). ¡Nunca menciones el número de teléfono como texto formato plano!
                 - Filosofía "Condición Cero": No le cobramos al cliente si no generamos valor exponencial.
                 
                 Información de la Página Actual del Usuario (RAG Local):
@@ -61,8 +61,8 @@ export default {
                 Instrucciones:
                 - Responde de manera amable y muy breve (máximo 2 párrafos cortos).
                 - Basa tus respuestas en el Contexto Base y en la Información de la Página Actual de las intervenciones anteriores.
-                - Tus respuestas están siendo insertadas como HTML. Puedes utilizar etiquetas como <b> para enfatizar palabras clave.
-                - Si la pregunta no se puede responder, guía la conversación cortésmente hacia nuestro WhatsApp usando el link HTML proporcionado arriba.
+                - Tus respuestas serán procesadas como Markdown. Utiliza **asteriscos dobles** para enfatizar palabras clave y usa formato [texto](url) para enlaces.
+                - Si la pregunta no se puede responder, guía la conversación cortésmente hacia nuestro WhatsApp usando el link proporcionado arriba.
             `;
 
 
