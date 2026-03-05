@@ -24,6 +24,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
+        /* ===== AURORA BACKGROUND (pure CSS, zero JS) ===== */
         body {
             font-family: 'Inter', system-ui, sans-serif;
             background-color: #0c111e;
@@ -34,11 +35,63 @@
             flex-direction: column;
             align-items: center;
             line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
         }
 
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(255, 0, 80, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(0, 242, 254, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(157, 0, 255, 0.04) 0%, transparent 50%);
+            animation: auroraShift 15s ease-in-out infinite alternate;
+            z-index: -1;
+            pointer-events: none;
+            will-change: transform;
+        }
+
+        @keyframes auroraShift {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            33% {
+                transform: translate(2%, -3%) rotate(1deg);
+            }
+
+            66% {
+                transform: translate(-1%, 2%) rotate(-0.5deg);
+            }
+
+            100% {
+                transform: translate(3%, 1%) rotate(0.5deg);
+            }
+        }
+
+        /* ===== SCROLL PROGRESS BAR ===== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff0050, #9d00ff, #00f2fe);
+            z-index: 10000;
+            transition: width 0.1s;
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+            width: 0%;
+        }
+
+        /* ===== ANIMATED GRADIENT TITLE ===== */
         h1 {
             text-align: center;
-            background: linear-gradient(90deg, #ff0050, #00f2fe);
+            background: linear-gradient(90deg, #ff0050, #9d00ff, #00f2fe, #ff0050);
+            background-size: 300% 100%;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -46,6 +99,47 @@
             font-size: 2.8rem;
             font-weight: 800;
             max-width: 900px;
+            animation: gradientFlow 4s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff0050, #00f2fe);
+            border-radius: 2px;
+            animation: lineExpand 2s ease-out forwards;
+        }
+
+        @keyframes lineExpand {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+
+            to {
+                width: 120px;
+                opacity: 1;
+            }
         }
 
         p.subtitle {
@@ -56,10 +150,165 @@
             font-size: 1.15rem;
         }
 
+        /* ===== GLOWING BADGE ===== */
+        .glow-badge {
+            display: inline-block;
+            padding: 0.35rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #00f2fe;
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: 2rem;
+            background: rgba(0, 242, 254, 0.05);
+            margin-bottom: 1rem;
+            animation: badgeGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes badgeGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 5px rgba(0, 242, 254, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+            }
+        }
+
+        /* ===== ANIMATED STATS BAR ===== */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem 2rem;
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 1rem;
+            min-width: 140px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .stat-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00f2fe, transparent);
+            animation: shimmerLine 3s linear infinite;
+        }
+
+        @keyframes shimmerLine {
+            to {
+                left: 200%;
+            }
+        }
+
+        .stat-item:hover {
+            border-color: rgba(0, 242, 254, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff0050, #00f2fe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 0.3rem;
+        }
+
+        /* ===== SECTION GLOW CONNECTOR ===== */
+        .section-glow-connector {
+            width: 2px;
+            height: 60px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, rgba(255, 0, 80, 0.6), rgba(0, 242, 254, 0.6));
+            border-radius: 2px;
+            position: relative;
+            overflow: visible;
+        }
+
+        .section-glow-connector::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background: #ff0050;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #ff0050;
+            animation: pulseConnector 2s ease-in-out infinite;
+        }
+
+        .section-glow-connector::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background: #00f2fe;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #00f2fe;
+            animation: pulseConnector 2s ease-in-out infinite 1s;
+        }
+
+        @keyframes pulseConnector {
+
+            0%,
+            100% {
+                transform: translateX(-50%) scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateX(-50%) scale(1.5);
+                opacity: 0.5;
+            }
+        }
+
         section {
             width: 100%;
             max-width: 1000px;
             margin-bottom: 4rem;
+            position: relative;
         }
 
         .section-title {
@@ -94,6 +343,7 @@
             gap: 2rem;
         }
 
+        /* ===== CARD WITH SHINE EFFECT ===== */
         .card {
             background: #1e293b;
             border-radius: 1rem;
@@ -101,16 +351,45 @@
             border: 1px solid #334155;
             position: relative;
             overflow: hidden;
-            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, box-shadow 0.4s;
             display: flex;
             flex-direction: column;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
         }
 
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -200%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.03), rgba(255, 0, 80, 0.03), transparent);
+            animation: cardShine 6s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        @keyframes cardShine {
+            0% {
+                left: -200%;
+            }
+
+            50% {
+                left: 200%;
+            }
+
+            100% {
+                left: 200%;
+            }
+        }
+
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px) scale(1.01);
             border-color: #00f2fe;
-            box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.5);
+            box-shadow:
+                0 20px 40px -5px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(0, 242, 254, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
         }
 
         .card h3 {
@@ -141,6 +420,10 @@
             margin-bottom: 0.5rem;
         }
 
+        .card li::marker {
+            color: #00f2fe;
+        }
+
         .highlight-box {
             background: linear-gradient(90deg, rgba(255, 0, 80, 0.1), rgba(0, 242, 254, 0.1));
             border-left: 4px solid #ff0050;
@@ -148,6 +431,31 @@
             border-radius: 0 1rem 1rem 0;
             margin-top: 2rem;
             margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.05));
+            animation: highlightPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes highlightPulse {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 1;
+            }
         }
 
         .highlight-box h4 {
@@ -176,6 +484,72 @@
             position: relative;
             border: 1px solid #1e293b;
             box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ===== SCROLL REVEAL (CSS-only, triggered by JS class) ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.85);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-scale.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Stagger delays */
+        .stagger-1 {
+            transition-delay: 0.1s !important;
+        }
+
+        .stagger-2 {
+            transition-delay: 0.25s !important;
+        }
+
+        .stagger-3 {
+            transition-delay: 0.4s !important;
+        }
+
+        .stagger-4 {
+            transition-delay: 0.55s !important;
         }
 
         /* SVG Animations */
@@ -241,6 +615,26 @@
             stroke-dasharray: 6 6;
             animation: flowData 1s linear infinite;
         }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .stats-bar {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 1rem 1.2rem;
+            }
+
+            .stat-number {
+                font-size: 1.6rem;
+            }
+        }
     </style>
 
 
@@ -285,7 +679,8 @@
     </script>
     <link rel="canonical" href="https://economiaia.business/estrategia_tiktok_ia.html">
     <meta property="og:title" content="Estrategia TikTok IA | Economía IA">
-    <meta property="og:description" content="TikTok como motor full-funnel algorítmico para negocios en 2026. Spark Ads, Zero-Targeting y contenido orgánico.">
+    <meta property="og:description"
+        content="TikTok como motor full-funnel algorítmico para negocios en 2026. Spark Ads, Zero-Targeting y contenido orgánico.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://economiaia.business/estrategia_tiktok_ia.html">
     <meta property="og:site_name" content="Economía IA">
@@ -355,6 +750,14 @@
 
 <body>
 
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Glow Badge -->
+    <div style="text-align: center; margin-bottom: 0.5rem;">
+        <span class="glow-badge">Actualizado Marzo 2026</span>
+    </div>
+
     <h1>Estrategia TikTok IA</h1>
     <p class="subtitle">
         TikTok ya no es solo entretenimiento; es un <strong>motor full-funnel algorítmico</strong>. ha colapsado el
@@ -362,8 +765,28 @@
         de minutos.
     </p>
 
+    <!-- Animated Stats Bar -->
+    <div class="stats-bar">
+        <div class="stat-item reveal stagger-1">
+            <span class="stat-number" data-target="1800">0</span>
+            <span class="stat-label">M Usuarios Activos</span>
+        </div>
+        <div class="stat-item reveal stagger-2">
+            <span class="stat-number" data-target="95">0</span>
+            <span class="stat-label">Min/Día Promedio</span>
+        </div>
+        <div class="stat-item reveal stagger-3">
+            <span class="stat-number" data-target="70">0</span>
+            <span class="stat-label">% Descubrimiento</span>
+        </div>
+        <div class="stat-item reveal stagger-4">
+            <span class="stat-number" data-target="2">0</span>
+            <span class="stat-label">× Mayor Engagement</span>
+        </div>
+    </div>
+
     <!-- Contexto y Visión de Alto Nivel -->
-    <section>
+    <section class="reveal">
         <div class="highlight-box">
             <h4>El Paradigma del "Zero-Targeting"</h4>
             <p>
@@ -375,8 +798,11 @@
         </div>
     </section>
 
+    <!-- Section Connector -->
+    <div class="section-glow-connector"></div>
+
     <!-- 1. El Nuevo Funnel de Ventas en TikTok -->
-    <section>
+    <section class="reveal">
         <h2 class="section-title"><span class="section-number">1</span> El Embudo Híbrido: De Extraño a Comprador</h2>
 
         <div class="svg-container" style="height: 380px;">
@@ -444,7 +870,7 @@
         </div>
 
         <div class="grid-2">
-            <div class="card">
+            <div class="card reveal-left stagger-1">
                 <h3>🚀 1. Atracción: Orgánico Amplificado (Spark Ads)</h3>
                 <p>El motor empieza probando contenido orgánicamente y escalando a los ganadores con presupuesto.</p>
                 <ul>
@@ -459,7 +885,7 @@
                 </ul>
             </div>
 
-            <div class="card">
+            <div class="card reveal-right stagger-2">
                 <h3>💬 2. Interacción: Automatización por DMs (ManyChat)</h3>
                 <p>El puente entre un lead curioso y un cierre de ventas está en la capacidad de respuesta inmediata.
                 </p>
@@ -475,8 +901,11 @@
         </div>
     </section>
 
+    <!-- Section Connector -->
+    <div class="section-glow-connector"></div>
+
     <!-- 2. Estrategia Paga vs Orgánica (El Bucle de IA) -->
-    <section>
+    <section class="reveal">
         <h2 class="section-title"><span class="section-number">2</span> Estrategia Híbrida: Organic + TikTok Smart+</h2>
         <p style="color: #cbd5e1; font-size: 1.05rem; margin-top: -1rem; margin-bottom: 2rem;">
             No puedes depender solo del azar. Los negocios que escalan usan una estrategia probada: suben orgánico,
@@ -485,7 +914,7 @@
         </p>
 
         <div class="grid-2">
-            <div class="card">
+            <div class="card reveal-left stagger-1">
                 <h3>⚡ Spark Ads: Amplificar lo que ya sirve</h3>
                 <p> En vez de lanzar un arte promocional, usas <strong>Spark Ads</strong>, que es pagar para mostrar un
                     video orgánico real (tuyo o de un influencer) haciéndolo parecer 100% natural pero dándole un empuje
@@ -508,7 +937,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card reveal-right stagger-2">
                 <h3>🧠 TikTok Smart+ & Pixel CAPI</h3>
                 <p>TikTok ha lanzado herramientas de IA muy similares a Advantage+ de Meta. Trabajan basándose en
                     mediciones de conversión precisas.</p>
@@ -524,8 +953,11 @@
         </div>
     </section>
 
+    <!-- Section Connector -->
+    <div class="section-glow-connector"></div>
+
     <!-- 3. Evolución del Funnel de Cierre y Retención -->
-    <section>
+    <section class="reveal">
         <h2 class="section-title"><span class="section-number">3</span> Evolución del Funnel: Captura de Email vs. DM
             Automation</h2>
         <p style="color: #cbd5e1; font-size: 1.05rem; margin-top: -1rem; margin-bottom: 2rem;">
@@ -536,7 +968,7 @@
 
         <div class="grid-2">
             <!-- Opción A: Funnel Clásico (Beacons + Email) -->
-            <div class="card" style="border-color: #f59e0b;">
+            <div class="card reveal-left stagger-1" style="border-color: #f59e0b;">
                 <h3 style="color: #f59e0b;">📧 El "Link in Bio" Clásico</h3>
                 <p><strong>Ruta:</strong> Video ➔ Perfil ➔ Beacons.ai ➔ Landing Page ➔ Captura Email.</p>
 
@@ -578,7 +1010,7 @@
             </div>
 
             <!-- Opción B: Funnel Moderno (ManyChat + WhatsApp) -->
-            <div class="card" style="border-color: #10b981;">
+            <div class="card reveal-right stagger-2" style="border-color: #10b981;">
                 <h3 style="color: #10b981;">🤖 El Funnel SOTA 2026 (Mensajería)</h3>
                 <p><strong>Ruta:</strong> Video ➔ DM Directo (IA) ➔ Link Instantáneo a WhatsApp ➔ Cierre de caja.</p>
 
@@ -630,8 +1062,11 @@
         </div>
     </section>
 
+    <!-- Section Connector -->
+    <div class="section-glow-connector"></div>
+
     <!-- 4. Spark Ads vs ManyChat DMs -->
-    <section>
+    <section class="reveal">
         <h2 class="section-title"><span class="section-number">4</span> El Botón sobre el Video: Spark Ads vs DMs
             Orgánicos</h2>
         <p style="color: #cbd5e1; font-size: 1.05rem; margin-top: -1rem; margin-bottom: 2rem;">
@@ -642,7 +1077,7 @@
 
         <div class="grid-2">
             <!-- La Vía Directa (Spark Ads) -->
-            <div class="card" style="border-color: #f43f5e;">
+            <div class="card reveal-left stagger-1" style="border-color: #f43f5e;">
                 <h3 style="color: #f43f5e;">💸 La Vía Rápida: Spark Ads (El Botón)</h3>
                 <p>TikTok <strong>ya no permite</strong> que pongas un "sticker" con un enlace hacia afuera (URL
                     externa) en tus videos orgánicos gratuitos. La única forma de tener esa barra hermosa de "Comprar
@@ -662,7 +1097,7 @@
             </div>
 
             <!-- La Vía Conversacional (ManyChat) -->
-            <div class="card" style="border-color: #10b981;">
+            <div class="card reveal-right stagger-2" style="border-color: #10b981;">
                 <h3 style="color: #10b981;">🤖 La Vía de Alta Retención: ManyChat DMs</h3>
                 <p>En lugar de pagar publicidad por el link externo, subes el video orgánicamente y pides: <em>"Comenta
                         la palabra RESERVA"</em>. ManyChat les manda el link por chat interno.</p>
@@ -682,7 +1117,7 @@
             </div>
         </div>
 
-        <div class="highlight-box"
+        <div class="highlight-box reveal-scale"
             style="border-left-color: #f59e0b; margin-top: 3rem; background: linear-gradient(90deg, rgba(245, 158, 11, 0.1), rgba(15, 23, 42, 0.1));">
             <h4 style="color: #fbbf24;">¿Acaso la automatización (ManyChat) no agrega pasos innecesarios?</h4>
             <p style="color: #e2e8f0; font-size: 1.05rem;">
@@ -926,367 +1361,446 @@
         </footer>
 
 
-    <!-- Asistente IA "Sigma" Widget -->
-    <style>
-        .ai-widget-btn {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #10b981, #3b82f6);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
-            cursor: pointer;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
+        <!-- Asistente IA "Sigma" Widget -->
+        <style>
+            .ai-widget-btn {
+                position: fixed;
+                bottom: 2rem;
+                right: 2rem;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #10b981, #3b82f6);
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+                cursor: pointer;
+                z-index: 9999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+            }
 
-        .ai-widget-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.6);
-        }
+            .ai-widget-btn:hover {
+                transform: scale(1.1);
+                box-shadow: 0 15px 35px rgba(59, 130, 246, 0.6);
+            }
 
-        .ai-widget-btn svg {
-            width: 30px;
-            height: 30px;
-            fill: white;
-            animation: float-icon 3s ease-in-out infinite;
-        }
+            .ai-widget-btn svg {
+                width: 30px;
+                height: 30px;
+                fill: white;
+                animation: float-icon 3s ease-in-out infinite;
+            }
 
-        @keyframes float-icon {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-3px); }
-        }
+            @keyframes float-icon {
 
-        .ai-chat-panel {
-            position: fixed;
-            bottom: 6rem;
-            right: 2rem;
-            width: 350px;
-            height: 500px;
-            max-height: 80vh;
-            background: #0f172a;
-            border: 1px solid #334155;
-            border-radius: 1rem;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            z-index: 9998;
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(20px);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            overflow: hidden;
-        }
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
 
-        .ai-chat-panel.active {
-            opacity: 1;
-            pointer-events: all;
-            transform: translateY(0);
-        }
+                50% {
+                    transform: translateY(-3px);
+                }
+            }
 
-        .ai-chat-header {
-            background: linear-gradient(90deg, #1e293b, #0f172a);
-            padding: 1rem;
-            border-bottom: 1px solid #334155;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .ai-chat-header h3 {
-            margin: 0;
-            font-size: 1rem;
-            color: #f8fafc;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .ai-chat-header .badge {
-            background: rgba(16, 185, 129, 0.2);
-            color: #10b981;
-            font-size: 0.7rem;
-            padding: 2px 6px;
-            border-radius: 4px;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-        }
-
-        .close-chat {
-            background: transparent;
-            border: none;
-            color: #94a3b8;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: color 0.2s;
-        }
-
-        .close-chat:hover {
-            color: #f1f5f9;
-        }
-
-        .ai-chat-body {
-            flex-grow: 1;
-            padding: 1rem;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .chat-bubble {
-            max-width: 85%;
-            padding: 0.8rem 1rem;
-            border-radius: 1rem;
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-
-        .chat-bot {
-            background: #1e293b;
-            color: #e2e8f0;
-            border-bottom-left-radius: 0.25rem;
-            align-self: flex-start;
-            border: 1px solid #334155;
-        }
-
-        .chat-user {
-            background: #3b82f6;
-            color: #fff;
-            border-bottom-right-radius: 0.25rem;
-            align-self: flex-end;
-        }
-
-        .ai-chat-input-area {
-            padding: 1rem;
-            border-top: 1px solid #334155;
-            display: flex;
-            gap: 0.5rem;
-            background: #0f172a;
-        }
-
-        .ai-chat-input-area input {
-            flex-grow: 1;
-            background: #1e293b;
-            border: 1px solid #334155;
-            color: #fff;
-            padding: 0.7rem 1rem;
-            border-radius: 2rem;
-            outline: none;
-            font-family: inherit;
-        }
-
-        .ai-chat-input-area input:focus {
-            border-color: #3b82f6;
-        }
-
-        .ai-chat-input-area button {
-            background: #3b82f6;
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
-            flex-shrink: 0;
-        }
-
-        .ai-chat-input-area button:hover {
-            background: #2563eb;
-        }
-
-        .typing-indicator {
-            display: flex;
-            gap: 4px;
-            padding: 0.5rem 1rem;
-            background: #1e293b;
-            border-radius: 1rem;
-            width: fit-content;
-            align-self: flex-start;
-            border-bottom-left-radius: 0.25rem;
-            border: 1px solid #334155;
-        }
-
-        .typing-dot {
-            width: 6px;
-            height: 6px;
-            background: #94a3b8;
-            border-radius: 50%;
-            animation: typing 1.4s infinite ease-in-out;
-        }
-
-        .typing-dot:nth-child(1) { animation-delay: 0s; }
-        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
-        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
-
-        @keyframes typing {
-            0%, 100% { transform: translateY(0); opacity: 0.4; }
-            50% { transform: translateY(-4px); opacity: 1; }
-        }
-
-        @media (max-width: 600px) {
             .ai-chat-panel {
-                bottom: 0;
-                right: 0;
-                width: 100%;
-                height: auto;
+                position: fixed;
+                bottom: 6rem;
+                right: 2rem;
+                width: 350px;
+                height: 500px;
+                max-height: 80vh;
+                background: #0f172a;
+                border: 1px solid #334155;
+                border-radius: 1rem;
+                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+                display: flex;
+                flex-direction: column;
+                z-index: 9998;
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(20px);
+                transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                overflow: hidden;
+            }
+
+            .ai-chat-panel.active {
+                opacity: 1;
+                pointer-events: all;
+                transform: translateY(0);
+            }
+
+            .ai-chat-header {
+                background: linear-gradient(90deg, #1e293b, #0f172a);
+                padding: 1rem;
+                border-bottom: 1px solid #334155;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .ai-chat-header h3 {
+                margin: 0;
+                font-size: 1rem;
+                color: #f8fafc;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .ai-chat-header .badge {
+                background: rgba(16, 185, 129, 0.2);
+                color: #10b981;
+                font-size: 0.7rem;
+                padding: 2px 6px;
+                border-radius: 4px;
+                border: 1px solid rgba(16, 185, 129, 0.3);
+            }
+
+            .close-chat {
+                background: transparent;
+                border: none;
+                color: #94a3b8;
+                cursor: pointer;
+                font-size: 1.2rem;
+                transition: color 0.2s;
+            }
+
+            .close-chat:hover {
+                color: #f1f5f9;
+            }
+
+            .ai-chat-body {
+                flex-grow: 1;
+                padding: 1rem;
+                overflow-y: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .chat-bubble {
+                max-width: 85%;
+                padding: 0.8rem 1rem;
+                border-radius: 1rem;
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+
+            .chat-bot {
+                background: #1e293b;
+                color: #e2e8f0;
+                border-bottom-left-radius: 0.25rem;
+                align-self: flex-start;
+                border: 1px solid #334155;
+            }
+
+            .chat-user {
+                background: #3b82f6;
+                color: #fff;
+                border-bottom-right-radius: 0.25rem;
+                align-self: flex-end;
+            }
+
+            .ai-chat-input-area {
+                padding: 1rem;
+                border-top: 1px solid #334155;
+                display: flex;
+                gap: 0.5rem;
+                background: #0f172a;
+            }
+
+            .ai-chat-input-area input {
+                flex-grow: 1;
+                background: #1e293b;
+                border: 1px solid #334155;
+                color: #fff;
+                padding: 0.7rem 1rem;
+                border-radius: 2rem;
+                outline: none;
+                font-family: inherit;
+            }
+
+            .ai-chat-input-area input:focus {
+                border-color: #3b82f6;
+            }
+
+            .ai-chat-input-area button {
+                background: #3b82f6;
+                color: white;
+                border: none;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background 0.2s;
+                flex-shrink: 0;
+            }
+
+            .ai-chat-input-area button:hover {
+                background: #2563eb;
+            }
+
+            .typing-indicator {
+                display: flex;
+                gap: 4px;
+                padding: 0.5rem 1rem;
+                background: #1e293b;
+                border-radius: 1rem;
+                width: fit-content;
+                align-self: flex-start;
+                border-bottom-left-radius: 0.25rem;
+                border: 1px solid #334155;
+            }
+
+            .typing-dot {
+                width: 6px;
+                height: 6px;
+                background: #94a3b8;
+                border-radius: 50%;
+                animation: typing 1.4s infinite ease-in-out;
+            }
+
+            .typing-dot:nth-child(1) {
+                animation-delay: 0s;
+            }
+
+            .typing-dot:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+
+            .typing-dot:nth-child(3) {
+                animation-delay: 0.4s;
+            }
+
+            @keyframes typing {
+
+                0%,
+                100% {
+                    transform: translateY(0);
+                    opacity: 0.4;
+                }
+
+                50% {
+                    transform: translateY(-4px);
+                    opacity: 1;
+                }
+            }
+
+            @media (max-width: 600px) {
+                .ai-chat-panel {
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;
+                    height: auto;
                     max-height: 70vh;
                     border-radius: 1rem 1rem 0 0;
                     bottom: 0;
+                }
+
+                .ai-widget-btn {
+                    bottom: 1rem;
+                    right: 1rem;
+                }
             }
+        </style>
 
-            .ai-widget-btn {
-                bottom: 1rem;
-                right: 1rem;
-            }
-        }
-    </style>
+        <button class="ai-widget-btn" id="aiBtn" aria-label="Abrir asistente">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.01 1.01 4.35l-1.35 4.02a.85.85 0 0 0 1.07 1.07l4.02-1.35A9.95 9.95 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.36 0-2.65-.29-3.83-.8l-.34-.14-2.82.94.94-2.82-.14-.34A7.95 7.95 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
+            </svg>
+        </button>
 
-    <button class="ai-widget-btn" id="aiBtn" aria-label="Abrir asistente">
-        <svg viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.01 1.01 4.35l-1.35 4.02a.85.85 0 0 0 1.07 1.07l4.02-1.35A9.95 9.95 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.36 0-2.65-.29-3.83-.8l-.34-.14-2.82.94.94-2.82-.14-.34A7.95 7.95 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
-        </svg>
-    </button>
-
-    <div class="ai-chat-panel" id="aiChatPanel">
-        <div class="ai-chat-header">
-            <h3>Sigma <span class="badge">Llama 3 (Edge)</span></h3>
-            <button class="close-chat" id="closeChat">&times;</button>
-        </div>
-        <div class="ai-chat-body" id="chatBody">
-            <div class="chat-bubble chat-bot">
-                ¿Quieres usar TikTok como un motor de ventas automático? Pregúntame cómo funciona.
+        <div class="ai-chat-panel" id="aiChatPanel">
+            <div class="ai-chat-header">
+                <h3>Sigma <span class="badge">Llama 3 (Edge)</span></h3>
+                <button class="close-chat" id="closeChat">&times;</button>
+            </div>
+            <div class="ai-chat-body" id="chatBody">
+                <div class="chat-bubble chat-bot">
+                    ¿Quieres usar TikTok como un motor de ventas automático? Pregúntame cómo funciona.
+                </div>
+            </div>
+            <div class="ai-chat-input-area">
+                <input type="text" id="chatInput" placeholder="Escribe tu pregunta..." autocomplete="off">
+                <button id="sendBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
             </div>
         </div>
-        <div class="ai-chat-input-area">
-            <input type="text" id="chatInput" placeholder="Escribe tu pregunta..." autocomplete="off">
-            <button id="sendBtn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                </svg>
-            </button>
-        </div>
-    </div>
 
-    <script>
-        const aiBtn = document.getElementById('aiBtn');
-        const aiChatPanel = document.getElementById('aiChatPanel');
-        const closeChat = document.getElementById('closeChat');
-        const chatInput = document.getElementById('chatInput');
-        const sendBtn = document.getElementById('sendBtn');
-        const chatBody = document.getElementById('chatBody');
+        <script>
+            const aiBtn = document.getElementById('aiBtn');
+            const aiChatPanel = document.getElementById('aiChatPanel');
+            const closeChat = document.getElementById('closeChat');
+            const chatInput = document.getElementById('chatInput');
+            const sendBtn = document.getElementById('sendBtn');
+            const chatBody = document.getElementById('chatBody');
 
-        let chatHistory = [];
+            let chatHistory = [];
 
-        aiBtn.addEventListener('click', () => {
-            aiChatPanel.classList.add('active');
-            chatInput.focus();
-            aiBtn.style.display = 'none';
-        });
+            aiBtn.addEventListener('click', () => {
+                aiChatPanel.classList.add('active');
+                chatInput.focus();
+                aiBtn.style.display = 'none';
+            });
 
-        closeChat.addEventListener('click', () => {
-            aiChatPanel.classList.remove('active');
-            aiBtn.style.display = 'flex';
-        });
+            closeChat.addEventListener('click', () => {
+                aiChatPanel.classList.remove('active');
+                aiBtn.style.display = 'flex';
+            });
 
-        async function sendMessage() {
-            const text = chatInput.value.trim();
-            if (!text) return;
+            async function sendMessage() {
+                const text = chatInput.value.trim();
+                if (!text) return;
 
-            addMessage(text, 'user');
-            chatInput.value = '';
+                addMessage(text, 'user');
+                chatInput.value = '';
 
-            const typingId = showTyping();
+                const typingId = showTyping();
 
-            try {
-                const workerUrl = 'https://agente-sigma.henryroncanciovelandia.workers.dev/';
+                try {
+                    const workerUrl = 'https://agente-sigma.henryroncanciovelandia.workers.dev/';
 
-                let pageContext = "";
-                const mainTags = document.querySelectorAll('h1, h2, h3, p');
-                mainTags.forEach(tag => {
-                    if (!tag.closest('.ai-chat-panel')) {
-                        pageContext += tag.innerText + " \n";
+                    let pageContext = "";
+                    const mainTags = document.querySelectorAll('h1, h2, h3, p');
+                    mainTags.forEach(tag => {
+                        if (!tag.closest('.ai-chat-panel')) {
+                            pageContext += tag.innerText + " \n";
+                        }
+                    });
+                    const cleanedContext = pageContext.substring(0, 4000);
+
+                    const response = await fetch(workerUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            user_question: text,
+                            page_context: cleanedContext,
+                            chat_history: chatHistory
+                        })
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        removeTyping(typingId);
+                        addMessage(data.answer, 'bot');
+
+                        chatHistory.push({ role: "user", content: text });
+                        chatHistory.push({ role: "assistant", content: data.answer });
+
+                        if (chatHistory.length > 10) chatHistory = chatHistory.slice(chatHistory.length - 10);
+                    } else {
+                        throw new Error("Worker no conectado");
+                    }
+                } catch (err) {
+                    setTimeout(() => {
+                        removeTyping(typingId);
+                        addMessage("Ha ocurrido un error contactando a la Inteligencia Artificial. Revisa tu conexión a internet.", 'bot');
+                    }, 1500);
+                }
+            }
+
+            sendBtn.addEventListener('click', sendMessage);
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') sendMessage();
+            });
+
+            function parseMarkdown(text) {
+                let html = text;
+                html = html.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+                html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color:#10b981; text-decoration:underline;">$1</a>');
+                html = html.replace(/\n/g, '<br>');
+                return html;
+            }
+
+            function addMessage(text, sender) {
+                const div = document.createElement('div');
+                div.className = 'chat-bubble chat-' + sender;
+                div.innerHTML = sender === 'bot' ? parseMarkdown(text) : text;
+                chatBody.appendChild(div);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            function showTyping() {
+                const id = 'typing-' + Date.now();
+                const div = document.createElement('div');
+                div.className = 'typing-indicator';
+                div.id = id;
+                div.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+                chatBody.appendChild(div);
+                chatBody.scrollTop = chatBody.scrollHeight;
+                return id;
+            }
+
+            function removeTyping(id) {
+                const el = document.getElementById(id);
+                if (el) el.remove();
+            }
+        </script>
+
+        <!-- Lightweight Animation Engine (no libraries, pure IntersectionObserver) -->
+        <script>
+            // === Scroll Progress Bar ===
+            const progressBar = document.getElementById('scrollProgress');
+            window.addEventListener('scroll', () => {
+                const scrollTop = document.documentElement.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const progress = (scrollTop / scrollHeight) * 100;
+                progressBar.style.width = progress + '%';
+            }, { passive: true });
+
+            // === Scroll Reveal (IntersectionObserver — native, no layout thrashing) ===
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
                     }
                 });
-                const cleanedContext = pageContext.substring(0, 4000);
+            }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-                const response = await fetch(workerUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        user_question: text,
-                        page_context: cleanedContext,
-                        chat_history: chatHistory
-                    })
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stat-item').forEach(el => {
+                revealObserver.observe(el);
+            });
+
+            // === Animated Counter (runs once on stat visibility) ===
+            let countersAnimated = false;
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !countersAnimated) {
+                        countersAnimated = true;
+                        document.querySelectorAll('.stat-number[data-target]').forEach(el => {
+                            const target = parseInt(el.getAttribute('data-target'));
+                            const duration = 1500;
+                            const startTime = performance.now();
+
+                            function updateCounter(currentTime) {
+                                const elapsed = currentTime - startTime;
+                                const progress = Math.min(elapsed / duration, 1);
+                                // Ease-out cubic
+                                const eased = 1 - Math.pow(1 - progress, 3);
+                                el.textContent = Math.round(target * eased).toLocaleString();
+                                if (progress < 1) requestAnimationFrame(updateCounter);
+                            }
+                            requestAnimationFrame(updateCounter);
+                        });
+                    }
                 });
+            }, { threshold: 0.5 });
 
-                if (response.ok) {
-                    const data = await response.json();
-                    removeTyping(typingId);
-                    addMessage(data.answer, 'bot');
-
-                    chatHistory.push({ role: "user", content: text });
-                    chatHistory.push({ role: "assistant", content: data.answer });
-
-                    if (chatHistory.length > 10) chatHistory = chatHistory.slice(chatHistory.length - 10);
-                } else {
-                    throw new Error("Worker no conectado");
-                }
-            } catch (err) {
-                setTimeout(() => {
-                    removeTyping(typingId);
-                    addMessage("Ha ocurrido un error contactando a la Inteligencia Artificial. Revisa tu conexión a internet.", 'bot');
-                }, 1500);
-            }
-        }
-
-        sendBtn.addEventListener('click', sendMessage);
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') sendMessage();
-        });
-
-        function parseMarkdown(text) {
-            let html = text;
-            html = html.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
-            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color:#10b981; text-decoration:underline;">$1</a>');
-            html = html.replace(/\n/g, '<br>');
-            return html;
-        }
-
-        function addMessage(text, sender) {
-            const div = document.createElement('div');
-            div.className = 'chat-bubble chat-' + sender;
-            div.innerHTML = sender === 'bot' ? parseMarkdown(text) : text;
-            chatBody.appendChild(div);
-            chatBody.scrollTop = chatBody.scrollHeight;
-        }
-
-        function showTyping() {
-            const id = 'typing-' + Date.now();
-            const div = document.createElement('div');
-            div.className = 'typing-indicator';
-            div.id = id;
-            div.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
-            chatBody.appendChild(div);
-            chatBody.scrollTop = chatBody.scrollHeight;
-            return id;
-        }
-
-        function removeTyping(id) {
-            const el = document.getElementById(id);
-            if (el) el.remove();
-        }
-    </script>
+            const statsBar = document.querySelector('.stats-bar');
+            if (statsBar) counterObserver.observe(statsBar);
+        </script>
 
 </body>
 
