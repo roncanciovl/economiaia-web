@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Optimización LLM SEO y Meta tags para Economía IA -->
     <meta name="description"
-        content="Agentes Conversacionales con IA: Implementa sistemas cognitivos de texto y voz que automatizan ventas y atención al cliente.">
+        content="Agentes Conversacionales con IA: Implementa sistemas cognitivos que clonan el razonamiento humano para automatizar ventas y atención al cliente.">
     <meta name="keywords"
         content="Agentes Conversacionales, IA Cognitiva, WhatsApp IA, Voice IA, Automatización de Ventas">
     <meta name="author" content="Economía IA">
@@ -288,7 +288,7 @@
       "url": "https://economiaia.business",
       "logo": "https://economiaia.business/logo_economia_ia_neon_v4.png",
       "image": "https://economiaia.business/logo_economia_ia_neon_v4.png",
-      "description": "Acelerador de Negocios con Inteligencia Artificial enfocada en resultados rápidos para Pymes y arquitecturas Enterprise. Reemplazamos chatbots viejos con Agentes Cognitivos y automatizamos ventas usando Google Vertex AI, Gemini y arquitecturas cognitivas.",
+      "description": "Acelerador de Negocios con Inteligencia Artificial. Reemplazamos chatbots por Agentes Cognitivos que clonan el razonamiento humano para automatizar ventas y atención al cliente usando arquitecturas cognitivas avanzadas.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Latinoamérica",
@@ -356,7 +356,7 @@
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "Agentes Conversacionales",
-      "description": "Sistemas de texto y voz basados en LLMs para atención al cliente, cualificación de leads y ventas automáticas.",
+      "description": "Sistemas de texto y voz que clonan el razonamiento humano para atención al cliente, cualificación de leads y ventas automáticas.",
       "url": "https://economiaia.business/agentes_conversacionales_ia.html",
       "datePublished": "2026-01-15",
       "dateModified": "2026-03-05",
@@ -392,7 +392,7 @@
       "@context": "https://schema.org",
       "@type": "HowTo",
       "name": "Cómo implementar un agente conversacional con IA para tu negocio",
-      "description": "Guía de 5 pasos para crear un agente cognitivo que atienda clientes, cualifique leads y cierre ventas automáticamente por WhatsApp, Instagram y teléfono.",
+      "description": "Guía de 5 pasos para crear un agente cognitivo que clona el razonamiento humano para atender clientes, cualificar leads y cerrar ventas automáticamente por WhatsApp, Instagram y teléfono.",
       "totalTime": "PT2H",
       "tool": [
         {"@type": "HowToTool", "name": "WhatsApp Business API"},
@@ -406,7 +406,7 @@
           "@type": "HowToStep",
           "position": 1,
           "name": "Define el objetivo del agente",
-          "text": "Decide si tu agente va a atender consultas, cualificar leads, agendar citas o cerrar ventas. Un agente cognitivo, a diferencia de un chatbot de reglas, puede manejar todas estas tareas porque entiende contexto y mantiene memoria de la conversación."
+          "text": "Decide si tu agente va a atender consultas, cualificar leads, agendar citas o cerrar ventas. Un agente cognitivo puede clonar el razonamiento de tus mejores expertos para manejar tareas complejas, entender contexto y mantener memoria."
         },
         {
           "@type": "HowToStep",
@@ -476,7 +476,8 @@
         <header class="hero">
             <h1 class="hero-title">Agentes Conversacionales</h1>
             <p class="hero-subtitle">Guía sobre los sistemas de <strong>Texto y Voz</strong> basados en modelos de
-                lenguaje que pueden mantener conversaciones contextuales, ejecutar tareas y operar de forma autónoma.
+                lenguaje que pueden clonar el razonamiento humano, mantener conversaciones contextuales y operar de
+                forma autónoma.
             </p>
             <img src="agente_ia_cognitivo.png" alt="Agentes Cognitivos IA" class="hero-image">
         </header>
@@ -512,6 +513,17 @@
                 <h3>🌍 Escalabilidad Multilingüe</h3>
                 <p>Un solo agente puede atender miles de conversaciones simultáneas en más de 50 idiomas sin degradación
                     de la calidad de respuesta.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>👤 Clonación de Razonamiento</h3>
+                <p>Define procesos de pensamiento y criterios de decisión específicos que permiten al agente actuar y
+                    resolver objeciones clonando la lógica de un experto humano.</p>
+            </div>
+            <div class="benefit-card"
+                style="border-color: var(--accent-indigo); background: linear-gradient(135deg, var(--card-bg), rgba(99, 102, 241, 0.1));">
+                <h3>⚡ Conoce a Sigma</h3>
+                <p>Sigma es nuestro agente cognitivo oficial. No es un chatbot común; es un motor de aceleración
+                    diseñado para guiarte por el ecosistema con razonamiento real.</p>
             </div>
         </div>
 
@@ -988,6 +1000,45 @@
                 }
             }
 
+            .ai-widget-tooltip {
+                position: fixed;
+                bottom: 6.5rem;
+                right: 2rem;
+                background: var(--accent-blue);
+                color: white;
+                padding: 0.8rem 1.2rem;
+                border-radius: 12px;
+                font-size: 0.85rem;
+                font-weight: 600;
+                box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+                z-index: 9998;
+                pointer-events: none;
+                animation: float-tooltip 3s ease-in-out infinite;
+                white-space: nowrap;
+            }
+
+            .ai-widget-tooltip::after {
+                content: '';
+                position: absolute;
+                bottom: -8px;
+                right: 20px;
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-top: 8px solid var(--accent-blue);
+            }
+
+            @keyframes float-tooltip {
+
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+
+                50% {
+                    transform: translateY(-5px);
+                }
+            }
+
             @media (max-width: 600px) {
                 .ai-chat-panel {
                     bottom: 0;
@@ -1006,6 +1057,7 @@
             }
         </style>
 
+        <div class="ai-widget-tooltip" id="aiTooltip">¿Tienes dudas? ¡Pregúntame! Soy un agente conversacional</div>
         <button class="ai-widget-btn" id="aiBtn" aria-label="Abrir asistente">
             <svg viewBox="0 0 24 24">
                 <path
@@ -1015,7 +1067,11 @@
 
         <div class="ai-chat-panel" id="aiChatPanel">
             <div class="ai-chat-header">
-                <h3>Sigma <span class="badge">Llama 3 (Edge)</span></h3>
+                <h3 style="display: flex; align-items: center; gap: 0.8rem;">
+                    <img src="logos/logo_economia_ia_neon_v4.png" alt="Sigma Logo"
+                        style="width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--accent-cyan);">
+                    Sigma <span class="badge">Llama 3.3 (Edge)</span>
+                </h3>
                 <button class="close-chat" id="closeChat">×</button>
             </div>
             <div class="ai-chat-body" id="chatBody">
@@ -1050,11 +1106,13 @@
                 aiChatPanel.classList.add('active');
                 chatInput.focus();
                 aiBtn.style.display = 'none';
+                document.getElementById('aiTooltip').style.display = 'none';
             });
 
             closeChat.addEventListener('click', () => {
                 aiChatPanel.classList.remove('active');
                 aiBtn.style.display = 'flex';
+                document.getElementById('aiTooltip').style.display = 'block';
             });
 
             async function sendMessage() {
@@ -1071,7 +1129,7 @@
 
                     // --- RAG Local: Extraer contexto visible de la página ---
                     const welcomeMsg = document.querySelector('.chat-bubble.chat-bot')?.innerText || "";
-                let pageContext = `Mensaje de bienvenida que Sigma (tú) acaba de enviar al usuario: "${welcomeMsg}"\n\n`;
+                    let pageContext = `Mensaje de bienvenida que Sigma (tú) acaba de enviar al usuario: "${welcomeMsg}"\n\n`;
 
                     // Extraer enlaces de navegación
                     const navLinks = document.querySelectorAll('a.nav-back, .consultancy-banner a');

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precios y Planes IA - Economía IA</title>
+    <meta name="description"
+        content="Planes de implementación de Inteligencia Artificial para Pymes y Corporativos. Desde agilización básica hasta agentes cognitivos de razonamiento real.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --accent-blue: #3b82f6;
+            --accent-green: #10b981;
+            --accent-purple: #8b5cf6;
+            --accent-cyan: #22d3ee;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .pricing-title {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, var(--accent-blue) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Pricing Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--accent-blue);
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
+        }
+
+        .badge-pop {
+            position: absolute;
+            top: 2rem;
+            right: -2rem;
+            background: var(--accent-blue);
+            color: white;
+            padding: 0.5rem 4rem;
+            transform: rotate(45deg);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .plan-price span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .plan-features li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Express Section */
+        .express-consultancy {
+            margin-top: 6rem;
+            background: linear-gradient(90deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1));
+            border-radius: 32px;
+            padding: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .express-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .express-info p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .express-price {
+            text-align: right;
+        }
+
+        .express-price .price {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--accent-purple);
+            font-family: 'Outfit', sans-serif;
+            display: block;
+        }
+
+        /* Navigation */
+        .nav-back {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* AI Widget Styles */
+        .ai-widget-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+            transition: transform 0.3s;
+        }
+
+        .ai-widget-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .ai-widget-btn svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        .ai-chat-panel {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 380px;
+            height: 550px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            z-index: 10001;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .ai-chat-panel.active {
+            display: flex;
+        }
+
+        .ai-chat-header {
+            background: rgba(30, 41, 59, 0.1);
+            padding: 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ai-chat-header h3 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .close-chat {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .ai-chat-body {
+            flex-grow: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chat-bubble {
+            max-width: 85%;
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .chat-bot {
+            background: #1e293b;
+            color: #e2e8f0;
+            align-self: flex-start;
+            border: 1px solid #334155;
+        }
+
+        .chat-user {
+            background: var(--accent-blue);
+            color: white;
+            align-self: flex-end;
+        }
+
+        .ai-chat-input-area {
+            padding: 1rem;
+            border-top: 1px solid #334155;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .ai-chat-input-area input {
+            flex-grow: 1;
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: #fff;
+            padding: 0.7rem 1rem;
+            border-radius: 2rem;
+            outline: none;
+        }
+
+        .ai-chat-input-area button {
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 0.5rem 1rem;
+            background: #1e293b;
+            border-radius: 1rem;
+            width: fit-content;
+        }
+
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background: #94a3b8;
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+
+        @keyframes typing {
+
+            0%,
+            100% {
+                opacity: 0.2;
+                transform: translateY(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateY(-4px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .express-consultancy {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem;
+            }
+
+            .express-price {
+                text-align: center;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .ai-chat-panel {
+                width: 100%;
+                height: 70%;
+                right: 0;
+                bottom: 0;
+                border-radius: 20px 20px 0 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="index.html" class="nav-back">← Volver al Hub</a>
+
+    <div class="container">
+        <header class="header">
+            <h1>Inversión Estratégica</h1>
+            <p>No vendemos herramientas. Instalamos infraestructura de crecimiento que clona tu razonamiento y libera tu
+                tiempo.</p>
+        </header>
+
+        <div class="pricing-grid">
+            <!-- Starter -->
+            <div class="pricing-card">
+                <p class="plan-name">🟢 Starter</p>
+                <div class="plan-price">$297 - $497<span>/único</span></div>
+                <ul class="plan-features">
+                    <li>Automatización esencial en ManyChat/TikTok/IG.</li>
+                    <li>Captura de leads 24/7 sin intervención humana.</li>
+                    <li>Estructura básica de "Oferta Irresistible".</li>
+                    <li>Soporte técnico por 15 días.</li>
+                    <li>Ideal para: Autónomos y Micro-negocios.</li>
+                </ul>
+                <a href="https://wa.me/573043656226?text=Hola%20Sigma%2C%20quiero%20el%20plan%20Starter"
+                    class="btn btn-outline">Empezar Ahora</a>
+            </div>
+
+            <!-- Growth -->
+            <div class="pricing-card featured">
+                <div class="badge-pop">Popular</div>
+                <p class="plan-name">🔵 Growth</p>
+                <div class="plan-price">$997 - $1,500<span> + $150/mes</span></div>
+                <ul class="plan-features">
+                    <li>Agente Cognitivo en WhatsApp (Razonamiento Real).</li>
+                    <li>Integración con Catálogo y Pagos Automáticos.</li>
+                    <li>Clonación de Procesos de Venta complejos.</li>
+                    <li>Entrenamiento de Personal en uso de IA.</li>
+                    <li>Mantenimiento y Auditoría Mensual.</li>
+                    <li>Ideal para: Negocios en fase de escala rápida.</li>
+                </ul>
+                <a href="https://wa.me/573043656226?text=Hola%20Sigma%2C%20quiero%20el%20plan%20Growth"
+                    class="btn btn-primary">Escalar Mi Negocio</a>
+            </div>
+
+            <!-- Acceleration -->
+            <div class="pricing-card">
+                <p class="plan-name">🟣 Aceleración</p>
+                <div class="plan-price">desde $3,000<span>/proyect</span></div>
+                <ul class="plan-features">
+                    <li>Sistema Omnicanal (Vía Texto y Voz).</li>
+                    <li>Integración con CRMs y Bases de Datos Privadas.</li>
+                    <li>Consultoría Técnica y de Inversiones con Henry Roncancio.</li>
+                    <li>Despliegue en Servidores Propios (Edge Computing).</li>
+                    <li>Soporte Prioritario 24/7.</li>
+                    <li>Ideal para: Medianas y Grandes Empresas.</li>
+                </ul>
+                <a href="https://wa.me/573043656226?text=Hola%20Sigma%2C%20quiero%20el%20plan%20Aceleración"
+                    class="btn btn-outline">Solicitar Auditoría</a>
+            </div>
+        </div>
+
+        <div class="express-consultancy">
+            <div class="express-info">
+                <h2>☕ Consultoría Express</h2>
+                <p>¿Necesitas claridad inmediata antes de dar el siguiente paso? Agenda 1 hora estratégica para
+                    diagnosticar tu cuello de botella actual.</p>
+                <ul class="plan-features" style="margin-bottom: 2rem;">
+                    <li>1 Hora 1-a-1 de alta densidad estratégica.</li>
+                    <li><strong>Deducible:</strong> Si contratas un plan, los $50 se abonan a tu factura.</li>
+                </ul>
+                <a href="https://wa.me/573043656226?text=Hola%20Sigma%2C%20quiero%20agendar%20una%20Consultoría%20Express"
+                    class="btn btn-primary" style="width: auto; padding: 1rem 3rem;">Agendar Sesión</a>
+            </div>
+            <div class="express-price">
+                <span
+                    style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Inversión</span>
+                <span class="price">$50 <span style="font-size: 1.5rem; color: var(--text-muted);">USD</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Widget Markup -->
+    <button class="ai-widget-btn" id="aiBtn" aria-label="Abrir asistente">
+        <svg viewBox="0 0 24 24">
+            <path
+                d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.01 1.01 4.35l-1.35 4.02a.85.85 0 0 0 1.07 1.07l4.02-1.35A9.95 9.95 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.36 0-2.65-.29-3.83-.8l-.34-.14-2.82.94.94-2.82-.14-.34A7.95 7.95 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
+        </svg>
+    </button>
+
+    <div class="ai-chat-panel" id="aiChatPanel">
+        <div class="ai-chat-header">
+            <h3>Sigma <span
+                    style="font-size:0.7rem; background: var(--accent-blue); padding: 2px 8px; border-radius: 10px;">Llama
+                    3.3</span></h3>
+            <button class="close-chat" id="closeChat">×</button>
+        </div>
+        <div class="ai-chat-body" id="chatBody">
+            <div class="chat-bubble chat-bot">
+                Hola, soy Sigma. Aquí puedes comparar nuestros planes y ver cuál se ajusta mejor al tamaño de tu negocio
+                actual. ¿Quieres que te ayude a elegir uno?
+            </div>
+        </div>
+        <div class="ai-chat-input-area">
+            <input type="text" id="chatInput" placeholder="Pregunta sobre los planes..." autocomplete="off">
+            <button id="sendBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const aiBtn = document.getElementById('aiBtn');
+        const aiChatPanel = document.getElementById('aiChatPanel');
+        const closeChat = document.getElementById('closeChat');
+        const chatInput = document.getElementById('chatInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const chatBody = document.getElementById('chatBody');
+
+        let chatHistory = [];
+
+        aiBtn.addEventListener('click', () => {
+            aiChatPanel.classList.add('active');
+            chatInput.focus();
+            aiBtn.style.display = 'none';
+        });
+
+        closeChat.addEventListener('click', () => {
+            aiChatPanel.classList.remove('active');
+            aiBtn.style.display = 'flex';
+        });
+
+        async function sendMessage() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            addMessage(text, 'user');
+            chatInput.value = '';
+            const typingId = showTyping();
+
+            try {
+                const workerUrl = 'https://agente-sigma.henryroncanciovelandia.workers.dev/';
+                const welcomeMsg = document.querySelector('.chat-bubble.chat-bot')?.innerText || "";
+                let pageContext = `Mensaje de bienvenida que Sigma (tú) acaba de enviar al usuario: "${welcomeMsg}"\n\n`;
+
+                const mainTags = document.querySelectorAll('h1, h2, h3, p, li');
+                mainTags.forEach(tag => {
+                    if (!tag.closest('.ai-chat-panel')) {
+                        pageContext += tag.innerText + " \n";
+                    }
+                });
+
+                const response = await fetch(workerUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        user_question: text,
+                        page_context: pageContext.substring(0, 4000),
+                        chat_history: chatHistory
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    removeTyping(typingId);
+                    addMessage(data.answer, 'bot');
+                    chatHistory.push({ role: "user", content: text });
+                    chatHistory.push({ role: "assistant", content: data.answer });
+                    if (chatHistory.length > 10) chatHistory = chatHistory.slice(chatHistory.length - 10);
+                }
+            } catch (err) {
+                removeTyping(typingId);
+                addMessage("Error de conexión.", 'bot');
+            }
+        }
+
+        sendBtn.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
+
+        function parseMarkdown(text) {
+            let html = text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color:#10b981; text-decoration:underline;">$1</a>');
+            html = html.replace(/\n/g, '<br>');
+            return html;
+        }
+
+        function addMessage(text, sender) {
+            const div = document.createElement('div');
+            div.className = 'chat-bubble chat-' + sender;
+            div.innerHTML = sender === 'bot' ? parseMarkdown(text) : text;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function showTyping() {
+            const id = 'typing-' + Date.now();
+            const div = document.createElement('div');
+            div.className = 'typing-indicator';
+            div.id = id;
+            div.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+            return id;
+        }
+
+        function removeTyping(id) {
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        }
+    </script>
+</body>
+
+</html>
