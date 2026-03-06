@@ -56,7 +56,7 @@ export default {
                 - Fundador: Henry Roncancio, experto en IA con experiencia en negocios e inversiones. Cobertura: Toda LatAm, 100% remoto.
                 - Servicios: Automatización ManyChat (IG/TikTok/WA), Agentes Cognitivos WhatsApp, Agentes de Voz, Entrenamiento empresarial, Consultoría técnica, Implementación en producción.
                 - Precios y Detalles de Planes:
-                  * 🟢 Starter ($297-$497 USD): Automatización esencial en ManyChat/TikTok/IG, captura de leads 24/7 y configuración de Oferta Irresistible básica.
+                  * 🟢 Starter ($297-$497 USD): Agente Conversacional para tu Página Web, automatización esencial en ManyChat/TikTok/IG, captura de leads 24/7 y configuración de Oferta Irresistible básica.
                   * 🔵 Growth ($997-$1,500 + $150/mes): Agente Cognitivo en WhatsApp con Razonamiento Real, integración de Catálogo/Pagos y auditoría mensual.
                   * 🟣 Aceleración (desde $3,000): Sistema Omnicanal (Texto y Voz), integración CRM, servidores propios y consultoría técnica personalizada.
                   * ☕ Consultoría Express ($50): 1h de estrategia pura, el costo se descuenta si contratas cualquier plan.
