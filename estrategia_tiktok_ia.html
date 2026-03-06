@@ -569,6 +569,94 @@
                 font-size: 1.6rem;
             }
         }
+
+        .context-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 0.75rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .context-image:hover {
+            transform: scale(1.02);
+            border-color: #3b82f6;
+        }
+
+        .evo-svg-container {
+            width: 100%;
+            height: 120px;
+            background: #0f172a;
+            border-radius: 0.75rem;
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: 1px solid #334155;
+            position: relative;
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 5px rgba(52, 211, 153, 0.4));
+                transform: scale(1);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 15px rgba(52, 211, 153, 0.8));
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes floatSmooth {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        @keyframes dataSync {
+            0% {
+                stroke-dashoffset: 60;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes typingDot {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        .icon-float {
+            animation: floatSmooth 3s ease-in-out infinite;
+        }
+
+        .icon-pulse {
+            animation: pulseGlow 2s infinite;
+        }
     </style>
 
 
@@ -827,8 +915,10 @@
         </div>
 
         <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-            <div class="card">
-                <h3>🚀 1. Atraer Clientes (Descubrir)</h3>
+            <div class="card" style="padding-bottom: 0; border-color: #8b5cf6;">
+                <img src="atraer.png" alt="Estrategia para atraer clientes en TikTok" class="context-image"
+                    loading="lazy">
+                <h3 style="color: #8b5cf6; margin-top: 0;">🚀 1. Atraer Clientes (Descubrir)</h3>
                 <p>El mejor enfoque es publicar videos normales y orgánicos. Si uno funciona muy bien por sí solo, le
                     pones dinero de publicidad para llegar a todo el mundo.</p>
                 <ul>
@@ -837,10 +927,43 @@
                     <li><strong>Publicidad Segura:</strong> Cuando a un video le metes dinero, la gente puede descubrir
                         tu página saltando directo al botón de venta rápida.</li>
                 </ul>
+                <div class="evo-svg-container"
+                    style="border-radius: 0.75rem 0.75rem 0 0; margin-top: auto; border-bottom: none;">
+                    <svg viewBox="0 0 200 120" width="100%" height="100%">
+                        <!-- Radar AI Descubrimiento -->
+                        <circle cx="50" cy="60" r="30" fill="none" stroke="#334155" stroke-width="1" />
+                        <circle cx="50" cy="60" r="20" fill="none" stroke="#334155" stroke-width="1" />
+                        <circle cx="50" cy="60" r="10" fill="#1e293b" />
+                        <text x="50" y="65" text-anchor="middle" font-size="14">🤖</text>
+                        <!-- Radar Sweep -->
+                        <path d="M 50 60 L 50 30 A 30 30 0 0 1 80 60 Z" fill="rgba(139, 92, 246, 0.2)">
+                            <animateTransform attributeName="transform" type="rotate" from="0 50 60" to="360 50 60"
+                                dur="3s" repeatCount="indefinite" />
+                        </path>
+                        <!-- Conexión Algorítmica -->
+                        <path d="M 85 60 L 140 60" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="4 4"
+                            style="animation: dataSync 1.5s linear infinite reverse;" />
+                        <circle cx="112" cy="60" r="3" fill="#8b5cf6">
+                            <animate attributeName="cx" values="85;140" dur="1.5s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="1;0" dur="1.5s" repeatCount="indefinite" />
+                        </circle>
+                        <!-- Cliente Específico Descubierto -->
+                        <circle cx="155" cy="60" r="16" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"
+                            class="icon-float" />
+                        <text x="155" y="65" text-anchor="middle" font-size="14">🎯</text>
+                        <!-- Etiquetas -->
+                        <text x="50" y="105" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="600">Scan
+                            Algorítmico</text>
+                        <text x="155" y="105" text-anchor="middle" fill="#8b5cf6" font-size="9"
+                            font-weight="600">Cliente Exacto</text>
+                    </svg>
+                </div>
             </div>
 
-            <div class="card">
-                <h3>💬 2. Explicar la Oferta (Consideración)</h3>
+            <div class="card" style="padding-bottom: 0; border-color: #60a5fa;">
+                <img src="capturar_intencion.png" alt="Consideración a través de ChatBots" class="context-image"
+                    loading="lazy">
+                <h3 style="color: #60a5fa; margin-top: 0;">💬 2. Explicar la Oferta (Consideración)</h3>
                 <p>A esto le llama la teoría del embudo "Consideración" o "Deseo". Antes de pagar, la persona necesita
                     evaluar si necesita el producto y saber el precio.</p>
                 <ul>
@@ -849,10 +972,38 @@
                     <li><strong>La Presentación:</strong> Tu robot responde al instante presentando de qué trata tu
                         oferta, los beneficios principales y respondiendo sus miedos 24/7 de forma educada.</li>
                 </ul>
+                <div class="evo-svg-container"
+                    style="border-radius: 0.75rem 0.75rem 0 0; margin-top: auto; border-bottom: none;">
+                    <svg viewBox="0 0 200 120" width="100%" height="100%">
+                        <!-- Búsqueda/Interés -->
+                        <rect x="25" y="30" width="50" height="40" rx="6" fill="#1e293b" stroke="#cbd5e1"
+                            stroke-width="2" class="icon-float" />
+                        <text x="50" y="55" text-anchor="middle" font-size="16">💬</text>
+                        <text x="50" y="68" text-anchor="middle" fill="#94a3b8" font-size="8">"¿Precio?"</text>
+
+                        <!-- Conversión a Asistente IA via WhatsApp-->
+                        <path d="M 85 60 L 140 60" fill="none" stroke="#60a5fa" stroke-width="2" stroke-dasharray="4 4"
+                            style="animation: dataSync 1s linear infinite reverse;" />
+
+                        <!-- Asistente respondiendo y convenciendo -->
+                        <circle cx="155" cy="60" r="16" fill="#1e293b" stroke="#60a5fa" stroke-width="2"
+                            class="icon-pulse" />
+                        <text x="155" y="65" text-anchor="middle" font-size="14">🤖</text>
+                        <text x="155" y="86" text-anchor="middle" fill="#60a5fa" font-size="8"
+                            font-weight="bold">Convence</text>
+
+                        <!-- Etiquetas -->
+                        <text x="50" y="105" text-anchor="middle" fill="#f8fafc" font-size="9" font-weight="600">Muestra
+                            Interés</text>
+                        <text x="155" y="105" text-anchor="middle" fill="#60a5fa" font-size="9"
+                            font-weight="600">Presenta Oferta</text>
+                    </svg>
+                </div>
             </div>
 
-            <div class="card">
-                <h3>💰 3. Cerrar la Venta (El Cobro)</h3>
+            <div class="card" style="padding-bottom: 0; border-color: #10b981;">
+                <img src="convertir.png" alt="Cierre de Venta con IA" class="context-image" loading="lazy">
+                <h3 style="color: #10b981; margin-top: 0;">💰 3. Cerrar la Venta (El Cobro)</h3>
                 <p>El bloque sagrado o "Fondo del Embudo". Aquí la gente toma la acción e intercambia su dinero por una
                     solución final.</p>
                 <ul>
@@ -861,6 +1012,36 @@
                     <li><strong>Sencillo y Limpio:</strong> Llegan a una web de un solo botón de compra o a tu WhatsApp
                         listos para hacer la transferencia.</li>
                 </ul>
+                <div class="evo-svg-container"
+                    style="border-radius: 0.75rem 0.75rem 0 0; margin-top: auto; border-bottom: none;">
+                    <svg viewBox="0 0 200 120" width="100%" height="100%">
+                        <!-- Chat WhatsApp resolviendo de IA a pago -->
+                        <rect x="25" y="30" width="50" height="40" rx="6" fill="#1e293b" stroke="#25d366"
+                            stroke-width="2" class="icon-float" />
+                        <text x="50" y="55" text-anchor="middle" font-size="18">💬</text>
+                        <circle cx="40" cy="78" r="3" fill="#10b981" style="animation: typingDot 1.4s infinite 0s;" />
+                        <circle cx="50" cy="78" r="3" fill="#10b981" style="animation: typingDot 1.4s infinite 0.2s;" />
+                        <circle cx="60" cy="78" r="3" fill="#10b981" style="animation: typingDot 1.4s infinite 0.4s;" />
+
+                        <!-- Proceso a URL cobro -->
+                        <path d="M 85 50 C 105 50, 115 50, 135 50" fill="none" stroke="#10b981" stroke-width="2"
+                            stroke-dasharray="4 4" style="animation: dataSync 1s linear infinite reverse;" />
+                        <text x="110" y="45" text-anchor="middle" font-size="12">🔗</text>
+
+                        <!-- Cobro Automático -->
+                        <rect x="145" y="30" width="40" height="50" rx="6" fill="#1e293b" stroke="#10b981"
+                            stroke-width="2" />
+                        <text x="165" y="55" text-anchor="middle" font-size="20" class="icon-pulse">💰</text>
+                        <text x="165" y="72" text-anchor="middle" fill="#10b981" font-size="9"
+                            font-weight="bold">Pagado</text>
+
+                        <!-- Etiquetas -->
+                        <text x="50" y="105" text-anchor="middle" fill="#25d366" font-size="9" font-weight="600">Link de
+                            Checkout</text>
+                        <text x="165" y="105" text-anchor="middle" fill="#10b981" font-size="9" font-weight="600">Cobro
+                            Listo</text>
+                    </svg>
+                </div>
             </div>
         </div>
     </section>
