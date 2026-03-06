@@ -310,9 +310,11 @@
 
         /* Boton Atrás */
         .nav-back {
-            position: absolute;
-            top: 1.5rem;
-            left: 2rem;
+            position: static;
+            padding: 1rem 2rem;
+            width: 100%;
+            box-sizing: border-box;
+            display: inline-block;
             color: var(--text-muted);
             text-decoration: none;
             font-size: 0.9rem;
@@ -322,6 +324,34 @@
 
         .nav-back:hover {
             color: #fff;
+        }
+
+        /* Mobile Adjustments for Layout */
+        @media (max-width: 600px) {
+            .nav-back {
+                padding: 1rem;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+                padding: 1.2rem 1rem;
+            }
+
+            .header-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .panel {
+                padding: 1rem;
+            }
+
+            main {
+                padding: 1rem 0.5rem;
+            }
         }
     </style>
 
@@ -437,9 +467,7 @@
 </head>
 
 <body>
-    <a href="index.html" class="nav-back"
-        style="position: static; padding: 1rem 2rem; width: 100%; box-sizing: border-box; display: inline-block;">←
-        Volver al Ecosistema</a>
+    <a href="index.html" class="nav-back">← Volver al Ecosistema</a>
 
     <header>
         <div class="header-title">
