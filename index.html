@@ -905,12 +905,12 @@
         }
 
         .ai-chat-header .badge {
-            background: rgba(16, 185, 129, 0.2);
-            color: #10b981;
+            background: rgba(34, 211, 238, 0.15);
+            color: #22d3ee;
             font-size: 0.7rem;
             padding: 2px 6px;
             border-radius: 4px;
-            border: 1px solid rgba(16, 185, 129, 0.3);
+            border: 1px solid rgba(34, 211, 238, 0.3);
         }
 
         .close-chat {
@@ -959,6 +959,7 @@
             border-bottom-left-radius: 0.25rem;
             align-self: flex-start;
             border: 1px solid #334155;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .chat-user {
@@ -1057,8 +1058,41 @@
                 right: 1rem;
             }
         }
+
+        .ai-widget-tooltip {
+            position: fixed;
+            bottom: 6.5rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+            z-index: 9998;
+            pointer-events: none;
+            animation: float-tooltip 3s ease-in-out infinite;
+            white-space: nowrap;
+        }
+
+        .ai-widget-tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 20px;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid #3b82f6;
+        }
+
+        @keyframes float-tooltip {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
     </style>
 
+    <div class="ai-widget-tooltip" id="aiTooltip">¿En qué te puedo ayudar?</div>
     <button class="ai-widget-btn" id="aiBtn" aria-label="Abrir asistente">
         <svg viewBox="0 0 24 24">
             <path
@@ -1068,7 +1102,9 @@
 
     <div class="ai-chat-panel" id="aiChatPanel">
         <div class="ai-chat-header">
-            <h3>Sigma <span class="badge">Llama 3 (Edge)</span></h3>
+            <h3 style="display: flex; align-items: center; gap: 0.8rem;">
+                Sigma <span class="badge">Llama 3.3 (Edge)</span>
+            </h3>
             <button class="close-chat" id="closeChat">×</button>
         </div>
         <div class="ai-chat-body" id="chatBody">
@@ -1105,12 +1141,14 @@
             chatInput.focus();
             // Ocultar botón flotante para evitar que se superponga al botón "enviar" en celulares
             aiBtn.style.display = 'none';
+            document.getElementById('aiTooltip').style.display = 'none';
         });
 
         closeChat.addEventListener('click', () => {
             aiChatPanel.classList.remove('active');
             // Reaparecer el botón flotante
             aiBtn.style.display = 'flex';
+            document.getElementById('aiTooltip').style.display = 'block';
         });
 
         async function sendMessage() {
@@ -1190,7 +1228,7 @@
             // Convertir **negritas** a <b>negritas</b>
             html = html.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
             // Convertir [texto](url) a <a href="url" target="_blank">texto</a>
-            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color:#10b981; text-decoration:underline;">$1</a>');
+            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color:#22d3ee; text-decoration:underline; font-weight:600;">$1</a>');
             // Convertir saltos de linea a <br>
             html = html.replace(/\n/g, '<br>');
             return html;
