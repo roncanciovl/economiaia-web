@@ -426,23 +426,36 @@
                 <div class="evo-card">
                     <img src="dolor_pago.png" alt="Controlar el Dolor del Pago en Economía IA" class="context-image"
                         loading="lazy">
-                    <p class="new" style="color: #ec4899;">🧠 3. Suavizar la Inversión (Reducir Fricción)</p>
-                    <p class="desc">La toma de decisión requiere reducir la resistencia natural a invertir. Diseñamos
-                        arquitecturas de precios que guían al usuario hacia tu opción de mayor impacto de manera lógica
-                        y transparente.<br><br><strong>Rol de la
-                            IA:</strong> Si el prospecto necesita mayor seguridad, el Agente interviene estructurando
-                        facilidades o alternativas estratégicas en tiempo real, facilitando la decisión sin rogar el
-                        cierre.</p>
+                    <p class="new" style="color: #ec4899;">🧠 3. Hackea el Dolor de Pagar (El Señuelo)</p>
+                    <p class="desc">A nadie le gusta ver salir plata de su cuenta. Por eso, en lugar de ponerles un solo
+                        precio enorme y asustarlos, debes jugar con las opciones que ofreces. Si les pones un combo
+                        pequeño de tu producto a $4, uno mediano inútil a $7 y el gigante "VIP" a $8, la gente deja de
+                        sufrir por gastar y dice: *"¡Por 1 dólar más me llevo lo máximo, qué oferton!"*. Se enfocan en
+                        ganar.<br><br><strong>Rol de la
+                            IA:</strong> La IA lee el chat y detecta si el prospecto duda en el precio. En lugar de
+                        dejar que se enfríe y se vaya, le lanza instantáneamente opciones de pago alternativas, un plan
+                        de cuotas, o le recuerda la oferta ganadora. No pierdes dinero por fricción de caja.</p>
                     <div class="evo-svg-container">
                         <svg viewBox="0 0 200 120" width="100%" height="100%">
                             <rect x="80" y="45" width="40" height="55" rx="3" fill="#1e293b" stroke="#64748b"
                                 stroke-width="1.5" stroke-dasharray="2 2" />
                             <text x="100" y="35" text-anchor="middle" fill="#ef4444" font-size="10"
                                 text-decoration="line-through">$7</text>
+                            <text x="100" y="75" text-anchor="middle" font-size="16" opacity="0.6">🍿</text>
+                            <text x="100" y="112" text-anchor="middle" fill="#64748b" font-size="7">El Engaño</text>
+
+                            <rect x="30" y="60" width="25" height="40" rx="3" fill="#1e293b" stroke="#64748b"
+                                stroke-width="1.5" />
+                            <text x="42.5" y="50" text-anchor="middle" fill="#94a3b8" font-size="10">$4</text>
+                            <text x="42.5" y="85" text-anchor="middle" font-size="12">🍿</text>
+
                             <rect x="140" y="30" width="40" height="70" rx="4" fill="#1e293b" stroke="#ec4899"
                                 stroke-width="2.5" class="icon-pulse" />
                             <text x="160" y="20" text-anchor="middle" fill="#ec4899" font-size="14"
                                 font-weight="bold">$8</text>
+                            <text x="160" y="70" text-anchor="middle" font-size="24" class="icon-float">🍿</text>
+                            <text x="160" y="112" text-anchor="middle" fill="#ec4899" font-size="8"
+                                font-weight="bold">¡VIP!</text>
                         </svg>
                     </div>
                 </div>
@@ -480,6 +493,53 @@
                                 font-weight="bold">$1,000</text>
                             <text x="167.5" y="90" text-anchor="middle" fill="#8b5cf6" font-size="7">Inversión</text>
                         </svg>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 5: Urgencia y Escasez (FOMO) -->
+                <div class="evo-card">
+                    <img src="escasez_urgencia_promo.png" alt="Reloj con Urgencia y Escasez en Economía IA"
+                        class="context-image" loading="lazy">
+                    <p class="new" style="color: #ef4444;">⏳ 5. Urgencia y Escasez (El FOMO)</p>
+                    <p class="desc">Al ser humano le duele mucho más perder una oportunidad que ganar algo nuevo. Un
+                        descuento eterno no sirve de nada; una promoción relámpago que expira a la medianoche genera
+                        compras impulsivas por el miedo a quedarse por fuera.<br><br><strong>Rol de la
+                            IA:</strong> El Agente IA en WhatsApp crea un <strong style="color: #ef4444;">enlace de
+                            pago</strong> que se autodestruye en 2 horas. Le dice al cliente: "Te aparté este bono
+                        especial, pero la oferta expira pronto". La IA presiona al cliente con precisión suiza sin que
+                        tú te veas necesitado o ruegues la venta.</p>
+                    <div class="evo-svg-container">
+                        <svg viewBox="0 0 200 120" width="100%" height="100%">
+                            <!-- Reloj de Arena -->
+                            <path d="M 60 30 L 100 65 L 140 30 Z" fill="rgba(239, 68, 68, 0.4)" stroke="#ef4444"
+                                stroke-width="2" />
+                            <path d="M 60 100 L 100 65 L 140 100 Z" fill="rgba(239, 68, 68, 0.1)" stroke="#ef4444"
+                                stroke-width="2" />
+
+                            <!-- Arena Cayendo -->
+                            <line x1="100" y1="65" x2="100" y2="85" stroke="#ef4444" stroke-width="2"
+                                stroke-dasharray="2 2" style="animation: dropSand 1s infinite linear;" />
+
+                            <text x="100" y="20" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="bold"
+                                class="icon-pulse">Expira en 01:59:00</text>
+
+                            <!-- Botón Urgente -->
+                            <rect x="65" y="90" width="70" height="20" rx="4" fill="#1e293b" stroke="#ef4444"
+                                stroke-width="1.5" />
+                            <text x="100" y="103" text-anchor="middle" fill="#ef4444" font-size="8"
+                                font-weight="bold">Pagar Ahora</text>
+                        </svg>
+                        <style>
+                            @keyframes dropSand {
+                                0% {
+                                    stroke-dashoffset: 0;
+                                }
+
+                                100% {
+                                    stroke-dashoffset: 4;
+                                }
+                            }
+                        </style>
                     </div>
                 </div>
             </div>
