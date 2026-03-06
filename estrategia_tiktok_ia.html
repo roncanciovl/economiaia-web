@@ -199,8 +199,8 @@
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
-            opacity: 0;
-            transform: translateY(20px);
+            opacity: 1;
+            transform: translateY(0);
             transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -486,72 +486,6 @@
             box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
-        /* ===== SCROLL REVEAL (CSS-only, triggered by JS class) ===== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: transform, opacity;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-60px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: transform, opacity;
-        }
-
-        .reveal-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .reveal-right {
-            opacity: 0;
-            transform: translateX(60px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: transform, opacity;
-        }
-
-        .reveal-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .reveal-scale {
-            opacity: 0;
-            transform: scale(0.85);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: transform, opacity;
-        }
-
-        .reveal-scale.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* Stagger delays */
-        .stagger-1 {
-            transition-delay: 0.1s !important;
-        }
-
-        .stagger-2 {
-            transition-delay: 0.25s !important;
-        }
-
-        .stagger-3 {
-            transition-delay: 0.4s !important;
-        }
-
-        .stagger-4 {
-            transition-delay: 0.55s !important;
-        }
-
         /* SVG Animations */
         @keyframes flowData {
             to {
@@ -767,26 +701,26 @@
 
     <!-- Animated Stats Bar -->
     <div class="stats-bar">
-        <div class="stat-item reveal stagger-1">
+        <div class="stat-item">
             <span class="stat-number" data-target="1800">0</span>
             <span class="stat-label">M Usuarios Activos</span>
         </div>
-        <div class="stat-item reveal stagger-2">
+        <div class="stat-item">
             <span class="stat-number" data-target="95">0</span>
             <span class="stat-label">Min/Día Promedio</span>
         </div>
-        <div class="stat-item reveal stagger-3">
+        <div class="stat-item">
             <span class="stat-number" data-target="70">0</span>
             <span class="stat-label">% Descubrimiento</span>
         </div>
-        <div class="stat-item reveal stagger-4">
+        <div class="stat-item">
             <span class="stat-number" data-target="2">0</span>
             <span class="stat-label">× Mayor Engagement</span>
         </div>
     </div>
 
     <!-- Contexto y Visión de Alto Nivel -->
-    <section class="reveal">
+    <section>
         <div class="highlight-box">
             <h4>El Paradigma del "Zero-Targeting"</h4>
             <p>
@@ -802,7 +736,7 @@
     <div class="section-glow-connector"></div>
 
     <!-- 1. El Nuevo Funnel de Ventas en TikTok -->
-    <section class="reveal">
+    <section>
         <h2 class="section-title"><span class="section-number">1</span> El Embudo Híbrido: De Extraño a Comprador</h2>
 
         <div class="svg-container" style="height: 380px;">
@@ -870,7 +804,7 @@
         </div>
 
         <div class="grid-2">
-            <div class="card reveal-left stagger-1">
+            <div class="card">
                 <h3>🚀 1. Atracción: Orgánico Amplificado (Spark Ads)</h3>
                 <p>El motor empieza probando contenido orgánicamente y escalando a los ganadores con presupuesto.</p>
                 <ul>
@@ -885,7 +819,7 @@
                 </ul>
             </div>
 
-            <div class="card reveal-right stagger-2">
+            <div class="card">
                 <h3>💬 2. Interacción: Automatización por DMs (ManyChat)</h3>
                 <p>El puente entre un lead curioso y un cierre de ventas está en la capacidad de respuesta inmediata.
                 </p>
@@ -905,7 +839,7 @@
     <div class="section-glow-connector"></div>
 
     <!-- 2. Estrategia Paga vs Orgánica (El Bucle de IA) -->
-    <section class="reveal">
+    <section>
         <h2 class="section-title"><span class="section-number">2</span> Estrategia Híbrida: Organic + TikTok Smart+</h2>
         <p style="color: #cbd5e1; font-size: 1.05rem; margin-top: -1rem; margin-bottom: 2rem;">
             No puedes depender solo del azar. Los negocios que escalan usan una estrategia probada: suben orgánico,
@@ -914,7 +848,7 @@
         </p>
 
         <div class="grid-2">
-            <div class="card reveal-left stagger-1">
+            <div class="card">
                 <h3>⚡ Spark Ads: Amplificar lo que ya sirve</h3>
                 <p> En vez de lanzar un arte promocional, usas <strong>Spark Ads</strong>, que es pagar para mostrar un
                     video orgánico real (tuyo o de un influencer) haciéndolo parecer 100% natural pero dándole un empuje
@@ -937,7 +871,7 @@
                 </div>
             </div>
 
-            <div class="card reveal-right stagger-2">
+            <div class="card">
                 <h3>🧠 TikTok Smart+ & Pixel CAPI</h3>
                 <p>TikTok ha lanzado herramientas de IA muy similares a Advantage+ de Meta. Trabajan basándose en
                     mediciones de conversión precisas.</p>
@@ -957,7 +891,7 @@
     <div class="section-glow-connector"></div>
 
     <!-- 3. Evolución del Funnel de Cierre y Retención -->
-    <section class="reveal">
+    <section>
         <h2 class="section-title"><span class="section-number">3</span> Evolución del Funnel: Captura de Email vs. DM
             Automation</h2>
         <p style="color: #cbd5e1; font-size: 1.05rem; margin-top: -1rem; margin-bottom: 2rem;">
@@ -968,7 +902,7 @@
 
         <div class="grid-2">
             <!-- Opción A: Funnel Clásico (Beacons + Email) -->
-            <div class="card reveal-left stagger-1" style="border-color: #f59e0b;">
+            <div class="card" style="border-color: #f59e0b;">
                 <h3 style="color: #f59e0b;">📧 El "Link in Bio" Clásico</h3>
                 <p><strong>Ruta:</strong> Video ➔ Perfil ➔ Beacons.ai ➔ Landing Page ➔ Captura Email.</p>
 
@@ -1010,7 +944,7 @@
             </div>
 
             <!-- Opción B: Funnel Moderno (ManyChat + WhatsApp) -->
-            <div class="card reveal-right stagger-2" style="border-color: #10b981;">
+            <div class="card" style="border-color: #10b981;">
                 <h3 style="color: #10b981;">🤖 El Funnel SOTA 2026 (Mensajería)</h3>
                 <p><strong>Ruta:</strong> Video ➔ DM Directo (IA) ➔ Link Instantáneo a WhatsApp ➔ Cierre de caja.</p>
 
@@ -1066,7 +1000,7 @@
     <div class="section-glow-connector"></div>
 
     <!-- 4. Spark Ads vs ManyChat DMs -->
-    <section class="reveal">
+    <section>
         <h2 class="section-title"><span class="section-number">4</span> El Botón sobre el Video: Spark Ads vs DMs
             Orgánicos</h2>
         <p style="color: #cbd5e1; font-size: 1.05rem; margin-top: -1rem; margin-bottom: 2rem;">
@@ -1077,7 +1011,7 @@
 
         <div class="grid-2">
             <!-- La Vía Directa (Spark Ads) -->
-            <div class="card reveal-left stagger-1" style="border-color: #f43f5e;">
+            <div class="card" style="border-color: #f43f5e;">
                 <h3 style="color: #f43f5e;">💸 La Vía Rápida: Spark Ads (El Botón)</h3>
                 <p>TikTok <strong>ya no permite</strong> que pongas un "sticker" con un enlace hacia afuera (URL
                     externa) en tus videos orgánicos gratuitos. La única forma de tener esa barra hermosa de "Comprar
@@ -1097,7 +1031,7 @@
             </div>
 
             <!-- La Vía Conversacional (ManyChat) -->
-            <div class="card reveal-right stagger-2" style="border-color: #10b981;">
+            <div class="card" style="border-color: #10b981;">
                 <h3 style="color: #10b981;">🤖 La Vía de Alta Retención: ManyChat DMs</h3>
                 <p>En lugar de pagar publicidad por el link externo, subes el video orgánicamente y pides: <em>"Comenta
                         la palabra RESERVA"</em>. ManyChat les manda el link por chat interno.</p>
@@ -1117,7 +1051,7 @@
             </div>
         </div>
 
-        <div class="highlight-box reveal-scale"
+        <div class="highlight-box"
             style="border-left-color: #f59e0b; margin-top: 3rem; background: linear-gradient(90deg, rgba(245, 158, 11, 0.1), rgba(15, 23, 42, 0.1));">
             <h4 style="color: #fbbf24;">¿Acaso la automatización (ManyChat) no agrega pasos innecesarios?</h4>
             <p style="color: #e2e8f0; font-size: 1.05rem;">
@@ -1130,677 +1064,664 @@
                 cuando el cliente está listo para meter su tarjeta.
             </p>
         </div>
+    </section>
 
-        <!-- Footer Economía IA -->
-        <style>
+    <!-- Footer Economía IA -->
+    <style>
+        .footer-premium {
+            width: calc(100% - 2rem);
+            max-width: 1000px;
+            margin: 4rem auto 2rem auto;
+            padding: 3rem 2rem;
+            border-radius: 1.5rem;
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.6) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+        }
+
+        .footer-premium-brand {
+            display: inline-block;
+            color: #f8fafc;
+            font-size: 1rem;
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
+
+        .footer-premium-brand:hover {
+            opacity: 1;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-premium-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-link-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 80px;
+        }
+
+        .footer-link-item .icon-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        /* Hover colors */
+        .footer-link-item.tiktok:hover {
+            color: #f8fafc;
+        }
+
+        .footer-link-item.tiktok:hover .icon-wrap {
+            background: rgba(255, 0, 80, 0.1);
+            border-color: rgba(255, 0, 80, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .footer-link-item.whatsapp:hover {
+            color: #f8fafc;
+        }
+
+        .footer-link-item.whatsapp:hover .icon-wrap {
+            background: rgba(37, 211, 102, 0.1);
+            border-color: rgba(37, 211, 102, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .footer-link-item.consultoria:hover {
+            color: #f8fafc;
+        }
+
+        .footer-link-item.consultoria:hover .icon-wrap {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .footer-link-item.bio:hover {
+            color: #f8fafc;
+        }
+
+        .footer-link-item.bio:hover .icon-wrap {
+            background: rgba(250, 204, 21, 0.1);
+            border-color: rgba(250, 204, 21, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .footer-link-item.trafico:hover {
+            color: #34d399;
+        }
+
+        .footer-link-item.trafico .icon-wrap {
+            background: rgba(16, 185, 129, 0.05);
+            border-color: rgba(16, 185, 129, 0.2);
+        }
+
+        .footer-link-item.trafico:hover .icon-wrap {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.6);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 600px) {
             .footer-premium {
-                width: calc(100% - 2rem);
-                max-width: 1000px;
-                margin: 4rem auto 2rem auto;
-                padding: 3rem 2rem;
-                border-radius: 1.5rem;
-                background: linear-gradient(180deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.6) 100%);
-                border: 1px solid rgba(255, 255, 255, 0.05);
-                text-align: center;
-                backdrop-filter: blur(10px);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-                box-sizing: border-box;
-            }
-
-            .footer-premium-brand {
-                display: inline-block;
-                color: #f8fafc;
-                font-size: 1rem;
-                font-weight: 800;
-                text-decoration: none;
-                text-transform: uppercase;
-                letter-spacing: 0.15em;
-                transition: all 0.3s ease;
-                opacity: 0.9;
-            }
-
-            .footer-premium-brand:hover {
-                opacity: 1;
-                text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+                padding: 2.5rem 1rem;
+                margin: 3rem auto 1.5rem auto;
+                border-radius: 1rem;
             }
 
             .footer-premium-links {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 1.5rem;
-                flex-wrap: wrap;
-                margin-bottom: 2.5rem;
-            }
-
-            .footer-link-item {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 0.6rem;
-                color: #94a3b8;
-                text-decoration: none;
-                font-size: 0.75rem;
-                font-weight: 600;
-                transition: all 0.3s ease;
-                width: 80px;
-            }
-
-            .footer-link-item .icon-wrap {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 44px;
-                height: 44px;
-                border-radius: 12px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid rgba(255, 255, 255, 0.08);
-                transition: all 0.3s ease;
-            }
-
-            /* Hover colors */
-            .footer-link-item.tiktok:hover {
-                color: #f8fafc;
-            }
-
-            .footer-link-item.tiktok:hover .icon-wrap {
-                background: rgba(255, 0, 80, 0.1);
-                border-color: rgba(255, 0, 80, 0.4);
-                transform: translateY(-3px);
-            }
-
-            .footer-link-item.whatsapp:hover {
-                color: #f8fafc;
-            }
-
-            .footer-link-item.whatsapp:hover .icon-wrap {
-                background: rgba(37, 211, 102, 0.1);
-                border-color: rgba(37, 211, 102, 0.4);
-                transform: translateY(-3px);
-            }
-
-            .footer-link-item.consultoria:hover {
-                color: #f8fafc;
-            }
-
-            .footer-link-item.consultoria:hover .icon-wrap {
-                background: rgba(59, 130, 246, 0.1);
-                border-color: rgba(59, 130, 246, 0.5);
-                transform: translateY(-3px);
-            }
-
-            .footer-link-item.bio:hover {
-                color: #f8fafc;
-            }
-
-            .footer-link-item.bio:hover .icon-wrap {
-                background: rgba(250, 204, 21, 0.1);
-                border-color: rgba(250, 204, 21, 0.4);
-                transform: translateY(-3px);
-            }
-
-            .footer-link-item.trafico:hover {
-                color: #34d399;
-            }
-
-            .footer-link-item.trafico .icon-wrap {
-                background: rgba(16, 185, 129, 0.05);
-                border-color: rgba(16, 185, 129, 0.2);
-            }
-
-            .footer-link-item.trafico:hover .icon-wrap {
-                background: rgba(16, 185, 129, 0.1);
-                border-color: rgba(16, 185, 129, 0.6);
-                transform: translateY(-3px);
-            }
-
-            @media (max-width: 600px) {
-                .footer-premium {
-                    padding: 2.5rem 1rem;
-                    margin: 3rem auto 1.5rem auto;
-                    border-radius: 1rem;
-                }
-
-                .footer-premium-links {
-                    gap: 1rem;
-                }
-
-                .footer-link-item {
-                    width: 70px;
-                    font-size: 0.65rem;
-                }
-
-                .footer-link-item .icon-wrap {
-                    width: 38px;
-                    height: 38px;
-                }
-
-                .footer-premium-brand {
-                    font-size: 0.9rem;
-                }
-            }
-        </style>
-        <footer class="footer-premium">
-            <div style="margin-bottom: 2.5rem;">
-                <a href="index.html" class="footer-premium-brand">
-                    ECONOMÍA IA <span style="color: #3b82f6;">ECOSISTEMA</span>
-                </a>
-                <div
-                    style="height: 2px; width: 40px; background: linear-gradient(90deg, #22d3ee, #3b82f6); margin: 0.8rem auto 0; border-radius: 2px;">
-                </div>
-            </div>
-
-            <div class="footer-premium-links">
-                <!-- TikTok -->
-                <a href="https://www.tiktok.com/@economiaia" target="_blank" rel="noopener noreferrer"
-                    class="footer-link-item tiktok">
-                    <div class="icon-wrap">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743 2.897 2.897 0 0 1 3.103-4.488v-3.44a6.324 6.324 0 0 0-5.236 10.517 6.33 6.33 0 0 0 10.78-4.394V7.727a8.21 8.21 0 0 0 5.207 1.754V6.03a4.75 4.75 0 0 1-1.438-.344Z" />
-                        </svg>
-                    </div>
-                    <span>TikTok</span>
-                </a>
-
-                <!-- WhatsApp -->
-                <a href="https://wa.me/573043656226?text=Hola,%20vengo%20del%20Ecosistema%20IA.%20Quiero%20más%20información."
-                    target="_blank" rel="noopener noreferrer" class="footer-link-item whatsapp">
-                    <div class="icon-wrap">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.670.15-.197.297-.767.966-.940 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.390-1.475-.883-.788-1.480-1.761-1.653-2.059-.173-.297-.018-.458.130-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.050-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.500-.669-.510-.173-.008-.371-.010-.570-.01-.198 0-.520.074-.792.372-.272.297-1.040 1.016-1.040 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.200 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.570-.347m-4.752 5.093h-.008c-1.247 0-2.47-.336-3.541-.970l-.253-.149-2.632.691.704-2.569-.163-.260c-.697-1.110-1.066-2.393-1.066-3.714 0-3.804 3.096-6.901 6.904-6.901 1.842 0 3.574.717 4.876 2.020 1.301 1.303 2.019 3.036 2.019 4.879 0 3.805-3.097 6.901-6.904 6.901m9.609-12.719C20.373 4.708 17.803 3.500 15.067 3.500c-5.863 0-10.634 4.771-10.634 10.635 0 1.873.488 3.702 1.414 5.304L4.000 26.500l7.150-1.875c1.554.848 3.305 1.297 5.087 1.300 5.861 0 10.632-4.772 10.632-10.636 0-2.840-1.105-5.511-3.113-7.518" />
-                        </svg>
-                    </div>
-                    <span>WhatsApp</span>
-                </a>
-
-                <!-- Consultoría -->
-                <a href="https://wa.me/573043656226?text=Hola,%20quiero%20recibir%20consultoría%20sobre%20IA%20y%20Agentes%20Conversacionales."
-                    target="_blank" rel="noopener noreferrer" class="footer-link-item consultoria">
-                    <div class="icon-wrap">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
-                    </div>
-                    <span>Consultoría</span>
-                </a>
-
-                <!-- Bio / Home -->
-                <a href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer"
-                    class="footer-link-item bio">
-                    <div class="icon-wrap">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                        </svg>
-                    </div>
-                    <span>Bio/Home</span>
-                </a>
-
-                <!-- Tráfico Real -->
-                <a href="trafico_llm_seo.html" target="_blank" rel="noopener noreferrer"
-                    class="footer-link-item trafico">
-                    <div class="icon-wrap">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                        </svg>
-                    </div>
-                    <span>Tráfico Real</span>
-                </a>
-            </div>
-
-            <p style="color: #64748b; font-size: 0.75rem; margin: 0; font-weight: 500; letter-spacing: 0.05em;">© 2026
-                Economía IA ™</p>
-        </footer>
-
-
-        <!-- Asistente IA "Sigma" Widget -->
-        <style>
-            .ai-widget-btn {
-                position: fixed;
-                bottom: 2rem;
-                right: 2rem;
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                background: linear-gradient(135deg, #10b981, #3b82f6);
-                border: 2px solid rgba(255, 255, 255, 0.2);
-                box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
-                cursor: pointer;
-                z-index: 9999;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: all 0.3s ease;
-            }
-
-            .ai-widget-btn:hover {
-                transform: scale(1.1);
-                box-shadow: 0 15px 35px rgba(59, 130, 246, 0.6);
-            }
-
-            .ai-widget-btn svg {
-                width: 30px;
-                height: 30px;
-                fill: white;
-                animation: float-icon 3s ease-in-out infinite;
-            }
-
-            @keyframes float-icon {
-
-                0%,
-                100% {
-                    transform: translateY(0);
-                }
-
-                50% {
-                    transform: translateY(-3px);
-                }
-            }
-
-            .ai-chat-panel {
-                position: fixed;
-                bottom: 6rem;
-                right: 2rem;
-                width: 350px;
-                height: 500px;
-                max-height: 80vh;
-                background: #0f172a;
-                border: 1px solid #334155;
-                border-radius: 1rem;
-                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-                display: flex;
-                flex-direction: column;
-                z-index: 9998;
-                opacity: 0;
-                pointer-events: none;
-                transform: translateY(20px);
-                transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                overflow: hidden;
-            }
-
-            .ai-chat-panel.active {
-                opacity: 1;
-                pointer-events: all;
-                transform: translateY(0);
-            }
-
-            .ai-chat-header {
-                background: linear-gradient(90deg, #1e293b, #0f172a);
-                padding: 1rem;
-                border-bottom: 1px solid #334155;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .ai-chat-header h3 {
-                margin: 0;
-                font-size: 1rem;
-                color: #f8fafc;
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-            }
-
-            .ai-chat-header .badge {
-                background: rgba(16, 185, 129, 0.2);
-                color: #10b981;
-                font-size: 0.7rem;
-                padding: 2px 6px;
-                border-radius: 4px;
-                border: 1px solid rgba(16, 185, 129, 0.3);
-            }
-
-            .close-chat {
-                background: transparent;
-                border: none;
-                color: #94a3b8;
-                cursor: pointer;
-                font-size: 1.2rem;
-                transition: color 0.2s;
-            }
-
-            .close-chat:hover {
-                color: #f1f5f9;
-            }
-
-            .ai-chat-body {
-                flex-grow: 1;
-                padding: 1rem;
-                overflow-y: auto;
-                display: flex;
-                flex-direction: column;
                 gap: 1rem;
             }
 
-            .chat-bubble {
-                max-width: 85%;
-                padding: 0.8rem 1rem;
-                border-radius: 1rem;
+            .footer-link-item {
+                width: 70px;
+                font-size: 0.65rem;
+            }
+
+            .footer-link-item .icon-wrap {
+                width: 38px;
+                height: 38px;
+            }
+
+            .footer-premium-brand {
                 font-size: 0.9rem;
-                line-height: 1.4;
             }
-
-            .chat-bot {
-                background: #1e293b;
-                color: #e2e8f0;
-                border-bottom-left-radius: 0.25rem;
-                align-self: flex-start;
-                border: 1px solid #334155;
-            }
-
-            .chat-user {
-                background: #3b82f6;
-                color: #fff;
-                border-bottom-right-radius: 0.25rem;
-                align-self: flex-end;
-            }
-
-            .ai-chat-input-area {
-                padding: 1rem;
-                border-top: 1px solid #334155;
-                display: flex;
-                gap: 0.5rem;
-                background: #0f172a;
-            }
-
-            .ai-chat-input-area input {
-                flex-grow: 1;
-                background: #1e293b;
-                border: 1px solid #334155;
-                color: #fff;
-                padding: 0.7rem 1rem;
-                border-radius: 2rem;
-                outline: none;
-                font-family: inherit;
-            }
-
-            .ai-chat-input-area input:focus {
-                border-color: #3b82f6;
-            }
-
-            .ai-chat-input-area button {
-                background: #3b82f6;
-                color: white;
-                border: none;
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: background 0.2s;
-                flex-shrink: 0;
-            }
-
-            .ai-chat-input-area button:hover {
-                background: #2563eb;
-            }
-
-            .typing-indicator {
-                display: flex;
-                gap: 4px;
-                padding: 0.5rem 1rem;
-                background: #1e293b;
-                border-radius: 1rem;
-                width: fit-content;
-                align-self: flex-start;
-                border-bottom-left-radius: 0.25rem;
-                border: 1px solid #334155;
-            }
-
-            .typing-dot {
-                width: 6px;
-                height: 6px;
-                background: #94a3b8;
-                border-radius: 50%;
-                animation: typing 1.4s infinite ease-in-out;
-            }
-
-            .typing-dot:nth-child(1) {
-                animation-delay: 0s;
-            }
-
-            .typing-dot:nth-child(2) {
-                animation-delay: 0.2s;
-            }
-
-            .typing-dot:nth-child(3) {
-                animation-delay: 0.4s;
-            }
-
-            @keyframes typing {
-
-                0%,
-                100% {
-                    transform: translateY(0);
-                    opacity: 0.4;
-                }
-
-                50% {
-                    transform: translateY(-4px);
-                    opacity: 1;
-                }
-            }
-
-            @media (max-width: 600px) {
-                .ai-chat-panel {
-                    bottom: 0;
-                    right: 0;
-                    width: 100%;
-                    height: auto;
-                    max-height: 70vh;
-                    border-radius: 1rem 1rem 0 0;
-                    bottom: 0;
-                }
-
-                .ai-widget-btn {
-                    bottom: 1rem;
-                    right: 1rem;
-                }
-            }
-        </style>
-
-        <button class="ai-widget-btn" id="aiBtn" aria-label="Abrir asistente">
-            <svg viewBox="0 0 24 24">
-                <path
-                    d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.01 1.01 4.35l-1.35 4.02a.85.85 0 0 0 1.07 1.07l4.02-1.35A9.95 9.95 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.36 0-2.65-.29-3.83-.8l-.34-.14-2.82.94.94-2.82-.14-.34A7.95 7.95 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
-            </svg>
-        </button>
-
-        <div class="ai-chat-panel" id="aiChatPanel">
-            <div class="ai-chat-header">
-                <h3>Sigma <span class="badge">Llama 3 (Edge)</span></h3>
-                <button class="close-chat" id="closeChat">&times;</button>
-            </div>
-            <div class="ai-chat-body" id="chatBody">
-                <div class="chat-bubble chat-bot">
-                    ¿Quieres usar TikTok como un motor de ventas automático? Pregúntame cómo funciona.
-                </div>
-            </div>
-            <div class="ai-chat-input-area">
-                <input type="text" id="chatInput" placeholder="Escribe tu pregunta..." autocomplete="off">
-                <button id="sendBtn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="22" y1="2" x2="11" y2="13"></line>
-                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                    </svg>
-                </button>
+        }
+    </style>
+    <footer class="footer-premium">
+        <div style="margin-bottom: 2.5rem;">
+            <a href="index.html" class="footer-premium-brand">
+                ECONOMÍA IA <span style="color: #3b82f6;">ECOSISTEMA</span>
+            </a>
+            <div
+                style="height: 2px; width: 40px; background: linear-gradient(90deg, #22d3ee, #3b82f6); margin: 0.8rem auto 0; border-radius: 2px;">
             </div>
         </div>
 
-        <script>
-            const aiBtn = document.getElementById('aiBtn');
-            const aiChatPanel = document.getElementById('aiChatPanel');
-            const closeChat = document.getElementById('closeChat');
-            const chatInput = document.getElementById('chatInput');
-            const sendBtn = document.getElementById('sendBtn');
-            const chatBody = document.getElementById('chatBody');
+        <div class="footer-premium-links">
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@economiaia" target="_blank" rel="noopener noreferrer"
+                class="footer-link-item tiktok">
+                <div class="icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743 2.897 2.897 0 0 1 3.103-4.488v-3.44a6.324 6.324 0 0 0-5.236 10.517 6.33 6.33 0 0 0 10.78-4.394V7.727a8.21 8.21 0 0 0 5.207 1.754V6.03a4.75 4.75 0 0 1-1.438-.344Z" />
+                    </svg>
+                </div>
+                <span>TikTok</span>
+            </a>
 
-            let chatHistory = [];
+            <!-- WhatsApp -->
+            <a href="https://wa.me/573043656226?text=Hola,%20vengo%20del%20Ecosistema%20IA.%20Quiero%20más%20información."
+                target="_blank" rel="noopener noreferrer" class="footer-link-item whatsapp">
+                <div class="icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.670.15-.197.297-.767.966-.940 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.390-1.475-.883-.788-1.480-1.761-1.653-2.059-.173-.297-.018-.458.130-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.050-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.500-.669-.510-.173-.008-.371-.010-.570-.01-.198 0-.520.074-.792.372-.272.297-1.040 1.016-1.040 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.200 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.570-.347m-4.752 5.093h-.008c-1.247 0-2.47-.336-3.541-.970l-.253-.149-2.632.691.704-2.569-.163-.260c-.697-1.110-1.066-2.393-1.066-3.714 0-3.804 3.096-6.901 6.904-6.901 1.842 0 3.574.717 4.876 2.020 1.301 1.303 2.019 3.036 2.019 4.879 0 3.805-3.097 6.901-6.904 6.901m9.609-12.719C20.373 4.708 17.803 3.500 15.067 3.500c-5.863 0-10.634 4.771-10.634 10.635 0 1.873.488 3.702 1.414 5.304L4.000 26.500l7.150-1.875c1.554.848 3.305 1.297 5.087 1.300 5.861 0 10.632-4.772 10.632-10.636 0-2.840-1.105-5.511-3.113-7.518" />
+                    </svg>
+                </div>
+                <span>WhatsApp</span>
+            </a>
 
-            aiBtn.addEventListener('click', () => {
-                aiChatPanel.classList.add('active');
-                chatInput.focus();
-                aiBtn.style.display = 'none';
-            });
+            <!-- Consultoría -->
+            <a href="https://wa.me/573043656226?text=Hola,%20quiero%20recibir%20consultoría%20sobre%20IA%20y%20Agentes%20Conversacionales."
+                target="_blank" rel="noopener noreferrer" class="footer-link-item consultoria">
+                <div class="icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <span>Consultoría</span>
+            </a>
 
-            closeChat.addEventListener('click', () => {
-                aiChatPanel.classList.remove('active');
-                aiBtn.style.display = 'flex';
-            });
+            <!-- Bio / Home -->
+            <a href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer"
+                class="footer-link-item bio">
+                <div class="icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </div>
+                <span>Bio/Home</span>
+            </a>
 
-            async function sendMessage() {
-                const text = chatInput.value.trim();
-                if (!text) return;
+            <!-- Tráfico Real -->
+            <a href="trafico_llm_seo.html" target="_blank" rel="noopener noreferrer" class="footer-link-item trafico">
+                <div class="icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                </div>
+                <span>Tráfico Real</span>
+            </a>
+        </div>
 
-                addMessage(text, 'user');
-                chatInput.value = '';
+        <p style="color: #64748b; font-size: 0.75rem; margin: 0; font-weight: 500; letter-spacing: 0.05em;">© 2026
+            Economía IA ™</p>
+    </footer>
 
-                const typingId = showTyping();
 
-                try {
-                    const workerUrl = 'https://agente-sigma.henryroncanciovelandia.workers.dev/';
+    <!-- Asistente IA "Sigma" Widget -->
+    <style>
+        .ai-widget-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+            cursor: pointer;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
 
-                    let pageContext = "";
-                    const mainTags = document.querySelectorAll('h1, h2, h3, p');
-                    mainTags.forEach(tag => {
-                        if (!tag.closest('.ai-chat-panel')) {
-                            pageContext += tag.innerText + " \n";
-                        }
-                    });
-                    const cleanedContext = pageContext.substring(0, 4000);
+        .ai-widget-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.6);
+        }
 
-                    const response = await fetch(workerUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            user_question: text,
-                            page_context: cleanedContext,
-                            chat_history: chatHistory
-                        })
-                    });
+        .ai-widget-btn svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+            animation: float-icon 3s ease-in-out infinite;
+        }
 
-                    if (response.ok) {
-                        const data = await response.json();
-                        removeTyping(typingId);
-                        addMessage(data.answer, 'bot');
+        @keyframes float-icon {
 
-                        chatHistory.push({ role: "user", content: text });
-                        chatHistory.push({ role: "assistant", content: data.answer });
+            0%,
+            100% {
+                transform: translateY(0);
+            }
 
-                        if (chatHistory.length > 10) chatHistory = chatHistory.slice(chatHistory.length - 10);
-                    } else {
-                        throw new Error("Worker no conectado");
+            50% {
+                transform: translateY(-3px);
+            }
+        }
+
+        .ai-chat-panel {
+            position: fixed;
+            bottom: 6rem;
+            right: 2rem;
+            width: 350px;
+            height: 500px;
+            max-height: 80vh;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 1rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            z-index: 9998;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+
+        .ai-chat-panel.active {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0);
+        }
+
+        .ai-chat-header {
+            background: linear-gradient(90deg, #1e293b, #0f172a);
+            padding: 1rem;
+            border-bottom: 1px solid #334155;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ai-chat-header h3 {
+            margin: 0;
+            font-size: 1rem;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ai-chat-header .badge {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .close-chat {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+
+        .close-chat:hover {
+            color: #f1f5f9;
+        }
+
+        .ai-chat-body {
+            flex-grow: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chat-bubble {
+            max-width: 85%;
+            padding: 0.8rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .chat-bot {
+            background: #1e293b;
+            color: #e2e8f0;
+            border-bottom-left-radius: 0.25rem;
+            align-self: flex-start;
+            border: 1px solid #334155;
+        }
+
+        .chat-user {
+            background: #3b82f6;
+            color: #fff;
+            border-bottom-right-radius: 0.25rem;
+            align-self: flex-end;
+        }
+
+        .ai-chat-input-area {
+            padding: 1rem;
+            border-top: 1px solid #334155;
+            display: flex;
+            gap: 0.5rem;
+            background: #0f172a;
+        }
+
+        .ai-chat-input-area input {
+            flex-grow: 1;
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: #fff;
+            padding: 0.7rem 1rem;
+            border-radius: 2rem;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .ai-chat-input-area input:focus {
+            border-color: #3b82f6;
+        }
+
+        .ai-chat-input-area button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            flex-shrink: 0;
+        }
+
+        .ai-chat-input-area button:hover {
+            background: #2563eb;
+        }
+
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 0.5rem 1rem;
+            background: #1e293b;
+            border-radius: 1rem;
+            width: fit-content;
+            align-self: flex-start;
+            border-bottom-left-radius: 0.25rem;
+            border: 1px solid #334155;
+        }
+
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background: #94a3b8;
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: 0.4;
+            }
+
+            50% {
+                transform: translateY(-4px);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .ai-chat-panel {
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: auto;
+                max-height: 70vh;
+                border-radius: 1rem 1rem 0 0;
+                bottom: 0;
+            }
+
+            .ai-widget-btn {
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+    </style>
+
+    <button class="ai-widget-btn" id="aiBtn" aria-label="Abrir asistente">
+        <svg viewBox="0 0 24 24">
+            <path
+                d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.01 1.01 4.35l-1.35 4.02a.85.85 0 0 0 1.07 1.07l4.02-1.35A9.95 9.95 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.36 0-2.65-.29-3.83-.8l-.34-.14-2.82.94.94-2.82-.14-.34A7.95 7.95 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
+        </svg>
+    </button>
+
+    <div class="ai-chat-panel" id="aiChatPanel">
+        <div class="ai-chat-header">
+            <h3>Sigma <span class="badge">Llama 3 (Edge)</span></h3>
+            <button class="close-chat" id="closeChat">&times;</button>
+        </div>
+        <div class="ai-chat-body" id="chatBody">
+            <div class="chat-bubble chat-bot">
+                ¿Quieres usar TikTok como un motor de ventas automático? Pregúntame cómo funciona.
+            </div>
+        </div>
+        <div class="ai-chat-input-area">
+            <input type="text" id="chatInput" placeholder="Escribe tu pregunta..." autocomplete="off">
+            <button id="sendBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const aiBtn = document.getElementById('aiBtn');
+        const aiChatPanel = document.getElementById('aiChatPanel');
+        const closeChat = document.getElementById('closeChat');
+        const chatInput = document.getElementById('chatInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const chatBody = document.getElementById('chatBody');
+
+        let chatHistory = [];
+
+        aiBtn.addEventListener('click', () => {
+            aiChatPanel.classList.add('active');
+            chatInput.focus();
+            aiBtn.style.display = 'none';
+        });
+
+        closeChat.addEventListener('click', () => {
+            aiChatPanel.classList.remove('active');
+            aiBtn.style.display = 'flex';
+        });
+
+        async function sendMessage() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            addMessage(text, 'user');
+            chatInput.value = '';
+
+            const typingId = showTyping();
+
+            try {
+                const workerUrl = 'https://agente-sigma.henryroncanciovelandia.workers.dev/';
+
+                let pageContext = "";
+                const mainTags = document.querySelectorAll('h1, h2, h3, p');
+                mainTags.forEach(tag => {
+                    if (!tag.closest('.ai-chat-panel')) {
+                        pageContext += tag.innerText + " \n";
                     }
-                } catch (err) {
-                    setTimeout(() => {
-                        removeTyping(typingId);
-                        addMessage("Ha ocurrido un error contactando a la Inteligencia Artificial. Revisa tu conexión a internet.", 'bot');
-                    }, 1500);
+                });
+                const cleanedContext = pageContext.substring(0, 4000);
+
+                const response = await fetch(workerUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        user_question: text,
+                        page_context: cleanedContext,
+                        chat_history: chatHistory
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    removeTyping(typingId);
+                    addMessage(data.answer, 'bot');
+
+                    chatHistory.push({ role: "user", content: text });
+                    chatHistory.push({ role: "assistant", content: data.answer });
+
+                    if (chatHistory.length > 10) chatHistory = chatHistory.slice(chatHistory.length - 10);
+                } else {
+                    throw new Error("Worker no conectado");
                 }
+            } catch (err) {
+                setTimeout(() => {
+                    removeTyping(typingId);
+                    addMessage("Ha ocurrido un error contactando a la Inteligencia Artificial. Revisa tu conexión a internet.", 'bot');
+                }, 1500);
             }
+        }
 
-            sendBtn.addEventListener('click', sendMessage);
-            chatInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') sendMessage();
+        sendBtn.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        function parseMarkdown(text) {
+            let html = text;
+            html = html.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color:#10b981; text-decoration:underline;">$1</a>');
+            html = html.replace(/\n/g, '<br>');
+            return html;
+        }
+
+        function addMessage(text, sender) {
+            const div = document.createElement('div');
+            div.className = 'chat-bubble chat-' + sender;
+            div.innerHTML = sender === 'bot' ? parseMarkdown(text) : text;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function showTyping() {
+            const id = 'typing-' + Date.now();
+            const div = document.createElement('div');
+            div.className = 'typing-indicator';
+            div.id = id;
+            div.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+            return id;
+        }
+
+        function removeTyping(id) {
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        }
+    </script>
+
+    <!-- Lightweight Animation Engine (no libraries, pure IntersectionObserver) -->
+    <script>
+        // === Scroll Progress Bar ===
+        const progressBar = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const progress = (scrollTop / scrollHeight) * 100;
+            progressBar.style.width = progress + '%';
+        }, { passive: true });
+
+        // === Animated Counter (runs once on stat visibility) ===
+        let countersAnimated = false;
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !countersAnimated) {
+                    countersAnimated = true;
+                    document.querySelectorAll('.stat-number[data-target]').forEach(el => {
+                        const target = parseInt(el.getAttribute('data-target'));
+                        const duration = 1500;
+                        const startTime = performance.now();
+
+                        function updateCounter(currentTime) {
+                            const elapsed = currentTime - startTime;
+                            const progress = Math.min(elapsed / duration, 1);
+                            // Ease-out cubic
+                            const eased = 1 - Math.pow(1 - progress, 3);
+                            el.textContent = Math.round(target * eased).toLocaleString();
+                            if (progress < 1) requestAnimationFrame(updateCounter);
+                        }
+                        requestAnimationFrame(updateCounter);
+                    });
+                }
             });
+        }, { threshold: 0.5 });
 
-            function parseMarkdown(text) {
-                let html = text;
-                html = html.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
-                html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color:#10b981; text-decoration:underline;">$1</a>');
-                html = html.replace(/\n/g, '<br>');
-                return html;
-            }
-
-            function addMessage(text, sender) {
-                const div = document.createElement('div');
-                div.className = 'chat-bubble chat-' + sender;
-                div.innerHTML = sender === 'bot' ? parseMarkdown(text) : text;
-                chatBody.appendChild(div);
-                chatBody.scrollTop = chatBody.scrollHeight;
-            }
-
-            function showTyping() {
-                const id = 'typing-' + Date.now();
-                const div = document.createElement('div');
-                div.className = 'typing-indicator';
-                div.id = id;
-                div.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
-                chatBody.appendChild(div);
-                chatBody.scrollTop = chatBody.scrollHeight;
-                return id;
-            }
-
-            function removeTyping(id) {
-                const el = document.getElementById(id);
-                if (el) el.remove();
-            }
-        </script>
-
-        <!-- Lightweight Animation Engine (no libraries, pure IntersectionObserver) -->
-        <script>
-            // === Scroll Progress Bar ===
-            const progressBar = document.getElementById('scrollProgress');
-            window.addEventListener('scroll', () => {
-                const scrollTop = document.documentElement.scrollTop;
-                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const progress = (scrollTop / scrollHeight) * 100;
-                progressBar.style.width = progress + '%';
-            }, { passive: true });
-
-            // === Scroll Reveal (IntersectionObserver — native, no layout thrashing) ===
-            const revealObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
-
-            document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stat-item').forEach(el => {
-                revealObserver.observe(el);
-            });
-
-            // === Animated Counter (runs once on stat visibility) ===
-            let countersAnimated = false;
-            const counterObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !countersAnimated) {
-                        countersAnimated = true;
-                        document.querySelectorAll('.stat-number[data-target]').forEach(el => {
-                            const target = parseInt(el.getAttribute('data-target'));
-                            const duration = 1500;
-                            const startTime = performance.now();
-
-                            function updateCounter(currentTime) {
-                                const elapsed = currentTime - startTime;
-                                const progress = Math.min(elapsed / duration, 1);
-                                // Ease-out cubic
-                                const eased = 1 - Math.pow(1 - progress, 3);
-                                el.textContent = Math.round(target * eased).toLocaleString();
-                                if (progress < 1) requestAnimationFrame(updateCounter);
-                            }
-                            requestAnimationFrame(updateCounter);
-                        });
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            const statsBar = document.querySelector('.stats-bar');
-            if (statsBar) counterObserver.observe(statsBar);
-        </script>
+        const statsBar = document.querySelector('.stats-bar');
+        if (statsBar) counterObserver.observe(statsBar);
+    </script>
 
 </body>
 
