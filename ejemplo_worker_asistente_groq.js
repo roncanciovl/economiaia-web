@@ -69,7 +69,7 @@ export default {
                 
                 Información de la Página Actual (RAG Local):
                 ${page_context ?
-                    `El usuario está analizando actualmente esto en pantalla:\n"""${page_context}"""\nUtiliza esta data para tus diagnósticos y recomendaciones.`
+                    `El usuario está analizando actualmente esto en pantalla (incluyendo el mensaje de bienvenida que tú acabas de enviarle):\n"""${page_context}"""\nUtiliza esta data para tus diagnósticos y recomendaciones. Si el usuario responde a tu mensaje de bienvenida, actúa en consecuencia.`
                     : "No hay contexto adicional de la página."}
 
                 Mapa del Ecosistema (Conocimiento Global):

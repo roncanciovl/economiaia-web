@@ -1626,7 +1626,8 @@
             try {
                 const workerUrl = 'https://agente-sigma.henryroncanciovelandia.workers.dev/';
 
-                let pageContext = "";
+                const welcomeMsg = document.querySelector('.chat-bubble.chat-bot')?.innerText || "";
+                let pageContext = `Mensaje de bienvenida que Sigma (tú) acaba de enviar al usuario: "${welcomeMsg}"\n\n`;
                 const mainTags = document.querySelectorAll('h1, h2, h3, p');
                 mainTags.forEach(tag => {
                     if (!tag.closest('.ai-chat-panel')) {

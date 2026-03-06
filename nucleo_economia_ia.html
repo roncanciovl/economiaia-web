@@ -1773,7 +1773,8 @@
                 const workerUrl = 'https://agente-sigma.henryroncanciovelandia.workers.dev/';
 
                 // --- RAG Local: Extraer contexto visible de la página ---
-                let pageContext = "";
+                const welcomeMsg = document.querySelector('.chat-bubble.chat-bot')?.innerText || "";
+                let pageContext = `Mensaje de bienvenida que Sigma (tú) acaba de enviar al usuario: "${welcomeMsg}"\n\n`;
 
                 // Extraer enlaces de navegación o botones importantes
                 const navLinks = document.querySelectorAll('a.evo-card, a.nav-back, .consultancy-banner a');
