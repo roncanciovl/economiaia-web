@@ -442,6 +442,9 @@
             <p>No vendemos herramientas. Instalamos infraestructura de crecimiento que clona tu razonamiento y libera tu
                 tiempo.</p>
         </header>
+        <div id="intentRecommendation"
+            style="display:none; margin: 0 0 1.5rem 0; padding: 1rem 1.2rem; border-radius: 14px; border: 1px solid rgba(16,185,129,0.45); background: rgba(16,185,129,0.08); color: var(--text-main);">
+        </div>
 
         <div class="pricing-grid">
             <!-- Starter -->
@@ -456,7 +459,7 @@
                     <li>Soporte técnico por 15 días.</li>
                     <li>Ideal para: Autónomos y Micro-negocios.</li>
                 </ul>
-                <a href="https://wa.me/573043656226?text=Hola%20Sigma%2C%20quiero%20el%20plan%20Starter"
+                <a id="starterCta" href="https://wa.me/573043656226?text=Hola%20Sigma%2C%20quiero%20el%20plan%20Starter"
                     class="btn btn-outline">Empezar Ahora</a>
             </div>
 
@@ -473,7 +476,7 @@
                     <li>Mantenimiento y Auditoría Mensual.</li>
                     <li>Ideal para: Negocios en fase de escala rápida.</li>
                 </ul>
-                <a href="https://wa.me/573043656226?text=Hola%20Sigma%2C%20quiero%20el%20plan%20Growth"
+                <a id="growthCta" href="https://wa.me/573043656226?text=Hola%20Sigma%2C%20quiero%20el%20plan%20Growth"
                     class="btn btn-primary">Escalar Mi Negocio</a>
             </div>
 
@@ -489,7 +492,7 @@
                     <li>Soporte Prioritario 24/7.</li>
                     <li>Ideal para: Medianas y Grandes Empresas.</li>
                 </ul>
-                <a href="https://wa.me/573043656226?text=Hola%20Sigma%2C%20quiero%20el%20plan%20Aceleración"
+                <a id="aceleracionCta" href="https://wa.me/573043656226?text=Hola%20Sigma%2C%20quiero%20el%20plan%20Aceleración"
                     class="btn btn-outline">Solicitar Auditoría</a>
             </div>
         </div>
@@ -503,7 +506,7 @@
                     <li>1 Hora 1-a-1 de alta densidad estratégica.</li>
                     <li><strong>Deducible:</strong> Si contratas un plan, los $50 se abonan a tu factura.</li>
                 </ul>
-                <a href="https://wa.me/573043656226?text=Hola%20Sigma%2C%20quiero%20agendar%20una%20Consultoría%20Express"
+                <a id="expressCta" href="https://wa.me/573043656226?text=Hola%20Sigma%2C%20quiero%20agendar%20una%20Consultoría%20Express"
                     class="btn btn-primary" style="width: auto; padding: 1rem 3rem;">Agendar Sesión</a>
             </div>
             <div class="express-price">
@@ -555,18 +558,75 @@
         const sendBtn = document.getElementById('sendBtn');
         const chatBody = document.getElementById('chatBody');
 
-        let chatHistory = [];
+        const starterCta = document.getElementById('starterCta');
+        const growthCta = document.getElementById('growthCta');
+        const aceleracionCta = document.getElementById('aceleracionCta');
+        const expressCta = document.getElementById('expressCta');
+        const recommendationBox = document.getElementById('intentRecommendation');
 
-        aiBtn.addEventListener('click', () => {
+        const SIGMA_WORKER_URL = 'https://agente-sigma.henryroncanciovelandia.workers.dev/';
+        const INTENT_WORKER_URL = window.__INTENT_WORKER_URL || 'https://intent-router.henryroncanciovelandia.workers.dev/api/intent';
+        const SESSION_KEY = 'sigma_intent_state_v1';
+        const SESSION_ID_KEY = 'sigma_session_id';
+
+        let chatHistory = [];
+        const sessionId = getOrCreateSessionId();
+
+        const sessionState = loadSessionState();
+        sessionState.pages_viewed = (sessionState.pages_viewed || 0) + 1;
+        sessionState.pricing_visited = true;
+        persistSessionState();
+
+        const originalPlanCtas = {
+            Starter: { element: starterCta, href: starterCta ? starterCta.href : '', label: starterCta ? starterCta.textContent : '' },
+            Growth: { element: growthCta, href: growthCta ? growthCta.href : '', label: growthCta ? growthCta.textContent : '' },
+            Aceleracion: { element: aceleracionCta, href: aceleracionCta ? aceleracionCta.href : '', label: aceleracionCta ? aceleracionCta.textContent : '' },
+            "Consultoria Express": { element: expressCta, href: expressCta ? expressCta.href : '', label: expressCta ? expressCta.textContent : '' }
+        };
+
+        const sessionStart = Date.now();
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY || 0;
+            const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+            const depth = Math.min(1, scrollTop / maxScroll);
+            sessionState.scroll_depth = Math.max(sessionState.scroll_depth || 0, depth);
+            persistSessionState();
+        }, { passive: true });
+
+        setInterval(() => {
+            sessionState.time_on_site_sec = Math.floor((Date.now() - sessionStart) / 1000);
+            persistSessionState();
+        }, 5000);
+
+        document.querySelectorAll('a[href*="wa.me/"]').forEach(link => {
+            link.addEventListener('click', () => {
+                sessionState.whatsapp_clicks = (sessionState.whatsapp_clicks || 0) + 1;
+                persistSessionState();
+            });
+        });
+
+        bootstrapIntent();
+
+        aiBtn.addEventListener('click', async () => {
             aiChatPanel.classList.add('active');
             chatInput.focus();
             aiBtn.style.display = 'none';
+
+            sessionState.chat_opened = true;
+            persistSessionState();
+            const intent = await resolveIntent('', ['open_chat', 'view_pricing']);
+            applySigmaOpening(intent);
         });
 
         closeChat.addEventListener('click', () => {
             aiChatPanel.classList.remove('active');
             aiBtn.style.display = 'flex';
         });
+
+        async function bootstrapIntent() {
+            const intent = await resolveIntent('', ['view_pricing']);
+            applyPricingIntent(intent);
+        }
 
         async function sendMessage() {
             const text = chatInput.value.trim();
@@ -577,9 +637,11 @@
             const typingId = showTyping();
 
             try {
-                const workerUrl = 'https://agente-sigma.henryroncanciovelandia.workers.dev/';
+                const intent = await resolveIntent(text, ['chat_user_message', 'view_pricing']);
+                applyPricingIntent(intent);
+
                 const welcomeMsg = document.querySelector('.chat-bubble.chat-bot')?.innerText || "";
-                let pageContext = `Mensaje de bienvenida que Sigma (tú) acaba de enviar al usuario: "${welcomeMsg}"\n\n`;
+                let pageContext = `Mensaje de bienvenida que Sigma (tu) acaba de enviar al usuario: "${welcomeMsg}"\n\n`;
 
                 const mainTags = document.querySelectorAll('h1, h2, h3, p, li');
                 mainTags.forEach(tag => {
@@ -588,28 +650,172 @@
                     }
                 });
 
-                const response = await fetch(workerUrl, {
+                const response = await fetch(SIGMA_WORKER_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         user_question: text,
                         page_context: pageContext.substring(0, 4000),
-                        chat_history: chatHistory
+                        chat_history: chatHistory,
+                        intent_state: intent.intent_state,
+                        pain_angle: intent.pain_angle,
+                        recommended_plan: intent.recommended_plan
                     })
                 });
 
-                if (response.ok) {
-                    const data = await response.json();
-                    removeTyping(typingId);
-                    addMessage(data.answer, 'bot');
-                    chatHistory.push({ role: "user", content: text });
-                    chatHistory.push({ role: "assistant", content: data.answer });
-                    if (chatHistory.length > 10) chatHistory = chatHistory.slice(chatHistory.length - 10);
+                if (!response.ok) {
+                    throw new Error('Worker no conectado');
                 }
-            } catch (err) {
+
+                const data = await response.json();
+                removeTyping(typingId);
+                addMessage(data.answer, 'bot');
+                chatHistory.push({ role: "user", content: text });
+                chatHistory.push({ role: "assistant", content: data.answer });
+                if (chatHistory.length > 10) chatHistory = chatHistory.slice(chatHistory.length - 10);
+            } catch (_) {
                 removeTyping(typingId);
                 addMessage("Error de conexión.", 'bot');
             }
+        }
+
+        async function resolveIntent(lastUserMessage, extraEvents) {
+            const fallback = buildFallbackIntent(lastUserMessage);
+            const payload = {
+                path: window.location.pathname,
+                referrer: document.referrer || '',
+                utm_source: new URLSearchParams(window.location.search).get('utm_source') || '',
+                utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || '',
+                country: '',
+                device: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) ? 'mobile' : 'desktop',
+                session_id: sessionId,
+                session: {
+                    pages_viewed: sessionState.pages_viewed || 1,
+                    pricing_visited: true,
+                    chat_opened: Boolean(sessionState.chat_opened),
+                    whatsapp_clicks: sessionState.whatsapp_clicks || 0,
+                    time_on_site_sec: sessionState.time_on_site_sec || 0,
+                    scroll_depth: sessionState.scroll_depth || 0
+                },
+                chat: {
+                    last_user_message: lastUserMessage || '',
+                    messages_count: Math.floor(chatHistory.length / 2)
+                },
+                events: ['view_page', 'view_pricing'].concat(extraEvents || [])
+            };
+
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 1800);
+
+            try {
+                const response = await fetch(INTENT_WORKER_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                    signal: controller.signal
+                });
+                clearTimeout(timeoutId);
+
+                if (!response.ok) {
+                    return fallback;
+                }
+                const intent = await response.json();
+                sessionState.intent_state = intent.intent_state || fallback.intent_state;
+                sessionState.recommended_plan = intent.recommended_plan || null;
+                persistSessionState();
+                return { ...fallback, ...intent };
+            } catch (_) {
+                clearTimeout(timeoutId);
+                return fallback;
+            }
+        }
+
+        function applyPricingIntent(intent) {
+            if (!intent) return;
+            resetPlanCtas();
+
+            if (intent.intent_state !== 'commercial') {
+                if (recommendationBox) {
+                    recommendationBox.style.display = 'none';
+                    recommendationBox.innerHTML = '';
+                }
+                return;
+            }
+
+            if (recommendationBox) {
+                recommendationBox.style.display = 'block';
+                recommendationBox.innerHTML = `<strong>Ruta sugerida:</strong> ${intent.recommended_plan || 'Growth'}<br>${intent.sigma_opening || 'Estas en fase de compra. Te conviene pasar a una evaluacion comercial.'}`;
+            }
+
+            const plan = intent.recommended_plan || 'Growth';
+            const planTarget = originalPlanCtas[plan];
+            if (!planTarget || !planTarget.element || !intent.primary_cta?.url) return;
+
+            planTarget.element.href = intent.primary_cta.url;
+            planTarget.element.textContent = intent.primary_cta.label || planTarget.label;
+            planTarget.element.style.boxShadow = '0 0 0 2px rgba(16,185,129,0.35)';
+        }
+
+        function resetPlanCtas() {
+            Object.values(originalPlanCtas).forEach(item => {
+                if (!item.element) return;
+                item.element.href = item.href;
+                item.element.textContent = item.label;
+                item.element.style.boxShadow = '';
+            });
+        }
+
+        function applySigmaOpening(intent) {
+            if (!intent || !intent.sigma_opening || chatHistory.length > 0) return;
+            const firstBotBubble = chatBody.querySelector('.chat-bubble.chat-bot');
+            if (firstBotBubble) {
+                firstBotBubble.innerText = intent.sigma_opening;
+            }
+        }
+
+        function buildFallbackIntent(lastUserMessage) {
+            const text = normalizeText(lastUserMessage);
+            const isCommercial = hasKeyword(text, ['precio', 'precios', 'plan', 'planes', 'servicio', 'servicios', 'contratar', 'whatsapp', 'consultoria', 'auditoria']);
+
+            return {
+                intent_state: isCommercial ? 'commercial' : 'diagnostic',
+                pain_angle: isCommercial ? 'comparacion_de_planes_e_inversion' : 'claridad_estrategica',
+                recommended_plan: isCommercial ? 'Growth' : null,
+                sigma_opening: isCommercial
+                    ? 'Si ya estas comparando inversion, te ayudo a elegir plan y pasar a implementacion.'
+                    : 'Te ayudo a elegir el plan segun tu contexto antes de cerrar por WhatsApp.'
+            };
+        }
+
+        function loadSessionState() {
+            try {
+                return JSON.parse(sessionStorage.getItem(SESSION_KEY) || '{}');
+            } catch (_) {
+                return {};
+            }
+        }
+
+        function persistSessionState() {
+            sessionStorage.setItem(SESSION_KEY, JSON.stringify(sessionState));
+        }
+
+        function getOrCreateSessionId() {
+            const existing = sessionStorage.getItem(SESSION_ID_KEY);
+            if (existing) return existing;
+            const generated = `sess_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
+            sessionStorage.setItem(SESSION_ID_KEY, generated);
+            return generated;
+        }
+
+        function normalizeText(input) {
+            return String(input || '')
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '');
+        }
+
+        function hasKeyword(text, keywords) {
+            return keywords.some(keyword => text.includes(keyword));
         }
 
         sendBtn.addEventListener('click', sendMessage);

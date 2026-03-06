@@ -1132,15 +1132,52 @@
         const sendBtn = document.getElementById('sendBtn');
         const chatBody = document.getElementById('chatBody');
 
+        const SIGMA_WORKER_URL = 'https://agente-sigma.henryroncanciovelandia.workers.dev/';
+        const INTENT_WORKER_URL = window.__INTENT_WORKER_URL || 'https://intent-router.henryroncanciovelandia.workers.dev/api/intent';
+        const SESSION_KEY = 'sigma_intent_state_v1';
+        const SESSION_ID_KEY = 'sigma_session_id';
+
         // Memoria para el historial de la conversación
         let chatHistory = [];
+        const sessionId = getOrCreateSessionId();
 
-        aiBtn.addEventListener('click', () => {
+        const sessionState = loadSessionState();
+        sessionState.pages_viewed = (sessionState.pages_viewed || 0) + 1;
+        sessionState.pricing_visited = sessionState.pricing_visited || window.location.pathname.includes('precios_y_planes_ia.html');
+        persistSessionState();
+
+        const sessionStart = Date.now();
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY || 0;
+            const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+            const depth = Math.min(1, scrollTop / maxScroll);
+            sessionState.scroll_depth = Math.max(sessionState.scroll_depth || 0, depth);
+            persistSessionState();
+        }, { passive: true });
+
+        setInterval(() => {
+            sessionState.time_on_site_sec = Math.floor((Date.now() - sessionStart) / 1000);
+            persistSessionState();
+        }, 5000);
+
+        document.querySelectorAll('a[href*="wa.me/"]').forEach(link => {
+            link.addEventListener('click', () => {
+                sessionState.whatsapp_clicks = (sessionState.whatsapp_clicks || 0) + 1;
+                persistSessionState();
+            });
+        });
+
+        aiBtn.addEventListener('click', async () => {
             aiChatPanel.classList.add('active');
             chatInput.focus();
             // Ocultar botón flotante para evitar que se superponga al botón "enviar" en celulares
             aiBtn.style.display = 'none';
             document.getElementById('aiTooltip').style.display = 'none';
+
+            sessionState.chat_opened = true;
+            persistSessionState();
+            const intent = await resolveIntent('', ['open_chat']);
+            applySigmaOpening(intent);
         });
 
         closeChat.addEventListener('click', () => {
@@ -1160,12 +1197,11 @@
             const typingId = showTyping();
 
             try {
-                // URL de Producción del Worker de Cloudflare
-                const workerUrl = 'https://agente-sigma.henryroncanciovelandia.workers.dev/';
+                const intent = await resolveIntent(text, ['chat_user_message']);
 
                 // --- RAG Local: Extraer contexto visible de la página ---
                 const welcomeMsg = document.querySelector('.chat-bubble.chat-bot')?.innerText || "";
-                let pageContext = `Mensaje de bienvenida que Sigma (tú) acaba de enviar al usuario: "${welcomeMsg}"\n\n`;
+                let pageContext = `Mensaje de bienvenida que Sigma (tu) acaba de enviar al usuario: "${welcomeMsg}"\n\n`;
 
                 // Extraer específicamente los nodos/órbitas con sus enlaces
                 const orbitNodes = document.querySelectorAll('.node');
@@ -1184,37 +1220,145 @@
                 });
                 const cleanedContext = pageContext.substring(0, 4000); // 4000 caracteres como máximo preventivo
 
-                const response = await fetch(workerUrl, {
+                const response = await fetch(SIGMA_WORKER_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         user_question: text,
                         page_context: cleanedContext,
-                        chat_history: chatHistory
+                        chat_history: chatHistory,
+                        intent_state: intent.intent_state,
+                        pain_angle: intent.pain_angle,
+                        recommended_plan: intent.recommended_plan
                     })
                 });
 
-                if (response.ok) {
-                    const data = await response.json();
-                    removeTyping(typingId);
-                    addMessage(data.answer, 'bot');
-
-                    // Actualizar memoria con la pareja de Turnos (Usuario y Asistente)
-                    chatHistory.push({ role: "user", content: text });
-                    chatHistory.push({ role: "assistant", content: data.answer });
-
-                    // Limitar la memoria a las últimas 10 interacciones (5 turnos de pregunta/respuesta) para no saturar tokens
-                    if (chatHistory.length > 10) chatHistory = chatHistory.slice(chatHistory.length - 10);
-
-                } else {
+                if (!response.ok) {
                     throw new Error("Worker no conectado");
                 }
+
+                const data = await response.json();
+                removeTyping(typingId);
+                addMessage(data.answer, 'bot');
+
+                // Actualizar memoria con la pareja de Turnos (Usuario y Asistente)
+                chatHistory.push({ role: "user", content: text });
+                chatHistory.push({ role: "assistant", content: data.answer });
+
+                // Limitar la memoria a las últimas 10 interacciones (5 turnos de pregunta/respuesta) para no saturar tokens
+                if (chatHistory.length > 10) chatHistory = chatHistory.slice(chatHistory.length - 10);
             } catch (err) {
                 setTimeout(() => {
                     removeTyping(typingId);
                     addMessage("Ha ocurrido un error contactando a la Inteligencia Artificial. Revisa tu conexión a internet.", 'bot');
                 }, 1500);
             }
+        }
+
+        async function resolveIntent(lastUserMessage, extraEvents) {
+            const fallback = buildFallbackIntent(lastUserMessage);
+            const payload = {
+                path: window.location.pathname,
+                referrer: document.referrer || '',
+                utm_source: new URLSearchParams(window.location.search).get('utm_source') || '',
+                utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || '',
+                country: '',
+                device: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) ? 'mobile' : 'desktop',
+                session_id: sessionId,
+                session: {
+                    pages_viewed: sessionState.pages_viewed || 1,
+                    pricing_visited: Boolean(sessionState.pricing_visited),
+                    chat_opened: Boolean(sessionState.chat_opened),
+                    whatsapp_clicks: sessionState.whatsapp_clicks || 0,
+                    time_on_site_sec: sessionState.time_on_site_sec || 0,
+                    scroll_depth: sessionState.scroll_depth || 0
+                },
+                chat: {
+                    last_user_message: lastUserMessage || '',
+                    messages_count: Math.floor(chatHistory.length / 2)
+                },
+                events: ['view_page'].concat(extraEvents || [])
+            };
+
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 1800);
+
+            try {
+                const response = await fetch(INTENT_WORKER_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                    signal: controller.signal
+                });
+                clearTimeout(timeoutId);
+
+                if (!response.ok) {
+                    return fallback;
+                }
+                const intent = await response.json();
+                sessionState.intent_state = intent.intent_state || fallback.intent_state;
+                sessionState.recommended_plan = intent.recommended_plan || null;
+                persistSessionState();
+                return { ...fallback, ...intent };
+            } catch (_) {
+                clearTimeout(timeoutId);
+                return fallback;
+            }
+        }
+
+        function applySigmaOpening(intent) {
+            if (!intent || !intent.sigma_opening || chatHistory.length > 0) return;
+            const firstBotBubble = chatBody.querySelector('.chat-bubble.chat-bot');
+            if (firstBotBubble) {
+                firstBotBubble.innerText = intent.sigma_opening;
+            }
+        }
+
+        function buildFallbackIntent(lastUserMessage) {
+            const text = normalizeText(lastUserMessage);
+            const isCommercial = hasKeyword(text, ['precio', 'precios', 'plan', 'planes', 'servicio', 'servicios', 'contratar', 'whatsapp', 'consultoria', 'auditoria']);
+            const isDiagnostic = !isCommercial && hasKeyword(text, ['mi negocio', 'me sirve', 'como aplico', 'automatizar', 'leads', 'conversion', 'embudo']);
+            const intentState = isCommercial ? 'commercial' : isDiagnostic ? 'diagnostic' : 'signal';
+
+            return {
+                intent_state: intentState,
+                pain_angle: isCommercial ? 'comparacion_de_planes_e_inversion' : 'claridad_estrategica',
+                recommended_plan: isCommercial ? 'Growth' : null,
+                sigma_opening: intentState === 'commercial'
+                    ? 'Si ya estas evaluando inversion, te guio al plan que mejor encaja con tu operacion.'
+                    : 'Te guio por el ecosistema y luego definimos la mejor ruta para tu negocio.'
+            };
+        }
+
+        function loadSessionState() {
+            try {
+                return JSON.parse(sessionStorage.getItem(SESSION_KEY) || '{}');
+            } catch (_) {
+                return {};
+            }
+        }
+
+        function persistSessionState() {
+            sessionStorage.setItem(SESSION_KEY, JSON.stringify(sessionState));
+        }
+
+        function getOrCreateSessionId() {
+            const existing = sessionStorage.getItem(SESSION_ID_KEY);
+            if (existing) return existing;
+            const generated = `sess_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
+            sessionStorage.setItem(SESSION_ID_KEY, generated);
+            return generated;
+        }
+
+        function normalizeText(input) {
+            return String(input || '')
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '');
+        }
+
+        function hasKeyword(text, keywords) {
+            return keywords.some(keyword => text.includes(keyword));
         }
 
         sendBtn.addEventListener('click', sendMessage);

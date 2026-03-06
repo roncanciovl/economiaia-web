@@ -29,7 +29,15 @@ export default {
         }
         try {
             // 2. Extraer la pregunta, el contexto de la página y el historial de la conversación
-            const { user_question, page_context, chat_history } = await request.json();
+            // Campos de intención son opcionales para mantener compatibilidad con frontends viejos.
+            const {
+                user_question,
+                page_context,
+                chat_history,
+                intent_state = "signal",
+                pain_angle = "claridad_estrategica",
+                recommended_plan = null
+            } = await request.json();
             if (!user_question) {
                 return new Response(JSON.stringify({ error: "Falta la pregunta del usuario" }), {
                     status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" }
@@ -65,6 +73,15 @@ export default {
                 - Si objetan el precio ("es muy caro"): Defiéndelo usando Anclaje Cognitivo. Compara nuestra tarifa con el costo de perder ventas por ineficiencia, y recuérdales la Garantía Operativa. Cero descuentos.
                 - Si preguntan por resultados: "Estás hablando con uno. Yo soy Sigma, construido con la misma tecnología que implementamos. Respondo en 2 segundos y te guío al contenido exacto."
                 
+                Estado de intención (clasificado por Intent Router):
+                - intent_state: ${intent_state}
+                - pain_angle: ${pain_angle}
+                - recommended_plan: ${recommended_plan || "sin recomendacion"}
+                - Regla operacional por estado:
+                  * signal: prioriza señalización, educación y navegación. CTA comercial secundario.
+                  * diagnostic: prioriza diagnóstico del cuello de botella y receta de arquitectura.
+                  * commercial: prioriza recomendación de plan, manejo de objeciones y cierre por WhatsApp.
+
                 Información de la Página Actual (RAG Local):
                 ${page_context ?
                     `El usuario está analizando actualmente esto en pantalla (incluyendo el mensaje de bienvenida que tú acabas de enviarle):\n"""${page_context}"""\nUtiliza esta data para tus diagnósticos y recomendaciones. Si el usuario responde a tu mensaje de bienvenida, actúa en consecuencia.`
@@ -92,7 +109,7 @@ export default {
                    - Si solo explora: guíalo a las páginas del ecosistema (gratis).
                    - Si muestra interés real: invítalo a una conversación por WhatsApp con un Estratega.
                    - Si está listo para actuar: ofrécele una sesión de diagnóstico de aceleración personalizada por WhatsApp.
-                5. DIRECTIVA DE CIERRE: Finaliza siempre cada intervención con un llamado a la acción (CTA) persuasivo que invite al usuario a contactar a un Estratega por WhatsApp. El enlace debe ser en formato Markdown [Texto](https://wa.me/573043656226?text=...). Elige el texto y el mensaje pre-llenado de forma estratégica según el flujo de la conversación.
+                5. DIRECTIVA DE CIERRE: Finaliza siempre cada intervención con un llamado a la acción (CTA) persuasivo que invite al usuario a contactar a un Estratega por WhatsApp. El enlace debe ser en formato Markdown [Texto](https://wa.me/573043656226?text=...). Elige el texto y el mensaje pre-llenado de forma estratégica según el flujo de la conversación. Solo habla de precios si el cliente lo pide.
                 
                 Formato:
                 - Usa Markdown (**negritas**, [links](url)).
