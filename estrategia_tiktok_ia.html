@@ -826,8 +826,8 @@
     <section>
         <h2 class="section-title"><span class="section-number">1</span> El Proceso de Venta Actual</h2>
 
-        <div class="svg-container" style="height: 380px;">
-            <svg viewBox="0 0 800 350" width="100%" height="100%">
+        <div class="svg-container" style="height: 480px;">
+            <svg viewBox="0 0 800 450" width="100%" height="100%">
                 <defs>
                     <linearGradient id="gradTop" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" style="stop-color:#ff0050;stop-opacity:1" />
@@ -837,207 +837,203 @@
                         <stop offset="0%" style="stop-color:#9d00ff;stop-opacity:1" />
                         <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
                     </linearGradient>
-                    <linearGradient id="gradBot" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <linearGradient id="gradSub" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" style="stop-color:#00f2fe;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#34d399;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="gradBot" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#34d399;stop-opacity:1" />
                         <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
                     </linearGradient>
                 </defs>
 
-                <!-- Fondo Embudo / Funnel -->
-                <polygon points="100,20 700,20 500,180 300,180" fill="url(#gradTop)" opacity="0.1" />
-                <polygon points="300,185 500,185 430,280 370,280" fill="url(#gradMid)" opacity="0.15" />
-                <polygon points="370,285 430,285 410,330 390,330" fill="url(#gradBot)" opacity="0.2" />
+                <!-- Fondo Embudo 4 Capas -->
+                <polygon points="100,20 700,20 540,120 260,120" fill="url(#gradTop)" opacity="0.1" />
+                <polygon points="260,125 540,125 460,225 340,225" fill="url(#gradMid)" opacity="0.15" />
+                <polygon points="340,230 460,230 410,330 390,330" fill="url(#gradSub)" opacity="0.2" />
+                <polygon points="390,335 410,335 400,410 400,410" fill="url(#gradBot)" opacity="0.25" />
 
                 <!-- Nivel 1: Descubrimiento -->
-                <text x="400" y="45" text-anchor="middle" fill="#fff" font-size="20" font-weight="bold">Paso 1: Que te
+                <text x="400" y="40" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold">Paso 1: Que te
                     conozcan y te vean</text>
 
-                <!-- Video Orgánico -->
-                <circle cx="250" cy="100" r="25" fill="#1e293b" stroke="#ff0050" stroke-width="2"
+                <circle cx="280" cy="80" r="22" fill="#1e293b" stroke="#ff0050" stroke-width="2"
                     style="animation: floatY 3s infinite;" />
-                <text x="250" y="108" text-anchor="middle" font-size="24">🎥</text>
-                <text x="250" y="145" text-anchor="middle" fill="#94a3b8" font-size="12">Publicar Videos</text>
+                <text x="280" y="87" text-anchor="middle" font-size="20">🎥</text>
+                <text x="280" y="115" text-anchor="middle" fill="#94a3b8" font-size="11">Video Orgánico</text>
 
-                <!-- Video Pautado -->
-                <circle cx="550" cy="100" r="25" fill="#1e293b" stroke="#ff0050" stroke-width="2"
+                <circle cx="520" cy="80" r="22" fill="#1e293b" stroke="#ff0050" stroke-width="2"
                     style="animation: floatY 3s infinite 1s;" />
-                <text x="550" y="108" text-anchor="middle" font-size="24">🚀</text>
-                <text x="550" y="145" text-anchor="middle" fill="#94a3b8" font-size="12">Pagar para Impulsarlo</text>
+                <text x="520" y="87" text-anchor="middle" font-size="20">🚀</text>
+                <text x="520" y="115" text-anchor="middle" fill="#94a3b8" font-size="11">Ads (Impulso)</text>
 
-                <!-- Flecha hacia abajo (Flujo Principal) -->
-                <path d="M 400 150 L 400 180" fill="none" stroke="#9d00ff" stroke-width="3" class="path-active" />
+                <!-- Flechas hacia abajo 1 -->
+                <path d="M 400 100 L 400 120" fill="none" stroke="#9d00ff" stroke-width="3" class="path-active" />
 
-                <!-- Flecha directa Spark Ads -> Shop -->
-                <path d="M 550 160 C 550 240, 480 315, 425 315" fill="none" stroke="#f43f5e" stroke-width="2"
-                    stroke-dasharray="4 4" style="animation: flowData 1s linear infinite;" />
-                <text x="520" y="230" text-anchor="middle" fill="#f43f5e" font-size="11" font-weight="bold">Botón
-                    hacia Sitio Web</text>
+                <!-- Nivel 2: Interacción TikTok -->
+                <text x="400" y="150" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold">Paso 2: Que
+                    interactúen (En TikTok)</text>
 
-                <!-- Nivel 2: Consideración e Interacción -->
-                <text x="400" y="205" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold">Paso 2:
-                    Explicar la Oferta y Resolver Dudas</text>
+                <rect x="330" y="170" width="140" height="36" rx="18" fill="#1e293b" stroke="#00f2fe"
+                    stroke-width="2" />
+                <text x="400" y="193" text-anchor="middle" fill="#00f2fe" font-size="14">💬 Comentar "INFO"</text>
 
-                <!-- Secuencia Animada de Chatbot -->
-                <!-- User Comments -->
-                <circle cx="260" cy="245" r="16" fill="#1e293b" stroke="#cbd5e1" stroke-width="1.5" />
-                <text x="260" y="250" text-anchor="middle" font-size="14">💬</text>
-                <text x="260" y="275" text-anchor="middle" fill="#94a3b8" font-size="10">Comenta Video</text>
+                <!-- Flechas hacia abajo 2 -->
+                <path d="M 400 210 L 400 225" fill="none" stroke="#00f2fe" stroke-width="3" class="path-active" />
 
-                <!-- Arrow to Bot -->
-                <path d="M 290 245 L 370 245" fill="none" stroke="#00f2fe" stroke-width="2" class="path-active" />
+                <!-- Nivel 3: Consideración Automática -->
+                <text x="400" y="250" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold">Paso 3:
+                    Consideración de tu Oferta</text>
+                <text x="400" y="265" text-anchor="middle" fill="#94a3b8" font-size="11">(Por Mensaje Privado o
+                    Manychat)</text>
 
-                <!-- AI Bot Processing -->
-                <circle cx="400" cy="245" r="18" fill="#1e293b" stroke="#00f2fe" stroke-width="2"
+                <circle cx="340" cy="295" r="16" fill="#1e293b" stroke="#00f2fe" stroke-width="2"
                     style="animation: pulseSoft 2s infinite;" />
-                <text x="400" y="251" text-anchor="middle" font-size="16">🤖</text>
-                <text x="400" y="275" text-anchor="middle" fill="#00f2fe" font-size="10" font-weight="bold">El Bot
-                    Presenta la Oferta</text>
+                <text x="340" y="301" text-anchor="middle" font-size="14">🤖</text>
 
-                <!-- Arrow to DM -->
-                <path d="M 430 245 L 510 245" fill="none" stroke="#10b981" stroke-width="2" class="path-active" />
+                <path d="M 360 295 L 430 295" fill="none" stroke="#34d399" stroke-width="2" class="path-active"
+                    stroke-dasharray="4" style="animation: flowData 1s linear infinite;" />
 
-                <!-- Private Link sent -->
-                <circle cx="540" cy="245" r="16" fill="#1e293b" stroke="#10b981" stroke-width="1.5" />
-                <text x="540" y="250" text-anchor="middle" font-size="14">🔗</text>
-                <text x="540" y="275" text-anchor="middle" fill="#10b981" font-size="10">Da link al privado</text>
+                <circle cx="450" cy="295" r="16" fill="#1e293b" stroke="#34d399" stroke-width="2" />
+                <text x="450" y="301" text-anchor="middle" font-size="14">🔗</text>
 
-                <!-- Flechas hacia abajo -->
-                <path d="M 400 283 L 400 310" fill="none" stroke="#10b981" stroke-width="3" class="path-active" />
+                <text x="395" y="322" text-anchor="middle" fill="#34d399" font-size="10">El robot defiende el precio y
+                    da el link</text>
 
-                <!-- Nivel 3: Conversión -->
-                <text x="480" y="315" text-anchor="start" fill="#10b981" font-size="16" font-weight="bold">Paso 3: El
-                    Cobro / Cierre</text>
-                <circle cx="400" cy="315" r="18" fill="#1e293b" stroke="#10b981" stroke-width="2"
+                <!-- Flechas hacia abajo 3 -->
+                <path d="M 400 330 L 400 350" fill="none" stroke="#10b981" stroke-width="3" class="path-active" />
+
+                <!-- Nivel 4: Cierre -->
+                <text x="400" y="375" text-anchor="middle" fill="#10b981" font-size="18" font-weight="bold">Paso 4:
+                    Cerrar la Venta</text>
+                <text x="400" y="390" text-anchor="middle" fill="#10b981" font-size="11" opacity="0.8">(Afuera: Web o
+                    WhatsApp)</text>
+                <circle cx="400" cy="420" r="18" fill="#1e293b" stroke="#10b981" stroke-width="2"
                     style="animation: pulseSoft 2s infinite;" />
-                <text x="400" y="321" text-anchor="middle" font-size="16">💰</text>
+                <text x="400" y="426" text-anchor="middle" font-size="16">💰</text>
 
             </svg>
         </div>
 
         <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-            <div class="card" style="padding-bottom: 0; border-color: #8b5cf6;">
+            <div class="card" style="padding-bottom: 0; border-color: #9d00ff;">
                 <img src="tiktok_atraer.png" alt="Estrategia para atraer clientes en TikTok" class="context-image"
                     loading="lazy">
-                <h3 style="color: #8b5cf6; margin-top: 0;">🚀 1. Atraer Clientes (Descubrir)</h3>
+                <h3 style="color: #9d00ff; margin-top: 0;">🚀 1. Atraer (El Descubrimiento)</h3>
                 <p>El mejor enfoque es publicar videos normales y orgánicos. Si uno funciona muy bien por sí solo, le
-                    pones dinero de publicidad para llegar a todo el mundo.</p>
+                    pones dinero de publicidad para llegar a demasiadas personas.</p>
                 <ul>
-                    <li><strong>Contenido Real:</strong> Los videos deben verse naturales en sus primeros 3 segundos.
-                        TikTok analiza lo que dices para saber a quién mostrar el video.</li>
-                    <li><strong>Publicidad Segura:</strong> Cuando a un video le metes dinero, la gente puede descubrir
-                        tu página saltando directo al botón de venta rápida.</li>
+                    <li><strong>Contenido Real:</strong> Los videos deben captar la atención en sus primeros 3 segundos.
+                        Tómate el tiempo de grabar algo de calidad.</li>
                 </ul>
                 <div class="evo-svg-container"
                     style="border-radius: 0.75rem 0.75rem 0 0; margin-top: auto; border-bottom: none;">
                     <svg viewBox="0 0 200 120" width="100%" height="100%">
-                        <!-- TikTok Video Icon -->
                         <rect x="40" y="35" width="24" height="40" rx="4" fill="#1e293b" stroke="#ff0050"
                             stroke-width="2" class="icon-float" />
                         <text x="52" y="58" text-anchor="middle" font-size="12">▶</text>
-                        <!-- Onda de viralidad -->
                         <path d="M 64 55 L 140 55" fill="none" stroke="#9d00ff" stroke-width="2" stroke-dasharray="4 4"
                             style="animation: dataSync 1s linear infinite reverse;" />
                         <circle cx="102" cy="55" r="3" fill="#00f2fe">
                             <animate attributeName="cx" values="64;140" dur="1s" repeatCount="indefinite" />
                             <animate attributeName="opacity" values="1;0" dur="1s" repeatCount="indefinite" />
                         </circle>
-                        <!-- Audiencia Ideal (Spark Ads/Orgánico) -->
-                        <circle cx="155" cy="55" r="16" fill="#1e293b" stroke="#00f2fe" stroke-width="2"
+                        <circle cx="155" cy="55" r="16" fill="#1e293b" stroke="#9d00ff" stroke-width="2"
                             class="icon-pulse" />
-                        <text x="155" y="60" text-anchor="middle" font-size="14">😍</text>
-                        <!-- Etiquetas -->
+                        <text x="155" y="60" text-anchor="middle" font-size="14">👀</text>
                         <text x="52" y="105" text-anchor="middle" fill="#ff0050" font-size="9" font-weight="600">Video
-                            Orgánico</text>
-                        <text x="155" y="105" text-anchor="middle" fill="#00f2fe" font-size="9"
-                            font-weight="600">Usuario Ideal</text>
+                            Algorítmico</text>
+                        <text x="155" y="105" text-anchor="middle" fill="#9d00ff" font-size="9" font-weight="600">Ojos
+                            en ti</text>
                     </svg>
                 </div>
             </div>
 
-            <div class="card" style="padding-bottom: 0; border-color: #60a5fa;">
-                <img src="tiktok_bot.png" alt="Consideración a través de ChatBots" class="context-image" loading="lazy">
-                <h3 style="color: #60a5fa; margin-top: 0;">💬 2. Explicar la Oferta (Consideración)</h3>
-                <p>A esto le llama la teoría del embudo "Consideración" o "Deseo". Antes de pagar, la persona necesita
-                    evaluar si necesita el producto y saber el precio.</p>
+            <div class="card" style="padding-bottom: 0; border-color: #f43f5e;">
+                <img src="tiktok_interaccion.png" alt="Interacción de la persona en la aplicación" class="context-image"
+                    loading="lazy">
+                <h3 style="color: #f43f5e; margin-top: 0;">💬 2. Interactuar en TikTok</h3>
+                <p>Para activar toda la maquinaria, necesitas una señal humana. Si el video es bueno, la persona
+                    naturalmente hará una acción física dentro de la app.</p>
                 <ul>
-                    <li><strong>Enganchar en Chat:</strong> Pides en el video que comenten "INFO" y un sistema
-                        automático les cuenta todo por privado.</li>
-                    <li><strong>La Presentación:</strong> Tu robot responde al instante presentando de qué trata tu
-                        oferta, los beneficios principales y respondiendo sus miedos 24/7 de forma educada.</li>
+                    <li><strong>Comentar y Participar:</strong> Tu única directriz en el video es pedir que comenten la
+                        palabra "INFO".</li>
+                    <li><strong>Hacer CLIC:</strong> Si es anuncio, la gente hace click en tu botón rápido rojo de
+                        TikTok al pie del video.</li>
                 </ul>
                 <div class="evo-svg-container"
                     style="border-radius: 0.75rem 0.75rem 0 0; margin-top: auto; border-bottom: none;">
                     <svg viewBox="0 0 200 120" width="100%" height="100%">
-                        <!-- Comentario en TikTok -->
-                        <circle cx="45" cy="55" r="14" fill="#1e293b" stroke="#ff0050" stroke-width="1.5"
-                            class="icon-float" />
-                        <text x="45" y="59" text-anchor="middle" font-size="10">💬</text>
-                        <text x="45" y="32" text-anchor="middle" fill="#f8fafc" font-size="8"
-                            font-style="italic">"INFO"</text>
-
-                        <!-- Conversión automática -->
-                        <path d="M 59 55 L 140 55" fill="none" stroke="#60a5fa" stroke-width="2" stroke-dasharray="4 4"
-                            style="animation: dataSync 1.5s linear infinite reverse;" />
-
-                        <!-- Emisión del DM al instante -->
-                        <circle cx="155" cy="55" r="18" fill="#1e293b" stroke="#60a5fa" stroke-width="2"
+                        <circle cx="100" cy="55" r="24" fill="#1e293b" stroke="#f43f5e" stroke-width="2"
                             class="icon-pulse" />
-                        <text x="155" y="61" text-anchor="middle" font-size="16">🤖</text>
+                        <text x="100" y="62" text-anchor="middle" font-size="18">👇</text>
+                        <text x="100" y="105" text-anchor="middle" fill="#f43f5e" font-size="10" font-weight="bold">El
+                            usuario acciona</text>
+                    </svg>
+                </div>
+            </div>
 
-                        <!-- Mini chat response -->
-                        <path d="M 125 45 C 135 45, 135 30, 145 30" fill="none" stroke="#00f2fe" stroke-dasharray="2 2"
-                            stroke-width="1.5" />
-                        <text x="155" y="25" text-anchor="middle" fill="#00f2fe" font-size="8" font-weight="bold">DM
-                            Enviado!</text>
-
-                        <!-- Etiquetas -->
-                        <text x="45" y="105" text-anchor="middle" fill="#ff0050" font-size="9" font-weight="600">Video
-                            TikTok</text>
-                        <text x="155" y="105" text-anchor="middle" fill="#60a5fa" font-size="9" font-weight="600">Robot
-                            responde al DM</text>
+            <div class="card" style="padding-bottom: 0; border-color: #00f2fe;">
+                <img src="manychat_consideracion.png" alt="Consideración a través de ChatBots y Manychat"
+                    class="context-image" loading="lazy">
+                <h3 style="color: #00f2fe; margin-top: 0;">🤖 3. Considerar la Oferta</h3>
+                <p>Esta es la "Consideración". Antes de pagar, la persona evalúa si necesita el producto y pregunta el
+                    precio.</p>
+                <ul>
+                    <li><strong>Moverlos al Chat Privado (Manychat):</strong> En el instante en el que deciden
+                        interactuar, un sistema saca al usuario del video y se lo lleva a charlar a los Mensajes
+                        Privados.</li>
+                    <li><strong>La IA Defiende el Valor:</strong> El robot responde al instante todo 24/7 y prepara el
+                        terreno.</li>
+                </ul>
+                <div class="evo-svg-container"
+                    style="border-radius: 0.75rem 0.75rem 0 0; margin-top: auto; border-bottom: none;">
+                    <svg viewBox="0 0 200 120" width="100%" height="100%">
+                        <path d="M 50 55 L 140 55" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="4 4"
+                            style="animation: dataSync 1.5s linear infinite reverse;" />
+                        <circle cx="50" cy="55" r="14" fill="#1e293b" stroke="#cbd5e1" stroke-width="1.5"
+                            class="icon-float" />
+                        <text x="50" y="59" text-anchor="middle" font-size="10">❔</text>
+                        <circle cx="150" cy="55" r="18" fill="#1e293b" stroke="#00f2fe" stroke-width="2"
+                            class="icon-pulse" />
+                        <text x="150" y="61" text-anchor="middle" font-size="16">🧠</text>
+                        <text x="50" y="105" text-anchor="middle" fill="#cbd5e1" font-size="9"
+                            font-weight="600">Objeciones</text>
+                        <text x="150" y="105" text-anchor="middle" fill="#00f2fe" font-size="9" font-weight="600">Robot
+                            Manychat</text>
                     </svg>
                 </div>
             </div>
 
             <div class="card" style="padding-bottom: 0; border-color: #10b981;">
-                <img src="tiktok_cierre.png" alt="Cierre de Venta con IA" class="context-image" loading="lazy">
-                <h3 style="color: #10b981; margin-top: 0;">💰 3. Cerrar la Venta (El Cobro)</h3>
-                <p>El bloque sagrado o "Fondo del Embudo". Aquí la gente toma la acción e intercambia su dinero por una
-                    solución final.</p>
+                <img src="cierre_venta_externo.png" alt="Cierre de Venta Afuera con Pagos y Checkout"
+                    class="context-image" loading="lazy">
+                <h3 style="color: #10b981; margin-top: 0;">💰 4. Cerrar la Venta (Afuera)</h3>
+                <p>El "Fondo del Embudo". Porque pagar hoy en TikTok directamente no se puede en Latinoamérica, el cobro
+                    pasa a tu hábitat.</p>
                 <ul>
-                    <li><strong>El Enlace al Sitio:</strong> Apenas el robot termine de explicar la oferta, se le
-                        entrega con facilidad un link para ir a pagar sin perder tiempo.</li>
-                    <li><strong>Sencillo y Limpio:</strong> Llegan a una web de un solo botón de compra o a tu WhatsApp
-                        listos para hacer la transferencia.</li>
+                    <li><strong>El Enlace hacia tu Dominio:</strong> Apenas el robot termine de explicar el valor,
+                        entrega un link a WhatsApp o a tu tienda oficial.</li>
+                    <li><strong>Sencillo y Limpio:</strong> Todo sale de la plataforma y termina en tu pasarela de
+                        bancos listos para facturar legalmente.</li>
                 </ul>
                 <div class="evo-svg-container"
                     style="border-radius: 0.75rem 0.75rem 0 0; margin-top: auto; border-bottom: none;">
                     <svg viewBox="0 0 200 120" width="100%" height="100%">
-                        <!-- Chat DM en celular -->
-                        <rect x="35" y="35" width="24" height="40" rx="4" fill="#1e293b" stroke="#00f2fe"
+                        <rect x="25" y="35" width="40" height="40" rx="4" fill="#1e293b" stroke="#34d399"
                             stroke-width="2" />
-                        <text x="47" y="55" text-anchor="middle" font-size="12">💬</text>
-                        <circle cx="47" cy="65" r="2" fill="#00f2fe" style="animation: pulseGlow 1s infinite;" />
-
-                        <!-- Click en el pago (Fricción cero) -->
-                        <path d="M 59 55 L 140 55" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="4 4"
+                        <text x="45" y="59" text-anchor="middle" font-size="12">🔗</text>
+                        <path d="M 65 55 L 135 55" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="4 4"
                             style="animation: dataSync 1s linear infinite reverse;" />
-                        <text x="100" y="47" text-anchor="middle" font-size="12">🔗 👉</text>
-
-                        <!-- Checkout exitoso -->
-                        <circle cx="155" cy="55" r="18" fill="#1e293b" stroke="#10b981" stroke-width="2"
-                            class="icon-float" />
-                        <text x="155" y="61" text-anchor="middle" font-size="16">💰</text>
-                        <path d="M 173 45 C 185 45, 185 30, 175 25" fill="none" stroke="#10b981" stroke-dasharray="2 2"
-                            stroke-width="1.5" />
-                        <text x="180" y="20" text-anchor="middle" fill="#10b981" font-size="8"
-                            font-weight="bold">OK!</text>
-
-                        <!-- Etiquetas -->
-                        <text x="47" y="105" text-anchor="middle" fill="#00f2fe" font-size="9" font-weight="600">Link en
-                            Chat DM</text>
-                        <text x="155" y="105" text-anchor="middle" fill="#10b981" font-size="9" font-weight="600">Dinero
-                            en Banco</text>
+                        <rect x="135" y="30" width="40" height="50" rx="6" fill="#1e293b" stroke="#10b981"
+                            stroke-width="2" class="icon-pulse" />
+                        <text x="155" y="55" text-anchor="middle" font-size="20">💳</text>
+                        <text x="155" y="72" text-anchor="middle" fill="#10b981" font-size="8"
+                            font-weight="bold">Checkout</text>
+                        <text x="45" y="105" text-anchor="middle" fill="#34d399" font-size="9"
+                            font-weight="600">Salida</text>
+                        <text x="155" y="105" text-anchor="middle" fill="#10b981" font-size="9"
+                            font-weight="600">Banco/Web</text>
                     </svg>
                 </div>
             </div>
