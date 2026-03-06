@@ -473,7 +473,8 @@
 
         .svg-container {
             width: 100%;
-            height: 250px;
+            height: auto;
+            aspect-ratio: 800 / 480;
             background: #0f172a;
             border-radius: 0.75rem;
             margin-bottom: 2rem;
@@ -588,7 +589,8 @@
 
         .evo-svg-container {
             width: 100%;
-            height: 120px;
+            height: auto;
+            aspect-ratio: 200 / 125;
             background: #0f172a;
             border-radius: 0.75rem;
             margin-top: 1.5rem;
@@ -826,8 +828,8 @@
     <section>
         <h2 class="section-title"><span class="section-number">1</span> El Proceso de Venta Actual</h2>
 
-        <div class="svg-container" style="height: 480px;">
-            <svg viewBox="0 0 800 450" width="100%" height="100%">
+        <div class="svg-container">
+            <svg viewBox="0 0 800 480" width="100%" height="auto">
                 <defs>
                     <linearGradient id="gradTop" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" style="stop-color:#ff0050;stop-opacity:1" />
@@ -926,25 +928,19 @@
                     <li><strong>Contenido Real:</strong> Los videos deben captar la atención en sus primeros 3 segundos.
                         Tómate el tiempo de grabar algo de calidad.</li>
                 </ul>
-                <div class="evo-svg-container"
-                    style="border-radius: 0.75rem 0.75rem 0 0; margin-top: auto; border-bottom: none;">
-                    <svg viewBox="0 0 200 120" width="100%" height="100%">
-                        <rect x="40" y="35" width="24" height="40" rx="4" fill="#1e293b" stroke="#ff0050"
-                            stroke-width="2" class="icon-float" />
+                <div class="evo-svg-container" style="border-radius: 0.75rem 0.75rem 0 0; margin-top: auto; border-bottom: none;">
+                    <svg viewBox="0 0 200 140" width="100%" height="auto">
+                        <rect x="40" y="35" width="24" height="40" rx="4" fill="#1e293b" stroke="#ff0050" stroke-width="2" class="icon-float" />
                         <text x="52" y="58" text-anchor="middle" font-size="12">▶</text>
-                        <path d="M 64 55 L 140 55" fill="none" stroke="#9d00ff" stroke-width="2" stroke-dasharray="4 4"
-                            style="animation: dataSync 1s linear infinite reverse;" />
+                        <path d="M 64 55 L 140 55" fill="none" stroke="#9d00ff" stroke-width="2" stroke-dasharray="4 4" style="animation: dataSync 1s linear infinite reverse;" />
                         <circle cx="102" cy="55" r="3" fill="#00f2fe">
                             <animate attributeName="cx" values="64;140" dur="1s" repeatCount="indefinite" />
                             <animate attributeName="opacity" values="1;0" dur="1s" repeatCount="indefinite" />
                         </circle>
-                        <circle cx="155" cy="55" r="16" fill="#1e293b" stroke="#9d00ff" stroke-width="2"
-                            class="icon-pulse" />
+                        <circle cx="155" cy="55" r="16" fill="#1e293b" stroke="#9d00ff" stroke-width="2" class="icon-pulse" />
                         <text x="155" y="60" text-anchor="middle" font-size="14">👀</text>
-                        <text x="52" y="105" text-anchor="middle" fill="#ff0050" font-size="9" font-weight="600">Video
-                            Algorítmico</text>
-                        <text x="155" y="105" text-anchor="middle" fill="#9d00ff" font-size="9" font-weight="600">Ojos
-                            en ti</text>
+                        <text x="52" y="115" text-anchor="middle" fill="#ff0050" font-size="9" font-weight="600">Video Algorítmico</text>
+                        <text x="155" y="115" text-anchor="middle" fill="#9d00ff" font-size="9" font-weight="600">Ojos en ti</text>
                     </svg>
                 </div>
             </div>
@@ -961,14 +957,11 @@
                     <li><strong>Hacer CLIC:</strong> Si es anuncio, la gente hace click en tu botón rápido rojo de
                         TikTok al pie del video.</li>
                 </ul>
-                <div class="evo-svg-container"
-                    style="border-radius: 0.75rem 0.75rem 0 0; margin-top: auto; border-bottom: none;">
-                    <svg viewBox="0 0 200 120" width="100%" height="100%">
-                        <circle cx="100" cy="55" r="24" fill="#1e293b" stroke="#f43f5e" stroke-width="2"
-                            class="icon-pulse" />
+                <div class="evo-svg-container" style="border-radius: 0.75rem 0.75rem 0 0; margin-top: auto; border-bottom: none;">
+                    <svg viewBox="0 0 200 140" width="100%" height="auto">
+                        <circle cx="100" cy="55" r="24" fill="#1e293b" stroke="#f43f5e" stroke-width="2" class="icon-pulse" />
                         <text x="100" y="62" text-anchor="middle" font-size="18">👇</text>
-                        <text x="100" y="105" text-anchor="middle" fill="#f43f5e" font-size="10" font-weight="bold">El
-                            usuario acciona</text>
+                        <text x="100" y="115" text-anchor="middle" fill="#f43f5e" font-size="10" font-weight="bold">El usuario acciona</text>
                     </svg>
                 </div>
             </div>
@@ -985,23 +978,17 @@
                     <li><strong>Chatbots y DMs (Manychat):</strong> Si prefieren chatear, un robot atiende dudas 24/7,
                         defiende el valor y los acompaña paso a paso.</li>
                 </ul>
-                <div class="evo-svg-container"
-                    style="border-radius: 0.75rem 0.75rem 0 0; margin-top: auto; border-bottom: none;">
-                    <svg viewBox="0 0 200 120" width="100%" height="100%">
-                        <path d="M 50 55 L 140 55" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="4 4"
-                            style="animation: dataSync 1.5s linear infinite reverse;" />
-                        <circle cx="50" cy="55" r="14" fill="#1e293b" stroke="#cbd5e1" stroke-width="1.5"
-                            class="icon-float" />
+                <div class="evo-svg-container" style="border-radius: 0.75rem 0.75rem 0 0; margin-top: auto; border-bottom: none;">
+                    <svg viewBox="0 0 200 140" width="100%" height="auto">
+                        <path d="M 50 55 L 140 55" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="4 4" style="animation: dataSync 1.5s linear infinite reverse;" />
+                        <circle cx="50" cy="55" r="14" fill="#1e293b" stroke="#cbd5e1" stroke-width="1.5" class="icon-float" />
                         <text x="50" y="59" text-anchor="middle" font-size="10">❔</text>
-                        <circle cx="150" cy="45" r="14" fill="#1e293b" stroke="#00f2fe" stroke-width="2"
-                            class="icon-pulse" />
+                        <circle cx="150" cy="45" r="14" fill="#1e293b" stroke="#00f2fe" stroke-width="2" class="icon-pulse" />
                         <text x="150" y="50" text-anchor="middle" font-size="12">🎁</text>
                         <circle cx="150" cy="75" r="14" fill="#1e293b" stroke="#00f2fe" stroke-width="2" />
                         <text x="150" y="80" text-anchor="middle" font-size="12">🤖</text>
-                        <text x="50" y="105" text-anchor="middle" fill="#cbd5e1" font-size="9"
-                            font-weight="600">Interés</text>
-                        <text x="150" y="105" text-anchor="middle" fill="#00f2fe" font-size="9" font-weight="600">Regalo
-                            o Chat</text>
+                        <text x="50" y="115" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">Interés</text>
+                        <text x="150" y="115" text-anchor="middle" fill="#00f2fe" font-size="9" font-weight="600">Regalo o Chat</text>
                     </svg>
                 </div>
             </div>
@@ -1018,23 +1005,16 @@
                     <li><strong>Sencillo y Limpio:</strong> Todo sale de la plataforma y termina en tu pasarela de
                         bancos listos para facturar legalmente.</li>
                 </ul>
-                <div class="evo-svg-container"
-                    style="border-radius: 0.75rem 0.75rem 0 0; margin-top: auto; border-bottom: none;">
-                    <svg viewBox="0 0 200 120" width="100%" height="100%">
-                        <rect x="25" y="35" width="40" height="40" rx="4" fill="#1e293b" stroke="#34d399"
-                            stroke-width="2" />
+                <div class="evo-svg-container" style="border-radius: 0.75rem 0.75rem 0 0; margin-top: auto; border-bottom: none;">
+                    <svg viewBox="0 0 200 140" width="100%" height="auto">
+                        <rect x="25" y="35" width="40" height="40" rx="4" fill="#1e293b" stroke="#34d399" stroke-width="2" />
                         <text x="45" y="59" text-anchor="middle" font-size="12">🔗</text>
-                        <path d="M 65 55 L 135 55" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="4 4"
-                            style="animation: dataSync 1s linear infinite reverse;" />
-                        <rect x="135" y="30" width="40" height="50" rx="6" fill="#1e293b" stroke="#10b981"
-                            stroke-width="2" class="icon-pulse" />
+                        <path d="M 65 55 L 135 55" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="4 4" style="animation: dataSync 1s linear infinite reverse;" />
+                        <rect x="135" y="30" width="40" height="50" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="2" class="icon-pulse" />
                         <text x="155" y="55" text-anchor="middle" font-size="20">💳</text>
-                        <text x="155" y="72" text-anchor="middle" fill="#10b981" font-size="8"
-                            font-weight="bold">Checkout</text>
-                        <text x="45" y="105" text-anchor="middle" fill="#34d399" font-size="9"
-                            font-weight="600">Salida</text>
-                        <text x="155" y="105" text-anchor="middle" fill="#10b981" font-size="9"
-                            font-weight="600">Banco/Web</text>
+                        <text x="155" y="72" text-anchor="middle" fill="#10b981" font-size="8" font-weight="bold">Checkout</text>
+                        <text x="45" y="115" text-anchor="middle" fill="#34d399" font-size="9" font-weight="600">Salida</text>
+                        <text x="155" y="115" text-anchor="middle" fill="#10b981" font-size="9" font-weight="600">Banco/Web</text>
                     </svg>
                 </div>
             </div>
