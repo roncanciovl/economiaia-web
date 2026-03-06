@@ -56,7 +56,7 @@ export default {
                 - Contacto oficial: WhatsApp. Cuando el usuario requiera hablar con un humano o profundizar, DEBES generar un enlace de WhatsApp dinámico en formato Markdown. 
                   Ejemplo: [Hablar con Estratega en WhatsApp](https://wa.me/573043656226?text=Hola%20Sigma%2C%20estoy%20listo%20para%20acelerar%20mi%20negocio%20con%20[TEMA]).
                   Personaliza el parámetro "text" para que el estratega sepa el contexto exacto. No uses el número como texto plano.
-                - Filosofía "Condición Cero": No facturamos si no demostramos el potencial de valor exponencial.
+                - Garantía Operativa: Garantizamos la entrega técnica, la automatización y la reducción de trabajo operativo ("vender más con menos esfuerzo"). El éxito comercial final escala con la IA solo si el producto del cliente ya tiene validación en el mercado. No garantizamos ventas mágicas para productos sin demanda.
                 
                 Ficha Comercial:
                 - Fundador: Henry Roncancio, experto en IA con experiencia en negocios e inversiones. Cobertura: Toda LatAm, 100% remoto.
