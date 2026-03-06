@@ -496,50 +496,58 @@
                     </div>
                 </div>
 
-                <!-- Tarjeta 5: Urgencia y Escasez (FOMO) -->
+                <!-- Tarjeta 5: El Placer de la Ganga (Utilidad Transaccional) -->
                 <div class="evo-card">
-                    <img src="escasez_urgencia_promo.png" alt="Reloj con Urgencia y Escasez en Economía IA"
+                    <img src="placer_descuento.png" alt="Dopamina y Utilidad Transaccional en Descuentos - Economía IA"
                         class="context-image" loading="lazy">
-                    <p class="new" style="color: #ef4444;">⏳ 5. Urgencia y Escasez (El FOMO)</p>
-                    <p class="desc">Al ser humano le duele mucho más perder una oportunidad que ganar algo nuevo. Un
-                        descuento eterno no sirve de nada; una promoción relámpago que expira a la medianoche genera
-                        compras impulsivas por el miedo a quedarse por fuera.<br><br><strong>Rol de la
-                            IA:</strong> El Agente IA en WhatsApp crea un <strong style="color: #ef4444;">enlace de
-                            pago</strong> que se autodestruye en 2 horas. Le dice al cliente: "Te aparté este bono
-                        especial, pero la oferta expira pronto". La IA presiona al cliente con precisión suiza sin que
-                        tú te veas necesitado o ruegues la venta.</p>
+                    <p class="new" style="color: #22c55e;">🤑 5. El Placer de "Ganarle al Sistema"</p>
+                    <p class="desc">A la gente no le atrae simplemente pagar menos; les atrae el <em>subidón de
+                            estatus</em> de creer que fueron más astutos que el resto. Un buen descuento no es una
+                        rebaja para que te compren, es la <strong>oportunidad dorada</strong> que su cerebro siente
+                        miedo de dejar pasar. Quieren sentir que "engañaron al sistema".<br><br><strong>Rol de la
+                            IA:</strong> La IA no lanza cupones de "desesperación". Cuando un Agente IA detecta a un
+                        prospecto estancado en WhatsApp, genera un beneficio "oculto" altamente exclusivo. Lo enmarca
+                        como una <em>oportunidad única de una sola vez</em> o un *"bono que acabo de habilitarte en el
+                        sistema solo a ti"*. El cliente no compra por necesidad, compra por no perderse la ganga.</p>
                     <div class="evo-svg-container">
                         <svg viewBox="0 0 200 120" width="100%" height="100%">
-                            <!-- Reloj de Arena -->
-                            <path d="M 60 30 L 100 65 L 140 30 Z" fill="rgba(239, 68, 68, 0.4)" stroke="#ef4444"
-                                stroke-width="2" />
-                            <path d="M 60 100 L 100 65 L 140 100 Z" fill="rgba(239, 68, 68, 0.1)" stroke="#ef4444"
-                                stroke-width="2" />
-
-                            <!-- Arena Cayendo -->
-                            <line x1="100" y1="65" x2="100" y2="85" stroke="#ef4444" stroke-width="2"
-                                stroke-dasharray="2 2" style="animation: dropSand 1s infinite linear;" />
-
-                            <text x="100" y="20" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="bold"
-                                class="icon-pulse">Expira en 01:59:00</text>
-
-                            <!-- Botón Urgente -->
-                            <rect x="65" y="90" width="70" height="20" rx="4" fill="#1e293b" stroke="#ef4444"
+                            <!-- "El Precio Base" (Aburrido) -->
+                            <rect x="25" y="45" width="45" height="40" rx="4" fill="#1e293b" stroke="#64748b"
                                 stroke-width="1.5" />
-                            <text x="100" y="103" text-anchor="middle" fill="#ef4444" font-size="8"
-                                font-weight="bold">Pagar Ahora</text>
-                        </svg>
-                        <style>
-                            @keyframes dropSand {
-                                0% {
-                                    stroke-dashoffset: 0;
-                                }
+                            <text x="47.5" y="70" text-anchor="middle" fill="#94a3b8" font-size="12">$100</text>
 
-                                100% {
-                                    stroke-dashoffset: 4;
-                                }
-                            }
-                        </style>
+                            <!-- Flecha/Transición -->
+                            <path d="M 80 65 L 110 65" fill="none" stroke="#22c55e" stroke-width="2"
+                                stroke-dasharray="4 4" style="animation: dataSync 1.5s linear infinite reverse;" />
+
+                            <!-- "La Oportunidad/Deal" (Dopamina) -->
+                            <rect x="120" y="30" width="60" height="70" rx="6" fill="#1e293b" stroke="#22c55e"
+                                stroke-width="2" class="icon-pulse" />
+
+                            <!-- Tachado -->
+                            <text x="150" y="55" text-anchor="middle" fill="#ef4444" font-size="10"
+                                text-decoration="line-through">$100</text>
+
+                            <!-- Precio Ganga -->
+                            <text x="150" y="80" text-anchor="middle" fill="#22c55e" font-size="20"
+                                font-weight="bold">$70</text>
+                            <text x="150" y="95" text-anchor="middle" fill="#22c55e" font-size="8" font-weight="bold">+
+                                Bono VIP</text>
+
+                            <!-- Chispas de Dopamina arriba de la Ganga -->
+                            <circle cx="130" cy="20" r="3" fill="#22c55e">
+                                <animate attributeName="opacity" values="1;0" dur="1.2s" repeatCount="indefinite" />
+                                <animate attributeName="cy" values="20;10" dur="1.2s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="150" cy="15" r="4" fill="#22c55e">
+                                <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" />
+                                <animate attributeName="cy" values="15;0" dur="1.5s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="170" cy="25" r="2.5" fill="#22c55e">
+                                <animate attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite" />
+                                <animate attributeName="cy" values="25;15" dur="1s" repeatCount="indefinite" />
+                            </circle>
+                        </svg>
                     </div>
                 </div>
             </div>
