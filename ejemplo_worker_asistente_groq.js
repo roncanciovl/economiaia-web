@@ -10,7 +10,6 @@
  * La llave de Groq (GROQ_API_KEY) vive de forma segura en las variables 
  * de entorno de Cloudflare. Nadie que inspeccione tu página web podrá verla ni robarla.
  */
-
 export default {
     async fetch(request, env, ctx) {
         // 1. Configuración de Seguridad y CORS (Para GitHub Pages)
@@ -19,28 +18,23 @@ export default {
             "Access-Control-Allow-Methods": "POST, OPTIONS",
             "Access-Control-Allow-Headers": "Content-Type",
         };
-
         if (request.method === "OPTIONS") {
             return new Response(null, { headers: corsHeaders });
         }
-
         // Solo aceptamos POST para preguntas
         if (request.method !== "POST") {
             return new Response("Método no permitido. Usa POST para enviar preguntas al asistente.", {
                 status: 405, headers: corsHeaders
             });
         }
-
         try {
             // 2. Extraer la pregunta, el contexto de la página y el historial de la conversación
             const { user_question, page_context, chat_history } = await request.json();
-
             if (!user_question) {
                 return new Response(JSON.stringify({ error: "Falta la pregunta del usuario" }), {
                     status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" }
                 });
             }
-
             // 3. El "Cerebro" / Contexto Dinámico (RAG Local Inyectado)
             const systemPrompt = `
                 Eres "Sigma", el estratega de IA oficial del acelerador de negocios "Economía IA". Tu misión es guiar al usuario a través del ecosistema para que conozca los fundamentos, note nuestra autoridad en el tema y ganemos su confianza.
@@ -71,7 +65,6 @@ export default {
                 ${page_context ?
                     `El usuario está analizando actualmente esto en pantalla (incluyendo el mensaje de bienvenida que tú acabas de enviarle):\n"""${page_context}"""\nUtiliza esta data para tus diagnósticos y recomendaciones. Si el usuario responde a tu mensaje de bienvenida, actúa en consecuencia.`
                     : "No hay contexto adicional de la página."}
-
                 Mapa del Ecosistema (Conocimiento Global):
                 Si el usuario pregunta por un tema, usa esta guía para responder y dar el link Markdown [Nombre](URL):
                 - Hub Central: https://economiaia.business/index.html (Punto de entrada y mapa orbital del ecosistema).
@@ -100,16 +93,12 @@ export default {
                 - Usa Markdown (**negritas**, [links](url)).
                 - Máximo 2 párrafos en total (Respuesta + Cierre).
             `;
-
-
             // 4. Preparar la llamada a la API de Groq
             // Asegúrate de tener GROQ_API_KEY configurada en los Settings del Worker -> Variables
             const groqApiKey = env.GROQ_API_KEY;
-
             if (!groqApiKey) {
                 throw new Error("No se ha configurado la variable de entorno GROQ_API_KEY en Cloudflare.");
             }
-
             const groqResponse = await fetch("https://api.groq.com/openai/v1/chat/completions", {
                 method: "POST",
                 headers: {
@@ -127,22 +116,18 @@ export default {
                     max_tokens: 500
                 })
             });
-
             if (!groqResponse.ok) {
                 const errorData = await groqResponse.text();
                 throw new Error(`Error de la API de Groq: ${errorData}`);
             }
-
             const data = await groqResponse.json();
             const assistantAnswer = data.choices[0].message.content;
-
             // 5. Devolver la respuesta al Frontend (Tu HTML)
             return new Response(JSON.stringify({
                 answer: assistantAnswer
             }), {
                 headers: { ...corsHeaders, "Content-Type": "application/json" }
             });
-
         } catch (err) {
             console.error("Error en Asistente Worker:", err);
             return new Response(JSON.stringify({
