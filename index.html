@@ -15,11 +15,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Optimización LLM SEO y Meta tags para Economía IA -->
     <meta name="description"
-        content="Hub de recursos sobre marketing IA, automatización, agentes conversacionales, pricing y arquitecturas de crecimiento para negocios en Latinoamérica.">
+        content="Ecosistema de Economía IA con órbitas de conocimiento sobre automatización, agentes conversacionales, pricing, tráfico LLM SEO y arquitecturas de crecimiento para negocios.">
     <meta name="keywords"
         content="Economía IA, Consultoría IA Latinoamérica, Agentes Conversacionales en Latinoamérica, Automatización de Ventas, IA para Negocios, Arquitectura LLM, LLM SEO">
     <meta name="author" content="Economía IA">
-    <title>Recursos de Marketing IA y Automatización para Negocios | Economía IA</title>
+    <title>Ecosistema de Economía IA | Economía IA</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
@@ -41,20 +41,32 @@
             background-color: var(--bg-color);
             background-image: radial-gradient(circle at center, #0B0B1A 0%, var(--bg-color) 100%);
             color: var(--text-color);
-            min-height: 100vh;
-            width: 100%;
-            overflow-x: hidden;
-            overflow-y: auto;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
         }
 
         .hero-shell {
             position: relative;
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             perspective: 1200px;
             overflow: hidden;
+        }
+
+        .seo-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            clip-path: inset(50%);
+            border: 0;
+            white-space: nowrap;
         }
 
         /* Ambient glowing background */
@@ -438,14 +450,6 @@
                 font-size: 2.2rem;
             }
 
-            .intro-copy {
-                top: 135px;
-                font-size: 0.95rem;
-            }
-
-            .meta-strip {
-                top: 228px;
-            }
         }
 
         @media (max-width: 600px) {
@@ -456,15 +460,6 @@
             .subtitle {
                 font-size: 0.9rem;
                 top: 90px;
-            }
-
-            .intro-copy {
-                top: 126px;
-                font-size: 0.88rem;
-            }
-
-            .meta-strip {
-                top: 230px;
             }
 
             .center-node {
@@ -486,12 +481,66 @@
             }
         }
 
+        .directory-toggle {
+            position: fixed;
+            left: 1.25rem;
+            bottom: 1.25rem;
+            z-index: 30;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(7, 8, 18, 0.82);
+            color: #e7e9ff;
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            backdrop-filter: blur(14px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .directory-toggle:hover {
+            border-color: rgba(162, 155, 254, 0.5);
+            transform: translateY(-2px);
+        }
+
         .resource-directory {
-            position: relative;
-            z-index: 20;
-            max-width: 1200px;
+            position: fixed;
+            left: 1.25rem;
+            right: 1.25rem;
+            bottom: 5rem;
+            z-index: 35;
+            max-width: 1080px;
+            max-height: min(72vh, 760px);
             margin: 0 auto;
-            padding: 4rem 1.5rem 6rem;
+            padding: 1.5rem;
+            overflow-y: auto;
+            border-radius: 1.5rem;
+            background: linear-gradient(180deg, rgba(10, 12, 28, 0.96), rgba(5, 6, 16, 0.98));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(18px);
+            pointer-events: none;
+            transition: opacity 0.22s ease, transform 0.22s ease;
+        }
+
+        .resource-directory.is-open {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .directory-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .directory-kicker {
@@ -509,7 +558,7 @@
         }
 
         .directory-header {
-            margin-bottom: 2rem;
+            margin-bottom: 0;
         }
 
         .directory-header h2 {
@@ -580,6 +629,38 @@
             font-size: 0.9rem;
             font-weight: 600;
         }
+
+        .directory-close {
+            border: 0;
+            background: rgba(255, 255, 255, 0.06);
+            color: #e7e9ff;
+            width: 36px;
+            height: 36px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 600px) {
+            .directory-toggle {
+                left: 1rem;
+                bottom: 1rem;
+                padding: 0.65rem 0.9rem;
+                font-size: 0.75rem;
+            }
+
+            .resource-directory {
+                left: 0.75rem;
+                right: 0.75rem;
+                bottom: 4.5rem;
+                padding: 1.1rem;
+                max-height: 74vh;
+            }
+
+            .directory-topbar {
+                align-items: flex-start;
+            }
+        }
     </style>
 
 
@@ -626,9 +707,9 @@
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      "name": "Recursos de Marketing IA y Automatización para Negocios",
+      "name": "Ecosistema de Economía IA",
       "url": "https://www.economiaia.business/",
-      "description": "Directorio principal de recursos de Economía IA sobre marketing, automatización, agentes conversacionales, pricing y crecimiento con inteligencia artificial.",
+      "description": "Directorio principal del Ecosistema de Economía IA con páginas sobre automatización, agentes conversacionales, pricing y crecimiento con inteligencia artificial.",
       "inLanguage": "es",
       "isPartOf": {
         "@type": "WebSite",
@@ -680,30 +761,30 @@
     }
     </script>
     <link rel="canonical" href="https://www.economiaia.business/">
-    <meta property="og:title" content="Recursos de Marketing IA y Automatización para Negocios | Economía IA">
+    <meta property="og:title" content="Ecosistema de Economía IA | Economía IA">
     <meta property="og:description"
-        content="Hub de recursos sobre marketing IA, automatización, agentes conversacionales, pricing y arquitecturas de crecimiento para negocios en Latinoamérica.">
+        content="Ecosistema de Economía IA con órbitas de conocimiento sobre automatización, agentes conversacionales, pricing, tráfico LLM SEO y arquitecturas de crecimiento para negocios.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.economiaia.business/">
     <meta property="og:site_name" content="Economía IA">
     <meta property="og:image" content="https://www.economiaia.business/logos/logo_economia_ia_neon_v4.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Recursos de Marketing IA y Automatización para Negocios | Economía IA">
+    <meta name="twitter:title" content="Ecosistema de Economía IA | Economía IA">
     <meta name="twitter:description"
-        content="Hub de recursos sobre marketing IA, automatización, agentes conversacionales, pricing y arquitecturas de crecimiento para negocios en Latinoamérica.">
+        content="Ecosistema de Economía IA con órbitas de conocimiento sobre automatización, agentes conversacionales, pricing, tráfico LLM SEO y arquitecturas de crecimiento para negocios.">
     <meta name="twitter:image" content="https://www.economiaia.business/logos/logo_economia_ia_neon_v4.png">
 </head>
 
 <body>
     <div class="hero-shell">
         <header style="position: absolute; top: 0; left: 0; width: 100%; text-align: center; z-index: 20;">
-            <h1 class="title">Recursos de Marketing IA | Economía IA</h1>
+            <h1 class="title">Ecosistema de Economía IA</h1>
             <div class="subtitle">Órbitas de Conocimiento para la Nueva Economía</div>
-            <p class="intro-copy">
+            <p class="intro-copy seo-hidden">
                 Explora estrategias, arquitecturas, automatización, pricing y sistemas conversacionales para negocios
                 que quieren vender más con inteligencia artificial y operar con menos fricción.
             </p>
-            <div class="meta-strip" aria-label="Información editorial">
+            <div class="meta-strip seo-hidden" aria-label="Información editorial">
                 <span class="meta-chip">Por Henry Roncancio</span>
                 <span class="meta-chip">Actualizado: 7 marzo 2026</span>
                 <span class="meta-chip">Recursos + precios + casos</span>
@@ -726,25 +807,26 @@
         <canvas id="connections"></canvas>
     </div>
 
-    <section class="resource-directory" aria-labelledby="resource-directory-title">
-        <div class="directory-header">
-            <span class="directory-kicker">Mapa rastreable del ecosistema</span>
-            <h2 id="resource-directory-title">Directorio de recursos y páginas clave</h2>
-            <p>
-                Este hub enlaza todas las páginas principales del sitio para facilitar exploración, rastreo e
-                identificación temática. Si buscas implementación, empieza por precios y planes; si buscas contexto,
-                empieza por el núcleo.
-            </p>
+    <button class="directory-toggle" id="directoryToggle" type="button" aria-expanded="false"
+        aria-controls="resourceDirectory">
+        <span>Indice</span>
+    </button>
+
+    <section class="resource-directory" id="resourceDirectory" aria-labelledby="resource-directory-title"
+        aria-hidden="true">
+        <div class="directory-topbar">
+            <div class="directory-header">
+                <span class="directory-kicker">Mapa rastreable del ecosistema</span>
+                <h2 id="resource-directory-title">Directorio de recursos y páginas clave</h2>
+                <p>
+                    Este ecosistema enlaza las páginas principales del sitio para facilitar exploración y rastreo sin
+                    romper la experiencia visual de las órbitas.
+                </p>
+            </div>
+            <button class="directory-close" id="directoryClose" type="button" aria-label="Cerrar indice">×</button>
         </div>
 
         <div class="directory-grid">
-            <a class="resource-card featured" href="precios_y_planes_ia.html">
-                <span class="directory-label">Comercial</span>
-                <h3>Precios y Planes IA</h3>
-                <p class="directory-summary">Comparativa de Starter, Growth, Aceleración y consultoría express para
-                    elegir el nivel de implementación adecuado.</p>
-                <span class="directory-cta">Ver inversión y alcances →</span>
-            </a>
             <a class="resource-card" href="nucleo_economia_ia.html">
                 <span class="directory-label">Fundamentos</span>
                 <h3>Núcleo Economía IA</h3>
@@ -864,6 +946,13 @@
                     agentes con razonamiento.</p>
                 <span class="directory-cta">Comparar enfoques →</span>
             </a>
+            <a class="resource-card" href="precios_y_planes_ia.html">
+                <span class="directory-label">Comercial</span>
+                <h3>Precios y Planes IA</h3>
+                <p class="directory-summary">Comparativa de Starter, Growth, Aceleración y consultoría express para
+                    elegir el nivel de implementación adecuado.</p>
+                <span class="directory-cta">Ver inversión y alcances →</span>
+            </a>
         </div>
     </section>
 
@@ -907,16 +996,45 @@
                     { title: 'Arquitectura ManyChat', file: 'arquitectura_manychat_ia.html', icon: '<i class="ph-duotone ph-robot"></i>', type: 'arquitectura' },
                     { title: 'Stack Tecnológico', file: 'stack_tecnologico_ia.html', icon: '<i class="ph-duotone ph-stack"></i>', type: 'operaciones' },
                     { title: 'Automatización con Meta', file: 'jerarquia_meta_whatsapp.html', icon: '<i class="ph-duotone ph-tree-view"></i>', type: 'arquitectura' },
-                    { title: 'ChatGPT nos visitó', file: 'trafico_llm_seo.html', icon: '<i class="ph-duotone ph-target"></i>', type: 'arquitectura' },
-                    { title: 'Precios y Planes IA', file: 'precios_y_planes_ia.html', icon: '<i class="ph-duotone ph-currency-circle-dollar"></i>', type: 'operaciones' }
+                    { title: 'ChatGPT nos visitó', file: 'trafico_llm_seo.html', icon: '<i class="ph-duotone ph-target"></i>', type: 'arquitectura' }
                 ]
             }
         ];
 
         const scene = document.getElementById('scene');
+        const directoryToggle = document.getElementById('directoryToggle');
+        const directoryPanel = document.getElementById('resourceDirectory');
+        const directoryClose = document.getElementById('directoryClose');
         let orbitTracksElements = [];
         let activeOrbits = [];
         let isHoveringNode = false;
+
+        function setDirectoryState(isOpen) {
+            directoryPanel.classList.toggle('is-open', isOpen);
+            directoryPanel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+            directoryToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+
+        directoryToggle.addEventListener('click', () => {
+            const isOpen = directoryPanel.classList.contains('is-open');
+            setDirectoryState(!isOpen);
+        });
+
+        directoryClose.addEventListener('click', () => {
+            setDirectoryState(false);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                setDirectoryState(false);
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!directoryPanel.classList.contains('is-open')) return;
+            if (directoryPanel.contains(e.target) || directoryToggle.contains(e.target)) return;
+            setDirectoryState(false);
+        });
 
         // --- Dragging Logic ---
         let draggedOrbit = null;
