@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Tráfico LLM SEO: Monitor en vivo de la visibilidad y el tráfico capturado mediante optimización para motores de respuesta de IA.">
+        content="Entiende de forma simple qué es LLM SEO y mira si herramientas como ChatGPT, Claude o Perplexity están leyendo tu sitio.">
     <meta name="keywords"
         content="Tráfico LLM SEO, IA SEO, Motores de Respuesta IA, Visibilidad Algorítmica, Economía IA">
     <meta name="author" content="Economía IA">
-    <title>Tráfico LLM SEO | Economía IA</title>
+    <title>Dónde te encuentra la IA (LLM SEO) | Economía IA</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9Q4T51VW0"></script>
@@ -129,6 +129,11 @@
             main {
                 grid-template-columns: 1fr;
             }
+
+            .intro-grid,
+            .explain-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .panel {
@@ -144,6 +149,98 @@
 
         .panel.full-width {
             grid-column: 1 / -1;
+        }
+
+        .intro-panel {
+            background:
+                radial-gradient(circle at top right, rgba(59, 130, 246, 0.16), transparent 35%),
+                linear-gradient(180deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 41, 59, 0.92) 100%);
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.9fr);
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .intro-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 9999px;
+            background: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            color: #93c5fd;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .intro-heading {
+            margin: 1rem 0 0.8rem;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            line-height: 1.08;
+        }
+
+        .intro-copy {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: #dbe4f0;
+            max-width: 62ch;
+            margin: 0;
+        }
+
+        .intro-aside {
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid rgba(59, 130, 246, 0.18);
+            border-radius: 1rem;
+            padding: 1.25rem;
+        }
+
+        .intro-aside-title {
+            margin: 0 0 0.7rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #93c5fd;
+        }
+
+        .intro-aside p {
+            margin: 0;
+            line-height: 1.7;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        .explain-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .explain-card {
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(148, 163, 184, 0.14);
+            border-radius: 0.9rem;
+            padding: 1rem;
+        }
+
+        .explain-card strong {
+            display: block;
+            margin-bottom: 0.45rem;
+            color: #f8fafc;
+            font-size: 0.95rem;
+        }
+
+        .explain-card p {
+            margin: 0;
+            color: #cbd5e1;
+            line-height: 1.6;
+            font-size: 0.92rem;
         }
 
         .panel-header {
@@ -396,9 +493,9 @@
     }
     </script>
     <link rel="canonical" href="https://www.economiaia.business/trafico_llm_seo.html">
-    <meta property="og:title" content="Tráfico LLM SEO | Economía IA">
+    <meta property="og:title" content="Dónde te encuentra la IA (LLM SEO) | Economía IA">
     <meta property="og:description"
-        content="Monitor en vivo de la visibilidad y tráfico capturado mediante optimización para motores de respuesta de IA.">
+        content="Entiende de forma simple qué es LLM SEO y mira si herramientas como ChatGPT, Claude o Perplexity están leyendo tu sitio.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.economiaia.business/trafico_llm_seo.html">
     <meta property="og:site_name" content="Economía IA">
@@ -422,7 +519,7 @@
             {
                   "@type": "ListItem",
                   "position": 3,
-                  "name": "Tráfico LLM SEO",
+                  "name": "Dónde te encuentra la IA (LLM SEO)",
                   "item": "https://www.economiaia.business/trafico_llm_seo.html"
             }
       ]
@@ -432,8 +529,8 @@
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "headline": "Tráfico LLM SEO",
-      "description": "Monitor en vivo de la visibilidad y tráfico capturado mediante optimización para motores de respuesta de IA.",
+      "headline": "Dónde te encuentra la IA (LLM SEO)",
+      "description": "Explicación simple y monitor en vivo para entender si herramientas como ChatGPT, Claude o Perplexity están leyendo tu sitio.",
       "url": "https://www.economiaia.business/trafico_llm_seo.html",
       "datePublished": "2026-01-15",
       "dateModified": "2026-03-07",
@@ -471,10 +568,10 @@
 
     <header>
         <div class="header-title">
-            <h1 class="logo-text" style="font-size: 1.2rem; margin: 0;">Tráfico LLM SEO</h1>
+            <h1 class="logo-text" style="font-size: 1.2rem; margin: 0;">Dónde te encuentra la IA</h1>
             <div class="live-badge">
                 <div class="live-dot"></div>
-                Tráfico de IA en Vivo
+                Lecturas en vivo
             </div>
         </div>
         <div style="font-size: 0.9rem; color: #94a3b8;">
@@ -483,20 +580,45 @@
     </header>
 
     <main>
+        <section class="panel full-width intro-panel" aria-labelledby="llm-seo-explicado">
+            <div class="intro-grid">
+                <div>
+                    <span class="intro-kicker">LLM SEO sin enredos</span>
+                    <h2 class="intro-heading" id="llm-seo-explicado">LLM SEO es lograr que la IA te vea, te entienda y te pueda mencionar.</h2>
+                    <p class="intro-copy">En palabras simples: si una persona le pregunta a ChatGPT, Claude o Perplexity por un tema relacionado con tu negocio, primero esas herramientas tienen que leer tu sitio. Esta página muestra esa primera parte del proceso para que entiendas qué está pasando.</p>
+                </div>
+                <aside class="intro-aside">
+                    <h3 class="intro-aside-title">La idea clave</h3>
+                    <p>Antes de que una IA te recomiende, tiene que pasar por tu web. Si no te lee, para la máquina no existes. Por eso aquí medimos si esas herramientas ya están entrando y revisando tu contenido.</p>
+                </aside>
+            </div>
+            <div class="explain-grid" aria-label="Resumen simple de LLM SEO">
+                <article class="explain-card">
+                    <strong>Qué significa</strong>
+                    <p>Que tu sitio está preparado para aparecer cuando la gente hace preguntas en motores de IA.</p>
+                </article>
+                <article class="explain-card">
+                    <strong>Qué muestra esta página</strong>
+                    <p>Si herramientas de IA han pasado por tu web y qué señales básicas estamos capturando.</p>
+                </article>
+                <article class="explain-card">
+                    <strong>Qué no significa</strong>
+                    <p>Una visita no es una venta. Primero te leen, luego te entienden y después te pueden recomendar.</p>
+                </article>
+            </div>
+        </section>
+
         <!-- Tracker Panel -->
         <div class="panel full-width">
             <div class="panel-header">
-                <h2 class="panel-title">📡 Auditoría de Conexión y LLM Tracking</h2>
+                <h2 class="panel-title">📡 Lo que está pasando ahora mismo</h2>
                 <span style="font-size: 0.8rem; color: var(--text-muted);">Sesión en Vivo</span>
             </div>
             <p
                 style="font-size: 0.95rem; color: var(--text-muted); margin-top: -0.5rem; margin-bottom: 1.5rem; line-height: 1.6;">
-                <strong>El SEO tradicional está muriendo.</strong> Si tu negocio no está optimizado para Inteligencia
-                Artificial (<span style="color: #6C5CE7; font-weight: bold;">LLM SEO</span>), no existirás en las
-                recomendaciones de ChatGPT, Claude o Gemini. Así como auditamos tu red humana usando los bloques
-                izquierdos, nuestra infraestructura perimetral (Edge) intercepta y cuantifica continuamente a los
-                'robots' que leen nuestro ecosistema empresarial, asegurando que Economía IA sea la primera opción de la
-                máquina.
+                Aquí puedes ver dos cosas: tu visita humana y las visitas de herramientas de IA que pasan por el sitio.
+                Eso ayuda a comprobar si el contenido ya está siendo leído por máquinas como ChatGPT, Claude o
+                Perplexity.
             </p>
             <style>
                 .tracker-grid {
@@ -578,11 +700,11 @@
                 <div class="stat-card" id="userConnectionPanel"
                     style="border-color: var(--accent-amber); background: rgba(245, 158, 11, 0.05);">
                     <div class="stat-card-content">
-                        <div class="stat-label" style="color: var(--accent-amber);">Tu IP y Terminal Detectada</div>
+                        <div class="stat-label" style="color: var(--accent-amber);">Tu visita ahora</div>
                         <div class="ip-text" id="userIP">Localizando...</div>
                         <div id="userLoc" style="font-size: 0.9rem; color: var(--text-muted); font-weight: 600;">
                             Cargando
-                            coordenadas...</div>
+                            datos de tu visita...</div>
                     </div>
                     <div class="stat-card-icon">🎯</div>
                 </div>
@@ -590,13 +712,13 @@
                 <div class="stat-card" id="aiCrawlerPanel"
                     style="border-color: #3b82f6; background: rgba(59, 130, 246, 0.05);">
                     <div class="stat-card-content">
-                        <div class="stat-label" style="color: #3b82f6;">Rastreo de IA (Network Edge)</div>
+                        <div class="stat-label" style="color: #3b82f6;">Lecturas de IA detectadas</div>
                         <div class="stat-value" id="aiCrawlerValue"
                             style="font-size: 1.2rem; color: #3b82f6; margin: 0.5rem 0; word-wrap: break-word;">
-                            Sintonizando...</div>
+                            Buscando actividad...</div>
                         <div id="aiCrawlerSubtitle"
                             style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">
-                            Analizando barrera perimetral...
+                            Revisando actividad reciente...
                         </div>
                     </div>
                     <div class="stat-card-icon">🤖</div>
@@ -607,7 +729,7 @@
                 style="margin-top: 1.5rem; max-height: 250px; overflow-y: auto; background: rgba(15, 23, 42, 0.6); border-radius: 0.5rem; padding: 1.5rem; font-size: 0.85rem; border: 1px solid rgba(59, 130, 246, 0.2); display: none;">
                 <div
                     style="color: #3b82f6; font-weight: 600; margin-bottom: 0.8rem; border-bottom: 1px solid rgba(59, 130, 246, 0.2); padding-bottom: 0.5rem;">
-                    Histórico de Conexiones de Máquina (Últimos Días)</div>
+                    Historial de lecturas de IA (últimos días)</div>
                 <div id="aiFeedList"></div>
             </div>
 
@@ -615,21 +737,18 @@
             <div
                 style="margin-top: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
                 <div style="font-size: 0.8rem;">
-                    <strong style="display: block; color: var(--accent-amber); margin-bottom: 0.3rem;">📡 Huella
-                        Humana</strong>
-                    Lo que ves a la izquierda es tu propia conexión. Analizamos metadatos de red para demostrar cómo un
-                    sistema puede identificar quién entra a tu negocio.
+                    <strong style="display: block; color: var(--accent-amber); margin-bottom: 0.3rem;">📡 Tu
+                        visita</strong>
+                    El bloque izquierdo muestra que una persona real entró a la página en este momento.
                 </div>
                 <div style="font-size: 0.8rem;">
-                    <strong style="display: block; color: #3b82f6; margin-bottom: 0.3rem;">🔍 Rastreo Edge</strong>
-                    El contador central muestra cuántas veces las IAs (GPTBot, ClaudeBot) han pasado por nuestro
-                    ecosistema en los últimos días para actualizar su base de datos.
+                    <strong style="display: block; color: #3b82f6; margin-bottom: 0.3rem;">🔍 Lecturas de IA</strong>
+                    El bloque derecho resume cuántas veces bots o herramientas de IA han pasado por el sitio.
                 </div>
                 <div style="font-size: 0.8rem;">
-                    <strong style="display: block; color: var(--accent-green); margin-bottom: 0.3rem;">✅ Validación
-                        LLM</strong>
-                    Cada registro en el historial confirma que tu contenido ha sido 'leído' por una máquina, el primer
-                    paso crítico para aparecer en sus recomendaciones.
+                    <strong style="display: block; color: var(--accent-green); margin-bottom: 0.3rem;">✅ Primer
+                        paso</strong>
+                    Si una IA te leyó, ya existe una base para que después pueda entenderte y mencionarte.
                 </div>
             </div>
         </div>
@@ -894,7 +1013,7 @@
 
             } catch (err) {
                 console.error("Error obteniendo info del visitante", err);
-                document.getElementById('userIP').innerText = "Rastreo Ofuscado";
+                document.getElementById('userIP').innerText = "Visita protegida";
             }
         }
 
@@ -925,7 +1044,7 @@
                     }
 
                     document.getElementById('aiCrawlerValue').innerText = visualString.join(' • ');
-                    document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #10b981;">${totalRequests} rastreos validados en tiempo real</span> a través de nuestra red EDGE.`;
+                    document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #10b981;">${totalRequests} lecturas recientes confirmadas</span> de herramientas de IA en el sitio.`;
 
                     const feedContainer = document.getElementById('aiFeedContainer');
                     const feedList = document.getElementById('aiFeedList');
@@ -952,7 +1071,7 @@
 
                             el.innerHTML = `
                                 <span style="color: var(--text-muted);">${dateLocale}</span>
-                                <span><strong style="color: ${colorStr}">${item.bot}</strong> detectado (${item.val} peticiones)</span>
+                                <span><strong style="color: ${colorStr}">${item.bot}</strong> pasó por el sitio (${item.val} lecturas)</span>
                             `;
                             feedList.appendChild(el);
                         });
@@ -962,7 +1081,7 @@
                 // Fallback de demostración UI si el worker no está disponible para no romper el layout de ventas
                 console.warn("Worker de Cloudflare no detectado, usando datos simulados de Edge para la interfaz visual.");
                 document.getElementById('aiCrawlerValue').innerText = 'GPTBot (7) • ClaudeBot (5) • Googlebot (3)';
-                document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #10b981;">15 rastreos EDGE interceptados</span> y bloqueados temporalmente.<br><span style="font-size: 0.75rem; color: #cbd5e1;">Cargando latencia perimetral...</span>`;
+                document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #10b981;">15 lecturas simuladas para la demo</span> mientras se conecta el monitor real.<br><span style="font-size: 0.75rem; color: #cbd5e1;">Mostrando una vista de ejemplo...</span>`;
             }
         }
 
