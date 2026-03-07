@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henry Roncancio | Economía IA</title>
+    <meta name="description"
+        content="Perfil profesional de Henry Roncancio, fundador de Economía IA, experto en Inteligencia Artificial y con trabajo en aplicaciones robóticas con IA junto a la Universidad Militar de Colombia.">
+    <meta name="author" content="Henry Roncancio">
+    <meta name="keywords"
+        content="Henry Roncancio, Economía IA, fundador, AI Architect, agentes conversacionales personalizados, pequeñas empresas, negocios, Latinoamérica">
+    <link rel="canonical" href="https://www.economiaia.business/henry_roncancio.html">
+    <meta property="og:title" content="Henry Roncancio | Economía IA">
+    <meta property="og:description"
+        content="Perfil profesional de Henry Roncancio, fundador de Economía IA, experto en Inteligencia Artificial y con trabajo en aplicaciones robóticas con IA junto a la Universidad Militar de Colombia.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://www.economiaia.business/henry_roncancio.html">
+    <meta property="og:site_name" content="Economía IA">
+    <meta property="og:image" content="https://www.economiaia.business/logos/logo_economia_ia_neon_v4.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Henry Roncancio | Economía IA">
+    <meta name="twitter:description"
+        content="Perfil profesional de Henry Roncancio, fundador de Economía IA, experto en Inteligencia Artificial y con trabajo en aplicaciones robóticas con IA junto a la Universidad Militar de Colombia.">
+    <meta name="twitter:image" content="https://www.economiaia.business/logos/logo_economia_ia_neon_v4.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #07101d;
+            --panel: rgba(15, 23, 42, 0.84);
+            --panel-strong: #0f1b30;
+            --border: rgba(148, 163, 184, 0.18);
+            --text: #f8fafc;
+            --muted: #a4b2c8;
+            --blue: #38bdf8;
+            --cyan: #22d3ee;
+            --green: #22c55e;
+            --gold: #f59e0b;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), transparent 24%),
+                radial-gradient(circle at top right, rgba(56, 189, 248, 0.10), transparent 28%),
+                linear-gradient(180deg, #08101b 0%, #0b1528 100%);
+        }
+
+        a { color: inherit; }
+
+        .container {
+            width: min(1100px, calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 1.5rem 0 0;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .hero {
+            padding: 3.2rem 0 2rem;
+        }
+
+        .hero-grid,
+        .section-grid,
+        .proof-grid,
+        .links-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .hero-grid {
+            grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.9fr);
+            align-items: stretch;
+        }
+
+        .section-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .proof-grid,
+        .links-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .hero-card,
+        .aside-card,
+        .section-card,
+        .proof-card,
+        .link-card,
+        .cta-panel {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            backdrop-filter: blur(12px);
+        }
+
+        .hero-card,
+        .aside-card,
+        .section-card,
+        .proof-card,
+        .link-card,
+        .cta-panel {
+            padding: 1.7rem;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+            border: 1px solid rgba(56, 189, 248, 0.24);
+            background: rgba(56, 189, 248, 0.08);
+            color: #93c5fd;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif;
+            margin: 0 0 0.8rem;
+        }
+
+        h1 {
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            line-height: 0.98;
+        }
+
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.2rem; }
+
+        p, li {
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        .hero-lead {
+            font-size: 1.06rem;
+            max-width: 64ch;
+            margin: 0;
+        }
+
+        .hero-lead strong,
+        .mini-list strong,
+        .proof-meta,
+        .meta-item strong {
+            color: var(--text);
+        }
+
+        .mini-list,
+        .meta-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .mini-badge {
+            display: inline-flex;
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.24);
+            color: #fcd34d;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+        }
+
+        .proof-meta {
+            display: block;
+            color: #bfdbfe;
+            font-size: 0.92rem;
+            font-weight: 600;
+            margin-bottom: 0.55rem;
+        }
+
+        .card-link,
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 1rem;
+        }
+
+        .card-link {
+            color: #c6f6ff;
+        }
+
+        .cta-panel {
+            margin: 2rem 0 4rem;
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) auto;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .cta-btn {
+            justify-content: center;
+            min-width: 230px;
+            padding: 1rem 1.4rem;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--cyan), var(--blue));
+            color: #04111d;
+        }
+
+        .footer {
+            padding: 0 0 3rem;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid,
+            .section-grid,
+            .proof-grid,
+            .links-grid,
+            .cta-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-btn { width: 100%; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "name": "Henry Roncancio | Economía IA",
+      "url": "https://www.economiaia.business/henry_roncancio.html",
+      "description": "Perfil profesional de Henry Roncancio, fundador de Economía IA, experto en Inteligencia Artificial y con trabajo en aplicaciones robóticas con IA junto a la Universidad Militar de Colombia.",
+      "inLanguage": "es",
+      "datePublished": "2026-03-07",
+      "dateModified": "2026-03-07",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Henry Roncancio",
+        "jobTitle": "Founder & AI Architect",
+        "url": "https://www.economiaia.business/henry_roncancio.html",
+        "sameAs": [
+          "https://www.linkedin.com/in/henry-roncancio-a7341015/",
+          "https://beacons.ai/economiaia"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Economía IA",
+          "url": "https://www.economiaia.business/"
+        }
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <a href="quienes_somos.html" class="nav-back">← Volver a Quiénes somos</a>
+
+        <header class="hero">
+            <div class="hero-grid">
+                <section class="hero-card">
+                    <span class="eyebrow">Perfil público</span>
+                    <h1>Henry Roncancio</h1>
+                    <p class="hero-lead"><strong>Fundador de Economía IA</strong>, experto en Inteligencia Artificial. Su trabajo se centra en diseñar e implementar sistemas de IA para negocios, con foco principal en <strong>agentes conversacionales personalizados para pequeñas empresas y negocios</strong>.</p>
+                </section>
+                <aside class="aside-card">
+                    <h2>En breve</h2>
+                    <ul class="mini-list">
+                        <li><strong>Rol:</strong> fundador y AI Architect.</li>
+                        <li><strong>Especialidad:</strong> agentes conversacionales, automatización comercial e implementación útil.</li>
+                        <li><strong>Trabajo adicional:</strong> aplicaciones robóticas con Inteligencia Artificial junto a la Universidad Militar de Colombia.</li>
+                        <li><strong>Cobertura:</strong> Colombia y Latinoamérica.</li>
+                        <li><strong>Conexión pública:</strong> sitio propio, LinkedIn y Beacons.</li>
+                    </ul>
+                </aside>
+            </div>
+        </header>
+
+        <section class="section-grid">
+            <article class="section-card">
+                <h2>Qué hace</h2>
+                <p>Henry Roncancio lidera proyectos donde la IA debe servir a un proceso comercial real. El objetivo no es solo que la tecnología funcione, sino que ayude a responder mejor, reducir carga operativa y convertir conversaciones en oportunidades más claras.</p>
+            </article>
+            <article class="section-card">
+                <h2>Cómo trabaja</h2>
+                <p>Combina estrategia, implementación y traducción técnica. Eso significa convertir decisiones complejas en acciones útiles para el negocio: qué canal activar, qué tipo de agente conviene y qué automatizar primero.</p>
+            </article>
+        </section>
+
+        <section style="padding-top: 1rem;">
+            <div class="section-card">
+                <h2>Experiencia en Inteligencia Artificial</h2>
+                <p>Además de liderar Economía IA, Henry Roncancio trabaja en aplicaciones robóticas con Inteligencia Artificial junto a la Universidad Militar de Colombia. Esto amplía su experiencia más allá de la automatización comercial y refuerza una base técnica aplicada en entornos reales.</p>
+            </div>
+        </section>
+
+        <section style="padding-top: 1rem;">
+            <div class="section-card">
+                <h2>Relación con Economía IA</h2>
+                <ul class="meta-list">
+                    <li class="meta-item"><strong>Marca principal:</strong> Economía IA.</li>
+                    <li class="meta-item"><strong>Posicionamiento actual:</strong> agentes conversacionales personalizados para pequeñas empresas y negocios.</li>
+                    <li class="meta-item"><strong>Función dentro del sistema:</strong> conectar la estrategia del negocio con la implementación y el resultado práctico.</li>
+                </ul>
+                <a class="card-link" href="quienes_somos.html">Ver página institucional de Economía IA</a>
+            </div>
+        </section>
+
+        <section style="padding-top: 1rem;">
+            <div class="section-card">
+                <h2>Experiencia visible</h2>
+                <div class="proof-grid">
+                    <article class="proof-card">
+                        <span class="mini-badge">Referencia visible</span>
+                        <span class="proof-meta">Toyota Colombia · junio de 2024</span>
+                        <h3>Trabajo realizado</h3>
+                        <p>Se incluye como referencia pública de experiencia profesional ejecutada en junio de 2024. Su función aquí es mostrar trabajo real en contexto empresarial.</p>
+                    </article>
+                    <article class="proof-card">
+                        <span class="mini-badge">Referencia visible</span>
+                        <span class="proof-meta">Agencia Nacional de Minería · Colombia · 2025</span>
+                        <h3>Trabajo realizado</h3>
+                        <p>Se incluye como referencia pública de trabajo realizado en 2025 con una entidad pública nacional en Colombia. Refuerza continuidad profesional y experiencia en contexto institucional.</p>
+                    </article>
+                    <article class="proof-card">
+                        <span class="mini-badge">Qué demuestra</span>
+                        <h3>Experiencia comprobable</h3>
+                        <p>Estas referencias ayudan a mostrar trayectoria. Con el tiempo pueden crecer a casos más completos, testimonios o páginas de experiencia.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding-top: 1rem;">
+            <div class="section-card">
+                <h2>Perfiles y presencia pública</h2>
+                <div class="links-grid">
+                    <article class="link-card">
+                        <span class="mini-badge">Perfil profesional</span>
+                        <h3>LinkedIn</h3>
+                        <p>Perfil principal para revisar trayectoria, conexiones profesionales y contexto público.</p>
+                        <a class="card-link" href="https://www.linkedin.com/in/henry-roncancio-a7341015/" target="_blank" rel="noopener noreferrer">Abrir LinkedIn</a>
+                    </article>
+                    <article class="link-card">
+                        <span class="mini-badge">Bio pública</span>
+                        <h3>Beacons</h3>
+                        <p>Bio complementaria para reunir accesos rápidos a canales, perfiles y presencia digital.</p>
+                        <a class="card-link" href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer">Abrir Beacons</a>
+                    </article>
+                    <article class="link-card">
+                        <span class="mini-badge">Marca principal</span>
+                        <h3>Economía IA</h3>
+                        <p>El sitio principal donde se organiza la oferta, el ecosistema de conocimiento y la parte comercial visible.</p>
+                        <a class="card-link" href="index.html">Ir al Ecosistema</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-panel">
+            <div>
+                <h2>¿Quieres hablar directamente?</h2>
+                <p>Si llegaste aquí para entender quién está detrás del proyecto y si esta experiencia encaja con tu negocio, el siguiente paso es una conversación directa.</p>
+            </div>
+            <a class="cta-btn" href="https://wa.me/573043656226?text=Hola,%20vengo%20del%20perfil%20de%20Henry%20Roncancio%20en%20Econom%C3%ADa%20IA.%20Quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
+        </section>
+
+        <div class="footer">© 2026 Economía IA ™</div>
+    </div>
+</body>
+
+</html>

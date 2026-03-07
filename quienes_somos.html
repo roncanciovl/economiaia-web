@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes Somos | Economía IA</title>
+    <meta name="description"
+        content="Conoce qué hace Economía IA, quién lidera el proyecto y por qué nos especializamos en agentes conversacionales personalizados para pequeñas empresas y negocios.">
+    <meta name="author" content="Henry Roncancio">
+    <meta name="keywords"
+        content="Economía IA, quiénes somos, Henry Roncancio, agentes conversacionales personalizados, pequeñas empresas, negocios, IA en Latinoamérica">
+    <link rel="canonical" href="https://www.economiaia.business/quienes_somos.html">
+    <meta property="og:title" content="Quiénes Somos | Economía IA">
+    <meta property="og:description"
+        content="Página institucional de Economía IA: qué hacemos, quién lidera el proyecto y experiencia visible en empresas y entidades.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.economiaia.business/quienes_somos.html">
+    <meta property="og:site_name" content="Economía IA">
+    <meta property="og:image" content="https://www.economiaia.business/logos/logo_economia_ia_neon_v4.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Quiénes Somos | Economía IA">
+    <meta name="twitter:description"
+        content="Página institucional de Economía IA: qué hacemos, quién lidera el proyecto y experiencia visible en empresas y entidades.">
+    <meta name="twitter:image" content="https://www.economiaia.business/logos/logo_economia_ia_neon_v4.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #09101d;
+            --panel: rgba(15, 23, 42, 0.82);
+            --panel-strong: #111c31;
+            --border: rgba(148, 163, 184, 0.18);
+            --text: #f8fafc;
+            --muted: #a7b4c7;
+            --blue: #38bdf8;
+            --green: #22c55e;
+            --cyan: #22d3ee;
+            --gold: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background:
+                radial-gradient(circle at top, rgba(34, 211, 238, 0.12), transparent 30%),
+                linear-gradient(180deg, #08101b 0%, #0b1324 100%);
+            color: var(--text);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            width: min(1120px, calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 1.5rem 0 0;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .hero {
+            padding: 3.5rem 0 2.5rem;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            background: rgba(56, 189, 248, 0.08);
+            color: #93c5fd;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.9fr);
+            gap: 1.5rem;
+            align-items: stretch;
+            margin-top: 1.25rem;
+        }
+
+        .hero-copy,
+        .hero-card,
+        .section-panel,
+        .profile-card,
+        .proof-card,
+        .step-card,
+        .cta-panel {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            backdrop-filter: blur(12px);
+        }
+
+        .hero-copy {
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.4rem, 5vw, 4.2rem);
+            line-height: 0.98;
+            margin: 1rem 0;
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin: 0;
+            max-width: 62ch;
+        }
+
+        .hero-strong {
+            color: #dff7ff;
+            font-weight: 600;
+        }
+
+        .hero-card {
+            padding: 1.6rem;
+            background:
+                radial-gradient(circle at top right, rgba(34, 197, 94, 0.12), transparent 30%),
+                var(--panel-strong);
+        }
+
+        .hero-card h2,
+        .section-title,
+        .profile-card h3,
+        .proof-card h3,
+        .step-card h3,
+        .cta-panel h2 {
+            font-family: 'Outfit', sans-serif;
+            margin: 0 0 0.75rem;
+        }
+
+        .hero-list,
+        .meta-list {
+            display: grid;
+            gap: 0.8rem;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .hero-list li,
+        .meta-list li {
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .hero-list strong,
+        .meta-list strong {
+            color: var(--text);
+        }
+
+        .section {
+            padding: 1rem 0 0;
+        }
+
+        .section-panel {
+            padding: 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .section-intro {
+            color: var(--muted);
+            max-width: 70ch;
+            line-height: 1.75;
+            margin: 0 0 1.5rem;
+        }
+
+        .two-col,
+        .profiles-grid,
+        .proof-grid,
+        .steps-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .two-col {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .profiles-grid,
+        .proof-grid,
+        .steps-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .profile-card,
+        .proof-card,
+        .step-card {
+            padding: 1.4rem;
+        }
+
+        .profile-card p,
+        .proof-card p,
+        .step-card p {
+            color: var(--muted);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .profile-link {
+            display: inline-flex;
+            margin-top: 1rem;
+            color: #c6f6ff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .mini-label {
+            display: inline-flex;
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.22);
+            color: #fcd34d;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .proof-meta {
+            display: block;
+            color: #bfdbfe;
+            font-size: 0.92rem;
+            font-weight: 600;
+            margin-bottom: 0.55rem;
+        }
+
+        .proof-note {
+            font-size: 0.9rem;
+            color: #93a7c5;
+            margin-top: 1rem;
+        }
+
+        .cta-panel {
+            padding: 2rem;
+            margin: 2rem 0 4rem;
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) auto;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .cta-panel p {
+            color: var(--muted);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 1.4rem;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--cyan), var(--blue));
+            color: #04111d;
+            min-width: 220px;
+        }
+
+        .footer {
+            padding: 0 0 3rem;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid,
+            .two-col,
+            .profiles-grid,
+            .proof-grid,
+            .steps-grid,
+            .cta-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-btn {
+                width: 100%;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "Quiénes Somos | Economía IA",
+      "url": "https://www.economiaia.business/quienes_somos.html",
+      "description": "Página institucional de Economía IA con información sobre qué hace la empresa, quién la lidera y experiencia visible.",
+      "inLanguage": "es",
+      "datePublished": "2026-03-07",
+      "dateModified": "2026-03-07",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Economía IA",
+        "url": "https://www.economiaia.business/",
+        "logo": "https://www.economiaia.business/logos/logo_economia_ia_neon_v4.png",
+        "description": "Economía IA se especializa en agentes conversacionales personalizados para pequeñas empresas y negocios en Latinoamérica.",
+        "founder": {
+          "@type": "Person",
+          "name": "Henry Roncancio",
+          "url": "https://www.linkedin.com/in/henry-roncancio-a7341015/"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/henry-roncancio-a7341015/",
+          "https://beacons.ai/economiaia",
+          "https://www.tiktok.com/@economiaia"
+        ]
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Henry Roncancio",
+      "url": "https://www.economiaia.business/quienes_somos.html",
+      "sameAs": [
+        "https://www.linkedin.com/in/henry-roncancio-a7341015/",
+        "https://beacons.ai/economiaia"
+      ],
+      "jobTitle": "Founder & AI Architect",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Economía IA",
+        "url": "https://www.economiaia.business/"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html" class="nav-back">← Volver al Ecosistema</a>
+
+        <header class="hero">
+            <span class="eyebrow">Página institucional</span>
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <h1>Economía IA</h1>
+                    <p><span class="hero-strong">Nos especializamos en agentes conversacionales personalizados para pequeñas empresas y negocios.</span> Diseñamos sistemas que responden clientes, ordenan conversaciones y ayudan a vender mejor por web, WhatsApp, Instagram y voz.</p>
+                </div>
+                <aside class="hero-card">
+                    <h2>En una sola lectura</h2>
+                    <ul class="hero-list">
+                        <li><strong>Qué es:</strong> una empresa enfocada en implementar IA para atención y ventas.</li>
+                        <li><strong>Quién lidera:</strong> Henry Roncancio, experto en Inteligencia Artificial.</li>
+                        <li><strong>Para quién:</strong> pequeñas empresas, negocios en crecimiento y proyectos que necesitan responder mejor.</li>
+                        <li><strong>Cobertura:</strong> Colombia y Latinoamérica, 100% remoto.</li>
+                    </ul>
+                </aside>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="section-panel">
+                <h2 class="section-title">Qué hacemos</h2>
+                <p class="section-intro">Ayudamos a negocios que quieren responder mejor, atender más rápido y vender con menos fricción. Nuestro foco principal es crear agentes conversacionales personalizados que se adapten al proceso real de cada empresa.</p>
+                <div class="two-col">
+                    <ul class="meta-list">
+                        <li><strong>Canales:</strong> web, WhatsApp, Instagram, automatizaciones de mensajería y voz.</li>
+                        <li><strong>Trabajo principal:</strong> agentes conversacionales, automatización comercial e implementación alrededor del agente.</li>
+                        <li><strong>Tipo de cliente:</strong> pequeñas empresas, negocios locales, marcas en crecimiento y equipos que quieren menos carga operativa.</li>
+                    </ul>
+                    <ul class="meta-list">
+                        <li><strong>Enfoque:</strong> claridad comercial, implementación útil y lenguaje fácil de entender.</li>
+                        <li><strong>Apoyo técnico:</strong> arquitectura, integraciones, pricing, contenido y visibilidad en motores de IA.</li>
+                        <li><strong>Forma de trabajo:</strong> diagnóstico, diseño, implementación y ajuste según el proceso real del negocio.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-panel">
+                <h2 class="section-title">Quién lidera Economía IA</h2>
+                <p class="section-intro">Henry Roncancio lidera la parte estratégica y técnica del proyecto. Es experto en Inteligencia Artificial y también trabaja en aplicaciones robóticas con Inteligencia Artificial junto a la Universidad Militar de Colombia. Esta sección existe para que cualquier cliente pueda ver con claridad quién está detrás de la marca y dónde consultar más información pública.</p>
+                <div class="profiles-grid">
+                    <article class="profile-card">
+                        <span class="mini-label">Perfil principal</span>
+                        <h3>Henry Roncancio</h3>
+                        <p>Fundador de Economía IA, experto en Inteligencia Artificial y vinculado a trabajo en aplicaciones robóticas con IA junto a la Universidad Militar de Colombia.</p>
+                        <a class="profile-link" href="henry_roncancio.html">Ver perfil completo</a>
+                    </article>
+                    <article class="profile-card">
+                        <span class="mini-label">Página personal</span>
+                        <h3>Beacons</h3>
+                        <p>La página en Beacons funciona como bio pública y punto rápido de acceso a canales y perfiles complementarios.</p>
+                        <a class="profile-link" href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer">Abrir Beacons</a>
+                    </article>
+                    <article class="profile-card">
+                        <span class="mini-label">Presencia externa</span>
+                        <h3>Señales públicas</h3>
+                        <p>Sitio propio, LinkedIn, Beacons y canales sociales deben apuntar al mismo mensaje para que la marca sea más clara y confiable.</p>
+                        <a class="profile-link" href="https://www.tiktok.com/@economiaia" target="_blank" rel="noopener noreferrer">Ver TikTok</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-panel">
+                <h2 class="section-title">Experiencia visible</h2>
+                <p class="section-intro">La confianza no sale solo del discurso. También importa poder mostrar experiencia real. Este bloque reúne referencias visibles de trabajo ya realizado.</p>
+                <div class="proof-grid">
+                    <article class="proof-card">
+                        <span class="proof-meta">Toyota Colombia · junio de 2024</span>
+                        <h3>Trabajo realizado</h3>
+                        <p>Referencia de experiencia profesional ejecutada en junio de 2024. Se incluye para mostrar que detrás de Economía IA sí existe trabajo real en contexto empresarial, aunque aquí todavía no se publique el caso completo.</p>
+                    </article>
+                    <article class="proof-card">
+                        <span class="proof-meta">Agencia Nacional de Minería · Colombia · 2025</span>
+                        <h3>Trabajo realizado</h3>
+                        <p>Referencia de trabajo realizado en 2025 con una entidad pública nacional en Colombia. Refuerza continuidad profesional y experiencia en contextos institucionales.</p>
+                    </article>
+                    <article class="proof-card">
+                        <span class="proof-meta">Nota</span>
+                        <h3>Cómo leer esta sección</h3>
+                        <p>Estas referencias ayudan a validar experiencia. El siguiente paso natural es convertirlas en casos con más detalle, alcance y resultados cuando se pueda publicarlos.</p>
+                    </article>
+                </div>
+                <p class="proof-note">A medida que se pueda publicar más información, estas referencias pueden crecer a casos públicos con mayor contexto y resultados.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-panel">
+                <h2 class="section-title">Cómo puedes conocernos mejor</h2>
+                <div class="steps-grid">
+                    <article class="step-card">
+                        <h3>1. Sitio propio</h3>
+                        <p>Aquí vive la explicación principal de qué es Economía IA, qué hace y quién la lidera.</p>
+                    </article>
+                    <article class="step-card">
+                        <h3>2. Perfiles conectados</h3>
+                        <p>LinkedIn y Beacons no reemplazan el sitio. Lo respaldan y ayudan a dar más contexto público.</p>
+                    </article>
+                    <article class="step-card">
+                        <h3>3. Experiencia real</h3>
+                        <p>Las empresas, entidades y trabajos de investigación aplicados sirven como base para mostrar trayectoria y confianza.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-panel">
+            <div>
+                <h2>¿Quieres hablar con un estratega?</h2>
+                <p>Si llegaste aquí para entender qué hace Economía IA y si encaja con tu negocio, el siguiente paso es una conversación directa para revisar tu caso.</p>
+            </div>
+            <a class="cta-btn" href="https://wa.me/573043656226?text=Hola,%20vengo%20de%20la%20p%C3%A1gina%20Qui%C3%A9nes%20Somos%20de%20Econom%C3%ADa%20IA.%20Quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
+        </section>
+
+        <div class="footer">© 2026 Economía IA ™</div>
+    </div>
+</body>
+
+</html>
