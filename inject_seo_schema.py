@@ -10,8 +10,8 @@ schema_template = '''
       "@type": "ProfessionalService",
       "name": "Economía IA",
       "url": "https://www.economiaia.business",
-      "logo": "https://www.economiaia.business/logo_economia_ia_neon_v4.png",
-      "image": "https://www.economiaia.business/logo_economia_ia_neon_v4.png",
+      "logo": "https://www.economiaia.business/logos/logo_economia_ia_neon_v4.png",
+      "image": "https://www.economiaia.business/logos/logo_economia_ia_neon_v4.png",
       "description": "Agencia de Inteligencia Artificial enfocada en resultados rápidos para Pymes y arquitecturas Enterprise. Reemplazamos chatbots viejos con Agentes Cognitivos y automatizamos ventas usando Google Vertex AI, Gemini y arquitecturas cognitivas.",
       "address": {
         "@type": "PostalAddress",
