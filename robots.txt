@@ -1,5 +1,5 @@
 # Economía IA — robots.txt
-# https://economiaia.business
+# https://www.economiaia.business
 #
 # IMPORTANTE PARA CLOUDFLARE:
 # Este archivo define directivas para crawlers. Sin embargo, si "Bot Fight Mode"
@@ -56,7 +56,7 @@ User-agent: Bingbot
 Allow: /
 
 # Sitemap
-Sitemap: https://economiaia.business/sitemap.xml
+Sitemap: https://www.economiaia.business/sitemap.xml
 
 # LLMs.txt — Archivo de contexto para modelos de lenguaje
-# https://economiaia.business/llms.txt
+# https://www.economiaia.business/llms.txt

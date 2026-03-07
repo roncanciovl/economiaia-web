@@ -12,7 +12,7 @@ export default {
     async fetch(request, env, ctx) {
         // --- 1. CONFIGURACIÓN CORS (Seguridad del Frontend) ---
         const corsHeaders = {
-            "Access-Control-Allow-Origin": "*", // En producción, cambiar a "https://economiaia.business"
+            "Access-Control-Allow-Origin": "*", // En producción, cambiar a "https://www.economiaia.business"
             "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
             "Access-Control-Allow-Headers": "Content-Type",
         };
@@ -59,7 +59,7 @@ Contacto directo: agendamiento@economiaia.business
 
             // c) ¿Es un usuario normal abriendo la URL del Worker directamente probando?
             // Podrías redirigirlo a tu página normal
-            return new Response("🚀 Edge Analytics / API Gateway en Vivo. Estado: OPERATIVO.\nIr a https://economiaia.business", {
+            return new Response("🚀 Edge Analytics / API Gateway en Vivo. Estado: OPERATIVO.\nIr a https://www.economiaia.business", {
                 headers: { ...corsHeaders, "Content-Type": "text/plain" }
             });
         }

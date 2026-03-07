@@ -15,11 +15,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Optimización LLM SEO y Meta tags para Economía IA -->
     <meta name="description"
-        content="Ecosistema de conocimiento y consultoría de Inteligencia Artificial en Latinoamérica. Descubre estrategias, arquitecturas de agentes conversacionales y automatización para negocios.">
+        content="Hub de recursos sobre marketing IA, automatización, agentes conversacionales, pricing y arquitecturas de crecimiento para negocios en Latinoamérica.">
     <meta name="keywords"
         content="Economía IA, Consultoría IA Latinoamérica, Agentes Conversacionales en Latinoamérica, Automatización de Ventas, IA para Negocios, Arquitectura LLM, LLM SEO">
     <meta name="author" content="Economía IA">
-    <title>Ecosistema de Marketing IA - Hub Central | Economía IA</title>
+    <title>Recursos de Marketing IA y Automatización para Negocios | Economía IA</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
@@ -41,13 +41,20 @@
             background-color: var(--bg-color);
             background-image: radial-gradient(circle at center, #0B0B1A 0%, var(--bg-color) 100%);
             color: var(--text-color);
-            height: 100vh;
-            width: 100vw;
-            overflow: hidden;
+            min-height: 100vh;
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .hero-shell {
+            position: relative;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             perspective: 1200px;
+            overflow: hidden;
         }
 
         /* Ambient glowing background */
@@ -118,6 +125,42 @@
             letter-spacing: 4px;
             text-transform: uppercase;
             z-index: 10;
+        }
+
+        .intro-copy {
+            position: absolute;
+            top: 125px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(760px, calc(100% - 2rem));
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #d6d7ff;
+            z-index: 10;
+        }
+
+        .meta-strip {
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(760px, calc(100% - 2rem));
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            z-index: 10;
+        }
+
+        .meta-chip {
+            padding: 0.45rem 0.85rem;
+            border-radius: 999px;
+            background: rgba(12, 16, 32, 0.8);
+            border: 1px solid rgba(162, 155, 254, 0.25);
+            font-size: 0.8rem;
+            color: #f5f5ff;
+            letter-spacing: 0.03em;
         }
 
         /* Connections layer */
@@ -394,6 +437,15 @@
             h1.title {
                 font-size: 2.2rem;
             }
+
+            .intro-copy {
+                top: 135px;
+                font-size: 0.95rem;
+            }
+
+            .meta-strip {
+                top: 228px;
+            }
         }
 
         @media (max-width: 600px) {
@@ -404,6 +456,15 @@
             .subtitle {
                 font-size: 0.9rem;
                 top: 90px;
+            }
+
+            .intro-copy {
+                top: 126px;
+                font-size: 0.88rem;
+            }
+
+            .meta-strip {
+                top: 230px;
             }
 
             .center-node {
@@ -424,6 +485,101 @@
                 font-size: 1.2rem;
             }
         }
+
+        .resource-directory {
+            position: relative;
+            z-index: 20;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem 6rem;
+        }
+
+        .directory-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 0.85rem;
+            border-radius: 999px;
+            border: 1px solid rgba(108, 92, 231, 0.3);
+            background: rgba(108, 92, 231, 0.08);
+            color: #c8c3ff;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .directory-header {
+            margin-bottom: 2rem;
+        }
+
+        .directory-header h2 {
+            margin: 1rem 0 0.75rem;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.1;
+        }
+
+        .directory-header p {
+            max-width: 760px;
+            color: #b9bed8;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+        }
+
+        .resource-card {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            padding: 1.25rem;
+            border-radius: 1.25rem;
+            background: linear-gradient(180deg, rgba(20, 22, 42, 0.9), rgba(7, 8, 18, 0.96));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.24);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(162, 155, 254, 0.45);
+            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        .resource-card.featured {
+            border-color: rgba(16, 185, 129, 0.45);
+            background: linear-gradient(180deg, rgba(14, 34, 35, 0.92), rgba(9, 15, 22, 0.96));
+        }
+
+        .directory-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: #9da6d3;
+        }
+
+        .resource-card h3 {
+            font-size: 1.15rem;
+            line-height: 1.25;
+        }
+
+        .directory-summary {
+            color: #c5cbdf;
+            line-height: 1.55;
+            font-size: 0.95rem;
+        }
+
+        .directory-cta {
+            margin-top: auto;
+            color: #9fe0ff;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
     </style>
 
 
@@ -433,9 +589,9 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Economía IA",
-      "url": "https://economiaia.business",
-      "logo": "https://economiaia.business/logo_economia_ia_neon_v4.png",
-      "image": "https://economiaia.business/logo_economia_ia_neon_v4.png",
+      "url": "https://www.economiaia.business/",
+      "logo": "https://www.economiaia.business/logo_economia_ia_neon_v4.png",
+      "image": "https://www.economiaia.business/logo_economia_ia_neon_v4.png",
       "description": "Acelerador de Negocios con Inteligencia Artificial enfocada en resultados rápidos para Pymes y arquitecturas Enterprise. Reemplazamos chatbots viejos con Agentes Cognitivos y automatizamos ventas usando Google Vertex AI, Gemini y arquitecturas cognitivas.",
       "address": {
         "@type": "PostalAddress",
@@ -466,36 +622,250 @@
       "priceRange": "$$"
     }
     </script>
-    <link rel="canonical" href="https://economiaia.business/index.html">
-    <meta property="og:title" content="Ecosistema de Marketing IA - Hub Central | Economía IA">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Recursos de Marketing IA y Automatización para Negocios",
+      "url": "https://www.economiaia.business/",
+      "description": "Directorio principal de recursos de Economía IA sobre marketing, automatización, agentes conversacionales, pricing y crecimiento con inteligencia artificial.",
+      "inLanguage": "es",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Economía IA",
+        "url": "https://www.economiaia.business/"
+      },
+      "hasPart": [
+        {
+          "@type": "WebPage",
+          "name": "Núcleo Economía IA",
+          "url": "https://www.economiaia.business/nucleo_economia_ia.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Precios y Planes IA",
+          "url": "https://www.economiaia.business/precios_y_planes_ia.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Agentes Conversacionales con IA",
+          "url": "https://www.economiaia.business/agentes_conversacionales_ia.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Arquitectura de Marketing IA",
+          "url": "https://www.economiaia.business/arquitectura_marketing_ia.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Arquitectura de Distribución con IA",
+          "url": "https://www.economiaia.business/arquitectura_distribucion_motor.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Operaciones y Datos con IA",
+          "url": "https://www.economiaia.business/operaciones_y_datos_ia.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Stack Tecnológico de Marketing IA",
+          "url": "https://www.economiaia.business/stack_tecnologico_ia.html"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Tráfico LLM SEO",
+          "url": "https://www.economiaia.business/trafico_llm_seo.html"
+        }
+      ]
+    }
+    </script>
+    <link rel="canonical" href="https://www.economiaia.business/">
+    <meta property="og:title" content="Recursos de Marketing IA y Automatización para Negocios | Economía IA">
     <meta property="og:description"
-        content="Ecosistema de conocimiento y consultoría de Inteligencia Artificial en Latinoamérica. Estrategias, agentes conversacionales y automatización para negocios.">
+        content="Hub de recursos sobre marketing IA, automatización, agentes conversacionales, pricing y arquitecturas de crecimiento para negocios en Latinoamérica.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://economiaia.business/index.html">
+    <meta property="og:url" content="https://www.economiaia.business/">
     <meta property="og:site_name" content="Economía IA">
-    <meta property="og:image" content="https://economiaia.business/logo_economia_ia_neon_v4.png">
+    <meta property="og:image" content="https://www.economiaia.business/logo_economia_ia_neon_v4.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Recursos de Marketing IA y Automatización para Negocios | Economía IA">
+    <meta name="twitter:description"
+        content="Hub de recursos sobre marketing IA, automatización, agentes conversacionales, pricing y arquitecturas de crecimiento para negocios en Latinoamérica.">
+    <meta name="twitter:image" content="https://www.economiaia.business/logo_economia_ia_neon_v4.png">
 </head>
 
 <body>
-    <header style="position: absolute; top: 0; left: 0; width: 100%; text-align: center; z-index: 20;">
-        <h1 class="title">Ecosistema Marketing | Economía IA</h1>
-        <div class="subtitle">Órbitas de Conocimiento para la Nueva Economía</div>
-    </header>
+    <div class="hero-shell">
+        <header style="position: absolute; top: 0; left: 0; width: 100%; text-align: center; z-index: 20;">
+            <h1 class="title">Recursos de Marketing IA | Economía IA</h1>
+            <div class="subtitle">Órbitas de Conocimiento para la Nueva Economía</div>
+            <p class="intro-copy">
+                Explora estrategias, arquitecturas, automatización, pricing y sistemas conversacionales para negocios
+                que quieren vender más con inteligencia artificial y operar con menos fricción.
+            </p>
+            <div class="meta-strip" aria-label="Información editorial">
+                <span class="meta-chip">Por Henry Roncancio</span>
+                <span class="meta-chip">Actualizado: 7 marzo 2026</span>
+                <span class="meta-chip">Recursos + precios + casos</span>
+            </div>
+        </header>
 
-    <main class="scene" id="scene">
-        <a href="nucleo_economia_ia.html" class="center-node" id="centerNode"
-            title="El Núcleo: Ciencia Económica de Ventas">
-            <div class="ring"></div>
-            <div class="ring"></div>
-            <img src="logos/logo_economia_ia_neon_v4.png" alt="Economía IA Logo" class="center-logo">
-        </a>
-        <!-- Orbit Tracks Injected by JS -->
-    </main>
+        <main class="scene" id="scene">
+            <a href="nucleo_economia_ia.html" class="center-node" id="centerNode"
+                title="El Núcleo: Ciencia Económica de Ventas">
+                <div class="ring"></div>
+                <div class="ring"></div>
+                <img src="logos/logo_economia_ia_neon_v4.png" alt="Economía IA Logo" class="center-logo">
+            </a>
+            <!-- Orbit Tracks Injected by JS -->
+        </main>
 
-    <div class="ambient-glow"></div>
-    <div class="bg-grid"></div>
-    <div id="particles"></div>
-    <canvas id="connections"></canvas>
+        <div class="ambient-glow"></div>
+        <div class="bg-grid"></div>
+        <div id="particles"></div>
+        <canvas id="connections"></canvas>
+    </div>
+
+    <section class="resource-directory" aria-labelledby="resource-directory-title">
+        <div class="directory-header">
+            <span class="directory-kicker">Mapa rastreable del ecosistema</span>
+            <h2 id="resource-directory-title">Directorio de recursos y páginas clave</h2>
+            <p>
+                Este hub enlaza todas las páginas principales del sitio para facilitar exploración, rastreo e
+                identificación temática. Si buscas implementación, empieza por precios y planes; si buscas contexto,
+                empieza por el núcleo.
+            </p>
+        </div>
+
+        <div class="directory-grid">
+            <a class="resource-card featured" href="precios_y_planes_ia.html">
+                <span class="directory-label">Comercial</span>
+                <h3>Precios y Planes IA</h3>
+                <p class="directory-summary">Comparativa de Starter, Growth, Aceleración y consultoría express para
+                    elegir el nivel de implementación adecuado.</p>
+                <span class="directory-cta">Ver inversión y alcances →</span>
+            </a>
+            <a class="resource-card" href="nucleo_economia_ia.html">
+                <span class="directory-label">Fundamentos</span>
+                <h3>Núcleo Economía IA</h3>
+                <p class="directory-summary">Las leyes económicas detrás de la conversión: señalización, fricción,
+                    escasez, upselling y predicción.</p>
+                <span class="directory-cta">Entrar al núcleo →</span>
+            </a>
+            <a class="resource-card" href="presentacion_condicion_cero.html">
+                <span class="directory-label">Oferta</span>
+                <h3>Oferta Irresistible</h3>
+                <p class="directory-summary">Cómo construir una propuesta difícil de rechazar usando condición cero y
+                    claridad comercial.</p>
+                <span class="directory-cta">Ver metodología →</span>
+            </a>
+            <a class="resource-card" href="teoria_senal_creativa.html">
+                <span class="directory-label">Creatividad</span>
+                <h3>Teoría Señal Creativa</h3>
+                <p class="directory-summary">Zero-targeting, contenido que atrae demanda y señales que los algoritmos sí
+                    entienden.</p>
+                <span class="directory-cta">Explorar señales →</span>
+            </a>
+            <a class="resource-card" href="arquitectura_marketing_ia.html">
+                <span class="directory-label">Sistema</span>
+                <h3>Arquitectura de Marketing IA</h3>
+                <p class="directory-summary">El sistema completo desde atracción hasta cierre y retroalimentación con IA
+                    aplicada al negocio.</p>
+                <span class="directory-cta">Ver arquitectura →</span>
+            </a>
+            <a class="resource-card" href="psicologia_precio_regla_oro.html">
+                <span class="directory-label">Pricing</span>
+                <h3>Psicología del Precio</h3>
+                <p class="directory-summary">Precio como señal estratégica, defensa del valor y posicionamiento frente a
+                    objeciones.</p>
+                <span class="directory-cta">Revisar pricing →</span>
+            </a>
+            <a class="resource-card" href="arquitectura_distribucion_motor.html">
+                <span class="directory-label">Distribución</span>
+                <h3>Arquitectura de Distribución con IA</h3>
+                <p class="directory-summary">Cómo Meta y TikTok encuentran, califican y empujan demanda de forma
+                    algorítmica.</p>
+                <span class="directory-cta">Abrir motor →</span>
+            </a>
+            <a class="resource-card" href="operaciones_y_datos_ia.html">
+                <span class="directory-label">Operaciones</span>
+                <h3>Operaciones y Datos con IA</h3>
+                <p class="directory-summary">Automatización operativa, tableros, trazabilidad y flujo de datos para
+                    decisiones más rápidas.</p>
+                <span class="directory-cta">Ver operaciones →</span>
+            </a>
+            <a class="resource-card" href="estrategia_tiktok_ia.html">
+                <span class="directory-label">Canal</span>
+                <h3>Estrategia TikTok IA</h3>
+                <p class="directory-summary">TikTok como motor full-funnel para adquisición, interacción y cierre con
+                    intención algorítmica.</p>
+                <span class="directory-cta">Abrir estrategia →</span>
+            </a>
+            <a class="resource-card" href="ecosistema_meta_ia.html">
+                <span class="directory-label">Canal</span>
+                <h3>Ecosistema Meta IA</h3>
+                <p class="directory-summary">Orquestación de Facebook, Instagram y WhatsApp con Advantage+, CAPI y
+                    agentes conversacionales.</p>
+                <span class="directory-cta">Ver ecosistema →</span>
+            </a>
+            <a class="resource-card" href="agentes_conversacionales_ia.html">
+                <span class="directory-label">Conversación</span>
+                <h3>Agentes Conversacionales con IA</h3>
+                <p class="directory-summary">Sistemas de texto y voz que responden con contexto, automatizan atención y
+                    ayudan a vender.</p>
+                <span class="directory-cta">Explorar agentes →</span>
+            </a>
+            <a class="resource-card" href="arquitectura_manychat_ia.html">
+                <span class="directory-label">Herramienta</span>
+                <h3>Arquitectura ManyChat</h3>
+                <p class="directory-summary">Captura de leads y automatización de DMs en Instagram, TikTok y WhatsApp
+                    con flujos bien diseñados.</p>
+                <span class="directory-cta">Ver ManyChat →</span>
+            </a>
+            <a class="resource-card" href="stack_tecnologico_ia.html">
+                <span class="directory-label">Herramientas</span>
+                <h3>Stack Tecnológico de Marketing IA</h3>
+                <p class="directory-summary">Herramientas clave para producir, distribuir, automatizar y medir un sistema
+                    comercial con IA.</p>
+                <span class="directory-cta">Revisar stack →</span>
+            </a>
+            <a class="resource-card" href="jerarquia_meta_whatsapp.html">
+                <span class="directory-label">Infraestructura</span>
+                <h3>Jerarquía Técnica de Meta y WhatsApp</h3>
+                <p class="directory-summary">Cómo se ordenan Business Portfolio, WABA, Phone ID y activos críticos del
+                    ecosistema Meta.</p>
+                <span class="directory-cta">Ver jerarquía →</span>
+            </a>
+            <a class="resource-card" href="trafico_llm_seo.html">
+                <span class="directory-label">Observabilidad</span>
+                <h3>Tráfico LLM SEO</h3>
+                <p class="directory-summary">Monitor de visibilidad capturada por motores de respuesta y páginas que ya
+                    generan tráfico desde IA.</p>
+                <span class="directory-cta">Abrir monitor →</span>
+            </a>
+            <a class="resource-card" href="analisis_agencias_ia_latam.html">
+                <span class="directory-label">Mercado</span>
+                <h3>Análisis de Agencias IA LatAm</h3>
+                <p class="directory-summary">Comparativa de enfoques, velocidad y propuesta de valor dentro del mercado
+                    regional de IA.</p>
+                <span class="directory-cta">Leer análisis →</span>
+            </a>
+            <a class="resource-card" href="estrategia_trafico_local.html">
+                <span class="directory-label">Local</span>
+                <h3>Estrategia de Tráfico Local</h3>
+                <p class="directory-summary">Cómo mover personas a un local usando señal geográfica, campañas y
+                    automatización de seguimiento.</p>
+                <span class="directory-cta">Ver estrategia local →</span>
+            </a>
+            <a class="resource-card" href="flujos_vs_agentes_ia.html">
+                <span class="directory-label">Conceptual</span>
+                <h3>Flujos vs. Agentes</h3>
+                <p class="directory-summary">Cuándo usar automatizaciones determinísticas y cuándo conviene desplegar
+                    agentes con razonamiento.</p>
+                <span class="directory-cta">Comparar enfoques →</span>
+            </a>
+        </div>
+    </section>
 
     <script>
         // Data organized by "Atomic Levels"
@@ -537,7 +907,8 @@
                     { title: 'Arquitectura ManyChat', file: 'arquitectura_manychat_ia.html', icon: '<i class="ph-duotone ph-robot"></i>', type: 'arquitectura' },
                     { title: 'Stack Tecnológico', file: 'stack_tecnologico_ia.html', icon: '<i class="ph-duotone ph-stack"></i>', type: 'operaciones' },
                     { title: 'Automatización con Meta', file: 'jerarquia_meta_whatsapp.html', icon: '<i class="ph-duotone ph-tree-view"></i>', type: 'arquitectura' },
-                    { title: 'ChatGPT nos visitó', file: 'trafico_llm_seo.html', icon: '<i class="ph-duotone ph-target"></i>', type: 'arquitectura' }
+                    { title: 'ChatGPT nos visitó', file: 'trafico_llm_seo.html', icon: '<i class="ph-duotone ph-target"></i>', type: 'arquitectura' },
+                    { title: 'Precios y Planes IA', file: 'precios_y_planes_ia.html', icon: '<i class="ph-duotone ph-currency-circle-dollar"></i>', type: 'operaciones' }
                 ]
             }
         ];
@@ -1171,7 +1542,7 @@
                 const orbitNodes = document.querySelectorAll('.node');
                 orbitNodes.forEach(node => {
                     const label = node.querySelector('.node-label').innerText.replace('\n', ' ');
-                    const url = "https://economiaia.business/" + node.getAttribute('href');
+                    const url = "https://www.economiaia.business/" + node.getAttribute('href');
                     pageContext += `- ${label}: ${url}\n`;
                 });
 

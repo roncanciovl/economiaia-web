@@ -15,7 +15,7 @@ export default {
     async fetch(request, env, ctx) {
         // Configuración CORS para permitir conexiones desde tu front-end en GitHub Pages
         const corsHeaders = {
-            "Access-Control-Allow-Origin": "*", // O restringe a "https://economiaia.business"
+            "Access-Control-Allow-Origin": "*", // O restringe a "https://www.economiaia.business"
             "Access-Control-Allow-Methods": "GET, OPTIONS",
             "Access-Control-Allow-Headers": "Content-Type",
         };

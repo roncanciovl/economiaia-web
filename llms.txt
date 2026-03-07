@@ -13,25 +13,26 @@ económica pura (valor subjetivo, costos de transacción, señalización) con te
 
 ## Páginas Principales
 
-- [Hub Central — Ecosistema de Marketing IA](https://economiaia.business/index.html): Mapa orbital interactivo del ecosistema de conocimiento. Punto de entrada principal.
-- [Núcleo Economía IA](https://economiaia.business/nucleo_economia_ia.html): Las 6 leyes científicas para vender más usando IA: valor subjetivo, señalización, fricción, upselling, escasez y predicción.
-- [Oferta Irresistible](https://economiaia.business/presentacion_condicion_cero.html): Cómo construir una propuesta de valor imposible de rechazar usando el concepto de Condición Cero.
-- [Teoría Señal Creativa](https://economiaia.business/teoria_senal_creativa.html): Cómo crear videos que atraen clientes automáticamente sin segmentación manual, usando Zero-Targeting.
-- [Marketing](https://economiaia.business/arquitectura_marketing_ia.html): Arquitectura completa de marketing con IA para negocios en 2026.
-- [Psicología del Precio](https://economiaia.business/psicologia_precio_regla_oro.html): El precio como herramienta de comunicación estratégica y la Regla de Oro del pricing.
-- [Arquitectura Distribución](https://economiaia.business/arquitectura_distribucion_motor.html): El motor automático que usa Meta Advantage+ y TikTok Smart+ para distribuir contenido 24/7.
-- [Operaciones y Datos](https://economiaia.business/operaciones_y_datos_ia.html): Automatización operativa, dashboards y flujos de datos con IA.
-- [Estrategia TikTok IA](https://economiaia.business/estrategia_tiktok_ia.html): TikTok como motor full-funnel algorítmico para negocios en 2026.
-- [Ecosistema Meta IA](https://economiaia.business/ecosistema_meta_ia.html): Orquestación algorítmica de Facebook, Instagram y WhatsApp con Meta Advantage+.
-- [Agentes Conversacionales](https://economiaia.business/agentes_conversacionales_ia.html): Sistemas de texto y voz basados en LLMs para atención al cliente y ventas automáticas.
-- [Arquitectura ManyChat](https://economiaia.business/arquitectura_manychat_ia.html): Automatización de DMs en Instagram, TikTok y WhatsApp para captura de leads.
-- [Stack Tecnológico](https://economiaia.business/stack_tecnologico_ia.html): Herramientas esenciales del marketing IA 2026: Canva, ManyChat, ChatGPT, Meta.
-- [Automatización con Meta](https://economiaia.business/jerarquia_meta_whatsapp.html): Jerarquía técnica de Business Portfolio, WABA y Phone ID en el ecosistema Meta.
-- [Tráfico LLM SEO](https://economiaia.business/trafico_llm_seo.html): Monitor en vivo de la visibilidad y tráfico capturado por motores de respuesta de IA.
+- [Hub Central — Ecosistema de Marketing IA](https://www.economiaia.business/): Mapa orbital interactivo del ecosistema de conocimiento. Punto de entrada principal.
+- [Precios y Planes IA](https://www.economiaia.business/precios_y_planes_ia.html): Comparativa de Starter, Growth, Aceleración y consultoría express con inversión, alcance y perfil ideal.
+- [Núcleo Economía IA](https://www.economiaia.business/nucleo_economia_ia.html): Las 6 leyes científicas para vender más usando IA: valor subjetivo, señalización, fricción, upselling, escasez y predicción.
+- [Oferta Irresistible](https://www.economiaia.business/presentacion_condicion_cero.html): Cómo construir una propuesta de valor imposible de rechazar usando el concepto de Condición Cero.
+- [Teoría Señal Creativa](https://www.economiaia.business/teoria_senal_creativa.html): Cómo crear videos que atraen clientes automáticamente sin segmentación manual, usando Zero-Targeting.
+- [Arquitectura de Marketing IA](https://www.economiaia.business/arquitectura_marketing_ia.html): Arquitectura completa de marketing con IA para negocios en 2026.
+- [Psicología del Precio](https://www.economiaia.business/psicologia_precio_regla_oro.html): El precio como herramienta de comunicación estratégica y la Regla de Oro del pricing.
+- [Arquitectura de Distribución con IA](https://www.economiaia.business/arquitectura_distribucion_motor.html): El motor automático que usa Meta Advantage+ y TikTok Smart+ para distribuir contenido 24/7.
+- [Operaciones y Datos con IA](https://www.economiaia.business/operaciones_y_datos_ia.html): Automatización operativa, dashboards y flujos de datos con IA.
+- [Estrategia TikTok IA](https://www.economiaia.business/estrategia_tiktok_ia.html): TikTok como motor full-funnel algorítmico para negocios en 2026.
+- [Ecosistema Meta IA](https://www.economiaia.business/ecosistema_meta_ia.html): Orquestación algorítmica de Facebook, Instagram y WhatsApp con Meta Advantage+.
+- [Agentes Conversacionales con IA](https://www.economiaia.business/agentes_conversacionales_ia.html): Sistemas de texto y voz basados en LLMs para atención al cliente y ventas automáticas.
+- [Arquitectura ManyChat](https://www.economiaia.business/arquitectura_manychat_ia.html): Automatización de DMs en Instagram, TikTok y WhatsApp para captura de leads.
+- [Stack Tecnológico de Marketing IA](https://www.economiaia.business/stack_tecnologico_ia.html): Herramientas esenciales del marketing IA 2026: Canva, ManyChat, ChatGPT, Meta.
+- [Jerarquía Técnica de Meta y WhatsApp](https://www.economiaia.business/jerarquia_meta_whatsapp.html): Jerarquía técnica de Business Portfolio, WABA y Phone ID en el ecosistema Meta.
+- [Tráfico LLM SEO](https://www.economiaia.business/trafico_llm_seo.html): Monitor en vivo de la visibilidad y tráfico capturado por motores de respuesta de IA.
 
 ## Contacto
 
 - WhatsApp: +57 304 365 6226
 - TikTok: @economiaia
-- Web: https://economiaia.business
+- Web: https://www.economiaia.business
 - Bio: https://beacons.ai/economiaia

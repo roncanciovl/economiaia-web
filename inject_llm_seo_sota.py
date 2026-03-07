@@ -10,7 +10,7 @@ import re
 import os
 from datetime import date
 
-BASE_URL = "https://economiaia.business"
+BASE_URL = "https://www.economiaia.business"
 LOGO_URL = f"{BASE_URL}/logo_economia_ia_neon_v4.png"
 TODAY = date.today().isoformat()
 
