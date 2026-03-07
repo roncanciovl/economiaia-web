@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución de Agente Conversacional para Negocios | Economía IA</title>
+    <meta name="description"
+        content="Conoce cómo un agente conversacional personalizado puede ayudar a tu negocio a responder mejor, generar más confianza y convertir más conversaciones en oportunidades reales.">
+    <meta name="author" content="Henry Roncancio">
+    <meta name="keywords"
+        content="agente conversacional para negocios, automatización de ventas, WhatsApp IA, atención 24/7, Economía IA">
+    <link rel="canonical" href="https://www.economiaia.business/solucion_agente_conversacional_negocios.html">
+    <meta property="og:title" content="Solución de Agente Conversacional para Negocios | Economía IA">
+    <meta property="og:description"
+        content="Una solución para negocios que necesitan responder mejor, explicar más claro su oferta y dejar de perder conversaciones valiosas.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.economiaia.business/solucion_agente_conversacional_negocios.html">
+    <meta property="og:site_name" content="Economía IA">
+    <meta property="og:image" content="https://www.economiaia.business/logos/logo_economia_ia_neon_v4.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Solución de Agente Conversacional para Negocios | Economía IA">
+    <meta name="twitter:description"
+        content="Una solución para negocios que necesitan responder mejor, explicar más claro su oferta y dejar de perder conversaciones valiosas.">
+    <meta name="twitter:image" content="https://www.economiaia.business/logos/logo_economia_ia_neon_v4.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #08111f;
+            --panel: rgba(15, 23, 42, 0.84);
+            --panel-strong: #111c31;
+            --border: rgba(148, 163, 184, 0.18);
+            --text: #f8fafc;
+            --muted: #a7b4c7;
+            --blue: #38bdf8;
+            --cyan: #22d3ee;
+            --green: #22c55e;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background:
+                radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 30%),
+                linear-gradient(180deg, #07101b 0%, #0b1324 100%);
+            color: var(--text);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            width: min(1120px, calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 1.5rem 0 0;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .hero {
+            padding: 3.5rem 0 2.5rem;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            background: rgba(56, 189, 248, 0.08);
+            color: #93c5fd;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .hero-grid,
+        .split-grid,
+        .proof-grid,
+        .levels-grid,
+        .signal-grid,
+        .compare-grid,
+        .quick-nav {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .hero-grid {
+            grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.85fr);
+            align-items: stretch;
+            margin-top: 1.25rem;
+        }
+
+        .hero-copy,
+        .hero-card,
+        .panel,
+        .proof-card,
+        .level-card,
+        .cta-panel {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            backdrop-filter: blur(12px);
+            padding: 1.8rem;
+        }
+
+        .hero-card {
+            background:
+                radial-gradient(circle at top right, rgba(34, 197, 94, 0.12), transparent 30%),
+                var(--panel-strong);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            margin-top: 0;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.6rem, 5vw, 4.3rem);
+            line-height: 0.98;
+            margin: 1rem 0;
+        }
+
+        .hero p,
+        .panel p,
+        .proof-card p,
+        .level-card p,
+        .cta-panel p {
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        .hero strong,
+        .panel strong,
+        .proof-card strong,
+        .level-card strong {
+            color: var(--text);
+        }
+
+        .list {
+            margin: 0;
+            padding-left: 1.1rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .section {
+            padding: 1rem 0 0;
+            scroll-margin-top: 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-intro {
+            max-width: 70ch;
+            margin: 0 0 1.25rem;
+            color: var(--muted);
+        }
+
+        .split-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .proof-grid,
+        .levels-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .quick-nav {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            margin: 0 0 1.5rem;
+        }
+
+        .quick-link {
+            padding: 0.95rem 1rem;
+            border-radius: 18px;
+            text-decoration: none;
+            border: 1px solid rgba(148, 163, 184, 0.15);
+            background: rgba(15, 23, 42, 0.7);
+            color: #d7e7f8;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .quick-link span {
+            display: block;
+            margin-top: 0.2rem;
+            color: var(--muted);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .quick-link:hover {
+            transform: translateY(-1px);
+            border-color: rgba(56, 189, 248, 0.35);
+            background: rgba(17, 28, 49, 0.92);
+        }
+
+        .signal-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            margin: 1.25rem 0 0;
+        }
+
+        .signal-card {
+            padding: 1rem;
+            border-radius: 18px;
+            background: rgba(11, 19, 36, 0.78);
+            border: 1px solid rgba(148, 163, 184, 0.12);
+        }
+
+        .signal-card strong {
+            display: block;
+            color: #e0f2fe;
+            margin-bottom: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        .signal-card span {
+            color: var(--muted);
+            font-size: 0.86rem;
+            line-height: 1.5;
+        }
+
+        .pill {
+            display: inline-flex;
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(34, 197, 94, 0.1);
+            color: #86efac;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: var(--panel);
+        }
+
+        .compare-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            margin: 0 0 1rem;
+        }
+
+        .compare-card {
+            padding: 1.2rem;
+            border-radius: 18px;
+            background: rgba(15, 23, 42, 0.72);
+            border: 1px solid rgba(148, 163, 184, 0.12);
+        }
+
+        .compare-card h3 {
+            margin-bottom: 0.45rem;
+            font-size: 1.05rem;
+        }
+
+        .compare-card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.65;
+            font-size: 0.92rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 640px;
+        }
+
+        th,
+        td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+        }
+
+        th {
+            font-family: 'Outfit', sans-serif;
+            color: #dff7ff;
+            background: rgba(15, 23, 42, 0.7);
+        }
+
+        td {
+            color: var(--muted);
+        }
+
+        tbody tr:hover {
+            background: rgba(56, 189, 248, 0.04);
+        }
+
+        tbody td:first-child {
+            color: #dbeafe;
+            font-weight: 600;
+        }
+
+        .cta-panel {
+            margin: 2rem 0 3rem;
+            background:
+                radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 26%),
+                linear-gradient(135deg, rgba(14, 24, 39, 0.92), rgba(17, 28, 49, 0.92));
+            text-align: center;
+        }
+
+        .cta-actions {
+            display: flex;
+            justify-content: center;
+            gap: 0.9rem;
+            flex-wrap: wrap;
+            margin-top: 1.25rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            padding: 0.95rem 1.4rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--cyan), var(--blue));
+            color: #fff;
+            box-shadow: 0 14px 28px rgba(56, 189, 248, 0.18);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(148, 163, 184, 0.24);
+            color: #dbeafe;
+            background: rgba(15, 23, 42, 0.72);
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .footer {
+            padding: 0 0 2.5rem;
+            text-align: center;
+            color: #8fa3bb;
+            font-size: 0.86rem;
+        }
+
+        @media (max-width: 920px) {
+            .hero-grid,
+            .split-grid,
+            .proof-grid,
+            .levels-grid,
+            .signal-grid,
+            .compare-grid,
+            .quick-nav {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-link span {
+                margin-top: 0.1rem;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Solución de Agente Conversacional para Negocios",
+      "url": "https://www.economiaia.business/solucion_agente_conversacional_negocios.html",
+      "description": "Una solución para negocios que necesitan responder mejor, explicar más claro su oferta y dejar de perder conversaciones valiosas.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Economía IA",
+        "url": "https://www.economiaia.business/"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <a href="agentes_conversacionales_ia.html" class="nav-back">← Volver a Agentes Conversacionales</a>
+
+        <header class="hero">
+            <span class="eyebrow">Solución para negocios</span>
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <h1>Deja de perder conversaciones valiosas por responder tarde o explicar mal tu oferta.</h1>
+                    <p>Esta solución está pensada para <strong>pequeñas empresas y negocios</strong> que necesitan
+                        responder mejor, generar más confianza desde el primer contacto y convertir más conversaciones en
+                        oportunidades reales.</p>
+                </div>
+                <aside class="hero-card">
+                    <h2>En pocas palabras</h2>
+                    <ul class="list">
+                        <li>Atiendes mejor sin depender de responder manualmente todo el día.</li>
+                        <li>Tu negocio explica su oferta con más claridad y consistencia.</li>
+                        <li>La primera interacción gana velocidad, orden y confianza.</li>
+                        <li>Tu equipo se enfoca más en cerrar y menos en repetir siempre lo mismo.</li>
+                    </ul>
+                </aside>
+            </div>
+            <div class="signal-grid">
+                <div class="signal-card">
+                    <strong>Responde mejor</strong>
+                    <span>La conversación arranca con más velocidad y menos fricción.</span>
+                </div>
+                <div class="signal-card">
+                    <strong>Explica más claro</strong>
+                    <span>Tu oferta deja de depender de respuestas improvisadas.</span>
+                </div>
+                <div class="signal-card">
+                    <strong>Gana confianza</strong>
+                    <span>La persona entiende más rápido qué haces y cómo ayudas.</span>
+                </div>
+                <div class="signal-card">
+                    <strong>Libera al equipo</strong>
+                    <span>Menos tiempo en lo repetitivo y más tiempo en cerrar.</span>
+                </div>
+            </div>
+        </header>
+
+        <nav class="quick-nav" aria-label="Resumen de secciones">
+            <a class="quick-link" href="#problema">Problema<span>Qué está frenando ventas hoy</span></a>
+            <a class="quick-link" href="#funciona">Cómo funciona<span>Por qué mejora la atención</span></a>
+            <a class="quick-link" href="#comparacion">Comparación<span>Persona vs agente eficiente</span></a>
+            <a class="quick-link" href="#siguiente-paso">Siguiente paso<span>Qué puedes hacer ahora</span></a>
+        </nav>
+
+        <section class="section" id="problema">
+            <div class="panel">
+                <h2 class="section-title">El problema no siempre es el producto. Muchas veces es la atención inicial.</h2>
+                <p class="section-intro">Muchos negocios pierden oportunidades porque responden tarde, dependen demasiado
+                    de una persona o no logran explicar bien qué hacen y por qué deberían ser elegidos.</p>
+                <div class="split-grid">
+                    <div>
+                        <span class="pill">Lo que pasa hoy</span>
+                        <ul class="list">
+                            <li>El cliente pregunta y espera demasiado.</li>
+                            <li>La respuesta cambia según quién atienda.</li>
+                            <li>La oferta no se entiende rápido.</li>
+                            <li>Se repiten las mismas preguntas todos los días.</li>
+                            <li>Fuera de horario se enfrían conversaciones valiosas.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="pill">Lo que cambia</span>
+                        <ul class="list">
+                            <li>La orientación es inmediata y más clara.</li>
+                            <li>La conversación mantiene un tono consistente.</li>
+                            <li>La persona entiende mejor el servicio y el siguiente paso.</li>
+                            <li>La primera capa de atención deja de depender solo del dueño o del equipo.</li>
+                            <li>Las conversaciones llegan mejor preparadas al cierre.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="funciona">
+            <h2 class="section-title">Por qué esta solución funciona</h2>
+            <p class="section-intro">No se trata de poner un bot por moda. Se trata de ordenar la atención para que el
+                negocio responda mejor, explique más claro y use mejor el tiempo humano.</p>
+            <div class="proof-grid">
+                <article class="proof-card">
+                    <h3>Respuesta inmediata</h3>
+                    <p>Si respondes más rápido, pierdes menos conversaciones. La velocidad sigue siendo una ventaja real
+                        cuando el cliente todavía está decidiendo con quién avanzar.</p>
+                </article>
+                <article class="proof-card">
+                    <h3>Más confianza</h3>
+                    <p>Cuando la oferta se explica mejor y con consistencia, la persona entiende más rápido qué haces y
+                        por qué debería seguir hablando contigo.</p>
+                </article>
+                <article class="proof-card">
+                    <h3>Mejor uso del equipo</h3>
+                    <p>La automatización absorbe la parte repetitiva y deja al equipo libre para asesorar, cerrar y
+                        atender mejor los casos que sí necesitan intervención humana.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="comparacion">
+            <h2 class="section-title">Comparación simple: depender de una persona vs sumar un agente eficiente</h2>
+            <div class="compare-grid">
+                <article class="compare-card">
+                    <h3>Atención humana sola</h3>
+                    <p>Sirve, pero se satura rápido, cambia de calidad según el momento y no aguanta bien el volumen.</p>
+                </article>
+                <article class="compare-card">
+                    <h3>Agente bien implementado</h3>
+                    <p>Absorbe la primera capa de atención, responde con consistencia y mantiene activas más conversaciones.</p>
+                </article>
+                <article class="compare-card">
+                    <h3>Mejor combinación</h3>
+                    <p>El agente orienta y filtra; la persona cierra, asesora y toma decisiones donde más valor aporta.</p>
+                </article>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Factor</th>
+                            <th>Depender de una persona</th>
+                            <th>Agente conversacional eficiente</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Horario</td>
+                            <td>Limitado</td>
+                            <td>24/7</td>
+                        </tr>
+                        <tr>
+                            <td>Capacidad simultánea</td>
+                            <td>Baja</td>
+                            <td>Alta</td>
+                        </tr>
+                        <tr>
+                            <td>Consistencia</td>
+                            <td>Variable</td>
+                            <td>Alta</td>
+                        </tr>
+                        <tr>
+                            <td>Respuestas repetitivas</td>
+                            <td>Desgastan al equipo</td>
+                            <td>Se automatizan</td>
+                        </tr>
+                        <tr>
+                            <td>Costo operativo al crecer</td>
+                            <td>Sube rápido</td>
+                            <td>Sube más lento</td>
+                        </tr>
+                        <tr>
+                            <td>Rol del humano</td>
+                            <td>Responde y apaga incendios</td>
+                            <td>Cierra, asesora y toma decisiones de valor</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section" id="niveles">
+            <h2 class="section-title">Niveles de implementación</h2>
+            <p class="section-intro">No todos los negocios necesitan lo mismo desde el día uno. Por eso la solución puede
+                empezar de forma simple y crecer según el momento del negocio.</p>
+            <div class="levels-grid">
+                <article class="level-card">
+                    <span class="pill">Nivel 1</span>
+                    <h3>Diagnóstico y mensaje</h3>
+                    <p>Para negocios que todavía no tienen clara la forma más efectiva de explicar lo que venden y cómo
+                        convertir mejor sus conversaciones.</p>
+                </article>
+                <article class="level-card">
+                    <span class="pill">Nivel 2</span>
+                    <h3>Web clara + agente</h3>
+                    <p>Para negocios que ya necesitan responder mejor, generar más confianza y dejar de perder
+                        conversaciones por demoras o desorden en la atención.</p>
+                </article>
+                <article class="level-card">
+                    <span class="pill">Nivel 3</span>
+                    <h3>Optimización comercial</h3>
+                    <p>Para negocios que además quieren filtrar mejor oportunidades, mejorar conversión y construir una
+                        estructura más eficiente para crecer.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="siguiente-paso">
+            <div class="cta-panel">
+                <h2>La parte costosa no es implementar una solución así. La parte costosa es seguir perdiendo conversaciones que ya tenían intención.</h2>
+                <p>Si tu negocio hoy depende demasiado de responder manualmente, esta solución puede ayudarte a vender con
+                    más claridad, atender mejor y construir una atención más rentable.</p>
+                <div class="cta-actions">
+                    <a class="btn btn-primary"
+                        href="https://wa.me/573043656226?text=Hola,%20quiero%20ver%20c%C3%B3mo%20un%20agente%20conversacional%20podr%C3%ADa%20funcionar%20en%20mi%20negocio.">Quiero ver esta solución</a>
+                    <a class="btn btn-secondary" href="precios_y_planes_ia.html">Ver planes y próximos pasos</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer">Economía IA · Agentes conversacionales personalizados para pequeñas empresas y negocios</div>
+    </div>
+</body>
+
+</html>

@@ -266,6 +266,65 @@
             filter: brightness(1.1);
         }
 
+        .decision-block {
+            margin: 0 0 4rem;
+            padding: 2.3rem;
+            border-radius: 1.4rem;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.94), rgba(30, 41, 59, 0.92));
+            border: 1px solid rgba(148, 163, 184, 0.14);
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .decision-block h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.7rem;
+            margin: 0 0 0.75rem;
+        }
+
+        .decision-block p {
+            margin: 0;
+            color: var(--text-muted);
+        }
+
+        .decision-list {
+            margin: 1rem 0 0;
+            padding-left: 1.1rem;
+            color: #cbd5e1;
+        }
+
+        .decision-list li {
+            margin-bottom: 0.55rem;
+        }
+
+        .decision-actions {
+            display: grid;
+            gap: 0.85rem;
+        }
+
+        .btn-secondary-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.95rem 1.1rem;
+            border-radius: 0.6rem;
+            text-decoration: none;
+            font-weight: 700;
+            border: 1px solid rgba(148, 163, 184, 0.22);
+            background: rgba(15, 23, 42, 0.74);
+            color: #dbeafe;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary-cta:hover {
+            transform: translateY(-2px);
+            border-color: rgba(34, 211, 238, 0.45);
+            color: #ffffff;
+        }
+
         @media (max-width: 600px) {
             .consultancy-banner {
                 text-align: center;
@@ -274,6 +333,11 @@
 
             .btn-consultancy {
                 width: 100%;
+            }
+
+            .decision-block {
+                grid-template-columns: 1fr;
+                padding: 1.8rem;
             }
         }
     </style>
@@ -475,7 +539,7 @@
 
         <header class="hero">
             <h1 class="hero-title">Agentes Conversacionales Personalizados</h1>
-            <p class="hero-subtitle">En Economía IA nos especializamos en agentes conversacionales personalizados para <strong>pequeñas empresas y negocios</strong>, por texto y voz, capaces de responder clientes, resolver dudas y apoyar ventas de forma autónoma.
+            <p class="hero-subtitle">Los agentes conversacionales personalizados son sistemas por texto y voz diseñados para <strong>pequeñas empresas y negocios</strong> que responden clientes, resuelven dudas y apoyan ventas de forma autónoma.
             </p>
             <div
                 style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1.5rem; color: #cbd5e1; font-size: 0.82rem;">
@@ -536,6 +600,24 @@
                     diseñado para guiarte por el ecosistema con razonamiento real.</p>
             </div>
         </div>
+
+        <section class="decision-block">
+            <div>
+                <h2>Si tu negocio sigue respondiendo todo manualmente, aquí puedes ver la solución completa.</h2>
+                <p>Esta solución está pensada para negocios que necesitan responder más rápido, explicar mejor su oferta
+                    y dejar de perder conversaciones valiosas por demoras o falta de claridad.</p>
+                <ul class="decision-list">
+                    <li>Menos dependencia de una sola persona para atender.</li>
+                    <li>Más confianza desde la primera interacción.</li>
+                    <li>Mejor uso del tiempo humano para cerrar y asesorar.</li>
+                </ul>
+            </div>
+            <div class="decision-actions">
+                <a href="solucion_agente_conversacional_negocios.html" class="btn-consultancy">Ver la solución completa</a>
+                <a href="https://wa.me/573043656226?text=Hola,%20quiero%20entender%20c%C3%B3mo%20esta%20soluci%C3%B3n%20de%20agente%20conversacional%20podr%C3%ADa%20funcionar%20en%20mi%20negocio."
+                    class="btn-secondary-cta">Hablar por WhatsApp</a>
+            </div>
+        </section>
 
         <!-- Consultancy Banner -->
             <div class="consultancy-banner">
@@ -1062,7 +1144,7 @@
             }
         </style>
 
-        <div class="ai-widget-tooltip" id="aiTooltip">Preguntame por agentes para tu negocio</div>
+        <div class="ai-widget-tooltip" id="aiTooltip">Preguntame, soy un agente conversacional</div>
         <button class="ai-widget-btn" id="aiBtn" aria-label="Abrir asistente">
             <svg viewBox="0 0 24 24">
                 <path
