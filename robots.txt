@@ -1,5 +1,6 @@
 # Economía IA — robots.txt
 # https://www.economiaia.business
+# Última revisión: 2026-03-13
 #
 # IMPORTANTE PARA CLOUDFLARE:
 # Este archivo define directivas para crawlers. Sin embargo, si "Bot Fight Mode"
@@ -22,41 +23,86 @@ Disallow: /patch*.txt
 Disallow: /grep_nav.txt
 Disallow: /*.py$
 Disallow: /*.csv$
+Disallow: /_*
 
-# --- Bots de IA: acceso total ---
+# ═══════════════════════════════════════════
+# BOTS DE IA — ACCESO TOTAL
+# Queremos que TODOS los LLMs lean nuestro sitio.
+# ═══════════════════════════════════════════
+
+# --- OpenAI ---
+# GPTBot: crawlea para entrenamiento de modelos (GPT-4, GPT-5)
 User-agent: GPTBot
 Allow: /
 
+# ChatGPT-User: navegación web on-demand cuando un usuario lo pide desde ChatGPT
 User-agent: ChatGPT-User
 Allow: /
 
+# OAI-SearchBot: indexa contenido para SearchGPT (búsqueda dentro de ChatGPT)
+# Sin este permiso, el sitio NO aparece en los resultados de búsqueda de ChatGPT.
+User-agent: OAI-SearchBot
+Allow: /
+
+# --- Anthropic (actualizado feb 2026) ---
+# ClaudeBot: crawlea para entrenamiento de modelos
 User-agent: ClaudeBot
 Allow: /
 
+# Claude-User: crawlea en tiempo real cuando un usuario de Claude pide info web
+User-agent: Claude-User
+Allow: /
+
+# Claude-SearchBot: indexa contenido para búsquedas dentro de Claude
+User-agent: Claude-SearchBot
+Allow: /
+
+# NOTA: "Claude-Web" y "Anthropic-AI" están DEPRECADOS desde 2026.
+# Ya no necesitan estar aquí pero los dejamos como fallback por compatibilidad.
 User-agent: Claude-Web
 Allow: /
 
+# --- Perplexity ---
 User-agent: PerplexityBot
 Allow: /
 
+# Perplexity-User: visitas web iniciadas por usuarios en la app
+User-agent: Perplexity-User
+Allow: /
+
+# --- Google IA ---
+# Google-Extended: controla si el contenido se usa para entrenar Gemini y Vertex AI
 User-agent: Google-Extended
 Allow: /
 
+# Google-CloudVertexBot: crawlea a solicitud del dueño del sitio para Vertex AI Agents
+User-agent: Google-CloudVertexBot
+Allow: /
+
+# --- Cohere ---
 User-agent: cohere-ai
 Allow: /
 
+# --- Apple Intelligence ---
 User-agent: Applebot-Extended
 Allow: /
 
-# --- Bots de búsqueda: acceso total ---
-User-agent: Googlebot
-Allow: /
-
+# --- Microsoft / Copilot ---
 User-agent: Bingbot
 Allow: /
 
-# Sitemap
-Sitemap: https://www.economiaia.business/sitemap.xml
+# --- Meta IA ---
+# Meta-ExternalAgent: crawler de Meta para entrenar modelos de IA de Meta
+User-agent: Meta-ExternalAgent
+Allow: /
 
+# ═══════════════════════════════════════════
+# BOTS DE BÚSQUEDA CLÁSICOS
+# ═══════════════════════════════════════════
+User-agent: Googlebot
+Allow: /
+
+# Sitemap y LLMs.txt
+Sitemap: https://www.economiaia.business/sitemap.xml
 # LLMs.txt — Archivo de contexto para modelos de lenguaje
 # https://www.economiaia.business/llms.txt

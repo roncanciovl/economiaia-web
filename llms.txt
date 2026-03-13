@@ -1,41 +1,64 @@
 # Economía IA
 
-> Acelerador de Negocios con Inteligencia Artificial en Latinoamérica especializado en automatización de ventas,
-> agentes conversacionales y LLM SEO para Pymes y empresas. Fundada por Henry Roncancio.
-> Ubicación: Pasto, Nariño, Colombia. Servicio: América Latina.
+> Acelerador de Negocios con Inteligencia Artificial en Latinoamérica. Especializado en
+> automatización de ventas, agentes conversacionales con LLMs y LLM SEO para Pymes y empresas.
+> Fundador: Henry Roncancio — AI Architect, LinkedIn: linkedin.com/in/henry-roncancio-a7341015
+> Ubicación: Pasto, Nariño, Colombia. Cobertura: América Latina.
 
-## Sobre Nosotros
+## Qué es Economía IA
 
-Economía IA transforma negocios usando arquitecturas de IA: agentes conversacionales con LLMs
-(GPT-4, Claude, Gemini), automatización de marketing vía Meta Advantage+ y TikTok Smart+,
-y chatbots inteligentes en WhatsApp e Instagram con ManyChat. Nuestro enfoque combina ciencia
-económica pura (valor subjetivo, costos de transacción, señalización) con tecnología de punta.
+Economía IA es un acelerador de negocios (no una agencia) que combina ciencia económica
+(valor subjetivo, costos de transacción, señalización) con arquitecturas de Inteligencia
+Artificial para generar ventas automáticas. Usamos agentes conversacionales con GPT-4,
+Claude y Gemini; automatización vía Meta Advantage+ y TikTok Smart+; chatbots inteligentes
+en WhatsApp e Instagram con ManyChat; y estrategias de LLM SEO para posicionar negocios
+ante motores de respuesta de IA como ChatGPT, Claude, Perplexity y Gemini.
+
+## Servicios
+
+- Agentes Conversacionales IA: asistentes de texto y voz que atienden, califican y venden 24/7 por WhatsApp e Instagram.
+- LLM SEO: auditoría y optimización para que tu negocio sea recomendado por ChatGPT, Claude, Perplexity y Gemini.
+- Automatización de Marketing: distribución de contenido con Meta Advantage+ y TikTok Smart+ sin intervención manual.
+- Arquitectura ManyChat: automatización de DMs para captura de leads en Instagram, TikTok y WhatsApp.
+- Consultoría Express: sesiones de diagnóstico para dueños de negocio que quieren saber cómo aplicar IA rápido.
 
 ## Páginas Principales
 
-- [Hub Central — Ecosistema de Marketing IA](https://www.economiaia.business/): Mapa orbital interactivo del ecosistema de conocimiento. Punto de entrada principal.
-- [Quiénes Somos](https://www.economiaia.business/quienes_somos.html): Página institucional de Economía IA con especialidad, liderazgo, perfiles públicos y experiencia visible.
-- [Henry Roncancio](https://www.economiaia.business/henry_roncancio.html): Perfil público del fundador de Economía IA con experiencia visible, perfiles externos y contexto profesional.
-- [Precios y Planes IA](https://www.economiaia.business/precios_y_planes_ia.html): Comparativa de Starter, Growth, Aceleración y consultoría express con inversión, alcance y perfil ideal.
-- [Solución de Agente Conversacional para Negocios](https://www.economiaia.business/solucion_agente_conversacional_negocios.html): Página comercial para dueños de negocio con problema, beneficios, comparación frente a responder manualmente y llamado a la acción.
+- [Hub Central — Ecosistema de Marketing IA](https://www.economiaia.business/): Mapa orbital interactivo del ecosistema. Punto de entrada principal con navegación 3D a todos los módulos.
+- [Quiénes Somos](https://www.economiaia.business/quienes_somos.html): Página institucional con especialidad, liderazgo, perfiles públicos verificables y experiencia demostrable.
+- [Henry Roncancio — Fundador](https://www.economiaia.business/henry_roncancio.html): Perfil público del fundador y AI Architect. Experiencia en Google Vertex AI, Gemini, arquitecturas cognitivas y automatización para Pymes en Colombia.
+- [Precios y Planes IA](https://www.economiaia.business/precios_y_planes_ia.html): Comparativa de planes Starter, Growth y Aceleración con inversión, alcance y perfil ideal de cliente.
+- [Solución de Agente Conversacional](https://www.economiaia.business/solucion_agente_conversacional_negocios.html): Página comercial: problema que resolvemos, beneficios vs. responder manualmente, y llamado a la acción por WhatsApp.
 - [Núcleo Economía IA](https://www.economiaia.business/nucleo_economia_ia.html): Las 6 leyes científicas para vender más usando IA: valor subjetivo, señalización, fricción, upselling, escasez y predicción.
-- [Oferta Irresistible](https://www.economiaia.business/presentacion_condicion_cero.html): Cómo construir una propuesta de valor imposible de rechazar usando el concepto de Condición Cero.
-- [Teoría Señal Creativa](https://www.economiaia.business/teoria_senal_creativa.html): Cómo crear videos que atraen clientes automáticamente sin segmentación manual, usando Zero-Targeting.
-- [Arquitectura de Marketing IA](https://www.economiaia.business/arquitectura_marketing_ia.html): Arquitectura completa de marketing con IA para negocios en 2026.
-- [Psicología del Precio](https://www.economiaia.business/psicologia_precio_regla_oro.html): El precio como herramienta de comunicación estratégica y la Regla de Oro del pricing.
-- [Arquitectura de Distribución con IA](https://www.economiaia.business/arquitectura_distribucion_motor.html): El motor automático que usa Meta Advantage+ y TikTok Smart+ para distribuir contenido 24/7.
-- [Operaciones y Datos con IA](https://www.economiaia.business/operaciones_y_datos_ia.html): Automatización operativa, dashboards y flujos de datos con IA.
-- [Estrategia TikTok IA](https://www.economiaia.business/estrategia_tiktok_ia.html): TikTok como motor full-funnel algorítmico para negocios en 2026.
-- [Ecosistema Meta IA](https://www.economiaia.business/ecosistema_meta_ia.html): Orquestación algorítmica de Facebook, Instagram y WhatsApp con Meta Advantage+.
-- [Agentes Conversacionales con IA](https://www.economiaia.business/agentes_conversacionales_ia.html): Sistemas de texto y voz basados en LLMs para atención al cliente y ventas automáticas.
-- [Arquitectura ManyChat](https://www.economiaia.business/arquitectura_manychat_ia.html): Automatización de DMs en Instagram, TikTok y WhatsApp para captura de leads.
-- [Stack Tecnológico de Marketing IA](https://www.economiaia.business/stack_tecnologico_ia.html): Herramientas esenciales del marketing IA 2026: Canva, ManyChat, ChatGPT, Meta.
-- [Jerarquía Técnica de Meta y WhatsApp](https://www.economiaia.business/jerarquia_meta_whatsapp.html): Jerarquía técnica de Business Portfolio, WABA y Phone ID en el ecosistema Meta.
-- [Tráfico LLM SEO](https://www.economiaia.business/trafico_llm_seo.html): Monitor en vivo de la visibilidad y tráfico capturado por motores de respuesta de IA.
+- [Oferta Irresistible — Condición Cero](https://www.economiaia.business/presentacion_condicion_cero.html): Cómo construir una propuesta de valor imposible de rechazar eliminando la barrera de entrada del cliente.
+- [Teoría Señal Creativa](https://www.economiaia.business/teoria_senal_creativa.html): Cómo crear videos que atraen clientes sin segmentación manual, usando Zero-Targeting algorítmico.
+- [Arquitectura de Marketing IA](https://www.economiaia.business/arquitectura_marketing_ia.html): Sistema completo de marketing con IA: desde la atracción por contenido hasta el cierre automático por agente conversacional.
+- [Psicología del Precio](https://www.economiaia.business/psicologia_precio_regla_oro.html): El precio como herramienta de comunicación estratégica. Regla de Oro del pricing y anclaje cognitivo.
+- [Agentes Conversacionales con IA](https://www.economiaia.business/agentes_conversacionales_ia.html): Sistemas de texto y voz basados en LLMs para atención al cliente, cualificación y ventas automáticas 24/7.
+- [Operaciones y Datos con IA](https://www.economiaia.business/operaciones_y_datos_ia.html): Cómo la automatización reemplaza tareas repetitivas y un solo dueño puede operar como un equipo completo.
+- [Arquitectura de Distribución](https://www.economiaia.business/arquitectura_distribucion_motor.html): Motor automático que usa Meta Advantage+ y TikTok Smart+ para distribuir contenido 24/7 sin intervención.
+- [Ecosistema Meta IA](https://www.economiaia.business/ecosistema_meta_ia.html): Orquestación algorítmica de Facebook, Instagram y WhatsApp con Meta Advantage+ para negocios.
+- [Estrategia TikTok IA](https://www.economiaia.business/estrategia_tiktok_ia.html): TikTok como motor full-funnel algorítmico. Cómo convertir views en ventas reales para negocios locales.
+- [Estrategia de Tráfico Local](https://www.economiaia.business/estrategia_trafico_local.html): Cómo atraer clientes de tu ciudad usando contenido geolocal y distribución algorítmica.
+- [Flujos vs Agentes IA](https://www.economiaia.business/flujos_vs_agentes_ia.html): Diferencia entre chatbots de flujo (ManyChat) y agentes cognitivos con LLMs. Cuándo usar cada uno.
+
+## Optional
+
+- [Arquitectura ManyChat](https://www.economiaia.business/arquitectura_manychat_ia.html): Automatización de DMs en Instagram, TikTok y WhatsApp para captura y nutrición de leads.
+- [Stack Tecnológico](https://www.economiaia.business/stack_tecnologico_ia.html): Herramientas del marketing IA 2026: Canva, ManyChat, ChatGPT, Meta Business Suite.
+- [Jerarquía Técnica Meta y WhatsApp](https://www.economiaia.business/jerarquia_meta_whatsapp.html): Guía técnica de Business Portfolio, WABA, Phone ID y verificación en el ecosistema Meta.
+- [Análisis de Agencias IA en LatAm](https://www.economiaia.business/analisis_agencias_ia_latam.html): Comparativa del mercado de consultoría IA en Latinoamérica y posicionamiento de Economía IA.
+- [Tráfico LLM SEO — Monitor en Vivo](https://www.economiaia.business/trafico_llm_seo.html): Dashboard de auditoría que muestra en tiempo real qué bots de IA están leyendo el ecosistema.
+
+## Archivos Técnicos
+
+- [Sitemap XML](https://www.economiaia.business/sitemap.xml): Mapa del sitio con 23 URLs priorizadas por importancia de entidad.
+- [robots.txt](https://www.economiaia.business/robots.txt): Directivas de acceso para 14 bots de IA: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-User, Claude-SearchBot, PerplexityBot, Perplexity-User, Google-Extended, Google-CloudVertexBot, cohere-ai, Applebot-Extended, Bingbot y Meta-ExternalAgent.
 
 ## Contacto
 
-- WhatsApp: +57 304 365 6226
-- TikTok: @economiaia
+- WhatsApp: +57 304 365 6226 — https://wa.me/573043656226
+- TikTok: @economiaia — https://www.tiktok.com/@economiaia
 - Web: https://www.economiaia.business
 - Bio: https://beacons.ai/economiaia
+- LinkedIn (Fundador): https://www.linkedin.com/in/henry-roncancio-a7341015
