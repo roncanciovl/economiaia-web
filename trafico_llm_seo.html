@@ -1050,19 +1050,23 @@
                         'Microsoft': '#00bcf2'
                     };
 
-                    // Construir resumen visual agrupado por proveedor
+                    // Construir resumen visual agrupado por proveedor usando badges flex
                     const byProvider = data.byProvider || {};
                     let visualParts = [];
                     const providerOrder = ['OpenAI', 'Anthropic', 'Google', 'Perplexity', 'Meta', 'Apple', 'Cohere'];
                     for (const prov of providerOrder) {
                         if (byProvider[prov]) {
                             const color = providerColors[prov] || '#3b82f6';
-                            visualParts.push(`<span style="color:${color};font-weight:700;">${prov}</span> <span style="color:#94a3b8;">(${byProvider[prov].total.toLocaleString()})</span>`);
+                            visualParts.push(`<span style="display:inline-flex;align-items:center;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);padding:0.2rem 0.5rem;border-radius:0.5rem;white-space:nowrap;font-size:0.9em;"><span style="color:${color};font-weight:700;margin-right:0.3rem;">${prov}</span> <span style="color:#94a3b8;font-size:0.9em;">(${byProvider[prov].total.toLocaleString()})</span></span>`);
                         }
                     }
 
                     const totalBots = data.totalBots || Object.keys(data.botsAggregated).length;
-                    document.getElementById('aiCrawlerValue').innerHTML = visualParts.join(' <span style="color:#334155;margin:0 0.3rem;">•</span> ');
+                    const crawlerValueEl = document.getElementById('aiCrawlerValue');
+                    crawlerValueEl.style.display = 'flex';
+                    crawlerValueEl.style.flexWrap = 'wrap';
+                    crawlerValueEl.style.gap = '0.4rem';
+                    crawlerValueEl.innerHTML = visualParts.join('');
                     document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #10b981;">${totalRequests.toLocaleString()} lecturas recientes confirmadas</span> de <strong>${totalBots} bots</strong> de IA en el sitio.`;
 
                     const feedContainer = document.getElementById('aiFeedContainer');
@@ -1116,7 +1120,16 @@
                 }
             } catch (err) {
                 console.warn("Worker de Cloudflare no detectado, usando datos simulados de Edge para la interfaz visual.");
-                document.getElementById('aiCrawlerValue').innerHTML = '<span style="color:#10a37f;">OpenAI</span> <span style="color:#94a3b8;">(42)</span> <span style="color:#334155;">•</span> <span style="color:#d97757;">Anthropic</span> <span style="color:#94a3b8;">(28)</span> <span style="color:#334155;">•</span> <span style="color:#4285f4;">Google</span> <span style="color:#94a3b8;">(15)</span> <span style="color:#334155;">•</span> <span style="color:#06b6d4;">Perplexity</span> <span style="color:#94a3b8;">(9)</span>';
+                const crawlerValueEl = document.getElementById('aiCrawlerValue');
+                crawlerValueEl.style.display = 'flex';
+                crawlerValueEl.style.flexWrap = 'wrap';
+                crawlerValueEl.style.gap = '0.4rem';
+                crawlerValueEl.innerHTML = `
+                    <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);padding:0.2rem 0.5rem;border-radius:0.5rem;white-space:nowrap;font-size:0.9em;"><span style="color:#10a37f;font-weight:700;margin-right:0.3rem;">OpenAI</span> <span style="color:#94a3b8;font-size:0.9em;">(42)</span></span>
+                    <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);padding:0.2rem 0.5rem;border-radius:0.5rem;white-space:nowrap;font-size:0.9em;"><span style="color:#d97757;font-weight:700;margin-right:0.3rem;">Anthropic</span> <span style="color:#94a3b8;font-size:0.9em;">(28)</span></span>
+                    <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);padding:0.2rem 0.5rem;border-radius:0.5rem;white-space:nowrap;font-size:0.9em;"><span style="color:#4285f4;font-weight:700;margin-right:0.3rem;">Google</span> <span style="color:#94a3b8;font-size:0.9em;">(15)</span></span>
+                    <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);padding:0.2rem 0.5rem;border-radius:0.5rem;white-space:nowrap;font-size:0.9em;"><span style="color:#06b6d4;font-weight:700;margin-right:0.3rem;">Perplexity</span> <span style="color:#94a3b8;font-size:0.9em;">(9)</span></span>
+                `;
                 document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #10b981;">94 lecturas simuladas para la demo</span> de <strong>14 bots</strong> mientras se conecta el monitor real.<br><span style="font-size: 0.75rem; color: #cbd5e1;">Mostrando una vista de ejemplo...</span>`;
             }
         }
