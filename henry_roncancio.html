@@ -229,11 +229,88 @@
             font-size: 0.92rem;
         }
 
+        .github-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        .repo-card {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(34, 211, 238, 0.18);
+            border-radius: 18px;
+            padding: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.2s;
+        }
+
+        .repo-card:hover {
+            border-color: rgba(34, 211, 238, 0.45);
+        }
+
+        .repo-lang {
+            display: inline-flex;
+            padding: 0.25rem 0.65rem;
+            border-radius: 999px;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.24);
+            color: #86efac;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            width: fit-content;
+        }
+
+        .repo-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .repo-card p {
+            font-size: 0.9rem;
+            flex: 1;
+        }
+
+        .repo-card .card-link {
+            font-size: 0.88rem;
+            margin-top: 0.9rem;
+        }
+
+        .social-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .social-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            border: 1px solid rgba(56, 189, 248, 0.28);
+            background: rgba(56, 189, 248, 0.07);
+            color: #93c5fd;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .social-chip:hover {
+            border-color: rgba(56, 189, 248, 0.55);
+            background: rgba(56, 189, 248, 0.14);
+        }
+
         @media (max-width: 900px) {
             .hero-grid,
             .section-grid,
             .proof-grid,
             .links-grid,
+            .github-grid,
             .cta-panel {
                 grid-template-columns: 1fr;
             }
@@ -258,8 +335,34 @@
         "url": "https://www.economiaia.business/henry_roncancio.html",
         "sameAs": [
           "https://www.linkedin.com/in/henry-roncancio-a7341015/",
+          "https://www.linkedin.com/company/economiaia",
+          "https://github.com/roncanciovl",
           "https://beacons.ai/economiaia",
-          "https://theorg.com/org/universidad-militar-nueva-granada/org-chart/henry-roncancio"
+          "https://theorg.com/org/universidad-militar-nueva-granada/org-chart/henry-roncancio",
+          "https://www.tiktok.com/@economiaia",
+          "https://www.instagram.com/economiaia/"
+        ],
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Universidade de São Paulo",
+            "url": "https://www.usp.br/"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Universidad Distrital Francisco José de Caldas",
+            "url": "https://www.udistrital.edu.co/"
+          }
+        ],
+        "knowsAbout": [
+          "Inteligencia Artificial",
+          "Agentes conversacionales",
+          "Redes neuronales convolucionales",
+          "Robótica autónoma",
+          "ROS 2",
+          "Visión artificial",
+          "Automatización comercial",
+          "Machine Learning"
         ],
         "worksFor": {
           "@type": "Organization",
@@ -280,14 +383,14 @@
                 <section class="hero-card">
                     <span class="eyebrow">Perfil público</span>
                     <h1>Henry Roncancio</h1>
-                    <p class="hero-lead"><strong>Fundador de Economía IA y Profesor de Inteligencia Artificial y Robótica</strong> en la Universidad Militar Nueva Granada. Ingeniero electrónico con maestría en Mecatrónica, especializado en agentes conversacionales, automatización comercial e investigación aplicada en redes neuronales y navegación robótica.</p>
+                    <p class="hero-lead"><strong>Fundador de Economía IA y Profesor de Inteligencia Artificial y Robótica</strong> en la Universidad Militar Nueva Granada. Ingeniero electrónico con maestría en Mecatrónica, especializado en <a href="agentes_conversacionales_ia.html" style="color:#22d3ee;text-decoration:underline;text-underline-offset:3px;">agentes conversacionales</a>, automatización comercial e investigación aplicada en redes neuronales y navegación robótica.</p>
                 </section>
                 <aside class="aside-card">
                     <h2>En breve</h2>
                     <ul class="mini-list">
                         <li><strong>Rol en Economía IA:</strong> fundador y AI Architect (desde mayo 2025).</li>
                         <li><strong>Rol académico:</strong> Profesor de IA y Robótica, Universidad Militar Nueva Granada (desde junio 2022).</li>
-                        <li><strong>Especialidad:</strong> agentes conversacionales, redes neuronales convolucionales y sistemas de navegación robótica.</li>
+                        <li><strong>Especialidad:</strong> <a href="agentes_conversacionales_ia.html" style="color:#22d3ee;text-decoration:underline;text-underline-offset:3px;">agentes conversacionales</a>, redes neuronales convolucionales y sistemas de navegación robótica.</li>
                         <li><strong>Formación:</strong> Maestría en Mecatrónica (USP, Brasil) · Ingeniería Electrónica (Universidad Distrital, Colombia).</li>
                         <li><strong>Cobertura:</strong> Colombia y Latinoamérica, trabajo 100% remoto.</li>
                     </ul>
@@ -298,7 +401,7 @@
         <section class="section-grid">
             <article class="section-card">
                 <h2>Qué hace</h2>
-                <p>Henry diseña e implementa agentes conversacionales para pequeñas empresas en Colombia y Latinoamérica a través de Economía IA. Paralelamente, enseña Robótica e Inteligencia Artificial en la Universidad Militar Nueva Granada e investiga en redes neuronales convolucionales aplicadas a navegación robótica autónoma.</p>
+                <p>Henry diseña e implementa <a href="agentes_conversacionales_ia.html" style="color:#22d3ee;text-decoration:underline;text-underline-offset:3px;">agentes conversacionales</a> para pequeñas empresas en Colombia y Latinoamérica a través de Economía IA. Paralelamente, enseña Robótica e Inteligencia Artificial en la Universidad Militar Nueva Granada e investiga en redes neuronales convolucionales aplicadas a navegación robótica autónoma.</p>
             </article>
             <article class="section-card">
                 <h2>Cómo trabaja</h2>
@@ -314,20 +417,49 @@
                     <li class="meta-item"><strong>Universidad de La Salle</strong> · Profesor de IA y Ciencias de Datos · aprendizaje automático y análisis de datos.</li>
                     <li class="meta-item"><strong>Hexagon AB / Devex Mining</strong> · Ingeniero I+D · sistemas de percepción para vehículos autónomos en minería.</li>
                     <li class="meta-item"><strong>Universidade de São Paulo (USP)</strong> · Investigador · detección de objetos para navegación vehicular autónoma.</li>
-                    <li class="meta-item"><strong>Economía IA</strong> · Fundador · desde mayo 2025. Agentes conversacionales para pequeñas empresas en Colombia y Latinoamérica.</li>
+                    <li class="meta-item"><strong>Economía IA</strong> · Fundador · desde mayo 2025. <a href="agentes_conversacionales_ia.html" style="color:#22d3ee;text-decoration:underline;text-underline-offset:3px;">Agentes conversacionales</a> para pequeñas empresas en Colombia y Latinoamérica.</li>
                 </ul>
             </div>
         </section>
 
         <section style="padding-top: 1rem;">
             <div class="section-card">
-                <h2>Relación con Economía IA</h2>
+                <h2>Proyectos en GitHub</h2>
+                <p style="margin:0 0 0.2rem;">Repositorios públicos que muestran trabajo técnico real en robótica, visión artificial e inteligencia artificial aplicada.</p>
+                <div class="github-grid">
+                    <article class="repo-card">
+                        <span class="repo-lang">Shell · ROS 2 Jazzy</span>
+                        <h3>burger_delivery ⭐</h3>
+                        <p>Sistema de entrega con brazo robótico Kinova Gen3, visión con AprilTag y control distribuido micro-ROS para robots móviles.</p>
+                        <a class="card-link" href="https://github.com/roncanciovl/burger_delivery" target="_blank" rel="noopener noreferrer">Ver en GitHub →</a>
+                    </article>
+                    <article class="repo-card">
+                        <span class="repo-lang">Python · Deep Learning</span>
+                        <h3>objectclassification ⭐</h3>
+                        <p>Clasificación de residuos con brazo robótico usando redes neuronales convolucionales, visión artificial y máquinas de estado.</p>
+                        <a class="card-link" href="https://github.com/roncanciovl/objectclassification" target="_blank" rel="noopener noreferrer">Ver en GitHub →</a>
+                    </article>
+                    <article class="repo-card">
+                        <span class="repo-lang">Python · ROS 2</span>
+                        <h3>Robot-over-ROS2</h3>
+                        <p>Implementación de robot móvil con Robot Operating System V2. Navegación autónoma y control de bajo nivel en Python.</p>
+                        <a class="card-link" href="https://github.com/roncanciovl/Robot-over-ROS2" target="_blank" rel="noopener noreferrer">Ver en GitHub →</a>
+                    </article>
+                </div>
+                <a class="card-link" href="https://github.com/roncanciovl" target="_blank" rel="noopener noreferrer" style="margin-top:1.5rem;">Ver todos los repositorios →</a>
+            </div>
+        </section>
+
+        <section style="padding-top: 1rem;">
+            <div class="section-card">
+                <h2>Economía IA</h2>
                 <ul class="meta-list">
-                    <li class="meta-item"><strong>Marca principal:</strong> Economía IA.</li>
-                    <li class="meta-item"><strong>Posicionamiento actual:</strong> agentes conversacionales personalizados para pequeñas empresas y negocios.</li>
-                    <li class="meta-item"><strong>Función dentro del sistema:</strong> conectar la estrategia del negocio con la implementación y el resultado práctico.</li>
+                    <li class="meta-item"><strong>Rol:</strong> Fundador y AI Architect desde mayo de 2025.</li>
+                    <li class="meta-item"><strong>Qué ofrece:</strong> <a href="agentes_conversacionales_ia.html" style="color:#22d3ee;text-decoration:underline;text-underline-offset:3px;">agentes conversacionales</a> personalizados para pequeñas empresas y negocios en crecimiento.</li>
+                    <li class="meta-item"><strong>Cómo trabaja:</strong> diagnóstico del negocio → diseño del agente → implementación → ajuste con resultados reales.</li>
+                    <li class="meta-item"><strong>Cobertura:</strong> Colombia y Latinoamérica, 100% remoto.</li>
                 </ul>
-                <a class="card-link" href="quienes_somos.html">Ver página institucional de Economía IA</a>
+                <a class="card-link" href="quienes_somos.html">Ver página institucional de Economía IA →</a>
             </div>
         </section>
 
@@ -336,21 +468,21 @@
                 <h2>Experiencia visible</h2>
                 <div class="proof-grid">
                     <article class="proof-card">
-                        <span class="mini-badge">Referencia visible</span>
-                        <span class="proof-meta">Toyota Colombia · junio de 2024</span>
-                        <h3>Trabajo realizado</h3>
-                        <p>Se incluye como referencia pública de experiencia profesional ejecutada en junio de 2024. Su función aquí es mostrar trabajo real en contexto empresarial.</p>
+                        <span class="mini-badge">Empresa · junio 2024</span>
+                        <span class="proof-meta">Toyota Colombia</span>
+                        <h3>Trabajo profesional</h3>
+                        <p>Proyecto realizado con Toyota Colombia en junio de 2024. Referencia de trabajo en contexto empresarial real con una marca internacional.</p>
                     </article>
                     <article class="proof-card">
-                        <span class="mini-badge">Referencia visible</span>
-                        <span class="proof-meta">Agencia Nacional de Minería · Colombia · 2025</span>
-                        <h3>Trabajo realizado</h3>
-                        <p>Se incluye como referencia pública de trabajo realizado en 2025 con una entidad pública nacional en Colombia. Refuerza continuidad profesional y experiencia en contexto institucional.</p>
+                        <span class="mini-badge">Entidad pública · 2025</span>
+                        <span class="proof-meta">Agencia Nacional de Minería · Colombia</span>
+                        <h3>Proyecto institucional</h3>
+                        <p>Trabajo realizado en 2025 con la Agencia Nacional de Minería, entidad del Gobierno de Colombia. Muestra experiencia en proyectos del sector público.</p>
                     </article>
                     <article class="proof-card">
-                        <span class="mini-badge">Qué demuestra</span>
-                        <h3>Experiencia comprobable</h3>
-                        <p>Estas referencias ayudan a mostrar trayectoria. Con el tiempo pueden crecer a casos más completos, testimonios o páginas de experiencia.</p>
+                        <span class="mini-badge">Nota</span>
+                        <h3>Confidencialidad</h3>
+                        <p>Por acuerdos de confidencialidad no se publican todos los detalles de cada proyecto. Estas referencias confirman que hay trabajo real y verificable detrás de la marca.</p>
                     </article>
                 </div>
             </div>
@@ -362,27 +494,42 @@
                 <div class="links-grid">
                     <article class="link-card">
                         <span class="mini-badge">Perfil profesional</span>
-                        <h3>LinkedIn</h3>
-                        <p>Perfil principal para revisar trayectoria, conexiones profesionales y contexto público.</p>
-                        <a class="card-link" href="https://www.linkedin.com/in/henry-roncancio-a7341015/" target="_blank" rel="noopener noreferrer">Abrir LinkedIn</a>
+                        <h3>LinkedIn Personal</h3>
+                        <p>Trayectoria profesional completa, formación académica, experiencia laboral y conexiones verificables.</p>
+                        <a class="card-link" href="https://www.linkedin.com/in/henry-roncancio-a7341015/" target="_blank" rel="noopener noreferrer">Abrir LinkedIn →</a>
                     </article>
                     <article class="link-card">
-                        <span class="mini-badge">Bio pública</span>
-                        <h3>Beacons</h3>
-                        <p>Bio complementaria para reunir accesos rápidos a canales, perfiles y presencia digital.</p>
-                        <a class="card-link" href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer">Abrir Beacons</a>
+                        <span class="mini-badge">Empresa</span>
+                        <h3>LinkedIn Economía IA</h3>
+                        <p>Página oficial de la empresa. Actualizaciones, publicaciones y equipo de Economía IA en LinkedIn.</p>
+                        <a class="card-link" href="https://www.linkedin.com/company/economiaia" target="_blank" rel="noopener noreferrer">Ver empresa →</a>
                     </article>
                     <article class="link-card">
-                        <span class="mini-badge">Marca principal</span>
-                        <h3>Economía IA</h3>
-                        <p>El sitio principal donde se organiza la oferta, el ecosistema de conocimiento y la parte comercial visible.</p>
-                        <a class="card-link" href="index.html">Ir al Ecosistema</a>
+                        <span class="mini-badge">Código abierto</span>
+                        <h3>GitHub</h3>
+                        <p>Repositorios públicos de proyectos de robótica, visión artificial e inteligencia artificial aplicada.</p>
+                        <a class="card-link" href="https://github.com/roncanciovl" target="_blank" rel="noopener noreferrer">Ver GitHub →</a>
                     </article>
                     <article class="link-card">
                         <span class="mini-badge">Perfil en The Org</span>
                         <h3>Universidad Militar Nueva Granada</h3>
-                        <p>Perfil público verificado en The Org con cargo, organización y trayectoria profesional de Henry Roncancio como Profesor de IA y Robótica.</p>
-                        <a class="card-link" href="https://theorg.com/org/universidad-militar-nueva-granada/org-chart/henry-roncancio" target="_blank" rel="noopener noreferrer">Ver en The Org</a>
+                        <p>Perfil verificado en The Org como Profesor de IA y Robótica en la Universidad Militar Nueva Granada.</p>
+                        <a class="card-link" href="https://theorg.com/org/universidad-militar-nueva-granada/org-chart/henry-roncancio" target="_blank" rel="noopener noreferrer">Ver en The Org →</a>
+                    </article>
+                    <article class="link-card">
+                        <span class="mini-badge">Bio pública</span>
+                        <h3>Beacons</h3>
+                        <p>Acceso rápido a todos los canales y perfiles de Economía IA en un solo lugar.</p>
+                        <a class="card-link" href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer">Abrir Beacons →</a>
+                    </article>
+                    <article class="link-card">
+                        <span class="mini-badge">Redes sociales</span>
+                        <h3>Instagram y TikTok</h3>
+                        <p>Contenido sobre inteligencia artificial en lenguaje simple. Sigue @economiaia en Instagram y TikTok.</p>
+                        <div class="social-chips">
+                            <a class="social-chip" href="javascript:void(0)" data-lk="aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9lY29ub21pYWlhLw==" onclick="window.open(atob(this.getAttribute('data-lk')), '_blank');">📸 Instagram</a>
+                            <a class="social-chip" href="javascript:void(0)" data-lk="aHR0cHM6Ly93d3cudGlrdG9rLmNvbS9AZWNvbm9taWFpYQ==" onclick="window.open(atob(this.getAttribute('data-lk')), '_blank');">🎵 TikTok</a>
+                        </div>
                     </article>
                 </div>
             </div>
