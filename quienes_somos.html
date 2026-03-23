@@ -568,6 +568,36 @@
         /* ── Footer ── */
         .footer { padding: 0 0 3rem; color: #3a5270; font-size: 0.88rem; }
 
+        /* ── Legal panel ── */
+        .legal-panel { --accent-line: rgba(0,212,255,0.5); }
+        .legal-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0,1fr));
+            gap: 0.75rem 1.5rem;
+        }
+        .legal-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            padding: 0.9rem 1rem;
+            border-radius: 12px;
+            background: rgba(0,212,255,0.04);
+            border: 1px solid rgba(0,212,255,0.1);
+        }
+        .legal-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 6px rgba(0,212,255,0.4);
+        }
+        .legal-value {
+            font-size: 0.95rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
         @media (max-width: 900px) {
             .hero-grid,
             .two-col,
@@ -579,6 +609,7 @@
             }
             .cta-btn { width: 100%; }
             .circuit-side { display: none; }
+            .legal-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
         }
     </style>
     <script type="application/ld+json">
@@ -594,9 +625,16 @@
       "mainEntity": {
         "@type": "Organization",
         "name": "Economía IA",
+        "legalName": "economiaia LLC",
+        "foundingDate": "2025-05-17",
         "url": "https://www.economiaia.business/",
         "logo": "https://www.economiaia.business/logos/logo_economia_ia_neon_v4.png",
         "description": "Economía IA se especializa en agentes conversacionales personalizados para pequeñas empresas y negocios en Latinoamérica.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "New Mexico",
+          "addressCountry": "US"
+        },
         "founder": {
           "@type": "Person",
           "name": "Henry Roncancio",
@@ -762,6 +800,39 @@
                         <p>En TikTok publicamos contenido sobre IA aplicada a negocios, en lenguaje simple y sin tecnicismos. Es una forma de conocer el estilo de trabajo y la forma de comunicar antes de hablar.</p>
                         <a class="profile-link" href="javascript:void(0)" data-lk="aHR0cHM6Ly93d3cudGlrdG9rLmNvbS9AZWNvbm9taWFpYQ==" onclick="window.open(atob(this.getAttribute('data-lk')), '_blank');" target="_blank" rel="noopener noreferrer">Ver TikTok →</a>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-panel legal-panel">
+                <h2 class="section-title">Empresa legalmente constituida</h2>
+                <p class="section-intro">Economía IA opera bajo una entidad legal registrada en Estados Unidos. Esta información es pública y verificable en el registro oficial del estado de New Mexico.</p>
+                <div class="legal-grid">
+                    <div class="legal-item">
+                        <span class="legal-label">Nombre legal</span>
+                        <span class="legal-value">economiaia LLC</span>
+                    </div>
+                    <div class="legal-item">
+                        <span class="legal-label">Tipo de entidad</span>
+                        <span class="legal-value">Domestic Limited Liability Company</span>
+                    </div>
+                    <div class="legal-item">
+                        <span class="legal-label">Estado de registro</span>
+                        <span class="legal-value">New Mexico, Estados Unidos</span>
+                    </div>
+                    <div class="legal-item">
+                        <span class="legal-label">Fecha de constitución</span>
+                        <span class="legal-value">17 de mayo de 2025</span>
+                    </div>
+                    <div class="legal-item">
+                        <span class="legal-label">Entity ID</span>
+                        <span class="legal-value">0008026752</span>
+                    </div>
+                    <div class="legal-item">
+                        <span class="legal-label">Miembro único</span>
+                        <span class="legal-value">Henry Roncancio</span>
+                    </div>
                 </div>
             </div>
         </section>
