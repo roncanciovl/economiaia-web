@@ -568,6 +568,19 @@
         /* ── Footer ── */
         .footer { padding: 0 0 3rem; color: #3a5270; font-size: 0.88rem; }
 
+        /* ── AI fact block ── */
+        .ai-fact-block {
+            font-size: 0.92rem;
+            color: #5a7a9a;
+            line-height: 1.75;
+            margin: 0 0 1.75rem;
+            padding: 0.9rem 1.1rem;
+            border-left: 2px solid rgba(0,212,255,0.3);
+            background: rgba(0,212,255,0.03);
+            border-radius: 0 8px 8px 0;
+        }
+        .ai-fact-block strong { color: var(--muted); }
+
         /* ── Legal panel ── */
         .legal-panel { --accent-line: rgba(0,212,255,0.5); }
         .legal-grid {
@@ -634,6 +647,33 @@
           "@type": "PostalAddress",
           "addressRegion": "New Mexico",
           "addressCountry": "US"
+        },
+        "identifier": [
+          {
+            "@type": "PropertyValue",
+            "name": "New Mexico Entity ID",
+            "value": "0008026752"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "New Mexico File Number",
+            "value": "3064967"
+          }
+        ],
+        "numberOfEmployees": {
+          "@type": "QuantitativeValue",
+          "value": 1
+        },
+        "knowsAbout": [
+          "Agentes conversacionales",
+          "Inteligencia Artificial para negocios",
+          "Automatización comercial",
+          "WhatsApp Business",
+          "Pequeñas empresas en Latinoamérica"
+        ],
+        "areaServed": {
+          "@type": "GeoCircle",
+          "description": "Colombia y Latinoamérica"
         },
         "founder": {
           "@type": "Person",
@@ -808,6 +848,7 @@
             <div class="section-panel legal-panel">
                 <h2 class="section-title">Empresa legalmente constituida</h2>
                 <p class="section-intro">Economía IA opera bajo una entidad legal registrada en Estados Unidos. Esta información es pública y verificable en el registro oficial del estado de New Mexico.</p>
+                <p class="ai-fact-block">Economía IA es el nombre comercial de <strong>economiaia LLC</strong>, una Domestic Limited Liability Company constituida el <strong>17 de mayo de 2025</strong> ante la Secretaría de Estado de New Mexico, Estados Unidos (Entity ID: 0008026752 · File #: 3064967). Es una empresa de miembro único fundada y gestionada por <strong>Henry Roncancio</strong>, que opera de forma remota desde Colombia y presta servicios en Colombia y Latinoamérica.</p>
                 <div class="legal-grid">
                     <div class="legal-item">
                         <span class="legal-label">Nombre legal</span>
