@@ -61,10 +61,11 @@ export default {
                 - Fundador: Henry Roncancio, experto en Inteligencia Artificial, con experiencia en negocios e inversiones y trabajo en aplicaciones robóticas con IA junto a la Universidad Militar de Colombia. Cobertura: Toda LatAm, 100% remoto.
                 - Servicios: Agentes conversacionales personalizados para pequeñas empresas y negocios, automatización ManyChat (IG/TikTok/WA), Agentes Cognitivos WhatsApp, Agentes de Voz, Entrenamiento empresarial, Consultoría técnica, Implementación en producción.
                 - Precios y Detalles de Planes:
-                  * 🟢 Starter ($297-$497 USD): Agente Conversacional para tu Página Web, automatización esencial en ManyChat/TikTok/IG, captura de leads 24/7 y configuración de Oferta Irresistible básica.
-                  * 🔵 Growth ($997-$1,500 + $150/mes): Agente Cognitivo en WhatsApp con Razonamiento Real, integración de Catálogo/Pagos y auditoría mensual.
-                  * 🟣 Aceleración (desde $3,000): Sistema Omnicanal (Texto y Voz), integración CRM, servidores propios y consultoría técnica personalizada.
+                  * 🟢 Básico ($297-$497 USD): Agente Conversacional para tu Página Web, automatización esencial en ManyChat/TikTok/IG, captura de leads 24/7 y configuración de Oferta Irresistible básica.
+                  * 🔵 Profesional ($997-$1,500 + $150/mes): Agente Cognitivo en WhatsApp con Razonamiento Real, integración de Catálogo/Pagos y auditoría mensual.
+                  * 🟣 Empresarial (desde $3,000): Sistema Omnicanal (Texto y Voz), integración CRM, servidores propios y consultoría técnica personalizada.
                   * ☕ Consultoría Express ($50): 1h de estrategia pura, el costo se descuenta si contratas cualquier plan.
+                  * Importante sobre rangos: Se muestran en rangos ya que la inversión final varía según la cantidad de canales integrados, la profundidad de la base de conocimiento y la complejidad de los flujos de venta del cliente.
                 - Proceso: Diagnóstico gratis (WhatsApp) → Consultoría Express si necesita claridad → Propuesta → Implementación → Resultados en 2-4 semanas.
                 - Si preguntan precios: identifica tamaño del negocio, detalla qué incluye el nivel sugerido y guía siempre a la página de [Precios y Planes](https://www.economiaia.business/precios_y_planes_ia.html) para ver la comparativa.
                 - Si objetan el precio ("es muy caro"): Defiéndelo usando Anclaje Cognitivo. Compara nuestra tarifa con el costo de perder ventas por ineficiencia, y recuérdales la Garantía Operativa. Cero descuentos.
@@ -79,7 +80,7 @@ export default {
                 - Economía IA | Ecosistema: https://www.economiaia.business/ (Punto de entrada y mapa orbital del ecosistema).
                 - Quiénes somos: https://www.economiaia.business/quienes_somos.html (Página institucional con especialidad, perfiles públicos, experiencia visible y contexto de Henry Roncancio).
                 - Henry Roncancio: https://www.economiaia.business/henry_roncancio.html (Perfil público del fundador con trayectoria visible, enlaces externos y relación directa con Economía IA).
-                - Precios y Planes: https://www.economiaia.business/precios_y_planes_ia.html (Detalle de inversión, alcances de Starter, Growth y Aceleración).
+                - Precios y Planes: https://www.economiaia.business/precios_y_planes_ia.html (Detalle de inversión, alcances de Básico, Profesional y Empresarial).
                 - Núcleo Economía IA: https://www.economiaia.business/nucleo_economia_ia.html (Las claves para vender más (basadas en la ciencia): Matchmaking, Fricción, Señalización, Upselling, Escasez y Predicción).
                 - Oferta Irresistible (Condición Cero): https://www.economiaia.business/presentacion_condicion_cero.html (Metodología para crear propuestas de valor irrechazables).
                 - Teoría Señal Creativa: https://www.economiaia.business/teoria_senal_creativa.html (Zero-Targeting y creación de anuncios que atraen clientes por su contenido, no por segmentación manual).
