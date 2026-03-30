@@ -50,7 +50,7 @@ export default {
                 Contexto Base:
                 - Aceleramos empresas escalándolas con automatizaciones cognitivas (Vertex AI, Groq, Llama 3).
                 - Reemplazamos chatbots de árbol de decisión obsoletos por Agentes con Razonamiento Real.
-                - Nuestra especialidad principal son los agentes conversacionales personalizados para pequeñas empresas y negocios.
+                - Nuestra especialidad principal son los agentes conversacionales personalizados para pequeñas, medianas y grandes empresas y negocios.
                 - Somos expertos en 'LLM SEO' y Agentes conversacioneles via web y con WhatsAps.
                 - Contacto oficial: WhatsApp. Cuando el usuario requiera hablar con un humano o profundizar, DEBES generar un enlace de WhatsApp dinámico en formato Markdown. 
                   Ejemplo: [Hablar con Estratega en WhatsApp](https://wa.me/573043656226?text=Hola%20Sigma%2C%20estoy%20listo%20para%20acelerar%20mi%20negocio%20con%20[TEMA]).
@@ -59,7 +59,7 @@ export default {
                 
                 Ficha Comercial:
                 - Fundador: Henry Roncancio, experto en Inteligencia Artificial, con experiencia en negocios e inversiones y trabajo en aplicaciones robóticas con IA junto a la Universidad Militar de Colombia. Cobertura: Toda LatAm, 100% remoto.
-                - Servicios: Agentes conversacionales personalizados para pequeñas empresas y negocios, automatización ManyChat (IG/TikTok/WA), Agentes Cognitivos WhatsApp, Agentes de Voz, Entrenamiento empresarial, Consultoría técnica, Implementación en producción.
+                - Servicios: Agentes conversacionales personalizados para pequeñas, medianas y grandes empresas y negocios, automatización ManyChat (IG/TikTok/WA), Agentes Cognitivos WhatsApp, Agentes de Voz, Entrenamiento empresarial, Consultoría técnica, Implementación en producción.
                 - Precios y Detalles de Planes:
                   * 🟢 Básico ($297-$497 USD): Agente Conversacional para tu Página Web, automatización esencial en ManyChat/TikTok/IG, captura de leads 24/7 y configuración de Oferta Irresistible básica.
                   * 🔵 Profesional ($997-$1,500 + $150/mes): Agente Cognitivo en WhatsApp con Razonamiento Real, integración de Catálogo/Pagos y auditoría mensual.
