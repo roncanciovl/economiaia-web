@@ -248,17 +248,50 @@
         }
 
         /* AI Widget Styles */
-        .ai-widget-btn {
+        .ai-widget-container {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 1rem;
+        }
+
+        .ai-widget-tooltip {
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 1.2rem;
+            border-radius: 16px;
+            border-bottom-right-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #e2e8f0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            animation: float-bounce 3s infinite ease-in-out;
+            cursor: pointer;
+            text-align: right;
+        }
+
+        .ai-widget-tooltip strong {
+            color: var(--accent-cyan);
+            font-weight: 700;
+        }
+
+        @keyframes float-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .ai-widget-btn {
+            position: relative;
             width: 60px;
             height: 60px;
             background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
             border: none;
             border-radius: 50%;
             cursor: pointer;
-            z-index: 10000;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -711,12 +744,17 @@
     </div>
 
     <!-- AI Widget Markup -->
-    <button class="ai-widget-btn" id="aiBtn" aria-label="Abrir asistente">
-        <svg viewBox="0 0 24 24">
-            <path
-                d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.01 1.01 4.35l-1.35 4.02a.85.85 0 0 0 1.07 1.07l4.02-1.35A9.95 9.95 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.36 0-2.65-.29-3.83-.8l-.34-.14-2.82.94.94-2.82-.14-.34A7.95 7.95 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
-        </svg>
-    </button>
+    <div class="ai-widget-container" id="aiWidgetContainer">
+        <div class="ai-widget-tooltip" onclick="document.getElementById('aiBtn').click()">
+            ¿Dudas sobre estos planes o precios?<br><strong>Acláralas con Sigma 👇</strong>
+        </div>
+        <button class="ai-widget-btn" id="aiBtn" aria-label="Abrir asistente">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.01 1.01 4.35l-1.35 4.02a.85.85 0 0 0 1.07 1.07l4.02-1.35A9.95 9.95 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.36 0-2.65-.29-3.83-.8l-.34-.14-2.82.94.94-2.82-.14-.34A7.95 7.95 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
+            </svg>
+        </button>
+    </div>
 
     <div class="ai-chat-panel" id="aiChatPanel">
         <div class="ai-chat-header">
@@ -750,17 +788,19 @@
         const sendBtn = document.getElementById('sendBtn');
         const chatBody = document.getElementById('chatBody');
 
+        const aiWidgetContainer = document.getElementById('aiWidgetContainer');
+
         let chatHistory = [];
 
         aiBtn.addEventListener('click', () => {
             aiChatPanel.classList.add('active');
             chatInput.focus();
-            aiBtn.style.display = 'none';
+            aiWidgetContainer.style.display = 'none';
         });
 
         closeChat.addEventListener('click', () => {
             aiChatPanel.classList.remove('active');
-            aiBtn.style.display = 'flex';
+            aiWidgetContainer.style.display = 'flex';
         });
 
         async function sendMessage() {
