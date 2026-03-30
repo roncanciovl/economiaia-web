@@ -263,6 +263,34 @@
             background: var(--panel);
         }
 
+        .scroll-hint {
+            display: none;
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--blue);
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            animation: pulse-x 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse-x {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(-8px); }
+        }
+
+        .table-shadow {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 100%;
+            background: linear-gradient(to right, rgba(15, 23, 42, 0), rgba(15, 23, 42, 0.95));
+            pointer-events: none;
+            display: none;
+            border-radius: 0 20px 20px 0;
+            z-index: 10;
+        }
+
         .compare-grid {
             grid-template-columns: repeat(3, minmax(0, 1fr));
             margin: 0 0 1rem;
@@ -383,6 +411,11 @@
 
             .quick-link span {
                 margin-top: 0.1rem;
+            }
+
+            .scroll-hint,
+            .table-shadow {
+                display: block;
             }
         }
     </style>
@@ -549,8 +582,11 @@
                     <p>El agente orienta y filtra; la persona cierra, asesora y toma decisiones donde más valor aporta.</p>
                 </article>
             </div>
-            <div class="table-wrap">
-                <table>
+            
+            <div class="scroll-hint">← Desliza para ver más</div>
+            <div style="position: relative;">
+                <div class="table-wrap">
+                    <table>
                     <thead>
                         <tr>
                             <th>Factor</th>
@@ -591,6 +627,8 @@
                         </tr>
                     </tbody>
                 </table>
+                </div>
+                <div class="table-shadow"></div>
             </div>
         </section>
 
