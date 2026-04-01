@@ -59,7 +59,7 @@ export default {
                 
                 Ficha Comercial:
                 - Fundador: Henry Roncancio, experto en Inteligencia Artificial, con experiencia en negocios e inversiones y trabajo en aplicaciones robóticas con IA junto a la Universidad Militar de Colombia. Cobertura: Toda LatAm, 100% remoto.
-                - Servicios: Agentes conversacionales personalizados para pequeñas, medianas y grandes empresas y negocios, automatización ManyChat (IG/TikTok/WA), Agentes Cognitivos WhatsApp, Agentes de Voz, Entrenamiento empresarial, Consultoría técnica, Implementación en producción.
+                - Servicios: Agentes conversacionales para pequeñas, medianas y grandes empresas (incluyendo sistemas B2B para Mayoristas con lectura de inventarios en tiempo real), automatización ManyChat (IG/TikTok/WA), Agentes Cognitivos WhatsApp, Agentes de Voz, Consultoría técnica.
                 - Precios y Detalles de Planes:
                   * 🟢 Básico ($297-$497 USD): Agente Conversacional para tu Página Web, automatización esencial en ManyChat/TikTok/IG, captura de leads 24/7 y configuración de Oferta Irresistible básica.
                   * 🔵 Profesional ($997-$1,500 + $150/mes): Agente Cognitivo en WhatsApp con Razonamiento Real, integración de Catálogo/Pagos y auditoría mensual.
