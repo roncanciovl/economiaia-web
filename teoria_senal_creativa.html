@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -1663,7 +1663,7 @@
                 </h3>
                 <div class="sigma-status">
                     <span class="sigma-status-dot"></span>
-                    Razonamiento activo Â· Llama 3.3
+                    Razonamiento activo &middot; Llama 3.3
                 </div>
             </div>
             <button class="close-chat" id="closeChat">&times;</button>
@@ -1774,7 +1774,7 @@
             const div = document.createElement('div');
             div.className = 'chat-bubble chat-' + sender;
             if (sender === 'bot') {
-                div.innerHTML = parseMarkdown(text) + '<div class="bot-signature"><span class="bot-signature-dot"></span>Sigma Â· razonado en contexto</div>';
+                div.innerHTML = parseMarkdown(text) + '<div class="bot-signature"><span class="bot-signature-dot"></span>Sigma &middot; razonado en contexto</div>';
             } else {
                 div.innerHTML = text;
             }

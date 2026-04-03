@@ -1616,7 +1616,7 @@
         }
     </style>
 
-    <div class="ai-widget-tooltip" id="aiTooltip">¿En qué te puedo ayudar?</div>
+    <div class="ai-widget-tooltip" id="aiTooltip">Preguntale a Sigma GPT</div>
     <button class="ai-widget-btn" id="aiBtn" aria-label="Abrir asistente">
         <svg viewBox="0 0 24 24">
             <path
@@ -1632,7 +1632,7 @@
                 </h3>
                 <div class="sigma-status">
                     <span class="sigma-status-dot"></span>
-                    Razonamiento activo · Llama 3.3
+                    Razonamiento activo &middot; Llama 3.3
                 </div>
             </div>
             <button class="close-chat" id="closeChat">×</button>
@@ -1640,7 +1640,7 @@
         <div class="ai-chat-body" id="chatBody">
             <div class="chat-bubble chat-bot">
                 Hola, soy Sigma. ¿Qué necesita tu negocio ahora mismo: conseguir más clientes, vender más a los que ya tienes, o automatizar para dejar de hacer todo tú solo?
-                <div class="bot-signature"><span class="bot-signature-dot"></span>Sigma · razonado en contexto</div>
+                <div class="bot-signature"><span class="bot-signature-dot"></span>Sigma &middot; razonado en contexto</div>
             </div>
         </div>
         <div class="ai-chat-input-area">
@@ -1769,7 +1769,7 @@
             div.className = 'chat-bubble chat-' + sender;
             // Usamos innerHTML y parseamos el Markdown a HTML (solo para las respuestas del bot)
             if (sender === 'bot') {
-                div.innerHTML = parseMarkdown(text) + '<div class="bot-signature"><span class="bot-signature-dot"></span>Sigma · razonado en contexto</div>';
+                div.innerHTML = parseMarkdown(text) + '<div class="bot-signature"><span class="bot-signature-dot"></span>Sigma &middot; razonado en contexto</div>';
             } else {
                 div.innerHTML = text;
             }
