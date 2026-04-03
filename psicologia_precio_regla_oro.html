@@ -1080,6 +1080,93 @@
             }
         }
 
+        
+        .ai-widget-tooltip {
+            position: fixed;
+            bottom: 6.5rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+            z-index: 9998;
+            pointer-events: none;
+            animation: float-tooltip 3s ease-in-out infinite;
+            white-space: nowrap;
+        }
+
+        .ai-widget-tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 20px;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid #3b82f6;
+        }
+
+        @keyframes float-tooltip {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .sigma-status {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.7rem;
+            color: #10b981;
+            font-weight: 500;
+        }
+
+        .sigma-status-dot {
+            width: 6px;
+            height: 6px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(16, 185, 129, 0); }
+        }
+
+        .ai-chat-header-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .ai-chat-header-info h3 {
+            margin: 0;
+            font-size: 1rem;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .bot-signature {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 0.5rem;
+            font-size: 0.65rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .bot-signature-dot {
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            border-radius: 50%;
+        }
+
         @media (max-width: 600px) {
             .ai-chat-panel {
                 bottom: 0;
