@@ -49,10 +49,45 @@
             margin: 0;
             font-family: 'Inter', sans-serif;
             color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ── Fondo animado con orbes ── */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background:
-                radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), transparent 24%),
-                radial-gradient(circle at top right, rgba(56, 189, 248, 0.10), transparent 28%),
-                linear-gradient(180deg, #08101b 0%, #0b1528 100%);
+                radial-gradient(ellipse 600px 600px at 10% 10%, rgba(34, 211, 238, 0.12), transparent),
+                radial-gradient(ellipse 500px 500px at 90% 5%, rgba(56, 189, 248, 0.10), transparent),
+                radial-gradient(ellipse 400px 400px at 50% 50%, rgba(99, 102, 241, 0.06), transparent),
+                radial-gradient(ellipse 500px 500px at 80% 80%, rgba(34, 211, 238, 0.05), transparent);
+            z-index: -2;
+            animation: orb-drift 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes orb-drift {
+            0%   { transform: translate(0, 0) scale(1); }
+            50%  { transform: translate(-20px, 15px) scale(1.03); }
+            100% { transform: translate(10px, -10px) scale(0.98); }
+        }
+
+        /* ── Grid decorativo de fondo ── */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image:
+                linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: -1;
+            mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 20%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 20%, transparent 70%);
         }
 
         a { color: inherit; }
@@ -60,6 +95,7 @@
         .container {
             width: min(1100px, calc(100% - 2rem));
             margin: 0 auto;
+            position: relative;
         }
 
         .nav-back {
@@ -70,7 +106,10 @@
             color: var(--muted);
             text-decoration: none;
             font-size: 0.95rem;
+            transition: color 0.2s;
         }
+
+        .nav-back:hover { color: var(--cyan); }
 
         .hero {
             padding: 3.2rem 0 2rem;
@@ -98,6 +137,7 @@
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
+        /* ── Cards base ── */
         .hero-card,
         .aside-card,
         .section-card,
@@ -108,6 +148,11 @@
             border: 1px solid var(--border);
             border-radius: 24px;
             backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.35s cubic-bezier(.22,.61,.36,1),
+                        border-color 0.35s,
+                        box-shadow 0.35s;
         }
 
         .hero-card,
@@ -117,6 +162,55 @@
         .link-card,
         .cta-panel {
             padding: 1.7rem;
+        }
+
+        /* ── Hover glow en cards ── */
+        .section-card:hover,
+        .proof-card:hover,
+        .link-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(34, 211, 238, 0.35);
+            box-shadow: 0 8px 32px rgba(34, 211, 238, 0.08), 0 0 0 1px rgba(34, 211, 238, 0.12);
+        }
+
+        /* ── Brillo shimmer en hover ── */
+        .section-card::before,
+        .proof-card::before,
+        .link-card::before,
+        .repo-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.04), transparent);
+            transition: left 0.6s ease;
+            pointer-events: none;
+        }
+
+        .section-card:hover::before,
+        .proof-card:hover::before,
+        .link-card:hover::before,
+        .repo-card:hover::before {
+            left: 100%;
+        }
+
+        /* ── Línea superior decorativa en hero-card ── */
+        .hero-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 1.5rem; right: 1.5rem;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--cyan), var(--blue), transparent);
+            border-radius: 2px;
+        }
+
+        .aside-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 1.5rem; right: 1.5rem;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), rgba(245, 158, 11, 0.3), transparent);
+            border-radius: 2px;
         }
 
         .eyebrow {
@@ -141,9 +235,27 @@
         h1 {
             font-size: clamp(2.4rem, 5vw, 4rem);
             line-height: 0.98;
+            background: linear-gradient(135deg, #f8fafc 0%, var(--cyan) 50%, var(--blue) 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 6s ease-in-out infinite;
         }
 
-        h2 { font-size: 2rem; }
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50%      { background-position: 100% 50%; }
+        }
+
+        h2 {
+            font-size: 2rem;
+            background: linear-gradient(135deg, var(--text) 40%, var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         h3 { font-size: 1.2rem; }
 
         p, li {
@@ -173,6 +285,53 @@
             gap: 0.75rem;
         }
 
+        /* ── Timeline visual para trayectoria ── */
+        .meta-list.timeline {
+            gap: 0;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+
+        .meta-list.timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.45rem;
+            top: 0.6rem;
+            bottom: 0.6rem;
+            width: 2px;
+            background: linear-gradient(180deg, var(--cyan), var(--blue), rgba(99, 102, 241, 0.3));
+            border-radius: 2px;
+        }
+
+        .meta-list.timeline .meta-item {
+            position: relative;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.06);
+        }
+
+        .meta-list.timeline .meta-item:last-child {
+            border-bottom: none;
+        }
+
+        .meta-list.timeline .meta-item::before {
+            content: '';
+            position: absolute;
+            left: -1.8rem;
+            top: 1.15rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--bg);
+            border: 2px solid var(--cyan);
+            z-index: 1;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        .meta-list.timeline .meta-item:hover::before {
+            background: var(--cyan);
+            box-shadow: 0 0 12px rgba(34, 211, 238, 0.5);
+        }
+
         .mini-badge {
             display: inline-flex;
             padding: 0.3rem 0.7rem;
@@ -200,18 +359,50 @@
             text-decoration: none;
             font-weight: 700;
             margin-top: 1rem;
+            transition: color 0.2s, gap 0.2s;
         }
 
         .card-link {
             color: #c6f6ff;
+            gap: 0.3rem;
         }
 
+        .card-link:hover {
+            color: var(--cyan);
+            gap: 0.5rem;
+        }
+
+        /* ── CTA espectacular ── */
         .cta-panel {
             margin: 2rem 0 4rem;
             display: grid;
             grid-template-columns: minmax(0, 1.2fr) auto;
             gap: 1rem;
             align-items: center;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(34, 211, 238, 0.06));
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            position: relative;
+        }
+
+        .cta-panel::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 25px;
+            padding: 1px;
+            background: linear-gradient(135deg, var(--cyan), var(--blue), rgba(99, 102, 241, 0.5), var(--cyan));
+            background-size: 300% 300%;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: border-glow 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes border-glow {
+            0%, 100% { background-position: 0% 50%; opacity: 0.6; }
+            50%      { background-position: 100% 50%; opacity: 1; }
         }
 
         .cta-btn {
@@ -221,7 +412,26 @@
             border-radius: 14px;
             background: linear-gradient(135deg, var(--cyan), var(--blue));
             color: #04111d;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(34, 211, 238, 0.3);
+        }
+
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-btn:hover::before { left: 100%; }
 
         .footer {
             padding: 0 0 3rem;
@@ -243,11 +453,15 @@
             padding: 1.4rem;
             display: flex;
             flex-direction: column;
-            transition: border-color 0.2s;
+            transition: border-color 0.3s, transform 0.35s cubic-bezier(.22,.61,.36,1), box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
         .repo-card:hover {
             border-color: rgba(34, 211, 238, 0.45);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(34, 211, 238, 0.08);
         }
 
         .repo-lang {
@@ -297,13 +511,54 @@
             font-size: 0.82rem;
             font-weight: 600;
             text-decoration: none;
-            transition: border-color 0.2s, background 0.2s;
+            transition: border-color 0.3s, background 0.3s, transform 0.3s;
         }
 
         .social-chip:hover {
             border-color: rgba(56, 189, 248, 0.55);
             background: rgba(56, 189, 248, 0.14);
+            transform: translateY(-2px);
         }
+
+        /* ── Separador decorativo entre secciones ── */
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.2), rgba(56, 189, 248, 0.15), transparent);
+            margin: 1.5rem 0 0.5rem;
+            border: none;
+        }
+
+        /* ── Animaciones de entrada ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(.22,.61,.36,1), transform 0.7s cubic-bezier(.22,.61,.36,1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger children */
+        .reveal-children > * {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.5s cubic-bezier(.22,.61,.36,1), transform 0.5s cubic-bezier(.22,.61,.36,1);
+        }
+
+        .reveal-children.visible > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-children.visible > *:nth-child(1) { transition-delay: 0s; }
+        .reveal-children.visible > *:nth-child(2) { transition-delay: 0.08s; }
+        .reveal-children.visible > *:nth-child(3) { transition-delay: 0.16s; }
+        .reveal-children.visible > *:nth-child(4) { transition-delay: 0.24s; }
+        .reveal-children.visible > *:nth-child(5) { transition-delay: 0.32s; }
+        .reveal-children.visible > *:nth-child(6) { transition-delay: 0.40s; }
 
         @media (max-width: 900px) {
             .hero-grid,
@@ -531,7 +786,7 @@
     <div class="container">
         <a href="quienes_somos.html" class="nav-back">← Volver a Quiénes somos</a>
 
-        <header class="hero">
+        <header class="hero reveal">
             <div class="hero-grid">
                 <section class="hero-card">
                     <span class="eyebrow">Perfil público</span>
@@ -551,7 +806,9 @@
             </div>
         </header>
 
-        <section class="section-grid">
+        <hr class="section-divider">
+
+        <section class="section-grid reveal-children">
             <article class="section-card">
                 <h2>Qué hace</h2>
                 <p>Henry diseña e implementa <a href="agentes_conversacionales_ia.html" style="color:#22d3ee;text-decoration:underline;text-underline-offset:3px;">agentes conversacionales</a> para pequeñas empresas en Colombia y Latinoamérica a través de Economía IA. Paralelamente, enseña Robótica e Inteligencia Artificial en la Universidad Militar Nueva Granada e investiga en redes neuronales convolucionales aplicadas a navegación robótica autónoma.</p>
@@ -562,10 +819,12 @@
             </article>
         </section>
 
-        <section style="padding-top: 1rem;">
+        <hr class="section-divider">
+
+        <section style="padding-top: 1rem;" class="reveal">
             <div class="section-card">
                 <h2>Trayectoria profesional</h2>
-                <ul class="meta-list">
+                <ul class="meta-list timeline">
                     <li class="meta-item"><strong>Universidad Militar Nueva Granada</strong> · Profesor de IA y Robótica · desde junio 2022. Enseña cursos de Robótica e Inteligencia Artificial e investiga en redes neuronales convolucionales y simulación de navegación robótica.</li>
                     <li class="meta-item"><strong>Universidad de La Salle</strong> · Profesor de IA y Ciencias de Datos · aprendizaje automático y análisis de datos.</li>
                     <li class="meta-item"><strong>Hexagon AB / Devex Mining</strong> · Ingeniero I+D · sistemas de percepción para vehículos autónomos en minería.</li>
@@ -575,11 +834,13 @@
             </div>
         </section>
 
-        <section style="padding-top: 1rem;">
+        <hr class="section-divider">
+
+        <section style="padding-top: 1rem;" class="reveal">
             <div class="section-card">
                 <h2>Proyectos en GitHub</h2>
                 <p style="margin:0 0 0.2rem;">Repositorios públicos que muestran trabajo técnico real en robótica, visión artificial e inteligencia artificial aplicada.</p>
-                <div class="github-grid">
+                <div class="github-grid reveal-children">
                     <article class="repo-card">
                         <span class="repo-lang">Shell · ROS 2 Jazzy</span>
                         <h3>burger_delivery ⭐</h3>
@@ -603,7 +864,9 @@
             </div>
         </section>
 
-        <section style="padding-top: 1rem;">
+        <hr class="section-divider">
+
+        <section style="padding-top: 1rem;" class="reveal">
             <div class="section-card">
                 <h2>Economía IA</h2>
                 <ul class="meta-list">
@@ -616,10 +879,12 @@
             </div>
         </section>
 
-        <section style="padding-top: 1rem;">
+        <hr class="section-divider">
+
+        <section style="padding-top: 1rem;" class="reveal">
             <div class="section-card">
                 <h2>Experiencia visible</h2>
-                <div class="proof-grid">
+                <div class="proof-grid reveal-children">
                     <article class="proof-card">
                         <span class="mini-badge">Empresa · junio 2024</span>
                         <span class="proof-meta">Toyota Colombia</span>
@@ -641,10 +906,12 @@
             </div>
         </section>
 
-        <section style="padding-top: 1rem;">
+        <hr class="section-divider">
+
+        <section style="padding-top: 1rem;" class="reveal">
             <div class="section-card">
                 <h2>Perfiles y presencia pública</h2>
-                <div class="links-grid">
+                <div class="links-grid reveal-children">
                     <article class="link-card">
                         <span class="mini-badge">Perfil profesional</span>
                         <h3>LinkedIn Personal</h3>
@@ -688,7 +955,9 @@
             </div>
         </section>
 
-        <section class="cta-panel">
+        <hr class="section-divider">
+
+        <section class="cta-panel reveal">
             <div>
                 <h2>¿Quieres hablar directamente?</h2>
                 <p>Si llegaste aquí para entender quién está detrás del proyecto y si esta experiencia encaja con tu negocio, el siguiente paso es una conversación directa.</p>
@@ -838,6 +1107,13 @@
             const el = document.getElementById(id);
             if (el) el.remove();
         }
+    </script>
+
+    <script>
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal, .reveal-children').forEach(el => io.observe(el));
     </script>
 </body>
 
