@@ -1367,14 +1367,20 @@
 
         .ai-chat-header {
             background: linear-gradient(90deg, #1e293b, #0f172a);
-            padding: 1rem;
+            padding: 0.8rem 1rem;
             border-bottom: 1px solid #334155;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .ai-chat-header h3 {
+        .ai-chat-header-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .ai-chat-header-info h3 {
             margin: 0;
             font-size: 1rem;
             color: #f8fafc;
@@ -1386,10 +1392,49 @@
         .ai-chat-header .badge {
             background: rgba(34, 211, 238, 0.15);
             color: #22d3ee;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             padding: 2px 6px;
             border-radius: 4px;
             border: 1px solid rgba(34, 211, 238, 0.3);
+        }
+
+        .sigma-status {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.7rem;
+            color: #10b981;
+            font-weight: 500;
+        }
+
+        .sigma-status-dot {
+            width: 6px;
+            height: 6px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(16, 185, 129, 0); }
+        }
+
+        .bot-signature {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 0.5rem;
+            font-size: 0.65rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .bot-signature-dot {
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            border-radius: 50%;
         }
 
         .close-chat {
@@ -1581,15 +1626,21 @@
 
     <div class="ai-chat-panel" id="aiChatPanel">
         <div class="ai-chat-header">
-            <h3 style="display: flex; align-items: center; gap: 0.8rem;">
-                Sigma <span class="badge">Llama 3.3 (Edge)</span>
-            </h3>
+            <div class="ai-chat-header-info">
+                <h3>
+                    Sigma <span class="badge">Agente Cognitivo</span>
+                </h3>
+                <div class="sigma-status">
+                    <span class="sigma-status-dot"></span>
+                    Razonamiento activo · Llama 3.3
+                </div>
+            </div>
             <button class="close-chat" id="closeChat">×</button>
         </div>
         <div class="ai-chat-body" id="chatBody">
             <div class="chat-bubble chat-bot">
-                Hola, soy Sigma. ¿Qué necesita tu negocio ahora mismo: conseguir más clientes, vender más a los que ya
-                tienes, o automatizar para dejar de hacer todo tú solo?
+                Hola, soy Sigma. ¿Qué necesita tu negocio ahora mismo: conseguir más clientes, vender más a los que ya tienes, o automatizar para dejar de hacer todo tú solo?
+                <div class="bot-signature"><span class="bot-signature-dot"></span>Sigma · razonado en contexto</div>
             </div>
         </div>
         <div class="ai-chat-input-area">
@@ -1717,7 +1768,11 @@
             const div = document.createElement('div');
             div.className = 'chat-bubble chat-' + sender;
             // Usamos innerHTML y parseamos el Markdown a HTML (solo para las respuestas del bot)
-            div.innerHTML = sender === 'bot' ? parseMarkdown(text) : text;
+            if (sender === 'bot') {
+                div.innerHTML = parseMarkdown(text) + '<div class="bot-signature"><span class="bot-signature-dot"></span>Sigma · razonado en contexto</div>';
+            } else {
+                div.innerHTML = text;
+            }
             chatBody.appendChild(div);
             chatBody.scrollTop = chatBody.scrollHeight;
         }
