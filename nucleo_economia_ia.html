@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -1712,6 +1712,7 @@
         }
     </style>
 
+    <div class="ai-widget-tooltip" id="aiTooltip">Preguntale a Sigma GPT</div>
     <button class="ai-widget-btn" id="aiBtn" aria-label="Abrir asistente">
         <svg viewBox="0 0 24 24">
             <path
@@ -1721,7 +1722,15 @@
 
     <div class="ai-chat-panel" id="aiChatPanel">
         <div class="ai-chat-header">
-            <h3>Sigma <span class="badge">Llama 3 (Edge)</span></h3>
+            <div class="ai-chat-header-info">
+                <h3>
+                    Sigma <span class="badge">Agente Cognitivo</span>
+                </h3>
+                <div class="sigma-status">
+                    <span class="sigma-status-dot"></span>
+                    Razonamiento activo Â· Llama 3.3
+                </div>
+            </div>
             <button class="close-chat" id="closeChat">×</button>
         </div>
         <div class="ai-chat-body" id="chatBody">
@@ -1845,7 +1854,7 @@
             // Convertir **negritas** a <b>negritas</b>
             html = html.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
             // Convertir [texto](url) a <a href="url" target="_blank">texto</a>
-            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color:#10b981; text-decoration:underline;">$1</a>');
+            html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color:#22d3ee; text-decoration:underline; font-weight:600;">$1</a>');
             // Convertir saltos de linea a <br>
             html = html.replace(/\n/g, '<br>');
             return html;
@@ -1855,7 +1864,11 @@
             const div = document.createElement('div');
             div.className = 'chat-bubble chat-' + sender;
             // Usamos innerHTML y parseamos el Markdown a HTML (solo para las respuestas del bot)
-            div.innerHTML = sender === 'bot' ? parseMarkdown(text) : text;
+            if (sender === 'bot') {
+                div.innerHTML = parseMarkdown(text) + '<div class="bot-signature"><span class="bot-signature-dot"></span>Sigma Â· razonado en contexto</div>';
+            } else {
+                div.innerHTML = text;
+            }
             chatBody.appendChild(div);
             chatBody.scrollTop = chatBody.scrollHeight;
         }
