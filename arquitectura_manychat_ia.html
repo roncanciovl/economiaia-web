@@ -1306,8 +1306,13 @@
             } else {
                 div.innerHTML = text;
             }
+            const previousScroll = chatBody.scrollHeight;
             chatBody.appendChild(div);
-            chatBody.scrollTop = chatBody.scrollHeight;
+            if (sender === 'bot') {
+                chatBody.scrollTo({ top: previousScroll - 60, behavior: 'smooth' });
+            } else {
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
         }
 
         function showTyping() {

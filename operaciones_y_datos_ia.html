@@ -1819,8 +1819,13 @@ Fase 3 - Cierre Inversivo: Presenta el precio e inmediatamente lanza la forma de
             } else {
                 div.innerHTML = text;
             }
+            const previousScroll = chatBody.scrollHeight;
             chatBody.appendChild(div);
-            chatBody.scrollTop = chatBody.scrollHeight;
+            if (sender === 'bot') {
+                chatBody.scrollTo({ top: previousScroll - 60, behavior: 'smooth' });
+            } else {
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
         }
 
         function showTyping() {
