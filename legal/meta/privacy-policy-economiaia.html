@@ -1,114 +1,140 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Politica de Privacidad | Economia IA</title>
+  <title>PolÃ­tica de Privacidad | EconomÃ­a IA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f6f3ed;
-      --paper: #fffdf8;
-      --ink: #182228;
-      --muted: #5a676e;
-      --line: #d9d1c4;
-      --accent: #146356;
+      --bg: #030305;
+      --paper: #0a0b14;
+      --ink: #f0f0f0;
+      --muted: #94a3b8;
+      --line: rgba(255, 255, 255, 0.1);
+      --accent: #6C5CE7;
+      --accent-glow: rgba(108, 92, 231, 0.3);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: 'Outfit', sans-serif;
       color: var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(20, 99, 86, 0.10), transparent 30%),
-        linear-gradient(180deg, #efe9dd 0%, var(--bg) 100%);
-      line-height: 1.65;
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at top left, var(--accent-glow), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.05), transparent 40%);
+      line-height: 1.7;
     }
     main {
-      max-width: 860px;
-      margin: 48px auto;
-      padding: 32px;
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 40px;
       background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: 0 18px 50px rgba(24, 34, 40, 0.08);
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
     }
-    h1, h2 { line-height: 1.2; }
+    h1, h2 { line-height: 1.2; font-weight: 800; }
     h1 {
-      margin: 0 0 8px;
-      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 0 0 16px;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     h2 {
-      margin-top: 32px;
-      font-size: 1.25rem;
-      color: var(--accent);
+      margin-top: 40px;
+      font-size: 1.4rem;
+      color: #fff;
+      border-left: 3px solid var(--accent);
+      padding-left: 15px;
     }
-    p, li { font-size: 1.05rem; }
+    p, li { font-size: 1.05rem; color: #cbd5e1; }
     .eyebrow {
-      margin: 0 0 18px;
-      color: var(--muted);
+      margin: 0 0 20px;
+      color: var(--accent);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.82rem;
+      letter-spacing: 0.15em;
+      font-size: 0.85rem;
+      font-weight: 600;
     }
     .meta {
-      padding: 14px 16px;
-      border-radius: 12px;
-      background: #f2f8f7;
-      border: 1px solid #cde0dc;
-      color: var(--muted);
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(108, 92, 231, 0.1);
+      border: 1px solid rgba(108, 92, 231, 0.2);
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-bottom: 30px;
     }
-    a { color: var(--accent); }
-    ul { padding-left: 22px; }
+    a { color: var(--accent); text-decoration: none; transition: 0.2s; }
+    a:hover { color: #fff; text-shadow: 0 0 10px var(--accent); }
+    ul, ol { padding-left: 24px; margin: 15px 0; }
+    li { margin-bottom: 10px; }
+    .footer-links {
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        gap: 20px;
+        font-size: 0.9rem;
+    }
+    .footer-links a { color: var(--muted); }
+    .footer-links a:hover { color: #fff; }
   </style>
 </head>
 <body>
   <main>
-    <p class="eyebrow">Economia IA · Meta App</p>
-    <h1>Politica de Privacidad</h1>
-    <p class="meta">Ultima actualizacion: 20 de marzo de 2026</p>
+    <p class="eyebrow">EconomÃ­a IA Â· Meta App</p>
+    <h1>PolÃ­tica de Privacidad</h1>
+    <p class="meta">Ãšltima actualizaciÃ³n: 11 de abril de 2026</p>
 
-    <p>Economia IA respeta la privacidad de las personas que interactuan con sus sitios, paginas, formularios, anuncios y automatizaciones conectadas con Meta y otras plataformas digitales.</p>
+        <p>EconomÃ­a IA respeta la privacidad de las personas que interactÃºan con sus sitios, pÃ¡ginas, formularios, anuncios y automatizaciones conectadas con Meta y otras plataformas digitales.</p>
 
-    <h2>1. Quien trata los datos</h2>
-    <p>Esta politica aplica a los servicios y activos digitales operados bajo la marca Economia IA, incluyendo campañas, formularios, publicaciones, mensajes y automatizaciones asociadas a nuestras apps de Meta.</p>
+    <h2>1. QuiÃ©n trata los datos</h2>
+    <p>Esta polÃ­tica aplica a los servicios y activos digitales operados bajo la marca <strong>EconomÃ­a IA</strong>, incluyendo campaÃ±as, formularios, publicaciones, mensajes y automatizaciones asociadas a nuestras apps de Meta.</p>
 
-    <h2>2. Que datos podemos recopilar</h2>
+    <h2>2. QuÃ© datos podemos recopilar</h2>
     <ul>
-      <li>Datos de contacto enviados voluntariamente, como nombre, correo electronico o telefono.</li>
-      <li>Datos de interaccion con anuncios, formularios, publicaciones y paginas conectadas a Meta.</li>
-      <li>Informacion tecnica basica, como dispositivo, navegador, pais aproximado o eventos de uso cuando una plataforma la comparte de forma agregada o autorizada.</li>
-      <li>Mensajes o respuestas enviados por el usuario a traves de canales oficiales.</li>
+      <li>Datos de contacto enviados voluntariamente (nombre, correo, telÃ©fono).</li>
+      <li>Datos de interacciÃ³n con anuncios y formularios de Meta.</li>
+      <li>InformaciÃ³n tÃ©cnica bÃ¡sica compartida por las plataformas de forma agregada.</li>
+      <li>Mensajes directos enviados a travÃ©s de nuestros canales oficiales.</li>
     </ul>
 
-    <h2>3. Para que usamos la informacion</h2>
+    <h2>3. Para quÃ© usamos la informaciÃ³n</h2>
     <ul>
-      <li>Responder solicitudes, preguntas o mensajes.</li>
-      <li>Entregar productos, recursos digitales o acceso a servicios solicitados.</li>
-      <li>Medir el rendimiento de campañas de marketing y mejorar contenidos, anuncios y experiencias.</li>
-      <li>Gestionar audiencias, seguimiento comercial y soporte al cliente.</li>
-      <li>Cumplir obligaciones legales, regulatorias o de seguridad.</li>
+      <li>Responder solicitudes y entregar recursos digitales.</li>
+      <li>Optimizar campaÃ±as de marketing y mejorar la experiencia del usuario.</li>
+      <li>GestiÃ³n de audiencias y soporte tÃ©cnico.</li>
+      <li>Cumplimiento de obligaciones legales y de seguridad.</li>
     </ul>
 
     <h2>4. Bases de tratamiento</h2>
-    <p>Tratamos datos cuando existe consentimiento del usuario, una solicitud directa del usuario, interes legitimo para operar y mejorar nuestros servicios, o una obligacion legal aplicable.</p>
+    <p>Tratamos datos bajo el consentimiento del usuario, interÃ©s legÃ­timo para mejorar nuestros servicios o por necesidad de cumplimiento contractual/legal.</p>
 
-    <h2>5. Comparticion de datos</h2>
-    <p>Podemos usar proveedores y plataformas para operar el negocio, incluyendo servicios de alojamiento, analitica, email, CRM, procesamiento de pagos y plataformas publicitarias como Meta. No vendemos datos personales como actividad independiente.</p>
+    <h2>5. ComparticiÃ³n de datos</h2>
+    <p>Usamos proveedores de confianza (Meta, Google, CRM) para operar. No vendemos datos personales a terceros como actividad comercial.</p>
 
-    <h2>6. Conservacion</h2>
-    <p>Conservamos la informacion solo durante el tiempo necesario para cumplir las finalidades descritas, atender requerimientos legales o mantener registros operativos y comerciales razonables.</p>
+    <h2>6. ConservaciÃ³n</h2>
+    <p>Conservamos la informaciÃ³n solo el tiempo necesario para cumplir las finalidades descritas o segÃºn lo exija la ley.</p>
 
     <h2>7. Derechos del usuario</h2>
-    <p>La persona titular puede solicitar acceso, actualizacion, correccion o eliminacion de su informacion, sujeto a requisitos legales y operativos aplicables.</p>
+    <p>Puedes solicitar el acceso, rectificaciÃ³n o eliminaciÃ³n de tus datos en cualquier momento escribiendo a nuestro contacto oficial.</p>
 
     <h2>8. Seguridad</h2>
-    <p>Aplicamos medidas razonables de seguridad tecnica y organizativa para proteger la informacion contra acceso no autorizado, perdida, uso indebido o alteracion.</p>
+    <p>Implementamos medidas tÃ©cnicas y organizativas para proteger tu informaciÃ³n contra acceso no autorizado.</p>
 
-    <h2>9. Datos de Meta</h2>
-    <p>Cuando un usuario interactua con una Fan Page, anuncio, formulario o cuenta conectada a Meta, parte del tratamiento tambien depende de las politicas y herramientas de Meta Platforms. Recomendamos revisar sus terminos y politicas de privacidad directamente.</p>
+    <h2>9. Contacto</h2>
+    <p>Para consultas sobre privacidad: <a href="mailto:roncanciovl@hotmail.com">roncanciovl@hotmail.com</a>.</p>
 
-    <h2>10. Contacto</h2>
-    <p>Para consultas sobre privacidad o tratamiento de datos, puedes escribir a <a href="mailto:roncanciovl@hotmail.com">roncanciovl@hotmail.com</a>.</p>
+    <div class="footer-links">
+      <a href="https://www.economiaia.business/">â† Volver al inicio</a>
+      <a href="mailto:roncanciovl@hotmail.com">Soporte</a>
+    </div>
   </main>
 </body>
 </html>

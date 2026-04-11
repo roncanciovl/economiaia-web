@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -414,72 +414,59 @@
             color: #10b981;
         }
 
-        /* Animated Flow SVG */
+        /* --- Animated Traffic Funnel --- */
         .flow-container {
             width: 100%;
             max-width: 1000px;
-            height: 140px;
-            background: #0f172a;
-            border-radius: 1rem;
-            border: 1px solid #334155;
+            background: #0a1120;
+            border-radius: 1.25rem;
+            border: 1px solid #1e2d45;
             margin-bottom: 3rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 60px rgba(16,185,129,0.06), 0 0 0 1px rgba(16,185,129,0.04);
+        }
+        .flow-container svg {
+            display: block;
+            width: 100%;
+            height: auto;
         }
 
-        .svg-node {
-            animation: floatNode 4s ease-in-out infinite;
-        }
-
-        .svg-node-pulse {
-            animation: pulseNode 3s ease-in-out infinite;
-        }
-
-        @keyframes floatNode {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-4px);
-            }
-        }
-
-        @keyframes pulseNode {
-
-            0%,
-            100% {
-                filter: drop-shadow(0 0 5px rgba(16, 185, 129, 0.3));
-                transform: scale(1) translateY(0);
-            }
-
-            50% {
-                filter: drop-shadow(0 0 15px rgba(16, 185, 129, 0.8));
-                transform: scale(1.02) translateY(-2px);
-            }
-        }
-
-        /* Animar iconos mágicamente en hover de las tarjetas */
+        /* Card icon hover bounce */
         .card:hover .card-icon {
             animation: bounceIcon 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
-
         @keyframes bounceIcon {
-            0% {
-                transform: scale(1) translateY(0);
-            }
+            0%   { transform: scale(1)    translateY(0); }
+            50%  { transform: scale(1.15) translateY(-8px); }
+            100% { transform: scale(1.1)  translateY(-4px); }
+        }
 
-            50% {
-                transform: scale(1.15) translateY(-8px);
-            }
+        /* Floating source nodes */
+        .fn-social   { animation: floatA 4.0s ease-in-out infinite; }
+        .fn-maps     { animation: floatB 4.4s ease-in-out infinite; }
+        .fn-whatsapp { animation: floatA 3.8s ease-in-out infinite; }
+        .fn-ferias   { animation: floatB 4.2s ease-in-out infinite; }
+        .fn-alianzas { animation: floatA 4.6s ease-in-out infinite; }
+        .fn-urgencia { animation: floatB 4.0s ease-in-out infinite; }
+        .fn-ia       { animation: pulseIA    3s   ease-in-out infinite; }
+        .fn-store    { animation: pulseStore 3.5s ease-in-out infinite; }
 
-            100% {
-                transform: scale(1.1) translateY(-4px);
-            }
+        @keyframes floatA {
+            0%,100% { transform: translateY(0); }
+            50%      { transform: translateY(-5px); }
+        }
+        @keyframes floatB {
+            0%,100% { transform: translateY(0); }
+            50%      { transform: translateY(5px); }
+        }
+        @keyframes pulseIA {
+            0%,100% { filter: drop-shadow(0 0 6px rgba(16,185,129,0.4));  transform: scale(1); }
+            50%      { filter: drop-shadow(0 0 20px rgba(16,185,129,0.9)); transform: scale(1.03); }
+        }
+        @keyframes pulseStore {
+            0%,100% { filter: drop-shadow(0 0 6px rgba(245,158,11,0.4));  transform: scale(1); }
+            50%      { filter: drop-shadow(0 0 22px rgba(245,158,11,0.9)); transform: scale(1.04); }
         }
 
         .btn-back {
@@ -518,9 +505,17 @@
                 font-size: 0.8rem;
             }
 
-            .flow-container {
-                height: 110px;
-            }
+            /* Flow diagram: hide desktop version, show mobile version */
+            .flow-desktop { display: none; }
+            .flow-mobile  { display: block; }
+
+            /* Make summary table scroll horizontally if needed */
+            .summary-table { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .summary-table table { min-width: 360px; }
+        }
+        @media (min-width: 601px) {
+            .flow-desktop { display: block; }
+            .flow-mobile  { display: none; }
         }
     </style>
 
@@ -564,81 +559,309 @@
 
     <main style="width: 100%; display: flex; flex-direction: column; align-items: center;">
 
-        <!-- Animated Flow SVG -->
+        <div class="flow-desktop">
+        <!-- === Animated Traffic Funnel === -->
         <div class="flow-container">
-            <svg viewBox="0 0 500 130" width="100%" height="100%">
-                <defs>
-                    <filter id="glowGreen" x="-20%" y="-20%" width="140%" height="140%">
-                        <feGaussianBlur stdDeviation="3" result="blur" />
-                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                    </filter>
-                    <filter id="glowBlue" x="-20%" y="-20%" width="140%" height="140%">
-                        <feGaussianBlur stdDeviation="3" result="blur" />
-                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                    </filter>
-                </defs>
+          <svg viewBox="0 0 960 660" xmlns="http://www.w3.org/2000/svg" aria-label="Embudo de trafico local animado">
+            <defs>
+              <filter id="gGreen" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="gAmber" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="6" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="gBlue" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="4" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="gPink" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="4" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="gPurple" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="4" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="gCyan" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="4" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.5"/>
+              </filter>
+              <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#10b981" stop-opacity="0.07"/>
+                <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="lineSocial"   x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.7"/><stop offset="100%" stop-color="#10b981" stop-opacity="0.4"/></linearGradient>
+              <linearGradient id="lineMaps"     x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.7"/><stop offset="100%" stop-color="#10b981" stop-opacity="0.4"/></linearGradient>
+              <linearGradient id="lineWA"       x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#22c55e" stop-opacity="0.7"/><stop offset="100%" stop-color="#10b981" stop-opacity="0.4"/></linearGradient>
+              <linearGradient id="lineFerias"   x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#ec4899" stop-opacity="0.7"/><stop offset="100%" stop-color="#10b981" stop-opacity="0.4"/></linearGradient>
+              <linearGradient id="lineAlianzas" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.7"/><stop offset="100%" stop-color="#10b981" stop-opacity="0.4"/></linearGradient>
+              <linearGradient id="lineUrgencia" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#06b6d4" stop-opacity="0.7"/><stop offset="100%" stop-color="#10b981" stop-opacity="0.4"/></linearGradient>
+              <linearGradient id="lineIAStore"  x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#10b981" stop-opacity="0.8"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0.8"/></linearGradient>
+              <linearGradient id="iaGrad"    x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0f3d2c"/><stop offset="100%" stop-color="#0a2419"/></linearGradient>
+              <linearGradient id="storeGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3d2c0a"/><stop offset="100%" stop-color="#241a04"/></linearGradient>
+            </defs>
 
-                <!-- Línea de Conexión Base -->
-                <path d="M 125 50 L 375 50" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="4 4" />
+            <!-- Background glow -->
+            <ellipse cx="480" cy="330" rx="320" ry="200" fill="url(#bgGlow)"/>
 
-                <!-- Nodo 1: Redes Sociales -->
-                <g class="svg-node" style="transform-origin: 75px 50px;">
-                    <rect x="25" y="25" width="100" height="50" rx="10" fill="#1e293b" stroke="#f59e0b"
-                        stroke-width="2" />
-                    <text x="75" y="45" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="bold">📱
-                        Redes</text>
-                    <text x="75" y="62" text-anchor="middle" fill="#94a3b8" font-size="8">1. Descubrimiento</text>
-                </g>
+            <!-- CONNECTION LINES (source to IA) -->
+            <path d="M 162 56  C 300 56,  370 320, 420 320" fill="none" stroke="url(#lineSocial)"   stroke-width="1.8" stroke-dasharray="6 4" opacity="0.75"/>
+            <path d="M 162 151 C 300 151, 370 320, 420 320" fill="none" stroke="url(#lineMaps)"     stroke-width="1.8" stroke-dasharray="6 4" opacity="0.75"/>
+            <path d="M 162 246 C 295 246, 370 320, 420 320" fill="none" stroke="url(#lineWA)"       stroke-width="1.8" stroke-dasharray="6 4" opacity="0.75"/>
+            <path d="M 162 396 C 295 396, 370 320, 420 320" fill="none" stroke="url(#lineFerias)"   stroke-width="1.8" stroke-dasharray="6 4" opacity="0.75"/>
+            <path d="M 162 491 C 300 491, 370 320, 420 320" fill="none" stroke="url(#lineAlianzas)" stroke-width="1.8" stroke-dasharray="6 4" opacity="0.75"/>
+            <path d="M 162 581 C 300 581, 370 320, 420 320" fill="none" stroke="url(#lineUrgencia)" stroke-width="1.8" stroke-dasharray="6 4" opacity="0.75"/>
+            <!-- IA to Store ---->
+            <path d="M 562 320 L 796 320" fill="none" stroke="url(#lineIAStore)" stroke-width="3" stroke-dasharray="8 4" opacity="0.9"/>
 
-                <!-- Partículas de Redes a Bot -->
-                <circle cy="50" r="4" fill="#10b981" filter="url(#glowGreen)">
-                    <animate attributeName="cx" values="135; 195" dur="1.2s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" dur="1.2s"
-                        repeatCount="indefinite" />
-                </circle>
+            <!-- PARTICLES (source to IA) -->
+            <circle r="5" fill="#f59e0b" filter="url(#gAmber)">
+              <animateMotion dur="1.6s" repeatCount="indefinite" begin="0s"   path="M 162 56  C 300 56,  370 320, 420 320"/>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="1.6s" repeatCount="indefinite" begin="0s"/>
+            </circle>
+            <circle r="5" fill="#3b82f6" filter="url(#gBlue)">
+              <animateMotion dur="1.9s" repeatCount="indefinite" begin="0.3s" path="M 162 151 C 300 151, 370 320, 420 320"/>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="1.9s" repeatCount="indefinite" begin="0.3s"/>
+            </circle>
+            <circle r="5" fill="#22c55e" filter="url(#gGreen)">
+              <animateMotion dur="1.5s" repeatCount="indefinite" begin="0.6s" path="M 162 246 C 295 246, 370 320, 420 320"/>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="1.5s" repeatCount="indefinite" begin="0.6s"/>
+            </circle>
+            <circle r="5" fill="#ec4899" filter="url(#gPink)">
+              <animateMotion dur="1.7s" repeatCount="indefinite" begin="0.9s" path="M 162 396 C 295 396, 370 320, 420 320"/>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="1.7s" repeatCount="indefinite" begin="0.9s"/>
+            </circle>
+            <circle r="5" fill="#8b5cf6" filter="url(#gPurple)">
+              <animateMotion dur="2.0s" repeatCount="indefinite" begin="0.2s" path="M 162 491 C 300 491, 370 320, 420 320"/>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="2.0s" repeatCount="indefinite" begin="0.2s"/>
+            </circle>
+            <circle r="5" fill="#06b6d4" filter="url(#gCyan)">
+              <animateMotion dur="1.8s" repeatCount="indefinite" begin="0.5s" path="M 162 581 C 300 581, 370 320, 420 320"/>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="1.8s" repeatCount="indefinite" begin="0.5s"/>
+            </circle>
+            <!-- IA to Store particles -->
+            <circle r="6" fill="#10b981" filter="url(#gGreen)">
+              <animateMotion dur="1.1s" repeatCount="indefinite" begin="0s"    path="M 562 320 L 796 320"/>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="1.1s" repeatCount="indefinite" begin="0s"/>
+            </circle>
+            <circle r="5" fill="#f59e0b" filter="url(#gAmber)">
+              <animateMotion dur="1.1s" repeatCount="indefinite" begin="0.37s" path="M 562 320 L 796 320"/>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="1.1s" repeatCount="indefinite" begin="0.37s"/>
+            </circle>
+            <circle r="4" fill="#3b82f6" filter="url(#gBlue)">
+              <animateMotion dur="1.1s" repeatCount="indefinite" begin="0.74s" path="M 562 320 L 796 320"/>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="1.1s" repeatCount="indefinite" begin="0.74s"/>
+            </circle>
 
-                <!-- Nodo 2: IA Bot -->
-                <g class="svg-node-pulse" style="transform-origin: 250px 50px;">
-                    <rect x="200" y="20" width="100" height="60" rx="12" fill="#1e293b" stroke="#10b981"
-                        stroke-width="2" />
-                    <text x="250" y="42" text-anchor="middle" fill="#10b981" font-size="12" font-weight="bold">🤖 IA
-                        Bot</text>
-                    <text x="250" y="56" text-anchor="middle" fill="#94a3b8" font-size="8">Atención Inmediata</text>
-                    <!-- Animación de "Escribiendo" en el Bot -->
-                    <circle cx="235" cy="68" r="2.5" fill="#10b981">
-                        <animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" repeatCount="indefinite"
-                            begin="0s" />
-                    </circle>
-                    <circle cx="250" cy="68" r="2.5" fill="#10b981">
-                        <animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" repeatCount="indefinite"
-                            begin="0.3s" />
-                    </circle>
-                    <circle cx="265" cy="68" r="2.5" fill="#10b981">
-                        <animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" repeatCount="indefinite"
-                            begin="0.6s" />
-                    </circle>
-                </g>
+            <!-- SOURCE NODE BOXES -->
+            <!-- 1. Redes Sociales -->
+            <g class="fn-social" filter="url(#softShadow)">
+              <rect x="10" y="26" width="152" height="62" rx="12" fill="#1a2540" stroke="#f59e0b" stroke-width="1.8"/>
+              <text x="86" y="50" text-anchor="middle" font-size="20">&#128241;</text>
+              <text x="86" y="68" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="700">Redes Sociales</text>
+              <text x="86" y="80" text-anchor="middle" fill="#64748b" font-size="9">Videos Â· Reels Â· Stories</text>
+            </g>
+            <!-- 2. Google Maps -->
+            <g class="fn-maps" filter="url(#softShadow)">
+              <rect x="10" y="122" width="152" height="62" rx="12" fill="#1a2540" stroke="#3b82f6" stroke-width="1.8"/>
+              <text x="86" y="146" text-anchor="middle" font-size="20">&#128506;</text>
+              <text x="86" y="163" text-anchor="middle" fill="#3b82f6" font-size="11" font-weight="700">Google Maps</text>
+              <text x="86" y="175" text-anchor="middle" fill="#64748b" font-size="9">Rese&#241;as Â· My Business</text>
+            </g>
+            <!-- 3. WhatsApp Bot -->
+            <g class="fn-whatsapp" filter="url(#softShadow)">
+              <rect x="10" y="217" width="152" height="62" rx="12" fill="#1a2540" stroke="#22c55e" stroke-width="1.8"/>
+              <text x="86" y="241" text-anchor="middle" font-size="20">&#128172;</text>
+              <text x="86" y="258" text-anchor="middle" fill="#22c55e" font-size="11" font-weight="700">WhatsApp Bot</text>
+              <text x="86" y="270" text-anchor="middle" fill="#64748b" font-size="9">Respuesta 24/7 Â· Reservas</text>
+            </g>
+            <!-- 4. Ferias y Mercados -->
+            <g class="fn-ferias" filter="url(#softShadow)">
+              <rect x="10" y="367" width="152" height="62" rx="12" fill="#1a2540" stroke="#ec4899" stroke-width="1.8"/>
+              <text x="86" y="391" text-anchor="middle" font-size="20">&#127914;</text>
+              <text x="86" y="408" text-anchor="middle" fill="#ec4899" font-size="11" font-weight="700">Ferias y Mercados</text>
+              <text x="86" y="420" text-anchor="middle" fill="#64748b" font-size="9">Demos Â· QR Â· Contactos</text>
+            </g>
+            <!-- 5. Alianzas Locales -->
+            <g class="fn-alianzas" filter="url(#softShadow)">
+              <rect x="10" y="462" width="152" height="62" rx="12" fill="#1a2540" stroke="#8b5cf6" stroke-width="1.8"/>
+              <text x="86" y="486" text-anchor="middle" font-size="20">&#129309;</text>
+              <text x="86" y="503" text-anchor="middle" fill="#8b5cf6" font-size="11" font-weight="700">Alianzas Locales</text>
+              <text x="86" y="515" text-anchor="middle" fill="#64748b" font-size="9">Caf&#233;s Â· Hoteles Â· Cross-promo</text>
+            </g>
+            <!-- 6. Urgencia / Cupos -->
+            <g class="fn-urgencia" filter="url(#softShadow)">
+              <rect x="10" y="552" width="152" height="62" rx="12" fill="#1a2540" stroke="#06b6d4" stroke-width="1.8"/>
+              <text x="86" y="576" text-anchor="middle" font-size="20">&#9203;</text>
+              <text x="86" y="593" text-anchor="middle" fill="#06b6d4" font-size="11" font-weight="700">Urgencia / Cupos</text>
+              <text x="86" y="605" text-anchor="middle" fill="#64748b" font-size="9">Limitados Â· Recordatorios</text>
+            </g>
 
-                <!-- Partículas de Bot a Local -->
-                <circle cy="50" r="4" fill="#3b82f6" filter="url(#glowBlue)">
-                    <animate attributeName="cx" values="305; 365" dur="1.2s" repeatCount="indefinite" begin="0.6s" />
-                    <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" dur="1.2s"
-                        repeatCount="indefinite" begin="0.6s" />
-                </circle>
+            <!-- CENTRAL IA NODE -->
+            <g class="fn-ia" filter="url(#softShadow)">
+              <circle cx="490" cy="320" r="80" fill="none" stroke="#10b981" stroke-width="0.6" stroke-dasharray="3 6" opacity="0.5">
+                <animateTransform attributeName="transform" type="rotate" from="0 490 320" to="360 490 320" dur="18s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="490" cy="320" r="70" fill="url(#iaGrad)" stroke="#10b981" stroke-width="2.2"/>
+              <text x="490" y="308" text-anchor="middle" font-size="28">&#129302;</text>
+              <text x="490" y="330" text-anchor="middle" fill="#10b981" font-size="13" font-weight="800">IA HUB</text>
+              <circle cx="475" cy="346" r="3.2" fill="#10b981">
+                <animate attributeName="opacity" values="0.2;1;0.2" dur="1.4s" repeatCount="indefinite" begin="0s"/>
+              </circle>
+              <circle cx="490" cy="346" r="3.2" fill="#10b981">
+                <animate attributeName="opacity" values="0.2;1;0.2" dur="1.4s" repeatCount="indefinite" begin="0.28s"/>
+              </circle>
+              <circle cx="505" cy="346" r="3.2" fill="#10b981">
+                <animate attributeName="opacity" values="0.2;1;0.2" dur="1.4s" repeatCount="indefinite" begin="0.56s"/>
+              </circle>
+            </g>
 
-                <!-- Nodo 3: Tu Local -->
-                <g class="svg-node" style="transform-origin: 425px 50px; animation-delay: 1s;">
-                    <rect x="375" y="25" width="100" height="50" rx="10" fill="#1e293b" stroke="#3b82f6"
-                        stroke-width="2" />
-                    <text x="425" y="45" text-anchor="middle" fill="#3b82f6" font-size="12" font-weight="bold">🏪 Tu
-                        Local</text>
-                    <text x="425" y="62" text-anchor="middle" fill="#94a3b8" font-size="8">3. Visita Física</text>
-                </g>
+            <!-- STORE NODE -->
+            <g class="fn-store" filter="url(#softShadow)">
+              <circle cx="870" cy="320" r="84" fill="none" stroke="#f59e0b" stroke-width="0.5" stroke-dasharray="2 8" opacity="0.4">
+                <animateTransform attributeName="transform" type="rotate" from="360 870 320" to="0 870 320" dur="12s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="870" cy="320" r="72" fill="url(#storeGrad)" stroke="#f59e0b" stroke-width="2.5"/>
+              <text x="870" y="306" text-anchor="middle" font-size="32">&#127978;</text>
+              <text x="870" y="330" text-anchor="middle" fill="#f59e0b" font-size="13" font-weight="800">TU LOCAL</text>
+              <text x="870" y="347" text-anchor="middle" fill="#a16207" font-size="10" font-weight="600">Visita F&#237;sica &#10003;</text>
+            </g>
 
-                <!-- Texto base explicativo -->
-                <text x="250" y="115" text-anchor="middle" fill="#64748b" font-size="10" font-weight="bold"
-                    letter-spacing="1">EL EMBUDO INVISIBLE DEL TRÁFICO FÍSICO</text>
-            </svg>
+            <!-- SEPARATOR -->
+            <text x="86" y="335" text-anchor="middle" fill="#1e3a5a" font-size="11" font-weight="800">Â· Â· Â· Â· Â· Â·</text>
+
+            <!-- BOTTOM LABEL -->
+            <text x="480" y="645" text-anchor="middle" fill="#334155" font-size="11" font-weight="700" letter-spacing="1.5">EL EMBUDO INVISIBLE DEL TR&#193;FICO F&#205;SICO</text>
+          </svg>
+        </div>
+        </div>
+        <!-- Mobile Funnel (vertical, compact) -->
+        <div class="flow-mobile flow-container">
+          <svg viewBox="0 0 340 620" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;" aria-label="Embudo de trafico movil">
+            <defs>
+              <filter id="mgGreen" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="4" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="mgAmber" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <radialGradient id="mbgGlow" cx="50%" cy="40%" r="50%">
+                <stop offset="0%" stop-color="#10b981" stop-opacity="0.08"/>
+                <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="miaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0f3d2c"/><stop offset="100%" stop-color="#0a2419"/></linearGradient>
+              <linearGradient id="mstoreGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3d2c0a"/><stop offset="100%" stop-color="#241a04"/></linearGradient>
+            </defs>
+
+            <ellipse cx="170" cy="300" rx="150" ry="200" fill="url(#mbgGlow)"/>
+
+            <!-- === SOURCE CHIPS (2 cols x 3 rows) === -->
+            <!-- Row 1 -->
+            <rect x="8"   y="10" width="148" height="48" rx="10" fill="#1a2540" stroke="#f59e0b" stroke-width="1.5"/>
+            <text x="82"  y="30" text-anchor="middle" font-size="14">&#128241;</text>
+            <text x="82"  y="45" text-anchor="middle" fill="#f59e0b" font-size="9.5" font-weight="700">Redes Sociales</text>
+
+            <rect x="184" y="10" width="148" height="48" rx="10" fill="#1a2540" stroke="#3b82f6" stroke-width="1.5"/>
+            <text x="258" y="30" text-anchor="middle" font-size="14">&#128506;</text>
+            <text x="258" y="45" text-anchor="middle" fill="#3b82f6" font-size="9.5" font-weight="700">Google Maps</text>
+
+            <!-- Row 2 -->
+            <rect x="8"   y="70" width="148" height="48" rx="10" fill="#1a2540" stroke="#22c55e" stroke-width="1.5"/>
+            <text x="82"  y="90" text-anchor="middle" font-size="14">&#128172;</text>
+            <text x="82"  y="105" text-anchor="middle" fill="#22c55e" font-size="9.5" font-weight="700">WhatsApp Bot</text>
+
+            <rect x="184" y="70" width="148" height="48" rx="10" fill="#1a2540" stroke="#ec4899" stroke-width="1.5"/>
+            <text x="258" y="90" text-anchor="middle" font-size="14">&#127914;</text>
+            <text x="258" y="105" text-anchor="middle" fill="#ec4899" font-size="9.5" font-weight="700">Ferias y Mercados</text>
+
+            <!-- Row 3 -->
+            <rect x="8"   y="130" width="148" height="48" rx="10" fill="#1a2540" stroke="#8b5cf6" stroke-width="1.5"/>
+            <text x="82"  y="150" text-anchor="middle" font-size="14">&#129309;</text>
+            <text x="82"  y="165" text-anchor="middle" fill="#8b5cf6" font-size="9.5" font-weight="700">Alianzas Locales</text>
+
+            <rect x="184" y="130" width="148" height="48" rx="10" fill="#1a2540" stroke="#06b6d4" stroke-width="1.5"/>
+            <text x="258" y="150" text-anchor="middle" font-size="14">&#9203;</text>
+            <text x="258" y="165" text-anchor="middle" fill="#06b6d4" font-size="9.5" font-weight="700">Urgencia / Cupos</text>
+
+            <!-- === FUNNEL LINES converging to IA === -->
+            <path d="M 82 58  L 82 200  L 170 270" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.5"/>
+            <path d="M 258 58  L 258 200 L 170 270" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.5"/>
+            <path d="M 82 118 L 82 200  L 170 270" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.35"/>
+            <path d="M 258 118 L 258 200 L 170 270" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.35"/>
+            <path d="M 82 178 L 82 200  L 170 270" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.25"/>
+            <path d="M 258 178 L 258 200 L 170 270" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.25"/>
+
+            <!-- === PARTICLES along funnel === -->
+            <circle r="4" fill="#f59e0b" filter="url(#mgAmber)">
+              <animateMotion dur="1.8s" repeatCount="indefinite" begin="0s"   path="M 82 58 L 82 200 L 170 270"/>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.8s" repeatCount="indefinite" begin="0s"/>
+            </circle>
+            <circle r="4" fill="#3b82f6">
+              <animateMotion dur="1.8s" repeatCount="indefinite" begin="0.3s" path="M 258 58 L 258 200 L 170 270"/>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.8s" repeatCount="indefinite" begin="0.3s"/>
+            </circle>
+            <circle r="4" fill="#22c55e" filter="url(#mgGreen)">
+              <animateMotion dur="1.4s" repeatCount="indefinite" begin="0.6s" path="M 82 118 L 82 200 L 170 270"/>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.4s" repeatCount="indefinite" begin="0.6s"/>
+            </circle>
+            <circle r="4" fill="#ec4899">
+              <animateMotion dur="1.6s" repeatCount="indefinite" begin="0.9s" path="M 258 118 L 258 200 L 170 270"/>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.6s" repeatCount="indefinite" begin="0.9s"/>
+            </circle>
+
+            <!-- === IA HUB (center) === -->
+            <circle cx="170" cy="310" r="62" fill="none" stroke="#10b981" stroke-width="0.6" stroke-dasharray="3 6" opacity="0.5">
+              <animateTransform attributeName="transform" type="rotate" from="0 170 310" to="360 170 310" dur="16s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="170" cy="310" r="54" fill="url(#miaGrad)" stroke="#10b981" stroke-width="2">
+              <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <text x="170" y="300" text-anchor="middle" font-size="22">&#129302;</text>
+            <text x="170" y="320" text-anchor="middle" fill="#10b981" font-size="11.5" font-weight="800">IA HUB</text>
+            <circle cx="156" cy="332" r="2.8" fill="#10b981">
+              <animate attributeName="opacity" values="0.2;1;0.2" dur="1.4s" repeatCount="indefinite" begin="0s"/>
+            </circle>
+            <circle cx="170" cy="332" r="2.8" fill="#10b981">
+              <animate attributeName="opacity" values="0.2;1;0.2" dur="1.4s" repeatCount="indefinite" begin="0.28s"/>
+            </circle>
+            <circle cx="184" cy="332" r="2.8" fill="#10b981">
+              <animate attributeName="opacity" values="0.2;1;0.2" dur="1.4s" repeatCount="indefinite" begin="0.56s"/>
+            </circle>
+
+            <!-- Vertical line IA to Store -->
+            <path d="M 170 364 L 170 460" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="7 4" opacity="0.8"/>
+
+            <!-- IA to Store particles -->
+            <circle r="5" fill="#10b981" filter="url(#mgGreen)">
+              <animateMotion dur="1.0s" repeatCount="indefinite" begin="0s"    path="M 170 364 L 170 460"/>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="1.0s" repeatCount="indefinite" begin="0s"/>
+            </circle>
+            <circle r="4" fill="#f59e0b" filter="url(#mgAmber)">
+              <animateMotion dur="1.0s" repeatCount="indefinite" begin="0.5s"  path="M 170 364 L 170 460"/>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="1.0s" repeatCount="indefinite" begin="0.5s"/>
+            </circle>
+
+            <!-- === TU LOCAL (bottom) === -->
+            <circle cx="170" cy="510" r="66" fill="none" stroke="#f59e0b" stroke-width="0.5" stroke-dasharray="2 7" opacity="0.4">
+              <animateTransform attributeName="transform" type="rotate" from="360 170 510" to="0 170 510" dur="10s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="170" cy="510" r="56" fill="url(#mstoreGrad)" stroke="#f59e0b" stroke-width="2.2">
+              <animate attributeName="opacity" values="0.85;1;0.85" dur="3.5s" repeatCount="indefinite"/>
+            </circle>
+            <text x="170" y="498" text-anchor="middle" font-size="26">&#127978;</text>
+            <text x="170" y="519" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="800">TU LOCAL</text>
+            <text x="170" y="535" text-anchor="middle" fill="#a16207" font-size="9" font-weight="600">Visita F&#237;sica &#10003;</text>
+
+            <!-- Label -->
+            <text x="170" y="610" text-anchor="middle" fill="#334155" font-size="9.5" font-weight="700" letter-spacing="1">EL EMBUDO DEL TR&#193;FICO F&#205;SICO</text>
+          </svg>
         </div>
 
         <!-- Intro Box -->
@@ -1099,6 +1322,13 @@
         </div>
         
         <p style="color: #64748b; font-size: 0.75rem; margin: 0; font-weight: 500; letter-spacing: 0.05em;">Copyright © Economía IA LLC 2025</p>
+                <p style="margin: 0.35rem 0 0; font-size: 0.72rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="https://www.economiaia.business/legal/meta/terms-of-service-economiaia.html" style="color: #475569; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#94a3b8'" onmouseout="this.style.color='#475569'">T&#233;rminos del Servicio</a>
+          <span style="color: #1e293b;">&middot;</span>
+          <a href="https://www.economiaia.business/legal/meta/privacy-policy-economiaia.html" style="color: #475569; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#94a3b8'" onmouseout="this.style.color='#475569'">Pol&#237;tica de Privacidad</a>
+          <span style="color: #1e293b;">&middot;</span>
+          <a href="https://www.economiaia.business/legal/meta/data-deletion-economiaia.html" style="color: #475569; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#94a3b8'" onmouseout="this.style.color='#475569'">Eliminaci&#243;n de Datos</a>
+        </p>
     </footer>
 
     <!-- Asistente IA "Sigma" Widget -->

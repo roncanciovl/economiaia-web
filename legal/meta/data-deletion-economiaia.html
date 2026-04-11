@@ -1,93 +1,123 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Eliminacion de Datos | Economia IA</title>
+  <title>Instrucciones de EliminaciÃ³n | EconomÃ­a IA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f5f7fb;
-      --paper: #ffffff;
-      --ink: #16202a;
-      --muted: #5c6b76;
-      --line: #d9e0ea;
-      --accent: #1d4ed8;
+      --bg: #030305;
+      --paper: #0a0b14;
+      --ink: #f0f0f0;
+      --muted: #94a3b8;
+      --line: rgba(255, 255, 255, 0.1);
+      --accent: #6C5CE7;
+      --accent-glow: rgba(108, 92, 231, 0.3);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: 'Outfit', sans-serif;
       color: var(--ink);
-      background:
-        radial-gradient(circle at top right, rgba(29, 78, 216, 0.10), transparent 28%),
-        linear-gradient(180deg, #eef2f9 0%, var(--bg) 100%);
-      line-height: 1.65;
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at top left, var(--accent-glow), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.05), transparent 40%);
+      line-height: 1.7;
     }
     main {
-      max-width: 860px;
-      margin: 48px auto;
-      padding: 32px;
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 40px;
       background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: 0 18px 50px rgba(22, 32, 42, 0.08);
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
     }
-    h1, h2 { line-height: 1.2; }
+    h1, h2 { line-height: 1.2; font-weight: 800; }
     h1 {
-      margin: 0 0 8px;
-      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 0 0 16px;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     h2 {
-      margin-top: 32px;
-      font-size: 1.2rem;
-      color: var(--accent);
+      margin-top: 40px;
+      font-size: 1.4rem;
+      color: #fff;
+      border-left: 3px solid var(--accent);
+      padding-left: 15px;
     }
-    p, li { font-size: 1.05rem; }
+    p, li { font-size: 1.05rem; color: #cbd5e1; }
     .eyebrow {
-      margin: 0 0 18px;
-      color: var(--muted);
+      margin: 0 0 20px;
+      color: var(--accent);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.82rem;
+      letter-spacing: 0.15em;
+      font-size: 0.85rem;
+      font-weight: 600;
     }
     .meta {
-      padding: 14px 16px;
-      border-radius: 12px;
-      background: #f3f7ff;
-      border: 1px solid #d6e3ff;
-      color: var(--muted);
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(108, 92, 231, 0.1);
+      border: 1px solid rgba(108, 92, 231, 0.2);
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-bottom: 30px;
     }
-    a { color: var(--accent); }
-    ol { padding-left: 24px; }
+    a { color: var(--accent); text-decoration: none; transition: 0.2s; }
+    a:hover { color: #fff; text-shadow: 0 0 10px var(--accent); }
+    ul, ol { padding-left: 24px; margin: 15px 0; }
+    li { margin-bottom: 10px; }
+    .footer-links {
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        gap: 20px;
+        font-size: 0.9rem;
+    }
+    .footer-links a { color: var(--muted); }
+    .footer-links a:hover { color: #fff; }
   </style>
 </head>
 <body>
   <main>
-    <p class="eyebrow">Economia IA · Meta App</p>
-    <h1>Instrucciones de Eliminacion de Datos</h1>
-    <p class="meta">Ultima actualizacion: 20 de marzo de 2026</p>
+    <p class="eyebrow">EconomÃ­a IA Â· Meta App</p>
+    <h1>Instrucciones de EliminaciÃ³n</h1>
+    <p class="meta">Ãšltima actualizaciÃ³n: 11 de abril de 2026</p>
 
-    <p>Si deseas solicitar la eliminacion de tus datos asociados a interacciones con Economia IA en Meta, puedes hacerlo siguiendo este procedimiento.</p>
+        <p>Si deseas solicitar la eliminaciÃ³n de tus datos asociados a interacciones con EconomÃ­a IA en Meta, puedes hacerlo siguiendo este procedimiento simple y directo.</p>
 
     <h2>1. Solicitud por correo</h2>
-    <p>Envianos una solicitud al correo <a href="mailto:roncanciovl@hotmail.com">roncanciovl@hotmail.com</a> con el asunto <strong>Eliminacion de datos</strong>.</p>
+    <p>EnvÃ­anos una solicitud al correo <a href="mailto:roncanciovl@hotmail.com">roncanciovl@hotmail.com</a> con el asunto <strong>"EliminaciÃ³n de datos - Meta App"</strong>.</p>
 
-    <h2>2. Informacion recomendada en la solicitud</h2>
+    <h2>2. InformaciÃ³n requerida</h2>
     <ol>
-      <li>Nombre o identificador con el que interactuaste con Economia IA.</li>
-      <li>Canal usado, por ejemplo Facebook Page, Instagram o formulario de Meta.</li>
-      <li>Correo o numero de telefono vinculado a la interaccion, si aplica.</li>
-      <li>Descripcion breve de los datos o interacciones que deseas eliminar.</li>
+      <li>Nombre o identificador usado en la interacciÃ³n.</li>
+      <li>Canal (Facebook, Instagram, WhatsApp o Formulario).</li>
+      <li>Correo o telÃ©fono vinculado a la interacciÃ³n.</li>
+      <li>DescripciÃ³n breve de los datos que deseas borrar.</li>
     </ol>
 
-    <h2>3. Plazo de atencion</h2>
-    <p>Revisaremos la solicitud y responderemos en un plazo razonable. Podemos pedir informacion minima adicional para verificar la identidad o ubicar correctamente los datos.</p>
+    <h2>3. Plazo de atenciÃ³n</h2>
+    <p>Procesaremos tu solicitud en un plazo mÃ¡ximo de 7 dÃ­as hÃ¡biles tras verificar tu identidad.</p>
 
-    <h2>4. Alcance</h2>
-    <p>La eliminacion aplicara a los registros bajo control de Economia IA que puedan identificarse y eliminarse de manera razonable. Algunos datos podrian conservarse temporalmente por obligaciones legales, contables, de seguridad o defensa frente a reclamaciones.</p>
+    <h2>4. Alcance y Excepciones</h2>
+    <p>La eliminaciÃ³n se aplicarÃ¡ a todos los registros identificables bajo nuestro control. Se exceptÃºan datos que deban conservarse por obligaciones legales o contables vigentes.</p>
 
-    <h2>5. Datos tratados por terceros</h2>
-    <p>Si parte de la informacion fue procesada directamente por Meta u otros proveedores, la persona interesada tambien puede ejercer sus derechos ante esas plataformas conforme a sus propias politicas.</p>
+    <h2>5. Terceras Partes</h2>
+    <p>Para datos procesados directamente por Meta, te recomendamos tambiÃ©n gestionar tus preferencias de privacidad desde la configuraciÃ³n de tu cuenta en Facebook/Instagram.</p>
+
+    <div class="footer-links">
+      <a href="https://www.economiaia.business/">â† Volver al inicio</a>
+      <a href="mailto:roncanciovl@hotmail.com">Soporte</a>
+    </div>
   </main>
 </body>
 </html>
