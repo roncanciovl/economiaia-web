@@ -190,7 +190,7 @@
         }
 
         .quick-nav {
-            grid-template-columns: repeat(5, minmax(0, 1fr));
+            grid-template-columns: repeat(6, minmax(0, 1fr));
             margin: 0 0 1.5rem;
         }
 
@@ -479,12 +479,26 @@
         </header>
 
         <nav class="quick-nav" aria-label="Resumen de secciones">
+            <a class="quick-link" href="#demo">Demo en acción<span>Mira cómo funciona</span></a>
             <a class="quick-link" href="#problema">Problema<span>Qué está frenando ventas hoy</span></a>
             <a class="quick-link" href="#funciona">Cómo funciona<span>Por qué mejora la atención</span></a>
             <a class="quick-link" href="#costo-beneficio">Costo-beneficio<span>La ventaja económica</span></a>
             <a class="quick-link" href="#comparacion">Comparación<span>Persona vs agente eficiente</span></a>
             <a class="quick-link" href="#siguiente-paso">Siguiente paso<span>Qué puedes hacer ahora</span></a>
         </nav>
+
+        <section class="section" id="demo">
+            <div class="panel" style="text-align: center; background: radial-gradient(circle at center, rgba(34, 211, 238, 0.08) 0%, var(--panel) 100%);">
+                <h2 class="section-title">Mira el agente en acción</h2>
+                <p class="section-intro" style="margin: 0 auto 2rem;">Dale play para ver cómo responde al instante a preguntas repetitivas (precio, ubicación, promociones) sin que tengas que tocar el celular.</p>
+                
+                <div style="display: flex; justify-content: center;">
+                    <div style="border-radius: 36px; overflow: hidden; border: 8px solid #1e293b; box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 30px rgba(56, 189, 248, 0.15); max-width: 320px; width: 100%; background: #000;">
+                        <video src="videos/economiaia-prueba.mp4" controls autoplay muted loop playsinline style="width: 100%; height: auto; display: block; border-radius: 28px;"></video>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section class="section" id="problema">
             <div class="panel">
