@@ -592,28 +592,74 @@
                 <div
                     style="height: 220px; background: #0f172a; border-radius: 0.75rem; border: 1px solid #334155; display: flex; justify-content: center; align-items: center; overflow: hidden; margin-bottom: 1rem;">
                     <svg viewBox="0 0 400 200" width="100%" height="100%">
+                        <defs>
+                            <linearGradient id="gradLow" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#10b981" />
+                                <stop offset="100%" stop-color="#34d399" />
+                            </linearGradient>
+                            <linearGradient id="gradHigh" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#fca5a5" />
+                                <stop offset="100%" stop-color="#ef4444" />
+                            </linearGradient>
+                            <linearGradient id="gradAi" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#3b82f6" />
+                                <stop offset="100%" stop-color="#60a5fa" />
+                            </linearGradient>
+                            <filter id="glowFlow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="2.5" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                        </defs>
+
                         <!-- Ruta A: Bajo -->
-                        <rect x="20" y="30" width="80" height="40" rx="6" fill="#1e293b" stroke="#10b981"
-                            stroke-width="2" />
+                        <rect x="20" y="30" width="80" height="40" rx="6" fill="#0f172a" stroke="url(#gradLow)" stroke-width="2" />
                         <text x="60" y="55" text-anchor="middle" fill="#10b981" font-weight="bold">$15 USD</text>
-                        <path d="M 100 50 L 280 50" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="4 4"
-                            style="animation: dataSync 1s linear infinite reverse;" />
-                        <rect x="280" y="30" width="100" height="40" rx="6" fill="#1e293b" stroke="#10b981"
-                            stroke-width="2" class="icon-pulse" />
-                        <text x="330" y="55" text-anchor="middle" fill="#fff" font-size="14">🛒 Venta Directa</text>
+                        
+                        <!-- Path Bajo -->
+                        <path d="M 100 50 L 280 50" fill="none" stroke="rgba(16, 185, 129, 0.15)" stroke-width="3" />
+                        <path d="M 100 50 L 280 50" fill="none" stroke="url(#gradLow)" stroke-width="3" stroke-dasharray="8 8" filter="url(#glowFlow)">
+                            <animate attributeName="stroke-dashoffset" from="16" to="0" dur="0.8s" repeatCount="indefinite" />
+                        </path>
+                        <circle cx="0" cy="0" r="3.5" fill="#fff" filter="url(#glowFlow)">
+                            <animateMotion dur="1.5s" repeatCount="indefinite" path="M 100 50 L 280 50" />
+                        </circle>
+
+                        <rect x="280" y="30" width="100" height="40" rx="6" fill="#1e293b" stroke="url(#gradLow)" stroke-width="2" class="icon-pulse" />
+                        <text x="330" y="55" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">🛒 Directo</text>
 
                         <!-- Ruta B: Alto -->
-                        <rect x="20" y="130" width="80" height="40" rx="6" fill="#1e293b" stroke="#fca5a5"
-                            stroke-width="2" />
-                        <text x="60" y="155" text-anchor="middle" fill="#fca5a5" font-weight="bold">$500 USD</text>
-                        <path d="M 100 150 L 160 150" fill="none" stroke="#fca5a5" stroke-width="2"
-                            stroke-dasharray="4 4" style="animation: dataSync 1.5s linear infinite reverse;" />
-                        <rect x="160" y="130" width="60" height="40" rx="6" fill="#1e293b" stroke="#3b82f6"
-                            stroke-width="2" class="icon-float" />
-                        <text x="190" y="150" text-anchor="middle" font-size="14">🤖 WA-IA</text>
-                        <rect x="280" y="130" width="100" height="40" rx="6" fill="#1e293b" stroke="#3b82f6"
-                            stroke-width="2" />
-                        <text x="330" y="155" text-anchor="middle" fill="#fff" font-size="14">💳 Pago</text>
+                        <rect x="20" y="130" width="80" height="40" rx="6" fill="#0f172a" stroke="url(#gradHigh)" stroke-width="2" />
+                        <text x="60" y="155" text-anchor="middle" fill="#fca5a5" font-weight="bold">$500+ USD</text>
+                        
+                        <!-- Path Alto 1 (Con Fricción) -->
+                        <path d="M 100 150 L 160 150" fill="none" stroke="rgba(252, 165, 165, 0.15)" stroke-width="3" />
+                        <path d="M 100 150 L 160 150" fill="none" stroke="url(#gradHigh)" stroke-width="3" stroke-dasharray="8 8" filter="url(#glowFlow)">
+                            <animate attributeName="stroke-dashoffset" from="16" to="0" dur="1s" repeatCount="indefinite" />
+                        </path>
+
+                        <!-- Bloque Fricción -->
+                        <rect x="135" y="120" width="3" height="60" fill="#ef4444" opacity="0.8">
+                            <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2s" repeatCount="indefinite"/>
+                        </rect>
+                        <text x="136" y="115" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="bold">Fricción</text>
+
+                        <!-- Bloque Agente IA -->
+                        <rect x="160" y="125" width="80" height="50" rx="8" fill="#1e3a8a" stroke="url(#gradAi)" stroke-width="2" class="icon-float" filter="url(#glowFlow)" />
+                        <text x="200" y="145" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">🤖 Agente IA</text>
+                        <text x="200" y="160" text-anchor="middle" fill="#93c5fd" font-size="9">+ Confianza</text>
+                        
+                        <!-- Path Alto 2 (Camino Libre) -->
+                        <path d="M 240 150 L 280 150" fill="none" stroke="rgba(59, 130, 246, 0.15)" stroke-width="3" />
+                        <path d="M 240 150 L 280 150" fill="none" stroke="url(#gradAi)" stroke-width="3" stroke-dasharray="8 8" filter="url(#glowFlow)">
+                            <animate attributeName="stroke-dashoffset" from="16" to="0" dur="0.8s" repeatCount="indefinite" />
+                        </path>
+
+                        <circle cx="0" cy="0" r="3.5" fill="#fff" filter="url(#glowFlow)">
+                            <animateMotion dur="2.5s" repeatCount="indefinite" path="M 100 150 L 160 150 M 240 150 L 280 150" />
+                        </circle>
+
+                        <rect x="280" y="130" width="100" height="40" rx="6" fill="#1e293b" stroke="url(#gradAi)" stroke-width="2" class="icon-pulse" />
+                        <text x="330" y="155" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">💳 Pago</text>
                     </svg>
                 </div>
                 <p style="color: #e2e8f0; font-size: 1rem; text-align: center; margin: 0;">
