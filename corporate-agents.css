@@ -1,0 +1,669 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --corp-paper: #071018;
+  --corp-bone: #0b1722;
+  --corp-cream: #0f1b26;
+  --corp-ink: #edf6fb;
+  --corp-ink-2: #c7d6df;
+  --corp-muted: #8fa3b0;
+  --corp-line: rgba(138, 179, 202, 0.18);
+  --corp-blue: #5ba9d0;
+  --corp-blue-dark: #7cc7e8;
+  --corp-blue-soft: #142d3d;
+  --corp-green: #69a58d;
+  --corp-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
+  --corp-radius: 8px;
+  --panel: rgba(13, 27, 39, 0.82);
+  --card-bg: rgba(13, 27, 39, 0.76);
+  --accent-indigo: rgba(124, 199, 232, 0.44);
+  --accent-cyan: #7cc7e8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.corporate-agents {
+  margin: 0;
+  background:
+    linear-gradient(90deg, rgba(124, 199, 232, 0.055) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(124, 199, 232, 0.035) 1px, transparent 1px),
+    linear-gradient(180deg, #071018 0%, #0a141d 54%, #0d1720 100%);
+  background-size: 72px 72px, 72px 72px, auto;
+  color: var(--corp-ink);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+body.corporate-agents::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 14% 4%, rgba(91, 169, 208, 0.22), transparent 28rem),
+    radial-gradient(circle at 86% 12%, rgba(105, 165, 141, 0.12), transparent 24rem),
+    linear-gradient(135deg, transparent 0 48%, rgba(124, 199, 232, 0.055) 48% 49%, transparent 49% 100%);
+}
+
+.corporate-agents a {
+  color: inherit;
+}
+
+.corporate-agents .container {
+  width: min(1180px, calc(100% - 2rem));
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.1rem 0 3rem;
+}
+
+.corporate-agents .nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0.5rem 0 1.1rem;
+  color: var(--corp-muted);
+  text-decoration: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.corporate-agents .nav-back:hover {
+  color: var(--corp-blue-dark);
+  transform: translateX(-2px);
+}
+
+.corporate-agents .hero {
+  position: relative;
+  margin: 0 0 4.5rem;
+  padding: clamp(2rem, 4vw, 4.7rem);
+  min-height: clamp(600px, 82vh, 820px);
+  display: grid;
+  align-items: stretch;
+  overflow: hidden;
+  border-radius: var(--corp-radius);
+  border: 1px solid var(--corp-line);
+  background: linear-gradient(135deg, rgba(15, 27, 38, 0.94), rgba(8, 18, 27, 0.96));
+  box-shadow: var(--corp-shadow);
+  max-width: 100%;
+  text-align: left;
+  min-width: 0;
+}
+
+.corporate-agents .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8, 18, 27, 0.99) 0%, rgba(8, 18, 27, 0.97) 54%, rgba(8, 18, 27, 0.72) 68%, rgba(8, 18, 27, 0.24) 90%),
+    radial-gradient(circle at 80% 34%, rgba(91, 169, 208, 0.22), transparent 23rem);
+  z-index: 1;
+}
+
+.corporate-agents .hero .hero-grid,
+.corporate-agents .hero .signal-grid {
+  position: relative;
+}
+
+.corporate-agents .hero::after {
+  content: "ECONOMIA IA";
+  position: absolute;
+  right: -0.9rem;
+  bottom: 1.4rem;
+  z-index: 1;
+  writing-mode: vertical-rl;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.18em;
+  color: rgba(124, 199, 232, 0.28);
+}
+
+.corporate-agents .hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+.corporate-agents .hero-title,
+.corporate-agents .hero h1 {
+  max-width: 780px;
+  margin: 0.85rem 0 1.25rem;
+  color: var(--corp-ink);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3.3rem, 7vw, 6.7rem);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: 0;
+  text-wrap: balance;
+  overflow-wrap: normal;
+  word-break: normal;
+  max-inline-size: 100%;
+}
+
+.corporate-agents .hero-subtitle,
+.corporate-agents .hero p {
+  max-width: 620px;
+  margin: 0 0 1.6rem;
+  color: var(--corp-ink-2);
+  font-size: clamp(1.05rem, 1.5vw, 1.24rem);
+  line-height: 1.65;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+  max-inline-size: 100%;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.78);
+}
+
+.corporate-agents strong {
+  overflow-wrap: break-word;
+}
+
+.corporate-agents .hero strong {
+  color: var(--corp-blue-dark);
+}
+
+.corporate-agents .hero-image {
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  top: 0;
+  width: min(54%, 680px);
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  filter: saturate(0.82) contrast(1.02);
+}
+
+.corporate-agents .hero > div[style*="display: flex"] {
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  margin: 0 0 1.4rem !important;
+}
+
+.corporate-agents .hero > div[style*="display: flex"] span,
+.corporate-agents .eyebrow,
+.corporate-agents .pill {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border-radius: 3px !important;
+  border: 1px solid var(--corp-line) !important;
+  background: rgba(10, 22, 32, 0.78) !important;
+  color: var(--corp-blue-dark) !important;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase;
+  align-self: flex-start !important;
+  flex: 0 0 auto !important;
+  min-height: 0 !important;
+  padding: 0.5rem 0.75rem !important;
+}
+
+.corporate-agents .section-title,
+.corporate-agents h2 {
+  color: var(--corp-ink);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: left;
+  text-wrap: balance;
+  max-inline-size: 100%;
+  overflow-wrap: break-word;
+}
+
+.corporate-agents .hero-grid .hero-copy h1 {
+  font-size: clamp(3rem, 5.2vw, 5.35rem);
+  line-height: 0.96;
+}
+
+.corporate-agents .section-intro {
+  max-width: 68ch;
+  color: var(--corp-muted);
+  font-size: 1.04rem;
+}
+
+.corporate-agents .benefits-grid,
+.corporate-agents .proof-grid,
+.corporate-agents .levels-grid,
+.corporate-agents .signal-grid,
+.corporate-agents .compare-grid,
+.corporate-agents .split-grid,
+.corporate-agents .hero-grid {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.corporate-agents .benefits-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0 0 4.5rem;
+}
+
+.corporate-agents .benefit-card,
+.corporate-agents .panel,
+.corporate-agents .proof-card,
+.corporate-agents .level-card,
+.corporate-agents .compare-card,
+.corporate-agents .signal-card,
+.corporate-agents .hero-copy,
+.corporate-agents .hero-card,
+.corporate-agents .cta-panel,
+.corporate-agents .decision-block,
+.corporate-agents .consultancy-banner {
+  border-radius: var(--corp-radius) !important;
+  border: 1px solid var(--corp-line) !important;
+  background: rgba(13, 27, 39, 0.76) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(10px);
+  min-width: 0;
+  max-width: 100%;
+}
+
+.corporate-agents .benefit-card,
+.corporate-agents .panel,
+.corporate-agents .proof-card,
+.corporate-agents .level-card,
+.corporate-agents .compare-card,
+.corporate-agents .signal-card {
+  padding: 1.35rem !important;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.corporate-agents .benefit-card::before,
+.corporate-agents .proof-card::before,
+.corporate-agents .level-card::before,
+.corporate-agents .compare-card::before,
+.corporate-agents .signal-card::before,
+.corporate-agents .panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(124, 199, 232, 0.32), transparent 42%) top left / 100% 1px no-repeat,
+    radial-gradient(circle at 100% 0%, rgba(124, 199, 232, 0.09), transparent 14rem);
+}
+
+.corporate-agents .benefit-card:hover,
+.corporate-agents .proof-card:hover,
+.corporate-agents .level-card:hover,
+.corporate-agents .compare-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(124, 199, 232, 0.42) !important;
+  background: rgba(16, 34, 48, 0.94) !important;
+}
+
+.corporate-agents h3 {
+  color: var(--corp-ink) !important;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  margin: 0 0 0.7rem;
+}
+
+.corporate-agents .section {
+  margin: 0 0 4.5rem;
+}
+
+.corporate-agents .section-title::after,
+.corporate-agents h2::after {
+  content: "";
+  display: block;
+  width: 5.4rem;
+  height: 1px;
+  margin-top: 0.9rem;
+  background: linear-gradient(90deg, var(--corp-blue-dark), rgba(105, 165, 141, 0.35), transparent);
+}
+
+.corporate-agents .hero h2::after,
+.corporate-agents .footer h2::after,
+.corporate-agents .footer-premium h2::after {
+  display: none;
+}
+
+.corporate-agents p,
+.corporate-agents li,
+.corporate-agents td {
+  color: var(--corp-muted) !important;
+}
+
+.corporate-agents .benefit-card h3 {
+  display: block;
+}
+
+.corporate-agents .decision-block,
+.corporate-agents .consultancy-banner,
+.corporate-agents .cta-panel {
+  margin: 4rem 0;
+  padding: clamp(1.6rem, 3vw, 2.7rem) !important;
+}
+
+.corporate-agents .decision-block {
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+}
+
+.corporate-agents .btn,
+.corporate-agents .btn-consultancy,
+.corporate-agents .btn-secondary-cta,
+.corporate-agents .quick-link {
+  border-radius: 4px !important;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+  max-width: 100%;
+}
+
+.corporate-agents .btn-primary,
+.corporate-agents .btn-consultancy {
+  background: linear-gradient(135deg, var(--corp-blue-dark), #d5eef8) !important;
+  color: #061018 !important;
+  border: 1px solid rgba(124, 199, 232, 0.72) !important;
+}
+
+.corporate-agents .btn-secondary,
+.corporate-agents .btn-secondary-cta {
+  background: transparent !important;
+  color: var(--corp-ink) !important;
+  border: 1px solid var(--corp-line) !important;
+}
+
+.corporate-agents .btn:hover,
+.corporate-agents .btn-consultancy:hover,
+.corporate-agents .btn-secondary-cta:hover,
+.corporate-agents .quick-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(124, 199, 232, 0.52) !important;
+}
+
+.corporate-agents .quick-nav {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: -2rem 0 4rem;
+}
+
+.corporate-agents .quick-link {
+  padding: 1rem;
+  text-decoration: none;
+  background: rgba(12, 25, 36, 0.72) !important;
+  border: 1px solid var(--corp-line) !important;
+  color: var(--corp-ink) !important;
+}
+
+.corporate-agents .quick-link span,
+.corporate-agents .signal-card span {
+  color: var(--corp-muted) !important;
+}
+
+.corporate-agents .signal-card strong,
+.corporate-agents .proof-card strong,
+.corporate-agents .level-card strong {
+  color: var(--corp-blue-dark);
+}
+
+.corporate-agents .hero-grid {
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+}
+
+.corporate-agents .hero-copy,
+.corporate-agents .hero-card {
+  padding: clamp(1.5rem, 3vw, 2.4rem) !important;
+}
+
+.corporate-agents .signal-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.corporate-agents .proof-grid,
+.corporate-agents .levels-grid,
+.corporate-agents .compare-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.corporate-agents .split-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.corporate-agents .table-wrap {
+  background: rgba(13, 27, 39, 0.78);
+  border: 1px solid var(--corp-line);
+  border-radius: var(--corp-radius);
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.corporate-agents th {
+  background: #102334;
+  color: #edf6fb;
+}
+
+.corporate-agents table {
+  border-color: var(--corp-line) !important;
+}
+
+.corporate-agents td,
+.corporate-agents th {
+  border-color: var(--corp-line) !important;
+}
+
+.corporate-agents .footer,
+.corporate-agents .footer-premium {
+  background: transparent !important;
+  border-top: 1px solid var(--corp-line) !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: var(--corp-muted) !important;
+}
+
+@media (max-width: 980px) {
+  .corporate-agents .benefits-grid,
+  .corporate-agents .hero-grid,
+  .corporate-agents .proof-grid,
+  .corporate-agents .levels-grid,
+  .corporate-agents .signal-grid,
+  .corporate-agents .compare-grid,
+  .corporate-agents .split-grid,
+  .corporate-agents .quick-nav,
+  .corporate-agents .decision-block {
+    grid-template-columns: 1fr !important;
+  }
+
+  .corporate-agents .hero {
+    min-height: auto;
+    padding: 1.35rem;
+  }
+
+  .corporate-agents .hero.hero-visual {
+    padding-top: 16.5rem;
+  }
+
+  .corporate-agents .hero::before {
+    background: radial-gradient(circle at top right, rgba(91, 169, 208, 0.16), transparent 18rem);
+  }
+
+  .corporate-agents .hero.hero-visual::before {
+    background:
+      linear-gradient(180deg, rgba(8, 18, 27, 0.12) 0%, rgba(8, 18, 27, 0.96) 17rem, rgba(8, 18, 27, 1) 100%);
+  }
+
+  .corporate-agents .hero-image {
+    width: 100%;
+    height: 17rem;
+    bottom: auto;
+    object-position: center 28%;
+  }
+
+  .corporate-agents .hero::after {
+    display: none;
+  }
+
+  .corporate-agents .quick-nav {
+    margin: 0 0 3rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .corporate-agents .container {
+    width: min(100% - 1rem, 1180px);
+  }
+
+  .corporate-agents .hero {
+    margin-bottom: 3rem;
+    padding: 1rem;
+  }
+
+  .corporate-agents .hero.hero-visual {
+    padding-top: 12.7rem;
+  }
+
+  .corporate-agents .hero-title,
+  .corporate-agents .hero h1 {
+    font-size: clamp(2rem, 9.4vw, 2.15rem);
+    line-height: 0.98;
+    max-width: calc(100vw - 3rem);
+    overflow-wrap: break-word !important;
+    word-break: normal;
+    hyphens: none;
+    text-align: left;
+  }
+
+  .corporate-agents .hero-grid .hero-copy h1 {
+    font-size: clamp(2.25rem, 10.2vw, 2.95rem);
+  }
+
+  .corporate-agents .hero p,
+  .corporate-agents .hero-subtitle,
+  .corporate-agents p,
+  .corporate-agents li {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .corporate-agents .section-title,
+  .corporate-agents h2 {
+    font-size: clamp(1.78rem, 8.8vw, 2.35rem);
+    line-height: 1.04;
+    overflow-wrap: break-word;
+  }
+
+  .corporate-agents .hero-image {
+    height: 13.4rem;
+  }
+
+  .corporate-agents .hero::before {
+    background: radial-gradient(circle at top right, rgba(91, 169, 208, 0.16), transparent 15rem);
+  }
+
+  .corporate-agents .hero.hero-visual::before {
+    background:
+      linear-gradient(180deg, rgba(8, 18, 27, 0.1) 0%, rgba(8, 18, 27, 0.96) 12.8rem, rgba(8, 18, 27, 1) 100%);
+  }
+
+  .corporate-agents .hero > div[style*="display: flex"] {
+    gap: 0.45rem !important;
+  }
+
+  .corporate-agents .hero > div[style*="display: flex"] span,
+  .corporate-agents .eyebrow,
+  .corporate-agents .pill {
+    width: auto;
+    max-width: 100%;
+    font-size: 0.66rem !important;
+    line-height: 1.35;
+  }
+
+  .corporate-agents .benefit-card,
+  .corporate-agents .panel,
+  .corporate-agents .proof-card,
+  .corporate-agents .level-card,
+  .corporate-agents .compare-card,
+  .corporate-agents .signal-card {
+    padding: 1rem !important;
+  }
+
+  .corporate-agents .decision-block,
+  .corporate-agents .consultancy-banner,
+  .corporate-agents .cta-panel {
+    margin: 2.5rem 0;
+    padding: 1rem !important;
+  }
+
+  .corporate-agents .btn,
+  .corporate-agents .btn-consultancy,
+  .corporate-agents .btn-secondary-cta {
+    width: 100%;
+    min-height: 48px;
+    padding: 0.9rem 1rem;
+    white-space: normal !important;
+    text-align: center;
+  }
+
+  .corporate-agents .quick-link {
+    padding: 0.9rem;
+  }
+
+  .corporate-agents .footer-premium {
+    width: 100% !important;
+  }
+
+  .corporate-agents .ai-chat-panel {
+    left: 0.75rem !important;
+    right: 0.75rem !important;
+    bottom: 0.75rem !important;
+    width: auto !important;
+    height: min(78vh, 620px) !important;
+    max-height: calc(100dvh - 1.5rem) !important;
+  }
+
+  .corporate-agents .ai-widget-tooltip {
+    display: none !important;
+  }
+
+  .corporate-agents .ai-widget-btn {
+    right: 1rem !important;
+    bottom: 1rem !important;
+    width: 54px !important;
+    height: 54px !important;
+  }
+
+  .corporate-agents .ribbon {
+    display: none !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .corporate-agents .hero {
+    padding: 0.9rem;
+  }
+
+  .corporate-agents .hero.hero-visual {
+    padding-top: 11.4rem;
+  }
+
+  .corporate-agents .hero-image {
+    height: 12rem;
+  }
+
+  .corporate-agents .hero-title,
+  .corporate-agents .hero h1 {
+    font-size: clamp(1.86rem, 9.8vw, 2.32rem);
+  }
+}
