@@ -667,3 +667,255 @@ body.corporate-agents::before {
     font-size: clamp(1.86rem, 9.8vw, 2.32rem);
   }
 }
+
+.corporate-agents.pricing-page .container {
+  width: min(1180px, calc(100% - 2rem));
+  padding: 1.1rem 0 4rem;
+}
+
+.corporate-agents.pricing-page .nav-back {
+  display: flex !important;
+  position: static !important;
+  margin: 1.1rem auto 1rem;
+  width: min(1180px, calc(100% - 2rem));
+}
+
+.corporate-agents.pricing-page .header {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 3rem;
+  padding: clamp(2rem, 5vw, 4rem);
+  min-height: auto;
+  border-radius: var(--corp-radius);
+  border: 1px solid var(--corp-line);
+  background:
+    linear-gradient(135deg, rgba(13, 27, 39, 0.96), rgba(7, 16, 24, 0.98)),
+    linear-gradient(90deg, rgba(124, 199, 232, 0.08) 1px, transparent 1px);
+  box-shadow: var(--corp-shadow);
+  text-align: left;
+}
+
+.corporate-agents.pricing-page .header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 78% 10%, rgba(124, 199, 232, 0.16), transparent 22rem),
+    linear-gradient(120deg, transparent 0 55%, rgba(124, 199, 232, 0.055) 55% 56%, transparent 56% 100%);
+}
+
+.corporate-agents.pricing-page .header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.corporate-agents.pricing-page .header h1 {
+  max-width: 880px;
+  margin: 0 0 1.1rem;
+  color: var(--corp-ink);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3rem, 6.5vw, 6.1rem);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.corporate-agents.pricing-page .header p {
+  max-width: 760px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  color: var(--corp-ink-2) !important;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+}
+
+.corporate-agents.pricing-page .pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.corporate-agents.pricing-page .pricing-card,
+.corporate-agents.pricing-page .express-consultancy,
+.corporate-agents.pricing-page .related-resources {
+  border-radius: var(--corp-radius) !important;
+  border: 1px solid var(--corp-line) !important;
+  background: rgba(13, 27, 39, 0.78) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(10px);
+}
+
+.corporate-agents.pricing-page .pricing-card {
+  padding: 1.45rem !important;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.corporate-agents.pricing-page .pricing-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(124, 199, 232, 0.42) !important;
+  background: rgba(16, 34, 48, 0.94) !important;
+}
+
+.corporate-agents.pricing-page .pricing-card.featured {
+  border-color: rgba(124, 199, 232, 0.68) !important;
+  background:
+    linear-gradient(180deg, rgba(20, 45, 61, 0.92), rgba(13, 27, 39, 0.84)) !important;
+}
+
+.corporate-agents.pricing-page .badge-pop {
+  top: 1rem;
+  right: 1rem;
+  transform: none;
+  border-radius: 3px;
+  border: 1px solid rgba(124, 199, 232, 0.5);
+  background: rgba(124, 199, 232, 0.12);
+  color: var(--corp-blue-dark);
+  padding: 0.35rem 0.55rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+}
+
+.corporate-agents.pricing-page .plan-name {
+  margin: 0 0 0.75rem;
+  color: var(--corp-blue-dark);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.corporate-agents.pricing-page .plan-price {
+  margin: 0 0 1.4rem;
+  color: var(--corp-ink);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.45rem, 4vw, 3.7rem);
+  font-weight: 600;
+  line-height: 0.98;
+}
+
+.corporate-agents.pricing-page .plan-price span,
+.corporate-agents.pricing-page .express-price span {
+  color: var(--corp-muted) !important;
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+.corporate-agents.pricing-page .plan-features {
+  margin: 0 0 1.6rem;
+  padding: 0;
+}
+
+.corporate-agents.pricing-page .plan-features li {
+  color: var(--corp-muted) !important;
+  gap: 0.7rem;
+}
+
+.corporate-agents.pricing-page .plan-features li::before {
+  content: "";
+  flex: 0 0 0.42rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  margin-top: 0.55rem;
+  border-radius: 50%;
+  background: var(--corp-blue-dark);
+  box-shadow: 0 0 14px rgba(124, 199, 232, 0.45);
+}
+
+.corporate-agents.pricing-page .btn-outline {
+  background: transparent !important;
+  color: var(--corp-ink) !important;
+  border: 1px solid var(--corp-line) !important;
+}
+
+.corporate-agents.pricing-page .express-consultancy {
+  margin: 4rem 0;
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.corporate-agents.pricing-page .express-info h2,
+.corporate-agents.pricing-page .related-resources h2 {
+  color: var(--corp-ink);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.1rem, 4vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.corporate-agents.pricing-page .express-price .price {
+  color: var(--corp-blue-dark);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 600;
+}
+
+.corporate-agents.pricing-page .related-resources {
+  margin-top: 0;
+  padding: clamp(1.4rem, 3vw, 2rem);
+}
+
+.corporate-agents.pricing-page .related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.corporate-agents.pricing-page .related-card {
+  border-radius: var(--corp-radius);
+  border: 1px solid var(--corp-line);
+  background: rgba(12, 25, 36, 0.72);
+  color: var(--corp-muted);
+}
+
+.corporate-agents.pricing-page .related-card strong {
+  color: var(--corp-ink);
+}
+
+@media (max-width: 980px) {
+  .corporate-agents.pricing-page .pricing-grid,
+  .corporate-agents.pricing-page .related-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .corporate-agents.pricing-page .express-consultancy {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .corporate-agents.pricing-page .express-price {
+    text-align: left;
+  }
+}
+
+@media (max-width: 620px) {
+  .corporate-agents.pricing-page .container,
+  .corporate-agents.pricing-page .nav-back {
+    width: min(100% - 1rem, 1180px);
+  }
+
+  .corporate-agents.pricing-page .header {
+    padding: 1.15rem;
+  }
+
+  .corporate-agents.pricing-page .header h1 {
+    font-size: clamp(2.15rem, 10vw, 2.8rem);
+  }
+
+  .corporate-agents.pricing-page .pricing-card {
+    padding: 1.1rem !important;
+  }
+
+  .corporate-agents.pricing-page .plan-price {
+    font-size: clamp(2.2rem, 11vw, 2.85rem);
+  }
+
+  .corporate-agents.pricing-page .express-consultancy,
+  .corporate-agents.pricing-page .related-resources {
+    padding: 1rem;
+  }
+}
