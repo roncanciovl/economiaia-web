@@ -55,7 +55,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 6rem 2rem 4rem;
         }
 
         .header {
@@ -548,6 +548,31 @@
             50% { opacity: 1; transform: translateY(-4px); }
         }
 
+        @media (max-width: 768px) {
+            .express-consultancy {
+                flex-direction: column;
+                padding: 2rem;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .express-price {
+                text-align: center;
+            }
+
+            .express-price .price {
+                font-size: 2.5rem;
+            }
+
+            .express-info h2 {
+                font-size: 1.8rem;
+            }
+
+            .express-info .btn {
+                width: 100%;
+            }
+        }
+
         @media (max-width: 600px) {
             .ai-chat-panel {
                 bottom: 0;
@@ -739,7 +764,7 @@
 
 <body class="corporate-agents pricing-page">
 
-    <a href="index.html" class="nav-back">← Volver al Hub</a>
+    <a href="agentes_conversacionales_ia.html" class="nav-back">← Volver a Agentes</a>
 
     <div class="container">
         <header class="header">
@@ -817,29 +842,6 @@
             </div>
         </div>
 
-        <section class="related-resources" aria-labelledby="related-resources-title">
-            <h2 id="related-resources-title">Qué revisar antes de elegir un plan</h2>
-            <p>Estas páginas te ayudan a entender el enfoque, la arquitectura y el nivel de complejidad detrás de cada
-                implementación.</p>
-            <div class="related-grid">
-                <a class="related-card" href="nucleo_economia_ia.html">
-                    <strong>Núcleo Economía IA</strong>
-                    Las leyes económicas que explican por qué una implementación convierte o se queda en humo.
-                </a>
-                <a class="related-card" href="agentes_conversacionales_ia.html">
-                    <strong>Agentes Conversacionales Personalizados</strong>
-                    Qué puede hacer realmente un agente de texto o voz para pequeñas, medianas y grandes empresas y negocios.
-                </a>
-                <a class="related-card" href="arquitectura_marketing_ia.html">
-                    <strong>Arquitectura de Marketing IA</strong>
-                    La vista sistémica de atracción, distribución, conversión y datos.
-                </a>
-                <a class="related-card" href="operaciones_y_datos_ia.html">
-                    <strong>Operaciones y Datos con IA</strong>
-                    Qué cambia cuando automatizas seguimiento, trazabilidad y decisiones internas.
-                </a>
-            </div>
-        </section>
     </div>
 
     <!-- AI Widget Markup -->
