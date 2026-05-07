@@ -13,11 +13,11 @@ footer_html = '''    <!-- Footer Economía IA -->
                 style="color: #64748b; font-size: 0.7rem; text-decoration: none; transition: color 0.2s;"
                 onmouseover="this.style.color='#ff0050';" onmouseout="this.style.color='#64748b';">🎵 TikTok</a>
             <span style="color: #1e293b;">·</span>
-            <a href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer"
+            <a href="https://descubre.economiaia.business" target="_blank" rel="noopener noreferrer"
                 style="color: #64748b; font-size: 0.7rem; text-decoration: none; transition: color 0.2s;"
                 onmouseover="this.style.color='#8b5cf6';" onmouseout="this.style.color='#64748b';">🔗 Enlaces</a>
             <span style="color: #1e293b;">·</span>
-            <a href="https://beacons.ai/economiaia" target="_blank" rel="noopener noreferrer"
+            <a href="https://descubre.economiaia.business" target="_blank" rel="noopener noreferrer"
                 style="color: #64748b; font-size: 0.7rem; text-decoration: none; transition: color 0.2s;"
                 onmouseover="this.style.color='#10b981';" onmouseout="this.style.color='#64748b';">💼 Consultoría</a>
             <span style="color: #1e293b;">·</span>

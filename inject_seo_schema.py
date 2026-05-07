@@ -37,7 +37,7 @@ schema_template = '''
       ],
       "sameAs": [
         "https://www.tiktok.com/@economiaia",
-        "https://beacons.ai/economiaia"
+        "https://descubre.economiaia.business"
       ],
       "priceRange": "$$"
     }
