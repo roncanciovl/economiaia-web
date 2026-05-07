@@ -22,6 +22,16 @@
 
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+html,
+body,
+.corporate-agents *,
+.corporate-agents *::before,
+.corporate-agents *::after {
+  box-sizing: border-box;
 }
 
 body.corporate-agents {
@@ -35,6 +45,12 @@ body.corporate-agents {
   font-family: 'DM Sans', system-ui, sans-serif;
   line-height: 1.65;
   overflow-x: hidden;
+}
+
+.corporate-agents img,
+.corporate-agents svg,
+.corporate-agents video {
+  max-width: 100%;
 }
 
 body.corporate-agents::before {
@@ -58,6 +74,7 @@ body.corporate-agents::before {
   max-width: 1180px;
   margin: 0 auto;
   padding: 1.1rem 0 3rem;
+  overflow: clip;
 }
 
 .corporate-agents .nav-back {
@@ -251,6 +268,7 @@ body.corporate-agents::before {
 .corporate-agents .benefits-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: 0 0 4.5rem;
+  align-items: stretch;
 }
 
 .corporate-agents .benefit-card,
@@ -283,6 +301,7 @@ body.corporate-agents::before {
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
   position: relative;
   overflow: hidden;
+  overflow-wrap: break-word;
 }
 
 .corporate-agents .benefit-card::before,
@@ -315,6 +334,8 @@ body.corporate-agents::before {
   font-size: 1.05rem;
   line-height: 1.2;
   margin: 0 0 0.7rem;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
 }
 
 .corporate-agents .section {
@@ -341,6 +362,7 @@ body.corporate-agents::before {
 .corporate-agents li,
 .corporate-agents td {
   color: var(--corp-muted) !important;
+  overflow-wrap: break-word;
 }
 
 .corporate-agents .benefit-card h3 {
@@ -522,16 +544,18 @@ body.corporate-agents::before {
 
 @media (max-width: 620px) {
   .corporate-agents .container {
-    width: min(100% - 1rem, 1180px);
+    width: min(100% - 1.25rem, 1180px);
+    padding-bottom: 2rem;
   }
 
   .corporate-agents .hero {
     margin-bottom: 3rem;
     padding: 1rem;
+    border-radius: 6px;
   }
 
   .corporate-agents .hero.hero-visual {
-    padding-top: 12.7rem;
+    padding-top: 13rem;
   }
 
   .corporate-agents .hero-title,
@@ -543,6 +567,7 @@ body.corporate-agents::before {
     word-break: normal;
     hyphens: none;
     text-align: left;
+    margin-top: 0.2rem;
   }
 
   .corporate-agents .hero-grid .hero-copy h1 {
@@ -555,6 +580,7 @@ body.corporate-agents::before {
   .corporate-agents li {
     max-width: 100%;
     overflow-wrap: break-word;
+    font-size: 0.96rem;
   }
 
   .corporate-agents .section-title,
@@ -565,7 +591,8 @@ body.corporate-agents::before {
   }
 
   .corporate-agents .hero-image {
-    height: 13.4rem;
+    height: 13.6rem;
+    object-position: center 22%;
   }
 
   .corporate-agents .hero::before {
@@ -579,6 +606,7 @@ body.corporate-agents::before {
 
   .corporate-agents .hero > div[style*="display: flex"] {
     gap: 0.45rem !important;
+    max-width: 100%;
   }
 
   .corporate-agents .hero > div[style*="display: flex"] span,
@@ -599,11 +627,38 @@ body.corporate-agents::before {
     padding: 1rem !important;
   }
 
+  .corporate-agents .benefits-grid {
+    gap: 0.85rem;
+    margin-bottom: 2.75rem;
+  }
+
+  .corporate-agents .benefit-card h3,
+  .corporate-agents .consultancy-banner h3,
+  .corporate-agents .decision-block h2 {
+    line-height: 1.18;
+  }
+
+  .corporate-agents .benefit-card p {
+    font-size: 0.92rem;
+    line-height: 1.58;
+  }
+
   .corporate-agents .decision-block,
   .corporate-agents .consultancy-banner,
   .corporate-agents .cta-panel {
     margin: 2.5rem 0;
     padding: 1rem !important;
+    gap: 1rem;
+    overflow: hidden;
+  }
+
+  .corporate-agents .consultancy-banner {
+    align-items: stretch;
+    text-align: left !important;
+  }
+
+  .corporate-agents .consultancy-banner .info {
+    min-width: 0 !important;
   }
 
   .corporate-agents .btn,
@@ -614,6 +669,7 @@ body.corporate-agents::before {
     padding: 0.9rem 1rem;
     white-space: normal !important;
     text-align: center;
+    justify-content: center;
   }
 
   .corporate-agents .quick-link {
@@ -622,6 +678,20 @@ body.corporate-agents::before {
 
   .corporate-agents .footer-premium {
     width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .corporate-agents .footer-premium-links {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem !important;
+    justify-items: center;
+  }
+
+  .corporate-agents .footer-link-item {
+    width: 100% !important;
+    min-width: 0;
   }
 
   .corporate-agents .ai-chat-panel {
@@ -629,8 +699,28 @@ body.corporate-agents::before {
     right: 0.75rem !important;
     bottom: 0.75rem !important;
     width: auto !important;
-    height: min(78vh, 620px) !important;
+    height: min(82dvh, 620px) !important;
     max-height: calc(100dvh - 1.5rem) !important;
+    border-radius: 10px !important;
+  }
+
+  .corporate-agents .ai-chat-header,
+  .corporate-agents .ai-chat-input-area {
+    padding: 0.8rem !important;
+  }
+
+  .corporate-agents .ai-chat-header-info {
+    min-width: 0;
+  }
+
+  .corporate-agents .ai-chat-header-info h3,
+  .corporate-agents .sigma-status {
+    overflow-wrap: anywhere;
+  }
+
+  .corporate-agents .chat-bubble {
+    max-width: 92% !important;
+    overflow-wrap: anywhere;
   }
 
   .corporate-agents .ai-widget-tooltip {
