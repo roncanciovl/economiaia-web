@@ -739,6 +739,28 @@ body.corporate-agents::before {
   }
 }
 
+.corporate-agents.agents-page .ai-widget-tooltip {
+  border-radius: 4px !important;
+}
+
+@media (max-width: 620px) {
+  .corporate-agents.agents-page .ai-widget-tooltip {
+    display: block !important;
+    right: 0.75rem !important;
+    bottom: 5rem !important;
+    max-width: calc(100vw - 1.5rem);
+    padding: 0.55rem 0.75rem !important;
+    font-size: 0.76rem !important;
+    line-height: 1.2;
+    white-space: normal !important;
+    text-align: center;
+  }
+
+  .corporate-agents.agents-page .ai-widget-tooltip::after {
+    right: 1.35rem !important;
+  }
+}
+
 @media (max-width: 390px) {
   .corporate-agents .hero {
     padding: 0.9rem;
