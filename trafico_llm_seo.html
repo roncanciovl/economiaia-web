@@ -1080,14 +1080,14 @@
             const apiEndpoint = '/api/llm-telemetry'; // URL Oficial de Producción
 
             try {
-                // Intento de conexión al servidor perimetral Edge (Worker)
+                // Intento de conexión al servicio perimetral Edge
                 const response = await fetch(apiEndpoint);
 
                 let data;
                 if (response.ok) {
                     data = await response.json();
                 } else {
-                    throw new Error("Worker no configurado aún o error de red");
+                    throw new Error("Servicio no configurado aún o error de red");
                 }
 
                 if (data && data.botsAggregated) {
@@ -1186,7 +1186,7 @@
                 crawlerValueEl.innerHTML = `
                     <span style="display:inline-flex;align-items:center;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);padding:0.2rem 0.5rem;border-radius:0.5rem;white-space:nowrap;font-size:0.9em;color:#fecaca;">Monitor no conectado</span>
                 `;
-                document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #fca5a5;">No hay lecturas reales disponibles todavía.</span><br><span style="font-size: 0.75rem; color: #cbd5e1;">Revisa la fuente de telemetría del Worker.</span>`;
+                document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #fca5a5;">No hay lecturas reales disponibles todavía.</span><br><span style="font-size: 0.75rem; color: #cbd5e1;">Revisa la fuente de telemetría del servicio.</span>`;
             }
         }
 
