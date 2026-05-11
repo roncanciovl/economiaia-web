@@ -1965,7 +1965,7 @@
             const typingId = showTyping();
 
             try {
-                const workerUrl = '/api/chat';
+                const apiEndpoint = '/api/chat';
 
                 const welcomeMsg = document.querySelector('.chat-bubble.chat-bot')?.innerText || "";
                 let pageContext = `Mensaje de bienvenida que Sigma (tú) acaba de enviar al usuario: "${welcomeMsg}"\n\n`;
@@ -1977,7 +1977,7 @@
                 });
                 const cleanedContext = pageContext.substring(0, 4000);
 
-                const response = await fetch(workerUrl, {
+                const response = await fetch(apiEndpoint, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -1997,7 +1997,7 @@
 
                     if (chatHistory.length > 10) chatHistory = chatHistory.slice(chatHistory.length - 10);
                 } else {
-                    throw new Error("Worker no conectado");
+                    throw new Error("Servicio no conectado");
                 }
             } catch (err) {
                 setTimeout(() => {

@@ -918,7 +918,7 @@
             const typingId = showTyping();
 
             try {
-                const workerUrl = '/api/chat';
+                const apiEndpoint = '/api/chat';
                 const welcomeMsg = document.querySelector('.chat-bubble.chat-bot')?.innerText || "";
                 let pageContext = `Mensaje de bienvenida que Sigma (tú) acaba de enviar al usuario: "${welcomeMsg}"\n\n`;
 
@@ -929,7 +929,7 @@
                     }
                 });
 
-                const response = await fetch(workerUrl, {
+                const response = await fetch(apiEndpoint, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({

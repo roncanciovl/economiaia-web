@@ -1042,7 +1042,7 @@
             const typingId = showTyping();
 
             try {
-                const workerUrl = '/api/chat';
+                const apiEndpoint = '/api/chat';
                 let pageContext = "Contexto: Estás en el perfil personal de Henry Roncancio, fundador de Economía IA.\n\n";
                 
                 const mainTags = document.querySelectorAll('h1, h2, h3, p, li');
@@ -1052,7 +1052,7 @@
                     }
                 });
 
-                const response = await fetch(workerUrl, {
+                const response = await fetch(apiEndpoint, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({

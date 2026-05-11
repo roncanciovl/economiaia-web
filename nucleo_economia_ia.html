@@ -1887,8 +1887,8 @@
             const typingId = showTyping();
 
             try {
-                // URL de Producción del Worker de Cloudflare
-                const workerUrl = '/api/chat';
+                // URL de Producción del API
+                const apiEndpoint = '/api/chat';
 
                 // --- RAG Local: Extraer contexto visible de la página ---
                 const welcomeMsg = document.querySelector('.chat-bubble.chat-bot')?.innerText || "";
@@ -1912,7 +1912,7 @@
                 });
                 const cleanedContext = pageContext.substring(0, 4000); // 4000 caracteres como máximo preventivo
 
-                const response = await fetch(workerUrl, {
+                const response = await fetch(apiEndpoint, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -1935,7 +1935,7 @@
                     if (chatHistory.length > 10) chatHistory = chatHistory.slice(chatHistory.length - 10);
 
                 } else {
-                    throw new Error("Worker no conectado");
+                    throw new Error("Servicio no conectado");
                 }
             } catch (err) {
                 // Fallback de demostración (Simula la respuesta del Edge en frontend)
