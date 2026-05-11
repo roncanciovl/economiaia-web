@@ -1037,29 +1037,17 @@
 
         async function fetchVisitorInfo() {
             try {
-                const response = await fetch('https://ipapi.co/json/');
+                const response = await fetch('/api/visitor');
                 const data = await response.json();
                 visitorData = {
-                    ip: data.ip,
+                    ip: data.ip_masked || "Visita protegida",
                     city: data.city,
                     country: data.country_name,
                     org: data.org
                 };
 
-                // Formatear IP para privacidad y compatibilidad IPv4/IPv6
-                let ipDisplay = "Ofuscada";
-                if (data.ip.includes(':')) {
-                    // Es IPv6
-                    const parts = data.ip.split(':');
-                    ipDisplay = parts[0] + ':' + parts[1] + ':XXXX:XXXX';
-                } else {
-                    // Es IPv4
-                    const parts = data.ip.split('.');
-                    ipDisplay = parts[0] + '.' + parts[1] + '.XX.XX';
-                }
-
-                document.getElementById('userIP').innerText = ipDisplay;
-                document.getElementById('userLoc').innerText = `${data.city}, ${data.country_code} via ${data.org.substring(0, 20)}...`;
+                document.getElementById('userIP').innerText = data.ip_masked || "Visita protegida";
+                document.getElementById('userLoc').innerText = `${data.city}, ${data.country_code} via ${(data.org || "Cloudflare").substring(0, 20)}...`;
 
             } catch (err) {
                 console.error("Error obteniendo info del visitante", err);
@@ -1069,8 +1057,8 @@
 
         async function loadCloudflareData() {
             // URL DEL WORKER: Aquí debes poner el endpoint de tu Cloudflare Worker
-            // Ejemplo: const workerUrl = 'https://llm-seo-tracker.tuusuario.workers.dev';
-            const workerUrl = 'https://llm-seo-tracker.henryroncanciovelandia.workers.dev/'; // URL Oficial de Producción
+            // Ejemplo: const workerUrl = '/api/llm-telemetry';
+            const workerUrl = '/api/llm-telemetry'; // URL Oficial de Producción
 
             try {
                 // Intento de conexión al servidor perimetral Edge (Worker)
@@ -1595,7 +1583,7 @@
             const typingId = showTyping();
 
             try {
-                const workerUrl = 'https://agente-sigma.henryroncanciovelandia.workers.dev/';
+                const workerUrl = '/api/chat';
 
                 const welcomeMsg = document.querySelector('.chat-bubble.chat-bot')?.innerText || "";
                 let pageContext = `Mensaje de bienvenida que Sigma (tú) acaba de enviar al usuario: "${welcomeMsg}"\n\n`;

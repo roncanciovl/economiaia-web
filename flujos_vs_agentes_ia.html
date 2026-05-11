@@ -951,7 +951,7 @@
             const typingId = showTyping();
 
             try {
-                const workerUrl = 'https://agente-sigma.henryroncanciovelandia.workers.dev/';
+                const workerUrl = '/api/chat';
 
                 const welcomeMsg = document.querySelector('.chat-bubble.chat-bot')?.innerText || "";
                 let pageContext = `Mensaje de bienvenida que Sigma (tú) acaba de enviar al usuario: "${welcomeMsg}"\n\n`;

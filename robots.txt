@@ -18,11 +18,15 @@
 # --- Regla general: permitir todo ---
 User-agent: *
 Allow: /
+Disallow: /api/chat
+Disallow: /api/visitor
 Disallow: /old_*
 Disallow: /patch*.txt
 Disallow: /grep_nav.txt
 Disallow: /*.py$
 Disallow: /*.csv$
+Disallow: /*.ps1$
+Disallow: /*.md$
 Disallow: /_*
 
 # ═══════════════════════════════════════════

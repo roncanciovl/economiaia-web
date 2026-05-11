@@ -1,2 +1,10 @@
-
-_infra_privada_manychat.html
+_*
+*.py
+*.ps1
+*.md
+*.csv
+patch*.txt
+old_*
+grep_nav.txt
+remove_nav_patch.txt
+skills/
