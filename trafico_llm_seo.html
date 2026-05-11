@@ -1103,7 +1103,11 @@
                     crawlerValueEl.style.flexWrap = 'wrap';
                     crawlerValueEl.style.gap = '0.4rem';
                     crawlerValueEl.innerHTML = visualParts.join('');
-                    document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #10b981;">${totalRequests.toLocaleString()} lecturas recientes confirmadas</span> de <strong>${totalBots} bots</strong> de IA en el sitio.`;
+                    const recentRequests = data.recentRequests || 0;
+                    const sourceLabel = data.source === 'cloudflare_graphql'
+                        ? `Actividad reciente real: ${recentRequests.toLocaleString()} lecturas en las últimas 23 horas.`
+                        : 'Fuente de telemetría activa.';
+                    document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #10b981;">${totalRequests.toLocaleString()} lecturas IA acumuladas</span> de <strong>${totalBots} bots</strong> de IA en el sitio.<br><span style="font-size: 0.75rem; color: #cbd5e1;">${sourceLabel}</span>`;
 
                     const feedContainer = document.getElementById('aiFeedContainer');
                     const feedList = document.getElementById('aiFeedList');
