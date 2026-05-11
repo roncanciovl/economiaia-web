@@ -1064,8 +1064,6 @@
                 // Intento de conexión al servidor perimetral Edge (Worker)
                 const response = await fetch(workerUrl);
 
-                // Mientras no configures el Worker, caerá en este Mock Data de contingencia visual
-                // para que tu demo nunca se rompa ante un cliente si el dominio no coincide
                 let data;
                 if (response.ok) {
                     data = await response.json();
@@ -1157,18 +1155,15 @@
                     }
                 }
             } catch (err) {
-                console.warn("Worker de Cloudflare no detectado, usando datos simulados de Edge para la interfaz visual.");
+                console.warn("Worker de Cloudflare no conectado o sin fuente real de telemetría.", err);
                 const crawlerValueEl = document.getElementById('aiCrawlerValue');
                 crawlerValueEl.style.display = 'flex';
                 crawlerValueEl.style.flexWrap = 'wrap';
                 crawlerValueEl.style.gap = '0.4rem';
                 crawlerValueEl.innerHTML = `
-                    <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);padding:0.2rem 0.5rem;border-radius:0.5rem;white-space:nowrap;font-size:0.9em;"><span style="color:#10a37f;font-weight:700;margin-right:0.3rem;">OpenAI</span> <span style="color:#94a3b8;font-size:0.9em;">(42)</span></span>
-                    <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);padding:0.2rem 0.5rem;border-radius:0.5rem;white-space:nowrap;font-size:0.9em;"><span style="color:#d97757;font-weight:700;margin-right:0.3rem;">Anthropic</span> <span style="color:#94a3b8;font-size:0.9em;">(28)</span></span>
-                    <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);padding:0.2rem 0.5rem;border-radius:0.5rem;white-space:nowrap;font-size:0.9em;"><span style="color:#4285f4;font-weight:700;margin-right:0.3rem;">Google</span> <span style="color:#94a3b8;font-size:0.9em;">(15)</span></span>
-                    <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);padding:0.2rem 0.5rem;border-radius:0.5rem;white-space:nowrap;font-size:0.9em;"><span style="color:#06b6d4;font-weight:700;margin-right:0.3rem;">Perplexity</span> <span style="color:#94a3b8;font-size:0.9em;">(9)</span></span>
+                    <span style="display:inline-flex;align-items:center;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);padding:0.2rem 0.5rem;border-radius:0.5rem;white-space:nowrap;font-size:0.9em;color:#fecaca;">Monitor no conectado</span>
                 `;
-                document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #10b981;">94 lecturas simuladas para la demo</span> de <strong>14 bots</strong> mientras se conecta el monitor real.<br><span style="font-size: 0.75rem; color: #cbd5e1;">Mostrando una vista de ejemplo...</span>`;
+                document.getElementById('aiCrawlerSubtitle').innerHTML = `<span style="color: #fca5a5;">No hay lecturas reales disponibles todavía.</span><br><span style="font-size: 0.75rem; color: #cbd5e1;">Revisa la fuente de telemetría del Worker.</span>`;
             }
         }
 
