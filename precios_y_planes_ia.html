@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precios de Agentes Conversacionales IA | Economía IA</title>
+    <title>Servicios y Planes de IA | Economía IA</title>
     <meta name="description"
-        content="Compara nuestros planes de agentes conversacionales en dólares (USD) para pequeñas, medianas y grandes empresas y negocios: Básico, Profesional, Empresarial y consultoría express.">
+        content="Servicios de IA para tu negocio: publicidad en Meta gestionada con inteligencia artificial y agentes conversacionales que venden 24/7. Planes claros en dólares (USD) y consultoría express.">
     <meta name="author" content="Henry Roncancio">
     <meta name="keywords"
-        content="precios IA, planes IA, automatización de ventas, agentes conversacionales, consultoría IA, Economía IA">
+        content="marketing con IA, publicidad Meta, precios IA, planes IA, automatización de ventas, agentes conversacionales, consultoría IA, Economía IA">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -589,6 +589,242 @@
             }
         }
 
+        /* ── Selector de necesidad (patrón corporativo) ── */
+        .corporate-agents.pricing-page .need-selector {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            margin: 0 0 1.4rem;
+        }
+
+        .corporate-agents.pricing-page .need-card {
+            position: relative;
+            overflow: hidden;
+            display: block;
+            text-decoration: none;
+            border-radius: var(--corp-radius);
+            border: 1px solid var(--corp-line);
+            background: rgba(13, 27, 39, 0.76);
+            backdrop-filter: blur(10px);
+            padding: 1.6rem 1.7rem;
+            transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+        }
+
+        .corporate-agents.pricing-page .need-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(90deg, rgba(124, 199, 232, 0.32), transparent 42%) top left / 100% 1px no-repeat,
+                radial-gradient(circle at 100% 0%, rgba(124, 199, 232, 0.09), transparent 14rem);
+        }
+
+        .corporate-agents.pricing-page .need-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(124, 199, 232, 0.42);
+            background: rgba(16, 34, 48, 0.94);
+        }
+
+        .corporate-agents.pricing-page .need-card .need-kicker {
+            display: block;
+            margin-bottom: 0.85rem;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .corporate-agents.pricing-page .need-marketing .need-kicker {
+            color: #8fc7ae;
+        }
+
+        .corporate-agents.pricing-page .need-agentes .need-kicker {
+            color: var(--corp-blue-dark);
+        }
+
+        .corporate-agents.pricing-page .need-card h3 {
+            font-size: 1.28rem;
+            margin: 0 0 0.45rem;
+        }
+
+        .corporate-agents.pricing-page .need-card p {
+            font-size: 0.94rem;
+            margin: 0;
+        }
+
+        .corporate-agents.pricing-page .need-card .need-cta {
+            display: inline-block;
+            margin-top: 0.9rem;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .corporate-agents.pricing-page .need-marketing .need-cta {
+            color: #8fc7ae;
+        }
+
+        .corporate-agents.pricing-page .need-agentes .need-cta {
+            color: var(--corp-blue-dark);
+        }
+
+        /* ── Franja de entrada ── */
+        .corporate-agents.pricing-page .start-strip {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            border-radius: var(--corp-radius);
+            border: 1px solid var(--corp-line);
+            background: rgba(13, 27, 39, 0.6);
+            padding: 0.95rem 1.4rem;
+            margin: 0 0 4rem;
+            font-size: 0.93rem;
+            color: var(--corp-muted);
+        }
+
+        .corporate-agents.pricing-page .start-strip strong {
+            color: var(--corp-ink-2);
+        }
+
+        .corporate-agents.pricing-page .start-strip a {
+            color: var(--corp-blue-dark);
+            font-family: 'DM Mono', monospace;
+            font-size: 0.74rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .corporate-agents.pricing-page .start-strip a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Secciones de servicio ── */
+        .corporate-agents.pricing-page .service-section {
+            margin: 0 0 4.5rem;
+            scroll-margin-top: 2rem;
+        }
+
+        .corporate-agents.pricing-page .service-heading {
+            margin-bottom: 2.2rem;
+        }
+
+        .corporate-agents.pricing-page .service-heading .kicker {
+            display: inline-flex;
+            width: fit-content;
+            align-items: center;
+            margin-bottom: 1rem;
+            border-radius: 3px;
+            border: 1px solid var(--corp-line);
+            background: rgba(10, 22, 32, 0.78);
+            padding: 0.5rem 0.75rem;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .corporate-agents.pricing-page .service-heading.marketing .kicker {
+            color: #8fc7ae;
+            border-color: rgba(105, 165, 141, 0.42);
+        }
+
+        .corporate-agents.pricing-page .service-heading.agentes .kicker {
+            color: var(--corp-blue-dark);
+        }
+
+        .corporate-agents.pricing-page .service-heading h2 {
+            margin: 0 0 0.9rem;
+        }
+
+        .corporate-agents.pricing-page .service-heading p {
+            max-width: 68ch;
+            margin: 0;
+            font-size: 1.04rem;
+        }
+
+        /* ── Grilla de marketing (2 tarjetas) ── */
+        .corporate-agents.pricing-page .pricing-grid.marketing-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        /* ── Badge de resultados reales ── */
+        .corporate-agents.pricing-page .proof-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+            border-radius: 3px;
+            border: 1px solid rgba(105, 165, 141, 0.5);
+            background: rgba(105, 165, 141, 0.12);
+            color: #9fd3bd;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+            padding: 0.45rem 0.65rem;
+        }
+
+        .corporate-agents.pricing-page .pricing-card.marketing-featured {
+            border-color: rgba(105, 165, 141, 0.62) !important;
+            background: linear-gradient(180deg, rgba(22, 44, 38, 0.55), rgba(13, 27, 39, 0.84)) !important;
+        }
+
+        .corporate-agents.pricing-page .badge-pop.green {
+            border-color: rgba(105, 165, 141, 0.5);
+            background: rgba(105, 165, 141, 0.12);
+            color: #8fc7ae;
+        }
+
+        .corporate-agents.pricing-page .btn-green {
+            background: linear-gradient(135deg, var(--corp-green), #d9efe6) !important;
+            color: #061018 !important;
+            border: 1px solid rgba(105, 165, 141, 0.72) !important;
+        }
+
+        .corporate-agents.pricing-page .btn-green:hover {
+            transform: translateY(-2px);
+            box-shadow: none;
+        }
+
+        /* ── Puentes entre secciones ── */
+        .corporate-agents.pricing-page .service-bridge {
+            text-align: center;
+            margin: 1.6rem auto 0;
+            max-width: 70ch;
+            font-size: 0.92rem;
+        }
+
+        .corporate-agents.pricing-page .service-bridge a {
+            color: var(--corp-blue-dark);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .corporate-agents.pricing-page .service-bridge a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 860px) {
+            .corporate-agents.pricing-page .need-selector,
+            .corporate-agents.pricing-page .pricing-grid.marketing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .corporate-agents.pricing-page .start-strip {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
         .page-meta {
             margin: 1.5rem auto 0;
             display: flex;
@@ -659,12 +895,12 @@
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "Precios de Agentes Conversacionales IA",
+      "name": "Servicios y Planes de IA",
       "url": "https://www.economiaia.business/precios_y_planes_ia.html",
-      "description": "Comparativa de planes de agentes conversacionales personalizados para pequeñas, medianas y grandes empresas y negocios con alcances, inversión y criterios de selección.",
+      "description": "Servicios de IA para negocios: publicidad en Meta gestionada con inteligencia artificial y agentes conversacionales que atienden y venden 24/7, con inversión y alcances claros.",
       "inLanguage": "es",
       "datePublished": "2026-01-15",
-      "dateModified": "2026-03-07",
+      "dateModified": "2026-07-14",
       "author": {
         "@type": "Person",
         "name": "Henry Roncancio",
@@ -682,8 +918,27 @@
       },
       "mainEntity": {
         "@type": "OfferCatalog",
-        "name": "Planes de Agentes Conversacionales Personalizados",
+        "name": "Servicios y Planes de IA",
         "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Arranque de Marketing con IA",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "USD",
+              "minPrice": "297",
+              "maxPrice": "497"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Marketing Gestionado con IA",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "USD",
+              "price": "150"
+            }
+          },
           {
             "@type": "Offer",
             "name": "Básico",
@@ -747,17 +1002,17 @@
     }
     </script>
     <link rel="canonical" href="https://www.economiaia.business/precios_y_planes_ia.html">
-    <meta property="og:title" content="Precios de Agentes Conversacionales IA | Economía IA">
+    <meta property="og:title" content="Servicios y Planes de IA | Economía IA">
     <meta property="og:description"
-        content="Compara planes de agentes conversacionales personalizados para pequeñas, medianas y grandes empresas y negocios, con inversión y alcances claros.">
+        content="Publicidad en Meta gestionada con IA y agentes conversacionales que venden 24/7. Planes claros para pequeñas, medianas y grandes empresas.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.economiaia.business/precios_y_planes_ia.html">
     <meta property="og:site_name" content="Economía IA">
     <meta property="og:image" content="https://www.economiaia.business/logos/logo_economia_ia_neon_v4.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Precios de Agentes Conversacionales IA | Economía IA">
+    <meta name="twitter:title" content="Servicios y Planes de IA | Economía IA">
     <meta name="twitter:description"
-        content="Compara planes de agentes conversacionales personalizados para pequeñas, medianas y grandes empresas y negocios, con inversión y alcances claros.">
+        content="Publicidad en Meta gestionada con IA y agentes conversacionales que venden 24/7. Planes claros para pequeñas, medianas y grandes empresas.">
     <meta name="twitter:image" content="https://www.economiaia.business/logos/logo_economia_ia_neon_v4.png">
     <link rel="stylesheet" href="corporate-agents.css">
 </head>
@@ -768,10 +1023,88 @@
 
     <div class="container">
         <header class="header">
-            <h1>Precios de Agentes Conversacionales IA</h1>
-            <p style="margin-bottom: 0.5rem;">Nos especializamos en agentes conversacionales personalizados para pequeñas, medianas y grandes empresas y negocios. Todos los valores están expresados en <strong>Dólares (USD)</strong>.</p>
-            <p style="font-size: 0.95rem; color: var(--accent-cyan);"><em>* Los rangos de inversión de los planes varían según la cantidad de canales a conectar, el volumen de la base de conocimiento y la complejidad de las reglas de negocio en los flujos conversacionales.</em></p>
+            <h1>Servicios y Planes de IA</h1>
+            <p style="margin-bottom: 0.5rem;">Ayudamos a tu negocio a <strong>atraer clientes</strong> con publicidad inteligente y a <strong>atenderlos y venderles 24/7</strong> con asistentes de IA. Todos los valores están expresados en <strong>Dólares (USD)</strong>.</p>
         </header>
+
+        <!-- Selector de necesidad -->
+        <div class="need-selector">
+            <a href="#marketing-ia" class="need-card need-marketing">
+                <span class="need-kicker">01 · Atraer clientes</span>
+                <h3>Quiero atraer más clientes</h3>
+                <p>Tu negocio es bueno, pero no llega suficiente gente. Ponemos tu publicidad a trabajar con inteligencia artificial.</p>
+                <span class="need-cta">Ver Marketing con IA →</span>
+            </a>
+            <a href="#agentes-ia" class="need-card need-agentes">
+                <span class="need-kicker">02 · Atender y vender</span>
+                <h3>Quiero atender y vender 24/7</h3>
+                <p>Te escriben y no alcanzas a responder. Un asistente de IA atiende, responde y cierra ventas por ti, a toda hora.</p>
+                <span class="need-cta">Ver Agentes Conversacionales →</span>
+            </a>
+        </div>
+
+        <!-- Franja de entrada -->
+        <div class="start-strip">
+            <span>¿No sabes cuál necesitas? Empieza con una <strong>Consultoría Express de $50</strong> — 1 hora de diagnóstico, y si contratas un plan, se descuenta de tu factura.</span>
+            <a href="#consultoria-express">Agendar diagnóstico →</a>
+        </div>
+
+        <!-- ═══════════ LÍNEA 1 · MARKETING CON IA ═══════════ -->
+        <section id="marketing-ia" class="service-section">
+            <div class="service-heading marketing">
+                <span class="kicker">Atraer clientes</span>
+                <h2>Marketing con IA</h2>
+                <p>Publicamos tus anuncios en Facebook e Instagram y dejamos que la inteligencia artificial encuentre a las personas con más ganas de comprarte. Tú solo respondes el WhatsApp.</p>
+            </div>
+
+            <div class="pricing-grid marketing-grid">
+                <!-- Arranque -->
+                <div class="pricing-card marketing-featured">
+                    <div class="badge-pop green">Nuevo</div>
+                    <p class="plan-name">Arranque de Marketing con IA</p>
+                    <div class="plan-price">$297 - $497<span> USD / pago único</span></div>
+                    <span class="proof-badge">✦ Probado en campañas reales: clientes interesados desde $2.17 c/u</span>
+                    <ul class="plan-features">
+                        <li>Tus anuncios en Facebook e Instagram, listos y publicados: la gente te escribe directo al WhatsApp.</li>
+                        <li>La IA de Meta aprende quién te compra y busca más personas como ellas.</li>
+                        <li>Conectamos tu cuenta publicitaria a un asistente de IA que la revisa y te dice qué está funcionando.</li>
+                        <li>Te entregamos una guía sencilla para responder y cerrar a los interesados.</li>
+                        <li>Capacitación incluida: aprendes a leer tus números sin ser experto.</li>
+                        <li>Ideal para: negocios locales, eventos, lanzamientos y quien nunca ha pautado.</li>
+                    </ul>
+                    <a href="javascript:void(0)" data-lk="aHR0cHM6Ly93YS5tZS81NzMwNDM2NTYyMjY/dGV4dD1Ib2xhJTIwU2lnbWElMkMlMjBxdWllcm8lMjBlbCUyMEFycmFucXVlJTIwZGUlMjBNYXJrZXRpbmclMjBjb24lMjBJQQ==" onclick="window.open(atob(this.getAttribute('data-lk')), '_blank');"
+                        class="btn btn-green">Quiero Más Clientes</a>
+                </div>
+
+                <!-- Gestionado -->
+                <div class="pricing-card">
+                    <p class="plan-name">Marketing Gestionado</p>
+                    <div class="plan-price">$150<span> USD / mes</span></div>
+                    <ul class="plan-features">
+                        <li>Cuidamos tus campañas todas las semanas: la IA vigila y nosotros decidimos.</li>
+                        <li>Ajustamos anuncios y presupuesto para que cada dólar rinda más.</li>
+                        <li>Reporte mensual en lenguaje claro: cuánto invertiste y cuántos clientes llegaron.</li>
+                        <li>Ideas de contenido y anuncios nuevos cada mes.</li>
+                        <li>Acompañamiento directo por WhatsApp.</li>
+                        <li>Ideal para: negocios que ya pautan y quieren resultados constantes sin dedicarle tiempo.</li>
+                    </ul>
+                    <a href="javascript:void(0)" data-lk="aHR0cHM6Ly93YS5tZS81NzMwNDM2NTYyMjY/dGV4dD1Ib2xhJTIwU2lnbWElMkMlMjBxdWllcm8lMjBlbCUyMHBsYW4lMjBkZSUyME1hcmtldGluZyUyMEdlc3Rpb25hZG8=" onclick="window.open(atob(this.getAttribute('data-lk')), '_blank');"
+                        class="btn btn-outline">Delegar Mi Publicidad</a>
+                </div>
+            </div>
+
+            <p class="service-bridge">
+                Los clientes que llegan por tus anuncios escriben a tu WhatsApp… y un <a href="#agentes-ia">Agente Conversacional</a> puede atenderlos por ti, incluso mientras duermes.
+            </p>
+        </section>
+
+        <!-- ═══════════ LÍNEA 2 · AGENTES CONVERSACIONALES ═══════════ -->
+        <section id="agentes-ia" class="service-section">
+            <div class="service-heading agentes">
+                <span class="kicker">Atender y vender 24/7</span>
+                <h2>Agentes Conversacionales</h2>
+                <p>Un asistente de IA con la personalidad de tu negocio que responde al instante, resuelve dudas y cierra ventas en tu página web, WhatsApp e Instagram — de día y de noche.</p>
+            </div>
 
         <div class="pricing-grid">
             <!-- Starter -->
@@ -824,10 +1157,13 @@
             </div>
         </div>
 
-        <div class="express-consultancy">
+        <p style="text-align:center; margin-top:1.5rem; color: var(--text-muted); font-size: 0.88rem;"><em>* La inversión de cada plan varía según los canales a conectar y lo que tu negocio necesite. En la primera conversación te damos el valor exacto, sin sorpresas.</em></p>
+        </section>
+
+        <div class="express-consultancy" id="consultoria-express" style="scroll-margin-top: 2rem;">
             <div class="express-info">
                 <h2>Consultoría Express</h2>
-                <p>Si quieres saber qué tipo de agente conversacional necesita tu negocio antes de invertir, agenda 1 hora estratégica para diagnosticar tu cuello de botella actual.</p>
+                <p>¿No sabes si tu negocio necesita más publicidad, un asistente que venda por ti, o ambos? Agenda 1 hora estratégica y salimos con un diagnóstico claro de qué te está frenando y por dónde empezar.</p>
                 <ul class="plan-features" style="margin-bottom: 2rem;">
                     <li>1 Hora 1-a-1 de alta densidad estratégica.</li>
                     <li><strong>Deducible:</strong> Si contratas un plan, los $50 se abonan a tu factura.</li>
@@ -870,12 +1206,12 @@
         </div>
         <div class="ai-chat-body" id="chatBody">
             <div class="chat-bubble chat-bot">
-                Hola, soy Sigma. Aquí puedes comparar nuestros planes de agentes conversacionales personalizados para pequeñas, medianas y grandes empresas y negocios. ¿Quieres que te ayude a elegir uno?
+                Hola, soy Sigma. Aquí encuentras nuestros servicios de IA: publicidad inteligente para atraer clientes y agentes conversacionales para atenderlos 24/7. ¿Te ayudo a elegir el plan ideal para tu negocio?
                 <div class="bot-signature"><span class="bot-signature-dot"></span>Sigma &middot; razonado en contexto</div>
             </div>
         </div>
         <div class="ai-chat-input-area">
-            <input type="text" id="chatInput" placeholder="Pregunta sobre los planes..." autocomplete="off">
+            <input type="text" id="chatInput" placeholder="Pregunta sobre los servicios..." autocomplete="off">
             <button id="sendBtn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
