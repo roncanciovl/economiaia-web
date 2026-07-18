@@ -151,6 +151,66 @@
         }
 
         /* Comparison Table */
+        .table-wrap {
+            overflow-x: auto;
+            border-radius: 1.25rem;
+        }
+
+        .table-wrap .comparison {
+            min-width: 680px;
+        }
+
+        .cell-yes {
+            color: #6ee7b7;
+            font-weight: 700;
+        }
+
+        .cell-no {
+            color: #f87171;
+            font-weight: 700;
+        }
+
+        .svg-panel {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1.25rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .svg-panel svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .svg-caption {
+            color: var(--muted);
+            font-size: 0.85rem;
+            text-align: center;
+            margin-top: 0.75rem;
+        }
+
+        .svg-panel .svg-mobile {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .svg-panel .svg-desktop {
+                display: none;
+            }
+
+            .svg-panel .svg-mobile {
+                display: block;
+                max-width: 380px;
+                margin: 0 auto;
+            }
+
+            .svg-panel {
+                padding: 1rem;
+            }
+        }
+
         .comparison {
             width: 100%;
             border-collapse: collapse;
@@ -351,7 +411,8 @@
       "author": { "@type": "Organization", "name": "Economía IA", "url": "https://www.economiaia.business" },
       "publisher": { "@type": "Organization", "name": "Economía IA" },
       "description": "Guía informativa sobre ManyChat, la plataforma de automatización de conversaciones más usada para TikTok, Instagram y WhatsApp.",
-      "datePublished": "2026-02-26"
+      "datePublished": "2026-02-26",
+      "dateModified": "2026-07-18"
     }
     </script>
     <link rel="canonical" href="https://www.economiaia.business/arquitectura_manychat_ia.html">
@@ -405,7 +466,39 @@
           "name": "¿ManyChat funciona con WhatsApp?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. ManyChat se conecta a la WhatsApp Business API para enviar y recibir mensajes automatizados. Permite crear flujos de bienvenida, cualificación de leads, envío de catálogos y links de pago dentro de WhatsApp. Requiere una WABA (WhatsApp Business Account) verificada."
+            "text": "Sí. ManyChat se conecta a la WhatsApp Business API para enviar y recibir mensajes automatizados. Permite crear flujos de bienvenida, cualificación de leads, envío de catálogos y links de pago dentro de WhatsApp. Requiere una WABA (WhatsApp Business Account) verificada. Desde el nuevo pricing de marzo 2026, WhatsApp está disponible únicamente a partir del plan Pro ($29/mes); los planes Free y Essential no lo incluyen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Si migro mi número de WhatsApp Business a una WABA, ¿mis campañas click-to-WhatsApp siguen funcionando?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Los anuncios click-to-WhatsApp apuntan al número de teléfono, no al entorno, así que las campañas activas siguen funcionando sin recrearlas. En la migración completa, los mensajes dejan de llegar a la app del celular y entran por la Cloud API, donde se responden desde ManyChat o un webhook; con Coexistence, la app sigue recibiéndolos también. Además, cada conversación iniciada desde un anuncio abre una ventana de 72 horas sin costo de mensajes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo usar la WhatsApp Business App y ManyChat al mismo tiempo con el mismo número?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, con la conexión Coexistence (beta) de ManyChat, basada en la función de coexistencia que Meta lanzó en 2025. La app del celular sigue funcionando con sus etiquetas y listas de difusión, y los mensajes se espejan en tiempo real entre la app y el inbox de ManyChat, pudiendo responder desde cualquiera de los dos. Sincroniza hasta 6 meses de chats y contactos. Requiere WhatsApp Business App v2.24.5+, plan Pro de ManyChat y no está disponible en algunos países (UE, Reino Unido, India, Japón, entre otros); en Latinoamérica sí está habilitada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿ManyChat puede responder comentarios de Instagram automáticamente?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. En Instagram el comment-to-DM funciona con normalidad: cuando un usuario comenta una palabra clave en un post o reel, ManyChat puede publicar una respuesta pública en el hilo y enviarle un DM automático con el link o recurso. Requiere una cuenta de Instagram profesional (Business o Creator). La conversación por DM queda sujeta a la ventana de 24 horas de Meta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué incluye el plan Free de ManyChat en 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tras la actualización de precios de marzo 2026, el plan Free incluye hasta 25 contactos activos al mes (con renovación mensual automática), 2 canales conectados a elegir entre Instagram, Facebook Messenger, TikTok y Telegram, hasta 4 automatizaciones activas y 1 usuario. WhatsApp, SMS y Email requieren el plan Pro o superior."
           }
         },
         {
@@ -439,7 +532,7 @@
                     15 enero 2026</span>
                 <span
                     style="padding: 0.45rem 0.85rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.12); background: rgba(15, 23, 42, 0.75);">Actualizado:
-                    7 marzo 2026</span>
+                    18 julio 2026</span>
             </div>
         </header>
 
@@ -458,7 +551,7 @@
                 <div class="card">
                     <h3><span class="icon">📱</span> Multicanal</h3>
                     <p>Un solo panel para gestionar conversaciones en Instagram DM, Facebook Messenger, TikTok DM,
-                        WhatsApp Business y SMS.</p>
+                        Telegram, WhatsApp Business y SMS (los canales disponibles dependen del plan).</p>
                 </div>
                 <div class="card">
                     <h3><span class="icon">🎯</span> Captura de Datos</h3>
@@ -485,19 +578,40 @@
                         <div class="label">Red Social</div>
                         <div class="sub">TikTok / Instagram</div>
                     </div>
-                    <div class="flow-arrow">→</div>
+                    <div class="flow-arrow"><svg width="42" height="20" viewBox="0 0 42 20" aria-hidden="true">
+                            <line x1="2" y1="10" x2="30" y2="10" stroke="currentColor" stroke-width="2"
+                                stroke-dasharray="6 6">
+                                <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.8s"
+                                    repeatCount="indefinite" />
+                            </line>
+                            <path d="M30 4 L40 10 L30 16 Z" fill="currentColor" />
+                        </svg></div>
                     <div class="flow-step" style="border-color: var(--blue);">
                         <div class="emoji">🤖</div>
                         <div class="label">ManyChat</div>
                         <div class="sub">Flujo Automático</div>
                     </div>
-                    <div class="flow-arrow">→</div>
+                    <div class="flow-arrow"><svg width="42" height="20" viewBox="0 0 42 20" aria-hidden="true">
+                            <line x1="2" y1="10" x2="30" y2="10" stroke="currentColor" stroke-width="2"
+                                stroke-dasharray="6 6">
+                                <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.8s"
+                                    repeatCount="indefinite" />
+                            </line>
+                            <path d="M30 4 L40 10 L30 16 Z" fill="currentColor" />
+                        </svg></div>
                     <div class="flow-step" style="border-color: var(--green);">
                         <div class="emoji">📋</div>
                         <div class="label">Captura</div>
                         <div class="sub">Teléfono / Email</div>
                     </div>
-                    <div class="flow-arrow">→</div>
+                    <div class="flow-arrow"><svg width="42" height="20" viewBox="0 0 42 20" aria-hidden="true">
+                            <line x1="2" y1="10" x2="30" y2="10" stroke="currentColor" stroke-width="2"
+                                stroke-dasharray="6 6">
+                                <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.8s"
+                                    repeatCount="indefinite" />
+                            </line>
+                            <path d="M30 4 L40 10 L30 16 Z" fill="currentColor" />
+                        </svg></div>
                     <div class="flow-step" style="border-color: var(--purple);">
                         <div class="emoji">📊</div>
                         <div class="label">Base de Datos</div>
@@ -509,66 +623,235 @@
 
         <!-- 3. Planes -->
         <section>
-            <h2 class="section-title"><span class="num">3</span> Planes y Funcionalidades</h2>
-            <p class="section-desc">Comparativa entre las funcionalidades disponibles en el plan gratuito y el plan Pro
-                de ManyChat.</p>
-            <table class="comparison">
-                <thead>
-                    <tr>
-                        <th>Funcionalidad</th>
-                        <th>Free</th>
-                        <th>Pro ($15/mes+)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Contactos</td>
-                        <td>Hasta 1,000</td>
-                        <td>Ilimitados (precio escala)</td>
-                    </tr>
-                    <tr>
-                        <td>Canales</td>
-                        <td>IG, FB, TikTok (Beta)</td>
-                        <td>+ WhatsApp, SMS, Email</td>
-                    </tr>
-                    <tr>
-                        <td>Captura de Datos <span class="badge badge-pro">PRO</span></td>
-                        <td>No disponible</td>
-                        <td>Campos validados (email, teléfono)</td>
-                    </tr>
-                    <tr>
-                        <td>Tags / Segmentación</td>
-                        <td>Hasta 10 tags</td>
-                        <td>Ilimitados + campos personalizados</td>
-                    </tr>
-                    <tr>
-                        <td>Integraciones Externas</td>
-                        <td>Limitadas</td>
-                        <td>Zapier, Make, Webhooks, CRM</td>
-                    </tr>
-                    <tr>
-                        <td>Branding ManyChat</td>
-                        <td>Visible</td>
-                        <td>Removible</td>
-                    </tr>
-                    <tr>
-                        <td>AI Add-on</td>
-                        <td>No disponible</td>
-                        <td>+$29/mes (FAQs, tono, intención)</td>
-                    </tr>
-                    <tr>
-                        <td>Trial Pro</td>
-                        <td colspan="2" style="text-align: center;">14 días gratis con todas las funciones Pro</td>
-                    </tr>
-                </tbody>
-            </table>
+            <h2 class="section-title"><span class="num">3</span> Planes y Funcionalidades (Pricing 2026)</h2>
+            <p class="section-desc">En marzo de 2026 ManyChat reestructuró por completo sus precios: el modelo ahora se
+                basa en <strong>contactos activos por mes</strong> y en el <strong>número de canales conectados</strong>.
+                El plan Free pasó de 1,000 a solo 25 contactos activos, y WhatsApp quedó reservado para el plan Pro en
+                adelante.</p>
+
+            <!-- SVG Animado: Escalera de planes -->
+            <div class="svg-panel">
+                <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img"
+                    aria-label="Escalera de planes de ManyChat 2026: Free, Essential, Pro y Business">
+                    <!-- Ruta de upgrade animada -->
+                    <path d="M 60 235 L 230 195 L 400 150 L 570 100" fill="none" stroke="#8b5cf6" stroke-width="2.5"
+                        stroke-dasharray="8 8" opacity="0.7">
+                        <animate attributeName="stroke-dashoffset" from="16" to="0" dur="1s"
+                            repeatCount="indefinite" />
+                    </path>
+                    <!-- Free -->
+                    <g>
+                        <rect x="20" y="245" width="150" height="40" rx="10" fill="#065f46" opacity="0.35" />
+                        <rect x="20" y="245" width="150" height="40" rx="10" fill="none" stroke="#10b981"
+                            stroke-width="1.5" />
+                        <text x="95" y="262" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="800"
+                            font-family="Outfit, sans-serif">FREE — $0</text>
+                        <text x="95" y="278" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">25 contactos · 2 canales</text>
+                    </g>
+                    <!-- Essential -->
+                    <g>
+                        <rect x="190" y="205" width="150" height="40" rx="10" fill="#1e3a8a" opacity="0.3" />
+                        <rect x="190" y="205" width="150" height="40" rx="10" fill="none" stroke="#3b82f6"
+                            stroke-width="1.5" />
+                        <text x="265" y="222" text-anchor="middle" fill="#93c5fd" font-size="14" font-weight="800"
+                            font-family="Outfit, sans-serif">ESSENTIAL — $14</text>
+                        <text x="265" y="238" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">250 contactos · 2 canales</text>
+                    </g>
+                    <!-- Pro -->
+                    <g>
+                        <rect x="360" y="160" width="150" height="40" rx="10" fill="#4c1d95" opacity="0.35" />
+                        <rect x="360" y="160" width="150" height="40" rx="10" fill="none" stroke="#8b5cf6"
+                            stroke-width="1.5" />
+                        <text x="435" y="177" text-anchor="middle" fill="#c4b5fd" font-size="14" font-weight="800"
+                            font-family="Outfit, sans-serif">PRO — $29</text>
+                        <text x="435" y="193" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">2,500 contactos · 3 canales</text>
+                        <!-- Badge WhatsApp se desbloquea aquí -->
+                        <g>
+                            <circle cx="510" cy="160" r="14" fill="#065f46">
+                                <animate attributeName="r" values="14;16;14" dur="2s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="510" cy="160" r="14" fill="none" stroke="#25d366" stroke-width="1.5">
+                                <animate attributeName="opacity" values="1;0.4;1" dur="2s"
+                                    repeatCount="indefinite" />
+                            </circle>
+                            <text x="510" y="165" text-anchor="middle" font-size="13">💬</text>
+                        </g>
+                        <text x="530" y="150" fill="#25d366" font-size="10.5" font-weight="700"
+                            font-family="Outfit, sans-serif">WhatsApp se desbloquea aquí</text>
+                    </g>
+                    <!-- Business -->
+                    <g>
+                        <rect x="530" y="60" width="170" height="40" rx="10" fill="#7c2d12" opacity="0.35" />
+                        <rect x="530" y="60" width="170" height="40" rx="10" fill="none" stroke="#f59e0b"
+                            stroke-width="1.5" />
+                        <text x="615" y="77" text-anchor="middle" fill="#fdba74" font-size="14" font-weight="800"
+                            font-family="Outfit, sans-serif">BUSINESS — $69</text>
+                        <text x="615" y="93" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">7,500 contactos · Canales ilimitados</text>
+                    </g>
+                    <!-- Etiqueta eje -->
+                    <text x="20" y="30" fill="#9ca3af" font-size="12" font-family="Outfit, sans-serif">Precios
+                        mensuales (USD) — nuevo modelo desde marzo 2026</text>
+                </svg>
+                <p class="svg-caption">Ruta de escalado: cada plan sube el tope de contactos activos mensuales y el
+                    número de canales conectables.</p>
+            </div>
+
+            <div class="table-wrap">
+                <table class="comparison">
+                    <thead>
+                        <tr>
+                            <th>Funcionalidad</th>
+                            <th>Free <span class="badge badge-free">$0</span></th>
+                            <th>Essential ($14/mes)</th>
+                            <th>Pro ($29/mes)</th>
+                            <th>Business ($69/mes)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Contactos activos / mes</td>
+                            <td>25</td>
+                            <td>250</td>
+                            <td>2,500</td>
+                            <td>7,500 (+ overage)</td>
+                        </tr>
+                        <tr>
+                            <td>Canales conectados</td>
+                            <td>2 (a elegir)</td>
+                            <td>2 (a elegir)</td>
+                            <td>3</td>
+                            <td>Ilimitados</td>
+                        </tr>
+                        <tr>
+                            <td>Canales disponibles</td>
+                            <td colspan="2" style="text-align:center;">Instagram, Facebook Messenger, TikTok, Telegram
+                            </td>
+                            <td>+ WhatsApp, SMS o Email</td>
+                            <td>Todos</td>
+                        </tr>
+                        <tr>
+                            <td>WhatsApp <span class="badge badge-pro">PRO+</span></td>
+                            <td class="cell-no">✕</td>
+                            <td class="cell-no">✕</td>
+                            <td class="cell-yes">✓</td>
+                            <td class="cell-yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Automatizaciones</td>
+                            <td>4 activas</td>
+                            <td>Ilimitadas</td>
+                            <td>Ilimitadas + IA y A/B testing</td>
+                            <td>Todo + 5 usuarios</td>
+                        </tr>
+                        <tr>
+                            <td>Usuarios / Inbox</td>
+                            <td>1 usuario</td>
+                            <td>1 usuario</td>
+                            <td>Ampliado</td>
+                            <td>5 asientos + soporte prioritario</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="color: var(--muted); font-size: 0.85rem; margin-top: 1rem;">Nota: las conversaciones de WhatsApp
+                generan además un costo por conversación que Meta cobra aparte de la suscripción de ManyChat. En el plan
+                Business, los contactos que exceden el tope se cobran como overage (~$0.025 por contacto en plan
+                mensual).</p>
         </section>
 
         <!-- 4. TikTok -->
         <section>
             <h2 class="section-title"><span class="num">4</span> Integración con TikTok</h2>
             <p class="section-desc">ManyChat permite automatizar respuestas en TikTok DM bajo condiciones específicas.
-            </p>
+                Punto clave: <strong>los comentarios de videos NO disparan automatizaciones</strong> en la mayoría de
+                países — el trigger disponible es el mensaje directo (DM).</p>
+
+            <!-- SVG Animado: qué dispara y qué no dispara en TikTok -->
+            <div class="svg-panel">
+                <svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" role="img"
+                    aria-label="En TikTok un comentario no dispara la automatización de ManyChat; un DM con palabra clave sí">
+                    <!-- Lane 1: Comentario (bloqueado) -->
+                    <g>
+                        <rect x="20" y="30" width="170" height="56" rx="12" fill="rgba(255,0,80,0.08)"
+                            stroke="#ff0050" stroke-width="1.5" />
+                        <text x="105" y="53" text-anchor="middle" fill="#f9fafb" font-size="13" font-weight="700"
+                            font-family="Outfit, sans-serif">💬 Comentario en video</text>
+                        <text x="105" y="72" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">"INFO" en los comentarios</text>
+                    </g>
+                    <line x1="190" y1="58" x2="330" y2="58" stroke="#ff0050" stroke-width="2"
+                        stroke-dasharray="6 6" opacity="0.8">
+                        <animate attributeName="stroke-dashoffset" from="12" to="0" dur="1s"
+                            repeatCount="indefinite" />
+                    </line>
+                    <!-- Muro de bloqueo -->
+                    <g>
+                        <rect x="330" y="26" width="10" height="64" rx="3" fill="#ff0050" opacity="0.9" />
+                        <g>
+                            <animate attributeName="opacity" values="1;0.35;1" dur="1.6s"
+                                repeatCount="indefinite" />
+                            <line x1="352" y1="44" x2="380" y2="72" stroke="#f87171" stroke-width="4"
+                                stroke-linecap="round" />
+                            <line x1="380" y1="44" x2="352" y2="72" stroke="#f87171" stroke-width="4"
+                                stroke-linecap="round" />
+                        </g>
+                        <text x="400" y="50" fill="#f87171" font-size="12" font-weight="700"
+                            font-family="Outfit, sans-serif">Comment-to-DM no disponible</text>
+                        <text x="400" y="67" fill="#9ca3af" font-size="10.5"
+                            font-family="Outfit, sans-serif">Solo activo en Vietnam, Tailandia e Indonesia (beta).</text>
+                        <text x="400" y="82" fill="#9ca3af" font-size="10.5"
+                            font-family="Outfit, sans-serif">Restricción de la API de TikTok, no del plan.</text>
+                    </g>
+                    <!-- Lane 2: DM (funciona) -->
+                    <g>
+                        <rect x="20" y="160" width="170" height="56" rx="12" fill="rgba(16,185,129,0.08)"
+                            stroke="#10b981" stroke-width="1.5" />
+                        <text x="105" y="183" text-anchor="middle" fill="#f9fafb" font-size="13" font-weight="700"
+                            font-family="Outfit, sans-serif">📩 DM con palabra clave</text>
+                        <text x="105" y="202" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">Usuario escribe "INFO" por DM</text>
+                    </g>
+                    <line x1="190" y1="188" x2="280" y2="188" stroke="#10b981" stroke-width="2"
+                        stroke-dasharray="6 6">
+                        <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.8s"
+                            repeatCount="indefinite" />
+                    </line>
+                    <path d="M280 182 L292 188 L280 194 Z" fill="#10b981" />
+                    <g>
+                        <rect x="296" y="160" width="150" height="56" rx="12" fill="rgba(59,130,246,0.08)"
+                            stroke="#3b82f6" stroke-width="1.5" />
+                        <text x="371" y="183" text-anchor="middle" fill="#f9fafb" font-size="13" font-weight="700"
+                            font-family="Outfit, sans-serif">🤖 ManyChat</text>
+                        <text x="371" y="202" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">Trigger: DM entrante</text>
+                    </g>
+                    <line x1="446" y1="188" x2="536" y2="188" stroke="#10b981" stroke-width="2"
+                        stroke-dasharray="6 6">
+                        <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.8s"
+                            repeatCount="indefinite" />
+                    </line>
+                    <path d="M536 182 L548 188 L536 194 Z" fill="#10b981" />
+                    <g>
+                        <rect x="552" y="160" width="148" height="56" rx="12" fill="rgba(139,92,246,0.08)"
+                            stroke="#8b5cf6" stroke-width="1.5" />
+                        <text x="626" y="183" text-anchor="middle" fill="#f9fafb" font-size="13" font-weight="700"
+                            font-family="Outfit, sans-serif">🔗 Respuesta + Link</text>
+                        <text x="626" y="202" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">Registro, compra, recurso</text>
+                    </g>
+                    <!-- Labels de lane -->
+                    <text x="20" y="20" fill="#f87171" font-size="11" font-weight="700"
+                        font-family="Outfit, sans-serif">✕ NO dispara la automatización</text>
+                    <text x="20" y="150" fill="#6ee7b7" font-size="11" font-weight="700"
+                        font-family="Outfit, sans-serif">✓ SÍ dispara la automatización</text>
+                </svg>
+                <p class="svg-caption">En Instagram el comment-to-DM sí funciona con normalidad; en TikTok el usuario
+                    debe escribirte primero por mensaje directo.</p>
+            </div>
             <div class="grid">
                 <div class="card" style="border-left: 3px solid var(--tiktok);">
                     <h3><span class="icon">🔑</span> Requisito Obligatorio</h3>
@@ -578,7 +861,15 @@
                 <div class="card" style="border-left: 3px solid var(--tiktok);">
                     <h3><span class="icon">💬</span> Palabras Clave en DMs</h3>
                     <p>Se pueden configurar disparadores automáticos cuando un usuario escribe una palabra específica en
-                        los mensajes directos (ej: "INFO", "PRECIO").</p>
+                        los mensajes directos (ej: "INFO", "PRECIO"). Es el único trigger de TikTok disponible en la
+                        mayoría de regiones.</p>
+                </div>
+                <div class="card" style="border-left: 3px solid var(--tiktok);">
+                    <h3><span class="icon">🌎</span> Comentarios: Limitación Regional</h3>
+                    <p>El trigger de comentarios en videos (comment-to-DM) solo está activo en <strong>Vietnam,
+                            Tailandia e Indonesia</strong> (beta). No funciona en EE.UU., Reino Unido, la UE ni
+                        Latinoamérica: es una restricción de la API de TikTok, no del plan de ManyChat. En Instagram, en
+                        cambio, el comment-to-DM sí opera con normalidad.</p>
                 </div>
                 <div class="card" style="border-left: 3px solid var(--tiktok);">
                     <h3><span class="icon">🔗</span> Envío de Enlaces</h3>
@@ -593,9 +884,406 @@
             </div>
         </section>
 
-        <!-- 5. Flujos vs Agentes -->
+        <!-- 5. Instagram -->
         <section>
-            <h2 class="section-title"><span class="num">5</span> Flujos vs. Agentes Cognitivos</h2>
+            <h2 class="section-title"><span class="num">5</span> Integración con Instagram</h2>
+            <p class="section-desc">Instagram es el canal más completo de ManyChat y está disponible desde el plan Free.
+                A diferencia de TikTok, aquí el <strong>comment-to-DM sí funciona con normalidad</strong>: un comentario
+                con palabra clave en un post o reel dispara automáticamente una respuesta pública y un DM.</p>
+
+            <!-- SVG Animado (desktop): flujo comment-to-DM en Instagram -->
+            <div class="svg-panel">
+                <svg class="svg-desktop" viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" role="img"
+                    aria-label="Flujo de Instagram en ManyChat: un comentario con palabra clave dispara respuesta pública, DM automático, captura de dato y guardado en CRM">
+                    <!-- Badge disponible -->
+                    <g>
+                        <rect x="20" y="14" width="280" height="26" rx="13" fill="rgba(16,185,129,0.1)"
+                            stroke="#10b981" stroke-width="1">
+                            <animate attributeName="opacity" values="1;0.55;1" dur="2.2s"
+                                repeatCount="indefinite" />
+                        </rect>
+                        <text x="160" y="31" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="700"
+                            font-family="Outfit, sans-serif">✓ Comment-to-DM disponible en Instagram</text>
+                    </g>
+                    <!-- Paso 1: Comentario -->
+                    <g>
+                        <rect x="20" y="90" width="158" height="70" rx="12" fill="rgba(236,72,153,0.08)"
+                            stroke="#ec4899" stroke-width="1.5" />
+                        <text x="99" y="115" text-anchor="middle" fill="#f9fafb" font-size="13" font-weight="700"
+                            font-family="Outfit, sans-serif">💬 Comentario en Reel</text>
+                        <text x="99" y="133" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">Usuario comenta "INFO"</text>
+                        <text x="99" y="149" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">en tu post o reel</text>
+                    </g>
+                    <line x1="178" y1="125" x2="212" y2="125" stroke="#ec4899" stroke-width="2"
+                        stroke-dasharray="6 6">
+                        <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.8s"
+                            repeatCount="indefinite" />
+                    </line>
+                    <path d="M212 119 L224 125 L212 131 Z" fill="#ec4899" />
+                    <!-- Paso 2: ManyChat responde -->
+                    <g>
+                        <rect x="228" y="90" width="158" height="70" rx="12" fill="rgba(59,130,246,0.08)"
+                            stroke="#3b82f6" stroke-width="1.5" />
+                        <text x="307" y="115" text-anchor="middle" fill="#f9fafb" font-size="13" font-weight="700"
+                            font-family="Outfit, sans-serif">🤖 ManyChat</text>
+                        <text x="307" y="133" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">Respuesta pública en el hilo</text>
+                        <text x="307" y="149" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">+ DM automático al usuario</text>
+                    </g>
+                    <line x1="386" y1="125" x2="420" y2="125" stroke="#3b82f6" stroke-width="2"
+                        stroke-dasharray="6 6">
+                        <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.8s"
+                            repeatCount="indefinite" />
+                    </line>
+                    <path d="M420 119 L432 125 L420 131 Z" fill="#3b82f6" />
+                    <!-- Paso 3: Conversación DM -->
+                    <g>
+                        <rect x="436" y="90" width="130" height="70" rx="12" fill="rgba(16,185,129,0.08)"
+                            stroke="#10b981" stroke-width="1.5" />
+                        <text x="501" y="115" text-anchor="middle" fill="#f9fafb" font-size="13" font-weight="700"
+                            font-family="Outfit, sans-serif">📩 Conversación</text>
+                        <text x="501" y="133" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">Captura email /</text>
+                        <text x="501" y="149" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">teléfono en el chat</text>
+                    </g>
+                    <line x1="566" y1="125" x2="600" y2="125" stroke="#10b981" stroke-width="2"
+                        stroke-dasharray="6 6">
+                        <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.8s"
+                            repeatCount="indefinite" />
+                    </line>
+                    <path d="M600 119 L612 125 L600 131 Z" fill="#10b981" />
+                    <!-- Paso 4: CRM -->
+                    <g>
+                        <rect x="616" y="90" width="88" height="70" rx="12" fill="rgba(139,92,246,0.08)"
+                            stroke="#8b5cf6" stroke-width="1.5" />
+                        <text x="660" y="115" text-anchor="middle" fill="#f9fafb" font-size="13" font-weight="700"
+                            font-family="Outfit, sans-serif">📊 CRM</text>
+                        <text x="660" y="133" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">Lead</text>
+                        <text x="660" y="149" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">guardado</text>
+                    </g>
+                    <!-- Triggers adicionales -->
+                    <text x="20" y="205" fill="#9ca3af" font-size="11" font-weight="700"
+                        font-family="Outfit, sans-serif">Otros triggers de Instagram:</text>
+                    <text x="20" y="226" fill="#9ca3af" font-size="11"
+                        font-family="Outfit, sans-serif">📖 Respuesta a historia · 📣 Mención en historia · 💬 DM con palabra clave · 🔗 Link ig.me en bio o anuncios</text>
+                </svg>
+
+                <!-- SVG Animado (mobile): mismo flujo en vertical -->
+                <svg class="svg-mobile" viewBox="0 0 360 560" xmlns="http://www.w3.org/2000/svg" role="img"
+                    aria-label="Flujo de Instagram en ManyChat en vertical: comentario, respuesta automática, conversación DM y CRM">
+                    <g>
+                        <rect x="30" y="10" width="300" height="30" rx="15" fill="rgba(16,185,129,0.1)"
+                            stroke="#10b981" stroke-width="1">
+                            <animate attributeName="opacity" values="1;0.55;1" dur="2.2s"
+                                repeatCount="indefinite" />
+                        </rect>
+                        <text x="180" y="30" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="700"
+                            font-family="Outfit, sans-serif">✓ Comment-to-DM disponible</text>
+                    </g>
+                    <g>
+                        <rect x="40" y="60" width="280" height="74" rx="12" fill="rgba(236,72,153,0.08)"
+                            stroke="#ec4899" stroke-width="1.5" />
+                        <text x="180" y="88" text-anchor="middle" fill="#f9fafb" font-size="15" font-weight="700"
+                            font-family="Outfit, sans-serif">💬 Comentario en Reel</text>
+                        <text x="180" y="112" text-anchor="middle" fill="#9ca3af" font-size="12.5"
+                            font-family="Outfit, sans-serif">Usuario comenta "INFO" en tu post</text>
+                    </g>
+                    <line x1="180" y1="134" x2="180" y2="172" stroke="#ec4899" stroke-width="2"
+                        stroke-dasharray="6 6">
+                        <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.8s"
+                            repeatCount="indefinite" />
+                    </line>
+                    <path d="M174 172 L180 184 L186 172 Z" fill="#ec4899" />
+                    <g>
+                        <rect x="40" y="190" width="280" height="74" rx="12" fill="rgba(59,130,246,0.08)"
+                            stroke="#3b82f6" stroke-width="1.5" />
+                        <text x="180" y="218" text-anchor="middle" fill="#f9fafb" font-size="15" font-weight="700"
+                            font-family="Outfit, sans-serif">🤖 ManyChat</text>
+                        <text x="180" y="242" text-anchor="middle" fill="#9ca3af" font-size="12.5"
+                            font-family="Outfit, sans-serif">Respuesta pública + DM automático</text>
+                    </g>
+                    <line x1="180" y1="264" x2="180" y2="302" stroke="#3b82f6" stroke-width="2"
+                        stroke-dasharray="6 6">
+                        <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.8s"
+                            repeatCount="indefinite" />
+                    </line>
+                    <path d="M174 302 L180 314 L186 302 Z" fill="#3b82f6" />
+                    <g>
+                        <rect x="40" y="320" width="280" height="74" rx="12" fill="rgba(16,185,129,0.08)"
+                            stroke="#10b981" stroke-width="1.5" />
+                        <text x="180" y="348" text-anchor="middle" fill="#f9fafb" font-size="15" font-weight="700"
+                            font-family="Outfit, sans-serif">📩 Conversación DM</text>
+                        <text x="180" y="372" text-anchor="middle" fill="#9ca3af" font-size="12.5"
+                            font-family="Outfit, sans-serif">Captura email / teléfono en el chat</text>
+                    </g>
+                    <line x1="180" y1="394" x2="180" y2="432" stroke="#10b981" stroke-width="2"
+                        stroke-dasharray="6 6">
+                        <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.8s"
+                            repeatCount="indefinite" />
+                    </line>
+                    <path d="M174 432 L180 444 L186 432 Z" fill="#10b981" />
+                    <g>
+                        <rect x="40" y="450" width="280" height="74" rx="12" fill="rgba(139,92,246,0.08)"
+                            stroke="#8b5cf6" stroke-width="1.5" />
+                        <text x="180" y="478" text-anchor="middle" fill="#f9fafb" font-size="15" font-weight="700"
+                            font-family="Outfit, sans-serif">📊 CRM / Lista</text>
+                        <text x="180" y="502" text-anchor="middle" fill="#9ca3af" font-size="12.5"
+                            font-family="Outfit, sans-serif">Lead guardado y etiquetado</text>
+                    </g>
+                    <text x="180" y="548" text-anchor="middle" fill="#9ca3af" font-size="11.5"
+                        font-family="Outfit, sans-serif">📖 Historias · 📣 Menciones · 💬 DMs · 🔗 Links ig.me</text>
+                </svg>
+                <p class="svg-caption">Flujo completo de captura en Instagram: del comentario al lead guardado, sin
+                    intervención humana.</p>
+            </div>
+
+            <div class="grid">
+                <div class="card" style="border-left: 3px solid var(--pink);">
+                    <h3><span class="icon">🔑</span> Requisito Obligatorio</h3>
+                    <p>La cuenta de Instagram debe ser <strong>profesional (Business o Creator)</strong> y conectarse a
+                        ManyChat autorizando los permisos de mensajería de Meta. Las cuentas personales no son
+                        compatibles.</p>
+                </div>
+                <div class="card" style="border-left: 3px solid var(--pink);">
+                    <h3><span class="icon">💬</span> Comment-to-DM</h3>
+                    <p>El trigger estrella: un comentario con palabra clave en un post, reel o transmisión dispara una
+                        respuesta pública en el hilo y un DM automático. Es la mecánica del clásico "comenta INFO y te
+                        lo envío".</p>
+                </div>
+                <div class="card" style="border-left: 3px solid var(--pink);">
+                    <h3><span class="icon">📖</span> Historias y Menciones</h3>
+                    <p>Responder a una historia o mencionar la cuenta en una historia también puede iniciar un flujo.
+                        Útil para dinámicas de participación y para captar leads desde contenido efímero.</p>
+                </div>
+                <div class="card" style="border-left: 3px solid var(--pink);">
+                    <h3><span class="icon">⏱️</span> Ventana de 24 Horas</h3>
+                    <p>Por políticas de Meta, el bot puede conversar libremente dentro de las <strong>24 horas</strong>
+                        siguientes a la última interacción del usuario. Pasado ese tiempo, se requiere que el usuario
+                        vuelva a interactuar para reabrir la conversación.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. WhatsApp -->
+        <section>
+            <h2 class="section-title"><span class="num">6</span> Integración con WhatsApp (WABA)</h2>
+            <p class="section-desc">ManyChat sí es compatible con WhatsApp a través de la <strong>WhatsApp Business
+                    Platform (Cloud API)</strong>, con una WABA verificada y el plan Pro o superior. Hay <strong>dos
+                    rutas</strong> para conectar tu número: la <strong>migración completa</strong> (el número deja la
+                app del celular) o <strong>Coexistence</strong> (app y ManyChat conviven en el mismo número). Punto
+                clave para quien ya corre campañas: en ambas rutas <strong>los anuncios click-to-WhatsApp siguen
+                    funcionando igual</strong> — apuntan al número, no al entorno.</p>
+
+            <!-- SVG Animado (desktop): campañas CTWA y migración a WABA -->
+            <div class="svg-panel">
+                <svg class="svg-desktop" viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" role="img"
+                    aria-label="Una campaña click-to-WhatsApp sigue apuntando al mismo número tras migrar a WABA; lo que cambia es que los mensajes llegan a la Cloud API en lugar de la app del celular">
+                    <!-- Campaña -->
+                    <g>
+                        <rect x="20" y="105" width="160" height="70" rx="12" fill="rgba(59,130,246,0.08)"
+                            stroke="#3b82f6" stroke-width="1.5" />
+                        <text x="100" y="130" text-anchor="middle" fill="#f9fafb" font-size="13" font-weight="700"
+                            font-family="Outfit, sans-serif">📣 Campaña CTWA</text>
+                        <text x="100" y="148" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">Anuncio Meta Ads con</text>
+                        <text x="100" y="164" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">clic a WhatsApp</text>
+                    </g>
+                    <line x1="180" y1="140" x2="230" y2="140" stroke="#3b82f6" stroke-width="2"
+                        stroke-dasharray="6 6">
+                        <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.8s"
+                            repeatCount="indefinite" />
+                    </line>
+                    <path d="M230 134 L242 140 L230 146 Z" fill="#3b82f6" />
+                    <!-- Mismo número -->
+                    <g>
+                        <rect x="246" y="105" width="160" height="70" rx="12" fill="rgba(37,211,102,0.08)"
+                            stroke="#25d366" stroke-width="1.5" />
+                        <text x="326" y="130" text-anchor="middle" fill="#f9fafb" font-size="13" font-weight="700"
+                            font-family="Outfit, sans-serif">📱 Mismo número</text>
+                        <text x="326" y="148" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">La campaña no se toca:</text>
+                        <text x="326" y="164" text-anchor="middle" fill="#9ca3af" font-size="11"
+                            font-family="Outfit, sans-serif">el destino es el número</text>
+                    </g>
+                    <!-- Rama ANTES (app, apagada) -->
+                    <line x1="406" y1="122" x2="486" y2="70" stroke="#6b7280" stroke-width="2"
+                        stroke-dasharray="4 6" opacity="0.6" />
+                    <g opacity="0.55">
+                        <rect x="492" y="30" width="208" height="62" rx="12" fill="rgba(255,255,255,0.03)"
+                            stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5 4" />
+                        <text x="596" y="53" text-anchor="middle" fill="#9ca3af" font-size="12.5" font-weight="700"
+                            font-family="Outfit, sans-serif">📲 Antes: WhatsApp Business App</text>
+                        <text x="596" y="72" text-anchor="middle" fill="#6b7280" font-size="10.5"
+                            font-family="Outfit, sans-serif">Los chats llegaban al celular</text>
+                    </g>
+                    <!-- Rama DESPUÉS (WABA, activa) -->
+                    <line x1="406" y1="158" x2="486" y2="210" stroke="#25d366" stroke-width="2"
+                        stroke-dasharray="6 6">
+                        <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.8s"
+                            repeatCount="indefinite" />
+                    </line>
+                    <path d="M482 204 L492 216 L476 216 Z" fill="#25d366" />
+                    <g>
+                        <rect x="492" y="188" width="208" height="62" rx="12" fill="rgba(37,211,102,0.08)"
+                            stroke="#25d366" stroke-width="1.5" />
+                        <text x="596" y="211" text-anchor="middle" fill="#f9fafb" font-size="12.5" font-weight="700"
+                            font-family="Outfit, sans-serif">☁️ Ahora: WABA + ManyChat</text>
+                        <text x="596" y="230" text-anchor="middle" fill="#9ca3af" font-size="10.5"
+                            font-family="Outfit, sans-serif">Los chats llegan a la Cloud API y se</text>
+                        <text x="596" y="243" text-anchor="middle" fill="#9ca3af" font-size="10.5"
+                            font-family="Outfit, sans-serif">responden con automatización</text>
+                    </g>
+                    <!-- Badge 72h -->
+                    <g>
+                        <rect x="20" y="14" width="330" height="26" rx="13" fill="rgba(16,185,129,0.1)"
+                            stroke="#10b981" stroke-width="1">
+                            <animate attributeName="opacity" values="1;0.55;1" dur="2.2s"
+                                repeatCount="indefinite" />
+                        </rect>
+                        <text x="185" y="31" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="700"
+                            font-family="Outfit, sans-serif">⏱️ Bonus API: 72h de mensajes gratis por cada clic de anuncio</text>
+                    </g>
+                </svg>
+
+                <!-- SVG Animado (mobile): mismo contenido en vertical -->
+                <svg class="svg-mobile" viewBox="0 0 360 600" xmlns="http://www.w3.org/2000/svg" role="img"
+                    aria-label="Versión vertical: la campaña click-to-WhatsApp sigue funcionando con el mismo número tras migrar a WABA">
+                    <g>
+                        <rect x="30" y="10" width="300" height="44" rx="15" fill="rgba(16,185,129,0.1)"
+                            stroke="#10b981" stroke-width="1">
+                            <animate attributeName="opacity" values="1;0.55;1" dur="2.2s"
+                                repeatCount="indefinite" />
+                        </rect>
+                        <text x="180" y="28" text-anchor="middle" fill="#6ee7b7" font-size="12.5" font-weight="700"
+                            font-family="Outfit, sans-serif">⏱️ Bonus API: 72h de mensajes gratis</text>
+                        <text x="180" y="45" text-anchor="middle" fill="#6ee7b7" font-size="12.5" font-weight="700"
+                            font-family="Outfit, sans-serif">por cada clic de anuncio</text>
+                    </g>
+                    <g>
+                        <rect x="40" y="74" width="280" height="70" rx="12" fill="rgba(59,130,246,0.08)"
+                            stroke="#3b82f6" stroke-width="1.5" />
+                        <text x="180" y="102" text-anchor="middle" fill="#f9fafb" font-size="15" font-weight="700"
+                            font-family="Outfit, sans-serif">📣 Campaña CTWA</text>
+                        <text x="180" y="126" text-anchor="middle" fill="#9ca3af" font-size="12.5"
+                            font-family="Outfit, sans-serif">Anuncio Meta Ads con clic a WhatsApp</text>
+                    </g>
+                    <line x1="180" y1="144" x2="180" y2="180" stroke="#3b82f6" stroke-width="2"
+                        stroke-dasharray="6 6">
+                        <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.8s"
+                            repeatCount="indefinite" />
+                    </line>
+                    <path d="M174 180 L180 192 L186 180 Z" fill="#3b82f6" />
+                    <g>
+                        <rect x="40" y="198" width="280" height="70" rx="12" fill="rgba(37,211,102,0.08)"
+                            stroke="#25d366" stroke-width="1.5" />
+                        <text x="180" y="226" text-anchor="middle" fill="#f9fafb" font-size="15" font-weight="700"
+                            font-family="Outfit, sans-serif">📱 Mismo número</text>
+                        <text x="180" y="250" text-anchor="middle" fill="#9ca3af" font-size="12.5"
+                            font-family="Outfit, sans-serif">La campaña no se toca ni se recrea</text>
+                    </g>
+                    <line x1="180" y1="268" x2="180" y2="304" stroke="#25d366" stroke-width="2"
+                        stroke-dasharray="6 6">
+                        <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.8s"
+                            repeatCount="indefinite" />
+                    </line>
+                    <path d="M174 304 L180 316 L186 304 Z" fill="#25d366" />
+                    <g opacity="0.55">
+                        <rect x="40" y="322" width="280" height="70" rx="12" fill="rgba(255,255,255,0.03)"
+                            stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5 4" />
+                        <text x="180" y="350" text-anchor="middle" fill="#9ca3af" font-size="14" font-weight="700"
+                            font-family="Outfit, sans-serif">📲 Antes: app del celular</text>
+                        <text x="180" y="374" text-anchor="middle" fill="#6b7280" font-size="12"
+                            font-family="Outfit, sans-serif">Los chats llegaban al teléfono</text>
+                    </g>
+                    <line x1="180" y1="392" x2="180" y2="428" stroke="#25d366" stroke-width="2"
+                        stroke-dasharray="6 6">
+                        <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.8s"
+                            repeatCount="indefinite" />
+                    </line>
+                    <path d="M174 428 L180 440 L186 428 Z" fill="#25d366" />
+                    <g>
+                        <rect x="40" y="446" width="280" height="82" rx="12" fill="rgba(37,211,102,0.08)"
+                            stroke="#25d366" stroke-width="1.5" />
+                        <text x="180" y="474" text-anchor="middle" fill="#f9fafb" font-size="15" font-weight="700"
+                            font-family="Outfit, sans-serif">☁️ Ahora: WABA + ManyChat</text>
+                        <text x="180" y="497" text-anchor="middle" fill="#9ca3af" font-size="12.5"
+                            font-family="Outfit, sans-serif">Los chats llegan a la Cloud API y se</text>
+                        <text x="180" y="514" text-anchor="middle" fill="#9ca3af" font-size="12.5"
+                            font-family="Outfit, sans-serif">responden con automatización</text>
+                    </g>
+                    <text x="180" y="572" text-anchor="middle" fill="#9ca3af" font-size="11.5"
+                        font-family="Outfit, sans-serif">Ruta de migración completa · Con Coexistence la app no se pierde</text>
+                </svg>
+                <p class="svg-caption">Ruta 1 — Migración completa: la campaña apunta al número, no al entorno; cambia
+                    dónde llegan los mensajes, no el anuncio. Con la Ruta 2 (Coexistence, abajo) la app del celular ni
+                    siquiera se desconecta.</p>
+            </div>
+
+            <div class="grid">
+                <div class="card" style="border-left: 3px solid #25d366;">
+                    <h3><span class="icon">✅</span> Compatibilidad con ManyChat</h3>
+                    <p>ManyChat se conecta a WhatsApp vía <strong>Cloud API</strong>: el número debe estar en una WABA
+                        dentro de tu Meta Business Portfolio. En el pricing 2026 esto requiere el plan
+                        <strong>Pro ($29/mes)</strong> o superior; Free y Essential no incluyen WhatsApp.</p>
+                </div>
+                <div class="card" style="border-left: 3px solid #25d366;">
+                    <h3><span class="icon">📣</span> Tus campañas siguen intactas</h3>
+                    <p>Los anuncios click-to-WhatsApp apuntan al <strong>número</strong>, no al entorno. Al migrar el
+                        número de la app a una WABA, las campañas activas siguen funcionando sin recrearlas ni
+                        pausarlas. Verifica en Meta Business que el número quede vinculado a la página de Facebook del
+                        anuncio.</p>
+                </div>
+                <div class="card" style="border-left: 3px solid #25d366;">
+                    <h3><span class="icon">🔀</span> Migración completa: cambia el destino</h3>
+                    <p>En la migración completa, los mensajes <strong>dejan de llegar a la app del celular</strong> y
+                        entran por la Cloud API: se administran desde el panel o la app móvil de ManyChat. El historial,
+                        las etiquetas y las listas de difusión de la app no se transfieren, y la base de contactos de
+                        ManyChat arranca vacía (cada contacto se crea cuando te escribe).</p>
+                </div>
+                <div class="card" style="border-left: 3px solid #25d366;">
+                    <h3><span class="icon">⏱️</span> Ventaja para funnels pagados</h3>
+                    <p>Cada conversación iniciada desde un anuncio CTWA abre una <strong>ventana de 72 horas sin costo
+                            de mensajes</strong> (free entry point). Fuera de esa ventana, Meta cobra por plantilla
+                        entregada, y las plantillas requieren aprobación previa.</p>
+                </div>
+            </div>
+
+            <!-- Callout Coexistence -->
+            <div
+                style="margin-top: 2rem; background: linear-gradient(135deg, rgba(37, 211, 102, 0.08), rgba(59, 130, 246, 0.08)); border: 1px solid rgba(37, 211, 102, 0.35); border-radius: 1.25rem; padding: 2rem;">
+                <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.5rem;">🤝</span> Ruta 2 — Coexistence (Beta): app y ManyChat a la vez
+                    <span class="badge badge-free">SIN PERDER NADA</span>
+                </h3>
+                <p style="color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem;">Desde 2025, Meta permite que la
+                    <strong>WhatsApp Business App y la Cloud API convivan en el mismo número</strong>. ManyChat lo
+                    soporta con su conexión "Coexistence": la app del celular sigue funcionando normal (con sus
+                    etiquetas y listas de difusión intactas) mientras ManyChat automatiza sobre el mismo número.</p>
+                <ul style="color: var(--muted); font-size: 0.95rem; margin: 0 0 1rem 1.25rem; line-height: 1.9;">
+                    <li><strong>Mensajes espejados en tiempo real</strong> ("Messaging Echoes"): cada mensaje entrante o
+                        saliente aparece tanto en la app del celular como en el inbox de ManyChat, y puedes responder
+                        desde cualquiera de las dos.</li>
+                    <li><strong>Sincroniza hasta 6 meses</strong> de historial de chats y contactos hacia ManyChat.</li>
+                    <li>Requiere WhatsApp Business App <strong>v2.24.5 o superior</strong> y pasar por el flujo de
+                        conexión de ManyChat (plan Pro+).</li>
+                    <li>No disponible en algunos países (UE, Reino Unido, India, Japón, Turquía, Australia, entre
+                        otros); en Latinoamérica sí está habilitado.</li>
+                </ul>
+                <p style="color: var(--muted); font-size: 0.9rem; margin: 0;">Al estar en beta, conviene confirmar la
+                    disponibilidad en el panel de ManyChat al conectar el canal de WhatsApp.</p>
+            </div>
+        </section>
+
+        <!-- 7. Flujos vs Agentes -->
+        <section>
+            <h2 class="section-title"><span class="num">7</span> Flujos vs. Agentes Cognitivos</h2>
             <p class="section-desc">ManyChat opera bajo lógica de flujos (if-then). Una arquitectura agéntica usa un LLM
                 como cerebro para razonar dinámicamente. Ambos enfoques son complementarios.</p>
             <div class="grid">
