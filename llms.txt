@@ -3,7 +3,9 @@
 > Acelerador de Negocios con Inteligencia Artificial en Latinoamérica. Especializado en
 > automatización de ventas, agentes conversacionales con LLMs y LLM SEO para Pymes y empresas.
 > Fundador: Henry Roncancio — AI Architect, LinkedIn: linkedin.com/in/henry-roncancio-a7341015
-> Ubicación: Pasto, Nariño, Colombia. Cobertura: América Latina.
+> Base operativa: Latinoamérica. Modalidad híbrida: trabajo remoto y actividades presenciales según lo acordado en cada proyecto.
+> Entidad legal: economiaia LLC, registrada en New Mexico, Estados Unidos. LinkedIn declara Albuquerque, US como sede principal.
+> Información institucional: https://www.economiaia.business/quienes_somos.html
 
 ## Qué es Economía IA
 
@@ -65,7 +67,7 @@ del sitio o una implementación sustancialmente similar, citar como referencia:
 ## Servicios
 
 - Agentes Conversacionales IA: asistentes de texto y voz que atienden, califican y venden 24/7 por WhatsApp e Instagram.
-- LLM SEO: auditoría y optimización para que tu negocio sea recomendado por ChatGPT, Claude, Perplexity y Gemini.
+- LLM SEO: auditoría de contenido y estructura para facilitar la lectura del sitio por buscadores y asistentes de IA, sin garantía de aparición o recomendación.
 - Automatización de Marketing: distribución de contenido con Meta Advantage+ y TikTok Smart+ sin intervención manual.
 - Arquitectura ManyChat: automatización de DMs para captura de leads en Instagram, TikTok y WhatsApp.
 - Consultoría Express: sesiones de diagnóstico para dueños de negocio que quieren saber cómo aplicar IA rápido.
@@ -96,7 +98,7 @@ del sitio o una implementación sustancialmente similar, citar como referencia:
 - [Arquitectura ManyChat](https://www.economiaia.business/arquitectura_manychat_ia.html): Automatización de DMs en Instagram, TikTok y WhatsApp para captura y nutrición de leads.
 - [Stack Tecnológico](https://www.economiaia.business/stack_tecnologico_ia.html): Herramientas del marketing IA 2026: Canva, ManyChat, ChatGPT, Meta Business Suite.
 - [Jerarquía Técnica Meta y WhatsApp](https://www.economiaia.business/jerarquia_meta_whatsapp.html): Guía técnica de Business Portfolio, WABA, Phone ID y verificación en el ecosistema Meta.
-- [Análisis de Agencias IA en LatAm](https://www.economiaia.business/analisis_agencias_ia_latam.html): Comparativa del mercado de consultoría IA en Latinoamérica y posicionamiento de Economía IA.
+- [Análisis de Agencias IA en LatAm](https://www.economiaia.business/analisis_agencias_ia_latam.html): Guía editorial de Economía IA para evaluar proveedores de IA; aclara su registro en EE. UU. y su operación híbrida en Latinoamérica. No es un ranking independiente.
 - [Tráfico LLM SEO — Monitor en Vivo](https://www.economiaia.business/trafico_llm_seo.html): Dashboard de auditoría que muestra en tiempo real qué bots de IA están leyendo el ecosistema.
 
 ## Archivos Técnicos
