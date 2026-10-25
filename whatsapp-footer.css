@@ -13,7 +13,7 @@ a.eia-whatsapp-footer.eia-whatsapp-footer {
   padding: 0;
   border: 0;
   background: transparent;
-  color: inherit;
+  color: #39ff14;
   font-family: inherit;
   font-size: 11px;
   font-weight: 500;
@@ -34,11 +34,11 @@ a.eia-whatsapp-footer .eia-whatsapp-icon {
   flex: none;
   width: 44px;
   height: 44px;
-  border: 1px solid #b9d5c6;
+  border: 1px solid #39ff14;
   border-radius: 12px;
-  background: #dcefe5;
-  color: #286548;
-  box-shadow: 0 2px 8px rgb(25 65 44 / 6%);
+  background: #082012;
+  color: #39ff14;
+  box-shadow: 0 0 12px rgb(57 255 20 / 22%), inset 0 0 8px rgb(57 255 20 / 8%);
   transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
@@ -51,6 +51,7 @@ a.eia-whatsapp-footer svg {
 
 a.eia-whatsapp-footer .eia-whatsapp-label {
   max-width: 100%;
+  color: #39ff14;
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
@@ -58,13 +59,13 @@ a.eia-whatsapp-footer .eia-whatsapp-label {
 }
 
 a.eia-whatsapp-footer.eia-whatsapp-footer:hover .eia-whatsapp-icon {
-  background: #cce6d7;
-  border-color: #92bba4;
+  background: #10321a;
+  border-color: #75ff5c;
   transform: translateY(-2px);
 }
 
 a.eia-whatsapp-footer:focus-visible {
-  outline: 2px solid #79b593;
+  outline: 2px solid #39ff14;
   outline-offset: 5px;
 }
 
