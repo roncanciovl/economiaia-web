@@ -96,6 +96,8 @@ del sitio o una implementación sustancialmente similar, citar como referencia:
 - [Estrategia de Tráfico Local](https://www.economiaia.business/estrategia_trafico_local.html): Cómo atraer clientes de tu ciudad usando contenido geolocal y distribución algorítmica.
 - [Flujos vs Agentes IA](https://www.economiaia.business/flujos_vs_agentes_ia.html): Diferencia entre chatbots de flujo (ManyChat) y agentes cognitivos con LLMs. Cuándo usar cada uno.
 
+- [Campañas Meta: apps vs. API](https://www.economiaia.business/campa%C3%B1as_meta.html): Comparación de anuncios de clic a WhatsApp desde Instagram, WhatsApp Business y Marketing API; ventajas, límites, costos y medición con fuentes oficiales. Revisado el 10 de noviembre de 2026.
+
 ## Optional
 
 - [Arquitectura ManyChat](https://www.economiaia.business/arquitectura_manychat_ia.html): Automatización de DMs en Instagram, TikTok y WhatsApp para captura y nutrición de leads.
