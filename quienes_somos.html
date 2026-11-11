@@ -11,14 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiénes Somos | Economía IA</title>
     <meta name="description"
-        content="Conoce qué hace Economía IA, quién lidera el proyecto y por qué nos especializamos en agentes conversacionales personalizados para pequeñas, medianas y grandes empresas y negocios.">
+        content="Economía IA es una consultora de inteligencia artificial aplicada. Conoce sus líneas de servicio, cómo trabaja, su entidad legal (economiaia LLC), quién la dirige y cómo contactarla.">
     <meta name="author" content="Henry Roncancio">
     <meta name="keywords"
-        content="Economía IA, quiénes somos, Henry Roncancio, agentes conversacionales personalizados, pequeñas empresas, negocios, IA en Latinoamérica">
+        content="Economía IA, economiaia LLC, quiénes somos, agentes de atención a clientes, marketing con IA, gestión del conocimiento, capacitación en IA, Henry Roncancio, IA en Latinoamérica">
     <link rel="canonical" href="https://www.economiaia.business/quienes_somos.html">
     <meta property="og:title" content="Quiénes Somos | Economía IA">
     <meta property="og:description"
-        content="Página institucional de Economía IA: qué hacemos, quién lidera el proyecto y cómo verificar la trayectoria de su fundador.">
+        content="Página corporativa de Economía IA: qué hace la empresa, sus líneas de servicio, su entidad legal, quién la dirige y cómo contactarla.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.economiaia.business/quienes_somos.html">
     <meta property="og:site_name" content="Economía IA">
@@ -26,7 +26,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Quiénes Somos | Economía IA">
     <meta name="twitter:description"
-        content="Página institucional de Economía IA: qué hacemos, quién lidera el proyecto y cómo verificar la trayectoria de su fundador.">
+        content="Página corporativa de Economía IA: qué hace la empresa, sus líneas de servicio, su entidad legal, quién la dirige y cómo contactarla.">
     <meta name="twitter:image" content="https://www.economiaia.business/logos/logo_economia_ia_neon_v4.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -827,6 +827,42 @@
             .circuit-side { display: none; }
             .legal-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
         }
+        /* ── Página corporativa: listas dentro de tarjetas y texto largo ── */
+        .profile-card .meta-list { margin-top: 0.9rem; font-size: 0.93rem; gap: 0.55rem; }
+        .card-links { display: flex; gap: 0.75rem; margin-top: 1rem; flex-wrap: wrap; }
+        .card-links .profile-link { margin: 0; }
+        .legal-value, .legal-value a, .profile-link { overflow-wrap: anywhere; }
+        .container .footer-premium { width: 100%; margin-top: 1.5rem; }
+        .legal-value a { color: var(--neon-cyan); text-decoration: none; }
+        .legal-value a:hover { text-shadow: var(--glow-cyan); }
+
+        @media (max-width: 600px) {
+            .container { width: calc(100% - 1.5rem); }
+            .nav-back { margin-top: 1.1rem; }
+            .hero { padding: 1.5rem 0 0.75rem; }
+            .hero-copy, .section-panel, .cta-panel { padding: 1.15rem; }
+            .hero-card, .profile-card, .proof-card, .step-card { padding: 1.05rem; }
+            .two-col, .profiles-grid, .proof-grid, .steps-grid { gap: 0.85rem; }
+            .hero-list, .meta-list { gap: 0.6rem; }
+            .legal-grid { gap: 0.6rem; }
+            .legal-item { padding: 0.7rem 0.85rem; }
+            .hero h1 { font-size: 2.35rem; margin: 0.75rem 0 1rem; }
+            .hero p { font-size: 1rem; line-height: 1.7; }
+            .section-title { font-size: 1.45rem; }
+            .section-intro { margin-bottom: 1.25rem; line-height: 1.7; }
+            .legal-grid { grid-template-columns: 1fr; }
+            .product-card-content { padding: 1.35rem; }
+            .product-card-img { height: 180px; }
+            .cta-panel { margin-bottom: 2.5rem; gap: 1.1rem; }
+            .cta-panel h2 { font-size: 1.3rem; }
+            .cta-btn { min-width: 0; }
+            /* Espacio para que el botón de Sigma no tape el pie. */
+            .container .footer-premium { margin-bottom: 5.5rem; }
+            .ai-widget-container { bottom: 1rem; right: 1rem; }
+            /* En el teléfono el globo tapa el texto; queda el botón. */
+            .ai-widget-tooltip { display: none; }
+        }
+
         /* ── AI Widget Styles ── */
         .ai-widget-container {
             position: fixed;
@@ -871,19 +907,24 @@
         .ai-widget-btn {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #3b82f6, #22d3ee);
-            border: none;
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
         }
 
-        .ai-widget-btn:hover { transform: scale(1.1); }
-        .ai-widget-btn svg { width: 30px; height: 30px; fill: white; }
+        .ai-widget-btn:hover { transform: scale(1.1); box-shadow: 0 15px 35px rgba(59, 130, 246, 0.6); }
+        .ai-widget-btn svg { width: 30px; height: 30px; fill: white; animation: float-icon 3s ease-in-out infinite; }
+
+        @keyframes float-icon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
 
         .ai-chat-panel {
             position: fixed;
@@ -986,10 +1027,10 @@
   "@type": "AboutPage",
   "name": "Quiénes Somos | Economía IA",
   "url": "https://www.economiaia.business/quienes_somos.html",
-  "description": "Página institucional de Economía IA con información sobre qué hace la empresa, quién la lidera y cómo verificar su trayectoria.",
+  "description": "Página corporativa de Economía IA: qué hace la empresa, sus líneas de servicio, cómo trabaja, su entidad legal, quién la dirige y cómo contactarla.",
   "inLanguage": "es",
   "datePublished": "2026-03-07",
-  "dateModified": "2026-09-13",
+  "dateModified": "2026-11-11",
   "mainEntity": {
     "@type": "Organization",
     "@id": "https://www.economiaia.business/#organization",
@@ -998,7 +1039,7 @@
     "foundingDate": "2025-05-17",
     "url": "https://www.economiaia.business/",
     "logo": "https://www.economiaia.business/logos/logo_economia_ia_neon_v4.png",
-    "description": "Economía IA diseña e implementa agentes conversacionales y ofrece consultoría y entrenamiento empresarial en IA y automatización. Su entidad legal está registrada en New Mexico, Estados Unidos; su base operativa está en Latinoamérica y funciona en modalidad híbrida: trabajo remoto y actividades presenciales según lo acordado en cada proyecto.",
+    "description": "Economía IA es una consultora de inteligencia artificial aplicada: diseña e implementa agentes de atención a clientes con la lógica de operación de cada negocio, sistemas de ventas con IA y gestión del conocimiento empresarial, y ofrece capacitación aplicada. Su entidad legal está registrada en New Mexico, Estados Unidos; su base operativa está en Latinoamérica y funciona en modalidad híbrida: trabajo remoto y actividades presenciales según lo acordado en cada proyecto.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "1209 Mountain Road Pl NE, Ste N",
@@ -1027,11 +1068,160 @@
       "Desarrollo e implementación de agentes conversacionales",
       "Entrenamiento empresarial en IA",
       "Ingeniería de software con IA",
-      "Automatización comercial B2B y B2C"
+      "Automatización comercial B2B y B2C",
+      "Marketing con IA y automatización comercial en WhatsApp",
+      "Gestión del conocimiento profesional y empresarial"
     ],
     "areaServed": {
       "@type": "Place",
       "name": "Latinoamérica"
+    },
+    "email": "admin@economiaia.business",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "telephone": "+573043656226",
+      "email": "admin@economiaia.business",
+      "availableLanguage": "es"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de Economía IA",
+      "url": "https://www.economiaia.business/precios_y_planes_ia.html",
+      "itemListElement": [
+        {
+          "@type": "OfferCatalog",
+          "name": "Agentes de atención a clientes",
+          "url": "https://www.economiaia.business/agentes_conversacionales_ia.html",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Agente de atención a clientes con la lógica de tu negocio"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Plan Básico de agentes conversacionales"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Plan Profesional de agentes conversacionales"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Plan Empresarial de agentes conversacionales"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Agente de Reservas por WhatsApp y web"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Setup de IA nativa de Meta para WhatsApp Business"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Integración con formularios, CRM, calendarios y herramientas existentes"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Marketing con IA",
+          "url": "https://www.economiaia.business/precios_y_planes_ia.html",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Arranque de Marketing con IA"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Marketing Gestionado"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Instalación y auditoría de píxel, CAPI y GA4"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Gestión del conocimiento",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Red Henry para organizaciones: gestión del conocimiento"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Formación y consultoría",
+          "url": "https://reservas.economiaia.business",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Consultoría Express: diagnóstico de tu negocio"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Crea tu Negocio Online con IA (curso)"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Multiplica tu Productividad con IA (IAboost)"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Tutoría personalizada"
+              }
+            }
+          ]
+        }
+      ]
     },
     "founder": {
       "@type": "Person",
@@ -1064,7 +1254,8 @@
       "https://www.linkedin.com/company/economiaia",
       "https://descubre.economiaia.business",
       "https://www.tiktok.com/@economiaia",
-      "https://www.instagram.com/economiaia/"
+      "https://www.instagram.com/economiaia/",
+      "https://www.facebook.com/737273306132681"
     ]
   }
 }
@@ -1111,6 +1302,7 @@
 </head>
 
 <body>
+    <!-- Contenido corporativo tomado de /api/perfil-empresa, versión d9bd9e96dea7, el 2026-11-11 -->
 
     <!-- ═══════════════════════════════════════
          Decoraciones dinámicas neón
@@ -1178,7 +1370,7 @@
         <a href="index.html" class="nav-back">← Volver al Ecosistema</a>
 
         <header class="hero">
-            <span class="eyebrow">Página institucional</span>
+            <span class="eyebrow">Página corporativa</span>
             <div class="hero-grid">
                 <div class="hero-copy">
                     <div class="hero-logo-wrap">
@@ -1186,7 +1378,7 @@
                         <span class="hero-brand-text">Economía IA</span>
                     </div>
                     <h1>Economía IA</h1>
-                    <p><span class="hero-strong">Economía IA diseña e implementa <a href="agentes_conversacionales_ia.html" style="color:var(--neon-cyan);text-decoration:underline;text-decoration-color:rgba(0,212,255,0.35);">agentes conversacionales</a> para pequeñas, medianas y grandes empresas y negocios en Colombia y Latinoamérica.</span> Creamos sistemas que atienden clientes, organizan conversaciones y apoyan las ventas en WhatsApp, web, Instagram y voz — sin que necesites contratar más personal.</p>
+                    <p><span class="hero-strong">Economía IA es una consultora de inteligencia artificial aplicada para negocios de habla hispana.</span> Diseña e implementa <a href="agentes_conversacionales_ia.html" style="color:var(--neon-cyan);text-decoration:underline;text-decoration-color:rgba(0,212,255,0.35);">agentes de atención a clientes</a> con la lógica de operación de cada negocio, sistemas de ventas con IA y una sola fuente del conocimiento de la empresa.</p>
                     <div class="social-links">
                         <a class="social-pill" href="javascript:void(0)" data-lk="aHR0cHM6Ly93d3cudGlrdG9rLmNvbS9AZWNvbm9taWFpYQ==" onclick="window.open(atob(this.getAttribute('data-lk')), '_blank');" target="_blank" rel="noopener noreferrer">
                             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.75a8.16 8.16 0 0 0 4.77 1.52V6.83a4.85 4.85 0 0 1-1-.14z"/></svg>
@@ -1199,12 +1391,13 @@
                     </div>
                 </div>
                 <aside class="hero-card">
-                    <h2>En una sola lectura</h2>
+                    <h2>La empresa en una lectura</h2>
                     <ul class="hero-list">
-                        <li><strong>Qué hace:</strong> diseña e implementa agentes de IA que atienden clientes y apoyan ventas.</li>
-                        <li><strong>Quién lidera:</strong> Henry Roncancio, experto en Inteligencia Artificial con experiencia empresarial e institucional.</li>
-                        <li><strong>Para quién:</strong> pequeñas, medianas y grandes empresas y negocios que quieren atender mejor sin crecer en personal.</li>
-                        <li><strong>Dónde opera:</strong> Base operativa en Latinoamérica, modalidad híbrida: trabajo remoto y actividades presenciales según lo acordado en cada proyecto.</li>
+                        <li><strong>Qué hace:</strong> consultoría, agentes de atención a clientes, automatización comercial y gestión del conocimiento con inteligencia artificial.</li>
+                        <li><strong>Para quién:</strong> negocios pequeños y locales, pymes, comercios y empresas que venden por conversaciones; también gremios y equipos que necesitan capacitación práctica en IA.</li>
+                        <li><strong>Dónde opera:</strong> base operativa en Latinoamérica, modalidad híbrida: trabajo remoto y actividades presenciales según lo acordado en cada proyecto.</li>
+                        <li><strong>Entidad legal:</strong> economiaia LLC, constituida en New Mexico, Estados Unidos, el 17 de mayo de 2025.</li>
+                        <li><strong>Quién la dirige:</strong> Henry Roncancio, fundador, a cargo de la estrategia y del diseño técnico.</li>
                     </ul>
                 </aside>
             </div>
@@ -1213,55 +1406,111 @@
         <section class="section">
             <div class="section-panel">
                 <h2 class="section-title">Qué hacemos</h2>
-                <p class="section-intro">Ayudamos a negocios que quieren atender más rápido, responder mejor y vender con menos esfuerzo manual. Creamos <a href="agentes_conversacionales_ia.html" style="color:var(--neon-cyan);text-decoration:underline;text-decoration-color:rgba(0,212,255,0.35);">agentes conversacionales</a> que se adaptan al proceso real de tu empresa — no plantillas genéricas.</p>
+                <p class="section-intro">No vendemos tecnología genérica. Diseñamos sistemas prácticos de atención, captura y conversión con IA, adaptados al proceso real de cada negocio. Estas son las cuatro líneas de servicio de la empresa.</p>
                 <div class="two-col">
-                    <ul class="meta-list">
-                        <li><strong>Canales:</strong> WhatsApp, web, Instagram, voz y automatizaciones de mensajería.</li>
-                        <li><strong>Qué hace el agente:</strong> responde preguntas, califica prospectos, acompaña el proceso de venta y organiza conversaciones.</li>
-                        <li><strong>Para quién:</strong> pequeñas empresas, negocios locales y marcas que quieren crecer sin aumentar su equipo de atención.</li>
-                    </ul>
-                    <ul class="meta-list">
-                        <li><strong>Lenguaje:</strong> explicamos todo en términos claros, sin tecnicismos innecesarios.</li>
-                        <li><strong>Integraciones:</strong> conectamos el agente con las herramientas que ya usas — formularios, CRMs, calendarios y más.</li>
-                        <li><strong>Proceso:</strong> diagnóstico del negocio → diseño del agente → implementación → ajuste con datos reales.</li>
-                    </ul>
+                    <article class="profile-card">
+                        <span class="mini-label">Agentes conversacionales</span>
+                        <h3>Agentes de atención a clientes</h3>
+                        <p>Agentes de IA que atienden por WhatsApp, Telegram, web, Instagram y voz con la lógica de operación de cada negocio: qué preguntan, a quién filtran, qué ofrecen y cuándo pasan a una persona.</p>
+                        <ul class="meta-list">
+                            <li>Agente de atención a clientes con la lógica del negocio</li>
+                            <li>Planes Básico, Profesional y Empresarial</li>
+                            <li>Agente de Reservas por WhatsApp y web</li>
+                            <li>IA nativa de Meta para WhatsApp Business</li>
+                            <li>Integración con formularios, CRM, calendarios y herramientas existentes</li>
+                        </ul>
+                        <div class="card-links">
+                            <a class="profile-link" href="agentes_conversacionales_ia.html">Ver agentes conversacionales →</a>
+                        </div>
+                    </article>
+                    <article class="profile-card">
+                        <span class="mini-label">Marketing con IA</span>
+                        <h3>Publicidad y sistemas de ventas</h3>
+                        <p>Anuncios en Facebook e Instagram que llevan la conversación al WhatsApp del negocio, con la cuenta publicitaria conectada a un asistente de IA que la revisa y dice qué está funcionando.</p>
+                        <ul class="meta-list">
+                            <li>Arranque de Marketing con IA</li>
+                            <li>Marketing Gestionado, con reporte mensual en lenguaje claro</li>
+                            <li>Instalación y auditoría de píxel, CAPI y GA4</li>
+                        </ul>
+                        <div class="card-links">
+                            <a class="profile-link" href="precios_y_planes_ia.html">Ver planes y precios →</a>
+                        </div>
+                    </article>
+                    <article class="profile-card">
+                        <span class="mini-label">Gestión del conocimiento</span>
+                        <h3>Red Henry para organizaciones</h3>
+                        <p>Plataforma para que una empresa o un programa académico administre su conocimiento en una sola fuente: se corrige una vez y llega a sus agentes, su página web, sus perfiles y sus documentos, con registro de cada cambio.</p>
+                        <ul class="meta-list">
+                            <li>Economía IA la implementa y la opera; empieza con un diagnóstico de alcance cerrado</li>
+                            <li>Para programas académicos: hojas de vida de los profesores en el formato de acreditación, desde un perfil que cada profesor aprueba</li>
+                            <li>Red Profesional, el plugin para profesionales y docentes, está en desarrollo y aún no está a la venta</li>
+                        </ul>
+                    </article>
+                    <article class="profile-card">
+                        <span class="mini-label">Formación y consultoría</span>
+                        <h3>Capacitación aplicada y diagnóstico</h3>
+                        <p>Capacitación práctica en marketing digital y automatización con IA para empresas, gremios y grupos, y una sesión de diagnóstico para decidir por dónde empezar.</p>
+                        <ul class="meta-list">
+                            <li>Consultoría Express: diagnóstico del negocio en una hora</li>
+                            <li>Curso «Crea tu Negocio Online con IA», de 12 semanas</li>
+                            <li>Guía «Multiplica tu Productividad con IA» y tutoría personalizada</li>
+                            <li>Ebook «Tu Copiloto Digital» y tutoriales gratuitos</li>
+                        </ul>
+                        <div class="card-links">
+                            <a class="profile-link" href="https://reservas.economiaia.business" target="_blank" rel="noopener noreferrer">Eventos y reservas →</a>
+                            <a class="profile-link" href="https://descubre.economiaia.business" target="_blank" rel="noopener noreferrer">Recursos →</a>
+                        </div>
+                    </article>
+                </div>
+                <p class="proof-note">Los planes y servicios se cotizan en dólares (USD). La inversión de cada plan varía según los canales a conectar y lo que el negocio necesite; los valores vigentes están en <a href="precios_y_planes_ia.html" style="color:var(--neon-cyan);text-decoration:underline;text-decoration-color:rgba(0,212,255,0.35);">Planes y precios</a>.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-panel" style="--accent-line: rgba(249,115,22,0.7);">
+                <h2 class="section-title">Agentes Cognitivos</h2>
+                <p class="section-intro">Agentes inteligentes diseñados bajo nuestro ecosistema para maximizar tu productividad, resolver problemas complejos y potenciar tus ventas de forma autónoma.</p>
+
+                <div class="products-grid">
+                    <article class="product-card product-card--purple">
+                        <div class="product-card-img-wrap">
+                            <img src="agente_ia_cognitivo.png" alt="Agentes Conversacionales de IA" class="product-card-img">
+                        </div>
+                        <div class="product-card-content">
+                            <h3 class="product-card-title">Agentes Conversacionales de IA</h3>
+                            <p class="product-card-desc">Agentes cognitivos personalizados para tu negocio: por web, WhatsApp, Instagram y voz. Automatiza ventas, soporte y atención al cliente con inteligencia artificial conversacional.</p>
+                            <div class="product-card-bottom">
+                                <a href="agentes_conversacionales_ia.html" class="product-btn product-btn--primary">Conocer más</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
         <section class="section">
             <div class="section-panel">
-                <h2 class="section-title">Quién lidera Economía IA</h2>
-                <p class="section-intro">Detrás de Economía IA hay una persona real con experiencia verificable. Esta sección existe para que puedas saber con claridad quién diseña e implementa los agentes, dónde encontrar más información pública y cómo validar la trayectoria antes de tomar cualquier decisión.</p>
-                <div class="profiles-grid">
-                    <article class="profile-card">
-                        <span class="mini-label">Fundador</span>
-                        <h3>Henry Roncancio</h3>
-                        <p>Ingeniero electrónico y magíster en Ingeniería Mecánica por la Universidade de São Paulo. Diseña y opera arquitecturas de agentes de IA y sistemas multiagente, con orquestación de herramientas, trazabilidad, revisión humana y gobierno del dato. Lidera la estrategia y el diseño técnico de Economía IA, y desarrolla docencia en inteligencia artificial y ROS como Profesor de Cátedra — Categoría Asociado en la Universidad Militar Nueva Granada.</p>
-                        <p>Su experiencia en ingeniería de agentes incluye orquestación por grafos con LangGraph, integración de fuentes y herramientas, y despliegues de modelos de lenguaje en infraestructura privada de Vertex AI. El enfoque combina diagnóstico del proceso, arquitectura, evaluación y operación supervisada. Estas capacidades describen su trayectoria y proyectos propios; no implican resultados comerciales o financieros garantizados ni aval institucional de la UMNG.</p>
-                        <a class="profile-link" href="henry_roncancio.html">Ver perfil completo →</a>
-                        <a class="profile-link" href="https://orcid.org/0009-0009-9954-9813" target="_blank" rel="noopener noreferrer">ORCID 0009-0009-9954-9813 →</a>
-                        <a class="profile-link" href="https://scholar.google.com/citations?user=1iRSoqgAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar →</a>
+                <h2 class="section-title">Cómo trabajamos</h2>
+                <p class="section-intro">La implementación técnica la hace Economía IA: el negocio no necesita saber programar. Entrega su información —servicios, precios o rangos, horarios, preguntas frecuentes y tono— y aprueba cómo va a responder el agente antes de abrirlo al público.</p>
+                <div class="two-col">
+                    <article class="step-card">
+                        <h3>1. Diagnóstico del negocio</h3>
+                        <p>Revisamos la oferta, el mensaje, la información con la que se atiende y las reglas comerciales, para saber qué está frenando al negocio y por dónde empezar.</p>
                     </article>
-                    <article class="profile-card">
-                        <span class="mini-label">Perfiles públicos</span>
-                        <h3>LinkedIn y página bio</h3>
-                        <p>Puedes verificar la empresa en LinkedIn y acceder a todos los canales desde descubre.economiaia.business. Toda la información es pública.</p>
-                        <div style="display:flex;gap:0.75rem;margin-top:1rem;flex-wrap:wrap;">
-                            <a class="profile-link" style="margin:0;" href="https://www.linkedin.com/company/economiaia" target="_blank" rel="noopener noreferrer">LinkedIn empresa →</a>
-                            <a class="profile-link" style="margin:0;" href="https://descubre.economiaia.business" target="_blank" rel="noopener noreferrer">Página bio →</a>
-                        </div>
+                    <article class="step-card">
+                        <h3>2. Diseño del agente</h3>
+                        <p>La lógica y el tono se diseñan con el negocio: qué pregunta el agente, a quién filtra, qué ofrece y cuándo pasa a una persona. El negocio los aprueba.</p>
                     </article>
-                    <article class="profile-card">
-                        <span class="mini-label">Contenido</span>
-                        <h3>TikTok e Instagram</h3>
-                        <p>Publicamos contenido sobre IA aplicada a negocios en lenguaje simple. Es una forma de conocer el estilo de trabajo antes de hablar. Ambos canales bajo el handle <strong style="color:var(--text)">@economiaia</strong>.</p>
-                        <div style="display:flex;gap:0.75rem;margin-top:1rem;flex-wrap:wrap;">
-                            <a class="profile-link" style="margin:0;" href="javascript:void(0)" data-lk="aHR0cHM6Ly93d3cudGlrdG9rLmNvbS9AZWNvbm9taWFpYQ==" onclick="window.open(atob(this.getAttribute('data-lk')), '_blank');" target="_blank" rel="noopener noreferrer">TikTok →</a>
-                            <a class="profile-link" style="margin:0;" href="javascript:void(0)" data-lk="aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9lY29ub21pYWlhLw==" onclick="window.open(atob(this.getAttribute('data-lk')), '_blank');" target="_blank" rel="noopener noreferrer">Instagram →</a>
-                        </div>
+                    <article class="step-card">
+                        <h3>3. Implementación</h3>
+                        <p>Conectamos los canales y la información del negocio. Antes de abrirlo, el agente se prueba con conversaciones simuladas para que responda corto, sin repetirse y sin respuestas enlatadas.</p>
+                    </article>
+                    <article class="step-card">
+                        <h3>4. Ajuste con datos reales</h3>
+                        <p>Con el agente en operación, se ajusta a partir de las conversaciones reales. El agente orienta, responde y filtra; cuando detecta intención alta, deriva a la persona indicada.</p>
                     </article>
                 </div>
+                <p class="proof-note">Cada negocio tiene su propia copia del agente, con sus datos. Al empezar, el cliente ve un aviso de privacidad corto y puede pedir hablar con una persona o borrar sus datos cuando quiera.</p>
             </div>
         </section>
 
@@ -1292,6 +1541,10 @@
                         <span class="legal-value">0008026752</span>
                     </div>
                     <div class="legal-item">
+                        <span class="legal-label">File Number</span>
+                        <span class="legal-value">3064967</span>
+                    </div>
+                    <div class="legal-item">
                         <span class="legal-label">Dirección registrada</span>
                         <span class="legal-value">1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110, Estados Unidos</span>
                     </div>
@@ -1304,69 +1557,84 @@
         </section>
 
         <section class="section">
-            <div class="section-panel" style="--accent-line: rgba(249,115,22,0.7);">
-                <h2 class="section-title">Agentes Cognitivos</h2>
-                <p class="section-intro">Agentes inteligentes diseñados bajo nuestro ecosistema para maximizar tu productividad, resolver problemas complejos y potenciar tus ventas de forma autónoma.</p>
+            <div class="section-panel">
+                <h2 class="section-title">Quién dirige Economía IA</h2>
+                <article class="profile-card">
+                    <span class="mini-label">Fundador</span>
+                    <h3>Henry Roncancio</h3>
+                    <p>Fundó Economía IA en mayo de 2025 y dirige su estrategia y su diseño técnico. Es ingeniero electrónico y magíster en Ingeniería Mecánica por la Universidade de São Paulo, y diseña y opera arquitecturas de agentes de IA.</p>
+                    <div class="card-links">
+                        <a class="profile-link" href="henry_roncancio.html">Ver perfil completo →</a>
+                        <a class="profile-link" href="https://orcid.org/0009-0009-9954-9813" target="_blank" rel="noopener noreferrer">ORCID →</a>
+                        <a class="profile-link" href="https://roncanciovl.github.io/" target="_blank" rel="noopener noreferrer">Portafolio profesional →</a>
+                        <a class="profile-link" href="https://roncanciovl.github.io/red-publica.html" target="_blank" rel="noopener noreferrer">Mapa de relaciones →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-                <div class="products-grid">
-                    <article class="product-card product-card--purple">
-                        <div class="product-card-img-wrap">
-                            <img src="agente_ia_cognitivo.png" alt="Agentes Conversacionales de IA" class="product-card-img">
-                        </div>
-                        <div class="product-card-content">
-                            <h3 class="product-card-title">Agentes Conversacionales de IA</h3>
-                            <p class="product-card-desc">Agentes cognitivos personalizados para tu negocio: por web, WhatsApp, Instagram y voz. Automatiza ventas, soporte y atención al cliente con inteligencia artificial conversacional.</p>
-                            <div class="product-card-bottom">
-                                <a href="agentes_conversacionales_ia.html" class="product-btn product-btn--primary">Conocer más</a>
-                            </div>
-                        </div>
+        <section class="section">
+            <div class="section-panel">
+                <h2 class="section-title">Preguntas frecuentes</h2>
+                <p class="section-intro">Las respuestas cortas a lo que más nos preguntan antes de una primera conversación.</p>
+                <div class="two-col">
+                    <article class="proof-card">
+                        <h3>¿Venden un chatbot genérico?</h3>
+                        <p>No. Cada agente se diseña con la lógica de operación del negocio: qué pregunta, a quién filtra, qué ofrece y cuándo pasa a una persona. El negocio la aprueba y el agente responde con la información de su hoja.</p>
+                    </article>
+                    <article class="proof-card">
+                        <h3>¿En qué canales trabajan?</h3>
+                        <p>El canal principal es WhatsApp, porque ahí ya ocurren las conversaciones reales del negocio. Según el caso, también Telegram, web, Instagram, voz y automatizaciones de mensajería.</p>
+                    </article>
+                    <article class="proof-card">
+                        <h3>¿Se necesita página web o saber programar?</h3>
+                        <p>No. La operación puede arrancar con WhatsApp y una base de conocimiento en una hoja de cálculo o en documentos estructurados. La implementación técnica la hace Economía IA.</p>
+                    </article>
+                    <article class="proof-card">
+                        <h3>¿El agente reemplaza a un vendedor o asesor?</h3>
+                        <p>No. El sistema orienta, responde y filtra. Cuando detecta intención alta, deriva a la persona correcta.</p>
+                    </article>
+                    <article class="proof-card">
+                        <h3>¿También ofrecen formación?</h3>
+                        <p>Sí. Economía IA ofrece capacitación en marketing digital y automatización con inteligencia artificial para empresas y grupos.</p>
+                    </article>
+                    <article class="proof-card">
+                        <h3>¿Con qué empresas han trabajado?</h3>
+                        <p>Economía IA es una consultora en etapa inicial. Las capacitaciones a Toyota Colombia (2024) y a la Agencia Nacional de Minería (2025) las dictó Henry Roncancio como contratista de la Universidad Militar Nueva Granada: no son clientes de Economía IA.</p>
                     </article>
                 </div>
             </div>
         </section>
 
         <section class="section">
-            <div class="section-panel">
-                <h2 class="section-title">Trayectoria del fundador</h2>
-                <p class="section-intro">Economía IA se fundó en mayo de 2025. Su criterio técnico proviene de la trayectoria verificable de Henry Roncancio en docencia, formación empresarial e investigación aplicada. Los antecedentes de esta sección son suyos y fueron ejecutados como contratista de la Universidad Militar Nueva Granada, no como contratos de Economía IA.</p>
-                <div class="proof-grid">
-                    <article class="proof-card">
-                        <span class="proof-meta">UMNG · Toyota Colombia · junio 2024</span>
-                        <h3>Formación empresarial</h3>
-                        <p>Henry Roncancio dictó el Diplomado en Análisis de Datos y Big Data para empleados de Toyota Colombia, mediante la OPS DIVTAH-0834/2024 de la Universidad Militar Nueva Granada. Toyota Colombia fue la entidad beneficiaria de la formación.</p>
-                    </article>
-                    <article class="proof-card">
-                        <span class="proof-meta">UMNG · Agencia Nacional de Minería · 2025</span>
-                        <h3>Formación en el sector público</h3>
-                        <p>Capacitación en Inteligencia Artificial para funcionarios de la Agencia Nacional de Minería, mediante la OPS DIVTAH-1219/2025 de la Universidad Militar Nueva Granada, en el marco del Contrato Interadministrativo ANM-691-2025. La ANM fue la entidad beneficiaria.</p>
-                    </article>
-                    <article class="proof-card">
-                        <span class="proof-meta">Sobre esta información</span>
-                        <h3>Cómo verificar esta trayectoria</h3>
-                        <p>Toda la trayectoria académica y profesional de Henry Roncancio es pública y verificable en su registro ORCID y en su CvLAC de MinCiencias. Los servicios comerciales de Economía IA y sus casos propios se describen por separado.</p>
-                    </article>
-                </div>
-                <p class="proof-note">Si necesitas más contexto antes de tomar una decisión, lo más directo es una conversación. Ahí podemos hablar con más detalle sobre experiencia relevante para tu tipo de negocio.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-panel">
-                <h2 class="section-title">¿Quieres saber más antes de hablar?</h2>
-                <p class="section-intro">Si llegaste aquí evaluando si Economía IA es una opción para tu negocio, tienes tres formas concretas de conocernos mejor antes de decidir.</p>
-                <div class="steps-grid">
-                    <article class="step-card">
-                        <h3>1. Lee esta página completa</h3>
-                        <p>Aquí encontrarás qué hacemos, quién lo hace, con qué empresas hemos trabajado y cómo es nuestro proceso. Está escrita para que puedas evaluar sin necesidad de hablar primero.</p>
-                    </article>
-                    <article class="step-card">
-                        <h3>2. Verifica quién está detrás</h3>
-                        <p>El perfil de Henry Roncancio en LinkedIn es público. Los canales en la página bio y TikTok también. No tienes que creerle a la página — puedes verificar la trayectoria por tu cuenta.</p>
-                    </article>
-                    <article class="step-card">
-                        <h3>3. Agenda una conversación</h3>
-                        <p>Si ya tienes claro qué necesita tu negocio, el paso más útil es hablar directamente. En una conversación corta podemos decirte si lo que hacemos encaja con tu caso.</p>
-                    </article>
+            <div class="section-panel legal-panel">
+                <h2 class="section-title">Contacto y canales</h2>
+                <p class="section-intro">Economía IA no tiene oficina de atención al público: atiende por canales digitales. Un asistente de IA responde por WhatsApp a cualquier hora, y Henry Roncancio atiende de lunes a viernes, de 8:00 a 18:00 (hora de Colombia).</p>
+                <div class="legal-grid">
+                    <div class="legal-item">
+                        <span class="legal-label">WhatsApp comercial</span>
+                        <span class="legal-value"><a href="javascript:void(0)" data-lk="aHR0cHM6Ly93YS5tZS81NzMwNDM2NTYyMjY/dGV4dD1Ib2xhLCUyMHZlbmdvJTIwZGUlMjBsYSUyMHAlQzMlQTFnaW5hJTIwUXVpJUMzJUE5bmVzJTIwU29tb3MlMjBkZSUyMEVjb25vbSVDMyVBRGElMjBJQS4lMjBRdWllcm8lMjBtJUMzJUExcyUyMGluZm9ybWFjaSVDMyVCM24u" onclick="window.open(atob(this.getAttribute('data-lk')), '_blank');" target="_blank" rel="noopener noreferrer">+57 304 365 6226</a></span>
+                    </div>
+                    <div class="legal-item">
+                        <span class="legal-label">Correo</span>
+                        <span class="legal-value"><a href="mailto:admin@economiaia.business">admin@economiaia.business</a></span>
+                    </div>
+                    <div class="legal-item">
+                        <span class="legal-label">Horario de atención</span>
+                        <span class="legal-value">Asistente de IA 24/7 · Lunes a viernes, 8:00 a 18:00 (Colombia)</span>
+                    </div>
+                    <div class="legal-item">
+                        <span class="legal-label">Eventos y reservas</span>
+                        <span class="legal-value"><a href="https://reservas.economiaia.business" target="_blank" rel="noopener noreferrer">reservas.economiaia.business</a></span>
+                    </div>
+                    <div class="legal-item">
+                        <span class="legal-label">Productos y recursos</span>
+                        <span class="legal-value"><a href="https://descubre.economiaia.business" target="_blank" rel="noopener noreferrer">descubre.economiaia.business</a></span>
+                    </div>
+                    <div class="legal-item">
+                        <span class="legal-label">Perfiles de la empresa</span>
+                        <span class="legal-value"><a href="https://www.linkedin.com/company/economiaia" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="javascript:void(0)" data-lk="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tLzczNzI3MzMwNjEzMjY4MQ==" onclick="window.open(atob(this.getAttribute('data-lk')), '_blank');" target="_blank" rel="noopener noreferrer">Facebook</a> · <a href="javascript:void(0)" data-lk="aHR0cHM6Ly93d3cudGlrdG9rLmNvbS9AZWNvbm9taWFpYQ==" onclick="window.open(atob(this.getAttribute('data-lk')), '_blank');" target="_blank" rel="noopener noreferrer">TikTok</a> · <a href="javascript:void(0)" data-lk="aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9lY29ub21pYWlhLw==" onclick="window.open(atob(this.getAttribute('data-lk')), '_blank');" target="_blank" rel="noopener noreferrer">Instagram</a></span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1374,16 +1642,235 @@
         <section class="cta-panel">
             <div>
                 <h2>¿Tu negocio necesita atender mejor y vender más?</h2>
-                <p>Si después de leer esta página sientes que lo que hacemos encaja con lo que necesitas, el siguiente paso es una conversación directa. Sin compromiso — revisamos tu caso y te decimos con claridad si podemos ayudarte.</p>
+                <p>Si lo que hacemos encaja con lo que tu negocio necesita, el siguiente paso es una conversación directa. Sin compromiso: revisamos tu caso y te decimos con claridad si podemos ayudarte.</p>
             </div>
             <a class="cta-btn" href="javascript:void(0)" data-lk="aHR0cHM6Ly93YS5tZS81NzMwNDM2NTYyMjY/dGV4dD1Ib2xhLCUyMHZlbmdvJTIwZGUlMjBsYSUyMHAlQzMlQTFnaW5hJTIwUXVpJUMzJUE5bmVzJTIwU29tb3MlMjBkZSUyMEVjb25vbSVDMyVBRGElMjBJQS4lMjBRdWllcm8lMjBtJUMzJUExcyUyMGluZm9ybWFjaSVDMyVCM24u" onclick="window.open(atob(this.getAttribute('data-lk')), '_blank');" target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
         </section>
 
-        <section class="section" aria-label="Trayectoria pública del fundador"><h2>Trayectoria profesional de Henry Roncancio</h2><p>Henry es el fundador de Economía IA. Su experiencia en industria, docencia e investigación se documenta con sus instituciones, roles y periodos en su portafolio profesional. Esos antecedentes pertenecen al fundador y no equivalen a contratos o resultados de Economía IA.</p><p><a href="https://roncanciovl.github.io/">Portafolio profesional</a> · <a href="https://roncanciovl.github.io/red-publica.html">Mapa de relaciones y evidencia</a> · <a href="https://roncanciovl.github.io/red-publica.jsonld">Grafo público JSON-LD</a></p></section>
-        <div class="footer"><div style="flex-basis:100%;max-width:100%;margin-bottom:12px"><a class="footer-link-item whatsapp eia-whatsapp-footer" data-eia-whatsapp="footer" href="https://wa.me/573019750755?text=Hola%2C%20vengo%20de%20https%3A%2F%2Fwww.economiaia.business%2Fquienes_somos.html%20y%20quiero%20saber%20m%C3%A1s%20de%20sus%20soluciones." target="_blank" rel="noopener noreferrer" aria-label="Agente comercial 24/7 de EconomÃ­a IA por WhatsApp" title="Conversa con nuestro agente comercial 24/7 por WhatsApp">
+        <!-- Footer Economía IA -->
+        <style>
+            .footer-premium {
+                width: calc(100% - 2rem);
+                max-width: 1000px;
+                margin: 4rem auto 2rem auto;
+                padding: 3rem 2rem;
+                border-radius: 1.5rem;
+                background: linear-gradient(180deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.6) 100%);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                text-align: center;
+                backdrop-filter: blur(10px);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                box-sizing: border-box;
+            }
+
+            .footer-premium-brand {
+                display: inline-block;
+                color: #f8fafc;
+                font-size: 1rem;
+                font-weight: 800;
+                text-decoration: none;
+                text-transform: uppercase;
+                letter-spacing: 0.15em;
+                transition: all 0.3s ease;
+                opacity: 0.9;
+            }
+
+            .footer-premium-brand:hover {
+                opacity: 1;
+                text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            }
+
+            .footer-premium-links {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                margin-bottom: 2.5rem;
+            }
+
+            .footer-link-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.6rem;
+                color: #94a3b8;
+                text-decoration: none;
+                font-size: 0.75rem;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                width: 80px;
+            }
+
+            .footer-link-item .icon-wrap {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                transition: all 0.3s ease;
+            }
+
+            /* Hover colors */
+            .footer-link-item.tiktok:hover {
+                color: #f8fafc;
+            }
+
+            .footer-link-item.tiktok:hover .icon-wrap {
+                background: rgba(255, 0, 80, 0.1);
+                border-color: rgba(255, 0, 80, 0.4);
+                transform: translateY(-3px);
+            }
+
+            .footer-link-item.whatsapp:hover {
+                color: #f8fafc;
+            }
+
+            .footer-link-item.whatsapp:hover .icon-wrap {
+                background: rgba(37, 211, 102, 0.1);
+                border-color: rgba(37, 211, 102, 0.4);
+                transform: translateY(-3px);
+            }
+
+            .footer-link-item.consultoria:hover {
+                color: #f8fafc;
+            }
+
+            .footer-link-item.consultoria:hover .icon-wrap {
+                background: rgba(59, 130, 246, 0.1);
+                border-color: rgba(59, 130, 246, 0.5);
+                transform: translateY(-3px);
+            }
+
+            .footer-link-item.bio:hover {
+                color: #f8fafc;
+            }
+
+            .footer-link-item.bio:hover .icon-wrap {
+                background: rgba(250, 204, 21, 0.1);
+                border-color: rgba(250, 204, 21, 0.4);
+                transform: translateY(-3px);
+            }
+
+            .footer-link-item.trafico:hover {
+                color: #34d399;
+            }
+
+            .footer-link-item.trafico .icon-wrap {
+                background: rgba(16, 185, 129, 0.05);
+                border-color: rgba(16, 185, 129, 0.2);
+            }
+
+            .footer-link-item.trafico:hover .icon-wrap {
+                background: rgba(16, 185, 129, 0.1);
+                border-color: rgba(16, 185, 129, 0.6);
+                transform: translateY(-3px);
+            }
+
+            @media (max-width: 600px) {
+                .footer-premium {
+                    padding: 2.5rem 1rem;
+                    margin: 3rem auto 1.5rem auto;
+                    border-radius: 1rem;
+                }
+
+                .footer-premium-links {
+                    gap: 1rem;
+                }
+
+                .footer-link-item {
+                    width: 70px;
+                    font-size: 0.65rem;
+                }
+
+                .footer-link-item .icon-wrap {
+                    width: 38px;
+                    height: 38px;
+                }
+
+                .footer-premium-brand {
+                    font-size: 0.9rem;
+                }
+            }
+        </style>
+        <footer class="footer-premium">
+            <div style="margin-bottom: 2.5rem;">
+                <a href="index.html" class="footer-premium-brand">
+                    ECONOMÍA IA <span style="color: #3b82f6;">ECOSISTEMA</span>
+                </a>
+                <div
+                    style="height: 2px; width: 40px; background: linear-gradient(90deg, #22d3ee, #3b82f6); margin: 0.8rem auto 0; border-radius: 2px;">
+                </div>
+            </div>
+
+            <div class="footer-premium-links">
+            <!-- VIP Hook -->
+            <a href="comunidad_b2b.html" class="footer-link-item circle-hook">
+                <div class="icon-wrap" style="color: #f59e0b;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                </div>
+                <span style="font-weight: 800; color: #f59e0b; letter-spacing: 0.5px;">Entrar al VIP</span>
+            </a>
+                <!-- TikTok -->
+                <a href="javascript:void(0)" data-lk="aHR0cHM6Ly93d3cudGlrdG9rLmNvbS9AZWNvbm9taWFpYQ==" onclick="window.open(atob(this.getAttribute('data-lk')), '_blank');" target="_blank" rel="noopener noreferrer"
+                    class="footer-link-item tiktok">
+                    <div class="icon-wrap">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743 2.897 2.897 0 0 1 3.103-4.488v-3.44a6.324 6.324 0 0 0-5.236 10.517 6.33 6.33 0 0 0 10.78-4.394V7.727a8.21 8.21 0 0 0 5.207 1.754V6.03a4.75 4.75 0 0 1-1.438-.344Z" />
+                        </svg>
+                    </div>
+                    <span>TikTok</span>
+                </a>
+
+                <!-- WhatsApp -->
+                <a class="footer-link-item whatsapp eia-whatsapp-footer" data-eia-whatsapp="footer" href="https://wa.me/573019750755?text=Hola%2C%20vengo%20de%20https%3A%2F%2Fwww.economiaia.business%2Fquienes_somos.html%20y%20quiero%20saber%20m%C3%A1s%20de%20sus%20soluciones." target="_blank" rel="noopener noreferrer" aria-label="Agente comercial 24/7 de EconomÃ­a IA por WhatsApp" title="Conversa con nuestro agente comercial 24/7 por WhatsApp">
   <span class="icon-wrap eia-whatsapp-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span>
   <span class="eia-whatsapp-label">Agente comercial 24/7</span>
-</a></div>Copyright © economiaia LLC 2025</div>
+</a>
+
+                <!-- Consultoría -->
+                <a href="https://descubre.economiaia.business" target="_blank" rel="noopener noreferrer"
+                    class="footer-link-item consultoria">
+                    <div class="icon-wrap">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <span>Consultoría</span>
+                </a>
+
+                <!-- Bio / Home -->
+                <a href="index.html"
+                    class="footer-link-item bio">
+                    <div class="icon-wrap">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                            <polyline points="17 6 23 6 23 12"></polyline>
+                        </svg>
+                    </div>
+                    <span>Vender con IA</span>
+                </a>
+
+                <!-- Tráfico Real -->
+                <a href="trafico_llm_seo.html" target="_blank" rel="noopener noreferrer"
+                    class="footer-link-item trafico">
+                    <div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm0-136a104,104,0,1,0,104,104A104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z"></path></svg></div>
+                    <span>ChatGPT nos visitó</span>
+                </a>
+            </div>
+
+            <p style="color: #64748b; font-size: 0.75rem; margin: 0; font-weight: 500; letter-spacing: 0.05em;">Copyright © economiaia LLC 2025</p>
                 <p style="margin: 0.35rem 0 0; font-size: 0.72rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
           <a href="https://www.economiaia.business/legal/meta/terms-of-service-economiaia.html" style="color: #475569; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#94a3b8'" onmouseout="this.style.color='#475569'">T&#233;rminos del Servicio</a>
           <span style="color: #1e293b;">&middot;</span>
@@ -1391,6 +1878,7 @@
           <span style="color: #1e293b;">&middot;</span>
           <a href="https://www.economiaia.business/legal/meta/data-deletion-economiaia.html" style="color: #475569; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#94a3b8'" onmouseout="this.style.color='#475569'">Eliminaci&#243;n de Datos</a>
         </p>
+        </footer>
     </div>
 
     <script>
