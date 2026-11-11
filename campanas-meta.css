@@ -87,6 +87,52 @@ li{padding-left:3px;margin-bottom:9px}
 @media(min-width:901px){.option>div:nth-last-of-type(2){min-height:200px}}
 .source-note{font-size:.82rem;color:var(--muted);margin:20px 0 0;max-width:900px}
 .source-ref{font-size:.8em;white-space:nowrap}
+.payment-map{padding:0 22px 24px;margin-top:28px}
+.payment-map .visual-bar{margin-inline:-22px}
+.payment-map>figcaption{padding:20px 0 0;text-align:left}
+.payment-legend{display:flex;gap:12px 24px;flex-wrap:wrap;padding:20px 0;color:var(--muted);font-size:.78rem}
+.payment-legend span{display:inline-flex;gap:8px;align-items:center}
+.payment-legend i{width:9px;height:9px;border-radius:3px;background:#4ade80;flex-shrink:0}
+.payment-legend span:last-child i{background:#60a5fa}
+.payment-lanes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}
+.payment-lane{--channel:#86efac;min-width:0;border:1px solid #334155;border-radius:16px;background:#0e1a2c;overflow:hidden}
+.payment-lane.instagram{--channel:#c4b5fd}
+.payment-lane.api{--channel:#7dd3fc}
+.payment-platform{padding:22px 18px 18px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #334155;background:#17253a}
+.payment-platform svg{width:42px;height:42px;flex-shrink:0;color:var(--channel)}
+.payment-platform h3{font-size:1.12rem;margin:0;color:var(--text)}
+.payment-platform p{color:var(--muted);font-size:.76rem;margin:3px 0 0}
+.payment-route{padding:18px 16px 20px}
+.payment-route+.payment-route{border-top:1px dashed #475569}
+.route-heading{margin:0 0 12px;font-size:.9rem;color:var(--channel);font-weight:600}
+.payment-step{border:1px solid #334155;border-radius:10px;padding:14px;background:#16243a;min-height:96px}
+.payment-step strong{display:block;font-size:.92rem;font-weight:500;color:#edf5ff}
+.payment-step p{font-size:.8rem;color:var(--muted);margin:5px 0 0;line-height:1.55}
+.payment-step.direct{background:#102c26;border-color:#4ade8045}
+.payment-step.shared{background:#132c4c;border-color:#60a5fa65}
+.payment-step.direct strong{color:#a7f3d0}
+.payment-step.shared strong{color:#bfdbfe}
+.payment-step strong svg{width:18px;height:18px;display:inline-block;vertical-align:-4px;margin-right:6px;color:currentColor}
+.payment-connector{height:32px;display:flex;align-items:center;justify-content:center;color:var(--channel)}
+.payment-connector svg{width:22px;height:32px}
+.payment-connector .signal{stroke:currentColor;stroke-width:2;stroke-dasharray:4 6;filter:none}
+.payment-flag{display:inline-block;padding:4px 8px;border:1px solid #f0ce8a55;border-radius:5px;color:#f0ce8a;background:#f0ce8a0a;font-size:.69rem;font-weight:500;margin:8px 0 0;line-height:1.4}
+.payment-lane.api .payment-route{padding-bottom:18px}
+.payment-caveat{font-size:.8rem;color:var(--muted);padding:0 16px 20px;margin:0;line-height:1.6}
+.payment-key{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:22px}
+.payment-key>div{display:flex;gap:12px;padding:18px 0}
+.payment-key svg{width:28px;height:28px;flex-shrink:0;color:var(--accent)}
+.payment-key strong{font-size:.9rem;font-weight:500}
+.payment-key p{font-size:.82rem;color:var(--muted);margin:3px 0 0}
+.billing-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.billing-grid>div{border:1px solid #334155;border-radius:12px;background:#142238a6;padding:20px}
+.billing-grid h3{font-size:1.06rem;margin:0 0 8px;display:flex;align-items:center;gap:10px}
+.billing-grid h3 svg{width:24px;height:24px;color:var(--accent);flex-shrink:0}
+.billing-grid p{font-size:.89rem;color:var(--muted);margin:0}
+.payment-map .payment-platform svg,.payment-map .payment-step svg{height:auto}
+@media(max-width:900px){.payment-lanes{grid-template-columns:1fr}.payment-route{display:grid;grid-template-columns:1fr 32px 1fr;align-items:center;gap:0 10px}.route-heading{grid-column:1/-1}.payment-connector{transform:rotate(-90deg)}.payment-key{gap:20px}.payment-lane.api .payment-route .route-heading{grid-column:1/-1}}
+@media(max-width:560px){.payment-map{padding:0 14px 18px}.payment-map .visual-bar{margin-inline:-14px}.payment-route{display:block}.payment-step{min-height:0}.payment-connector{transform:none}.payment-key,.billing-grid{grid-template-columns:1fr;gap:0}.payment-key>div{padding-block:12px}.billing-grid{gap:12px}.payment-platform{padding:18px 16px}.payment-legend{gap:10px}.payment-legend span{font-size:.72rem}}
+@media print{.payment-lanes{display:block}.payment-lane{break-inside:avoid;margin-bottom:14px;print-color-adjust:exact}.payment-key{grid-template-columns:1fr}.payment-map .payment-step p,.payment-map>figcaption,.payment-legend,.payment-caveat{color:#b4bfd0!important}.billing-grid{display:block}.billing-grid>div{break-inside:avoid;margin-bottom:12px}}
 .table-hint{color:var(--muted);font-size:.82rem;margin:22px 0 10px}
 .table-scroll{overflow-x:auto;border:1px solid #47556999;border-radius:16px;scrollbar-color:#49638b #111c30}
 table{width:100%;min-width:760px;border-collapse:collapse;text-align:left;font-size:.92rem;background:#101b2ce6}
