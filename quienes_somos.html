@@ -387,6 +387,7 @@
             gap: 1.1rem;
         }
         .two-col { grid-template-columns: repeat(2, minmax(0,1fr)); }
+        .two-col .profile-card.ancho { grid-column: 1 / -1; }
         .profiles-grid, .proof-grid, .steps-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
 
         /* ── Cards ── */
@@ -1183,6 +1184,18 @@
                 "@type": "Service",
                 "name": "Red Henry para organizaciones: gestión del conocimiento"
               }
+            },
+            {
+              "@type": "Offer",
+              "availability": "https://schema.org/LimitedAvailability",
+              "itemOffered": {
+                "@type": "SoftwareApplication",
+                "name": "Red Profesional",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "url": "https://red.economiaia.business",
+                "description": "Plataforma SaaS nativa para agentes de IA, basada en el estándar MCP, que convierte la trayectoria verificada de investigadores, docentes y consultores técnicos en una fuente única de verdad y coordina su propagación a sus plataformas con aprobación humana. Piloto por invitación."
+              }
             }
           ]
         },
@@ -1406,7 +1419,7 @@
         <section class="section">
             <div class="section-panel">
                 <h2 class="section-title">Qué hacemos</h2>
-                <p class="section-intro">No vendemos tecnología genérica. Diseñamos sistemas prácticos de atención, captura y conversión con IA, adaptados al proceso real de cada negocio. Estas son las cuatro líneas de servicio de la empresa.</p>
+                <p class="section-intro">No vendemos tecnología genérica. Diseñamos sistemas prácticos de atención, captura y conversión con IA, adaptados al proceso real de cada negocio. Estas son las cuatro líneas de servicio de la empresa y su plataforma para profesionales.</p>
                 <div class="two-col">
                     <article class="profile-card">
                         <span class="mini-label">Agentes conversacionales</span>
@@ -1443,7 +1456,6 @@
                         <ul class="meta-list">
                             <li>Economía IA la implementa y la opera; empieza con un diagnóstico de alcance cerrado</li>
                             <li>Para programas académicos: hojas de vida de los profesores en el formato de acreditación, desde un perfil que cada profesor aprueba</li>
-                            <li>Red Profesional, el plugin para profesionales y docentes, está en desarrollo y aún no está a la venta</li>
                         </ul>
                     </article>
                     <article class="profile-card">
@@ -1459,6 +1471,20 @@
                         <div class="card-links">
                             <a class="profile-link" href="https://reservas.economiaia.business" target="_blank" rel="noopener noreferrer">Eventos y reservas →</a>
                             <a class="profile-link" href="https://descubre.economiaia.business" target="_blank" rel="noopener noreferrer">Recursos →</a>
+                        </div>
+                    </article>
+                    <article class="profile-card ancho">
+                        <span class="mini-label">Plataforma para profesionales · piloto</span>
+                        <h3>Red Profesional</h3>
+                        <p>Un investigador, docente o consultor técnico en Latinoamérica mantiene su trayectoria repartida en más de diez plataformas: ORCID, GitHub, LinkedIn, currículos estatales, bolsas públicas y su sitio web. Cada actualización se repite a mano, los certificados vencen sin aviso y se pierden convocatorias reales por falta de tiempo.</p>
+                        <p>Red Profesional es una plataforma SaaS nativa para agentes de IA, basada en el estándar MCP. Convierte la trayectoria verificada de cada profesional en una fuente única de verdad, valida sus soportes sin subir documentos privados al servidor, vigila oportunidades y certificados que caducan, y coordina la propagación a todas sus plataformas manteniendo siempre la aprobación humana.</p>
+                        <ul class="meta-list">
+                            <li>Se usa con el propio asistente de IA de la persona (Claude o Codex) y una consola web</li>
+                            <li>Cada dato con su soporte; la persona decide qué es público</li>
+                            <li>Piloto por invitación</li>
+                        </ul>
+                        <div class="card-links">
+                            <a class="profile-link" href="https://red.economiaia.business" target="_blank" rel="noopener noreferrer">Conocer el piloto →</a>
                         </div>
                     </article>
                 </div>
